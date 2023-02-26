@@ -1,0 +1,25 @@
+@import "../colors";
+
+.footer_body {
+  background: $blackCow;
+  padding: 17px 0;
+  .footer_content {
+    p {
+      text-align: center;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 19px;
+      color: $white;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .footer_body {
+    .footer_content {
+      p {
+        line-height: 22px;
+      }
+    }
+  }
+}
