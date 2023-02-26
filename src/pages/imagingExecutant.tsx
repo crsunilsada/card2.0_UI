@@ -225,7 +225,6 @@ const imagingExecutant = () => {
                     <button className="next">Next</button>
                   </div>
                 </Tab.Pane>
-
                 <Tab.Pane eventKey="third">
                   <div className="witnessList witness1">
                     <h5 className="mb-4">Witness 1</h5>

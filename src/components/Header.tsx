@@ -2,11 +2,11 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import styles from "../styles/components/header.module.scss";
 import { Navbar, NavDropdown, Container, Col, Row, Nav } from "react-bootstrap";
-
+import banner from 'images/Header1.png'
 const Header = () => {
   const router = useRouter();
   return (
-    <header className={styles.header_body}>
+    <><img src={"/images/Header1.png"}></img><header className={styles.header_body}>
       <Navbar className="navigation bg-primary" bg="light" expand="lg">
         <Container className="headerNavContainer">
           <div className="header-main-nav">
@@ -14,9 +14,7 @@ const Header = () => {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="headerNavList navbar-nav">
                 <Nav.Link
-                  className={
-                    router.pathname == "/" ? "active homeMenu" : "homeMenu"
-                  }
+                  className={router.pathname == "/" ? "active homeMenu" : "homeMenu"}
                   href="/"
                 >
                   <Image width={40} height={34} src="/images/Home.svg" />
@@ -38,7 +36,7 @@ const Header = () => {
           </div>
         </Container>
       </Navbar>
-    </header>
+    </header></>
   );
 };
 

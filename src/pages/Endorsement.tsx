@@ -8,8 +8,6 @@ const Endorsement = () => {
           <meta name="description" content="login" />
           <link rel="icon" href="/igrsfavicon.ico" />
         </Head>
-
-
         <div style={{ width: "100%" }}>
             <div className="mainWrapper">
                 <div className="wrapperInner">
@@ -94,6 +92,12 @@ const Endorsement = () => {
                                 </Form.Floating>
                             </Col>
                             <Col lg={3} md={3} xs={3} className="mb-3">
+                            <Form.Select aria-label="Default select example">
+		      <option value=""></option>
+		      <option value="AADHAR">AADHAR</option>
+		      <option value="REPRESENT/SEC 88">REPRESENT/SEC 88</option>
+		      <option value="NRI">NRI</option>
+		    </Form.Select>
                                 <Form.Group>
                                     <select className="" name="subregname" >
                                     <option value="">Sub Registrar Name</option>
@@ -102,7 +106,6 @@ const Endorsement = () => {
                                     <option value="30">Document Writer</option>
                                     </select>
                                 </Form.Group>
-
                             </Col>
                         </Row>
                         <Row>
@@ -119,7 +122,6 @@ const Endorsement = () => {
                                 <button className="bluebuttonclass">
                                     Print
                                 </button>
-
                             </Col>
                         </Row>
                     </div>
