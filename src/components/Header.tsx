@@ -6,7 +6,7 @@ import banner from 'images/Header1.png'
 const Header = () => {
   const router = useRouter();
   return (
-    <><img src={"/images/Header1.png"}></img><header className={styles.header_body}>
+    <><div className="fixed-top"><img src={"/images/Header1.png"} className="header-image"></img><header className={styles.header_body}>
       <Navbar className="navigation bg-primary" bg="light" expand="lg">
         <Container className="headerNavContainer">
           <div className="header-main-nav">
@@ -17,10 +17,10 @@ const Header = () => {
                   className={router.pathname == "/" ? "active homeMenu" : "homeMenu"}
                   href="/"
                 >
-                  <Image width={40} height={34} src="/images/Home.svg" />
+                  <Image width={25} height={20} src="/images/Home.svg" />
                 </Nav.Link>
                 <Nav.Link
-                  className={router.pathname == "/registration" ? "active" : ""}
+                  className={router.pathname == "/registration" ? "active" : "active"}
                   href="/registration"
                 >
                   REGISTRATION
@@ -36,7 +36,10 @@ const Header = () => {
           </div>
         </Container>
       </Navbar>
-    </header></>
+    </header>
+    </div>
+    <div className="header-space"></div>
+    </>
   );
 };
 
