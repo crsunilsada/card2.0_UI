@@ -36,7 +36,7 @@ p:last-child {
 }
 
 .navigation.bg-primary {
-  padding: 16px 0;
+  padding: 0px 0;
   background: $blue !important;
 }
 .navigation {
@@ -44,13 +44,19 @@ p:last-child {
     .nav-link {
       font-family: "Roboto", sans-serif;
       font-weight: 600;
-      font-size: 20px;
-      line-height: 23px;
+      font-size:14px;
+      line-height: 16px;
       color: $white;
-      padding: 6px 25px;
+      padding: 12px 25px 10px 25px;
+      
+    }
+    .nav-link.active{
+      text-decoration: underline;
+      text-underline-offset: 10px;
+      text-decoration-thickness: 3px !important;
     }
     .homeMenu.nav-link {
-      padding-top: 0;
+      padding-top: 10px;
       padding-bottom: 0;
     }
   }
@@ -70,7 +76,7 @@ p:last-child {
       background: $white;
       border: 1px solid $blue;
       border-radius: 4px;
-      padding: 76px 0 40px;
+      padding: 60px 0 40px;
       position: relative;
       .pageTableContainer {
         max-width: 1471px;
@@ -81,18 +87,18 @@ p:last-child {
 }
 .acknowledgement {
   position: absolute;
-  top: -30px;
+  top: -23px;
   left: 30px;
   background: $white;
   h4 {
     border: 1px solid $Bluish;
     background: $blue;
     font-weight: 600;
-    font-size: 24px;
-    line-height: 33px;
+    font-size: 18px;
+    line-height: 32px;
     color: $white;
     margin: 0;
-    padding: 10px 32px;
+    padding: 5px 25px;
   }
   button {
     background: $white;
@@ -125,16 +131,17 @@ p:last-child {
         font-weight: 400;
         font-size: 16px;
         line-height: 22px;
-        padding: 19px 21px;
+        padding: 10px 20px;
         min-height: inherit;
+        height: auto;
       }
       .input-group-prepend {
         .btn {
           width: 60px;
-          height: 60px;
+          height: auto;
           border: none;
-          padding: 0;
-          line-height: 66px;
+          padding: 10px 0px 0px 0px;
+          line-height: auto;
           background: none;
         }
       }
@@ -176,12 +183,12 @@ p:last-child {
 .pageTableMain {
   padding: 33px 0 0;
   .pageTableTabs {
-    padding: 0 0 30px;
+    padding: 0 0 15px;
     button {
       background: $blue;
       opacity: 0.5;
       font-weight: 400;
-      font-size: 18px;
+      font-size: 16px;
       line-height: 25px;
       color: $white;
       padding: 5px 12px;
@@ -203,13 +210,14 @@ p:last-child {
       border: none;
       th,
       td {
-        font-size: 16px;
+        font-size: 14px !important;
         line-height: 22px;
-        padding: 14px 6px;
+        padding: 6px 6px;
         border-width: 0 1px 0 0;
         border-color: rgba(179, 179, 179, 0.4);
         color: $liver;
         box-shadow: none;
+        vertical-align: middle;
       }
       th:last-child,
       td:last-child {
@@ -753,3 +761,262 @@ body {
   line-height: 33px;
   color: #ffffff;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.header-image{
+  height: 120px;
+  width: 100%;
+}
+
+.header-space{
+  height: 120px;
+}
+
+.headerNavContainer.container{
+  max-width: 100%;
+}
+
+
+
