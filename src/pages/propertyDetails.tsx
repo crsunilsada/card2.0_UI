@@ -3,6 +3,8 @@ import Image from "next/image";
 import Accordion from 'react-bootstrap/Accordion';
 import { Container, Row, Col, Table, Tab, Nav, Form } from "react-bootstrap";
 import Stepper from '../components/Stepper'
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
 const PropertyDetails = () => {
   const tableData = [
@@ -56,7 +58,7 @@ const PropertyDetails = () => {
     },
   ];
   return (
-      <><Stepper /><div className="pageMainWrap">
+      <><Stepper /><div className="pageMainWrap pt-4">
           <Head>
               <title>Property Details - CARD</title>
               <meta name="description" content="login" />
@@ -64,21 +66,30 @@ const PropertyDetails = () => {
           </Head>
 
           <div className="mainWrapper">
-              <div className="wrapperInner">
+              <div className="wrapperInner pt-0">
                   <div className="acknowledgement">
                       <button className="active partyDetails">Property Details</button>
                       <button className="imaging">Cash Receipt</button>
-                      <div style={{ position: 'relative', left: '70em' }}>
-                          <Form.Select aria-label="mapClaimants">
-                              <option>Previous Schedule</option>
-                              <option value="1">Schedule 1</option>
-                              <option value="2">Schedule 2</option>
-                              <option value="3">Schedule 3</option>
-                          </Form.Select>
-                      </div>
                   </div>
-                  <div className="pageTableContainer">
-                      <h4>Basic Details</h4>
+                  <Row className="mt-0 mb-2">
+                    <Col >
+                        <div  className="float-end">
+                            <Dropdown>
+                                <Dropdown.Toggle id="" className="previous-schedule" variant="secondary">
+                                Previous Schedule
+                                </Dropdown.Toggle>
+
+                                <Dropdown.Menu>
+                                <Dropdown.Item href="#/action-1">Schedule 1</Dropdown.Item>
+                                <Dropdown.Item href="#/action-2">Schedule 2</Dropdown.Item>
+                                <Dropdown.Item href="#/action-3">Schedule 3</Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                         </div>
+                    </Col>
+                  </Row>
+                  <div className="pageTableContainer mt-4">
+                      <h4 className="mb-4">Basic Details</h4>
                       <Row className="mb-4">
                           <Col lg={3} md={4} xs={12}>
                               <Form.Floating>
