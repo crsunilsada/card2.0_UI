@@ -524,14 +524,14 @@ body {
   text-align: right;
   padding: 45px 0 0;
   button {
-    width: 160px;
-    height: 60px;
+    /*width: 160px;
+    height: 40px;*/
     border-radius: 4px;
     font-weight: 600;
     font-size: 16px;
     line-height: 22px;
     text-align: center;
-    padding: 0;
+    padding: 10px 30px;
     border: 1px solid $blue;
   }
   button.clear {
@@ -824,7 +824,7 @@ body {
 }
 
 .header-space {
-  height: 120px;
+  height: 160px;
 }
 
 .headerNavContainer.container {
@@ -848,6 +848,14 @@ body {
   margin-top: 6px;
   border-radius: 1px solid #274C77 !important;
 }
+.progressbar {
+  position: relative;
+  z-index: 1;
+}
+.progressbar-section{
+  padding: 30px 0px;
+  height: 120px;
+}
 .progressbar li {
   list-style-type: none;
   width: 20%;
@@ -858,8 +866,8 @@ body {
   color: #9E9E9E;
 }
 .progressbar li:before {
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   content: "";
   line-height: 25px;
   border: 2px solid #9E9E9E;
@@ -881,7 +889,7 @@ font-weight: bold;
   content: '';
   position: absolute;
   background-color: #9E9E9E;
-  top: 42px;
+  top: 43px;
   left: -50%;
   z-index: -1;
 }
@@ -930,4 +938,97 @@ color: #274C77;
 .pageMainWrap.homepage {
   background: url(../../public/images/Dashboard-BG.png) no-repeat center bottom $white;
   padding-top: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.form-select{
+  font-size: 14px !important;
+  background-color: #F6F9FB ;
+  border-radius: 12px;
+}
+.previous-schedule{
+  border-radius: 0px;
+  text-decoration: underline;
+}
+.accordion-button:after {
+  order: -1; //swap order
+  margin-left: 0; 
+  margin-right:0.8em; // just extra space between text and icon
+}
+
+.red-strip {
+  background: linear-gradient(90deg, #FE0000 48.21%, #FE0000 100%);
+  color: #FFF;
+}
+
+.pageTableContainer .mb-4.row{
+  margin-bottom: .5rem !important
+}
+
+.accordion-item, .accordion-button {
+  border-radius: 12px !important;
+}
+
+.pageTableContainer .pageNextBtn {
+  padding: 20px 0 0;
 }
