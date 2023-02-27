@@ -104,10 +104,10 @@ p:last-child {
     background: $white;
     border: 1px solid $blue;
     font-weight: 600;
-    font-size: 24px;
-    line-height: 33px;
+    font-size: 18px;
+    line-height: 32px;
     opacity: 0.5;
-    padding: 10px 18px;
+    padding: 5px 18px;
     border-radius: 0;
   }
   button.active {
@@ -368,7 +368,7 @@ body {
   }
   .form-label {
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 16px;
     color: $liver;
   }
@@ -387,11 +387,13 @@ body {
   .form-floating > .form-control,
   .form-floating > .form-control-plaintext,
   .form-floating > .form-select {
-    height: 61px;
+    height: 40px;
+    padding-top: 10px;
+    font-size: 14px;
   }
   .form-floating > .form-control,
   .form-floating > .form-control-plaintext {
-    padding: 10px 20px;
+    padding: 0px 20px;
   }
   .form-floating > .form-control-plaintext:focus,
   .form-floating > .form-control-plaintext:not(:placeholder-shown),
@@ -402,7 +404,7 @@ body {
   }
   .form-floating > label {
     margin: 0;
-    padding: 20px;
+    padding: 12px;
   }
   .so.form-control {
     width: 25%;
