@@ -92,12 +92,12 @@ const Endorsement = () => {
                                 </Form.Floating>
                             </Col>
                             <Col lg={3} md={3} xs={3} className="mb-3">
-                            <Form.Select aria-label="Default select example">
-		      <option value=""></option>
-		      <option value="AADHAR">AADHAR</option>
-		      <option value="REPRESENT/SEC 88">REPRESENT/SEC 88</option>
-		      <option value="NRI">NRI</option>
-		    </Form.Select>
+                            {/* <Form.Select aria-label="Default select example">
+                                <option value=""></option>
+                                <option value="AADHAR">AADHAR</option>
+                                <option value="REPRESENT/SEC 88">REPRESENT/SEC 88</option>
+                                <option value="NRI">NRI</option>
+                            </Form.Select> */}
                                 <Form.Group>
                                     <select className="" name="subregname" >
                                     <option value="">Sub Registrar Name</option>
@@ -116,12 +116,11 @@ const Endorsement = () => {
 
                             </Col>
                             <Col lg={4} md={4} xs={4} className="mb-3">
-                            <button className="whitebuttonclass">
-                                    Exit
-                                </button>&nbsp;
-                                <button className="bluebuttonclass">
-                                    Print
-                                </button>
+                                <div className="pageNextBtn">
+                                    <button className="whitebuttonclass">
+                                        Exit
+                                    </button>&nbsp; <button className="next">Save</button>
+                                </div>
                             </Col>
                         </Row>
                     </div>
