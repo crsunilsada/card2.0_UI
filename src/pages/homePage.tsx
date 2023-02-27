@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head';
-import { Button, Col, Container, Image, Row, Table } from 'react-bootstrap';
+import { Button, Col, Container, Image, Row, Table, Link } from 'react-bootstrap';
 
 const Homepage = () => {
     return (
@@ -31,7 +31,12 @@ const Homepage = () => {
                                     src={"/images/OnlinePublicData.png"}
                                     alt="Online public data entry"
                                     width={85}
-                                    height={85} />
+                                    height={85}
+                                    <Link href={'/pages/homePage'}>
+                      <Button className="bluebuttonclass">
+                        Submit
+                      </Button>
+                    </Link>
                                 <h5 className="card-title text-center mb-3">Online Public Data Entry Service</h5>
                                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 {/* <a href="#" className ="btn btn-primary">Go somewhere</a> */}

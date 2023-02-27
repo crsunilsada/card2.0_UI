@@ -165,10 +165,10 @@ function Table({ columns, data }) {
   );
 }
 
-function documentPresentation() {
-  useEffect(() => {
-    require("bootstrap/dist/js/bootstrap.bundle.min.js");
-  }, []);
+  function documentPresentation() {
+    useEffect(() => {
+      require("bootstrap/dist/js/bootstrap.bundle.min.js");
+    }, []);
 
   const columns = React.useMemo(
     () => [

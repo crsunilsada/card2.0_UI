@@ -1,7 +1,7 @@
 import { Container, Col, Row, Form, Button, Table } from "react-bootstrap"
 import Head from "next/head";
 
-const DocumentHandover = () => {
+const documentHandover = () => {
     return (
         <><div className="">
             <ul className="progressbar">
@@ -12,7 +12,6 @@ const DocumentHandover = () => {
                 <li className="inactive"><div className="progress_step_text">Document Handover</div></li>
             </ul>
         </div><br></br><div className="pageMainWrap">
-
                 <Head>
                     <title>Document Handover - CARD</title>
                     <meta name="description" content="login" />
@@ -21,6 +20,7 @@ const DocumentHandover = () => {
                 <div style={{ width: "100%" }}>
                     <div className="mainWrapper">
                         <div className="wrapperInner">
+                        <div className="pageTableContainer">
                             <div className="acknowledgement">
                                 <button className="active partyDetails">Document Handover</button>
                             </div>
@@ -202,7 +202,7 @@ const DocumentHandover = () => {
                                     </Col>
                                 </Row>
                                 <hr></hr>
-                                <Table bordered className="tableData listData tableheadBg">
+                                <table className="tableData listData tableheadBg table">
                                     <thead>
                                         <tr>
                                             <th className="text-center">Name</th>
@@ -211,23 +211,25 @@ const DocumentHandover = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-
                                         <tr>
                                             <td>
                                                 Sanjay
                                             </td>
                                             <td className="text-center">
-                                                <div className="fcheckbox">
-                                                    <Form.Check type={"checkbox"} name="photo" />
-                                                </div>
-                                                <img src={""} />
+                                            <div className="fcheckbox">
+                                                <Form.Check
+                                                type={"checkbox"}
+                                                name="thumbImpression"
+                                                />
+                                            </div>
+                                            <img src={"/images/executant-thumb-impression.svg"} />
                                             </td>
                                             <td>
                                                 <button className="bluebuttonclass">Capture</button>
                                             </td>
                                         </tr>
                                     </tbody>
-                                </Table>
+                                </table>
                                 <Row>
                                     <Col lg={6} md={6} xs={12} className="mb-3">
 
@@ -243,9 +245,10 @@ const DocumentHandover = () => {
                                 </Row>
                             </div>
                         </div>
+                        </div>
                     </div>
                 </div>
             </div></>
     );
 };
-export default DocumentHandover;
+export default documentHandover;

@@ -10,58 +10,50 @@ const pdeScrutinyList = () => {
 
   const tableData = [
     {
-      appNo: "456787654",
-      ackNo: "345",
-      csNo: "212",
-      ackYear: "2022",
+      appId: "456787654",
       presenterName: "Chandra Sekhar",
-      noofSchedule: "1",
-      generateddatetime: "22/11/2022 @ 10: 45 AM",
-      bookNumber: "1",
-      maj: "01",
-      min: "01",
+      maj: "Sale",
+      min: "Sale Deed",
+      slotTime: "10:30am",
+      registrationType: "original",
+      details: "View Details",
+      status: "new",
     },
     {
-      appNo: "456787654",
-      ackNo: "345",
-      csNo: "212",
-      ackYear: "2022",
-      presenterName: "Sekhar Varma",
-      noofSchedule: "2",
-      generateddatetime: "22/11/2022 @ 10: 45 AM",
-      bookNumber: "2",
-      maj: "02",
-      min: "02",
-    },
-    {
-      appNo: "456787654",
-      ackNo: "345",
-      csNo: "212",
-      ackYear: "2022",
+      appId: "456787654",
       presenterName: "Chandra Sekhar",
-      noofSchedule: "1",
-      generateddatetime: "22/11/2022 @ 10: 45 AM",
-      bookNumber: "1",
-      maj: "01",
-      min: "01",
+      maj: "Sale",
+      min: "Sale Deed",
+      slotTime: "10:30am",
+      registrationType: "original",
+      details: "View Details",
+      status: "new",
     },
     {
-      appNo: "456787654",
-      ackNo: "345",
-      csNo: "212",
-      ackYear: "2022",
-      presenterName: "Sekhar Varma",
-      noofSchedule: "2",
-      generateddatetime: "22/11/2022 @ 10: 45 AM",
-      bookNumber: "2",
-      maj: "02",
-      min: "02",
+      appId: "456787654",
+      presenterName: "Chandra Sekhar",
+      maj: "Sale",
+      min: "Sale Deed",
+      slotTime: "10:30am",
+      registrationType: "original",
+      details: "View Details",
+      status: "new",
+    },
+    {
+      appId: "456787654",
+      presenterName: "Chandra Sekhar",
+      maj: "Sale",
+      min: "Sale Deed",
+      slotTime: "10:30am",
+      registrationType: "original",
+      details: "View Details",
+      status: "new",
     },
   ];
   return (
     <div className="pageMainWrap">
       <Head>
-        <title>PDE Scrutiny List - CARD</title>
+        <title>Document Presentation - CARD</title>
         <meta name="description" content="login" />
         <link rel="icon" href="/igrsfavicon.ico" />
       </Head>
@@ -69,7 +61,7 @@ const pdeScrutinyList = () => {
       <div className="mainWrapper">
         <div className="wrapperInner">
           <div className="acknowledgement">
-            <h4>PDE Applications Scrutiny List</h4>
+            <h4>PDE Applications Scrutiny</h4>
           </div>
 
           <Container>
@@ -111,7 +103,7 @@ const pdeScrutinyList = () => {
 
           <div className="documentsTable pageTableMain pageTableContainer">
             <div className="pageTableTabs">
-            <button className="accept ">Pending (30)</button>
+              <button className="accept ">Pending (30)</button>
               <button className="accept active">Accept (30)</button>
               <button className="ammend">Ammend (5)</button>
               <button className="ammend">Refuse (5)</button>
@@ -120,33 +112,25 @@ const pdeScrutinyList = () => {
               <thead>
                 <tr>
                   <th rowSpan={2} className="text-center">
-                    App No.
+                    App ID
                   </th>
                   <th rowSpan={2} className="text-center">
-                    Ack. No.
-                  </th>
-                  <th rowSpan={2} className="text-center">
-                    CS No.
-                  </th>
-                  <th rowSpan={2} className="text-center">
-                    Ack. Year
-                  </th>
-                  <th rowSpan={2}>Presenter Name</th>
-                  <th rowSpan={2} className="text-center">
-                    No. of <br />
-                    Schedule
-                  </th>
-                  <th rowSpan={2}>
-                    CS No. & Ack No.
-                    <br />
-                    Generated Date & Time
-                  </th>
-                  <th rowSpan={2} className="text-center">
-                    Book <br />
-                    Number
+                    Presenter Name
                   </th>
                   <th colSpan={2} className="extraFont text-center">
                     Nature of Document
+                  </th>
+                  <th rowSpan={2} className="text-center">
+                    Slot Time
+                  </th>
+                  <th rowSpan={2} className="text-center">
+                    Registration Type
+                  </th>
+                  <th rowSpan={2} className="text-center">
+                    Details
+                  </th>
+                  <th rowSpan={2} className="text-center">
+                    Status
                   </th>
                   <th rowSpan={2} className="text-center">
                     Action
@@ -161,16 +145,12 @@ const pdeScrutinyList = () => {
                 {tableData.map((item, index) => {
                   return (
                     <tr key={index}>
-                      <td className="text-center">{item.appNo}</td>
-                      <td className="text-center">{item.ackNo}</td>
-                      <td className="text-center">{item.csNo}</td>
-                      <td className="text-center">{item.ackYear}</td>
-                      <td>{item.presenterName}</td>
-                      <td className="text-center">{item.noofSchedule}</td>
-                      <td>{item.generateddatetime}</td>
-                      <td className="text-center">{item.bookNumber}</td>
+                      <td className="text-center">{item.appId}</td>
+                      <td className="text-center">{item.presenterName}</td>
                       <td className="text-center">{item.maj}</td>
                       <td className="text-center">{item.min}</td>
+                      <td className="text-center">{item.slotTime}</td>
+                      <td className="text-center">{item.registrationType}</td>
                       <td className="text-center">
                         <button
                           data-bs-toggle="modal"
@@ -185,14 +165,45 @@ const pdeScrutinyList = () => {
                           />
                           <small>View Basic Details</small>
                         </button>
-                        <button className="print">
-                          {" "}
+                      </td>
+                      <td className="text-center">{item.status}</td>
+                      <td className="text-center">
+                        <button
+                          className="actionAccept"
+                          data-bs-toggle="modal"
+                          data-toggle="popover"
+                          data-bs-target="#viewActionAccept"
+                        >
                           <Image
                             width={25}
                             height={25}
-                            src="/images/Print.svg"
+                            src="/images/accept.svg"
                           />
-                          <small>Print</small>
+                          <small>Accept</small>
+                        </button>
+                        <button
+                          className="ammend"
+                          data-bs-toggle="modal"
+                          data-bs-target="#viewActionAmmend"
+                        >
+                          <Image
+                            width={25}
+                            height={25}
+                            src="/images/ammend.svg"
+                          />
+                          <small>Ammend</small>
+                        </button>
+                        <button
+                          className="refuse"
+                          data-bs-toggle="modal"
+                          data-bs-target="#viewActionRefuse"
+                        >
+                          <Image
+                            width={25}
+                            height={25}
+                            src="/images/refuse.svg"
+                          />
+                          <small>Refuse</small>
                         </button>
                       </td>
                     </tr>
@@ -211,9 +222,22 @@ const pdeScrutinyList = () => {
             <div className="modal-dialog">
               <div className="modal-content">
                 <div className="modal-header">
-                  <h5 className="modal-title" id="exampleModalLabel">
-                    View Basic Details
-                  </h5>
+                  <ul className="nav nav-tabs">
+                    <li className="nav-item">
+                      <a
+                        className="nav-link active"
+                        aria-current="page"
+                        href="#"
+                      >
+                        Check List
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                      <a className="nav-link" href="#">
+                        Document
+                      </a>
+                    </li>
+                  </ul>
                   <button
                     type="button"
                     className="btn-close"
@@ -456,6 +480,171 @@ const pdeScrutinyList = () => {
                         </Form.Label>
                       </Form.Floating>
                     </Col>
+                  </Row>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            className="modal fade modal-md"
+            id="viewActionAccept"
+            aria-labelledby="viewActionAccept"
+            aria-hidden="true"
+          >
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title" id="exampleModalLabel">
+                    Application No: 98765432
+                  </h5>
+                  <button
+                    type="button"
+                    className="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <Image
+                      width={20}
+                      height={20}
+                      src="/images/popup-close.svg"
+                    />
+                  </button>
+                </div>
+
+                <div className="modal-body">
+                  <Row>
+                    <div className="text-center">
+                      <Image width={60} height={60} src="/images/Success.svg" />
+                    </div>
+                  </Row>
+
+                  <Row>
+                    <div className="text-center">
+                      <h5>Acknowledgement No:345 &</h5>
+                    </div>
+                    <div className="text-center">
+                      <h5>Check Slip No:212</h5>
+                    </div>
+                    <div className="text-center">
+                      <h5>has been generated successfully</h5>
+                    </div>
+                  </Row>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            className="modal fade modal-md"
+            id="viewActionAmmend"
+            aria-labelledby="viewActionAmmend"
+            aria-hidden="true"
+          >
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title" id="exampleModalLabel">
+                    Application List Ammend
+                  </h5>
+                  <button
+                    type="button"
+                    className="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <Image
+                      width={20}
+                      height={20}
+                      src="/images/popup-close.svg"
+                    />
+                  </button>
+                </div>
+
+                <div className="modal-body">
+                  <Row>
+                    <select className="form-select form-select-lg mb-3">
+                      <option selected>Select Season</option>
+                      <option value="1">Season One</option>
+                      <option value="2">Season Two</option>
+                      <option value="3">Season Three</option>
+                    </select>
+                  </Row>
+
+                  <Row>
+                    <textarea
+                      className="form-control"
+                      rows={5}
+                      id="comment"
+                      placeholder="comments"
+                    ></textarea>
+                  </Row>
+                  <br></br>
+
+                  <Row>
+                    <div className="text-center">
+                      <button type="button" className="btn btn-primary">
+                        Okay
+                      </button>
+                    </div>
+                  </Row>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            className="modal fade modal-md"
+            id="viewActionRefuse"
+            aria-labelledby="viewActionRefuse"
+            aria-hidden="true"
+          >
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title" id="exampleModalLabel">
+                    Application List Refuse
+                  </h5>
+                  <button
+                    type="button"
+                    className="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <Image
+                      width={20}
+                      height={20}
+                      src="/images/popup-close.svg"
+                    />
+                  </button>
+                </div>
+
+                <div className="modal-body">
+                  <Row>
+                    <select className="form-select form-select-lg mb-3">
+                      <option selected>Select Reason</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </Row>
+
+                  <Row>
+                    <textarea
+                      className="form-control"
+                      rows={5}
+                      id="comment"
+                      placeholder="comments"
+                    ></textarea>
+                  </Row>
+                  <br></br>
+
+                  <Row>
+                    <div className="text-center">
+                      <button type="button" className="btn btn-primary">
+                        Okay
+                      </button>
+                    </div>
                   </Row>
                 </div>
               </div>
