@@ -2,15 +2,16 @@ import { Container, Col, Row, Form, Button } from "react-bootstrap"
 import Head from "next/head";
 const Endorsement = () => {
     return (
-<div className="pageMainWrap">
+    <div className="pageMainWrap">
         <Head>
           <title>Digital Sign - CARD</title>
           <meta name="description" content="login" />
           <link rel="icon" href="/igrsfavicon.ico" />
         </Head>
-        <div style={{ width: "100%" }}>
+        <div >
             <div className="mainWrapper">
                 <div className="wrapperInner">
+                <div className="pageTableContainer">
                     <div className="acknowledgement">
                         <button className="partyDetails">Assigning</button>
                         <button className="active imaging">Endorement</button>
@@ -92,20 +93,20 @@ const Endorsement = () => {
                                 </Form.Floating>
                             </Col>
                             <Col lg={3} md={3} xs={3} className="mb-3">
-                            {/* <Form.Select aria-label="Default select example">
-                                <option value=""></option>
-                                <option value="AADHAR">AADHAR</option>
-                                <option value="REPRESENT/SEC 88">REPRESENT/SEC 88</option>
-                                <option value="NRI">NRI</option>
-                            </Form.Select> */}
-                                <Form.Group>
-                                    <select className="" name="subregname" >
+                                <Form.Select aria-label="Default select example">
+                                    <option value=""></option>
+                                    <option value="AADHAR">AADHAR</option>
+                                    <option value="REPRESENT/SEC 88">REPRESENT/SEC 88</option>
+                                    <option value="NRI">NRI</option>
+                                </Form.Select>
+                                {/* <Form.Select>
+                                    <select className="form-control" name="subregname" >
                                     <option value="">Sub Registrar Name</option>
                                     <option value="10">Chairman</option>
                                     <option value="20">AP Registrar Head</option>
                                     <option value="30">Document Writer</option>
                                     </select>
-                                </Form.Group>
+                                </Form.Select> */}
                             </Col>
                         </Row>
                         <Row>
@@ -117,17 +118,18 @@ const Endorsement = () => {
                             </Col>
                             <Col lg={4} md={4} xs={4} className="mb-3">
                                 <div className="pageNextBtn">
-                                    <button className="whitebuttonclass">
+                                    <button className=" clear">
                                         Exit
-                                    </button>&nbsp; <button className="next">Save</button>
+                                    </button> <button className="next">Save</button>
                                 </div>
                             </Col>
                         </Row>
                     </div>
                 </div>
+                </div>
             </div>
         </div>
-        </div>
+    </div>
     );
 };
 export default Endorsement;

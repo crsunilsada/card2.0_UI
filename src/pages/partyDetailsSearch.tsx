@@ -11,6 +11,7 @@ const partyDetailsSearch = () => {
             </Head>
             <div className="mainWrapper">
                 <div className="wrapperInner">
+                <div className="pageTableContainer">
                     <div className="acknowledgement">
                         <button className="active partyDetails">Party Details Search</button>
                     </div>
@@ -72,14 +73,12 @@ const partyDetailsSearch = () => {
                     </Row>
                     <Row>
                         <Col lg={6} md={6} xs={12} className="mb-3">
-                            <Form.Group>
-                                <select className="" name="subregname" >
-                                    <option value="">Sub Registrar Name</option>
-                                    <option value="10">Chairman</option>
-                                    <option value="20">AP Registrar Head</option>
-                                    <option value="30">Document Writer</option>
-                                </select>
-                            </Form.Group>
+                            <Form.Select>
+                                    <option value="">Presentant Type</option>
+                                    <option value="10">Claimant</option>
+                                    <option value="20">Executant</option>
+                                    <option value="30">Witness</option>
+                            </Form.Select>
 
                         </Col>
                         <Col lg={6} md={6} xs={12} className="mb-3">
@@ -94,6 +93,7 @@ const partyDetailsSearch = () => {
                             <button className="bluebuttonclass">Next</button>
                         </Col>
                     </Row>
+                </div>
                 </div>
             </div>
         </div>

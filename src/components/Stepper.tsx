@@ -1,4 +1,4 @@
-<div className="">
+<div>
   <ul className="progressbar">
       <li className="completed"><div className="progress_step_text">Document Presentation</div></li>
       <li className="inactive"><div className="progress_step_text">Admission Of Execution</div></li>

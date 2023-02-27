@@ -11,6 +11,7 @@ const partyDetails = () => {
             <div >
                 <div className="mainWrapper">
                     <div className="wrapperInner">
+                    <div className="pageTableContainer">
                         <div className="acknowledgement">
                             <button className="active partyDetails">Party Details</button>
                             <button className=" imaging">Imaging</button>
@@ -32,14 +33,14 @@ const partyDetails = () => {
                             </div>
                             <Row>
                                 <Col lg={4} md={4} xs={12} className="mb-3">
-                                    <Form.Group>
-                                        <select className="" name="IDProof" >
+                                    <Form.Select aria-label="Default select example">
+
                                         <option value="">ID Proof</option>
                                         <option value="10">Chairman</option>
                                         <option value="20">AP Registrar Head</option>
                                         <option value="30">Document Writer</option>
-                                        </select>
-                                    </Form.Group>
+
+                                    </Form.Select>
                                 </Col>
                                 <Col lg={4} md={4} xs={12} className="mb-3">
                                     <Form.Floating>
@@ -83,14 +84,14 @@ const partyDetails = () => {
                                     </Form.Floating>
                                 </Col>
                                 <Col lg={4} md={4} xs={12} className="mb-3">
-                                    <Form.Group>
-                                        <select className="" name="sunof" >
+
+                                    <Form.Select aria-label="Default select example">
                                             <option value="">S / o</option>
                                             <option value="">S/o</option>
                                             <option value="">D/o</option>
                                             <option value="">W/o</option>
-                                        </select>
-                                    </Form.Group>
+                                    </Form.Select>
+
                                     <Form.Floating>
                                         <Form.Control
                                             id="floatingInputCustom"
@@ -167,15 +168,18 @@ const partyDetails = () => {
                                 <Col lg={2} md={2} xs={12} className="mb-3">
                                 </Col>
                                 <Col lg={4} md={4} xs={4} className="mb-3">
-                                    <button className="whitebuttonclass">
-                                        Exit
-                                    </button>&nbsp;
-                                    <button className="bluebuttonclass">
-                                        Print
-                                    </button>
+                                    <div className="pageNextBtn">
+                                        <button className="clear">
+                                            Exit
+                                        </button>
+                                        <button className="next">
+                                            Print
+                                        </button>
+                                    </div>
                                 </Col>
                             </Row>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>
