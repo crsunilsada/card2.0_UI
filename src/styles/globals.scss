@@ -441,7 +441,7 @@ body {
 .executanttantTable {
   .tabsList {
     position: absolute;
-    top: 90px;
+    top: 60px;
     .nav-item {
       margin: 0 30px 0 0;
       a {
@@ -933,7 +933,11 @@ body {
   background: url(../../public/images/innerpagebackground.svg) no-repeat center top $white;
   background-size: cover;
 }
+.homepageheader
+ {
+  background: url(../../public/images/homepageheader.png);
 
+}
 
 
 
@@ -1295,4 +1299,48 @@ body {
       }
     }
   }
+}
+// ramakrishna start
+.sign{
+  border: 1px dashed #274C77;
+}
+.crop-image-text{
+  color: #274C77;
+}
+.orginal-document-herf-link-button {
+  position: absolute;
+  width: 220px;
+  height: 60px;
+  text-transform: none;
+  border-radius: 0px 3px 0px 0px;
+  text-decoration-line: underline;
+  background-color: #606F82 !important;
+  color: white !important;
+}
+
+.orginal-document-herf-link-button-over {
+  margin-top: -60px;
+  margin-left: 255px;
+}
+.pageNextBtn.scanningPageSave{
+  padding-top: 0;
+  text-align: left;
+  button{
+    height: 40px;
+  }
+}
+::-webkit-scrollbar {
+  width: 6px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 3px grey;
+  background-color: #f5f5f5;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background: #C5C5C5;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
