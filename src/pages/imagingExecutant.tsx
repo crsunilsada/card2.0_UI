@@ -57,8 +57,8 @@ const imagingExecutant = () => {
           </div>
 
           <Container>
-            <Row className="justify-content-md-end">
-              <Col lg={7} md={8} xs={12} className="pageTableSearch">
+            <Row className="justify-content-md-end"><br/>
+              <Col lg={8} md={8} xs={12} className="pageTableSearch">
                 <form className="md-form">
                   <div className={`input-group md-form form-sm form-1 pl-0`}>
                     <input
@@ -104,7 +104,7 @@ const imagingExecutant = () => {
                   </Nav.Item>
                 </Nav>
               </div>
-
+              <br/>  
               <Tab.Content>
                 <Tab.Pane eventKey="first">
                   <Table bordered className="tableData listData tableheadBg">
@@ -129,7 +129,9 @@ const imagingExecutant = () => {
                               <div className="fcheckbox">
                                 <Form.Check type={"checkbox"} name="photo" />
                               </div>
-                              <img src={item.photo} />
+                              <img src={item.photo} 
+                                className="border border-dark"></img>
+                                
                             </td>
                             <td className="text-center">
                               <div className="fcheckbox">
@@ -186,7 +188,7 @@ const imagingExecutant = () => {
                               <div className="fcheckbox">
                                 <Form.Check type={"checkbox"} name="photo" />
                               </div>
-                              <img src={item.photo} />
+                              <img src={item.photo}  className="border border-dark" />
                             </td>
                             <td className="text-center">
                               <div className="fcheckbox">

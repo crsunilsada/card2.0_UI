@@ -7,7 +7,7 @@ const ScanningDocument = () => {
   return (
     <><Stepper /><div className="pageMainWrap innerpage">
       <Head>
-        <title>Assigning - CARD</title>
+        <title>Scanning Documents - CARD</title>
         <meta name="description" content="login" />
         <link rel="icon" href="/igrsfavicon.ico" />
       </Head>
@@ -88,20 +88,23 @@ const ScanningDocument = () => {
                       <Image
                         width={117}
                         height={175}
-                        src="/images/image1.svg" />
+                        src="/images/doc 1.svg"
+                      />
                     </Col>
 
                     <Col lg={4} md={4} xs={12} className="mb-3">
                       <Image
                         width={117}
                         height={175}
-                        src="/images/image2.svg" />
+                        src="/images/doc2.svg"
+                      />
                     </Col>
                     <Col lg={4} md={4} xs={12} className="mb-3">
                       <Image
                         width={117}
                         height={175}
-                        src="/images/image3.svg" />
+                        src="/images/doc3.svg"
+                      />
                     </Col>
                   </Row>
 
@@ -110,20 +113,23 @@ const ScanningDocument = () => {
                       <Image
                         width={117}
                         height={175}
-                        src="/images/image4.svg" />
+                        src="/images/doc4.svg"
+                      />
                     </Col>
 
                     <Col lg={4} md={4} xs={12} className="mb-3">
                       <Image
                         width={117}
                         height={175}
-                        src="/images/image5.svg" />
+                        src="/images/doc 1.svg"
+                      />
                     </Col>
                     <Col lg={4} md={4} xs={12} className="mb-3">
                       <Image
                         width={117}
                         height={175}
-                        src="/images/image6.svg" />
+                        src="/images/doc3.svg"
+                      />
                     </Col>
                   </Row>
 
@@ -132,20 +138,23 @@ const ScanningDocument = () => {
                       <Image
                         width={117}
                         height={175}
-                        src="/images/image7.svg" />
+                        src="/images/doc 1.svg"
+                      />
                     </Col>
 
                     <Col lg={4} md={4} xs={12} className="mb-3">
                       <Image
                         width={117}
                         height={175}
-                        src="/images/image8.svg" />
+                        src="/images/doc3.svg"
+                      />
                     </Col>
                     <Col lg={4} md={4} xs={12} className="mb-3">
                       <Image
                         width={117}
                         height={175}
-                        src="/images/image9.svg" />
+                        src="/images/doc3.svg"
+                      />
                     </Col>
                   </Row>
 
@@ -154,24 +163,27 @@ const ScanningDocument = () => {
                       <Image
                         width={117}
                         height={175}
-                        src="/images/image10.svg" />
+                        src="/images/doc4.svg"
+                      />
                     </Col>
 
                     <Col lg={4} md={4} xs={12} className="mb-3">
                       <Image
                         width={117}
                         height={175}
-                        src="/images/image11.svg" />
+                        src="/images/doc 1.svg"
+                      />
                     </Col>
                   </Row>
                 </Col>
 
                 <Col lg={6} md={6} xs={12} className="mb-3">
 
-                  <Image
-                    width={653}
-                    height={879}
-                    src="/images/image12.svg" />
+                <Image
+                        width={653}
+                        height={850}
+                        src="/images/stampdoc.svg"
+                      />
                 </Col>
               </Row>
 

@@ -17,35 +17,40 @@ const CropImage = () => {
                             <button className="partyDetails">Party Details</button>
                             <button className="active imaging">Imaging</button>
                         </div>
-                        <Container>
-                            <Row className="justify-content-md-center">
-                                <Col lg={7} md={8} xs={12}>
-                                    <div className="ml-200 crop-image-text mx-auto">
+                        <div className='d-flex justify-content-center align-items-center flex-column'>
+                            <Row className="justify-content-center">
+                                <Col >
+                                    <div className="my-5 crop-image-text">
                                         <Image
                                             width={23}
                                             height={23}
-                                            src="/images/Crop.svg" /> &nbsp;
-                                        Crop the below image and Proceed</div>
+                                            src="/images/Crop.svg"
+                                            alt='picture'
+                                        /> &nbsp;
+                                        <u><strong>CROP THE BELOW IMAGE AND PROCEED</strong></u></div>
                                 </Col>
                             </Row>
-                        </Container>
-                        <Container>
                             <Row>
-                                <Col>
-                                    <div>
+                                <Col >
+                                    <div className='sign p-1'>
                                         <Image className='crops-image'
                                             src={"/images/person.svg"}
                                             alt="Picture of the person"
-                                            width={169}
-                                            height={199} />
-                                    </div>
-                                    <div className='btn-image d-flex'>
-                                        <div><Button className="btn btn-light whitebuttonclass m-4">Retake</Button></div> &nbsp;&nbsp;
-                                        <div><Button className='bluebuttonclass btn btn-light m-4'>Done</Button></div>
+                                            width={148}
+                                            height={189}
+                                        />
                                     </div>
                                 </Col>
                             </Row>
-                        </Container>
+                            <Row>
+                                <Col>
+                                    <div className='pageNextBtn d-flex'>
+                                        <Button className="btn btn-light clear m-2">Retake</Button>
+                                        <Button className='next btn btn-light m-2'>Done</Button>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </div>
                     </div>
                 </div>
             </div>
