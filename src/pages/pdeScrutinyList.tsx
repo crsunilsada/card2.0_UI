@@ -1,59 +1,121 @@
 import { useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { Container, Row, Col, Table, Form } from "react-bootstrap";
-import Stepper from '../components/Stepper'
+import { Container, Row, Col, Table, Form, Nav, Tab, Tabs } from "react-bootstrap";
+
+
 const pdeScrutinyList = () => {
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
-
-  const tableData = [
+  const ammendData=[
+    
+  ]
+  const pendingtableData = [
     {
       appId: "456787654",
-      presenterName: "Chandra Sekhar",
+      presenterName: "Chandra Shekar",
       maj: "Sale",
       min: "Sale Deed",
       slotTime: "10:30am",
-      registrationType: "original",
+      registrationType: "Original",
       details: "View Details",
-      status: "new",
+      status: "New",
     },
     {
       appId: "456787654",
-      presenterName: "Chandra Sekhar",
+      presenterName: "Shekar Varma",
+      maj: "Sale",
+      min: "Sale Deed",
+      slotTime: "12:15pm",
+      registrationType: "Anywhere",
+      details: "View Details",
+      status: "Ammend",
+    },
+  ]
+  const accepttableData = [
+    {
+      appId: "456787654",
+      presenterName: "Chandra Shekar",
       maj: "Sale",
       min: "Sale Deed",
       slotTime: "10:30am",
-      registrationType: "original",
+      registrationType: "Original",
       details: "View Details",
-      status: "new",
+      status: "New",
     },
     {
       appId: "456787654",
-      presenterName: "Chandra Sekhar",
+      presenterName: "Shekar Varma",
       maj: "Sale",
       min: "Sale Deed",
-      slotTime: "10:30am",
-      registrationType: "original",
+      slotTime: "12:15pm",
+      registrationType: "Anywhere",
       details: "View Details",
-      status: "new",
+      status: "Ammend",
+    },
+  ]
+    const ammendtableData = [
+    {
+      ackNo: "345",
+      csNo: "212",
+      appId: "46576864",
+      presenterName: "chandra Shekar",
+      maj: "Sale",
+      min: "Sale Deed",
+      slotTime: "10:30pm",
+      registrationType: "original",
+      ammendReason: "Wrong Document",
+      ammend_datetime_SRO: "02-1-2023 2:30pm",
+      ammend_comments: "Comments comes here",
     },
     {
-      appId: "456787654",
-      presenterName: "Chandra Sekhar",
+      ackNo: "345",
+      csNo: "212",
+      appId: "46576864",
+      presenterName: "shekar varma",
       maj: "Sale",
       min: "Sale Deed",
-      slotTime: "10:30am",
+      slotTime: "12:15pm",
       registrationType: "original",
-      details: "View Details",
-      status: "new",
+      ammendReason: "Wrong Document",
+      ammend_datetime_SRO: "02-1-2023 2:30pm",
+      ammend_comments: "Comments comes here",
+    }
+  ];
+  const refusetableData = [
+    {
+      ackNo: "345",
+      csNo: "212",
+      appId: "46576864",
+      presenterName: "chandra Shekar",
+      maj: "Sale",
+      min: "Sale Deed",
+      slotTime: "10:30pm",
+      registrationType: "original",
+      refuseReason: "Wrong Document",
+      refuse_datetime_SRO: "02-1-2023 2:30pm",
+      refuse_comments: "Comments comes here",
     },
+    {
+      ackNo: "345",
+      csNo: "212",
+      appId: "46576864",
+      presenterName: "shekar varma",
+      maj: "Sale",
+      min: "Sale Deed",
+      slotTime: "12:15pm",
+      registrationType: "original",
+      refuseReason: "Wrong Document",
+      refuse_datetime_SRO: "02-1-2023 2:30pm",
+      refuse_comments: "Comments comes here",
+    }
   ];
   return (
-    <><Stepper /><div className="pageMainWrap innerpage">
+
+    <div className="pageMainWrap">
       <Head>
-        <title>Document Presentation - CARD</title>
+        <title>Document Presentation-CARD</title>
         <meta name="description" content="login" />
         <link rel="icon" href="/igrsfavicon.ico" />
       </Head>
@@ -73,16 +135,18 @@ const pdeScrutinyList = () => {
                       className={`form-control form-control-sm ml-3 w-75`}
                       type="text"
                       placeholder="Search"
-                      aria-label="Search" />
+                      aria-label="Search"
+                    />
                     <div className={`input-group-prepend`}>
                       <button
                         className={`btn btn-outline-success`}
                         type="submit"
                       >
                         <Image
-                          width={23}
-                          height={23}
-                          src="/images/Search-icon.svg" />
+                          width={30}
+                          height={30}
+                          src="/images/Search-icon.svg"
+                        />
                       </button>
                     </div>
                   </div>
@@ -100,113 +164,402 @@ const pdeScrutinyList = () => {
           </Container>
 
           <div className="documentsTable pageTableMain pageTableContainer">
-            <div className="pageTableTabs">
-              <button className="accept ">Pending (30)</button>
-              <button className="accept active">Accept (30)</button>
-              <button className="ammend">Ammend (5)</button>
-              <button className="ammend">Refuse (5)</button>
-            </div>
-            <Table bordered className="tableData listData tableheadBg">
-              <thead>
-                <tr>
-                  <th rowSpan={2} className="text-center">
-                    App ID
-                  </th>
-                  <th rowSpan={2} className="text-center">
-                    Presenter Name
-                  </th>
-                  <th colSpan={2} className="extraFont text-center">
-                    Nature of Document
-                  </th>
-                  <th rowSpan={2} className="text-center">
-                    Slot Time
-                  </th>
-                  <th rowSpan={2} className="text-center">
-                    Registration Type
-                  </th>
-                  <th rowSpan={2} className="text-center">
-                    Details
-                  </th>
-                  <th rowSpan={2} className="text-center">
-                    Status
-                  </th>
-                  <th rowSpan={2} className="text-center">
-                    Action
-                  </th>
-                </tr>
-                <tr>
-                  <th className="text-center smallFont">Maj</th>
-                  <th className="text-center smallFont">Min</th>
-                </tr>
-              </thead>
-              <tbody>
-                {tableData.map((item, index) => {
-                  return (
-                    <tr key={index}>
-                      <td className="text-center">{item.appId}</td>
-                      <td className="text-center">{item.presenterName}</td>
-                      <td className="text-center">{item.maj}</td>
-                      <td className="text-center">{item.min}</td>
-                      <td className="text-center">{item.slotTime}</td>
-                      <td className="text-center">{item.registrationType}</td>
-                      <td className="text-center">
-                        <button
-                          data-bs-toggle="modal"
-                          data-bs-target="#viewBasicDetails"
-                          className="basicDetails"
-                        >
-                          {" "}
-                          <Image
-                            width={20}
-                            height={27}
-                            src="/images/basic-details.jpg" />
-                          <small>View Basic Details</small>
-                        </button>
-                      </td>
-                      <td className="text-center">{item.status}</td>
-                      <td className="text-center">
-                        <button
-                          className="actionAccept"
-                          data-bs-toggle="modal"
-                          data-toggle="popover"
-                          data-bs-target="#viewActionAccept"
-                        >
-                          <Image
-                            width={25}
-                            height={25}
-                            src="/images/accept.svg" />
-                          <small>Accept</small>
-                        </button>
-                        <button
-                          className="ammend"
-                          data-bs-toggle="modal"
-                          data-bs-target="#viewActionAmmend"
-                        >
-                          <Image
-                            width={25}
-                            height={25}
-                            src="/images/ammend.svg" />
-                          <small>Ammend</small>
-                        </button>
-                        <button
-                          className="refuse"
-                          data-bs-toggle="modal"
-                          data-bs-target="#viewActionRefuse"
-                        >
-                          <Image
-                            width={25}
-                            height={25}
-                            src="/images/refuse.svg" />
-                          <small>Refuse</small>
-                        </button>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </Table>
-          </div>
 
+            <Tab.Container defaultActiveKey="pending">
+              <div className="pageTabsMain">
+                <div className="pageTableTabs">
+                  <Nav variant="pills">
+                    <Nav.Item>
+                      <Nav.Link eventKey="pending"><button className="pending">Pending (10)</button></Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link eventKey="accept"><button className="accept">Accept (30)</button></Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link eventKey="ammend"><button className="ammend">Ammend(5)</button></Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link eventKey="refuse"><button className="refuse">Refuse(2)</button></Nav.Link>
+                    </Nav.Item>
+                  </Nav>
+                </div>
+
+                <Tab.Content>
+                  <Tab.Pane eventKey="pending">
+                    <Table bordered className="tableData listData tableheadBg">
+                      <thead>
+                        <tr>
+                          <th rowSpan={2} className="text-center">
+                            App ID
+                          </th>
+                          <th rowSpan={2} className="text-center">
+                            Presenter Name
+                          </th>
+                          <th colSpan={2} className="extraFont text-center">
+                            Nature of Document
+                          </th>
+                          <th rowSpan={2} className="text-center">
+                            Slot Time
+                          </th>
+                          <th rowSpan={2} className="text-center">
+                            Registration Type
+                          </th>
+                          <th rowSpan={2} className="text-center">
+                            Details
+                          </th>
+                          <th rowSpan={2} className="text-center">
+                            Status
+                          </th>
+                          <th rowSpan={2} className="text-center">
+                            Actions
+                          </th>
+                        </tr>
+                        <tr>
+                          <th className="text-center smallFont">Maj</th>
+                          <th className="text-center smallFont">Min</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {pendingtableData.map((item, index) => {
+                          return (
+                            <tr key={index}>
+                              <td className="text-center">{item.appId}</td>
+                              <td className="text-center">{item.presenterName}</td>
+                              <td className="text-center">{item.maj}</td>
+                              <td className="text-center">{item.min}</td>
+                              <td className="text-center">{item.slotTime}</td>
+                              <td className="text-center">{item.registrationType}</td>
+                              <td className="text-center">
+                                <button
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#viewBasicDetails"
+                                  className="basicDetails"
+                                >
+                                  {" "}
+                                  <Image
+                                    width={20}
+                                    height={27}
+                                    src="/images/Viewdetails.svg"
+                                  />
+                                  <small>View Details</small>
+                                </button>
+                              </td>
+                              <td className="text-center">{item.status}</td>
+                              <td className="text-center">
+                                <button
+                                  className="actionAccept"
+                                  data-bs-toggle="modal"
+                                  data-toggle="popover"
+                                  data-bs-target="#viewActionAccept"
+                                >
+                                  <Image
+                                    width={15}
+                                    height={15}
+                                    src="/images/accept.svg"
+                                  />
+                                  <small>Accept</small>
+                                </button>
+                                <button
+                                  className="ammend"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#viewActionAmmend"
+                                >
+                                  <Image
+                                    width={15}
+                                    height={15}
+                                    src="/images/ammend.svg"
+                                  />
+                                  <small>Ammend</small>
+                                </button>
+                                <button
+                                  className="refuse"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#viewActionRefuse"
+                                >
+                                  <Image
+                                    width={15}
+                                    height={15}
+                                    src="/images/refuse.svg"
+                                  />
+                                  <small>Refuse</small>
+                                </button>
+                              </td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </Table>
+                  </Tab.Pane>
+                  <Tab.Pane eventKey="accept">
+                    <Table bordered className="tableData listData tableheadBg">
+                      <thead>
+                        <tr>
+                          <th rowSpan={2} className="text-center">
+                            App ID
+                          </th>
+                          <th rowSpan={2} className="text-center">
+                            Presenter Name
+                          </th>
+                          <th colSpan={2} className="extraFont text-center">
+                            Nature of Document
+                          </th>
+                          <th rowSpan={2} className="text-center">
+                            Slot Time
+                          </th>
+                          <th rowSpan={2} className="text-center">
+                            Registration Type
+                          </th>
+                          <th rowSpan={2} className="text-center">
+                            Details
+                          </th>
+                          <th rowSpan={2} className="text-center">
+                            Status
+                          </th>
+                          <th rowSpan={2} className="text-center">
+                            Actions
+                          </th>
+                        </tr>
+                        <tr>
+                          <th className="text-center smallFont">Maj</th>
+                          <th className="text-center smallFont">Min</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {accepttableData.map((item, index) => {
+                          return (
+                            <tr key={index}>
+                              <td className="text-center">{item.appId}</td>
+                              <td className="text-center">{item.presenterName}</td>
+                              <td className="text-center">{item.maj}</td>
+                              <td className="text-center">{item.min}</td>
+                              <td className="text-center">{item.slotTime}</td>
+                              <td className="text-center">{item.registrationType}</td>
+                              <td className="text-center">
+                                <button
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#viewBasicDetails"
+                                  className="basicDetails"
+                                >
+                                  {" "}
+                                  <Image
+                                    width={20}
+                                    height={27}
+                                    src="/images/Viewdetails.svg"
+                                  />
+                                  <small>View Details</small>
+                                </button>
+                              </td>
+                              <td className="text-center">{item.status}</td>
+                              <td className="text-center">
+                                <button
+                                  className="actionAccept"
+                                  data-bs-toggle="modal"
+                                  data-toggle="popover"
+                                  data-bs-target="#viewActionAccept"
+                                >
+                                  <Image
+                                    width={15}
+                                    height={15}
+                                    src="/images/accept.svg"
+                                  />
+                                  <small>Accept</small>
+                                </button>
+                                <button
+                                  className="ammend"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#viewActionAmmend"
+                                >
+                                  <Image
+                                    width={15}
+                                    height={15}
+                                    src="/images/ammend.svg"
+                                  />
+                                  <small>Ammend</small>
+                                </button>
+                                <button
+                                  className="refuse"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#viewActionRefuse"
+                                >
+                                  <Image
+                                    width={15}
+                                    height={15}
+                                    src="/images/refuse.svg"
+                                  />
+                                  <small>Refuse</small>
+                                </button>
+                              </td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </Table>
+                  </Tab.Pane>
+                  <Tab.Pane eventKey="ammend">
+                    <Table bordered className="tableData listData tableheadBg">
+                      <thead>
+                        <tr>
+                          <th rowSpan={2} className="text-center">
+                            Ack No
+                          </th>
+                          <th rowSpan={2} className="text-center">
+                            CS NO
+                          </th>
+                          <th rowSpan={2} className="extraFont text-center">
+                            App ID
+                          </th>
+                          <th rowSpan={2} className="text-center">
+                            Presenter Name
+                          </th>
+                          <th colSpan={2} className="text-center">
+                            Nature of Document
+                          </th>
+                          <th rowSpan={2} className="text-center">
+                            Slot Time
+                          </th>
+                          <th rowSpan={2} className="text-center">
+                            Registration Type
+                          </th>
+                          <th rowSpan={2} className="text-center">
+                            Details
+                          </th>
+                          <th rowSpan={2} className="text-center">
+                            Ammend Reason
+                          </th>
+                          <th rowSpan={2} className="text-center">
+                            Ammend Date & Time by SRO
+                          </th>
+                          <th rowSpan={2} className="text-center">
+                            Ammend Comments
+                          </th>
+                        </tr>
+                        <tr>
+                          <th className="text-center smallFont">Maj</th>
+                          <th className="text-center smallFont">Min</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {ammendtableData.map((item, index) => {
+                          return (
+                            <tr key={index}>
+                              <td className="text-center">{item.ackNo}</td>
+                              <td className="text-center">{item.csNo}</td>
+                              <td className="text-center">{item.appId}</td>
+                              <td className="text-center">{item.presenterName}</td>
+                              <td className="text-center">{item.maj}</td>
+                              <td className="text-center">{item.min}</td>
+                              <td className="text-center">{item.slotTime}</td>
+                              <td className="text-center">{item.registrationType}</td>
+                              <td className="text-center">
+                                <button
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#viewBasicDetails"
+                                  className="basicDetails"
+                                >
+                                 
+                                  <Image
+                                    width={20}
+                                    height={27}
+                                    src="/images/Viewdetails.svg"
+                                  />
+                                  <small>View Details</small>
+                                </button>
+                              </td>
+                              <td className="text-center">{item.ammendReason}</td>
+                              <td className="text-center">{item.ammend_datetime_SRO}</td>
+                              <td className="text-center">{item.ammend_comments}</td> 
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </Table>
+                  </Tab.Pane>
+                  <Tab.Pane eventKey="refuse">
+                    <Table bordered className="tableData listData tableheadBg">
+                      <thead>
+                        <tr>
+                          <th rowSpan={2} className="text-center">
+                            Ack No
+                          </th>
+                          <th rowSpan={2} className="text-center">
+                            CS No
+                          </th>
+                          <th rowSpan={2} className="extraFont text-center">
+                            App ID
+                          </th>
+                          <th rowSpan={2} className="text-center">
+                            Presenter Name
+                          </th>
+                          <th colSpan={2} className="text-center">
+                            Nature of Document
+                          </th>
+                          <th rowSpan={2} className="text-center">
+                            Slot Time
+                          </th>
+                          <th rowSpan={2} className="text-center">
+                            Registration Type
+                          </th>
+                          <th rowSpan={2} className="text-center">
+                            Details
+                          </th>
+                          <th rowSpan={2} className="text-center">
+                            Refuse Reason
+                          </th>
+                          <th rowSpan={2} className="text-center">
+                            Refuse Date & Time By SRO
+                          </th>
+                          <th rowSpan={2} className="text-center">
+                            Refuse Comments
+                          </th>
+                        </tr>
+                        <tr>
+                          <th className="text-center smallFont">Maj</th>
+                          <th className="text-center smallFont">Min</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {refusetableData.map((item, index) => {
+                          return (
+                            <tr key={index}>
+                              <td className="text-center">{item.ackNo}</td>
+                              <td className="text-center">{item.csNo}</td>
+                              <td className="text-center">{item.appId}</td>
+                              <td className="text-center">{item.presenterName}</td>
+                              <td className="text-center">{item.maj}</td>
+                              <td className="text-center">{item.min}</td>
+                              <td className="text-center">{item.slotTime}</td>
+                              <td className="text-center">{item.registrationType}</td>
+
+                              <td className="text-center">
+                                <button
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#viewBasicDetails"
+                                  className="basicDetails"
+                                >
+                                  
+                                  <Image
+                                    width={20}
+                                    height={27}
+                                    src="/images/Viewdetails.svg"
+                                  />
+                                  <small>View Details</small>
+                                </button>
+                              </td>
+                              <td className="text-center">{item.refuseReason}</td>
+                              <td className="text-center">{item.refuse_datetime_SRO}</td>
+                              <td className="text-center">{item.refuse_comments}</td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </Table>
+                  </Tab.Pane>
+                </Tab.Content>
+
+              </div>
+            </Tab.Container>
+
+          </div>
           <div
             className="modal fade modal-lg"
             id="viewBasicDetails"
@@ -241,220 +594,57 @@ const pdeScrutinyList = () => {
                     <Image
                       width={20}
                       height={20}
-                      src="/images/popup-close.svg" />
+                      src="/images/popup-close.svg"
+                    />
                   </button>
                 </div>
 
                 <div className="modal-body">
                   <Row>
-                    <Col lg={6} md={6} xs={12} className="mb-3">
-                      <Form.Floating>
-                        <Form.Control
-                          id="floatingInputCustom"
-                          type="text"
-                          placeholder="Presentant Name" />
-                        <Form.Label htmlFor="floatingInputCustom">
-                          Presentant Name
-                        </Form.Label>
-                      </Form.Floating>
-                    </Col>
-                    <Col lg={6} md={6} xs={12} className="mb-3">
-                      <Form.Floating>
-                        <Form.Control
-                          id="floatingInputCustom"
-                          type="text"
-                          placeholder="Nominee Name" />
-                        <Form.Label htmlFor="floatingInputCustom">
-                          Nominee Name
-                        </Form.Label>
-                      </Form.Floating>
-                    </Col>
-                  </Row>
+                    <h1 className="button">
+                      SALE DEED
+                      <br>
+                      </br>
+                      This sale deed is made and executed on this 02nd of february,2023 by:
+                    </h1>
+                    <h6>Mr/Mrs Vudimudi RaviTeja, S/O V.S.V.V.Subba Raju aged about, 35 years,
+                      occupation teacher presently residing at plot 181, shapur nagar, jeedimetla
+                      rangareddy, Qutubullapur-500055
 
-                  <h5 className="mt-4 mb-3">Consider Presentant As</h5>
+                      Herein after called the SETTLOR of the first part
 
-                  <div className="mb-4">
-                    <Form.Check
-                      value="Executant"
-                      type="radio"
-                      aria-label="Executant"
-                      label="Executant" />
-                  </div>
+                      Mr/Mrs Vudimudi RaviTeja, S/O V.S.V.V.Subba Raju aged about, 35 years,
+                      occupation teacher presently residing at plot 181, shapur nagar, jeedimetla
+                      rangareddy, Qutubullapur-500055
 
-                  <Row>
-                    <Col lg={12} md={12} xs={12} className="mb-3">
-                      <Form.Floating>
-                        <Form.Control
-                          id="floatingInputCustom"
-                          type="text"
-                          placeholder="ID Proof" />
-                        <Form.Label htmlFor="floatingInputCustom">
-                          ID Proof
-                        </Form.Label>
-                      </Form.Floating>
-                    </Col>
-                  </Row>
+                      Herein after called the SETTLOR of the first part
 
-                  <Row>
-                    <Col lg={3} md={6} xs={12} className="mb-3">
-                      <Form.Floating>
-                        <Form.Control
-                          id="floatingInputCustom"
-                          type="text"
-                          placeholder="ID Number" />
-                        <Form.Label htmlFor="floatingInputCustom">
-                          ID Number
-                        </Form.Label>
-                      </Form.Floating>
-                    </Col>
-                    <Col lg={3} md={6} xs={12} className="mb-3">
-                      <Form.Floating>
-                        <Form.Control
-                          id="floatingInputCustom"
-                          type="text"
-                          placeholder="Name" />
-                        <Form.Label htmlFor="floatingInputCustom">
-                          Name
-                        </Form.Label>
-                      </Form.Floating>
-                    </Col>
-                    <Col lg={2} md={4} xs={12} className="mb-3">
-                      <Form.Floating>
-                        <Form.Control
-                          id="floatingInputCustom"
-                          type="text"
-                          placeholder="Age" />
-                        <Form.Label htmlFor="floatingInputCustom">
-                          Age
-                        </Form.Label>
-                      </Form.Floating>
-                    </Col>
-                    <Col lg={4} md={8} xs={12} className="mb-3">
-                      <Form.Control
-                        className="so"
-                        id="floatingInputCustom"
-                        type="text"
-                        placeholder="S/o" />
-                      <Form.Floating className="relationName">
-                        <Form.Control
-                          id="floatingInputCustom"
-                          type="text"
-                          placeholder="Relation Name" />
-                        <Form.Label htmlFor="floatingInputCustom">
-                          Relation Name
-                        </Form.Label>
-                      </Form.Floating>
-                    </Col>
-                  </Row>
 
-                  <Row>
-                    <Col lg={5} md={5} xs={12} className="mb-3">
-                      <Form.Floating>
-                        <Form.Control
-                          id="floatingInputCustom"
-                          type="text"
-                          placeholder="Address" />
-                        <Form.Label htmlFor="floatingInputCustom">
-                          Address
-                        </Form.Label>
-                      </Form.Floating>
-                    </Col>
-                    <Col lg={3} md={3} xs={12} className="mb-3">
-                      <Form.Floating>
-                        <Form.Control
-                          id="floatingInputCustom"
-                          type="date"
-                          placeholder="Presentant Date" />
-                        <Form.Label htmlFor="floatingInputCustom">
-                          Presentant Date
-                        </Form.Label>
-                      </Form.Floating>
-                    </Col>
-                    <Col lg={4} md={4} xs={12} className="mb-3">
-                      <Form.Floating>
-                        <Form.Control
-                          id="floatingInputCustom"
-                          type="date"
-                          placeholder="Stamp Duty Borne by Document" />
-                        <Form.Label htmlFor="floatingInputCustom">
-                          Stamp Duty Borne by Document
-                        </Form.Label>
-                      </Form.Floating>
-                    </Col>
-                  </Row>
+                      Mr/Mrs Vudimudi RaviTeja, S/O V.S.V.V.Subba Raju aged about, 35 years,
+                      occupation teacher presently residing at plot 181, shapur nagar, jeedimetla
+                      rangareddy, Qutubullapur-500055
 
-                  <Row>
-                    <Col lg={3} md={4} xs={12} className="mb-3">
-                      <Form.Floating>
-                        <Form.Control
-                          id="floatingInputCustom"
-                          type="text"
-                          placeholder="No of Sheets" />
-                        <Form.Label htmlFor="floatingInputCustom">
-                          No of Sheets
-                        </Form.Label>
-                      </Form.Floating>
-                    </Col>
-                    <Col lg={3} md={4} xs={12} className="mb-3">
-                      <Form.Floating>
-                        <Form.Control
-                          id="floatingInputCustom"
-                          type="text"
-                          placeholder="Registration Type" />
-                        <Form.Label htmlFor="floatingInputCustom">
-                          Registration Type
-                        </Form.Label>
-                      </Form.Floating>
-                    </Col>
-                    <Col lg={3} md={4} xs={12} className="mb-3">
-                      <Form.Floating>
-                        <Form.Control
-                          id="floatingInputCustom"
-                          type="text"
-                          placeholder="Book Type" />
-                        <Form.Label htmlFor="floatingInputCustom">
-                          Book Type
-                        </Form.Label>
-                      </Form.Floating>
-                    </Col>
-                  </Row>
+                      Herein after called the SETTLOR of the first part
 
-                  <h5 className="mt-4 mb-3">Nature of Document</h5>
+                      Mr/Mrs Vudimudi RaviTeja, S/O V.S.V.V.Subba Raju aged about, 35 years,
+                      occupation teacher presently residing at plot 181, shapur nagar, jeedimetla
+                      rangareddy, Qutubullapur-500055
 
-                  <Row>
-                    <Col lg={3} md={4} xs={12} className="mb-3">
-                      <Form.Floating>
-                        <Form.Control
-                          id="floatingInputCustom"
-                          type="text"
-                          placeholder="Major" />
-                        <Form.Label htmlFor="floatingInputCustom">
-                          Major
-                        </Form.Label>
-                      </Form.Floating>
-                    </Col>
-                    <Col lg={3} md={4} xs={12} className="mb-3">
-                      <Form.Floating>
-                        <Form.Control
-                          id="floatingInputCustom"
-                          type="text"
-                          placeholder="Minor" />
-                        <Form.Label htmlFor="floatingInputCustom">
-                          Minor
-                        </Form.Label>
-                      </Form.Floating>
-                    </Col>
-                    <Col lg={3} md={4} xs={12} className="mb-3">
-                      <Form.Floating>
-                        <Form.Control
-                          id="floatingInputCustom"
-                          type="text"
-                          placeholder="No of Schedules" />
-                        <Form.Label htmlFor="floatingInputCustom">
-                          No of Schedules
-                        </Form.Label>
-                      </Form.Floating>
-                    </Col>
+                      Herein after called the SETTLOR of the first part
+
+
+                      Mr/Mrs Vudimudi RaviTeja, S/O V.S.V.V.Subba Raju aged about, 35 years,
+                      occupation teacher presently residing at plot 181, shapur nagar, jeedimetla
+                      rangareddy, Qutubullapur-500055
+
+                      Herein after called the SETTLOR of the first part
+
+                      Mr/Mrs Vudimudi RaviTeja, S/O V.S.V.V.Subba Raju aged about, 35 years,
+                      occupation teacher presently residing at plot 181, shapur nagar, jeedimetla
+                      rangareddy, Qutubullapur-500055
+
+                      Herein after called the SETTLOR of the first part
+                    </h6>
                   </Row>
                 </div>
               </div>
@@ -482,7 +672,8 @@ const pdeScrutinyList = () => {
                     <Image
                       width={20}
                       height={20}
-                      src="/images/popup-close.svg" />
+                      src="/images/popup-close.svg"
+                    />
                   </button>
                 </div>
 
@@ -492,13 +683,22 @@ const pdeScrutinyList = () => {
                       <Image width={60} height={60} src="/images/Success.svg" />
                     </div>
                   </Row>
-
                   <Row>
                     <div className="text-center">
+                      <div>
+                        <Image
+                          width={35}
+                          height={35}
+                          src="/images/accept1.svg"
+                        />
+                      </div>
                       <h5>Acknowledgement No:345 &</h5>
                     </div>
                     <div className="text-center">
                       <h5>Check Slip No:212</h5>
+                    </div>
+                    <div className="text-center">
+                      <h5>Receipt No:234567</h5>
                     </div>
                     <div className="text-center">
                       <h5>has been generated successfully</h5>
@@ -530,7 +730,8 @@ const pdeScrutinyList = () => {
                     <Image
                       width={20}
                       height={20}
-                      src="/images/popup-close.svg" />
+                      src="/images/popup-close.svg"
+                    />
                   </button>
                 </div>
 
@@ -547,7 +748,7 @@ const pdeScrutinyList = () => {
                   <Row>
                     <textarea
                       className="form-control"
-                      rows={5}
+                      rows={3}
                       id="comment"
                       placeholder="comments"
                     ></textarea>
@@ -587,7 +788,8 @@ const pdeScrutinyList = () => {
                     <Image
                       width={20}
                       height={20}
-                      src="/images/popup-close.svg" />
+                      src="/images/popup-close.svg"
+                    />
                   </button>
                 </div>
 
@@ -624,7 +826,7 @@ const pdeScrutinyList = () => {
           </div>
         </div>
       </div>
-    </div></>
+    </div>
   );
 };
 

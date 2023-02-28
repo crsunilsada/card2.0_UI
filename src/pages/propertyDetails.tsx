@@ -212,7 +212,7 @@ const PropertyDetails = () => {
                                         <Row className="mb-4">
                                             <Col lg={9} md={9} xs={12}></Col>
                                             <Col lg={3} md={3} xs={12}>
-                                                <button className="propertydetails-topbutton">Permission Granted</button>
+                                                {/* <button className="propertydetails-topbutton">Permission Granted</button> */}
                                             </Col></Row>
 
                                         <Row className="mb-4">
