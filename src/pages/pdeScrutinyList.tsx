@@ -51,7 +51,7 @@ const pdeScrutinyList = () => {
     },
   ];
   return (
-    <div className="pageMainWrap">
+    <div className="pageMainWrap innerpage">
       <Head>
         <title>Document Presentation - CARD</title>
         <meta name="description" content="login" />

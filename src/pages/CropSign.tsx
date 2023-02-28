@@ -5,7 +5,7 @@ import { Button, Col, Container, Image, Row, Table } from 'react-bootstrap';
 const CropSign = () => {
   return (
     <div>
-         <div className="pageMainWrap">
+         <div className="pageMainWrap innerpage">
                 <Head>
                     <title>Cropimage - CARD</title>
                     <meta name="description" content="login" />
@@ -35,7 +35,7 @@ const CropSign = () => {
                                 <Col>
                                     <div className='sign'>
                                         <div className="mt-5 p-3">
-                                        <Image 
+                                        <Image
                                             src={"/images/sign.svg"}
                                             alt="Picture of the person"
                                             width={159}

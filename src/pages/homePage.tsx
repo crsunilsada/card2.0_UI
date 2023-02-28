@@ -2,6 +2,7 @@ import React from 'react'
 import Head from 'next/head';
 import { Button, Col, Container, Image, Row, Table } from 'react-bootstrap';
 
+
 const Homepage = () => {
     return (
         <>
@@ -33,7 +34,7 @@ const Homepage = () => {
                                     width={85}
                                     height={85}
                                  />
-                                
+
                                 <h5 className="card-title text-center mb-3">Online Public Data Entry Service</h5>
                                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 {/* <a href="#" className ="btn btn-primary">Go somewhere</a> */}

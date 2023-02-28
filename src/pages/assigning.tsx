@@ -46,7 +46,7 @@ const Assigning = () => {
     },
   ];
   return (
-    <div className="pageMainWrap">
+    <div className="pageMainWrap innerpage">
       <Head>
         <title>Assigning - CARD</title>
         <meta name="description" content="login" />

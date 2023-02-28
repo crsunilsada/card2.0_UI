@@ -3,7 +3,7 @@ import Head from "next/head";
 
 const partyDetailsSearch = () => {
     return (
-        <div className="pageMainWrap">
+        <div className="pageMainWrap innerpage">
             <Head>
                 <title>Party Details Search - CARD</title>
                 <meta name="description" content="login" />

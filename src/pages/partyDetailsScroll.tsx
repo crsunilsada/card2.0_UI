@@ -46,7 +46,7 @@ const partyDetailsScroll = () => {
     },
   ];
   return (
-    <div className="pageMainWrap">
+    <div className="pageMainWrap innerpage">
       <Head>
         <title>Party Details Scroll - CARD</title>
         <meta name="description" content="login" />

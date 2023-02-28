@@ -11,7 +11,7 @@ const documentHandover = () => {
                 <li className="inactive"><div className="progress_step_text">Scanning And Upload</div></li>
                 <li className="inactive"><div className="progress_step_text">Document Handover</div></li>
             </ul>
-        </div><br></br><div className="pageMainWrap">
+        </div><br></br><div className="pageMainWrap innerpage">
                 <Head>
                     <title>Document Handover - CARD</title>
                     <meta name="description" content="login" />

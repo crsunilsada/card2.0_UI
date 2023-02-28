@@ -58,7 +58,7 @@ const PropertyDetails = () => {
     },
   ];
   return (
-      <><Stepper /><div className="pageMainWrap pt-4">
+      <><Stepper /><div className="pageMainWrap pt-4 innerpage">
           <Head>
               <title>Property Details - CARD</title>
               <meta name="description" content="login" />

@@ -362,7 +362,7 @@ function Verification() {
   ];
 
   return (
-    <div className="pageMainWrap">
+    <div className="pageMainWrap innerpage">
       <Head>
         <title>Verification - CARD</title>
         <meta name="description" content="login" />

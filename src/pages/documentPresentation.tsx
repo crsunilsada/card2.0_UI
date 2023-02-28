@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import { useTable, usePagination } from "react-table";
-
+import Stepper from '../components/Stepper'
 function Table({ columns, data }) {
   const {
     getTableProps,
@@ -29,7 +29,7 @@ function Table({ columns, data }) {
 
   // Render the UI for your table
   return (
-    <div className="tableWithPagination">
+    <><Stepper /><div className="tableWithPagination">
       <table
         className="tableData listData tableheadBg table"
         {...getTableProps()}
@@ -103,8 +103,7 @@ function Table({ columns, data }) {
                     <Image
                       width={20}
                       height={27}
-                      src="/images/basic-details.jpg"
-                    />
+                      src="/images/basic-details.jpg" />
                     <small>View Basic Details</small>
                   </button>
                   <button className="print">
@@ -127,7 +126,7 @@ function Table({ columns, data }) {
               value={pageSize}
               onChange={(e) => {
                 setPageSize(Number(e.target.value));
-              }}
+              } }
             >
               {[5, 10, 20, 30, 40, 50].map((pageSize) => (
                 <option key={pageSize} value={pageSize}>
@@ -161,7 +160,7 @@ function Table({ columns, data }) {
           </li>
         </ul>
       </div>
-    </div>
+    </div></>
   );
 }
 
@@ -326,7 +325,7 @@ function Table({ columns, data }) {
   ];
 
   return (
-    <div className="pageMainWrap">
+    <div className="pageMainWrap innerpage">
       <Head>
         <title>Document Presentation - CARD</title>
         <meta name="description" content="login" />

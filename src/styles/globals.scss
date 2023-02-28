@@ -915,12 +915,16 @@ body {
   font-weight: bold;
   color: #274C77;
 }
-.pageMainWrap.homepage {
+.pageMainWrap.homepage
+ {
   background: url(../../public/images/Dashboard-BG.png) no-repeat center bottom $white;
   padding-top: 100px;
 }
-
-
+.pageMainWrap.innerpage
+ {
+  background: url(../../public/images/innerpagebackground.svg) no-repeat center bottom $white;
+  padding-top: 100px;
+}
 
 
 
@@ -992,7 +996,7 @@ body {
 }
 .accordion-button:after {
   order: -1; //swap order
-  margin-left: 0; 
+  margin-left: 0;
   margin-right:0.8em; // just extra space between text and icon
 }
 

@@ -5,7 +5,7 @@ import { Button, Col, Container, Image, Row, Table } from 'react-bootstrap';
 const CropImage = () => {
     return (
         <div>
-            <div className="pageMainWrap">
+            <div className="pageMainWrap innerpage">
                 <Head>
                     <title>Cropimage - CARD</title>
                     <meta name="description" content="login" />

@@ -344,7 +344,7 @@ function AssigningVerification() {
   ];
 
   return (
-    <div className="pageMainWrap">
+    <div className="pageMainWrap innerpage">
       <Head>
         <title>Assigning Verification - CARD</title>
         <meta name="description" content="login" />

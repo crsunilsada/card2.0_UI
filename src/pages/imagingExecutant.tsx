@@ -42,7 +42,7 @@ const imagingExecutant = () => {
   ];
 
   return (
-    <div className="pageMainWrap">
+    <div className="pageMainWrap innerpage">
       <Head>
         <title>Imaging Executant - CARD</title>
         <meta name="description" content="login" />

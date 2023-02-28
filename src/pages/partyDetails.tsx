@@ -2,7 +2,7 @@ import { Container, Col, Row, Form, Button } from "react-bootstrap"
 import Head from "next/head";
 const partyDetails = () => {
     return (
-        <div className="pageMainWrap">
+        <div className="pageMainWrap innerpage">
             <Head>
                 <title>Party Details - CARD</title>
                 <meta name="description" content="login" />
