@@ -30,6 +30,7 @@ function Table({ columns, data }) {
   // Render the UI for your table
   return (
     <><Stepper /><div className="tableWithPagination">
+      <div className="table-responsive">
       <table
         className="tableData listData tableheadBg table"
         {...getTableProps()}
@@ -117,6 +118,7 @@ function Table({ columns, data }) {
           })}
         </tbody>
       </table>
+      </div>
 
       <div className="paginationMain">
         <ul className="pagination d-flex align-items-center justify-content-end">
