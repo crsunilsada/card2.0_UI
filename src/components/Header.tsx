@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <><div className="fixed-top "><img src={"/images/Header1.png"} className="header-image"></img><header className={styles.header_body}>
       <Navbar className="navigation bg-primary" bg="light" expand="lg">
-        <Container className="headerNavContainer homepageheader">
+        <Container className="headerNavContainer ">
           <div className="header-main-nav">
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
