@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { Container, Row, Col, Table, Form } from "react-bootstrap";
-
+import Stepper from '../components/Stepper'
 const pdeScrutinyList = () => {
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
@@ -51,7 +51,7 @@ const pdeScrutinyList = () => {
     },
   ];
   return (
-    <div className="pageMainWrap innerpage">
+    <><Stepper /><div className="pageMainWrap innerpage">
       <Head>
         <title>Document Presentation - CARD</title>
         <meta name="description" content="login" />
@@ -73,8 +73,7 @@ const pdeScrutinyList = () => {
                       className={`form-control form-control-sm ml-3 w-75`}
                       type="text"
                       placeholder="Search"
-                      aria-label="Search"
-                    />
+                      aria-label="Search" />
                     <div className={`input-group-prepend`}>
                       <button
                         className={`btn btn-outline-success`}
@@ -83,8 +82,7 @@ const pdeScrutinyList = () => {
                         <Image
                           width={23}
                           height={23}
-                          src="/images/Search-icon.svg"
-                        />
+                          src="/images/Search-icon.svg" />
                       </button>
                     </div>
                   </div>
@@ -161,8 +159,7 @@ const pdeScrutinyList = () => {
                           <Image
                             width={20}
                             height={27}
-                            src="/images/basic-details.jpg"
-                          />
+                            src="/images/basic-details.jpg" />
                           <small>View Basic Details</small>
                         </button>
                       </td>
@@ -177,8 +174,7 @@ const pdeScrutinyList = () => {
                           <Image
                             width={25}
                             height={25}
-                            src="/images/accept.svg"
-                          />
+                            src="/images/accept.svg" />
                           <small>Accept</small>
                         </button>
                         <button
@@ -189,8 +185,7 @@ const pdeScrutinyList = () => {
                           <Image
                             width={25}
                             height={25}
-                            src="/images/ammend.svg"
-                          />
+                            src="/images/ammend.svg" />
                           <small>Ammend</small>
                         </button>
                         <button
@@ -201,8 +196,7 @@ const pdeScrutinyList = () => {
                           <Image
                             width={25}
                             height={25}
-                            src="/images/refuse.svg"
-                          />
+                            src="/images/refuse.svg" />
                           <small>Refuse</small>
                         </button>
                       </td>
@@ -247,8 +241,7 @@ const pdeScrutinyList = () => {
                     <Image
                       width={20}
                       height={20}
-                      src="/images/popup-close.svg"
-                    />
+                      src="/images/popup-close.svg" />
                   </button>
                 </div>
 
@@ -259,8 +252,7 @@ const pdeScrutinyList = () => {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Presentant Name"
-                        />
+                          placeholder="Presentant Name" />
                         <Form.Label htmlFor="floatingInputCustom">
                           Presentant Name
                         </Form.Label>
@@ -271,8 +263,7 @@ const pdeScrutinyList = () => {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Nominee Name"
-                        />
+                          placeholder="Nominee Name" />
                         <Form.Label htmlFor="floatingInputCustom">
                           Nominee Name
                         </Form.Label>
@@ -287,8 +278,7 @@ const pdeScrutinyList = () => {
                       value="Executant"
                       type="radio"
                       aria-label="Executant"
-                      label="Executant"
-                    />
+                      label="Executant" />
                   </div>
 
                   <Row>
@@ -297,8 +287,7 @@ const pdeScrutinyList = () => {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="ID Proof"
-                        />
+                          placeholder="ID Proof" />
                         <Form.Label htmlFor="floatingInputCustom">
                           ID Proof
                         </Form.Label>
@@ -312,8 +301,7 @@ const pdeScrutinyList = () => {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="ID Number"
-                        />
+                          placeholder="ID Number" />
                         <Form.Label htmlFor="floatingInputCustom">
                           ID Number
                         </Form.Label>
@@ -324,8 +312,7 @@ const pdeScrutinyList = () => {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Name"
-                        />
+                          placeholder="Name" />
                         <Form.Label htmlFor="floatingInputCustom">
                           Name
                         </Form.Label>
@@ -336,8 +323,7 @@ const pdeScrutinyList = () => {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Age"
-                        />
+                          placeholder="Age" />
                         <Form.Label htmlFor="floatingInputCustom">
                           Age
                         </Form.Label>
@@ -348,14 +334,12 @@ const pdeScrutinyList = () => {
                         className="so"
                         id="floatingInputCustom"
                         type="text"
-                        placeholder="S/o"
-                      />
+                        placeholder="S/o" />
                       <Form.Floating className="relationName">
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Relation Name"
-                        />
+                          placeholder="Relation Name" />
                         <Form.Label htmlFor="floatingInputCustom">
                           Relation Name
                         </Form.Label>
@@ -369,8 +353,7 @@ const pdeScrutinyList = () => {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Address"
-                        />
+                          placeholder="Address" />
                         <Form.Label htmlFor="floatingInputCustom">
                           Address
                         </Form.Label>
@@ -381,8 +364,7 @@ const pdeScrutinyList = () => {
                         <Form.Control
                           id="floatingInputCustom"
                           type="date"
-                          placeholder="Presentant Date"
-                        />
+                          placeholder="Presentant Date" />
                         <Form.Label htmlFor="floatingInputCustom">
                           Presentant Date
                         </Form.Label>
@@ -393,8 +375,7 @@ const pdeScrutinyList = () => {
                         <Form.Control
                           id="floatingInputCustom"
                           type="date"
-                          placeholder="Stamp Duty Borne by Document"
-                        />
+                          placeholder="Stamp Duty Borne by Document" />
                         <Form.Label htmlFor="floatingInputCustom">
                           Stamp Duty Borne by Document
                         </Form.Label>
@@ -408,8 +389,7 @@ const pdeScrutinyList = () => {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="No of Sheets"
-                        />
+                          placeholder="No of Sheets" />
                         <Form.Label htmlFor="floatingInputCustom">
                           No of Sheets
                         </Form.Label>
@@ -420,8 +400,7 @@ const pdeScrutinyList = () => {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Registration Type"
-                        />
+                          placeholder="Registration Type" />
                         <Form.Label htmlFor="floatingInputCustom">
                           Registration Type
                         </Form.Label>
@@ -432,8 +411,7 @@ const pdeScrutinyList = () => {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Book Type"
-                        />
+                          placeholder="Book Type" />
                         <Form.Label htmlFor="floatingInputCustom">
                           Book Type
                         </Form.Label>
@@ -449,8 +427,7 @@ const pdeScrutinyList = () => {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Major"
-                        />
+                          placeholder="Major" />
                         <Form.Label htmlFor="floatingInputCustom">
                           Major
                         </Form.Label>
@@ -461,8 +438,7 @@ const pdeScrutinyList = () => {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Minor"
-                        />
+                          placeholder="Minor" />
                         <Form.Label htmlFor="floatingInputCustom">
                           Minor
                         </Form.Label>
@@ -473,8 +449,7 @@ const pdeScrutinyList = () => {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="No of Schedules"
-                        />
+                          placeholder="No of Schedules" />
                         <Form.Label htmlFor="floatingInputCustom">
                           No of Schedules
                         </Form.Label>
@@ -507,8 +482,7 @@ const pdeScrutinyList = () => {
                     <Image
                       width={20}
                       height={20}
-                      src="/images/popup-close.svg"
-                    />
+                      src="/images/popup-close.svg" />
                   </button>
                 </div>
 
@@ -556,8 +530,7 @@ const pdeScrutinyList = () => {
                     <Image
                       width={20}
                       height={20}
-                      src="/images/popup-close.svg"
-                    />
+                      src="/images/popup-close.svg" />
                   </button>
                 </div>
 
@@ -614,8 +587,7 @@ const pdeScrutinyList = () => {
                     <Image
                       width={20}
                       height={20}
-                      src="/images/popup-close.svg"
-                    />
+                      src="/images/popup-close.svg" />
                   </button>
                 </div>
 
@@ -652,7 +624,7 @@ const pdeScrutinyList = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div></>
   );
 };
 

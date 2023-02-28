@@ -5,7 +5,6 @@ import { Container, Row, Col, Table, Tab, Nav, Form } from "react-bootstrap";
 import Stepper from '../components/Stepper'
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-
 const PropertyDetails = () => {
   const tableData = [
     {

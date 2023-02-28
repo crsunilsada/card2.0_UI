@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Container, Row, Col, Table, Tab, Nav, Form } from "react-bootstrap";
 import Header from "../components/Header";
+import Stepper from '../components/Stepper'
 const scanning = () => {
   const tableData = [
     {
@@ -46,9 +47,9 @@ const scanning = () => {
     },
   ];
   return (
-    <div className="pageMainWrap innerpage">
+    <><Stepper /><div className="pageMainWrap innerpage">
       <Head>
-        <title>Assigning - CARD</title>
+        <title>Scanning - CARD</title>
         <meta name="description" content="login" />
         <link rel="icon" href="/igrsfavicon.ico" />
       </Head>
@@ -67,8 +68,7 @@ const scanning = () => {
                   <Form.Control
                     id="floatingInputCustom"
                     type="text"
-                    placeholder="CS Number"
-                  />
+                    placeholder="CS Number" />
                   <Form.Label htmlFor="floatingInputCustom">
                     CS Number
                   </Form.Label>
@@ -80,8 +80,7 @@ const scanning = () => {
                   <Form.Control
                     id="floatingInputCustom"
                     type="text"
-                    placeholder="Year"
-                  />
+                    placeholder="Year" />
                   <Form.Label htmlFor="floatingInputCustom">Year</Form.Label>
                 </Form.Floating>
               </Col>
@@ -91,8 +90,7 @@ const scanning = () => {
                   <Form.Control
                     id="floatingInputCustom"
                     type="text"
-                    placeholder="Book No."
-                  />
+                    placeholder="Book No." />
                   <Form.Label htmlFor="floatingInputCustom">
                     Book No.
                   </Form.Label>
@@ -103,8 +101,7 @@ const scanning = () => {
                   <Form.Control
                     id="floatingInputCustom"
                     type="text"
-                    placeholder="Book No."
-                  />
+                    placeholder="Book No." />
                   <Form.Label htmlFor="floatingInputCustom">
                     Document No.
                   </Form.Label>
@@ -411,15 +408,14 @@ const scanning = () => {
                   <Form.Control
                     id="floatingInputCustom"
                     type="text"
-                    placeholder="Re Enter Pending Doc No."
-                  />
+                    placeholder="Re Enter Pending Doc No." />
                   <Form.Label htmlFor="floatingInputCustom">
                     Re Enter Pending Doc No.
                   </Form.Label>
                 </Form.Floating>
                 <div className="pageNextBtn">
-              <button className="next">Save</button>
-            </div>
+                  <button className="next">Save</button>
+                </div>
               </Col>
 
             </Row>
@@ -427,7 +423,7 @@ const scanning = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div></>
   );
 };
 

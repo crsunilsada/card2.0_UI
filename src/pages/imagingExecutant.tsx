@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Container, Row, Col, Table, Tab, Nav, Form } from "react-bootstrap";
-
+import Stepper from '../components/Stepper'
 const imagingExecutant = () => {
   const ExecutantData = [
     {
@@ -42,7 +42,7 @@ const imagingExecutant = () => {
   ];
 
   return (
-    <div className="pageMainWrap innerpage">
+    <><Stepper /><div className="pageMainWrap innerpage">
       <Head>
         <title>Imaging Executant - CARD</title>
         <meta name="description" content="login" />
@@ -65,8 +65,7 @@ const imagingExecutant = () => {
                       className={`form-control form-control-sm ml-3 w-75`}
                       type="text"
                       placeholder="Search Here.."
-                      aria-label="Search"
-                    />
+                      aria-label="Search" />
                     <div className={`input-group-prepend`}>
                       <button
                         className={`btn btn-outline-success`}
@@ -75,8 +74,7 @@ const imagingExecutant = () => {
                         <Image
                           width={23}
                           height={23}
-                          src="/images/Search-icon.svg"
-                        />
+                          src="/images/Search-icon.svg" />
                       </button>
                     </div>
                   </div>
@@ -137,8 +135,7 @@ const imagingExecutant = () => {
                               <div className="fcheckbox">
                                 <Form.Check
                                   type={"checkbox"}
-                                  name="thumbImpression"
-                                />
+                                  name="thumbImpression" />
                               </div>
                               <img src={item.thumbImpression} />
                             </td>
@@ -146,8 +143,7 @@ const imagingExecutant = () => {
                               <div className="fcheckbox">
                                 <Form.Check
                                   type={"checkbox"}
-                                  name="esignSignature"
-                                />
+                                  name="esignSignature" />
                               </div>
                               <img src={item.esignSignature} />
                             </td>
@@ -196,8 +192,7 @@ const imagingExecutant = () => {
                               <div className="fcheckbox">
                                 <Form.Check
                                   type={"checkbox"}
-                                  name="thumbImpression"
-                                />
+                                  name="thumbImpression" />
                               </div>
                               <img src={item.thumbImpression} />
                             </td>
@@ -205,8 +200,7 @@ const imagingExecutant = () => {
                               <div className="fcheckbox">
                                 <Form.Check
                                   type={"checkbox"}
-                                  name="esignSignature"
-                                />
+                                  name="esignSignature" />
                               </div>
                               <img src={item.esignSignature} />
                             </td>
@@ -236,8 +230,7 @@ const imagingExecutant = () => {
                               <Form.Control
                                 id="floatingInputCustom"
                                 type="text"
-                                placeholder="ID Proof"
-                              />
+                                placeholder="ID Proof" />
                               <Form.Label htmlFor="floatingInputCustom">
                                 ID Proof
                               </Form.Label>
@@ -249,8 +242,7 @@ const imagingExecutant = () => {
                               <Form.Control
                                 id="floatingInputCustom"
                                 type="text"
-                                placeholder="ID Number"
-                              />
+                                placeholder="ID Number" />
                               <Form.Label htmlFor="floatingInputCustom">
                                 ID Number
                               </Form.Label>
@@ -264,8 +256,7 @@ const imagingExecutant = () => {
                               <Form.Control
                                 id="floatingInputCustom"
                                 type="text"
-                                placeholder="Name"
-                              />
+                                placeholder="Name" />
                               <Form.Label htmlFor="floatingInputCustom">
                                 Name
                               </Form.Label>
@@ -277,8 +268,7 @@ const imagingExecutant = () => {
                               <Form.Control
                                 id="floatingInputCustom"
                                 type="text"
-                                placeholder="Age"
-                              />
+                                placeholder="Age" />
                               <Form.Label htmlFor="floatingInputCustom">
                                 Age
                               </Form.Label>
@@ -292,8 +282,7 @@ const imagingExecutant = () => {
                               <Form.Control
                                 id="floatingInputCustom"
                                 type="text"
-                                placeholder="Name"
-                              />
+                                placeholder="Name" />
                               <Form.Label htmlFor="floatingInputCustom">
                                 Name
                               </Form.Label>
@@ -321,8 +310,7 @@ const imagingExecutant = () => {
                               <Form.Control
                                 id="floatingInputCustom"
                                 type="text"
-                                placeholder="ID Proof"
-                              />
+                                placeholder="ID Proof" />
                               <Form.Label htmlFor="floatingInputCustom">
                                 ID Proof
                               </Form.Label>
@@ -334,8 +322,7 @@ const imagingExecutant = () => {
                               <Form.Control
                                 id="floatingInputCustom"
                                 type="text"
-                                placeholder="ID Number"
-                              />
+                                placeholder="ID Number" />
                               <Form.Label htmlFor="floatingInputCustom">
                                 ID Number
                               </Form.Label>
@@ -349,8 +336,7 @@ const imagingExecutant = () => {
                               <Form.Control
                                 id="floatingInputCustom"
                                 type="text"
-                                placeholder="Name"
-                              />
+                                placeholder="Name" />
                               <Form.Label htmlFor="floatingInputCustom">
                                 Name
                               </Form.Label>
@@ -362,8 +348,7 @@ const imagingExecutant = () => {
                               <Form.Control
                                 id="floatingInputCustom"
                                 type="text"
-                                placeholder="Age"
-                              />
+                                placeholder="Age" />
                               <Form.Label htmlFor="floatingInputCustom">
                                 Age
                               </Form.Label>
@@ -377,8 +362,7 @@ const imagingExecutant = () => {
                               <Form.Control
                                 id="floatingInputCustom"
                                 type="text"
-                                placeholder="Name"
-                              />
+                                placeholder="Name" />
                               <Form.Label htmlFor="floatingInputCustom">
                                 Name
                               </Form.Label>
@@ -406,7 +390,7 @@ const imagingExecutant = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div></>
   );
 };
 

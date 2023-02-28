@@ -29,7 +29,7 @@ function Table({ columns, data }) {
 
   // Render the UI for your table
   return (
-    <><Stepper /><div className="tableWithPagination">
+    <div className="tableWithPagination">
       <table
         className="tableData listData tableheadBg table"
         {...getTableProps()}
@@ -166,7 +166,7 @@ function Table({ columns, data }) {
           </li>
         </ul>
       </div>
-    </div></>
+    </div>
   );
 }
 
@@ -361,7 +361,7 @@ function AdmissionofExecution() {
   ];
 
   return (
-    <div className="pageMainWrap innerpage">
+    <><Stepper /><div className="pageMainWrap innerpage">
       <Head>
         <title>Admission of Execution - CARD</title>
         <meta name="description" content="login" />
@@ -383,8 +383,7 @@ function AdmissionofExecution() {
                       className={`form-control form-control-sm ml-3 w-75`}
                       type="text"
                       placeholder="Search Here.."
-                      aria-label="Search"
-                    />
+                      aria-label="Search" />
                     <div className={`input-group-prepend`}>
                       <button
                         className={`btn btn-outline-success`}
@@ -393,8 +392,7 @@ function AdmissionofExecution() {
                         <Image
                           width={23}
                           height={23}
-                          src="/images/Search-icon.svg"
-                        />
+                          src="/images/Search-icon.svg" />
                       </button>
                     </div>
                   </div>
@@ -405,16 +403,16 @@ function AdmissionofExecution() {
 
           <div className="documentsTable pageTableMain pageTableContainer">
             <div className="documentsTable pageTableMain pageTableContainer">
-            <div className="pageTableTabs">
-              <button className="accept ">Accept (30)</button>
-              <button className="ammend active">Ammend (5)</button>
+              <div className="pageTableTabs">
+                <button className="accept ">Accept (30)</button>
+                <button className="ammend active">Ammend (5)</button>
+              </div>
+              <Table columns={columns} data={data} />
             </div>
-            <Table columns={columns} data={data} />
-          </div>
           </div>
         </div>
       </div>
-    </div>
+    </div></>
   );
 };
 export default AdmissionofExecution;

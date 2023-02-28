@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import { useTable, usePagination } from "react-table";
-
+import Stepper from '../components/Stepper'
 function Table({ columns, data }) {
   const {
     getTableProps,
@@ -93,26 +93,24 @@ function Table({ columns, data }) {
                     <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
                   );
                 })}
-                 <td className="text-center">
-                        <button className="basicDetails">
-                          {" "}
-                          <Image
-                            width={20}
-                            height={27}
-                            src="/images/Assigning.svg"
-                          />
-                          <small>Assigning</small>
-                        </button>
-                        <button className="print">
-                          {" "}
-                          <Image
-                            width={25}
-                            height={25}
-                            src="/images/Reverse-Endosemenrt.svg"
-                          />
-                          <small>Endorsement</small>
-                        </button>
-                      </td>
+                <td className="text-center">
+                  <button className="basicDetails">
+                    {" "}
+                    <Image
+                      width={20}
+                      height={27}
+                      src="/images/Assigning.svg" />
+                    <small>Assigning</small>
+                  </button>
+                  <button className="print">
+                    {" "}
+                    <Image
+                      width={25}
+                      height={25}
+                      src="/images/Reverse-Endosemenrt.svg" />
+                    <small>Endorsement</small>
+                  </button>
+                </td>
 
               </tr>
             );
@@ -128,7 +126,7 @@ function Table({ columns, data }) {
               value={pageSize}
               onChange={(e) => {
                 setPageSize(Number(e.target.value));
-              }}
+              } }
             >
               {[5, 10, 20, 30, 40, 50].map((pageSize) => (
                 <option key={pageSize} value={pageSize}>
@@ -344,7 +342,7 @@ function AssigningVerification() {
   ];
 
   return (
-    <div className="pageMainWrap innerpage">
+    <><Stepper /><div className="pageMainWrap innerpage">
       <Head>
         <title>Assigning Verification - CARD</title>
         <meta name="description" content="login" />
@@ -357,9 +355,9 @@ function AssigningVerification() {
             <h4>Assigning Verification</h4>
           </div>
           <div className="acknowledgement">
-              <button className="active partyDetails">Assigning</button>
-              <button className=" imaging">Endorsement</button>
-            </div>
+            <button className="active partyDetails">Assigning</button>
+            <button className=" imaging">Endorsement</button>
+          </div>
 
           <Container>
             <Row className="justify-content-md-center">
@@ -370,8 +368,7 @@ function AssigningVerification() {
                       className={`form-control form-control-sm ml-3 w-75`}
                       type="text"
                       placeholder="Search Here.."
-                      aria-label="Search"
-                    />
+                      aria-label="Search" />
                     <div className={`input-group-prepend`}>
                       <button
                         className={`btn btn-outline-success`}
@@ -380,8 +377,7 @@ function AssigningVerification() {
                         <Image
                           width={23}
                           height={23}
-                          src="/images/Search-icon.svg"
-                        />
+                          src="/images/Search-icon.svg" />
                       </button>
                     </div>
                   </div>
@@ -392,16 +388,16 @@ function AssigningVerification() {
 
           <div className="documentsTable pageTableMain pageTableContainer">
             <div className="documentsTable pageTableMain pageTableContainer">
-            <div className="pageTableTabs">
-              <button className="accept active">Accept (30)</button>
-              <button className="ammend ">Ammend (5)</button>
+              <div className="pageTableTabs">
+                <button className="accept active">Accept (30)</button>
+                <button className="ammend ">Ammend (5)</button>
+              </div>
+              <Table columns={columns} data={data} />
             </div>
-            <Table columns={columns} data={data} />
-          </div>
           </div>
         </div>
       </div>
-    </div>
+    </div></>
   );
 };
 export default AssigningVerification;

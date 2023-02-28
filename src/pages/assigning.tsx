@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Container, Row, Col, Table, Tab, Nav, Form } from "react-bootstrap";
-
+import Stepper from '../components/Stepper'
 const Assigning = () => {
   const tableData = [
     {
@@ -46,7 +46,7 @@ const Assigning = () => {
     },
   ];
   return (
-    <div className="pageMainWrap innerpage">
+    <><Stepper /><div className="pageMainWrap innerpage">
       <Head>
         <title>Assigning - CARD</title>
         <meta name="description" content="login" />
@@ -67,8 +67,7 @@ const Assigning = () => {
                   <Form.Control
                     id="floatingInputCustom"
                     type="text"
-                    placeholder="CS Number"
-                  />
+                    placeholder="CS Number" />
                   <Form.Label htmlFor="floatingInputCustom">
                     CS Number
                   </Form.Label>
@@ -80,8 +79,7 @@ const Assigning = () => {
                   <Form.Control
                     id="floatingInputCustom"
                     type="text"
-                    placeholder="Year"
-                  />
+                    placeholder="Year" />
                   <Form.Label htmlFor="floatingInputCustom">Year</Form.Label>
                 </Form.Floating>
               </Col>
@@ -91,8 +89,7 @@ const Assigning = () => {
                   <Form.Control
                     id="floatingInputCustom"
                     type="text"
-                    placeholder="Book No."
-                  />
+                    placeholder="Book No." />
                   <Form.Label htmlFor="floatingInputCustom">
                     Book No.
                   </Form.Label>
@@ -548,14 +545,12 @@ const Assigning = () => {
                 value="Pending Document Details"
                 type="radio"
                 aria-label="Pending Document Details"
-                label="Pending Document Details"
-              />
+                label="Pending Document Details" />
               <Form.Check
                 value="Regular Document Details"
                 type="radio"
                 aria-label="Regular Document Details"
-                label="Regular Document Details"
-              />
+                label="Regular Document Details" />
             </div>
 
             <Row>
@@ -564,8 +559,7 @@ const Assigning = () => {
                   <Form.Control
                     id="floatingInputCustom"
                     type="text"
-                    placeholder="Reg. Date"
-                  />
+                    placeholder="Reg. Date" />
                   <Form.Label htmlFor="floatingInputCustom">
                     Reg. Date
                   </Form.Label>
@@ -577,8 +571,7 @@ const Assigning = () => {
                   <Form.Control
                     id="floatingInputCustom"
                     type="text"
-                    placeholder="Pending Doc No."
-                  />
+                    placeholder="Pending Doc No." />
                   <Form.Label htmlFor="floatingInputCustom">
                     Pending Doc No.
                   </Form.Label>
@@ -590,8 +583,7 @@ const Assigning = () => {
                   <Form.Control
                     id="floatingInputCustom"
                     type="text"
-                    placeholder="Re Enter Pending Doc No."
-                  />
+                    placeholder="Re Enter Pending Doc No." />
                   <Form.Label htmlFor="floatingInputCustom">
                     Re Enter Pending Doc No.
                   </Form.Label>
@@ -605,7 +597,7 @@ const Assigning = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div></>
   );
 };
 

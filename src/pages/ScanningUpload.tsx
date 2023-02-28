@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import { useTable, usePagination } from "react-table";
-
+import Stepper from '../components/Stepper'
 function Table({ columns, data }) {
   const {
     getTableProps,
@@ -326,7 +326,7 @@ function Table({ columns, data }) {
   ];
 
   return (
-    <div className="pageMainWrap innerpage">
+    <><Stepper /><div className="pageMainWrap innerpage">
       <Head>
         <title>Document Presentation - CARD</title>
         <meta name="description" content="login" />
@@ -348,8 +348,7 @@ function Table({ columns, data }) {
                       className={`form-control form-control-sm ml-3 w-75`}
                       type="text"
                       placeholder="Search"
-                      aria-label="Search"
-                    />
+                      aria-label="Search" />
                     <div className={`input-group-prepend`}>
                       <button
                         className={`btn btn-outline-success`}
@@ -358,8 +357,7 @@ function Table({ columns, data }) {
                         <Image
                           width={23}
                           height={23}
-                          src="/images/Search-icon.svg"
-                        />
+                          src="/images/Search-icon.svg" />
                       </button>
                     </div>
                   </div>
@@ -387,7 +385,7 @@ function Table({ columns, data }) {
 
         </div>
       </div>
-    </div>
+    </div></>
   );
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head';
 import { Button, Col, Container, Image, Row, Table } from 'react-bootstrap';
-
+import Stepper from '../components/Stepper'
 const CropSign = () => {
   return (
     <div>

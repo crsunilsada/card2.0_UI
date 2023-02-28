@@ -279,6 +279,14 @@ p:last-child {
           background: $lavenderMist;
         }
       }
+      tr:last-child {
+        td:first-child {
+          border-radius: 0 0 0 8px;
+        }
+         td:last-child {
+          border-radius: 0 0 8px 0;
+         }
+       }
     }
   }
   .tableData.tableheadBg {
@@ -714,7 +722,7 @@ body {
   position: relative;
   width: 168px;
   height: 27px;
-  left: 80%;
+  left: 90%;
   font-family: "Noto Sans";
   font-style: normal;
   font-weight: 500;
@@ -725,7 +733,7 @@ body {
 .digitalSignHeader {
   width: 142px;
   height: 27px;
-  margin: 20.48px;
+  margin: 10.48px;
   font-family: "Noto Sans";
   font-style: regular;
   font-weight: 500;
@@ -922,8 +930,8 @@ body {
 }
 .pageMainWrap.innerpage
  {
-  background: url(../../public/images/innerpagebackground.svg) no-repeat center bottom $white;
-  padding-top: 100px;
+  background: url(../../public/images/innerpagebackground.svg) no-repeat center top $white;
+  background-size: cover;
 }
 
 
@@ -1015,4 +1023,276 @@ body {
 
 .pageTableContainer .pageNextBtn {
   padding: 20px 0 0;
+}
+@media (max-width: 991px) {
+  .navigation {
+    .headerNavContainer {
+      display: block;
+      .header-main-nav {
+        .navbar-toggler {
+          display: block;
+          width: 100%;
+          border: none;
+          background: none;
+          text-align: left;
+          font-size: 16px;
+          line-height: 32px;
+          color: $white;
+          font-weight: 700;
+          box-shadow: none;
+          padding: 6px 0;
+          .navbar-toggler-icon {
+            width: 26px;
+            float: right;
+            height: 32px;
+            position: relative;
+            z-index: 9;
+          }
+        }
+        .navbar-toggler::before {
+          content: "Navigation";
+        }
+        .navbar-toggler:after {
+          content: "";
+          background: $white;
+          width: 34px;
+          height: 30px;
+          position: absolute;
+          right: 8px;
+          top: 7px;
+          border-radius: 2px;
+        }
+        .navbar-collapse.collapse {
+          position: absolute;
+          left: 0px;
+          top: 46px;
+          width: 100%;
+          z-index: 999;
+          background: $blue;
+          .nav-link {
+            padding: 12px 15px 8px;
+            margin-bottom: 5px;
+          }
+          .nav-link.homeMenu {
+            padding: 10px 15px 2px;
+            margin-bottom: 0;
+          }
+          .nav-link.active {
+            text-decoration-thickness: 2px !important;
+          }
+          .nav-item.dropdown {
+            .dropdown-menu {
+              width: 100%;
+              .dropdown-item {
+                line-height: 20px;
+                padding: 10px 32px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1179px) {
+  .pageMainWrap {
+    padding: 40px 0;
+    .mainWrapper {
+      width: 97%;
+      padding: 40px 15px;
+      .wrapperInner {
+        padding: 40px 15px;
+      }
+    }
+  }
+  .pageMainWrap.innerpage {
+    padding-top: 40px;
+  }
+  .red-strip {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .pageTableMain {
+    padding: 30px 0 0;
+    .tableData {
+      tr {
+        th,
+        td {
+          padding: 5px;
+          line-height: 18px;
+        }
+      }
+      tbody {
+        tr {
+          td {
+            button {
+              margin: 3px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .progressbar-section {
+    padding: 20px 0;
+    height: 100px;
+    .progressbar {
+      padding: 0;
+      li {
+        .progress_step_text {
+          top: -10px;
+          line-height: 18px;
+        }
+      }
+    }
+    .progressbar:after {
+      clear: both;
+      content: "";
+      display: block;
+    }
+  }
+  .paginationMain {
+    .pagination {
+      margin: 20px 0 0;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .header-image{
+    height: 60px;
+  }
+  .header-space{
+    height: 104px;
+  }
+  .pageMainWrap {
+    padding: 30px 0;
+    .mainWrapper {
+      width: 97%;
+      padding: 30px 10px;
+      .wrapperInner {
+        padding: 30px 10px;
+      }
+    }
+  }
+  .pageMainWrap.innerpage {
+    padding-top: 30px;
+  }
+  .acknowledgement {
+    left: 10px;
+    top: -20px;
+    h4 {
+      font-size: 16px;
+      line-height: 28px;
+      padding: 5px 10px;
+    }
+  }
+  .pageTableSearch {
+    .searchFiler {
+      padding: 20px 0 0;
+      button {
+        margin-right: 10px;
+      }
+      button:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .red-strip {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .pageTableMain {
+    padding: 30px 0 0;
+    .tableData {
+      tr {
+        th,
+        td {
+          padding: 5px;
+          line-height: 17px;
+        }
+      }
+      tbody {
+        tr {
+          td {
+            button {
+              margin: 3px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .paginationMain {
+    .pagination {
+      margin: 10px 0 0;
+      li {
+        font-size: 12px;
+        select {
+          min-width: 50px;
+          font-size: 12px;
+        }
+      }
+      li.pagesList {
+        margin: 0 0 0 10px;
+      }
+      li.pageNav {
+        margin: 0 0 0 12px;
+        .page-link {
+          img {
+            width: 10px;
+          }
+        }
+      }
+    }
+  }
+  .progressbar-section {
+    padding: 0;
+    height: auto;
+    .progressbar {
+      padding: 0;
+      li {
+        width: 100%;
+        float: none;
+        padding: 0 0 20px;
+        .progress_step_text {
+          position: relative;
+          font-size: 14px;
+          top: 0;
+          background: $desertStorm;
+          padding: 7px 10px;
+        }
+      }
+      li::before {
+        width: 22px;
+        height: 22px;
+        content: "";
+        line-height: 18px;
+        margin: auto auto 4px;
+      }
+      li.completed::before {
+        font-size: 13px;
+      }
+      li::after {
+        width: 2px;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+      li:first-child::after {
+        content: "";
+      }
+      li:last-child {
+        padding-bottom: 0;
+      }
+      li:last-child:after {
+        display: none;
+      }
+    }
+  }
 }

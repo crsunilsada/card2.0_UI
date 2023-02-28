@@ -1,5 +1,6 @@
 import { Container, Col, Row, Form, Button } from "react-bootstrap"
 import Head from "next/head";
+import Stepper from '../components/Stepper'
 const Endorsement = () => {
     return (
     <div className="pageMainWrap innerpage">
@@ -93,20 +94,12 @@ const Endorsement = () => {
                                 </Form.Floating>
                             </Col>
                             <Col lg={3} md={3} xs={3} className="mb-3">
-                                <Form.Select aria-label="Default select example">
-                                    <option value=""></option>
+                                <Form.Select aria-label="Default select example" >
+                                    <option value="Sub Registrar Name"></option>
                                     <option value="AADHAR">AADHAR</option>
                                     <option value="REPRESENT/SEC 88">REPRESENT/SEC 88</option>
                                     <option value="NRI">NRI</option>
-                                </Form.Select>
-                                {/* <Form.Select>
-                                    <select className="form-control" name="subregname" >
-                                    <option value="">Sub Registrar Name</option>
-                                    <option value="10">Chairman</option>
-                                    <option value="20">AP Registrar Head</option>
-                                    <option value="30">Document Writer</option>
-                                    </select>
-                                </Form.Select> */}
+                                </Form.Select><span color="red"  > Sub Registrar Name mismatched</span>
                             </Col>
                         </Row>
                         <Row>
@@ -120,7 +113,7 @@ const Endorsement = () => {
                                 <div className="pageNextBtn">
                                     <button className=" clear">
                                         Exit
-                                    </button> <button className="next">Save</button>
+                                    </button> <button className="next">Print</button>
                                 </div>
                             </Col>
                         </Row>

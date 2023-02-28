@@ -29,7 +29,7 @@ function Table({ columns, data }) {
 
   // Render the UI for your table
   return (
-    <><Stepper /><div className="tableWithPagination">
+    <div className="tableWithPagination table-responsive">
       <table
         className="tableData listData tableheadBg table"
         {...getTableProps()}
@@ -160,7 +160,7 @@ function Table({ columns, data }) {
           </li>
         </ul>
       </div>
-    </div></>
+    </div>
   );
 }
 
@@ -325,7 +325,7 @@ function Table({ columns, data }) {
   ];
 
   return (
-    <div className="pageMainWrap innerpage">
+    <><Stepper /><div className="pageMainWrap innerpage">
       <Head>
         <title>Document Presentation - CARD</title>
         <meta name="description" content="login" />
@@ -347,8 +347,7 @@ function Table({ columns, data }) {
                       className={`form-control form-control-sm ml-3 w-75`}
                       type="text"
                       placeholder="Search"
-                      aria-label="Search"
-                    />
+                      aria-label="Search" />
                     <div className={`input-group-prepend`}>
                       <button
                         className={`btn btn-outline-success`}
@@ -357,8 +356,7 @@ function Table({ columns, data }) {
                         <Image
                           width={23}
                           height={23}
-                          src="/images/Search-icon.svg"
-                        />
+                          src="/images/Search-icon.svg" />
                       </button>
                     </div>
                   </div>
@@ -404,8 +402,7 @@ function Table({ columns, data }) {
                     <Image
                       width={20}
                       height={20}
-                      src="/images/popup-close.svg"
-                    />
+                      src="/images/popup-close.svg" />
                   </button>
                 </div>
 
@@ -416,8 +413,7 @@ function Table({ columns, data }) {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Presentant Name"
-                        />
+                          placeholder="Presentant Name" />
                         <Form.Label htmlFor="floatingInputCustom">
                           Presentant Name
                         </Form.Label>
@@ -428,8 +424,7 @@ function Table({ columns, data }) {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Nominee Name"
-                        />
+                          placeholder="Nominee Name" />
                         <Form.Label htmlFor="floatingInputCustom">
                           Nominee Name
                         </Form.Label>
@@ -444,8 +439,7 @@ function Table({ columns, data }) {
                       value="Executant"
                       type="radio"
                       aria-label="Executant"
-                      label="Executant"
-                    />
+                      label="Executant" />
                   </div>
 
                   <Row>
@@ -454,8 +448,7 @@ function Table({ columns, data }) {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="ID Proof"
-                        />
+                          placeholder="ID Proof" />
                         <Form.Label htmlFor="floatingInputCustom">
                           ID Proof
                         </Form.Label>
@@ -469,8 +462,7 @@ function Table({ columns, data }) {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="ID Number"
-                        />
+                          placeholder="ID Number" />
                         <Form.Label htmlFor="floatingInputCustom">
                           ID Number
                         </Form.Label>
@@ -481,8 +473,7 @@ function Table({ columns, data }) {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Name"
-                        />
+                          placeholder="Name" />
                         <Form.Label htmlFor="floatingInputCustom">
                           Name
                         </Form.Label>
@@ -493,8 +484,7 @@ function Table({ columns, data }) {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Age"
-                        />
+                          placeholder="Age" />
                         <Form.Label htmlFor="floatingInputCustom">
                           Age
                         </Form.Label>
@@ -505,14 +495,12 @@ function Table({ columns, data }) {
                         className="so"
                         id="floatingInputCustom"
                         type="text"
-                        placeholder="S/o"
-                      />
+                        placeholder="S/o" />
                       <Form.Floating className="relationName">
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Relation Name"
-                        />
+                          placeholder="Relation Name" />
                         <Form.Label htmlFor="floatingInputCustom">
                           Relation Name
                         </Form.Label>
@@ -526,8 +514,7 @@ function Table({ columns, data }) {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Address"
-                        />
+                          placeholder="Address" />
                         <Form.Label htmlFor="floatingInputCustom">
                           Address
                         </Form.Label>
@@ -538,8 +525,7 @@ function Table({ columns, data }) {
                         <Form.Control
                           id="floatingInputCustom"
                           type="date"
-                          placeholder="Presentant Date"
-                        />
+                          placeholder="Presentant Date" />
                         <Form.Label htmlFor="floatingInputCustom">
                           Presentant Date
                         </Form.Label>
@@ -550,8 +536,7 @@ function Table({ columns, data }) {
                         <Form.Control
                           id="floatingInputCustom"
                           type="date"
-                          placeholder="Stamp Duty Borne by Document"
-                        />
+                          placeholder="Stamp Duty Borne by Document" />
                         <Form.Label htmlFor="floatingInputCustom">
                           Stamp Duty Borne by Document
                         </Form.Label>
@@ -565,8 +550,7 @@ function Table({ columns, data }) {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="No of Sheets"
-                        />
+                          placeholder="No of Sheets" />
                         <Form.Label htmlFor="floatingInputCustom">
                           No of Sheets
                         </Form.Label>
@@ -577,8 +561,7 @@ function Table({ columns, data }) {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Registration Type"
-                        />
+                          placeholder="Registration Type" />
                         <Form.Label htmlFor="floatingInputCustom">
                           Registration Type
                         </Form.Label>
@@ -589,8 +572,7 @@ function Table({ columns, data }) {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Book Type"
-                        />
+                          placeholder="Book Type" />
                         <Form.Label htmlFor="floatingInputCustom">
                           Book Type
                         </Form.Label>
@@ -606,8 +588,7 @@ function Table({ columns, data }) {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Major"
-                        />
+                          placeholder="Major" />
                         <Form.Label htmlFor="floatingInputCustom">
                           Major
                         </Form.Label>
@@ -618,8 +599,7 @@ function Table({ columns, data }) {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Minor"
-                        />
+                          placeholder="Minor" />
                         <Form.Label htmlFor="floatingInputCustom">
                           Minor
                         </Form.Label>
@@ -630,8 +610,7 @@ function Table({ columns, data }) {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="No of Schedules"
-                        />
+                          placeholder="No of Schedules" />
                         <Form.Label htmlFor="floatingInputCustom">
                           No of Schedules
                         </Form.Label>
@@ -644,7 +623,7 @@ function Table({ columns, data }) {
           </div>
         </div>
       </div>
-    </div>
+    </div></>
   );
 }
 

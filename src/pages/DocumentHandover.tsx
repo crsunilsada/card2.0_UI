@@ -1,17 +1,9 @@
 import { Container, Col, Row, Form, Button, Table } from "react-bootstrap"
 import Head from "next/head";
-
+import Stepper from '../components/Stepper'
 const documentHandover = () => {
     return (
-        <><div className="">
-            <ul className="progressbar">
-                <li className="completed"><div className="progress_step_text">Document Presentation</div></li>
-                <li className="inactive"><div className="progress_step_text">Admission Of Execution</div></li>
-                <li className="inactive"><div className="progress_step_text">Assigning</div></li>
-                <li className="inactive"><div className="progress_step_text">Scanning And Upload</div></li>
-                <li className="inactive"><div className="progress_step_text">Document Handover</div></li>
-            </ul>
-        </div><br></br><div className="pageMainWrap innerpage">
+        <><Stepper /><div className="pageMainWrap innerpage">
                 <Head>
                     <title>Document Handover - CARD</title>
                     <meta name="description" content="login" />

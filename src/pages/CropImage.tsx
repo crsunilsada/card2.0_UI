@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import React from 'react'
 import { Button, Col, Container, Image, Row, Table } from 'react-bootstrap';
-
+import Stepper from '../components/Stepper'
 const CropImage = () => {
     return (
-        <div>
+        <><Stepper /><div>
             <div className="pageMainWrap innerpage">
                 <Head>
                     <title>Cropimage - CARD</title>
@@ -24,8 +24,7 @@ const CropImage = () => {
                                         <Image
                                             width={23}
                                             height={23}
-                                            src="/images/Crop.svg"
-                                        /> &nbsp;
+                                            src="/images/Crop.svg" /> &nbsp;
                                         Crop the below image and Proceed</div>
                                 </Col>
                             </Row>
@@ -38,12 +37,11 @@ const CropImage = () => {
                                             src={"/images/person.svg"}
                                             alt="Picture of the person"
                                             width={169}
-                                            height={199}
-                                        />
+                                            height={199} />
                                     </div>
                                     <div className='btn-image d-flex'>
-                                        <div ><Button className="btn btn-light whitebuttonclass m-4">Retake</Button></div> &nbsp;&nbsp;
-                                       <div ><Button className='bluebuttonclass btn btn-light m-4'>Done</Button></div>
+                                        <div><Button className="btn btn-light whitebuttonclass m-4">Retake</Button></div> &nbsp;&nbsp;
+                                        <div><Button className='bluebuttonclass btn btn-light m-4'>Done</Button></div>
                                     </div>
                                 </Col>
                             </Row>
@@ -51,7 +49,7 @@ const CropImage = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div></>
     )
 }
 
