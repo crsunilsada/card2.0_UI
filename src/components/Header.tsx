@@ -2,14 +2,27 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import styles from "../styles/components/header.module.scss";
 import { Navbar, NavDropdown, Container, Col, Row, Nav } from "react-bootstrap";
-import banner from 'images/Header1.png'
 
 const Header = () => {
   const router = useRouter();
+  let headerimage = {};
+  let headerclassname = {};
+  if (router.pathname === '/login') {
+    headerimage = '/images/Header1.png';
+    headerclassname = '';
+  }
+  else if (router.pathname === '/homePage') {
+    headerimage = '/images/homepageheader.png';
+    headerclassname = 'mainheader-space';
+  }
+  else {
+    headerimage = '/images/Header1.png';
+    headerclassname = 'header-space';
+  }
   return (
-    <><div className="fixed-top "><img src={"/images/Header1.png"} className="header-image"></img><header className={styles.header_body}>
+    <><div className={`mainHeader ${headerclassname}`}><div className={`fixed-top ${headerclassname}`}><img src={headerimage}></img><header className={styles.header_body}>
       <Navbar className="navigation bg-primary" bg="light" expand="lg">
-        <Container className="headerNavContainer ">
+        <Container className="headerNavContainer">
           <div className="header-main-nav">
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -39,8 +52,8 @@ const Header = () => {
       </Navbar>
     </header>
     </div>
-    <div className="header-space"></div>
-    </>
+      <div className="header-space"></div>
+      </div></>
   );
 };
 
