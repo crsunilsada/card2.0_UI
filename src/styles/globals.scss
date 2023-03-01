@@ -1145,11 +1145,6 @@ body {
 
 
 
-
-
-
-
-
 .form-select {
   font-size: 14px !important;
   background-color: #F6F9FB;
@@ -1662,6 +1657,7 @@ body {
   color: white;
 }
 
+
 .accordion-button::after {
   background-image: initial;
   width: 0;
@@ -1685,4 +1681,86 @@ body {
     margin: 0;
     box-shadow: none;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.drop-section .form-select.btn{
+  text-align: left;
+  border: 1px solid #ced4da;
+  height: 40px !important;
+}
+.drop-section .dropdown-menu{
+  padding: 0px;
+  width: 100%;
+}
+
+.drop-section .table{
+  border: 0px;
+}
+
+.drop-section .dropdown-table{
+  background: #F6F9FB;
+}
+
+.form-select.dropdown-toggle::after{
+  display: none;
+}
+
+.accordion-button:not(.collapsed) {
+  color: var(--bs-accordion-active-color);
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.propertydetails-topbutton {
+  background: #43A047;
+  color: #FFF;
+  padding: 5px;
+  position: absolute;
+  top: -1px;
+  z-index: 99;
+  right: 0px;
+  border-top-right-radius: 10px;
+}
+
+.accordion-button.collapsed .propertydetails-topbutton {
+  display: none;
 }

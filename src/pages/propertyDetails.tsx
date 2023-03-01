@@ -136,7 +136,7 @@ const PropertyDetails = () => {
                             </div>
                         </Col>
                     </Row>
-                    <div className="pageTableContainer mt-4">
+                    <div className="pageTableContainer pageTableMain mt-4">
                         <h4 className="mb-4">Basic Details</h4>
                         <Row className="mb-4">
                             <Col lg={3} md={4} xs={12}>
@@ -207,14 +207,9 @@ const PropertyDetails = () => {
                         <div className="scheduleDetails mb-3">
                             <Accordion>
                                 <Accordion.Item eventKey="0">
-                                    <Accordion.Header>Schedule Details</Accordion.Header>
+                                    <Accordion.Header>Schedule Details <span className="propertydetails-topbutton float-end">Permission Granted</span> 
+                                    </Accordion.Header>
                                     <Accordion.Body>
-                                        <Row className="mb-4">
-                                            <Col lg={9} md={9} xs={12}></Col>
-                                            <Col lg={3} md={3} xs={12}>
-                                                {/* <button className="propertydetails-topbutton">Permission Granted</button> */}
-                                            </Col></Row>
-
                                         <Row className="mb-4">
                                             <Col lg={6} md={6} xs={12}>
 
@@ -228,14 +223,39 @@ const PropertyDetails = () => {
                                                 </Form.Floating>
                                             </Col>
                                             <Col lg={6} md={6} xs={12} className="mb-3">
-                                                <Form.Floating>
-                                                    <Form.Select aria-label="mapClaimants">
-                                                        <option>Map Claimants</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                        <option value="3">Three</option>
-                                                    </Form.Select>
-                                                </Form.Floating>
+                                            <div className="drop-section">
+                                                <Dropdown>
+                                                    <Dropdown.Toggle id="" className=" form-select" variant="">
+                                                    Map Claimants
+                                                    </Dropdown.Toggle>
+
+                                                    <Dropdown.Menu>
+                                                        <table className="tableData listData tableheadBg table mb-0">
+                                                        <thead>
+                                                            <tr>
+                                                                <th className="text-center">Select</th>
+                                                                <th className="text-center">Claimant Details</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td className="text-center"><Form.Check aria-label="" /></td>
+                                                                <td><Dropdown.Item href="#/action-1">XXXXXXXXXX</Dropdown.Item></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td className="text-center"><Form.Check aria-label="" /></td>
+                                                                <td><Dropdown.Item href="#/action-1">XXXXXXXXXXX</Dropdown.Item></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td className="text-center"><Form.Check aria-label="" /></td>
+                                                                <td><Dropdown.Item href="#/action-1">XXXXXXXXXXXX</Dropdown.Item></td>
+                                                            </tr>
+                                                        </tbody>
+
+                                                        </table>
+                                                    </Dropdown.Menu>
+                                                </Dropdown>
+                                            </div>
                                             </Col>
                                         </Row>
                                         <Row className="mb-4">
