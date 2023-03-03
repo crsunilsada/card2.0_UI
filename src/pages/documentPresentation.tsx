@@ -902,6 +902,7 @@ function documentPresentation() {
                       </Form.Floating>
                     </Col>
                     <Col lg={4} md={8} xs={12} className="mb-3">
+
                       <Form.Control
                         className="so"
                         id="floatingInputCustom"
