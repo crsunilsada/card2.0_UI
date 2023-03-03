@@ -3,6 +3,7 @@ import Image from "next/image";
 import Head from "next/head";
 import { Container, Row, Col, Table, Tab, Nav, Form } from "react-bootstrap";
 import Stepper from '../components/Stepper'
+import Link from "next/link";
 const ScanningDocument = () => {
   return (
     <><Stepper /><div className="pageMainWrap innerpage">
@@ -203,7 +204,9 @@ const ScanningDocument = () => {
 
                     </Col>
                     <Col lg={3} md={3} xs={12}>
+                      <Link href={"/ScanningUpload"}>
                       <button type="button" className="bluebuttonclass">Save</button>
+                      </Link>
 
                     </Col>
                   </Row>

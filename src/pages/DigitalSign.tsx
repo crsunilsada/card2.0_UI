@@ -1,6 +1,7 @@
 import { Container, Col, Row, Form, Button } from "react-bootstrap"
 import React from "react";
 import Head from "next/head";
+import Link from "next/link";
 const DigitalSign = () => {
   return (
     <> 
@@ -58,7 +59,9 @@ const DigitalSign = () => {
               <br></br>
               <div  >
                 <div className="pageNextBtn">
+                  <Link href={"/documentHandover"}>
                   <button className="next">Submit</button>
+                  </Link>
                 </div>
               </div>
             </div>

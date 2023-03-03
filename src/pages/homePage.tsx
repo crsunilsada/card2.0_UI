@@ -2,7 +2,7 @@ import React from 'react'
 import Head from 'next/head';
 import { Button, Col, Container, Image, Row, Table } from 'react-bootstrap';
 import Stepper from '../components/Stepper'
-
+import Link from 'next/link';
 const Homepage = () => {
     return (
 
@@ -27,8 +27,10 @@ const Homepage = () => {
                             {/* <a href="#" className ="btn btn-primary">Go somewhere</a> */}
                         </div>
                     </div>
+                    <Link href="/documentPresentation">
                     <div className="card m-3 " style={{ width: "18rem" }}>
                         <div className="card-body text-center m-1">
+
                             <Image className='m-4'
                                 src={"/images/OnlinePublicData.png"}
                                 alt="Online public data entry"
@@ -40,6 +42,7 @@ const Homepage = () => {
                             {/* <a href="#" className ="btn btn-primary">Go somewhere</a> */}
                         </div>
                     </div>
+                    </Link>
                 </div>
             </div>
         </div></>

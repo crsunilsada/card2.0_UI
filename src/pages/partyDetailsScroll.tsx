@@ -1,8 +1,13 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useEffect } from "react";
+import Link from "next/link";
 import { Container, Row, Col, Table, Tab, Nav, Form } from "react-bootstrap";
 import Stepper from '../components/Stepper'
 const partyDetailsScroll = () => {
+  useEffect(() => {
+    require("bootstrap/dist/js/bootstrap.bundle.min.js");
+  }, []);
   const tableData = [
     {
       code: "01-TS",
@@ -126,185 +131,9 @@ const partyDetailsScroll = () => {
                                 Executant - <span>Representative</span>
                               </h5>
                               <h4 className="cardBtns">
-                                <button data-bs-toggle="modal" data-bs-target="#partydetailsscroll" className="basicDetails edit">
-                                  <img src="/images/edit-icon.svg" /></button>
-                                  //popup//
-                                <div
-                                  className="modal fade modal-lg"
-                                  id="partydetailsscroll"
-                                  aria-labelledby="partydetailsscroll"
-                                  aria-hidden="true"
-                                >
-                                  <div className="modal-dialog">
-                                    <div className="modal-content">
-                                      <div className="modal-header">
-                                        <h5 className="modal-title" id="exampleModalLabel">
-                                          Add New Party Details
-                                        </h5>
-                                        <button
-                                          type="button"
-                                          className="btn-close"
-                                          data-bs-dismiss="modal"
-                                          aria-label="Close"
-                                        >
-                                          <Image
-                                            width={20}
-                                            height={20}
-                                            src="/images/popup-close.svg"
-                                          />
-                                        </button>
-                                      </div>
-                                      <div className="modal-body">
-                                        <div>
-                                          <Row>
-                                            <Col lg={8} md={8} xs={8}>
-                                              <Row>
-                                                <Col lg={6} md={6} xs={12} className="mb-3">
-                                                  <Form.Select aria-label="Default select example">
-                                                    <option value="">ID Proof</option>
-                                                    <option value="10">Chairman</option>
-                                                    <option value="20">AP Registrar Head</option>
-                                                    <option value="30">Document Writer</option>
-                                                  </Form.Select>
-                                                </Col>
-                                                <Col lg={6} md={6} xs={12} className="mb-3">
-                                                  <Form.Floating>
-                                                    <Form.Control
-                                                      id="floatingInputCustom"
-                                                      type="text"
-                                                      placeholder="ID Number"
-                                                    />
-                                                    <label htmlFor="floatingInputCustom">
-                                                      ID Number
-                                                    </label>
-                                                  </Form.Floating>
-                                                </Col>
-                                              </Row>
-                                              <Row>
-                                                <Col lg={6} md={6} xs={12} className="mb-3">
-                                                  <Form.Floating>
-                                                    <Form.Control
-                                                      id="floatingInputCustom"
-                                                      type="text"
-                                                      placeholder="Name"
-                                                    />
-                                                    <label htmlFor="floatingInputCustom">
-                                                      Name
-                                                    </label>
-                                                  </Form.Floating>
-                                                </Col>
-                                                <Col lg={1} md={1} xs={12} className="mb-3">
-                                                  <Form.Floating>
-                                                    <Form.Control
-                                                      id="floatingInputCustom"
-                                                      type="text"
-                                                      placeholder="Nominee Name"
-                                                    />
-                                                    <label htmlFor="floatingInputCustom">
-                                                      Age
-                                                    </label>
-                                                  </Form.Floating>
-                                                </Col>
-                                                <Col lg={1} md={1} xs={2} className="mb-3">
-                                                  <Form.Select aria-label="Default select example" id="floatingInputCustom">
-                                                    <option value="">S/o</option>
-                                                    <option value="">S/o</option>
-                                                    <option value="">D/o</option>
-                                                    <option value="">W/o</option>
-                                                  </Form.Select>
-                                                </Col>
-                                                <Col lg={4} md={4} xs={8} className="mb-3">
-                                                  <Form.Floating>
-                                                    <Form.Control
-                                                      id="floatingInputCustom"
-                                                      type="text"
-                                                      placeholder="RelationName"
-                                                    />
-                                                    <label htmlFor="floatingInputCustom">
-                                                      Relation Name
-                                                    </label>
-                                                  </Form.Floating>
-                                                </Col>
-                                              </Row>
-                                              <Row>
-                                                <Col lg={12} md={12} xs={12} className="mb-3">
-                                                  <Form.Floating>
-                                                    <Form.Control
-                                                      id="floatingInputCustom"
-                                                      type="text"
-                                                      placeholder="Phone Number"
-                                                      name="phonenumber"
-                                                    />
-                                                    <label htmlFor="floatingInputCustom">
-                                                      Address
-                                                    </label>
-                                                  </Form.Floating>
-                                                </Col>
-                                              </Row>
-                                              <Row>
-                                                <Col lg={6} md={6} xs={12} className="mb-3">
-                                                  <Form.Floating>
-                                                    <Form.Control
-                                                      id="floatingInputCustom"
-                                                      type="text"
-                                                      placeholder="Phone Number"
-                                                      name="pannumber"
-                                                    />
-                                                    <label htmlFor="floatingInputCustom">
-                                                      Phone Number
-                                                    </label>
-                                                  </Form.Floating>
-                                                </Col>
-                                                <Col lg={6} md={6} xs={12} className="mb-3">
-                                                  <Form.Floating>
-                                                    <Form.Control
-                                                      id="floatingInputCustom"
-                                                      type="text"
-                                                      placeholder="PAN Card Number"
-                                                      name="pancardnumber"
-                                                    />
-                                                    <label htmlFor="floatingInputCustom">
-                                                      PAN Number/Form 60/61
-                                                    </label>
-                                                  </Form.Floating>
-                                                </Col>
-                                              </Row>
-                                            </Col>
-                                            <Col lg={2} md={2} xs={2}>
-                                              <img src="/images/party-executantimg.jpg" alt="Card image" />
-                                            </Col>
-                                          </Row>
-                                        </div>
-                                        <Row>
-                                          <Col lg={6} md={6} xs={6}>
-                                            <div className="form-check assigningcheckboxes">
-                                              <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" />
-                                              <label className="form-check-label" htmlFor="defaultCheck1">
-                                                Consider this Claimant/Executant as Representative
-                                              </label>
-                                            </div>
-                                          </Col>
-                                        </Row>
-                                        <Row>
-                                          <Col lg={6} md={6} xs={12} className="mb-3">
-                                          </Col>
-                                          <Col lg={2} md={2} xs={12} className="mb-3">
-                                          </Col>
-                                          <Col lg={4} md={4} xs={4} className="mb-3">
-                                            <div className="pageNextBtn">
-                                              <button className="clear">
-                                                Clear
-                                              </button>
-                                              <button className="next">
-                                                Done
-                                              </button>
-                                            </div>
-                                          </Col>
-                                        </Row>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#partyDetailsScroll">
+                                  <img src="/images/edit-icon.svg" />
+                                </button>
                                 <button className="delete">
                                   <img src="/images/delete-icon.svg" />
                                 </button>
@@ -350,9 +179,7 @@ const partyDetailsScroll = () => {
                                 Executant
                               </h5>
                               <h4 className="cardBtns">
-                                <button data-bs-toggle="modal"
-                                  data-bs-target="#partydetailsscroll"
-                                  className="basicDetails edit">
+                                <button data-bs-toggle="modal" data-bs-target="#partyDetailsScroll">
                                   <img src="/images/edit-icon.svg" />
                                 </button>
                                 <button className="delete">
@@ -399,13 +226,175 @@ const partyDetailsScroll = () => {
                 </Tab.Container>
               </div>
               <div className="pageNextBtn">
-                <button className="clear" data-bs-toggle="modal" data-bs-target="#partydetailsscroll">
+                <button className="clear" data-bs-toggle="modal" data-bs-target="#partyDetailsScroll">
                   Add New
                 </button>
+                <Link href={"/Verification"}>
                 <button className="next">
                   Next
                 </button>
+                </Link>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="modal" id="partyDetailsScroll" aria-labelledby="partyDetailsScrollLabel" aria-hidden="true">
+        <div className="modal-dialog modal-dialog-centered modal-xl">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="partyDetailsScrollLabel">Add New Party Details</h5>
+              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                <Image width={20} height={20} src="/images/popup-close.svg" />
+              </button>
+            </div>
+            <div className="modal-body">
+              <div>
+                <Row>
+                  <Col lg={9} md={9} xs={89}>
+                    <Row>
+                      <Col lg={6} md={6} xs={12} className="mb-3">
+                        <Form.Select aria-label="Default select example">
+                          <option value="">ID Proof</option>
+                          <option value="10">Chairman</option>
+                          <option value="20">AP Registrar Head</option>
+                          <option value="30">Document Writer</option>
+                        </Form.Select>
+                      </Col>
+                      <Col lg={6} md={6} xs={12} className="mb-3">
+                        <Form.Floating>
+                          <Form.Control
+                            id="floatingInputCustom"
+                            type="text"
+                            placeholder="ID Number"
+                          />
+                          <label htmlFor="floatingInputCustom">
+                            ID Number
+                          </label>
+                        </Form.Floating>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col lg={6} md={6} xs={12} className="mb-3">
+                        <Form.Floating>
+                          <Form.Control
+                            id="floatingInputCustom"
+                            type="text"
+                            placeholder="Name"
+                          />
+                          <label htmlFor="floatingInputCustom">
+                            Name
+                          </label>
+                        </Form.Floating>
+                      </Col>
+                      <Col lg={1} md={1} xs={12} className="mb-3">
+                        <Form.Floating>
+                          <Form.Control
+                            id="floatingInputCustom"
+                            type="text"
+                            placeholder="Nominee Name"
+                          />
+                          <label htmlFor="floatingInputCustom">
+                            Age
+                          </label>
+                        </Form.Floating>
+                      </Col>
+                      <Col lg={1} md={1} xs={2} className="mb-3">
+                        <Form.Select aria-label="Default select example" id="floatingInputCustom">
+                          <option value="">S/o</option>
+                          <option value="">S/o</option>
+                          <option value="">D/o</option>
+                          <option value="">W/o</option>
+                        </Form.Select>
+                      </Col>
+                      <Col lg={4} md={4} xs={8} className="mb-3">
+                        <Form.Floating>
+                          <Form.Control
+                            id="floatingInputCustom"
+                            type="text"
+                            placeholder="RelationName"
+                          />
+                          <label htmlFor="floatingInputCustom">
+                            Relation Name
+                          </label>
+                        </Form.Floating>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col lg={12} md={12} xs={12} className="mb-3">
+                        <Form.Floating>
+                          <Form.Control
+                            id="floatingInputCustom"
+                            type="text"
+                            placeholder="Phone Number"
+                            name="phonenumber"
+                          />
+                          <label htmlFor="floatingInputCustom">
+                            Address
+                          </label>
+                        </Form.Floating>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col lg={6} md={6} xs={12} className="mb-3">
+                        <Form.Floating>
+                          <Form.Control
+                            id="floatingInputCustom"
+                            type="text"
+                            placeholder="Phone Number"
+                            name="pannumber"
+                          />
+                          <label htmlFor="floatingInputCustom">
+                            Phone Number
+                          </label>
+                        </Form.Floating>
+                      </Col>
+                      <Col lg={6} md={6} xs={12} className="mb-3">
+                        <Form.Floating>
+                          <Form.Control
+                            id="floatingInputCustom"
+                            type="text"
+                            placeholder="PAN Card Number"
+                            name="pancardnumber"
+                          />
+                          <label htmlFor="floatingInputCustom">
+                            PAN Number/Form 60/61
+                          </label>
+                        </Form.Floating>
+                      </Col>
+                    </Row>
+                  </Col>
+                  <Col lg={3} md={3} xs={3}>
+                    <img src="/images/party-executantimg.jpg" alt="Card image" />
+                  </Col>
+                </Row>
+              </div>
+              <Row>
+                <Col lg={8} md={8} xs={8}>
+                  <div className="form-check assigningcheckboxes">
+                    <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" />
+                    <label className="form-check-label" htmlFor="defaultCheck1">
+                      Consider this Claimant/Executant as Representative
+                    </label>
+                  </div>
+                </Col>
+              </Row>
+              <Row>
+                <Col lg={6} md={6} xs={12} className="mb-3">
+                </Col>
+                <Col lg={2} md={2} xs={12} className="mb-3">
+                </Col>
+                <Col lg={4} md={4} xs={4} className="mb-3">
+                  <div className="pageNextBtn">
+                    <button className="clear">
+                      Clear
+                    </button>
+                    <button className="next" data-bs-dismiss="modal" aria-label="Close">
+                      Done
+                    </button>
+                  </div>
+                </Col>
+              </Row>
             </div>
           </div>
         </div>

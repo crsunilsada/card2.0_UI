@@ -207,20 +207,45 @@ const PropertyDetails = () => {
                         <div className="scheduleDetails mb-3">
                             <Accordion>
                                 <Accordion.Item eventKey="0">
-                                    <Accordion.Header>Schedule Details <span className="propertydetails-topbutton float-end">Permission Granted</span> 
+                                    <Accordion.Header>Schedule Details <span className="propertydetails-topbutton float-end">Permission Granted</span>
                                     </Accordion.Header>
                                     <Accordion.Body>
                                         <Row className="mb-4">
-                                            <Col lg={6} md={6} xs={12}>
 
-                                                <Form.Floating>
-                                                    <Form.Select aria-label="localBody">
-                                                        <option>Local Body</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                        <option value="3">Three</option>
-                                                    </Form.Select>
-                                                </Form.Floating>
+                                            <Col lg={6} md={6} xs={12} className="mb-3">
+                                                <div className="drop-section">
+                                                    <Dropdown>
+                                                        <Dropdown.Toggle id="" className=" form-select" variant="">
+                                                            Local Body
+                                                        </Dropdown.Toggle>
+
+                                                        <Dropdown.Menu>
+                                                            <table className="tableData listData tableheadBg table mb-0">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th className="text-center">Local Body</th>
+                                                                        <th className="text-center">Local Body Desc</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td className="text-center">01</td>
+                                                                        <td><Dropdown.Item href="#/action-1">Municipal Corporation</Dropdown.Item></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td className="text-center">02</td>
+                                                                        <td><Dropdown.Item href="#/action-1">SPL/ Selection grade municipality</Dropdown.Item></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td className="text-center">03</td>
+                                                                        <td><Dropdown.Item href="#/action-1">other Municipality/ Notified Area</Dropdown.Item></td>
+                                                                    </tr>
+                                                                </tbody>
+
+                                                            </table>
+                                                        </Dropdown.Menu>
+                                                    </Dropdown>
+                                                </div>
                                             </Col>
                                             <Col lg={6} md={6} xs={12} className="mb-3">
                                             <div className="drop-section">
@@ -229,28 +254,28 @@ const PropertyDetails = () => {
                                                     Map Claimants
                                                     </Dropdown.Toggle>
 
-                                                    <Dropdown.Menu>
-                                                        <table className="tableData listData tableheadBg table mb-0">
-                                                        <thead>
-                                                            <tr>
-                                                                <th className="text-center">Select</th>
-                                                                <th className="text-center">Claimant Details</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td className="text-center"><Form.Check aria-label="" /></td>
-                                                                <td><Dropdown.Item href="#/action-1">XXXXXXXXXX</Dropdown.Item></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td className="text-center"><Form.Check aria-label="" /></td>
-                                                                <td><Dropdown.Item href="#/action-1">XXXXXXXXXXX</Dropdown.Item></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td className="text-center"><Form.Check aria-label="" /></td>
-                                                                <td><Dropdown.Item href="#/action-1">XXXXXXXXXXXX</Dropdown.Item></td>
-                                                            </tr>
-                                                        </tbody>
+                                                        <Dropdown.Menu>
+                                                            <table className="tableData listData tableheadBg table mb-0">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th className="text-center">Select</th>
+                                                                        <th className="text-center">Claimant Details</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td className="text-center"><Form.Check aria-label="" /></td>
+                                                                        <td><Dropdown.Item href="#/action-1">All</Dropdown.Item></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td className="text-center"><Form.Check aria-label="" /></td>
+                                                                        <td><Dropdown.Item href="#/action-1">Rahul</Dropdown.Item></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td className="text-center"><Form.Check aria-label="" /></td>
+                                                                        <td><Dropdown.Item href="#/action-1">Bindu</Dropdown.Item></td>
+                                                                    </tr>
+                                                                </tbody>
 
                                                         </table>
                                                     </Dropdown.Menu>
@@ -315,15 +340,87 @@ const PropertyDetails = () => {
                                             </Col>
                                         </Row>
                                         <Row className="mb-4">                                          <Col lg={3} md={3} xs={12} className="mb-3">
-                                            <Form.Floating>
-                                                <Form.Control
-                                                    id="floatingInputCustom"
-                                                    type="text"
-                                                    placeholder="Door No." />
-                                                <Form.Label htmlFor="floatingInputCustom">
-                                                    Door No.
-                                                </Form.Label>
-                                            </Form.Floating>
+
+                                            <div className="drop-section">
+
+                                                <Dropdown>
+
+                                                    <Dropdown.Toggle id="" className=" form-select remove-icon" variant="">
+
+                                                        Door No
+
+                                                    </Dropdown.Toggle>
+
+
+
+                                                    <Dropdown.Menu>
+
+                                                        <table className="tableData listData tableheadBg table mb-0">
+
+                                                            <thead>
+
+                                                                <tr>
+
+                                                                    <th className="text-center">Door Number</th>
+
+                                                                    <th className="text-center">Building Number</th>
+
+                                                                </tr>
+
+                                                            </thead>
+
+                                                            <tbody>
+
+                                                                <tr>
+
+                                                                    <td className="text-center">
+
+                                                                        <input type="" className="form-control1 " id="floatingPassword" placeholder=""></input></td>
+
+                                                                    <td><Dropdown.Item href="#/action-1">
+
+                                                                        <input type="" className="form-control1" id="" placeholder=""></input></Dropdown.Item></td>
+
+                                                                </tr>
+                                                                <tr>
+
+                                                                    <td className="text-center"></td>
+
+                                                                    <td><Dropdown.Item href="#/action-1">
+                                                                        <Row >
+                                                                            <Col lg={8} md={8} xs={12} ></Col>
+                                                                            <Col lg={4} md={4} xs={12} >
+                                                                                <img src="/images/plus-circle.svg"class="plus-circle-img" />
+                                                                                {/* <plusCircle /> */}
+                                                                            </Col>
+                                                                        </Row></Dropdown.Item></td>
+
+                                                                </tr>
+                                                                <tr>
+
+
+
+                                                                </tr>
+
+
+
+
+
+
+
+
+                                                            </tbody>
+
+
+
+                                                        </table>
+
+                                                    </Dropdown.Menu>
+
+                                                </Dropdown>
+
+                                            </div>
+
                                         </Col>
                                             <Col lg={3} md={3} xs={12} className="mb-3">
                                                 <Form.Floating>
@@ -368,7 +465,7 @@ const PropertyDetails = () => {
                                                         type="text"
                                                         placeholder="Layout Name." />
                                                     <Form.Label htmlFor="floatingInputCustom">
-                                                        Layout Name.
+                                                        Layout Name
                                                     </Form.Label>
                                                 </Form.Floating>
                                             </Col>
@@ -439,7 +536,7 @@ const PropertyDetails = () => {
                                                 <Modal.Header closeButton>
                                                     <Modal.Title>Attention!</Modal.Title>
                                                 </Modal.Header>
-                                                <Modal.Body className="justify-content-center">This is prohibited property</Modal.Body>
+                                                <Modal.Body className="justify-content-center text-center">This is prohibited property</Modal.Body>
                                                 <Modal.Footer className="justify-content-center">
                                                     <Button className="submit" onClick={handleClose}>
                                                         Submit for request
@@ -966,10 +1063,22 @@ const PropertyDetails = () => {
 
                                                 <Modal.Footer>
 
-                                                    <button className="clear">Add New</button>
+
+                                                    <div className="pageNextBtn">
+
+                                                        <button>Add New</button>&ensp;&ensp;
+
+                                                        <Button onClick={handleClose1} className="next">
+
+                                                            Next
+
+                                                        </Button>
+
+                                                    </div>
+                                                    {/* <button className="clear">Add New</button>
                                                     <Button variant="primary" onClick={handleClose1}>
                                                         Next
-                                                    </Button>
+                                                    </Button> */}
 
 
                                                 </Modal.Footer>
@@ -1530,7 +1639,7 @@ const PropertyDetails = () => {
                                         </Row>
                                         <div className="pageNextBtn">
                                             <button >Cancel</button>&ensp;&ensp;
-                                            <button className="next">Done</button>
+                                            <button onClick={handleClick} className="next">Done</button>
                                         </div>
                                     </Accordion.Body>}
                                     {display && <Accordion.Body>
@@ -1873,7 +1982,7 @@ const PropertyDetails = () => {
                                 <Accordion.Item eventKey="0">
                                     <Accordion.Header>Duty Figure</Accordion.Header>
                                     <Accordion.Body>
-                                        <p class="text-center">This is total of two Schedule Duty Figures</p>
+                                        <p class="text-center1"><center>This is total of two Schedule Duty Figures</center></p>
                                         <Row className="mb-4">
                                             <Col lg={4} md={4} xs={12} className="mb-3">
                                                 <Form.Floating>

@@ -1,6 +1,7 @@
 import { Container, Col, Row, Form, Button } from "react-bootstrap"
 import Head from "next/head";
 import Stepper from '../components/Stepper'
+import Link from "next/link";
 const partyDetailsSearch = () => {
     return (
         <><Stepper /><div className="pageMainWrap innerpage">
@@ -88,7 +89,9 @@ const partyDetailsSearch = () => {
 
                             </Col>
                             <Col lg={3} md={3} xs={12} className="mb-3">
+                                <Link href={"/partyDetails"}>
                                 <button className="bluebuttonclass">Next</button>
+                                </Link>
                             </Col>
                         </Row>
                     </div>

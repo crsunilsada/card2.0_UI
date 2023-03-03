@@ -1,6 +1,7 @@
 import { Container, Col, Row, Form, Button } from "react-bootstrap"
 import Head from "next/head";
 import Stepper from '../components/Stepper'
+import Link from "next/link";
 const Endorsement = () => {
     return (
     <div className="pageMainWrap innerpage">
@@ -113,7 +114,10 @@ const Endorsement = () => {
                                 <div className="pageNextBtn">
                                     <button className=" clear">
                                         Exit
-                                    </button> <button className="next">Print</button>
+                                    </button>
+                                    <Link href={"/ScanningUpload"}>
+                                     <button className="next">Print</button>
+                                     </Link>
                                 </div>
                             </Col>
                         </Row>

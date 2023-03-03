@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import { useTable, usePagination } from "react-table";
 import Stepper from '../components/Stepper'
+import Link from "next/link";
 function Table({ columns, data }) {
   const {
     getTableProps,
@@ -94,6 +95,7 @@ function Table({ columns, data }) {
                   );
                 })}
                  <td className="text-center">
+                         <Link href={"/assigning"}>
                         <button className="basicDetails">
                           {" "}
                           <Image
@@ -103,6 +105,7 @@ function Table({ columns, data }) {
                           />
                           <small>Assigning</small>
                         </button>
+                        </Link>
                         <button className="print">
                           {" "}
                           <Image
@@ -269,18 +272,18 @@ function TableAmmend({ columns, data }) {
                           <Image
                             width={25}
                             height={25}
-                            src="/images/Scanning.svg"
+                            src="/images/Assigning.svg"
                           />
-                          <small>Scanning</small>
+                          <small>Assigning</small>
                         </button>
                         <button className="print">
                           {" "}
                           <Image
                             width={25}
                             height={25}
-                            src="/images/DigiSign.svg"
+                            src="/images/Reverse-Endosemenrt.svg"
                           />
-                          <small>Digital Sign</small>
+                          <small>Endorsement</small>
                         </button>
                         <button className="print">
                           {" "}
@@ -348,6 +351,7 @@ function TableAmmend({ columns, data }) {
 
 function AssigningVerification() {
   const [clicked, setclicked] = useState<boolean>(false)
+  const [activeTab, setActiveTab] = useState(0);
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
@@ -769,11 +773,33 @@ function AssigningVerification() {
 
           <div className="documentsTable pageTableMain pageTableContainer">
             <div className="documentsTable pageTableMain pageTableContainer">
-            <div className="pageTableTabs">
+            {/* <div className="pageTableTabs">
               <button onClick={onClickHandler}  className="accept active">Accept (30)</button>
               <button onClick={onClickHandlerAmmend}  className="ammend ">Ammend (5)</button>
-            </div>
-            <div className="table-responsive">
+            </div> */}
+           <div className="pageTableTabs">
+                  {["Accept (30)", "Ammend (5)"].map((o, i) => {
+                    return(
+                    <button
+                      key={o}
+                      className={i === activeTab ? "activeButton" : "button"}
+                      onClick={() => {
+                        if (o=="Accept (30)") {
+                        
+                          setclicked(false);
+                        } else {
+                    
+                          setclicked(true);
+                        }
+                        setActiveTab(i);
+                      }}
+                    >
+                      {o}
+                    </button>
+                    )
+                  })
+                }
+                </div> 
               
             <div className="table-responsive">
                 {clicked? 
@@ -782,7 +808,7 @@ function AssigningVerification() {
                 }
              
             </div>
-            </div>
+          
           </div>
           </div>
         </div>

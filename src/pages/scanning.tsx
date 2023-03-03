@@ -4,6 +4,7 @@ import { Container, Row, Col, Table, Tab, Nav, Form } from "react-bootstrap";
 import Header from "../components/Header";
 import Accordion from 'react-bootstrap/Accordion';
 import Stepper from '../components/Stepper'
+import Link from "next/link";
 const scanning = () => {
   const tableData = [
     {
@@ -457,7 +458,9 @@ const scanning = () => {
               </Col>
               <Col lg={4} md={4} xs={12}>
                 <div className="pageNextBtn scanningPageSave">
+                  <Link href={"/scanningDocuments"}>
                   <button className="next">Start Scan</button>
+                  </Link>
                 </div>
               </Col>
               <Col lg={3} md={4} xs={12}></Col>

@@ -1,6 +1,7 @@
 import { Container, Col, Row, Form, Button } from "react-bootstrap"
 import Head from "next/head";
 import Stepper from '../components/Stepper'
+import Link from "next/link";
 const partyDetails = () => {
     return (
         <><Stepper /><div className="pageMainWrap innerpage">
@@ -106,7 +107,7 @@ const partyDetails = () => {
                                                 </Col>
                                             </Row>
                                             <Row>
-                                                <Col lg={6} md={6} xs={12} className="mb-3">
+                                                <Col lg={6} md={6} xs={12} className="mb-4">
                                                     <Form.Floating>
                                                         <Form.Control
                                                             id="floatingInputCustom"
@@ -119,7 +120,7 @@ const partyDetails = () => {
                                                         </label>
                                                     </Form.Floating>
                                                 </Col>
-                                                <Col lg={6} md={6} xs={12} className="mb-3">
+                                                <Col lg={6} md={6} xs={12} className="mb-4">
                                                     <Form.Floating>
                                                         <Form.Control
                                                             id="floatingInputCustom"
@@ -186,9 +187,11 @@ const partyDetails = () => {
                                             <button className="clear">
                                                 Clear
                                             </button>
+                                            <Link href={"/partyDetailsScroll"}>
                                             <button className="next">
                                                 Done
                                             </button>
+                                            </Link>
                                         </div>
                                     </Col>
                                 </Row>

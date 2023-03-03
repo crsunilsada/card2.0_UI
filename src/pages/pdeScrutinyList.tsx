@@ -289,6 +289,13 @@ const pdeScrutinyList = () => {
                         })}
                       </tbody>
                     </Table>
+                    <div className="text-end">
+                      <Image
+                        width={500}
+                        height={50}
+                        src="/images/Pagination.svg"
+                      />
+                    </div>
                   </Tab.Pane>
                   <Tab.Pane eventKey="accept">
                     <Table bordered className="tableData listData tableheadBg">
@@ -473,6 +480,13 @@ const pdeScrutinyList = () => {
                         })}
                       </tbody>
                     </Table>
+                    <div className="text-end">
+                      <Image
+                        width={500}
+                        height={50}
+                        src="/images/Pagination.svg"
+                      />
+                    </div>
                   </Tab.Pane>
                   <Tab.Pane eventKey="refuse">
                     <Table bordered className="tableData listData tableheadBg">
@@ -553,6 +567,13 @@ const pdeScrutinyList = () => {
                         })}
                       </tbody>
                     </Table>
+                    <div className="text-end">
+                      <Image
+                        width={500}
+                        height={50}
+                        src="/images/Pagination.svg"
+                      />
+                    </div>
                   </Tab.Pane>
                 </Tab.Content>
 
@@ -601,7 +622,7 @@ const pdeScrutinyList = () => {
 
                 <div className="modal-body">
                   <Row>
-                    <h1 className="button">
+                    <h1 className="button-icon">
                       SALE DEED
                       <br>
                       </br>

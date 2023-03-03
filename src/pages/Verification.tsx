@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import { useTable, usePagination } from "react-table";
 import Stepper from '../components/Stepper'
+import Link from "next/link";
 function Table({ columns, data }) {
   const {
     getTableProps,
@@ -74,13 +75,7 @@ function Table({ columns, data }) {
             <th colSpan={2} className="extraFont text-center">
               Nature of Document
             </th>
-            <th colSpan={1} rowSpan={2} className="extraFont text-center">
-             Ammend Reason
-            </th>
-            <th colSpan={1} rowSpan={2} className="extraFont text-center">
-             Ammend Comments
-            </th>
-            <th rowSpan={2} className="text-center">
+           <th rowSpan={2} className="text-center">
               Action
             </th>
           </tr>
@@ -96,7 +91,7 @@ function Table({ columns, data }) {
               <tr {...row.getRowProps()}>
                 {row.cells.map((cell) => {
                   return (
-                    <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                    <td className="text-center"{...cell.getCellProps()}>{cell.render("Cell")}</td>
                   );
                 })}
                  <td className="text-center">
@@ -105,18 +100,18 @@ function Table({ columns, data }) {
                           <Image
                             width={20}
                             height={27}
-                            src="/images/PropertyDetails.svg"
+                            src="/images/Assigning.svg"
                           />
-                          <small>Property Details</small>
+                          <small>Assigning</small>
                         </button>
                         <button className="print">
                           {" "}
                           <Image
                             width={25}
                             height={25}
-                            src="/images/Cashreceipt.svg"
+                            src="/images/Reverse-Endosemenrt.svg"
                           />
-                          <small>Cash Receipt</small>
+                          <small>Endorsement</small>
                         </button>
                       </td>
               </tr>
@@ -265,27 +260,29 @@ function TableAmmend({ columns, data }) {
               <tr {...row.getRowProps()}>
                 {row.cells.map((cell) => {
                   return (
-                    <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                    <td className="text-center"{...cell.getCellProps()}>{cell.render("Cell")}</td>
                   );
                 })}
                <td className="text-center d-flex justify-content-around">
-                        <button className="basicDetails">
+               <Link href={"/propertyDetails"}>
+               <button className="basicDetails">
                           {" "}
                           <Image
-                            width={25}
-                            height={25}
-                            src="/images/Scanning.svg"
+                            width={20}
+                            height={27}
+                            src="/images/PropertyDetails.svg"
                           />
-                          <small>Scanning</small>
+                          <small>Property Details</small>
                         </button>
+                        </Link>
                         <button className="print">
                           {" "}
                           <Image
                             width={25}
                             height={25}
-                            src="/images/DigiSign.svg"
+                            src="/images/Cashreceipt.svg"
                           />
-                          <small>Digital Sign</small>
+                          <small>Cash Receipt</small>
                         </button>
                         <button className="print">
                           {" "}
@@ -353,6 +350,7 @@ function TableAmmend({ columns, data }) {
 
 function Verification() {
   const [clicked, setclicked] = useState<boolean>(false)
+  const [activeTab, setActiveTab] = useState(0);
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
@@ -410,19 +408,7 @@ function Verification() {
           },
         ],
       },
-      {
-        Header: "1",
-        columns: [
-          {
-            Header: "Ammend Reason",
-            accessor: "ammendreason",
-          },
-          {
-            Header: "Ammend Comments",
-            accessor: "ammendcomments",
-          },
-        ],
-      },
+     
     ],
     []
   );
@@ -509,8 +495,7 @@ function Verification() {
       bookNumber: "1",
       maj: "01",
       min: "01",
-      ammendreason: "wrong document",
-      ammendcomments: "Comments come here",
+      
     },
     {
       appNo: "456787654",
@@ -523,8 +508,7 @@ function Verification() {
       bookNumber: "2",
       maj: "02",
       min: "02",
-      ammendreason: "wrong document",
-      ammendcomments: "Comments come here",
+    
     },
     {
       appNo: "456787654",
@@ -537,8 +521,7 @@ function Verification() {
       bookNumber: "1",
       maj: "01",
       min: "01",
-      ammendreason: "wrong document",
-      ammendcomments: "Comments come here",
+     
     },
     {
       appNo: "456787654",
@@ -551,8 +534,7 @@ function Verification() {
       bookNumber: "2",
       maj: "02",
       min: "02",
-      ammendreason: "wrong document",
-      ammendcomments: "Comments come here",
+
     },
     {
       appNo: "456787654",
@@ -565,8 +547,7 @@ function Verification() {
       bookNumber: "1",
       maj: "01",
       min: "01",
-      ammendreason: "wrong document",
-      ammendcomments: "Comments come here",
+    
     },
     {
       appNo: "456787654",
@@ -579,8 +560,7 @@ function Verification() {
       bookNumber: "2",
       maj: "02",
       min: "02",
-      ammendreason: "wrong document",
-      ammendcomments: "Comments come here",
+   
     },
     {
       appNo: "456787654",
@@ -593,8 +573,7 @@ function Verification() {
       bookNumber: "1",
       maj: "01",
       min: "01",
-      ammendreason: "wrong document",
-      ammendcomments: "Comments come here",
+    
     },
     {
       appNo: "456787654",
@@ -607,8 +586,7 @@ function Verification() {
       bookNumber: "2",
       maj: "02",
       min: "02",
-      ammendreason: "wrong document",
-      ammendcomments: "Comments come here",
+ 
     },
   ];
 
@@ -785,10 +763,35 @@ function Verification() {
 
           <div className="documentsTable pageTableMain pageTableContainer">
             <div className="documentsTable pageTableMain pageTableContainer">
-            <div className="pageTableTabs">
+            {/* <div className="pageTableTabs">
               <button onClick={onClickHandler} className="accept ">Accept (30)</button>
               <button onClick={onClickHandlerAmmend}  className="ammend active">Ammend (5)</button>
-            </div>
+            </div> */}
+
+<div className="pageTableTabs">
+                  {["Accept (30)", "Ammend (5)"].map((o, i) => {
+                    return(
+                    <button
+                      key={o}
+                      className={i === activeTab ? "activeButton" : "button"}
+                      onClick={() => {
+                        if (o=="Accept (30)") {
+                        
+                          setclicked(false);
+                        } else {
+                    
+                          setclicked(true);
+                        }
+                        setActiveTab(i);
+                      }}
+                    >
+                      {o}
+                    </button>
+                    )
+                  })
+                }
+                </div>
+
             <div className="table-responsive">
                 {clicked? 
                 <TableAmmend columns={columnsAmmend} data={dataAmmend}/>:

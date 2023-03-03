@@ -31,7 +31,7 @@ function Table({ columns, data }) {
   return (
     <div className="tableWithPagination table-responsive">
       <table
-        className="tableData listData tableheadBg table"
+        className="tableData listData tableheadBg table text-center"
         {...getTableProps()}
       >
         <thead className="hiddenHead">
@@ -103,7 +103,7 @@ function Table({ columns, data }) {
                     <Image
                       width={20}
                       height={27}
-                      src="/images/basic-details.jpg" />
+                      src="/images/Basic-Details.svg" />
                     <small>View Basic Details</small>
                   </button>
                   <button className="print" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -187,110 +187,112 @@ function Tables({ columns, data }) {
         usePagination
     );
 
-    // Render the UI for your table
-    return (
-        <div className="tableWithPagination">
-            <table
-                className="tableData listData tableheadBg table"
-                {...getTableProps()}
-            >
-                <thead className="hiddenHead">
-                    {headerGroups.map((headerGroup) => (
-                        <tr {...headerGroup.getHeaderGroupProps()}>
-                            {headerGroup.headers.map((column) => (
-                                <th {...column.getHeaderProps()}>{column.render("Header")}</th>
-                            ))}
-                        </tr>
-                    ))}
-                </thead>
-                <thead>
-                    <tr>
-                        <th rowSpan={2} className="text-center">
-                            App No.
-                        </th>
-                        <th rowSpan={2} className="text-center">
-                            Ack. No.
-                        </th>
-                        <th rowSpan={2} className="text-center">
-                            CS No.
-                        </th>
-                        <th rowSpan={2} className="text-center">
-                            Ack. Year
-                        </th>
-                        <th rowSpan={2}>Presenter Name</th>
-                        <th rowSpan={2} className="text-center">
-                            No. of <br />
-                            Schedule
-                        </th>
-                        <th rowSpan={2}>
-                            CS No. & Ack No.
-                            <br />
-                            Generated Date & Time
-                        </th>
-                        <th rowSpan={2} className="text-center">
-                            Book <br />
-                            Number
-                        </th>
-                        <th colSpan={2} className="extraFont text-center">
-                            Nature of Document
-                        </th>
-                        <th rowSpan={2} className="text-center">
-                            Accept reason
-                        </th>
-                        <th rowSpan={2} className="text-center">
-                            Ammend reason
-                        </th>
-                        <th rowSpan={2} className="text-center">
-                            Action
-                        </th>
+  // Render the UI for your table
+  return (
+    <div className="tableWithPagination">
+      <table
+        className="tableData listData tableheadBg table text-center"
+        {...getTableProps()}
+      >
+        <thead className="hiddenHead">
+          {headerGroups.map((headerGroup) => (
+            <tr {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((column) => (
+                <th {...column.getHeaderProps()}>{column.render("Header")}</th>
+              ))}
+            </tr>
+          ))}
+        </thead>
+        <thead>
+          <tr>
+            <th rowSpan={2} className="text-center">
+              App No.
+            </th>
+            <th rowSpan={2} className="text-center">
+              Ack. No.
+            </th>
+            <th rowSpan={2} className="text-center">
+              CS No.
+            </th>
+            <th rowSpan={2} className="text-center">
+              Ack. Year
+            </th>
+            <th rowSpan={2}>Presenter Name</th>
+            <th rowSpan={2} className="text-center">
+              No. of <br />
+              Schedule
+            </th>
+            <th rowSpan={2}>
+              CS No. & Ack No.
+              <br />
+              Generated Date & Time
+            </th>
+            <th rowSpan={2} className="text-center">
+              Book <br />
+              Number
+            </th>
+            <th colSpan={2} className="extraFont text-center">
+              Nature of Document
+            </th>
+            <th rowSpan={2} className="text-center">
+              Accept reason
+            </th>
+            <th rowSpan={2} className="text-center">
+              Ammend reason
+            </th>
+            <th rowSpan={2} className="text-center">
+              Action
+            </th>
 
-                    </tr>
-                    <tr>
-                        <th className="text-center smallFont">Maj</th>
-                        <th className="text-center smallFont">Min</th>
-                    </tr>
-                </thead>
-                <tbody {...getTableBodyProps()}>
-                    {page.map((row, i) => {
-                        prepareRow(row);
-                        return (
-                            <tr {...row.getRowProps()}>
-                                {row.cells.map((cell) => {
-                                    return (
-                                        <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
-                                    );
-                                })}
-                                <td className="text-center d-flex">
-                                    <button
-                                        data-bs-toggle="modal"
-                                        data-bs-target="#viewBasicDetails"
-                                        className="basicDetails"
-                                    >
-                                        {" "}
-                                        <Image
-                                            width={20}
-                                            height={27}
-                                            src="/images/basic-details.jpg"
-                                        />
-                                        <small>View Basic Details</small>
-                                    </button>
-                                    <button className="print" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        {" "}
-                                        <Image width={25} height={25} src="/images/Print.svg" />
-                                        <small>Print</small>
-                                    </button>
-                                    <button className="print" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        {" "}
-                                        <Image width={25} height={25} src="/images/sroreview.png" />
-                                        <small>Submit sro for review</small>
-                                    </button>
-                                    {/* <Button active variant="primary" className="capture">Submit sro for review</Button> */}
-                                </td>
-                            </tr>
-                        );
-                    })}
-                </tbody>
-            </table>
+          </tr>
+          <tr>
+            <th className="text-center smallFont">Maj</th>
+            <th className="text-center smallFont">Min</th>
+          </tr>
+        </thead>
+        <tbody {...getTableBodyProps()}>
+          {page.map((row, i) => {
+            prepareRow(row);
+            return (
+              <tr {...row.getRowProps()}>
+                {row.cells.map((cell) => {
+                  return (
+                    <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                  );
+                })}
+                <td className="text-center d-flex">
+                  <button
+                    data-bs-toggle="modal"
+                    data-bs-target="#viewBasicDetails"
+                    className="basicDetails"
+                  >
+                    {" "}
+                    <Image
+                      width={20}
+                      height={27}
+                      src="/images/basic-details.jpg"
+                    />
+                    <small>View Basic Details</small>
+                  </button>
+                  <button className="print opacity-50"
+                  //  data-bs-toggle="modal" data-bs-target="#exampleModal"
+                  >
+                    {" "}
+                    <Image width={25} height={25} src="/images/Print.svg" />
+                    <small>Print</small>
+                  </button>
+                  <button className="print" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    {" "}
+                    <Image width={25} height={25} src="/images/sroreview.png" />
+                    <small>Submit sro for review</small>
+                  </button>
+                  {/* <Button active variant="primary" className="capture">Submit sro for review</Button> */}
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
 
             <div className="paginationMain">
                 <ul className="pagination d-flex align-items-center justify-content-end">
@@ -539,7 +541,7 @@ function documentPresentation() {
     ];
 
   return (
-    <><Stepper /><div className="pageMainWrap innerpage">
+    <><Stepper/><div className="pageMainWrap innerpage">
       <Head>
         <title>Document Presentation - CARD</title>
         <meta name="description" content="login" />
@@ -578,13 +580,55 @@ function documentPresentation() {
 
                 <div className="searchFiler">
                   <button className="today">Today</button>
-                  <button className="filter">
+                  <button className="filter"  data-bs-toggle="modal" data-bs-target="#exampleModals">
                     <small>Filters</small>
                     <Image width={20} height={20} src="/images/filter.svg" />
                   </button>
                 </div>
               </Col>
             </Row>
+            <div className="modal fade modal-sm" id="exampleModals" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h1 className="modal-title fs-5" id="exampleModalLabel">Clear</h1>
+                  <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div className="modal-body">
+                <Row>
+                            <Col lg={12} md={12} xs={12} className="mb-3">
+                                <Form.Floating>
+                                    <Form.Control
+                                        id="floatingInputCustom"
+                                        type="date"
+                                        placeholder="Start Date" />
+                                    <Form.Label htmlFor="floatingInputCustom">
+                                        Start Date
+                                    </Form.Label>
+                                </Form.Floating>
+                            </Col>
+                        </Row>
+                        <Row>
+                        <Col lg={12} md={12} xs={12} >
+                                <Form.Floating>
+                                    <Form.Control
+                                        id="floatingInputCustom"
+                                        type="date"
+                                        placeholder="End Date" />
+                                    <Form.Label htmlFor="floatingInputCustom">
+                                        End Date
+                                    </Form.Label>
+                                </Form.Floating>
+                            </Col>
+                        </Row>
+
+                </div>
+                <div className="modal-footer text-center d-flex justify-content-center">
+                  <button type="button" className="btn btn-primary text-center bluebuttonclass">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
           </Container>
 
                     <div className="documentsTable pageTableMain pageTableContainer">
@@ -592,24 +636,24 @@ function documentPresentation() {
                                 <div className="pageTabsMain">
                                     <div className="pageTableTabs">
 
-                                        <Nav variant="pills">
-                                            <Nav.Item>
-                                                <Nav.Link eventKey="accept"><button className="my-4">Accept (30)</button></Nav.Link>
-                                            </Nav.Item>
-                                            <Nav.Item>
-                                                <Nav.Link eventKey="ammend"><button className="my-4">Ammend (5)</button></Nav.Link>
-                                            </Nav.Item>
-                                        </Nav>
-                                        <Tab.Content>
-                                            <Tab.Pane eventKey="accept">
-                                                <Table columns={columns} data={data} />
-                                            </Tab.Pane>
-                                            <Tab.Pane eventKey="ammend">
-                                                <Tables columns={ammendcolumns} data={ammendData} />
-                                            </Tab.Pane>
-                                        </Tab.Content>
-                                    </div>
-                                </div>
+                  <Nav variant="pills">
+                    <Nav.Item>
+                      <Nav.Link eventKey="accept"><button className="button my-4">Accept (30)</button></Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link eventKey="ammend"><button className="button my-4">Ammend (5)</button></Nav.Link>
+                    </Nav.Item>
+                  </Nav>
+                  <Tab.Content>
+                    <Tab.Pane eventKey="accept">
+                      <Table columns={columns} data={data} />
+                    </Tab.Pane>
+                    <Tab.Pane eventKey="ammend">
+                      <Tables columns={ammendcolumns} data={ammendData} />
+                    </Tab.Pane>
+                  </Tab.Content>
+                </div>
+              </div>
 
                             </Tab.Container>
 
@@ -975,6 +1019,13 @@ function documentPresentation() {
                                             </Form.Floating>
                                         </Col>
                                     </Row>
+     <Row>
+                    <Col>
+                    <div className="modal-footer text-center d-flex">
+                  <button type="button" className="btn btn-primary text-center bluebuttonclass">Save</button>
+                </div>
+                    </Col>
+                  </Row>
                                 </div>
                             </div>
                         </div>

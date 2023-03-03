@@ -1,6 +1,7 @@
 import { Radio } from "@mui/material";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import { Container, Row, Col, Table, Tab, Nav, Form, Accordion } from "react-bootstrap";
 import Stepper from '../components/Stepper'
 const Assigning = () => {
@@ -793,7 +794,9 @@ const Assigning = () => {
           <hr/>
           <div className="pageTableContainer">
             <div className="pageNextBtn">
+              <Link href={"/Endorsement"}>
               <button className="next">Save</button>
+              </Link>
             </div>
           </div>
         </div>

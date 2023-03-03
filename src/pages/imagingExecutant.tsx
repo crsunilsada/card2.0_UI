@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import { Container, Row, Col, Table, Tab, Nav, Form } from "react-bootstrap";
 import Stepper from '../components/Stepper'
 const imagingExecutant = () => {
@@ -384,7 +385,9 @@ const imagingExecutant = () => {
 
                   <div className="pageNextBtn">
                     <button className="clear">Clear</button>
+                    <Link href={"/AssigningVerification"}>
                     <button className="next">Next</button>
+                    </Link>
                   </div>
                 </Tab.Pane>
               </Tab.Content>
