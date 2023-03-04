@@ -1,10 +1,36 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useState } from "react";
 import Link from "next/link";
-import { Container, Row, Col, Table, Tab, Nav, Form } from "react-bootstrap";
+import { Container, Row, Col, Table, Tab, Nav, Form, Button } from "react-bootstrap";
 import Stepper from '../components/Stepper'
 const imagingExecutant = () => {
+  const [display, setdisplay] = useState(false)
+const handleClick = () => {
+  setdisplay(true)
+}
+const [display1, setdisplay1] = useState(false)
+const handleClick1 = () => {
+  setdisplay1(true)
+}
   const ExecutantData = [
+    {
+      executantId: "Executant - 999-1",
+      name: "Raghav Dayal",
+      photo: "/images/border.svg",
+      thumbImpression: "/images/border.svg",
+      esignSignature: "/images/border.svg",
+      capture: "capture",
+    },
+
+    {
+      executantId: "Executant - 999-1",
+      name: "Raghav Dayal",
+      photo: "/images/border.svg",
+      thumbImpression: "/images/border.svg",
+      esignSignature: "/images/border.svg",
+      capture: "capture",
+    },
     {
       executantId: "Executant - 999-1",
       name: "Raghav Dayal",
@@ -49,8 +75,55 @@ const imagingExecutant = () => {
         <meta name="description" content="login" />
         <link rel="icon" href="/igrsfavicon.ico" />
       </Head>
-
+      {!display &&
       <div className="mainWrapper">
+         {display1 &&
+
+                         <div className="wrapperInner">
+                         <div className="acknowledgement">
+                             <button className="partyDetails">Party Details</button>
+                             <button className="active imaging">Imaging</button>
+                         </div>
+                         <div className='d-flex justify-content-center align-items-center flex-column'>
+                             <Row className="justify-content-md-center">
+                                  <Col>
+                                       <div className='my-5 crop-image-text mx-auto'>
+                                           <Image
+                                               width={23}
+                                               height={23}
+                                               src="/images/Crop.svg"
+                                               alt='picture'
+                                           /> &nbsp;
+                                           <u><strong>CROP THE BELOW IMAGE AND PROCEED</strong></u></div>
+                                   </Col>
+                               </Row>
+                               <Row>
+                                   <Col>
+                                       <div className='sign'>
+                                           <div className="my-5 py-2 px-1">
+                                               <Image
+                                                   src={"/images/sign.svg"}
+                                                   alt="Picture of the person"
+                                                   width={129}
+                                                   height={59}
+                                               /></div>
+                                       </div>
+                                   </Col>
+                               </Row>
+
+                               <Row>
+                                   <Col>
+                                       <div className='pageNextBtn d-flex'>
+                                           <Button className="btn btn-light clear m-2">Retake</Button>
+                                           <Button className='next btn btn-light m-2'>Done</Button>
+                                       </div>
+                                   </Col>
+                               </Row>
+                           </div>
+                       </div>
+                        }
+        {!display1 &&
+
         <div className="wrapperInner">
           <div className="acknowledgement">
             <button className="partyDetails">Party Details</button>
@@ -105,7 +178,7 @@ const imagingExecutant = () => {
                   </Nav.Item>
                 </Nav>
               </div>
-              <br/>  
+              <br/>
               <Tab.Content>
                 <Tab.Pane eventKey="first">
                   <Table bordered className="tableData listData tableheadBg">
@@ -130,9 +203,9 @@ const imagingExecutant = () => {
                               <div className="fcheckbox">
                                 <Form.Check type={"checkbox"} name="photo" />
                               </div>
-                              <img src={item.photo} 
+                              <img src={item.photo} onClick={handleClick}
                                 className="border border-dark"></img>
-                                
+
                             </td>
                             <td className="text-center">
                               <div className="fcheckbox">
@@ -148,10 +221,10 @@ const imagingExecutant = () => {
                                   type={"checkbox"}
                                   name="esignSignature" />
                               </div>
-                              <img src={item.esignSignature} />
+                              <img src={item.esignSignature}    />
                             </td>
                             <td>
-                              <button className="capture">
+                              <button className="capture" onClick={handleClick1}>
                                 {item.capture}
                               </button>
                             </td>
@@ -393,8 +466,54 @@ const imagingExecutant = () => {
               </Tab.Content>
             </Tab.Container>
           </div>
-        </div>
-      </div>
+
+
+        </div>}
+      </div>}
+
+      {display &&
+       <div className="mainWrapper">
+
+       <div className="wrapperInner">
+           <div className="acknowledgement">
+               <button className="partyDetails">Party Details</button>
+               <button className="active imaging">Imaging</button>
+           </div>
+           <div className='d-flex justify-content-center align-items-center flex-column'>
+                            <Row className="justify-content-center">
+                                <Col >
+                                    <div className="my-5 crop-image-text">
+                                        <Image
+                                            width={23}
+                                            height={23}
+                                            src="/images/Crop.svg"
+                                            alt='picture'
+                                        /> &nbsp;
+                                        <u><strong>CROP THE BELOW IMAGE AND PROCEED</strong></u></div>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col >
+                                    <div className='sign p-1'>
+                                        <Image className='crops-image'
+                                            src={"/images/person.svg"}
+                                            alt="Picture of the person"
+                                            width={148}
+                                            height={189}
+                                        />
+                                    </div>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <div className='pageNextBtn d-flex'>
+                                        <Button className="btn btn-light clear m-2">Retake</Button>
+                                        <Button className='next btn btn-light m-2'>Done</Button>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </div></div></div>}
+
     </div></>
   );
 };

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Button, Col, Row } from "react-bootstrap";
-import LoginBG from '../../../public/images/Login-BG.png';
+import LoginBG from '../../../public/images/Login1-BG.png';
 import { MdOutlineKeyboardBackspace } from "react-icons/md";
 import { TbRefresh } from "react-icons/tb";
 import Link from "next/link";
@@ -19,7 +19,7 @@ const LoginOtp = () => {
                 <div className="LoginPage mx-5">
                     <Row className='Login-rightGrd'>
                         <Col lg={7} md={7} xs={7}>
-                            <Image src={LoginBG} alt="login-BG" />
+                            <Image src={LoginBG} alt="login-BG" height="780px"/>
                         </Col>
                         <Col lg={5} md={5} xs={5}>
                             <Row className="my-3">
@@ -68,7 +68,7 @@ const LoginOtp = () => {
                             <Row>
                                 <Col lg={5} md={5} xs={5}></Col>
                                 <Col lg={4} md={4} xs={4}>
-                                    <Link href={"/Login/WelcomePage"}><Button className="bluebuttonclass my-3">Submit</Button></Link>
+                                    <Link href={"/Login/WelcomePage"}><Button className="loginbuttonclass my-3">Submit</Button></Link>
                                 </Col>
                             </Row>
                             <Row className="my-5">

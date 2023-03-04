@@ -7,7 +7,7 @@ const Header = () => {
   const router = useRouter();
   let headerimage = {};
   let headerclassname = {};
-
+  let loginheaderclass = {};
   let pagesNav = '';
 
   if (router.pathname === '/' || router.pathname === '/homePage') {
@@ -17,6 +17,8 @@ const Header = () => {
   else if (router.pathname === '/Login/LoginPage' || router.pathname === '/Login/LoginOtp' || router.pathname === '/Login/WelcomePage'){
     headerimage = '/images/Login.png';
     headerclassname = 'loginheaderspace';
+    loginheaderclass = 'headernone';
+
   }
    else {
     headerimage = '/images/PDE.png';
@@ -29,7 +31,7 @@ const Header = () => {
 
   return (
     <><div className={`mainHeader ${headerclassname}${pagesNav}`}><div className={`fixed-top ${headerclassname}`}><img src={headerimage} width="100%"></img><header className={styles.header_body}>
-      <Navbar className="navigation bg-primary" bg="light" expand="lg">
+      <Navbar className={`navigation bg-primary ${loginheaderclass}`} bg="light" expand="lg">
         <Container className="headerNavContainer">
           <div className="header-main-nav">
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -51,7 +53,6 @@ const Header = () => {
 
 
                 <nav >
-
                   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                   </button>
@@ -97,7 +98,7 @@ const Header = () => {
       </Navbar>
     </header>
     </div>
-      <div className="header-space"></div>
+      <div className={`header-space ${loginheaderclass}`}></div>
       </div></>
   );
 };

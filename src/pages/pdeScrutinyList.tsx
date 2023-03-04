@@ -9,7 +9,7 @@ const pdeScrutinyList = () => {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
   const ammendData=[
-    
+
   ]
   const pendingtableData = [
     {
@@ -463,7 +463,6 @@ const pdeScrutinyList = () => {
                                   data-bs-target="#viewBasicDetails"
                                   className="basicDetails"
                                 >
-                                 
                                   <Image
                                     width={20}
                                     height={27}
@@ -474,7 +473,7 @@ const pdeScrutinyList = () => {
                               </td>
                               <td className="text-center">{item.ammendReason}</td>
                               <td className="text-center">{item.ammend_datetime_SRO}</td>
-                              <td className="text-center">{item.ammend_comments}</td> 
+                              <td className="text-center">{item.ammend_comments}</td>
                             </tr>
                           );
                         })}
@@ -550,7 +549,7 @@ const pdeScrutinyList = () => {
                                   data-bs-target="#viewBasicDetails"
                                   className="basicDetails"
                                 >
-                                  
+
                                   <Image
                                     width={20}
                                     height={27}

@@ -727,39 +727,115 @@ function Verification() {
             <h4>Verification</h4>
           </div>
 
-          <Container>
-            <Row className="justify-content-md-center">
-              <Col lg={7} md={8} xs={12} className="pageTableSearch">
-                <form className="md-form">
-                  <div className={`input-group md-form form-sm form-1 pl-0`}>
-                    <input
-                      className={`form-control form-control-sm ml-3 w-75`}
-                      type="text"
-                      placeholder="Search Here.."
-                      aria-label="Search" />
-                    <div className={`input-group-prepend`}>
-                      <button
-                        className={`btn btn-outline-success`}
-                        type="submit"
-                      >
+            <Container>
+              <Row className="justify-content-md-center">
+                <Col lg={7} md={8} xs={12} className="pageTableSearch">
+                  <form className="md-form">
+                    <div className={`input-group md-form form-sm form-1 pl-0`}>
+                      <input
+                        className={`form-control form-control-sm ml-3 w-75`}
+                        type="text"
+                        placeholder="Search Here.."
+                        aria-label="Search"
+                      />
+                      <div className={`input-group-prepend`}>
+                        <button
+                          className={`btn btn-outline-success`}
+                          type="submit"
+                        >
+                          <Image
+                            width={23}
+                            height={23}
+                            src="/images/Search-icon.svg"
+                          />
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                  {clicked && (
+                    <div className="searchFiler">
+                      <button className="today">Today</button>
+                      <button className="filter"
+                       data-bs-toggle="modal"
+                       data-bs-target="#exampleModals"
+                     >
+                        <small>Filters</small>
                         <Image
-                          width={23}
-                          height={23}
-                          src="/images/Search-icon.svg" />
+                          width={20}
+                          height={20}
+                          src="/images/filter.svg"
+                        />
+                      </button>
+                    </div>
+                  )}
+                </Col>
+              </Row>
+              <div
+                className="modal fade modal-sm"
+                id="exampleModals"
+                tabIndex={-1}
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div className="modal-dialog">
+                  <div className="modal-content">
+                    <div className="modal-header">
+                      <h1 className="modal-title fs-5" id="exampleModalLabel">
+                        Clear
+                      </h1>
+                      <button
+                        type="button"
+                        className="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div className="modal-body">
+                      <Row>
+                        <Col lg={12} md={12} xs={12} className="mb-3">
+                          <Form.Floating>
+                            <Form.Control
+                              id="floatingInputCustom"
+                              type="date"
+                              placeholder="Start Date"
+                            />
+                            <Form.Label htmlFor="floatingInputCustom">
+                              Start Date
+                            </Form.Label>
+                          </Form.Floating>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col lg={12} md={12} xs={12}>
+                          <Form.Floating>
+                            <Form.Control
+                              id="floatingInputCustom"
+                              type="date"
+                              placeholder="End Date"
+                            />
+                            <Form.Label htmlFor="floatingInputCustom">
+                              End Date
+                            </Form.Label>
+                          </Form.Floating>
+                        </Col>
+                      </Row>
+                    </div>
+                    <div className="modal-footer text-center d-flex justify-content-center">
+                      <button
+                        type="button"
+                        className="btn btn-primary text-center bluebuttonclass"
+                      >
+                        Save
                       </button>
                     </div>
                   </div>
-                </form>
-                { clicked && <div className="searchFiler">
-                  <button className="today">Today</button>
-                  <button className="filter">
-                    <small>Filters</small>
-                    <Image width={20} height={20} src="/images/filter.svg" />
-                  </button>
-                </div>}
-              </Col>
-            </Row>
-          </Container>
+                </div>
+              </div>
+
+
+
+
+            </Container>
 
           <div className="documentsTable pageTableMain pageTableContainer">
             <div className="documentsTable pageTableMain pageTableContainer">
@@ -792,18 +868,19 @@ function Verification() {
                 }
                 </div>
 
-            <div className="table-responsive">
-                {clicked? 
-                <TableAmmend columns={columnsAmmend} data={dataAmmend}/>:
-                <Table columns={columns} data={data} />
-                }
-             
+                <div className="table-responsive">
+                  {clicked ? (
+                    <TableAmmend columns={columnsAmmend} data={dataAmmend} />
+                  ) : (
+                    <Table columns={columns} data={data} />
+                  )}
+                </div>
+              </div>
             </div>
-          </div>
           </div>
         </div>
       </div>
-    </div></>
+    </>
   );
 };
 export default Verification;

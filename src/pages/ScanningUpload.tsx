@@ -132,8 +132,8 @@ function Table({ columns, data }) {
         </tbody>
       </table>
 
-    
-                 
+
+
 
       <div className="paginationMain">
         <ul className="pagination d-flex align-items-center justify-content-end">
@@ -246,7 +246,7 @@ function ScanningUpload() {
 
 
 
-  
+
 
 const data = [
     {
@@ -373,7 +373,7 @@ const data = [
     },
   ];
 
-  
+
 
 return (
   <>
@@ -415,7 +415,7 @@ return (
                   </div>
                 </form>
 
-                  
+
                 </Col>
               </Row>
             </Container>
@@ -436,10 +436,10 @@ return (
                       className={i === activeTab ? "activeButton" : "button"}
                       onClick={() => {
                         if (o=="Accept (30)") {
-                        
+
                           setclicked(false);
                         } else {
-                    
+
                           setclicked(true);
                         }
                         setActiveTab(i);
@@ -453,15 +453,15 @@ return (
                 </div>
 
                 <div>
-                  <button className="digital-sign-btn">
+                  <button className="digital-sign-btn " >
                     Bulk Digital Sign
                   </button>
                 </div>
               </div>
               <div className="table-responsive">
-               
+
                   <Table columns={columns} data={data} />
-            
+
               </div>
             </div>
           </div>

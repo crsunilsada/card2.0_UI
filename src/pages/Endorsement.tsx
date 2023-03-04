@@ -100,7 +100,7 @@ const Endorsement = () => {
                                     <option value="AADHAR">AADHAR</option>
                                     <option value="REPRESENT/SEC 88">REPRESENT/SEC 88</option>
                                     <option value="NRI">NRI</option>
-                                </Form.Select><span color="red"  > Sub Registrar Name mismatched</span>
+                                </Form.Select><span style={{color:"red"}}  > Sub Registrar Name mismatched</span>
                             </Col>
                         </Row>
                         <Row>

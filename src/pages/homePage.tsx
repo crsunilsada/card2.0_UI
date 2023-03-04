@@ -5,7 +5,6 @@ import Stepper from '../components/Stepper'
 import Link from 'next/link';
 const Homepage = () => {
     return (
-
         <>
             <div>
             <div className="pageMainWrap homepage">
@@ -14,16 +13,17 @@ const Homepage = () => {
                     <meta name="description" content="login" />
                     <link rel="icon" href="/igrsfavicon.ico" />
                 </Head>
+                <div style={{height: '200px'}}></div>
                 <div className='d-flex justify-content-md-center'>
-                    <div className="card m-3  " style={{ width: "18rem" }}>
+                    <div className="card m-3 " style={{ width: "18rem" }}>
                         <div className="card-body text-center m-1">
                             <Image className='m-4'
                                 src={"/images/manual-entry.png"}
                                 alt="Manual entry"
                                 width={85}
                                 height={85} />
-                            <h5 className="card-title text-center mb-3">Manual Entry</h5>
-                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <h5 className="card-title text-center mb-3 opacity-25">Manual Entry</h5>
+                            <p className="opacity-25">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             {/* <a href="#" className ="btn btn-primary">Go somewhere</a> */}
                         </div>
                     </div>
@@ -38,7 +38,7 @@ const Homepage = () => {
                                 height={85} />
 
                             <h5 className="card-title text-center mb-3">Online Public Data Entry Service</h5>
-                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             {/* <a href="#" className ="btn btn-primary">Go somewhere</a> */}
                         </div>
                     </div>

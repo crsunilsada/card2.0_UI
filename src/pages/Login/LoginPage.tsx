@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Button, Col, Row } from "react-bootstrap";
-import LoginBG from '../../../public/images/Login-BG.png';
+import LoginBG from '../../../public/images/Login1-BG.png';
 import Modal from 'react-bootstrap/Modal';
 import { useState } from "react";
 import { AiOutlineCloseCircle } from "react-icons/ai";
@@ -45,15 +45,15 @@ const LoginPage = () => {
                 <div className="LoginPage mx-5 ">
                     <Row className='Login-rightGrd'>
                         <Col lg={7} md={7} xs={7}>
-                            <Image src={LoginBG} alt="login-BG" height={720}/>
+                            <Image src={LoginBG} alt="login-BG" height="780px" />
                         </Col>
                         <Col lg={5} md={5} xs={5}>
-                            <Row className="my-3">
+                            <Row className="my-3 mx-4">
                                 <Col lg={12} md={12} xs={12}>
                                     <h5>Hi, Welcome Back!</h5>
                                 </Col>
                             </Row>
-                            <Row className="my-3">
+                            <Row className="my-3 mx-4">
                                 <Col lg={2} md={2} xs={2}>
                                     <div>
                                         <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />&nbsp;
@@ -78,7 +78,7 @@ const LoginPage = () => {
                                         <label className="form-check-label" >SRO</label>
                                     </div>
                                 </Col>
-                                <Col lg={3} md={3} xs={3}>
+                                <Col lg={2} md={3} xs={3}>
                                     <div>
                                         <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5" />&nbsp;
                                         <label className="form-check-label" >Staff</label>
@@ -104,7 +104,7 @@ const LoginPage = () => {
                             <Row>
                                 <Col lg={6} md={6} xs={6}></Col>
                                 <Col lg={4} md={4} xs={4}>
-                                    <Button className="bluebuttonclass my-3" onClick={() => setModalShow(true)}><Link href={"/Login/LoginOtp"} >Next</Link></Button>
+                                    <Button className="loginbuttonclass my-3" onClick={() => setModalShow(true)}><Link href={"/Login/LoginOtp"} >Next</Link></Button>
                                     <MyVerticallyCenteredModal
                                         show={modalShow}
                                         onHide={() => setModalShow(false)}

@@ -80,15 +80,15 @@ const ScanningDocument = () => {
             </Row>
 
             <div className="wrapperInner">
-              <h4>Scanned Pages</h4>
+            <h4 className="p-4">Scanned Pages</h4>
 
-              <Row>
-                <Col lg={6} md={6} xs={12} className="mb-3 ">
+              <Row className="m-4">
+                <Col lg={6} md={6} xs={12} className="mb-3">
                   <Row className="mb-4">
                     <Col lg={4} md={4} xs={12} className="mb-3">
                       <Image
                         width={117}
-                        height={175}
+                        height={150}
                         src="/images/doc 1.svg"
                       />
                     </Col>
@@ -121,7 +121,7 @@ const ScanningDocument = () => {
                     <Col lg={4} md={4} xs={12} className="mb-3">
                       <Image
                         width={117}
-                        height={175}
+                        height={150}
                         src="/images/doc 1.svg"
                       />
                     </Col>
@@ -138,7 +138,7 @@ const ScanningDocument = () => {
                     <Col lg={4} md={4} xs={12} className="mb-3">
                       <Image
                         width={117}
-                        height={175}
+                        height={150}
                         src="/images/doc 1.svg"
                       />
                     </Col>
@@ -171,7 +171,7 @@ const ScanningDocument = () => {
                     <Col lg={4} md={4} xs={12} className="mb-3">
                       <Image
                         width={117}
-                        height={175}
+                        height={150}
                         src="/images/doc 1.svg"
                       />
                     </Col>
@@ -189,16 +189,16 @@ const ScanningDocument = () => {
               </Row>
 
               <Row>
-                <Col lg={8} md={8} xs={12} className="mb-3 ">
-                </Col>
-
-                <Col lg={4} md={4} xs={12} className="mb-3 ">
-
+                <Col lg={6} md={6} xs={12} className="mb-3 ">
+                </Col >
+                <Col lg={6} md={6} xs={12} className="mb-3">
                   <Row className="mb-4">
-                    <Col lg={6} md={6} xs={12}>
+                  <Col lg={2} md={2} xs={12}>
+
+                </Col>
+                    <Col lg={3} md={3} xs={12}>
                       <button type="button" className="whitebuttonclass">Rescan this page</button>
                     </Col>
-
                     <Col lg={3} md={3} xs={12}>
                       <button type="button" className="whitebuttonclass">Reject</button>
 
@@ -207,6 +207,9 @@ const ScanningDocument = () => {
                       <Link href={"/ScanningUpload"}>
                       <button type="button" className="bluebuttonclass">Save</button>
                       </Link>
+
+                    </Col>
+                    <Col lg={2} md={2} xs={12}>
 
                     </Col>
                   </Row>

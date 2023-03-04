@@ -813,7 +813,7 @@ function documentPresentation() {
                                                 <Form.Control
                                                     id="floatingInputCustom"
                                                     type="text"
-                                                    placeholder="Presentant Name"
+                                                    placeholder="Presentant Name" value="subbu"
                                                 />
                                                 <Form.Label htmlFor="floatingInputCustom">
                                                     Presentant Name
@@ -825,7 +825,7 @@ function documentPresentation() {
                                                 <Form.Control
                                                     id="floatingInputCustom"
                                                     type="text"
-                                                    placeholder="Nominee Name"
+                                                    placeholder="Nominee Name" value="anusha"
                                                 />
                                                 <Form.Label htmlFor="floatingInputCustom">
                                                     Nominee Name
@@ -837,7 +837,7 @@ function documentPresentation() {
                                                 <Form.Control
                                                     id="floatingInputCustom"
                                                     type="text"
-                                                    placeholder="Nominee Name"
+                                                    placeholder="Nominee Name" value=""
                                                 />
                                                 <Form.Label htmlFor="floatingInputCustom">
                                                     Nominee Aadhar No.
@@ -858,12 +858,15 @@ function documentPresentation() {
 
                                     <Row>
                                         <Col lg={12} md={12} xs={12} className="mb-3">
-                                            <Form.Select aria-label="mapClaimants">
-                                                <option>ID Proof</option>
-                                                <option value="1">Schedule 1</option>
-                                                <option value="2">Schedule 2</option>
-                                                <option value="3">Schedule 3</option>
-                                            </Form.Select>
+                                        <Form.Floating>
+                        <Form.Control
+                          id="floatingInputCustom"
+                          type="text"
+                          placeholder="ID Number" value="Subbu"/>
+                        <Form.Label htmlFor="floatingInputCustom">
+                          ID Proof
+                        </Form.Label>
+                      </Form.Floating>
                                         </Col>
                                     </Row>
 
@@ -873,7 +876,7 @@ function documentPresentation() {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="ID Number" />
+                          placeholder="ID Number" value="2524542" readOnly/>
                         <Form.Label htmlFor="floatingInputCustom">
                           ID Number
                         </Form.Label>
@@ -884,7 +887,7 @@ function documentPresentation() {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Name" />
+                          placeholder="Name" value="Subbarao mucharla" readOnly/>
                         <Form.Label htmlFor="floatingInputCustom">
                           Name
                         </Form.Label>
@@ -895,29 +898,42 @@ function documentPresentation() {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Age" />
+                          placeholder="Age" value="39" />
                         <Form.Label htmlFor="floatingInputCustom">
                           Age
                         </Form.Label>
                       </Form.Floating>
                     </Col>
-                    <Col lg={4} md={8} xs={12} className="mb-3">
-
-                      <Form.Control
-                        className="so"
-                        id="floatingInputCustom"
-                        type="text"
-                        placeholder="S/o" />
-                      <Form.Floating className="relationName">
-                        <Form.Control
-                          id="floatingInputCustom"
-                          type="text"
-                          placeholder="Relation Name" />
-                        <Form.Label htmlFor="floatingInputCustom">
-                          Relation Name
-                        </Form.Label>
-                      </Form.Floating>
+                    <Col lg={4} md={6} xs={12} className="mb-3">
+                      <div className="input-group">
+                        <button
+                          className="btn btn-outline-secondary dropdown-toggle "
+                          type="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                          style={{ color: "#4D4D4D", borderRadius: "8px 0px 0px 8px", borderColor: "#6096BA", backgroundColor: "#F6F9FB" }}
+                        >
+                          S/o
+                        </button>
+                        <ul className="dropdown-menu">
+                          <li><a className="dropdown-item" href="#">Option 1</a></li>
+                          <li><a className="dropdown-item" href="#">Option 2</a></li>
+                          <li><a className="dropdown-item" href="#">Option 3</a></li>
+                        </ul>
+                        <Form.Floating>
+                          <Form.Control
+                            id="floatingInputCustom"
+                            type="text"
+                            placeholder="Age"
+                            className="form-control"
+                          />
+                          <Form.Label htmlFor="floatingInputCustom">
+                            Relation Name
+                          </Form.Label>
+                        </Form.Floating>
+                      </div>
                     </Col>
+
                   </Row>
 
                   <Row>
@@ -926,7 +942,7 @@ function documentPresentation() {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Address" />
+                          placeholder="Address" value="hdyerabd" readOnly/>
                         <Form.Label htmlFor="floatingInputCustom">
                           Address
                         </Form.Label>
@@ -937,7 +953,7 @@ function documentPresentation() {
                         <Form.Control
                           id="floatingInputCustom"
                           type="date"
-                          placeholder="Presentant Date" />
+                          placeholder="Presentant Date" value="03-03-2023"/>
                         <Form.Label htmlFor="floatingInputCustom">
                           Presentant Date
                         </Form.Label>
@@ -948,7 +964,7 @@ function documentPresentation() {
                         <Form.Control
                           id="floatingInputCustom"
                           type="date"
-                          placeholder="Stamp Duty Borne by Document" />
+                          placeholder="Stamp Duty Borne by Document" value="03-03-2023" />
                         <Form.Label htmlFor="floatingInputCustom">
                           Stamp Duty Borne by Document
                         </Form.Label>
@@ -962,7 +978,7 @@ function documentPresentation() {
                                                 <Form.Control
                                                     id="floatingInputCustom"
                                                     type="text"
-                                                    placeholder="No of Sheets"
+                                                    placeholder="No of Sheets" value="3" readOnly
                                                 />
                                                 <Form.Label htmlFor="floatingInputCustom">
                                                     No of Sheets
@@ -970,49 +986,64 @@ function documentPresentation() {
                                             </Form.Floating>
                                         </Col>
                                         <Col lg={3} md={4} xs={12} className="mb-3">
-
-                                            <Form.Select aria-label="mapClaimants">
-                                                <option>Registration Type</option>
-                                                <option value="1">Schedule 1</option>
-                                                <option value="2">Schedule 2</option>
-                                                <option value="3">Schedule 3</option>
-                                            </Form.Select>
+                                        <Form.Floating>
+                                                <Form.Control
+                                                    id="floatingInputCustom"
+                                                    type="text"
+                                                    placeholder=" Registration Type" value="3" readOnly
+                                                />
+                                                <Form.Label htmlFor="floatingInputCustom">
+                                                    Registration Type
+                                                </Form.Label>
+                                            </Form.Floating>
                                         </Col>
                                         <Col lg={3} md={4} xs={12} className="mb-3">
-                                            <Form.Select aria-label="mapClaimants">
-                                                <option>Book Type</option>
-                                                <option value="1">Schedule 1</option>
-                                                <option value="2">Schedule 2</option>
-                                                <option value="3">Schedule 3</option>
-                                            </Form.Select>
+                                        <Form.Floating>
+                                                <Form.Control
+                                                    id="floatingInputCustom"
+                                                    type="text"
+                                                    placeholder="Book Type" value="3" readOnly
+                                                />
+                                                <Form.Label htmlFor="floatingInputCustom">
+                                                Book Type
+                                                </Form.Label>
+                                            </Form.Floating>
                                         </Col>
                                     </Row>
 
-                  <h5 className="mt-4 mb-3">Nature of Document</h5>
+                                    <h5 className="mt-4 mb-3">Nature of Document</h5>
 
                                     <Row>
                                         <Col lg={3} md={4} xs={12} className="mb-3">
-                                            <Form.Select aria-label="mapClaimants">
-                                                <option>Minor</option>
-                                                <option value="1">Schedule 1</option>
-                                                <option value="2">Schedule 2</option>
-                                                <option value="3">Schedule 3</option>
-                                            </Form.Select>
+                                        <Form.Floating>
+                                                <Form.Control
+                                                    id="floatingInputCustom"
+                                                    type="text"
+                                                    placeholder="Minor" value="3" readOnly
+                                                />
+                                                <Form.Label htmlFor="floatingInputCustom">
+                                                Minor
+                                                </Form.Label>
+                                            </Form.Floating>
                                         </Col>
                                         <Col lg={3} md={4} xs={12} className="mb-3">
-                                            <Form.Select aria-label="mapClaimants">
-                                                <option>Minor</option>
-                                                <option value="1">Schedule 1</option>
-                                                <option value="2">Schedule 2</option>
-                                                <option value="3">Schedule 3</option>
-                                            </Form.Select>
+                                        <Form.Floating>
+                                                <Form.Control
+                                                    id="floatingInputCustom"
+                                                    type="text"
+                                                    placeholder="Major" value="3" readOnly
+                                                />
+                                                <Form.Label htmlFor="floatingInputCustom">
+                                                Major
+                                                </Form.Label>
+                                            </Form.Floating>
                                         </Col>
                                         <Col lg={3} md={4} xs={12} className="mb-3">
                                             <Form.Floating>
                                                 <Form.Control
                                                     id="floatingInputCustom"
                                                     type="text"
-                                                    placeholder="No of Schedules"
+                                                    placeholder="No of Schedules" value="2"
                                                 />
                                                 <Form.Label htmlFor="floatingInputCustom">
                                                     No of Schedules

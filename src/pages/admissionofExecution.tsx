@@ -75,7 +75,7 @@ function Table({ columns, data }) {
             <th colSpan={2} className="extraFont text-center">
               Nature of Document
             </th>
-           
+
             <th rowSpan={2} className="text-center">
               Action
             </th>
@@ -99,13 +99,13 @@ function Table({ columns, data }) {
                   <button
                     data-bs-toggle="modal"
                     data-bs-target="#viewBasicDetails"
-                    className="basicDetails"
+                    className="basicDetails digital-sign-btn "
                   >
                     {" "}
                     <Image
                       width={20}
                       height={27}
-                      src="/images/partydetailsdisable.svg" />
+                      src="/images/party-details.svg" />
                     <small>Party Details</small>
                   </button>
                   <Link href="/imagingExecutant">
@@ -280,9 +280,9 @@ function TableAmmend({ columns, data }) {
                     <small>Party Details</small>
                   </button>
                   </Link>
-                  <button className="print">
+                  <button className="print digital-sign-btn ">
                     {" "}
-                    <Image width={25} height={25} src="/images/image-capturedisable.svg" />
+                    <Image width={25} height={25} src="/images/image-capture.svg" />
                     <small>Image Capture</small>
                   </button>
                         <button className="print">
@@ -409,7 +409,7 @@ function AdmissionofExecution() {
           },
         ],
       },
-     
+
     ],
     []
   );
@@ -495,7 +495,7 @@ function AdmissionofExecution() {
       bookNumber: "1",
       maj: "01",
       min: "01",
-      
+
     },
     {
       appNo: "456787654",
@@ -508,7 +508,7 @@ function AdmissionofExecution() {
       bookNumber: "2",
       maj: "02",
       min: "02",
-     
+
     },
     {
       appNo: "456787654",
@@ -521,7 +521,7 @@ function AdmissionofExecution() {
       bookNumber: "1",
       maj: "01",
       min: "01",
-   
+
     },
     {
       appNo: "456787654",
@@ -534,7 +534,7 @@ function AdmissionofExecution() {
       bookNumber: "2",
       maj: "02",
       min: "02",
-  
+
     },
     {
       appNo: "456787654",
@@ -547,7 +547,7 @@ function AdmissionofExecution() {
       bookNumber: "1",
       maj: "01",
       min: "01",
-    
+
     },
     {
       appNo: "456787654",
@@ -560,7 +560,7 @@ function AdmissionofExecution() {
       bookNumber: "2",
       maj: "02",
       min: "02",
-   
+
     },
     {
       appNo: "456787654",
@@ -573,7 +573,7 @@ function AdmissionofExecution() {
       bookNumber: "1",
       maj: "01",
       min: "01",
-    
+
     },
     {
       appNo: "456787654",
@@ -586,7 +586,7 @@ function AdmissionofExecution() {
       bookNumber: "2",
       maj: "02",
       min: "02",
- 
+
     },
   ];
 
@@ -726,39 +726,113 @@ function AdmissionofExecution() {
             <h4>Admission of Execution</h4>
           </div>
 
-          <Container>
-            <Row className="justify-content-md-center">
-              <Col lg={7} md={8} xs={12} className="pageTableSearch">
-                <form className="md-form">
-                  <div className={`input-group md-form form-sm form-1 pl-0`}>
-                    <input
-                      className={`form-control form-control-sm ml-3 w-75`}
-                      type="text"
-                      placeholder="Search Here.."
-                      aria-label="Search" />
-                    <div className={`input-group-prepend`}>
+            <Container>
+              <Row className="justify-content-md-center">
+                <Col lg={7} md={8} xs={12} className="pageTableSearch">
+                  <form className="md-form">
+                    <div className={`input-group md-form form-sm form-1 pl-0`}>
+                      <input
+                        className={`form-control form-control-sm ml-3 w-75`}
+                        type="text"
+                        placeholder="Search Here.."
+                        aria-label="Search"
+                      />
+                      <div className={`input-group-prepend`}>
+                        <button
+                          className={`btn btn-outline-success`}
+                          type="submit"
+                        >
+                          <Image
+                            width={23}
+                            height={23}
+                            src="/images/Search-icon.svg"
+                          />
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                  {clicked && (
+                    <div className="searchFiler">
+                      <button className="today">Today</button>
                       <button
-                        className={`btn btn-outline-success`}
-                        type="submit"
+                        className="filter"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModals"
                       >
+                        <small>Filters</small>
                         <Image
-                          width={23}
-                          height={23}
-                          src="/images/Search-icon.svg" />
+                          width={20}
+                          height={20}
+                          src="/images/filter.svg"
+                        />
+                      </button>
+                    </div>
+                  )}
+                </Col>
+              </Row>
+
+              <div
+                className="modal fade modal-sm"
+                id="exampleModals"
+                tabIndex={-1}
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div className="modal-dialog">
+                  <div className="modal-content">
+                    <div className="modal-header">
+                      <h1 className="modal-title fs-5" id="exampleModalLabel">
+                        Clear
+                      </h1>
+                      <button
+                        type="button"
+                        className="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div className="modal-body">
+                      <Row>
+                        <Col lg={12} md={12} xs={12} className="mb-3">
+                          <Form.Floating>
+                            <Form.Control
+                              id="floatingInputCustom"
+                              type="date"
+                              placeholder="Start Date"
+                            />
+                            <Form.Label htmlFor="floatingInputCustom">
+                              Start Date
+                            </Form.Label>
+                          </Form.Floating>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col lg={12} md={12} xs={12}>
+                          <Form.Floating>
+                            <Form.Control
+                              id="floatingInputCustom"
+                              type="date"
+                              placeholder="End Date"
+                            />
+                            <Form.Label htmlFor="floatingInputCustom">
+                              End Date
+                            </Form.Label>
+                          </Form.Floating>
+                        </Col>
+                      </Row>
+                    </div>
+                    <div className="modal-footer text-center d-flex justify-content-center">
+                      <button
+                        type="button"
+                        className="btn btn-primary text-center bluebuttonclass"
+                      >
+                        Save
                       </button>
                     </div>
                   </div>
-                </form>
-                { clicked && <div className="searchFiler">
-                  <button className="today">Today</button>
-                  <button className="filter">
-                    <small>Filters</small>
-                    <Image width={20} height={20} src="/images/filter.svg" />
-                  </button>
-                </div>}
-              </Col>
-            </Row>
-          </Container>
+                </div>
+              </div>
+            </Container>
 
           <div className="documentsTable pageTableMain pageTableContainer">
             <div className="documentsTable pageTableMain pageTableContainer">
@@ -767,7 +841,7 @@ function AdmissionofExecution() {
               <button onClick={onClickHandlerAmmend}  className="ammend active">Ammend (5)</button>
             </div> */}
 
-<div className="pageTableTabs">
+        <div className="pageTableTabs">
                   {["Accept (30)", "Ammend (5)"].map((o, i) => {
                     return(
                     <button
@@ -790,18 +864,19 @@ function AdmissionofExecution() {
                   })
                 }
                 </div>
-            <div className="table-responsive">
-                {clicked?
-                <TableAmmend columns={columnsAmmend} data={dataAmmend}/>:
-                <Table columns={columns} data={data} />
-                }
-
+                <div className="table-responsive">
+                  {clicked ? (
+                    <TableAmmend columns={columnsAmmend} data={dataAmmend} />
+                  ) : (
+                    <Table columns={columns} data={data} />
+                  )}
+                </div>
+              </div>
             </div>
-          </div>
           </div>
         </div>
       </div>
-    </div></>
+    </>
   );
 };
 export default AdmissionofExecution;
