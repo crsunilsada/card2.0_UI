@@ -587,40 +587,40 @@ function documentPresentation() {
                 </div>
               </Col>
             </Row>
-            <div className="modal fade modal-sm" id="exampleModals" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div className="modal-dialog">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h1 className="modal-title fs-5" id="exampleModalLabel">Clear</h1>
-                  <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div className="modal-body">
-                <Row>
-                            <Col lg={12} md={12} xs={12} className="mb-3">
-                                <Form.Floating>
-                                    <Form.Control
-                                        id="floatingInputCustom"
-                                        type="date"
-                                        placeholder="Start Date" />
-                                    <Form.Label htmlFor="floatingInputCustom">
-                                        Start Date
-                                    </Form.Label>
-                                </Form.Floating>
-                            </Col>
-                        </Row>
-                        <Row>
-                        <Col lg={12} md={12} xs={12} >
-                                <Form.Floating>
-                                    <Form.Control
-                                        id="floatingInputCustom"
-                                        type="date"
-                                        placeholder="End Date" />
-                                    <Form.Label htmlFor="floatingInputCustom">
-                                        End Date
-                                    </Form.Label>
-                                </Form.Floating>
-                            </Col>
-                        </Row>
+            <div className="modal fade modal-sm position-absolute" id="exampleModals" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div className="modal-dialog">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h1 className="modal-title fs-5" id="exampleModalLabel">Clear</h1>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div className="modal-body">
+                    <Row>
+                      <Col lg={12} md={12} xs={12} className="mb-3">
+                        <Form.Floating>
+                          <Form.Control
+                            id="floatingInputCustom"
+                            type="date"
+                            placeholder="Start Date" />
+                          <Form.Label htmlFor="floatingInputCustom">
+                            Start Date
+                          </Form.Label>
+                        </Form.Floating>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col lg={12} md={12} xs={12} >
+                        <Form.Floating>
+                          <Form.Control
+                            id="floatingInputCustom"
+                            type="date"
+                            placeholder="End Date" />
+                          <Form.Label htmlFor="floatingInputCustom">
+                            End Date
+                          </Form.Label>
+                        </Form.Floating>
+                      </Col>
+                    </Row>
 
                 </div>
                 <div className="modal-footer text-center d-flex justify-content-center">
@@ -847,18 +847,33 @@ function documentPresentation() {
                   </Row>
 
                   <h5 className="mt-4 mb-3">Consider Presentant As</h5>
-
-                  <div className="mb-4">
+<div className="d-flex">
+                  <div className="mb-3">
                     <Form.Check
                       value="Executant"
                       type="radio"
                       aria-label="Executant"
                       label="Executant" />
                   </div>
+                  <div className="mb-3 mx-2">
+                      <Form.Check
+                        value="Claimant"
+                        type="radio"
+                        aria-label="Claimant"
+                        label="Claimant" />
+                    </div>
+                    <div className="mb-3 mx-2">
+                      <Form.Check
+                        value="Representative"
+                        type="radio"
+                        aria-label="Representative"
+                        label="Representative" />
+                    </div>
+                    </div>
 
-                                    <Row>
-                                        <Col lg={12} md={12} xs={12} className="mb-3">
-                                        <Form.Floating>
+                  <Row>
+                    <Col lg={6} md={6} xs={6} className="mb-3">
+                      <Form.Floating>
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
@@ -867,11 +882,8 @@ function documentPresentation() {
                           ID Proof
                         </Form.Label>
                       </Form.Floating>
-                                        </Col>
-                                    </Row>
-
-                  <Row>
-                    <Col lg={3} md={6} xs={12} className="mb-3">
+                    </Col>
+                    <Col lg={6} md={6} xs={6} className="mb-3">
                       <Form.Floating>
                         <Form.Control
                           id="floatingInputCustom"
@@ -882,7 +894,11 @@ function documentPresentation() {
                         </Form.Label>
                       </Form.Floating>
                     </Col>
-                    <Col lg={3} md={6} xs={12} className="mb-3">
+                  </Row>
+
+                  <Row>
+
+                    <Col lg={6} md={6} xs={6} className="mb-3">
                       <Form.Floating>
                         <Form.Control
                           id="floatingInputCustom"
@@ -952,7 +968,7 @@ function documentPresentation() {
                       <Form.Floating>
                         <Form.Control
                           id="floatingInputCustom"
-                          type="date"
+                          type="text"
                           placeholder="Presentant Date" value="03-03-2023"/>
                         <Form.Label htmlFor="floatingInputCustom">
                           Presentant Date
@@ -963,7 +979,7 @@ function documentPresentation() {
                       <Form.Floating>
                         <Form.Control
                           id="floatingInputCustom"
-                          type="date"
+                          type="text"
                           placeholder="Stamp Duty Borne by Document" value="03-03-2023" />
                         <Form.Label htmlFor="floatingInputCustom">
                           Stamp Duty Borne by Document
@@ -1051,13 +1067,7 @@ function documentPresentation() {
                                             </Form.Floating>
                                         </Col>
                                     </Row>
-     <Row>
-                    <Col>
-                    <div className="modal-footer text-center d-flex">
-                  <button type="button" className="btn btn-primary text-center bluebuttonclass">Save</button>
-                </div>
-                    </Col>
-                  </Row>
+
                                 </div>
                             </div>
                         </div>

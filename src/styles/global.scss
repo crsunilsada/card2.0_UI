@@ -314,6 +314,8 @@ p:last-child {
 
                     .fcheckbox {
                         margin: 0 0 15px;
+
+
                     }
 
                     button {
@@ -522,6 +524,7 @@ body {
             margin: 0 10px 0 0;
             width: 20px;
             height: 20px;
+
         }
 
         .form-check-input:checked[type="radio"] {
@@ -1747,7 +1750,7 @@ body {
 .accordion-button {
 
     border-radius: 12px !important;
-
+    color: #274C77;
 }
 
 .pageTableContainer .pageNextBtn {

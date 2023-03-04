@@ -209,7 +209,7 @@ const handleClick1 = () => {
                             </td>
                             <td className="text-center">
                               <div className="fcheckbox">
-                                <Form.Check
+                                <Form.Check 
                                   type={"checkbox"}
                                   name="thumbImpression" />
                               </div>

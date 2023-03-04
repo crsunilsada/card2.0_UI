@@ -99,13 +99,13 @@ function Table({ columns, data }) {
                   <button
                     data-bs-toggle="modal"
                     data-bs-target="#viewBasicDetails"
-                    className="basicDetails digital-sign-btn "
+                    className="basicDetails  "
                   >
                     {" "}
                     <Image
                       width={20}
                       height={27}
-                      src="/images/party-details.svg" />
+                      src="/images/partydetailsdisable.svg" />
                     <small>Party Details</small>
                   </button>
                   <Link href="/imagingExecutant">
@@ -280,9 +280,9 @@ function TableAmmend({ columns, data }) {
                     <small>Party Details</small>
                   </button>
                   </Link>
-                  <button className="print digital-sign-btn ">
+                  <button className="print  ">
                     {" "}
-                    <Image width={25} height={25} src="/images/image-capture.svg" />
+                    <Image width={25} height={25} src="/images/image-capturedisabled.svg" />
                     <small>Image Capture</small>
                   </button>
                         <button className="print">
