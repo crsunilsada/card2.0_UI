@@ -751,6 +751,13 @@ function AdmissionofExecution() {
                       </div>
                     </div>
                   </form>
+                  <div className="searchFiler">
+                  <button className="today">Today</button>
+                  <button className="filter"  data-bs-toggle="modal" data-bs-target="#exampleModals">
+                    <small>Filters</small>
+                    <Image width={20} height={20} src="/images/filter.svg" />
+                  </button>
+                </div>
                   {clicked && (
                     <div className="searchFiler">
                       <button className="today">Today</button>

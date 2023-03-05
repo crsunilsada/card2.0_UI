@@ -82,10 +82,13 @@ function PendingTable({ columns, data }) {
               <tr {...row.getRowProps()}>
                 {row.cells.map((cell) => {
                   return (
+                    
                     <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
                   );
                 })}
-                <td className="text-center">
+
+{/*
+           <td className="text-center">
                   <button
                     data-bs-toggle="modal"
                     data-bs-target="#viewdetails"
@@ -95,10 +98,10 @@ function PendingTable({ columns, data }) {
                       width={57}
                       height={57}
                       src="/images/Viewdetails.svg" />
-                    {/* <small>View Details</small> */}
+                     <small>View Details</small>
                   </button>
-                </td>
-                <td className="text-ce  nter">New</td>
+                </td> */}
+                {/* <td className="text-ce  nter">New</td> */}
                 <td className="text-center">
                   <button
                     data-bs-toggle="modal"
@@ -269,7 +272,7 @@ function AcceptTable({ columns, data }) {
                     <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
                   );
                 })}
-                <td className="text-center">
+                {/* <td className="text-center">
                   <button
                     data-bs-toggle="modal"
                     data-bs-target="#viewdetails"
@@ -281,8 +284,8 @@ function AcceptTable({ columns, data }) {
                       src="/images/Viewdetails.svg" />
                     <small>View Details</small>
                   </button>
-                </td>
-                <td className="text-center">New</td>
+                </td> */}
+                {/* <td className="text-center">New</td> */}
                 <td className="text-center">
                   <button
                     data-bs-toggle="modal"
@@ -750,14 +753,14 @@ const pdeScrutinyList = () => {
             Header: "Registration Type",
             accessor: "registrationType",
           },
-          // {
-          //   Header: "Details",
-          //   accessor: "details",
-          // },
-          // {
-          //   Header: "Status",
-          //   accessor: "status",
-          // },
+          {
+            Header: "Details",
+            accessor: "details",
+          },
+          {
+            Header: "Status",
+            accessor: "status",
+          },
         ],
       },
     ],
@@ -772,7 +775,7 @@ const pdeScrutinyList = () => {
       maj: "Sale",
       min: "Sale Deed",
       slotTime: "10:30am",
-      registrationType: "Original",
+      registrationType: "Original1",
       details: "View Details",
       status: "New",
     },
@@ -784,7 +787,7 @@ const pdeScrutinyList = () => {
       slotTime: "12:15pm",
       registrationType: "Anywhere",
       details: "View Details",
-      status: "Pending",
+      status: "Ammend",
     },
   ]
 
@@ -822,13 +825,18 @@ const pdeScrutinyList = () => {
             Header: "Registration Type",
             accessor: "registrationType",
           },
+
+          {
+            Header: "Details",
+            accessor: "details",
+          },
+          {
+            Header: "Status",
+            accessor: "status",
+          },
           // {
-          //   Header: "Details",
-          //   accessor: "details",
-          // },
-          // {
-          //   Header: "Status",
-          //   accessor: "status",
+          //   Header: "Action",
+          //   accessor: "",
           // },
         ],
       },
@@ -843,7 +851,7 @@ const pdeScrutinyList = () => {
       min: "Sale Deed",
       slotTime: "10:30am",
       registrationType: "Original",
-      details: "View Details",
+      // details: "View Details",
       status: "New",
     },
     {
@@ -853,7 +861,7 @@ const pdeScrutinyList = () => {
       min: "Sale Deed",
       slotTime: "12:15pm",
       registrationType: "Anywhere",
-      details: "View Details",
+      // details: "View Details",
       status: "Ammend",
     },
   ]

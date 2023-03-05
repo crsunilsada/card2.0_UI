@@ -96,7 +96,7 @@ function Table({ columns, data }) {
                       type="checkbox"
                       value=""
                       id="flexCheckDefault"
-                    />
+                    />&nbsp;
                     <label
                       className="form-check-label"
                       htmlFor="flexCheckDefault"
@@ -414,10 +414,56 @@ return (
                     </div>
                   </div>
                 </form>
-
-
+                <div className="searchFiler">
+                  <button className="today">Today</button>
+                  <button className="filter"  data-bs-toggle="modal" data-bs-target="#exampleModals">
+                    <small>Filters</small>
+                    <Image width={20} height={20} src="/images/filter.svg" />
+                  </button>
+                </div>
                 </Col>
               </Row>
+              <div className="modal fade modal-sm position-absolute" id="exampleModals" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div className="modal-dialog">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h1 className="modal-title fs-5" id="exampleModalLabel">Clear</h1>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div className="modal-body">
+                    <Row>
+                      <Col lg={12} md={12} xs={12} className="mb-3">
+                        <Form.Floating>
+                          <Form.Control
+                            id="floatingInputCustom"
+                            type="date"
+                            placeholder="Start Date" />
+                          <Form.Label htmlFor="floatingInputCustom">
+                            Start Date
+                          </Form.Label>
+                        </Form.Floating>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col lg={12} md={12} xs={12} >
+                        <Form.Floating>
+                          <Form.Control
+                            id="floatingInputCustom"
+                            type="date"
+                            placeholder="End Date" />
+                          <Form.Label htmlFor="floatingInputCustom">
+                            End Date
+                          </Form.Label>
+                        </Form.Floating>
+                      </Col>
+                    </Row>
+
+                </div>
+                <div className="modal-footer text-center d-flex justify-content-center">
+                  <button type="button" className="btn btn-primary text-center bluebuttonclass">Save</button>
+                </div>
+              </div>
+            </div></div>
             </Container>
 
           <div className="documentsTable pageTableMain pageTableContainer">
