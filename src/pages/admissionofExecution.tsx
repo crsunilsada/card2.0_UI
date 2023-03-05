@@ -103,8 +103,8 @@ function Table({ columns, data }) {
                   >
                     {" "}
                     <Image
-                      width={20}
-                      height={27}
+                      width={37}
+                      height={37}
                       src="/images/partydetailsdisable.svg" />
                     <small>Party Details</small>
                   </button>
@@ -280,16 +280,16 @@ function TableAmmend({ columns, data }) {
                     <small>Party Details</small>
                   </button>
                   </Link>
-                  <button className="print  ">
+                  <button className="print  digital-sign-btn">
                     {" "}
-                    <Image width={25} height={25} src="/images/image-capturedisabled.svg" />
+                    <Image width={25} height={25} src="/images/image-capture.svg" />
                     <small>Image Capture</small>
                   </button>
                         <button className="print">
                           {" "}
                           <Image
-                            width={25}
-                            height={25}
+                            width={37}
+                            height={37}
                             src="/images/submitSRO.svg"
                           />
                           <small>Submit for SRO Review</small>
@@ -758,23 +758,7 @@ function AdmissionofExecution() {
                     <Image width={20} height={20} src="/images/filter.svg" />
                   </button>
                 </div>
-                  {clicked && (
-                    <div className="searchFiler">
-                      <button className="today">Today</button>
-                      <button
-                        className="filter"
-                        data-bs-toggle="modal"
-                        data-bs-target="#exampleModals"
-                      >
-                        <small>Filters</small>
-                        <Image
-                          width={20}
-                          height={20}
-                          src="/images/filter.svg"
-                        />
-                      </button>
-                    </div>
-                  )}
+
                 </Col>
               </Row>
 
