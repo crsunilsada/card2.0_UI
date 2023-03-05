@@ -169,7 +169,7 @@ const partyDetails = () => {
                                 </div>
                                 <Row>
                                     <Col lg={6} md={6} xs={6}>
-                                        <div className="form-check assigningcheckboxes">
+                                        <div className="form-check-checkbox">
                                             <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" />
                                             <label className="form-check-label" htmlFor="defaultCheck1">
                                                 Consider this Claimant/Executant as Representative

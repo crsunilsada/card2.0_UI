@@ -75,74 +75,125 @@ function PendingTable({ columns, data }) {
             <th className="text-center smallFont">Min</th>
           </tr>
         </thead>
-        <tbody {...getTableBodyProps()} className="text-center">
-          {page.map((row, i) => {
-            prepareRow(row);
-            return (
-              <tr {...row.getRowProps()}>
-                {row.cells.map((cell) => {
-                  return (
-                    
-                    <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
-                  );
-                })}
+        <tbody className="text-center">
+          <tr>
+            <td>
+              456787654 </td>
+            <td>Chandra Sekhar</td>
+            <td>
+              Sale </td>
+            <td>Sale Deed</td>
+            <td>10:30am</td>
+            <td>Original </td>
+            <td className="text-center">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#viewdetails"
+                className="basicDetails"
+              >
+                <Image
+                  width={57}
+                  height={57}
+                  src="/images/Viewdetails.svg" />
+                {/* <small>View Details</small> */}
+              </button>
+            </td>
+            <td>New</td>
+            <td className="text-center">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#acceptdetails"
+                className="basicDetails"
+              >
+                <Image
+                  width={18}
+                  height={18}
+                  src="/images/accept.svg" />
+                <small>Accept</small>
+              </button>
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#ammenddetails"
+                className="basicDetails"
+              >
+                <Image
+                  width={18}
+                  height={18}
+                  src="/images/ammend.svg" />
+                <small>Ammend</small>
+              </button>
 
-{/*
-           <td className="text-center">
-                  <button
-                    data-bs-toggle="modal"
-                    data-bs-target="#viewdetails"
-                    className="basicDetails"
-                  >
-                    <Image
-                      width={57}
-                      height={57}
-                      src="/images/Viewdetails.svg" />
-                     <small>View Details</small>
-                  </button>
-                </td> */}
-                {/* <td className="text-ce  nter">New</td> */}
-                <td className="text-center">
-                  <button
-                    data-bs-toggle="modal"
-                    data-bs-target="#acceptdetails"
-                    className="basicDetails"
-                  >
-                    <Image
-                      width={18}
-                      height={18}
-                      src="/images/accept.svg" />
-                    <small>Accept</small>
-                  </button>
+              <button className="print" data-bs-toggle="modal" data-bs-target="#refusedetails">
+                <Image
+                  width={18}
+                  height={18}
+                  src="/images/refuse.svg" />
+                <small>refuse</small>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              456787654 </td>
+            <td>Sekhar Varma</td>
+            <td>
+              Sale </td>
+            <td>Sale Deed</td>
+            <td>12:15pm</td>
+            <td>Anywhere</td>
+            <td className="text-center">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#viewdetails"
+                className="basicDetails"
+              >
+                <Image
+                  width={57}
+                  height={57}
+                  src="/images/Viewdetails.svg" />
+                {/* <small>View Details</small> */}
+              </button>
+            </td>
+            <td>
+              Ammend
+              <Image
+                width={18}
+                height={18}
+                src="/images/icon.svg" />
+            </td>
+            <td className="text-center">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#acceptdetails"
+                className="basicDetails"
+              >
+                <Image
+                  width={18}
+                  height={18}
+                  src="/images/accept.svg" />
+                <small>Accept</small>
+              </button>
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#ammenddetails"
+                className="basicDetails"
+              >
+                <Image
+                  width={18}
+                  height={18}
+                  src="/images/ammend.svg" />
+                <small>Ammend</small>
+              </button>
 
-                  <button
-                    data-bs-toggle="modal"
-                    data-bs-target="#ammenddetails"
-                    className="basicDetails"
-                  >
-                    <Image
-                      width={18}
-                      height={18}
-                      src="/images/ammend.svg" />
-                    <small>Ammend</small>
-                  </button>
-
-                  <button data-bs-toggle="modal"
-                    data-bs-target="#refusedetails"
-                    className="basicDetails"
-                  >
-                    <Image
-                      width={18}
-                      height={18}
-                      src="/images/refuse.svg" />
-                    <small>refuse</small>
-                  </button>
-                </td>
-
-              </tr>
-
-            );
-          })}
+              <button className="print" data-bs-toggle="modal" data-bs-target="#refusedetails">
+                <Image
+                  width={18}
+                  height={18}
+                  src="/images/refuse.svg" />
+                <small>refuse</small>
+              </button>
+            </td>
+          </tr>
         </tbody>
       </table>
 
@@ -262,65 +313,121 @@ function AcceptTable({ columns, data }) {
             <th className="text-center smallFont">Min</th>
           </tr>
         </thead>
-        <tbody {...getTableBodyProps()} className="text-center">
-          {page.map((row, i) => {
-            prepareRow(row);
-            return (
-              <tr {...row.getRowProps()}>
-                {row.cells.map((cell) => {
-                  return (
-                    <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
-                  );
-                })}
-                {/* <td className="text-center">
-                  <button
-                    data-bs-toggle="modal"
-                    data-bs-target="#viewdetails"
-                    className="basicDetails"
-                  >
-                    <Image
-                      width={18}
-                      height={18}
-                      src="/images/Viewdetails.svg" />
-                    <small>View Details</small>
-                  </button>
-                </td> */}
-                {/* <td className="text-center">New</td> */}
-                <td className="text-center">
-                  <button
-                    data-bs-toggle="modal"
-                    data-bs-target="#acceptdetails"
-                    className="basicDetails"
-                  >
-                    <Image
-                      width={18}
-                      height={18}
-                      src="/images/accept.svg" />
-                    <small>Accept</small>
-                  </button>
-                  <button
-                    data-bs-toggle="modal"
-                    data-bs-target="#ammenddetails"
-                    className="basicDetails"
-                  >
-                    <Image
-                      width={18}
-                      height={18}
-                      src="/images/ammend.svg" />
-                    <small>Ammend</small>
-                  </button>
+        <tbody className="text-center">
+          <tr>
+            <td>
+              456787654 </td>
+            <td>Chandra Sekhar</td>
+            <td>
+              Sale </td>
+            <td>Sale Deed</td>
+            <td>10:30am</td>
+            <td>Original </td>
+            <td className="text-center">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#viewdetails"
+                className="basicDetails"
+              >
+                <Image
+                  width={57}
+                  height={57}
+                  src="/images/Viewdetails.svg" />
+                {/* <small>View Details</small> */}
+              </button>
+            </td>
+            <td>New</td>
+            <td className="text-center">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#acceptdetails"
+                className="basicDetails"
+              >
+                <Image
+                  width={18}
+                  height={18}
+                  src="/images/accept.svg" />
+                <small>Accept</small>
+              </button>
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#ammenddetails"
+                className="basicDetails"
+              >
+                <Image
+                  width={18}
+                  height={18}
+                  src="/images/ammend.svg" />
+                <small>Ammend</small>
+              </button>
 
-                  <button className="print" data-bs-toggle="modal" data-bs-target="#refusedetails">
-                    <Image
-                      width={18}
-                      height={18}
-                      src="/images/refuse.svg" />
-                    <small>refuse</small>
-                  </button>
-                </td>
-              </tr>
-            );
-          })}
+              <button className="print" data-bs-toggle="modal" data-bs-target="#refusedetails">
+                <Image
+                  width={18}
+                  height={18}
+                  src="/images/refuse.svg" />
+                <small>refuse</small>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              456787654 </td>
+            <td>Sekhar Varma</td>
+            <td>
+              Sale </td>
+            <td>Sale Deed</td>
+            <td>12:15pm</td>
+            <td>Anywhere</td>
+            <td className="text-center">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#viewdetails"
+                className="basicDetails"
+              >
+                <Image
+                  width={57}
+                  height={57}
+                  src="/images/Viewdetails.svg" />
+                {/* <small>View Details</small> */}
+              </button>
+            </td>
+            <td>Ammend</td>
+            <td className="text-center">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#acceptdetails"
+                className="basicDetails"
+              >
+                <Image
+                  width={18}
+                  height={18}
+                  src="/images/accept.svg" />
+                <small>Accept</small>
+              </button>
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#ammenddetails"
+                className="basicDetails"
+              >
+                <Image
+                  width={18}
+                  height={18}
+                  src="/images/ammend.svg" />
+                <small>Ammend</small>
+              </button>
+
+              <button className="print" data-bs-toggle="modal" data-bs-target="#refusedetails">
+                <Image
+                  width={18}
+                  height={18}
+                  src="/images/refuse.svg" />
+                <small>refuse</small>
+              </button>
+            </td>
+          </tr>
+
+
         </tbody>
       </table>
 
@@ -450,48 +557,58 @@ function AmmendTable({ columns, data }) {
           </tr>
         </thead>
         <tbody {...getTableBodyProps()} className="text-center">
-          {page.map((row, i) => {
-            prepareRow(row);
-            return (
-              <tr {...row.getRowProps()}>
-                {row.cells.map((cell) => {
-                  return (
-                    <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
-                  );
-                })}
-                {/* <td className="text-center">
-                  <button
-                    data-bs-toggle="modal"
-                    data-bs-target="#viewBasicDetails"
-                    className="basicDetails"
-                  >
-                    <Image
-                      width={12}
-                      height={12}
-                      src="/images/accept.svg" />
-                    <small>Accept</small>
-                  </button>
-                  <button
-                    data-bs-toggle="modal"
-                    data-bs-target="#viewBasicDetails"
-                    className="basicDetails"
-                  >
-                    <Image
-                      width={12}
-                      height={12}
-                      src="/images/ammend.svg" />
-                    <small>Ammend</small>
-                  </button>
-                  <button className="print" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <Image width={12}
-                    height={12}
-                    src="/images/refuse.svg"/>
-                    <small>refuse</small>
-                  </button>
-                </td> */}
-              </tr>
-            );
-          })}
+          <tr>
+            <td>345</td>
+            <td>212</td>
+            <td>456787564</td>
+            <td>Chandra Shekar</td>
+            <td>Sale</td>
+            <td>Sale Deed</td>
+            <td>10:30am</td>
+            <td>Original</td>
+            <td className="text-center">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#viewdetails"
+                className="basicDetails"
+              >
+                <Image
+                  width={57}
+                  height={57}
+                  src="/images/Viewdetails.svg" />
+                {/* <small>View Details</small> */}
+              </button>
+            </td>
+            <td>Wrong Document</td>
+            <td>02-01-2023 12:00pm</td>
+            <td>Comments come here</td>
+          </tr>
+          <tr>
+            <td>345</td>
+            <td>212</td>
+            <td>456787564</td>
+            <td>Chandra Shekar</td>
+            <td>Sale</td>
+            <td>Sale Deed</td>
+            <td>10:30am</td>
+            <td>Original</td>
+            <td className="text-center">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#viewdetails"
+                className="basicDetails"
+              >
+                <Image
+                  width={57}
+                  height={57}
+                  src="/images/Viewdetails.svg" />
+                {/* <small>View Details</small> */}
+              </button>
+            </td>
+            <td>Wrong Document</td>
+            <td>02-01-2023 12:00pm</td>
+            <td>Comments come here</td>
+          </tr>
         </tbody>
       </table>
 
@@ -621,48 +738,58 @@ function RefuseTable({ columns, data }) {
           </tr>
         </thead>
         <tbody {...getTableBodyProps()} className="text-center">
-          {page.map((row, i) => {
-            prepareRow(row);
-            return (
-              <tr {...row.getRowProps()}>
-                {row.cells.map((cell) => {
-                  return (
-                    <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
-                  );
-                })}
-                {/* <td className="text-center">
-                  <button
-                    data-bs-toggle="modal"
-                    data-bs-target="#viewBasicDetails"
-                    className="basicDetails"
-                  >
-                    <Image
-                      width={12}
-                      height={12}
-                      src="/images/accept.svg" />
-                    <small>Accept</small>
-                  </button>
-                  <button
-                    data-bs-toggle="modal"
-                    data-bs-target="#viewBasicDetails"
-                    className="basicDetails"
-                  >
-                    <Image
-                      width={12}
-                      height={12}
-                      src="/images/ammend.svg" />
-                    <small>Ammend</small>
-                  </button>
-                  <button className="print" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <Image width={12}
-                    height={12}
-                    src="/images/refuse.svg"/>
-                    <small>refuse</small>
-                  </button>
-                </td> */}
-              </tr>
-            );
-          })}
+          <tr>
+            <td>345</td>
+            <td>212</td>
+            <td>456787564</td>
+            <td>Chandra Shekar</td>
+            <td>Sale</td>
+            <td>Sale Deed</td>
+            <td>10:30am</td>
+            <td>Original</td>
+            <td className="text-center">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#viewdetails"
+                className="basicDetails"
+              >
+                <Image
+                  width={57}
+                  height={57}
+                  src="/images/Viewdetails.svg" />
+                {/* <small>View Details</small> */}
+              </button>
+            </td>
+            <td>Wrong Document</td>
+            <td>02-01-2023 12:00pm</td>
+            <td>Comments come here</td>
+          </tr>
+          <tr>
+            <td>345</td>
+            <td>212</td>
+            <td>456787564</td>
+            <td>Chandra Shekar</td>
+            <td>Sale</td>
+            <td>Sale Deed</td>
+            <td>10:30am</td>
+            <td>Original</td>
+            <td className="text-center">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#viewdetails"
+                className="basicDetails"
+              >
+                <Image
+                  width={57}
+                  height={57}
+                  src="/images/Viewdetails.svg" />
+                {/* <small>View Details</small> */}
+              </button>
+            </td>
+            <td>Wrong Document</td>
+            <td>02-01-2023 12:00pm</td>
+            <td>Comments come here</td>
+          </tr>
         </tbody>
       </table>
 
@@ -767,7 +894,6 @@ const pdeScrutinyList = () => {
     []
   );
 
-
   const pendingtableData = [
     {
       appId: "456787654",
@@ -826,10 +952,10 @@ const pdeScrutinyList = () => {
             accessor: "registrationType",
           },
 
-          {
-            Header: "Details",
-            accessor: "details",
-          },
+          // {
+          //   Header: "Details",
+          //   accessor: "details",
+          // },
           {
             Header: "Status",
             accessor: "status",
@@ -851,8 +977,9 @@ const pdeScrutinyList = () => {
       min: "Sale Deed",
       slotTime: "10:30am",
       registrationType: "Original",
-      // details: "View Details",
-      status: "New",
+      details: "View Details",
+      status: "New"
+
     },
     {
       appId: "456787654",
@@ -861,8 +988,8 @@ const pdeScrutinyList = () => {
       min: "Sale Deed",
       slotTime: "12:15pm",
       registrationType: "Anywhere",
-      // details: "View Details",
-      status: "Ammend",
+      details: "View Details",
+      status: "Ammend"
     },
   ]
   const ammendcolumns = React.useMemo(

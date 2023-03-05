@@ -200,7 +200,7 @@ const handleClick1 = () => {
                               <h6>{item.name}</h6>
                             </td>
                             <td className="text-center">
-                              <div className="fcheckbox">
+                              <div className="form-check-checkbox">
                                 <Form.Check type={"checkbox"} name="photo" />
                               </div>
                               <img src={item.photo} onClick={handleClick}
@@ -208,15 +208,15 @@ const handleClick1 = () => {
 
                             </td>
                             <td className="text-center">
-                              <div className="fcheckbox">
-                                <Form.Check 
+                              <div className="form-check-checkbox">
+                                <Form.Check
                                   type={"checkbox"}
                                   name="thumbImpression" />
                               </div>
                               <img src={item.thumbImpression} />
                             </td>
                             <td className="text-center">
-                              <div className="fcheckbox">
+                              <div className="form-check-checkbox">
                                 <Form.Check
                                   type={"checkbox"}
                                   name="esignSignature" />
@@ -259,13 +259,13 @@ const handleClick1 = () => {
                               <h6>{item.name}</h6>
                             </td>
                             <td className="text-center">
-                              <div className="fcheckbox">
+                              <div className="form-check-checkbox">
                                 <Form.Check type={"checkbox"} name="photo" />
                               </div>
                               <img src={item.photo}  className="border border-dark" />
                             </td>
                             <td className="text-center">
-                              <div className="fcheckbox">
+                              <div className="form-check-checkbox">
                                 <Form.Check
                                   type={"checkbox"}
                                   name="thumbImpression" />
@@ -273,7 +273,7 @@ const handleClick1 = () => {
                               <img src={item.thumbImpression} />
                             </td>
                             <td className="text-center">
-                              <div className="fcheckbox">
+                              <div className="form-check-checkbox">
                                 <Form.Check
                                   type={"checkbox"}
                                   name="esignSignature" />

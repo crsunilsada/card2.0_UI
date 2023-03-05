@@ -90,7 +90,7 @@ function Table({ columns, data }) {
             return (
               <tr {...row.getRowProps()}>
                 <td>
-                  <div className="d-flex">
+                  <div className="d-flex form-check-checkbox">
                     <input
                       className="form-check-input"
                       type="checkbox"
