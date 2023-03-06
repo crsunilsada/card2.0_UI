@@ -904,7 +904,7 @@ const PropertyDetails = () => {
                                                                     <div className="pageNextBtn">
                                                                         {/* <button className="next">Clear</button> */}
 
-                                                                        <button onClick={handleShow1}>Add New</button>&ensp;&ensp;
+                                                                        <button className="clear" onClick={handleShow1}>Add New</button>&ensp;&ensp;
                                                                         <button className="next">Next</button>
                                                                     </div>
                                                                 </Row>
@@ -984,7 +984,7 @@ const PropertyDetails = () => {
                                                             </Col>
                                                         </Row>
                                                         <div className="pageNextBtn">
-                                                            <button onClick={handleButtonClick}>Add new</button>&ensp;&ensp;
+                                                            <button className="clear" onClick={handleButtonClick}>Add new</button>&ensp;&ensp;
                                                             <button className="next">Next</button>
                                                         </div>
                                                     </div>
@@ -1066,7 +1066,7 @@ const PropertyDetails = () => {
 
                                                     <div className="pageNextBtn">
 
-                                                        <button>Add New</button>&ensp;&ensp;
+                                                        <button className="clear">Add New</button>&ensp;&ensp;
 
                                                         <Button onClick={handleClose1} className="next">
 
@@ -1563,7 +1563,7 @@ const PropertyDetails = () => {
 
 
                                         <div className="pageNextBtn">
-                                            <button >Clear</button>&ensp;&ensp;
+                                            <button className="clear">Clear</button>&ensp;&ensp;
                                             <button className="next">Next</button>
                                         </div>
                                     </Accordion.Body>
@@ -1638,7 +1638,7 @@ const PropertyDetails = () => {
                                             </Col>
                                         </Row>
                                         <div className="pageNextBtn">
-                                            <button >Cancel</button>&ensp;&ensp;
+                                            <button className="clear">Cancel</button>&ensp;&ensp;
                                             <button onClick={handleClick} className="next">Done</button>
                                         </div>
                                     </Accordion.Body>}
@@ -1698,7 +1698,7 @@ const PropertyDetails = () => {
                                                 <div className="pageNextBtn">
                                                     {/* <button className="next">Clear</button> */}
 
-                                                    <button >Add New</button>&ensp;&ensp;
+                                                    <button className="clear">Add New</button>&ensp;&ensp;
                                                     <button className="next">Next</button>
                                                 </div>
                                             </Row></div>
@@ -1982,7 +1982,7 @@ const PropertyDetails = () => {
                                 <Accordion.Item eventKey="0">
                                     <Accordion.Header>Duty Figure</Accordion.Header>
                                     <Accordion.Body>
-                                        <p class="text-center1"><center>This is total of two Schedule Duty Figures</center></p>
+                                        <p className="text-center1 text-center">This is total of two Schedule Duty Figures</p>
                                         <Row className="mb-4">
                                             <Col lg={4} md={4} xs={12} className="mb-3">
                                                 <Form.Floating>

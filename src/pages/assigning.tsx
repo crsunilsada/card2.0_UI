@@ -373,7 +373,7 @@ const Assigning = () => {
                         <Col lg={4} md={4} xs={12} className="mb-2">
                           <div className="card">
                           <div className="cardHeader d-flex align-items-center justify-content-between">
-                            
+
                               <h5>
                                 Presentant - <span>Executant</span>
                               </h5>
@@ -435,7 +435,7 @@ const Assigning = () => {
             <div className="mb-3">
               <Accordion>
                 <Accordion.Item eventKey="0">
-                  <Accordion.Header>
+                  <Accordion.Header >
                     Property Details
                   </Accordion.Header>
                   <Accordion.Body>
@@ -734,7 +734,7 @@ const Assigning = () => {
               </Accordion>
             </div>
             <div className="mb-4 d-flex assigningcheckboxes">
-              
+
               <Form.Check
                 value="Pending Document Details"
                 type="radio"
@@ -789,7 +789,7 @@ const Assigning = () => {
                 </Form.Floating>
               </Col>
             </Row>
-            
+
           </div>
           <hr/>
           <div className="pageTableContainer">

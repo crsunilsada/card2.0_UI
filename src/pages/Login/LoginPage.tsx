@@ -45,7 +45,7 @@ const LoginPage = () => {
                 <div className="LoginPage mx-5 ">
                     <Row className='Login-rightGrd'>
                         <Col lg={7} md={7} xs={7}>
-                            <Image src={LoginBG} alt="login-BG" height="780px" />
+                            <Image src={LoginBG} alt="login-BG" height="676px" />
                         </Col>
                         <Col lg={5} md={5} xs={5}>
                             <Row className="my-3 mx-4">

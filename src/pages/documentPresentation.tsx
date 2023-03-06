@@ -106,11 +106,11 @@ function Table({ columns, data }) {
                       src="/images/Basic-Details.svg" />
                     <small>View Basic Details</small>
                   </button>
-                  <button className="print" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  {/* <button className="print" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     {" "}
                     <Image width={25} height={25} src="/images/Print.svg" />
                     <small>Print</small>
-                  </button>
+                  </button> */}
                 </td>
               </tr>
             );
@@ -235,10 +235,10 @@ function Tables({ columns, data }) {
               Nature of Document
             </th>
             <th rowSpan={2} className="text-center">
-              Accept reason
+              Ammend Reason
             </th>
             <th rowSpan={2} className="text-center">
-              Ammend reason
+              Ammend Comments
             </th>
             <th rowSpan={2} className="text-center">
               Action
@@ -274,14 +274,13 @@ function Tables({ columns, data }) {
                     />
                     <small>View Basic Details</small>
                   </button>
-                  <button className="print opacity-50"
-                  //  data-bs-toggle="modal" data-bs-target="#exampleModal"
+                  {/* <button className="print-sro-review opacity-50"
                   >
                     {" "}
                     <Image width={25} height={25} src="/images/Print.svg" />
                     <small>Print</small>
-                  </button>
-                  <button className="print" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  </button> */}
+                  <button className="print">
                     {" "}
                     <Image width={25} height={25} src="/images/sroreview.png" />
                     <small>Submit sro for review</small>
@@ -806,57 +805,60 @@ function documentPresentation() {
                   </button>
                 </div>
 
-                                <div className="modal-body">
-                                    <Row>
-                                        <Col lg={4} md={4} xs={12} className="mb-3">
-                                            <Form.Floating>
-                                                <Form.Control
-                                                    id="floatingInputCustom"
-                                                    type="text"
-                                                    placeholder="Presentant Name" value="subbu"
-                                                />
-                                                <Form.Label htmlFor="floatingInputCustom">
-                                                    Presentant Name
-                                                </Form.Label>
-                                            </Form.Floating>
-                                        </Col>
-                                        <Col lg={4} md={4} xs={12} className="mb-3">
-                                            <Form.Floating>
-                                                <Form.Control
-                                                    id="floatingInputCustom"
-                                                    type="text"
-                                                    placeholder="Nominee Name" value="anusha"
-                                                />
-                                                <Form.Label htmlFor="floatingInputCustom">
-                                                    Nominee Name
-                                                </Form.Label>
-                                            </Form.Floating>
-                                        </Col>
-                                        <Col lg={4} md={4} xs={12} className="mb-3">
-                                            <Form.Floating>
-                                                <Form.Control
-                                                    id="floatingInputCustom"
-                                                    type="text"
-                                                    placeholder="Nominee Name" value=""
-                                                />
-                                                <Form.Label htmlFor="floatingInputCustom">
-                                                    Nominee Aadhar No.
-                                                </Form.Label>
-                                            </Form.Floating>
-                                        </Col>
+                <div className="modal-body">
+                  <Row>
+                    <Col lg={4} md={4} xs={12} className="mb-3">
+                      <Form.Floating>
+                        <Form.Control
+                          id="floatingInputCustom"
+                          type="text"
+                          placeholder="Presentant Name" value="subbu" readOnly
+                        />
+                        <Form.Label htmlFor="floatingInputCustom">
+                          Presentant Name
+                        </Form.Label>
+                      </Form.Floating>
+                    </Col>
+                    <Col lg={4} md={4} xs={12} className="mb-3">
+                      <Form.Floating>
+                        <Form.Control
+                          id="floatingInputCustom"
+                          type="text"
+                          placeholder="Nominee Name" value="anusha" readOnly
+                        />
+                        <Form.Label htmlFor="floatingInputCustom">
+                          Nominee Name
+                        </Form.Label>
+                      </Form.Floating>
+                    </Col>
+                    <Col lg={4} md={4} xs={12} className="mb-3">
+                      <Form.Floating>
+                        <Form.Control
+                          id="floatingInputCustom"
+                          type="text"
+                          placeholder="Nominee Name" value="XXXXXXXXXXX1234"
+                          readOnly
+                        />
+                        <Form.Label htmlFor="floatingInputCustom">
+                          Nominee Aadhar No.
+                        </Form.Label>
+                      </Form.Floating>
+                    </Col>
                   </Row>
 
                   <h5 className="mt-4 mb-3">Consider Presentant As</h5>
-<div className="d-flex">
-                  <div className="mb-3">
-                    <Form.Check
-                      value="Executant"
-                      type="radio"
-                      aria-label="Executant"
-                      label="Executant" />
-                  </div>
-                  <div className="mb-3 mx-2">
+                  <div className="d-flex">
+                    <div className="mb-3">
                       <Form.Check
+                        defaultChecked readOnly
+                        value="Executant"
+                        type="radio"
+                        aria-label="Executant"
+                        label="Executant" />
+                    </div>
+                    <div className="mb-3 mx-2">
+                      <Form.Check
+                        disabled
                         value="Claimant"
                         type="radio"
                         aria-label="Claimant"
@@ -864,6 +866,7 @@ function documentPresentation() {
                     </div>
                     <div className="mb-3 mx-2">
                       <Form.Check
+                        disabled
                         value="Representative"
                         type="radio"
                         aria-label="Representative"
@@ -877,7 +880,7 @@ function documentPresentation() {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="ID Number" value="Subbu"/>
+                          placeholder="ID Number" value="Subbu" readOnly/>
                         <Form.Label htmlFor="floatingInputCustom">
                           ID Proof
                         </Form.Label>
@@ -914,7 +917,7 @@ function documentPresentation() {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Age" value="39" />
+                          placeholder="Age" value="39" readOnly />
                         <Form.Label htmlFor="floatingInputCustom">
                           Age
                         </Form.Label>
@@ -942,6 +945,7 @@ function documentPresentation() {
                             type="text"
                             placeholder="Age"
                             className="form-control"
+                            value="Venkateshwar rao" readOnly
                           />
                           <Form.Label htmlFor="floatingInputCustom">
                             Relation Name
@@ -969,7 +973,7 @@ function documentPresentation() {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Presentant Date" value="03-03-2023"/>
+                          placeholder="Presentant Date" value="03-03-2023" readOnly />
                         <Form.Label htmlFor="floatingInputCustom">
                           Presentant Date
                         </Form.Label>
@@ -980,93 +984,90 @@ function documentPresentation() {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Stamp Duty Borne by Document" value="03-03-2023" />
+                          placeholder="Stamp Duty Borne by Document" value="03-03-2023" readOnly/>
                         <Form.Label htmlFor="floatingInputCustom">
                           Stamp Duty Borne by Document
                         </Form.Label>
                       </Form.Floating>
                     </Col>
                   </Row>
-
-                                    <Row>
-                                        <Col lg={3} md={4} xs={12} className="mb-3">
-                                            <Form.Floating>
-                                                <Form.Control
-                                                    id="floatingInputCustom"
-                                                    type="text"
-                                                    placeholder="No of Sheets" value="3" readOnly
-                                                />
-                                                <Form.Label htmlFor="floatingInputCustom">
-                                                    No of Sheets
-                                                </Form.Label>
-                                            </Form.Floating>
-                                        </Col>
-                                        <Col lg={3} md={4} xs={12} className="mb-3">
-                                        <Form.Floating>
-                                                <Form.Control
-                                                    id="floatingInputCustom"
-                                                    type="text"
-                                                    placeholder=" Registration Type" value="3" readOnly
-                                                />
-                                                <Form.Label htmlFor="floatingInputCustom">
-                                                    Registration Type
-                                                </Form.Label>
-                                            </Form.Floating>
-                                        </Col>
-                                        <Col lg={3} md={4} xs={12} className="mb-3">
-                                        <Form.Floating>
-                                                <Form.Control
-                                                    id="floatingInputCustom"
-                                                    type="text"
-                                                    placeholder="Book Type" value="3" readOnly
-                                                />
-                                                <Form.Label htmlFor="floatingInputCustom">
-                                                Book Type
-                                                </Form.Label>
-                                            </Form.Floating>
-                                        </Col>
-                                    </Row>
-
-                                    <h5 className="mt-4 mb-3">Nature of Document</h5>
-
-                                    <Row>
-                                        <Col lg={3} md={4} xs={12} className="mb-3">
-                                        <Form.Floating>
-                                                <Form.Control
-                                                    id="floatingInputCustom"
-                                                    type="text"
-                                                    placeholder="Minor" value="3" readOnly
-                                                />
-                                                <Form.Label htmlFor="floatingInputCustom">
-                                                Minor
-                                                </Form.Label>
-                                            </Form.Floating>
-                                        </Col>
-                                        <Col lg={3} md={4} xs={12} className="mb-3">
-                                        <Form.Floating>
-                                                <Form.Control
-                                                    id="floatingInputCustom"
-                                                    type="text"
-                                                    placeholder="Major" value="3" readOnly
-                                                />
-                                                <Form.Label htmlFor="floatingInputCustom">
-                                                Major
-                                                </Form.Label>
-                                            </Form.Floating>
-                                        </Col>
-                                        <Col lg={3} md={4} xs={12} className="mb-3">
-                                            <Form.Floating>
-                                                <Form.Control
-                                                    id="floatingInputCustom"
-                                                    type="text"
-                                                    placeholder="No of Schedules" value="2"
-                                                />
-                                                <Form.Label htmlFor="floatingInputCustom">
-                                                    No of Schedules
-                                                </Form.Label>
-                                            </Form.Floating>
-                                        </Col>
-                                    </Row>
+                  <Row>
+                    <Col lg={3} md={4} xs={12} className="mb-3">
+                      <Form.Floating>
+                        <Form.Control
+                          id="floatingInputCustom"
+                          type="text"
+                          placeholder="No of Sheets" value="3" readOnly
+                        />
+                        <Form.Label htmlFor="floatingInputCustom">
+                          No of Sheets
+                        </Form.Label>
+                      </Form.Floating>
+                    </Col>
+                    <Col lg={3} md={4} xs={12} className="mb-3">
+                      <Form.Floating>
+                        <Form.Control
+                          id="floatingInputCustom"
+                          type="text"
+                          placeholder=" Registration Type" value="3" readOnly
+                        />
+                        <Form.Label htmlFor="floatingInputCustom">
+                          Registration Type
+                        </Form.Label>
+                      </Form.Floating>
+                    </Col>
+                    <Col lg={3} md={4} xs={12} className="mb-3">
+                      <Form.Floating>
+                        <Form.Control
+                          id="floatingInputCustom"
+                          type="text"
+                          placeholder="Book Type" value="3" readOnly
+                        />
+                        <Form.Label htmlFor="floatingInputCustom">
+                          Book Type
+                        </Form.Label>
+                      </Form.Floating>
+                    </Col>
+                  </Row>
+                  <h5 className="mt-4 mb-3">Nature of Document</h5>
+                  <Row>
+                    <Col lg={3} md={4} xs={12} className="mb-3">
+                      <Form.Floating>
+                        <Form.Control
+                          id="floatingInputCustom"
+                          type="text"
+                          placeholder="Minor" value="3" readOnly
+                        />
+                        <Form.Label htmlFor="floatingInputCustom">
+                          Minor
+                        </Form.Label>
+                      </Form.Floating>
+                    </Col>
+                    <Col lg={3} md={4} xs={12} className="mb-3">
+                      <Form.Floating>
+                        <Form.Control
+                          id="floatingInputCustom"
+                          type="text"
+                          placeholder="Major" value="3" readOnly
+                        />
+                        <Form.Label htmlFor="floatingInputCustom">
+                          Major
+                        </Form.Label>
+                      </Form.Floating>
+                    </Col>
+                    <Col lg={3} md={4} xs={12} className="mb-3">
+                      <Form.Floating>
+                        <Form.Control
+                          id="floatingInputCustom" readOnly
+                          type="text"
+                          placeholder="No of Schedules" value="2"
+                        />
+                        <Form.Label htmlFor="floatingInputCustom">
+                          No of Schedules
+                        </Form.Label>
+                      </Form.Floating>
+                    </Col>
+                  </Row>
 
                                 </div>
                             </div>

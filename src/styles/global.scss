@@ -1257,7 +1257,7 @@ body {
     order: -1; //swap order
     margin-left: 0;
     margin-right: 0.8em; // just extra space between text and icon
-    color: #274C77;
+
 }
 
 
@@ -1747,17 +1747,15 @@ body {
 }
 
 
-// .accordion-button::after {
-// //   background-image: initial;
-// //   width: 0;
-// color:#274C77;
-// }
+.accordion-button::after {
+    background: url(../../public/images/sidearrow.svg) no-repeat center center;;
 
-// .accordion-button:not(.collapsed)::after {
-//     color: #274C77;
-//     /* background-image: var(--bs-accordion-btn-active-icon); */
-//     //transform: var(--bs-accordion-btn-icon-transform);
-// }
+}
+
+.accordion-button:not(.collapsed)::after {
+     background: url(../../public/images/downarrow.svg) no-repeat center center;
+     transform:rotate(0deg);
+}
 
 // .accordion-button:focus {
 //   box-shadow: none;
@@ -1777,8 +1775,8 @@ body {
 
 .accordion-button {
 
-    border-radius: 12px !important;
-    color: $blue;
+    border-radius: 8px !important;
+
 }
 
 .pageTableContainer .pageNextBtn {
@@ -1956,7 +1954,7 @@ body {
 
 .accordion-button.collapsed .propertydetails-topbutton {
     display: none;
-    color: $blue;
+   // color: #274C77;
 }
 
 // menu bar css start
@@ -2055,4 +2053,17 @@ body {
     font-size: 16px;
     border-radius: 8px;
     border: none;
+}
+.WelcomePage{
+    margin: 0px 200px;
+}
+.welcomePage-image{
+    height:724px;
+}
+
+.popover {
+    max-width: 400px;
+}
+.popover-body{
+    width: 350px;
 }

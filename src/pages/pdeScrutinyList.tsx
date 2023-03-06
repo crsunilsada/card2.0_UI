@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { Container, Row, Col, Form, Nav, Tab, Tabs, TabContainer } from "react-bootstrap";
+import { Container, Row, Col, Form, Nav, Tab, Overlay, Popover } from "react-bootstrap";
 import { useTable, usePagination } from "react-table";
+import { BsInfoCircle } from "react-icons/bs";
 
 function PendingTable({ columns, data }) {
   const {
@@ -26,6 +27,16 @@ function PendingTable({ columns, data }) {
     },
     usePagination
   );
+
+  const [show, setShow] = useState(false);
+  const [target, setTarget] = useState(null);
+  const ref = useRef(null);
+
+  const handleClick = (event) => {
+    setShow(!show);
+    setTarget(event.target);
+  };
+
 
   // Render the UI for your table
   return (
@@ -155,11 +166,39 @@ function PendingTable({ columns, data }) {
               </button>
             </td>
             <td>
-              Ammend
-              <Image
-                width={18}
-                height={18}
-                src="/images/icon.svg" />
+              <div ref={ref}><span className="mx-2">Ammend</span>
+                <BsInfoCircle size={19} onClick={handleClick} style={{color:"#274C77"}}/>
+                <Overlay
+                  show={show}
+                  target={target}
+                  placement="bottom"
+                  container={ref}
+                  containerPadding={20}
+                >
+                  <Popover id="popover-contained">
+                    <Popover.Body>
+                      <h5>Previous Ammend Reasons</h5>
+                      <Form.Floating>
+                        <Form.Control
+                          id="floatingInputCustom"
+                          type="text"
+                          // placeholder="Deficit Amount"
+                          value="Deficit Amount"
+                        />
+                      </Form.Floating>
+                      <h5>Comments</h5>
+                      <Form.Floating>
+                        <Form.Control
+                          id="floatingInputCustom"
+                          type="text"
+                          // placeholder="Pay 10,000"
+                          value="Pay 10,000"
+                        />
+                      </Form.Floating>
+                    </Popover.Body>
+                  </Popover>
+                </Overlay>
+              </div>
             </td>
             <td className="text-center">
               <button

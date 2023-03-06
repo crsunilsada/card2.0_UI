@@ -12,12 +12,12 @@ const LoginOtp = () => {
                 <link rel="icon" href="/igrsfavicon.ico" />
             </Head>
 
-            <div className="m-5">
-                <div className="LoginPage mx-5" >
+            <div className="mt-5 WelcomePage">
+                <div className="LoginPage">
                     <Row>
-                        <Col lg={12} md={12} xs={12} className="d-flex justify-content-center align-items-center flex-column min-vh-100">
-                            <Image src={WaveGif} alt="wave-gif" width={130} height={130} />
-                            <h5>Hi, Praveen kumar! <br />Welcome Back</h5>
+                        <Col lg={12} md={12} xs={12} className="d-flex justify-content-center align-items-center flex-column welcomePage-image">
+                            <Image src={WaveGif} alt="wave-gif" width={80} height={80} />
+                            <h6 className="text-center">Hi, Praveen kumar! <br />Welcome Back</h6>
                         </Col>
                     </Row>
                 </div>
