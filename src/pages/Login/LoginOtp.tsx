@@ -27,7 +27,7 @@ const LoginOtp = () => {
                                     <MdOutlineKeyboardBackspace size={30} />
                                 </Col>
                                 <Col lg={11} md={11} xs={11}>
-                                    <Link href="/LoginPage">
+                                    <Link href="/Login/LoginPage">
                                         <u>Back</u>
                                     </Link>
                                 </Col>
