@@ -38,16 +38,16 @@ function Table({ columns, data }) {
                         </thead>
                         <thead>
                             <tr>
-                                <th className="text-center">
+                                <th rowSpan={2} className="text-center">
                                     Assigned SROs
                                 </th>
-                                <th className="text-center">
+                                <th rowSpan={2} className="text-center">
                                     From Date
                                 </th>
-                                <th className="text-center">
+                                <th rowSpan={2} className="text-center">
                                     To Date
                                 </th>
-                                <th className="text-center">
+                                <th  rowSpan={2} className="text-center">
                                     Edit
                                 </th>
                             </tr>
@@ -192,10 +192,19 @@ function SRO() {
                                 </Row><br />
                                 <Row className="justify-content-center" >
                                     <Col lg={6} md={6} xs={12} >
-                                        <textarea rows={5} style={{ width: '100%', borderColor: '#AEAEAE', borderRadius: '3px' }}
+                                        {/* <textarea rows={5} style={{ width: '100%', borderColor: '#AEAEAE', borderRadius: '3px' }}
                                             placeholder={'Comments/Optional'}
                                             name="Comments(Optional)">
-                                        </textarea>
+                                        </textarea> */}
+                                         <Form.Floating>
+                                    <Form.Control
+                                        id="floatingInputCustom"
+                                        type="text"
+                                        placeholder="Comments(Optional)" style={{height:"100px"}} />
+                                    <Form.Label htmlFor="floatingInputCustom">
+                                       Comments(Optional)  
+                                    </Form.Label>
+                                </Form.Floating>
                                     </Col>
                                 </Row>
                             </Container>

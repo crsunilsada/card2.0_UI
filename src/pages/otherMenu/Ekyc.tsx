@@ -24,12 +24,12 @@ const Ekyc = () => {
                 <div className="mainWrapper">
                     <div className="wrapperInner pt-0">
                         <div className="acknowledgement">
-                            <Button className='active partyDetails'>EKYC Services</Button>
+                            <button className='active'>EKYC Services</button>
                         </div>
-                        <Row className="mb-4 mt-3">
+                        <Row className="p-4">
                             <Col lg={10} md={10} xs={12}></Col>
-                            <Col lg={2} md={2} xs={12}><h4> Device Mantra</h4></Col></Row>
-                        <Row className="p-4 ">
+                            <Col lg={2} md={2} xs={12}><h4>Device Mantra</h4></Col></Row>
+                        <Row className="p-4">
                             <Col lg={3} md={4} xs={12}>
                                 <Form.Floating>
                                     <Form.Control
@@ -52,11 +52,13 @@ const Ekyc = () => {
                             </Col>
                         </Row>
                         <Row className='p-4'>
-                            <Col lg={11} md={11} xs={11} className="mb-3">
+                            <Col lg={11} md={11} xs={11}>
                                 <div className=" d-flex form-check-checkbox">
-                                    <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" />
-                                    <h6>Consent:</h6>
-                                    <Col style={{ marginLeft: "20px" }}>
+                                    <Col lg={0.25} md={0.25} xs={0.25}>
+                                        <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" />
+                                    </Col>
+                                    <Col lg={1} md={1} xs={1}><h6>Consent:</h6></Col>
+                                    <Col >
                                         I, the holder of Aadhar Number, given by consent number to IGRS under ITE&C, Govt. of Andhra Pradesh, to obtain my Aadhar Number and Biometric/ OTP for authenticating wih UIDAI
                                     </Col>
                                 </div>
@@ -68,13 +70,10 @@ const Ekyc = () => {
                         </Row>
                         <div className="pageNextBtn">
                             <Row>
-                                <Col lg={7} md={7} xs={7}></Col>
-                                <Col lg={2} md={2} xs={2}>
+                                <Col lg={8} md={8} xs={12}></Col>
+                                <Col lg={2} md={2} xs={12}>
                                     <button className="whitebuttonclass">Reset</button></Col>
-                                <Col lg={2} md={2} xs={2}>
-
                                     <button className="bluebuttonclass" data-bs-toggle="modal" data-bs-target="#popup" >Capture</button>
-                                </Col>
                             </Row>
                             {/* <div className="modal fade" id="popup" role="dialog" aria-labelledby="popuplabel" aria-hidden="true">
                                 <div className="modal-dialog" role="document">
@@ -82,7 +81,7 @@ const Ekyc = () => {
                                         <div className="modal-header">
                                             <h5 className="modal-title" id="popuplabel">Success Message</h5>
                                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                                            <Image width={20} height={20} src="/images/popup-close.svg" />                                       
+                                            <Image width={20} height={20} src="/images/popup-close.svg" />
                                             </button>
                                         </div>
                                         <div className="modal-body">
@@ -107,10 +106,10 @@ const Ekyc = () => {
                                         <div className="modal-body">
                                             <Row >
                                                 <Col lg={5} md={5} xs={12}></Col>
-                                                <Col lg={2} md={2} xs={12}><img src="/images/rejected.svg" /></Col></Row>
+                                                <Col lg={2} md={2} xs={12}><img src="/images/rejected.svg"/></Col></Row>
                                             <Row className='justify-content-center mt-3'>Couldn’t capture thumb impression</Row>
                                         </div>
-                                        <div >
+                                        <div>
                                             <Row className="justify-content-center mb-5">
                                                 <Col lg={3} md={3} xs={12}>
                                                     <button type="button" data-dismiss="modal" className="whitebuttonclass">Cancel</button></Col>
@@ -133,8 +132,8 @@ const Ekyc = () => {
                                         <div className="modal-bodyekyc ">
                                             <Form>
                                                 <div key="inline-radio" >
-                                                    
-                                                    <div className='mb-2'><Form.Check 
+
+                                                    <div className='mb-2'><Form.Check
                                                         value="EKYC failure Reason One"
                                                         type="radio"
                                                         aria-label="EKYC failure Reason One"
@@ -186,7 +185,7 @@ const Ekyc = () => {
                                             <h6>NOTE: SRO is sole responsible for Identification of party</h6>
                                             </Row>
                                             </Form>
-                                            
+
                                         </div>
                                         <Row>
                                         <Col className='text-center mb-3'>
@@ -202,7 +201,7 @@ const Ekyc = () => {
                                             <h5 className="modal-title" id="popuplabel">Success Message</h5>
                                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close">
                                             <Image width={20} height={20} src="/images/popup-close.svg" />
-                                       
+
                                             </button>
                                         </div>
                                         <div className="modal-body">

@@ -7,7 +7,6 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import Link from "next/link";
 import Head from "next/head";
 
-
 function MyVerticallyCenteredModal(props) {
     return (
         <Modal
@@ -30,7 +29,6 @@ function MyVerticallyCenteredModal(props) {
         </Modal>
     );
 }
-
 
 const LoginPage = () => {
     const [modalShow, setModalShow] = useState(false);
@@ -104,7 +102,7 @@ const LoginPage = () => {
                             <Row>
                                 <Col lg={6} md={6} xs={6}></Col>
                                 <Col lg={4} md={4} xs={4}>
-                                    <Button className="loginbuttonclass my-3" onClick={() => setModalShow(true)}><Link href={"/Login/LoginOtp"} >Next</Link></Button>
+                                    <Link href={"/Login/LoginOtp"} ><Button className="loginbuttonclass my-3" onClick={() => setModalShow(true)}>Next</Button></Link>
                                     <MyVerticallyCenteredModal
                                         show={modalShow}
                                         onHide={() => setModalShow(false)}

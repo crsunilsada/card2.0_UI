@@ -1004,7 +1004,7 @@ body {
 }
 
 .header-space {
-    height: 150px;
+    height: 130px;
 }
 
 .loginheaderspace {
@@ -1658,10 +1658,6 @@ body {
     background: #555;
 }
 
-.submit {
-    background-color: #274C77;
-}
-
 .linkdocuments-bg {
     background-color: #F1F3F6;
 }
@@ -1731,10 +1727,6 @@ body {
     color: white;
     background: #43A047;
     border-radius: 0px 20px 0px 0px;
-}
-
-.submit {
-    background-color: #274C77;
 }
 
 .linkdocuments-bg {
@@ -1843,14 +1835,6 @@ body {
     max-width: 82px;
     height: 40px;
 }
-
-// .so.form-control {
-//   width: 20%;
-//   height: 35px;
-//   display: inline-block;
-//   border-radius: 12px 0 0 12px;
-//   border-right: none;
-// }
 
 .witness-image-card {
     box-sizing: border-box;
@@ -2054,6 +2038,14 @@ body {
     border-radius: 8px;
     border: none;
 }
+.digital-sign-btn-enable {
+    color: white;
+    background-color: $blue ;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+}
 .WelcomePage{
     margin: 0px 200px;
 }
@@ -2067,3 +2059,4 @@ body {
 .popover-body{
     width: 350px;
 }
+.submit, .submit:hover { background-color: #274C77;}

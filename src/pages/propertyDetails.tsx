@@ -1,32 +1,26 @@
 import Head from "next/head";
-import Image from "next/image";
 import Accordion from 'react-bootstrap/Accordion';
-import { Container, Row, Col, Table, Tab, Nav, Form } from "react-bootstrap";
+import { Row, Col, Table, Form } from "react-bootstrap";
 import Stepper from '../components/Stepper'
 import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
 import { useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
-
-//import 'bootstrap-icons/font/bootstrap-icons.css';
 import * as React from "react";
-
-
-
 const PropertyDetails = () => {
+    const [selectedItem, setSelectedItem] = useState('');
+    const handleItemClick = (item) => {
+        setSelectedItem(item);
+    };
     const [display, setdisplay] = useState(false)
     const handleClick = () => {
         setdisplay(true)
     }
     const [show, setShow] = useState(false);
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [show1, setShow1] = useState(false);
-
     const handleClose1 = () => setShow1(false);
     const handleShow1 = () => setShow1(true);
-
     const tableData = [
         {
             appNo: "456787654",
@@ -79,15 +73,11 @@ const PropertyDetails = () => {
     ];
     const [cards, setCards] = useState([]);
     const [buttonClicked, setButtonClicked] = useState(false);
-
     function handleButtonClick() {
         if (cards.length === 0) {
-
             const newCard = { title: "New", description: "newcard." };
-
             setCards([newCard, ...cards]);
         }
-
         setButtonClicked(true);
     }
     const [age, setAge] = React.useState('');
@@ -98,12 +88,6 @@ const PropertyDetails = () => {
         setInputFields([...inputFields, {
             fullName: '',
         }])
-
-    }
-    const removeInputFields = (index) => {
-        const rows = [...inputFields];
-        rows.splice(index, 1);
-        setInputFields(rows);
     }
     return (
         <><Stepper /><div className="pageMainWrap pt-4 innerpage">
@@ -112,7 +96,6 @@ const PropertyDetails = () => {
                 <meta name="description" content="login" />
                 <link rel="icon" href="/igrsfavicon.ico" />
             </Head>
-
             <div className="mainWrapper">
                 <div className="wrapperInner pt-0">
                     <div className="acknowledgement">
@@ -126,7 +109,6 @@ const PropertyDetails = () => {
                                     <Dropdown.Toggle id="" className="previous-schedule" variant="secondary">
                                         Previous Schedule
                                     </Dropdown.Toggle>
-
                                     <Dropdown.Menu>
                                         <Dropdown.Item href="#/action-1">Schedule 1</Dropdown.Item>
                                         <Dropdown.Item href="#/action-2">Schedule 2</Dropdown.Item>
@@ -139,7 +121,7 @@ const PropertyDetails = () => {
                     <div className="pageTableContainer pageTableMain mt-4">
                         <h4 className="mb-4">Basic Details</h4>
                         <Row className="mb-4">
-                            <Col lg={3} md={4} xs={12}>
+                            <Col lg={3} md={4} xs={12} className="mb-3">
                                 <Form.Floating>
                                     <Form.Control
                                         id="floatingInputCustom"
@@ -171,8 +153,8 @@ const PropertyDetails = () => {
                                 </Form.Floating>
                             </Col>
                         </Row>
-                        <Row className="mb-4">
-                            <Col lg={3} md={4} xs={12}>
+                        <Row >
+                            <Col lg={3} md={4} xs={12} className="mb-3">
                                 <Form.Floating>
                                     <Form.Control
                                         id="floatingInputCustom"
@@ -211,14 +193,12 @@ const PropertyDetails = () => {
                                     </Accordion.Header>
                                     <Accordion.Body>
                                         <Row className="mb-4">
-
                                             <Col lg={6} md={6} xs={12} className="mb-3">
                                                 <div className="drop-section">
-                                                    <Dropdown>
-                                                        <Dropdown.Toggle id="" className=" form-select" variant="">
-                                                            Local Body
+                                                    <Dropdown onSelect={handleItemClick}>
+                                                        <Dropdown.Toggle id="local-body-dropdown" className="form-select" variant="" style={{ border: '1px solid #2279c5' }}>
+                                                            {selectedItem || 'Local Body'}
                                                         </Dropdown.Toggle>
-
                                                         <Dropdown.Menu>
                                                             <table className="tableData listData tableheadBg table mb-0">
                                                                 <thead>
@@ -230,30 +210,41 @@ const PropertyDetails = () => {
                                                                 <tbody>
                                                                     <tr>
                                                                         <td className="text-center">01</td>
-                                                                        <td><Dropdown.Item href="#/action-1">Municipal Corporation</Dropdown.Item></td>
+                                                                        <td>
+                                                                            <Dropdown.Item eventKey='Municipal Corporation'>
+                                                                                Municipal Corporation
+                                                                            </Dropdown.Item>
+                                                                        </td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td className="text-center">02</td>
-                                                                        <td><Dropdown.Item href="#/action-1">SPL/ Selection grade municipality</Dropdown.Item></td>
+                                                                        <td>
+                                                                            <Dropdown.Item eventKey='SPL/ Selection grade municipality'>
+                                                                                SPL/ Selection grade municipality
+                                                                            </Dropdown.Item>
+                                                                        </td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td className="text-center">03</td>
-                                                                        <td><Dropdown.Item href="#/action-1">other Municipality/ Notified Area</Dropdown.Item></td>
+                                                                        <td>
+                                                                            <Dropdown.Item eventKey='other Municipality/ Notified Area'>
+                                                                                other Municipality/ Notified Area
+                                                                            </Dropdown.Item>
+                                                                        </td>
                                                                     </tr>
                                                                 </tbody>
-
                                                             </table>
                                                         </Dropdown.Menu>
                                                     </Dropdown>
                                                 </div>
                                             </Col>
                                             <Col lg={6} md={6} xs={12} className="mb-3">
-                                            <div className="drop-section">
-                                                <Dropdown>
-                                                    <Dropdown.Toggle id="" className=" form-select" variant="">
-                                                    Map Claimants
-                                                    </Dropdown.Toggle>
-
+                                                <div className="drop-section">
+                                                    <Dropdown >
+                                                        <Dropdown.Toggle id="" className=" form-select" style={{ border: '1px solid #2279c5' }} variant="">
+                                                            {/* {selectedItem || 'Map Claimant'} */}
+                                                            Map Claimant
+                                                        </Dropdown.Toggle>
                                                         <Dropdown.Menu>
                                                             <table className="tableData listData tableheadBg table mb-0">
                                                                 <thead>
@@ -276,14 +267,11 @@ const PropertyDetails = () => {
                                                                         <td><Dropdown.Item href="#/action-1">Bindu</Dropdown.Item></td>
                                                                     </tr>
                                                                 </tbody>
-
-                                                        </table>
-                                                    </Dropdown.Menu>
-                                                </Dropdown>
-                                            </div>
+                                                            </table>
+                                                        </Dropdown.Menu>
+                                                    </Dropdown>
+                                                </div>
                                             </Col>
-                                        </Row>
-                                        <Row className="mb-4">
                                             <Col lg={6} md={6} xs={12} className="mb-3">
                                                 <Form.Floating>
                                                     <Form.Select aria-label="landUse">
@@ -294,7 +282,7 @@ const PropertyDetails = () => {
                                                     </Form.Select>
                                                 </Form.Floating>
                                             </Col>
-                                            <Col lg={6} md={6} xs={12}>
+                                            <Col lg={6} md={6} xs={12} className="mb-3">
                                                 <Form.Floating>
                                                     <Form.Select aria-label="localBody">
                                                         <option>ULC Act</option>
@@ -304,8 +292,6 @@ const PropertyDetails = () => {
                                                     </Form.Select>
                                                 </Form.Floating>
                                             </Col>
-                                        </Row>
-                                        <Row className="mb-4">
                                             <Col lg={6} md={6} xs={12} className="mb-3">
                                                 <Form.Floating>
                                                     <Form.Select aria-label="mapClaimants">
@@ -338,90 +324,45 @@ const PropertyDetails = () => {
                                                     </Form.Label>
                                                 </Form.Floating>
                                             </Col>
-                                        </Row>
-                                        <Row className="mb-4">                                          <Col lg={3} md={3} xs={12} className="mb-3">
-
-                                            <div className="drop-section">
-
-                                                <Dropdown>
-
-                                                    <Dropdown.Toggle id="" className=" form-select remove-icon" variant="">
-
-                                                        Door No
-
-                                                    </Dropdown.Toggle>
-
-
-
-                                                    <Dropdown.Menu>
-
-                                                        <table className="tableData listData tableheadBg table mb-0">
-
-                                                            <thead>
-
-                                                                <tr>
-
-                                                                    <th className="text-center">Door Number</th>
-
-                                                                    <th className="text-center">Building Number</th>
-
-                                                                </tr>
-
-                                                            </thead>
-
-                                                            <tbody>
-
-                                                                <tr>
-
-                                                                    <td className="text-center">
-
-                                                                        <input type="" className="form-control1 " id="floatingPassword" placeholder=""></input></td>
-
-                                                                    <td><Dropdown.Item href="#/action-1">
-
-                                                                        <input type="" className="form-control1" id="" placeholder=""></input></Dropdown.Item></td>
-
-                                                                </tr>
-                                                                <tr>
-
-                                                                    <td className="text-center"></td>
-
-                                                                    <td><Dropdown.Item href="#/action-1">
-                                                                        <Row >
-                                                                            <Col lg={8} md={8} xs={12} ></Col>
-                                                                            <Col lg={4} md={4} xs={12} >
-                                                                                <img src="/images/plus-circle.svg"class="plus-circle-img" />
-                                                                                {/* <plusCircle /> */}
-                                                                            </Col>
-                                                                        </Row></Dropdown.Item></td>
-
-                                                                </tr>
-                                                                <tr>
-
-
-
-                                                                </tr>
-
-
-
-
-
-
-
-
-                                                            </tbody>
-
-
-
-                                                        </table>
-
-                                                    </Dropdown.Menu>
-
-                                                </Dropdown>
-
-                                            </div>
-
-                                        </Col>
+                                            <Col lg={3} md={3} xs={12} className="mb-3">
+                                                <div className="drop-section">
+                                                    <Dropdown>
+                                                        <Dropdown.Toggle id="" className=" form-select remove-icon" variant="" style={{ border: '1px solid #2279c5' }}>
+                                                            Door No
+                                                        </Dropdown.Toggle>
+                                                        <Dropdown.Menu>
+                                                            <table className="tableData listData tableheadBg table mb-0">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th className="text-center">Door Number</th>
+                                                                        <th className="text-center">Building Number</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td className="text-center">
+                                                                            <input type="" className="form-control1 " id="floatingPassword" placeholder=""></input></td>
+                                                                        <td><Dropdown.Item href="#/action-1">
+                                                                            <input type="" className="form-control1" id="" placeholder=""></input></Dropdown.Item></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td className="text-center"></td>
+                                                                        <td><Dropdown.Item href="#/action-1">
+                                                                            <Row >
+                                                                                <Col lg={8} md={8} xs={12} ></Col>
+                                                                                <Col lg={4} md={4} xs={12} >
+                                                                                    <img src="/images/plus-circle.svg" className="plus-circle-img" />
+                                                                                </Col>
+                                                                            </Row></Dropdown.Item></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </Dropdown.Menu>
+                                                    </Dropdown>
+                                                </div>
+                                            </Col>
                                             <Col lg={3} md={3} xs={12} className="mb-3">
                                                 <Form.Floating>
                                                     <Form.Control
@@ -433,8 +374,6 @@ const PropertyDetails = () => {
                                                     </Form.Label>
                                                 </Form.Floating>
                                             </Col>
-
-
                                             <Col lg={3} md={3} xs={12} className="mb-3">
                                                 <Form.Floating>
                                                     <Form.Control
@@ -457,7 +396,6 @@ const PropertyDetails = () => {
                                                     </Form.Label>
                                                 </Form.Floating>
                                             </Col>
-                                            <Row className="mb-4"></Row>
                                             <Col lg={4} md={4} xs={12} className="mb-3">
                                                 <Form.Floating>
                                                     <Form.Control
@@ -480,7 +418,6 @@ const PropertyDetails = () => {
                                                     </Form.Label>
                                                 </Form.Floating>
                                             </Col>
-
                                             <Col lg={4} md={4} xs={12} className="mb-3">
                                                 <Form.Floating>
                                                     <Form.Control
@@ -492,8 +429,6 @@ const PropertyDetails = () => {
                                                     </Form.Label>
                                                 </Form.Floating>
                                             </Col>
-                                        </Row>
-                                        <Row className="mb-4">
                                             <Col lg={4} md={4} xs={12} className="mb-3">
                                                 <Form.Floating>
                                                     <Form.Control
@@ -527,9 +462,7 @@ const PropertyDetails = () => {
                                                 </Form.Floating>
                                             </Col>
                                         </Row>
-
                                         <div className="pageNextBtn">
-                                            {/* <button className="next">Clear</button> */}
                                             <button className="clear">Clear</button>
                                             <button className="next" onClick={handleShow}>Next</button>
                                             <Modal show={show} onHide={handleClose}>
@@ -543,8 +476,6 @@ const PropertyDetails = () => {
                                                     </Button>
                                                 </Modal.Footer>
                                             </Modal>
-
-
                                         </div>
                                     </Accordion.Body>
                                 </Accordion.Item>
@@ -555,279 +486,137 @@ const PropertyDetails = () => {
                                 <Accordion.Item eventKey="0">
                                     <Accordion.Header>Boundaries</Accordion.Header>
                                     <Accordion.Body>
-
                                         <h4>Property Boundaries</h4>
-
                                         <Row className="mb-4">
-
                                             <Col lg={6} md={6} xs={12} className="mb-3">
-
                                                 <Form.Floating>
-
                                                     <Form.Control
-
                                                         id="floatingInputCustom"
-
                                                         type="text"
-
                                                         placeholder="East" />
-
                                                     <Form.Label htmlFor="floatingInputCustom">
-
                                                         East
-
                                                     </Form.Label>
-
                                                 </Form.Floating>
-
                                             </Col>
-
                                             <Col lg={6} md={6} xs={12} className="mb-3">
-
                                                 <Form.Floating>
-
                                                     <Form.Control
-
                                                         id="floatingInputCustom"
-
                                                         type="text"
-
                                                         placeholder="West" />
-
                                                     <Form.Label htmlFor="floatingInputCustom">
-
                                                         West
-
                                                     </Form.Label>
-
                                                 </Form.Floating>
-
-                                            </Col></Row>
-                                        <Row className="mb-4">
-
+                                            </Col>
                                             <Col lg={6} md={6} xs={12} className="mb-3">
-
                                                 <Form.Floating>
-
                                                     <Form.Control
-
                                                         id="floatingInputCustom"
-
                                                         type="text"
-
                                                         placeholder="North" />
-
                                                     <Form.Label htmlFor="floatingInputCustom">
-
                                                         North
-
                                                     </Form.Label>
-
                                                 </Form.Floating>
-
                                             </Col>
-
                                             <Col lg={6} md={6} xs={12} className="mb-3">
-
                                                 <Form.Floating>
-
                                                     <Form.Control
-
                                                         id="floatingInputCustom"
-
                                                         type="text"
-
                                                         placeholder="South" />
-
                                                     <Form.Label htmlFor="floatingInputCustom">
-
                                                         South
-
                                                     </Form.Label>
-
                                                 </Form.Floating>
-
                                             </Col>
-
-                                        </Row>
-
-                                        <Row className="mb-4">
-
                                             <Col lg={6} md={6} xs={12} className="mb-3">
-
                                                 <Form.Floating>
-
                                                     <Form.Control
-
                                                         id="floatingInputCustom"
-
                                                         type="text"
-
                                                         placeholder="PPD Desc" />
-
                                                     <Form.Label htmlFor="floatingInputCustom">
-
                                                         PPD Desc
-
                                                     </Form.Label>
-
                                                 </Form.Floating>
-
                                             </Col>
-
                                             <Col lg={6} md={6} xs={12} className="mb-3">
-
                                                 <Form.Floating>
-
                                                     <Form.Control
-
                                                         id="floatingInputCustom"
-
                                                         type="text"
-
                                                         placeholder="Total Extent/Undivided Share" />
-
                                                     <Form.Label htmlFor="floatingInputCustom">
-
                                                         Total Extent/Undivided Share
-
                                                     </Form.Label>
-
                                                 </Form.Floating>
-
-                                            </Col></Row>
-                                        <Row className="mb-4">
-
+                                            </Col>
                                             <Col lg={12} md={12} xs={12} className="mb-3">
-
                                                 <Form.Floating>
-
                                                     <Form.Select aria-label="units">
-
                                                         <option>Units</option>
-
                                                         <option value="1">One</option>
-
                                                         <option value="2">Two</option>
-
                                                         <option value="3">Three</option>
-
                                                     </Form.Select>
-
                                                 </Form.Floating>
-
                                             </Col>
-
                                         </Row>
-
                                         <h4>Flat Boundaries</h4>
-
                                         <Row className="mb-4">
-
                                             <Col lg={6} md={6} xs={12} className="mb-3">
-
                                                 <Form.Floating>
-
                                                     <Form.Control
-
                                                         id="floatingInputCustom"
-
                                                         type="text"
-
                                                         placeholder="East" />
-
                                                     <Form.Label htmlFor="floatingInputCustom">
-
                                                         East
-
                                                     </Form.Label>
-
                                                 </Form.Floating>
-
                                             </Col>
-
                                             <Col lg={6} md={6} xs={12} className="mb-3">
-
                                                 <Form.Floating>
-
                                                     <Form.Control
-
                                                         id="floatingInputCustom"
-
                                                         type="text"
-
                                                         placeholder="West" />
-
                                                     <Form.Label htmlFor="floatingInputCustom">
-
                                                         West
-
                                                     </Form.Label>
-
                                                 </Form.Floating>
-
                                             </Col>
-                                        </Row>
-                                        <Row className="mb-4">
-
                                             <Col lg={6} md={6} xs={12} className="mb-3">
-
                                                 <Form.Floating>
-
                                                     <Form.Control
-
                                                         id="floatingInputCustom"
-
                                                         type="text"
-
                                                         placeholder="North" />
-
                                                     <Form.Label htmlFor="floatingInputCustom">
-
                                                         North
-
                                                     </Form.Label>
-
                                                 </Form.Floating>
-
                                             </Col>
-
                                             <Col lg={6} md={6} xs={12} className="mb-3">
-
                                                 <Form.Floating>
-
                                                     <Form.Control
-
                                                         id="floatingInputCustom"
-
                                                         type="text"
-
                                                         placeholder="South" />
-
                                                     <Form.Label htmlFor="floatingInputCustom">
-
                                                         South
-
                                                     </Form.Label>
-
                                                 </Form.Floating>
-
                                             </Col>
-
                                         </Row>
-
                                         <div className="pageNextBtn">
-
                                             <button className="clear">Clear</button>
-
-                                            {/* <button className="next">Clear</button> */}
-
                                             <button className="next">Next</button>
-
                                         </div>
-
                                     </Accordion.Body>
-
                                 </Accordion.Item>
                             </Accordion>
                         </div>
@@ -836,17 +625,12 @@ const PropertyDetails = () => {
                                 <Accordion.Item eventKey="0">
                                     <Accordion.Header>Structure Details </Accordion.Header>
                                     <Accordion.Body>
-
-
                                         <div className="pageNextBtn">
-                                            {/* <button className="next">Clear</button> */}
-                                            {/* <button className="clear" onClick={handleShow1}>Add New</button> */}
                                             <div>
                                                 <div>
                                                     {cards.map((card, index) => (
                                                         <div key={index} >
                                                             <div>
-
                                                                 <Row className="partyDetails mb-3 linkdocuments-bg">
                                                                     <Col lg={4} md={4} xs={12} className="mb-3" />
                                                                     <Col lg={4} md={4} xs={12} className="mb-3">
@@ -866,7 +650,6 @@ const PropertyDetails = () => {
                                                                             </div>
                                                                             <div className="cardBody">
                                                                                 <Row>
-
                                                                                     <Col lg={12} md={12} xs={12}>
                                                                                         <div className="d-flex align-items-center justify-content-evenly mb-3">
                                                                                             <h6>
@@ -879,7 +662,6 @@ const PropertyDetails = () => {
                                                                                                 <span>Structure Type</span><center>RCC</center>
                                                                                             </h6>
                                                                                         </div>
-
                                                                                         <div className="d-flex align-items-center justify-content-evenly mb-3">
                                                                                             <h6>
                                                                                                 <span>Plinth Area</span><center>2,200 Sq.ft</center>
@@ -890,20 +672,13 @@ const PropertyDetails = () => {
                                                                                             <h6 >
                                                                                                 <span>Age</span><center>5 Years</center>
                                                                                             </h6>
-
                                                                                         </div>
-
-
                                                                                     </Col>
                                                                                 </Row>
-
                                                                             </div>
-
                                                                         </div>
                                                                     </Col>
                                                                     <div className="pageNextBtn">
-                                                                        {/* <button className="next">Clear</button> */}
-
                                                                         <button className="clear" onClick={handleShow1}>Add New</button>&ensp;&ensp;
                                                                         <button className="next">Next</button>
                                                                     </div>
@@ -935,8 +710,6 @@ const PropertyDetails = () => {
                                                                     </Form.Select>
                                                                 </Form.Floating>
                                                             </Col>
-                                                        </Row>
-                                                        <Row className="mb-4">
                                                             <Col lg={6} md={6} xs={12} className="mb-3">
                                                                 <Form.Floating>
                                                                     <Form.Select aria-label="units">
@@ -947,7 +720,6 @@ const PropertyDetails = () => {
                                                                     </Form.Select>
                                                                 </Form.Floating>
                                                             </Col>
-
                                                             <Col lg={6} md={6} xs={12} className="mb-3">
                                                                 <Form.Floating>
                                                                     <Form.Select aria-label="units">
@@ -958,8 +730,6 @@ const PropertyDetails = () => {
                                                                     </Form.Select>
                                                                 </Form.Floating>
                                                             </Col>
-                                                        </Row>
-                                                        <Row className="mb-4">
                                                             <Col lg={6} md={6} xs={12} className="mb-3">
                                                                 <Form.Floating>
                                                                     <Form.Control
@@ -984,13 +754,12 @@ const PropertyDetails = () => {
                                                             </Col>
                                                         </Row>
                                                         <div className="pageNextBtn">
-                                                            <button className="clear" onClick={handleButtonClick}>Add new</button>&ensp;&ensp;
+                                                            <button className="clear" onClick={handleButtonClick}>Add new</button>
                                                             <button className="next">Next</button>
                                                         </div>
                                                     </div>
                                                 )}
                                             </div>
-
                                             <Modal show={show1} onHide={handleClose1}>
                                                 <Modal.Header closeButton>
                                                     <Modal.Title>Add New Structure</Modal.Title>
@@ -1060,32 +829,16 @@ const PropertyDetails = () => {
                                                             </Form.Floating>
                                                         </Col></Row>
                                                 </Modal.Body>
-
                                                 <Modal.Footer>
-
-
                                                     <div className="pageNextBtn">
-
                                                         <button className="clear">Add New</button>&ensp;&ensp;
-
                                                         <Button onClick={handleClose1} className="next">
-
                                                             Next
-
                                                         </Button>
-
                                                     </div>
-                                                    {/* <button className="clear">Add New</button>
-                                                    <Button variant="primary" onClick={handleClose1}>
-                                                        Next
-                                                    </Button> */}
-
-
                                                 </Modal.Footer>
                                             </Modal>
-
                                         </div>
-
                                     </Accordion.Body>
                                 </Accordion.Item>
                             </Accordion>
@@ -1095,108 +848,55 @@ const PropertyDetails = () => {
                                 <Accordion.Item eventKey="0">
                                     <Accordion.Header>Apartment Details  </Accordion.Header>
                                     <Accordion.Body>
-
                                         <Row className="mb-4">
-
                                             <Col lg={6} md={6} xs={12} className="mb-3">
-
                                                 <Form.Floating>
-
                                                     <Form.Control
-
                                                         id="floatingInputCustom"
-
                                                         type="text"
-
                                                         placeholder="Apartment Name" />
-
                                                     <Form.Label htmlFor="floatingInputCustom">
-
                                                         Apartment Name
-
                                                     </Form.Label>
-
                                                 </Form.Floating>
-
                                             </Col>
-
                                             <Col lg={6} md={6} xs={12} className="mb-3">
-
                                                 <Form.Floating>
-
                                                     <Form.Control
-
                                                         id="floatingInputCustom"
-
                                                         type="text"
-
                                                         placeholder="Flat No" />
-
                                                     <Form.Label htmlFor="floatingInputCustom">
-
                                                         Flat No
-
                                                     </Form.Label>
-
                                                 </Form.Floating>
-
-                                            </Col></Row>
-                                        <Row className="mb-4">
-
+                                            </Col>
                                             <Col lg={6} md={6} xs={12} className="mb-3">
-
                                                 <Form.Floating>
-
                                                     <Form.Control
-
                                                         id="floatingInputCustom"
-
                                                         type="text"
-
                                                         placeholder="Apartment Extent" />
-
                                                     <Form.Label htmlFor="floatingInputCustom">
-
                                                         Apartment Extent
-
                                                     </Form.Label>
-
                                                 </Form.Floating>
-
                                             </Col>
-
                                             <Col lg={6} md={6} xs={12} className="mb-3">
-
                                                 <Form.Floating>
-
                                                     <Form.Select aria-label="units">
-
                                                         <option>Units</option>
-
                                                         <option value="1">One</option>
-
                                                         <option value="2">Two</option>
-
                                                         <option value="3">Three</option>
-
                                                     </Form.Select>
-
                                                 </Form.Floating>
-
                                             </Col>
-
                                         </Row>
-
                                         <div className="pageNextBtn">
-
                                             <button className="clear">clear</button>
-
-                                            {/* <button className="next">Clear</button> */}
-
                                             <button className="next">Next</button>
-
                                         </div>
-
                                     </Accordion.Body>
                                 </Accordion.Item>
                             </Accordion>
@@ -1206,238 +906,121 @@ const PropertyDetails = () => {
                                 <Accordion.Item eventKey="0">
                                     <Accordion.Header>Enclosure Details  </Accordion.Header>
                                     <Accordion.Body>
-
-                    <Row className="justify-content-center">
-
-                      <Col lg={6} md={6} xs={12} >
-
-                        <Table bordered size="lg" className=" w-55 " >
-
-                          <thead className="enclosuredetails-table">
-
-                            <tr >
-
-                              <th >Code</th>
-
-                              <th >Name</th>
-
-                              <th >Attached Yes/No</th>
-
-                            </tr>
-
-                          </thead>
-
-                          <tbody>
-
-                            <tr>
-
-                              <td>6</td>
-
-                              <td>Rule-3</td>
-
-                              <td>
-
-                                <Col lg={6} md={6} xs={12}>
-
-                                  <Form.Floating >
-
-                                    <Form.Select aria-label="No">
-
-                                      <option>No</option>
-
-                                      <option value="1">One</option>
-
-                                      <option value="2">Two</option>
-
-                                      <option value="3">Three</option>
-
-                                    </Form.Select>
-
-                                  </Form.Floating>
-
-                                </Col>
-
-                              </td>
-
-                            </tr>
-
-                            <tr >
-
-                              <td>10</td>
-
-                              <td>Annexure</td>
-
-                              <td>
-
-                                <Col lg={6} md={6} xs={12}>
-
-                                  <Form.Floating >
-
-                                    <Form.Select aria-label="No">
-
-                                      <option>No</option>
-
-                                      <option value="1">One</option>
-
-                                      <option value="2">Two</option>
-
-                                      <option value="3">Three</option>
-
-                                    </Form.Select>
-
-                                  </Form.Floating>
-
-                                </Col>
-
-                              </td>
-
-                            </tr>
-
-                            <tr >
-
-                              <td>6</td>
-
-                              <td>Rule-3</td>
-
-                              <td>
-
-                                <Col lg={6} md={6} xs={12}>
-
-                                  <Form.Floating >
-
-                                    <Form.Select aria-label="No">
-
-                                      <option>No</option>
-
-                                      <option value="1">One</option>
-
-                                      <option value="2">Two</option>
-
-                                      <option value="3">Three</option>
-
-                                    </Form.Select>
-
-                                  </Form.Floating>
-
-                                </Col>
-
-                              </td>
-
-                            </tr>
-
-                            <tr>
-
-                              <td>10</td>
-
-                              <td>Annexure</td>
-
-                              <td>
-
-                                <Col lg={6} md={6} xs={12}>
-
-                                  <Form.Floating >
-
-                                    <Form.Select aria-label="No">
-
-                                      <option>No</option>
-
-                                      <option value="1">One</option>
-
-                                      <option value="2">Two</option>
-
-                                      <option value="3">Three</option>
-
-                                    </Form.Select>
-
-                                  </Form.Floating>
-
-                                </Col>
-
-                              </td>
-
-                            </tr>
-
-                            <tr>
-
-                              <td>6</td>
-
-                              <td>Rule-3</td>
-
-                              <td>
-
-                                <Col lg={6} md={6} xs={12}>
-
-                                  <Form.Floating >
-
-                                    <Form.Select aria-label="No">
-
-                                      <option>No</option>
-
-                                      <option value="1">One</option>
-
-                                      <option value="2">Two</option>
-
-                                      <option value="3">Three</option>
-
-                                    </Form.Select>
-
-                                  </Form.Floating>
-
-                                </Col>
-
-                              </td>
-
-                            </tr>
-
-                            <tr>
-
-                              <td>10</td>
-
-                              <td>Annexure</td>
-
-                              <td>
-
-                                <Col lg={6} md={6} xs={12}>
-
-                                  <Form.Floating >
-
-                                    <Form.Select aria-label="No">
-
-                                      <option>No</option>
-
-                                      <option value="1">One</option>
-
-                                      <option value="2">Two</option>
-
-                                      <option value="3">Three</option>
-
-                                    </Form.Select>
-
-                                  </Form.Floating>
-
-                                </Col>
-
-                              </td>
-
-                            </tr>
-
-                          </tbody>
-
-                        </Table>
-
-                      </Col>
-
-                    </Row>
-
-                    <div className="pageNextBtn">
-
-                      <button className="clear">Clear</button>
-
-                      {/* <button className="next">Clear</button> */}
-
-                      <button className="next">Next</button>
-
-                    </div>
+                                        <Row className="justify-content-center">
+                                            <Col lg={6} md={6} xs={12} >
+                                                <Table bordered size="lg" className=" w-55 " >
+                                                    <thead className="enclosuredetails-table">
+                                                        <tr >
+                                                            <th >Code</th>
+                                                            <th >Name</th>
+                                                            <th >Attached Yes/No</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>6</td>
+                                                            <td>Rule-3</td>
+                                                            <td>
+                                                                <Col lg={6} md={6} xs={12}>
+                                                                    <Form.Floating >
+                                                                        <Form.Select aria-label="No">
+                                                                            <option>No</option>
+                                                                            <option value="1">One</option>
+                                                                            <option value="2">Two</option>
+                                                                            <option value="3">Three</option>
+                                                                        </Form.Select>
+                                                                    </Form.Floating>
+                                                                </Col>
+                                                            </td>
+                                                        </tr>
+                                                        <tr >
+                                                            <td>10</td>
+                                                            <td>Annexure</td>
+                                                            <td>
+                                                                <Col lg={6} md={6} xs={12}>
+                                                                    <Form.Floating >
+                                                                        <Form.Select aria-label="No">
+                                                                            <option>No</option>
+                                                                            <option value="1">One</option>
+                                                                            <option value="2">Two</option>
+                                                                            <option value="3">Three</option>
+                                                                        </Form.Select>
+                                                                    </Form.Floating>
+                                                                </Col>
+                                                            </td>
+                                                        </tr>
+                                                        <tr >
+                                                            <td>6</td>
+                                                            <td>Rule-3</td>
+                                                            <td>
+                                                                <Col lg={6} md={6} xs={12}>
+                                                                    <Form.Floating >
+                                                                        <Form.Select aria-label="No">
+                                                                            <option>No</option>
+                                                                            <option value="1">One</option>
+                                                                            <option value="2">Two</option>
+                                                                            <option value="3">Three</option>
+                                                                        </Form.Select>
+                                                                    </Form.Floating>
+                                                                </Col>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>10</td>
+                                                            <td>Annexure</td>
+                                                            <td>
+                                                                <Col lg={6} md={6} xs={12}>
+                                                                    <Form.Floating >
+                                                                        <Form.Select aria-label="No">
+                                                                            <option>No</option>
+                                                                            <option value="1">One</option>
+                                                                            <option value="2">Two</option>
+                                                                            <option value="3">Three</option>
+                                                                        </Form.Select>
+                                                                    </Form.Floating>
+                                                                </Col>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>6</td>
+                                                            <td>Rule-3</td>
+                                                            <td>
+                                                                <Col lg={6} md={6} xs={12}>
+                                                                    <Form.Floating >
+                                                                        <Form.Select aria-label="No">
+                                                                            <option>No</option>
+                                                                            <option value="1">One</option>
+                                                                            <option value="2">Two</option>
+                                                                            <option value="3">Three</option>
+                                                                        </Form.Select>
+                                                                    </Form.Floating>
+                                                                </Col>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>10</td>
+                                                            <td>Annexure</td>
+                                                            <td>
+                                                                <Col lg={6} md={6} xs={12}>
+                                                                    <Form.Floating >
+                                                                        <Form.Select aria-label="No">
+                                                                            <option>No</option>
+                                                                            <option value="1">One</option>
+                                                                            <option value="2">Two</option>
+                                                                            <option value="3">Three</option>
+                                                                        </Form.Select>
+                                                                    </Form.Floating>
+                                                                </Col>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </Table>
+                                            </Col>
+                                        </Row>
+                                        <div className="pageNextBtn">
+                                            <button className="clear">Clear</button>
+                                            <button className="next">Next</button>
+                                        </div>
                                     </Accordion.Body>
                                 </Accordion.Item>
                             </Accordion>
@@ -1483,33 +1066,25 @@ const PropertyDetails = () => {
                                             </Col>
                                         </Row>
                                         <h4>Rent Details</h4>
-
                                         {
                                             inputFields.map((data, index) => {
                                                 const { fullName } = data;
                                                 return (
-                                                    // <div>
-
-
                                                     <Row className="mb-4" key={index}>
-                                                    <Col lg={3} md={3} xs={12} className="mb-3">
-                                                        <Form.Floating>
-                                                            <Form.Control onChange={(evnt) => handleChange1(index, evnt)} value={fullName}
-                                                                id="floatingInputCustom"
-                                                                type="text"
-                                                                placeholder="Rent Period" />
-                                                            <Form.Label htmlFor="floatingInputCustom">
-                                                                Rent Period
-                                                            </Form.Label>
-                                                        </Form.Floating>
-                                                    </Col>
-
-
-
-
                                                         <Col lg={3} md={3} xs={12} className="mb-3">
                                                             <Form.Floating>
-                                                                <Form.Control onChange={(evnt) => handleChange1(index, evnt)} value={fullName} name="fullName"
+                                                                <Form.Control value={fullName}
+                                                                    id="floatingInputCustom"
+                                                                    type="text"
+                                                                    placeholder="Rent Period" />
+                                                                <Form.Label htmlFor="floatingInputCustom">
+                                                                    Rent Period
+                                                                </Form.Label>
+                                                            </Form.Floating>
+                                                        </Col>
+                                                        <Col lg={3} md={3} xs={12} className="mb-3">
+                                                            <Form.Floating>
+                                                                <Form.Control value={fullName} name="fullName"
                                                                     id="floatingInputCustom"
                                                                     type="text"
                                                                     placeholder="Rent Amount" />
@@ -1518,26 +1093,16 @@ const PropertyDetails = () => {
                                                                 </Form.Label>
                                                             </Form.Floating>
                                                         </Col>
-
-
-
                                                         <Col lg={3} md={3} xs={12} className="mb-3">
                                                             <Form.Floating>
-                                                                <Form.Select aria-label="units" onChange={(evnt) => handleChange1(index, evnt)} value={fullName} name="fullName">
+                                                                <Form.Select aria-label="units" value={fullName} name="fullName">
                                                                     <option>Monthly/ Yearly</option>
                                                                     <option value="1">One</option>
                                                                     <option value="2">Two</option>
                                                                     <option value="3">Three</option>
                                                                 </Form.Select>
                                                             </Form.Floating>
-
                                                         </Col>
-
-
-
-                                                        {/* <Grid container >
-                    <Grid item sm={12} xs={12} md={12} xl={12} lg={12}><div >.</div></Grid>
-                  </Grid> */}
                                                         <Col lg={1} md={1} xs={12}>
                                                             {
                                                                 index === inputFields.length - 1 ?
@@ -1545,25 +1110,17 @@ const PropertyDetails = () => {
                                                                         <div className="pageNextBtn" style={{ padding: 0 }}>
                                                                             <button onClick={addInputField} className="next"> + </button>
                                                                         </div>
-                                                                        // <AddIcon sx={{ marginTop: '20px', width: '55px', height: '50px', background: '#274C77', color: 'white', borderRadius:'4px' }}  />
                                                                     )
                                                                     :
                                                                     (""
-                                                                        // <button style={{ marginTop: '35px', }} onClick={() => removeInputFields(index)}>x</button>
                                                                     )
                                                             }
                                                         </Col></Row>
-
-
-                                                    // </div>
                                                 )
                                             })
                                         }
-
-
-
                                         <div className="pageNextBtn">
-                                            <button className="clear">Clear</button>&ensp;&ensp;
+                                            <button className="clear">Clear</button>
                                             <button className="next">Next</button>
                                         </div>
                                     </Accordion.Body>
@@ -1573,9 +1130,8 @@ const PropertyDetails = () => {
                         <div className="linkDocuments mb-3">
                             <Accordion>
                                 <Accordion.Item eventKey="0">
-
                                     <Accordion.Header>Link Documents</Accordion.Header>
-                                    {!display && <Accordion.Body onClick={handleClick}>
+                                    {!display && <Accordion.Body >
                                         <Row className="mb-4">
                                             <Col lg={5} md={5} xs={12} className="mb-3">
                                                 <Form.Floating>
@@ -1599,8 +1155,6 @@ const PropertyDetails = () => {
                                                     </Form.Label>
                                                 </Form.Floating>
                                             </Col>
-                                        </Row>
-                                        <Row className="mb-4">
                                             <Col lg={5} md={5} xs={12} className="mb-3">
                                                 <Form.Floating>
                                                     <Form.Control
@@ -1623,8 +1177,6 @@ const PropertyDetails = () => {
                                                     </Form.Label>
                                                 </Form.Floating>
                                             </Col>
-                                        </Row>
-                                        <Row className="mb-4">
                                             <Col lg={5} md={5} xs={12} className="mb-3">
                                                 <Form.Floating>
                                                     <Form.Control
@@ -1638,7 +1190,7 @@ const PropertyDetails = () => {
                                             </Col>
                                         </Row>
                                         <div className="pageNextBtn">
-                                            <button className="clear">Cancel</button>&ensp;&ensp;
+                                            <button className="clear">Cancel</button>
                                             <button onClick={handleClick} className="next">Done</button>
                                         </div>
                                     </Accordion.Body>}
@@ -1663,7 +1215,6 @@ const PropertyDetails = () => {
                                                         </div>
                                                         <div className="cardBody">
                                                             <Row>
-
                                                                 <Col lg={12} md={12} xs={12}>
                                                                     <div className="d-flex align-items-center justify-content-evenly mb-3">
                                                                         <h6>
@@ -1676,7 +1227,6 @@ const PropertyDetails = () => {
                                                                             <span>Reg Year</span>2,200 Sq ft
                                                                         </h6>
                                                                     </div>
-
                                                                     <div className="d-flex align-items-center justify-content-evenly mb-3">
                                                                         <h6>
                                                                             <span>Schedule No.</span>123456
@@ -1684,28 +1234,18 @@ const PropertyDetails = () => {
                                                                         <h6 >
                                                                             <span>Book No.</span>RCC
                                                                         </h6>
-
                                                                     </div>
-
-
                                                                 </Col>
                                                             </Row>
-
                                                         </div>
-
                                                     </div>
                                                 </Col>
                                                 <div className="pageNextBtn">
-                                                    {/* <button className="next">Clear</button> */}
-
                                                     <button className="clear">Add New</button>&ensp;&ensp;
                                                     <button className="next">Next</button>
                                                 </div>
                                             </Row></div>
-
                                     </Accordion.Body>}
-
-
                                 </Accordion.Item>
                             </Accordion>
                         </div>
@@ -1714,76 +1254,42 @@ const PropertyDetails = () => {
                                 <Accordion.Item eventKey="0">
                                     <Accordion.Header>Market Value  </Accordion.Header>
                                     <Accordion.Body>
-
                                         <Form>
-
                                             <div key="inline-radio" className="mb-3">
-
                                                 <Form.Check
-
                                                     inline
-
                                                     label="Online Entry"
-
                                                     name="group1"
-
                                                     type="radio"
-
                                                     id="inline-radio-1" checked />
-
                                                 <Form.Check
-
                                                     inline
-
                                                     label="Post Manual Entry"
-
                                                     name="group1"
-
                                                     type="radio"
-
                                                     id="inline-radio-2" />
-
                                             </div>
-
                                         </Form>
-
-
                                         <div>
                                             <div>
                                                 {cards.map((card, index) => (
                                                     <div key={index} >
                                                         <div>
                                                             <Row className="mb-4">
-
                                                                 <Col lg={6} md={6} xs={12} className="mb-3">
-
                                                                     <Form.Floating>
-
                                                                         <Form.Control
-
                                                                             id="floatingInputCustom"
-
                                                                             type="text"
-
                                                                             placeholder="Loan Amount in Rs" />
-
                                                                         <Form.Label htmlFor="floatingInputCustom">
-
                                                                             Loan Amount in Rs
-
                                                                         </Form.Label>
-
                                                                     </Form.Floating>
-
                                                                 </Col></Row>
                                                             <div className="pageNextBtn">
-
                                                                 <button className="clear">Clear</button>
-
-                                                                {/* <button className="next">Clear</button> */}
-
                                                                 <button onClick={handleButtonClick} className="next">Next</button>
-
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1792,188 +1298,92 @@ const PropertyDetails = () => {
                                             {!buttonClicked && (
                                                 <div>
                                                     <Row className="mb-4">
-
                                                         <Col lg={6} md={6} xs={12} className="mb-3">
-
                                                             <Form.Floating>
-
                                                                 <Form.Control
-
                                                                     id="floatingInputCustom"
-
                                                                     type="text"
-
                                                                     placeholder="Land Cost Rs" />
-
                                                                 <Form.Label htmlFor="floatingInputCustom">
-
                                                                     Land Cost Rs
-
                                                                 </Form.Label>
-
                                                             </Form.Floating>
-
                                                         </Col>
-
                                                         <Col lg={6} md={6} xs={12} className="mb-3">
-
                                                             <Form.Floating>
-
                                                                 <Form.Control
-
                                                                     id="floatingInputCustom"
-
                                                                     type="text"
-
                                                                     placeholder="Structured Cost Rs" />
-
                                                                 <Form.Label htmlFor="floatingInputCustom">
-
                                                                     Structured Cost Rs
-
                                                                 </Form.Label>
-
                                                             </Form.Floating>
-
                                                         </Col>
-
-                                                    </Row>
-
-                                                    <Row className="mb-4">
-
                                                         <Col lg={5} md={5} xs={12} className="mb-3">
-
                                                             <Form.Floating>
-
                                                                 <Form.Control
-
                                                                     id="floatingInputCustom"
-
                                                                     type="text"
-
                                                                     placeholder="Other Property Cost Rs (Tree, Well, etc.,)" />
-
                                                                 <Form.Label htmlFor="floatingInputCustom">
-
                                                                     Other Property Cost Rs (Tree, Well, etc.,)
-
                                                                 </Form.Label>
-
                                                             </Form.Floating>
-
                                                         </Col>
-
                                                         <Col lg={3} md={3} xs={12} className="mb-3">
-
                                                             <Form.Floating>
-
                                                                 <Form.Control
-
                                                                     id="floatingInputCustom"
-
                                                                     type="text"
-
                                                                     placeholder="Value in Rs" />
-
                                                                 <Form.Label htmlFor="floatingInputCustom">
-
                                                                     Value in Rs
-
                                                                 </Form.Label>
-
                                                             </Form.Floating>
-
                                                         </Col>
-
                                                         <Col lg={4} md={4} xs={12} className="mb-3">
-
                                                             <Form.Floating>
-
                                                                 <Form.Control
-
                                                                     id="floatingInputCustom"
-
                                                                     type="text"
-
                                                                     placeholder="Consideration Value" />
-
                                                                 <Form.Label htmlFor="floatingInputCustom">
-
                                                                     Consideration Value
-
                                                                 </Form.Label>
-
                                                             </Form.Floating>
-
                                                         </Col>
-
-                                                    </Row>
-
-                                                    <Row className="mb-4">
-
                                                         <Col lg={6} md={6} xs={12} className="mb-3">
-
                                                             <Form.Floating>
-
                                                                 <Form.Control
-
                                                                     id="floatingInputCustom"
-
                                                                     type="text"
-
                                                                     placeholder="Market Value" />
-
                                                                 <Form.Label htmlFor="floatingInputCustom">
-
                                                                     Market Value
-
                                                                 </Form.Label>
-
                                                             </Form.Floating>
-
                                                         </Col>
-
                                                         <Col lg={6} md={6} xs={12} className="mb-3">
-
                                                             <Form.Floating>
-
                                                                 <Form.Control
-
                                                                     id="floatingInputCustom"
-
                                                                     type="text"
-
                                                                     placeholder="Annual Rent Rs" />
-
                                                                 <Form.Label htmlFor="floatingInputCustom">
-
                                                                     Annual Rent Rs
-
                                                                 </Form.Label>
-
                                                             </Form.Floating>
-
                                                         </Col>
-
                                                         <div className="pageNextBtn">
-
                                                             <button className="clear">Clear</button>
-
-                                                            {/* <button className="next">Clear</button> */}
-
                                                             <button onClick={handleButtonClick} className="next">Next</button>
-
                                                         </div>
-
                                                     </Row>
-
                                                 </div>
                                             )}
                                         </div>
-
                                     </Accordion.Body>
-
-
                                 </Accordion.Item>
                             </Accordion>
                         </div>
@@ -2064,8 +1474,6 @@ const PropertyDetails = () => {
                                                     </Form.Label>
                                                 </Form.Floating>
                                             </Col>
-                                        </Row>
-                                        <Row className="mb-4">
                                             <Col lg={6} md={6} xs={12} className="mb-3">
                                                 <Form.Floating>
                                                     <Form.Control
@@ -2087,8 +1495,7 @@ const PropertyDetails = () => {
                                                         DSD Payable
                                                     </Form.Label>
                                                 </Form.Floating>
-                                            </Col></Row>
-                                        <Row className="mb-4">
+                                            </Col>
                                             <Col lg={6} md={6} xs={12} className="mb-3">
                                                 <Form.Floating>
                                                     <Form.Control
@@ -2113,7 +1520,6 @@ const PropertyDetails = () => {
                                             </Col>
                                         </Row>
                                         <div className="pageNextBtn">
-                                            {/* <button className="next">Clear</button> */}
                                             <button className="clear">Clear</button>
                                             <button className="next">Save</button>
                                         </div>

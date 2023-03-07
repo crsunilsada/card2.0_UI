@@ -44,12 +44,12 @@ const aadharVerification = () => {
                                         </Col>
                                         {!display&&<Col lg={1} md={1} xs={1}>
                                             <button className="verifyBtn" 
-                                            // data-bs-toggle="modal" data-bs-target="#aadharVerification" 
+                                            data-bs-toggle="modal" data-bs-target="#aadharVerification" 
                                             onClick={handleDisplay}> Verify </button>
                                         </Col>}&ensp;&ensp;
                                         {display&&<Col lg={1} md={1} xs={1}>
                                             <button className="verifyBtn"
-                                            //  data-bs-toggle="modal" data-bs-target="#aadharVerification"
+                                             data-bs-toggle="modal" data-bs-target="#aadharVerification"
                                               onClick={handleDisplay}> <Image width={20} height={20} src="/images/tick.svg"/> </button>
                                         </Col>}&ensp;
                                         <Col lg={1} md={1} xs={1}>
@@ -76,33 +76,33 @@ const aadharVerification = () => {
                                                     <Form.Control
                                                         id="floatingInputCustom"
                                                         type="text"
-                                                        placeholder="ID Number"
+                                                        placeholder="Name"
                                                     />
                                                     <label htmlFor="floatingInputCustom">
-                                                        ID Number
+                                                        Name
                                                     </label>
                                                 </Form.Floating>
                                             </Col>
-                                            <Col lg={1} md={1} xs={2} className="mb-3">
-                                                <Form.Select aria-label="Default select example" id="floatingInputCustom">
-                                                    <option value="">S/o</option>
-                                                    <option value="">S/o</option>
-                                                    <option value="">D/o</option>
-                                                    <option value="">W/o</option>
-                                                </Form.Select>
-                                            </Col>
-                                            <Col lg={3} md={3} xs={6} className="mb-3">
-                                                <Form.Floating>
-                                                    <Form.Control
-                                                        id="floatingInputCustom"
-                                                        type="text"
-                                                        placeholder="Relation Name"
-                                                    />
-                                                    <label htmlFor="floatingInputCustom">
-                                                        Relation Name
-                                                    </label>
-                                                </Form.Floating>
-                                            </Col>
+                                            <Col lg={4} md={4} xs={12} className="mb-3">
+                                                    <div className="input-group">
+                                                        <select className="form-select" aria-label="Default select example" style={{ color: "#4D4D4D", borderRadius: "12px 0px 0px 12px", borderColor: "#6096BA", backgroundColor: "#F6F9FB", maxWidth: "78px", width: "100%" }}>
+                                                            <option value="1">S/o</option>
+                                                            <option value="2">D/o</option>
+                                                            <option value="3">W/o</option>
+                                                        </select>
+                                                        <Form.Floating>
+                                                            <Form.Control
+                                                                id="floatingInputCustom"
+                                                                type="text"
+                                                                placeholder="Age"
+                                                                className="form-control"
+                                                            />
+                                                            <Form.Label htmlFor="floatingInputCustom">
+                                                                Relation Name
+                                                            </Form.Label>
+                                                        </Form.Floating>
+                                                    </div>
+                                                </Col>
                                         </Row>
                                         <Row>
                                             <Col lg={7} md={7} xs={12} className="mb-3">
@@ -153,7 +153,7 @@ const aadharVerification = () => {
                                 </Row>
                             </Container>
                         </div>}
-                        {/* <div className="modal" id="aadharVerification" aria-labelledby="aadharVerificationLabel" aria-hidden="true">
+                        <div className="modal" id="aadharVerification" aria-labelledby="aadharVerificationLabel" aria-hidden="true">
                             <div className="modal-dialog modal-dialog-centered modal-lg">
                                 <div className="modal-content">
                                     <div className="modal-header">
@@ -173,7 +173,7 @@ const aadharVerification = () => {
                                                     </Row>
                                                     <Row className="mb-3 justify-content-center pageNextBtn">
                                                         <Col lg={2} md={2} xs={2}>
-                                                            <button className="verifyBtn" type="button" data-bs-toggle="modal" data-bs-target="#aadharVerification">
+                                                            <button className="verifyBtn" type="button" data-bs-dismiss="modal" aria-label="Close">
                                                                 Yes
                                                             </button>
                                                         </Col>
@@ -184,7 +184,7 @@ const aadharVerification = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div> */}
+                        </div>
                     </div>
                 </div>
             </div>

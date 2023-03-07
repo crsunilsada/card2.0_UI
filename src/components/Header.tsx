@@ -1,7 +1,8 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
 import styles from "../styles/components/header.module.scss";
-import { Navbar, NavDropdown, Container, Col, Row, Nav } from "react-bootstrap";
+import { Navbar, NavDropdown, Container, Col, Row, Nav, Dropdown } from "react-bootstrap";
+import banner from 'images/Header1.png'
 
 const Header = () => {
   const router = useRouter();
@@ -92,8 +93,24 @@ const Header = () => {
               </Nav>
             </Navbar.Collapse>
           </div>
-          <Image width={25} height={20} src="/images/Notification Icon.svg" />
-          {/* <Image width={125} height={30} src="/images/welcome.svg" /><Image width={25} height={10} src="/images/Polygon.svg" /> */}
+          <div className="d-flex float-end align-items-center " >
+          <Image className="mr-5"  width={25} height={20} src="/images/Notification Icon.svg" />
+          <Image ml-5 width={25} height={20} src="/images/profile-icon.svg" />
+          <Dropdown>
+            <Dropdown.Toggle  id=""  variant="secondary" style={{ backgroundColor: '#274C77', border:"none" }}>
+              Welcome, Suresh
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              <Dropdown.Item href="#/action-1">Schedule 1</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Schedule 2</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Schedule 3</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+          </div>
+          
+          
+          
         </Container>
       </Navbar>
     </header>

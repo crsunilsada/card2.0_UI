@@ -89,23 +89,7 @@ function Table({ columns, data }) {
             prepareRow(row);
             return (
               <tr {...row.getRowProps()}>
-                <td>
-                  <div className="d-flex form-check-checkbox">
-                    <input
-                      className="form-check-input"
-                      type="checkbox"
-                      value=""
-                      id="flexCheckDefault"
-                    />&nbsp;
-                    <label
-                      className="form-check-label"
-                      htmlFor="flexCheckDefault"
-                    >
-                      456787654
-                    </label>
-                  </div>
-                </td>
-                {row.cells.map((cell) => {
+              {row.cells.map((cell) => {
                   return (
                     <td className="text-center" {...cell.getCellProps()}>{cell.render("Cell")}</td>
                   );
@@ -188,15 +172,35 @@ function ScanningUpload() {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
 
+let appNo=(
+<> <div className="d-flex form-check-checkbox">
+      <input
+        onClick={checkboxes}
+        className="form-check-input"
+        // checked={checked}
+        type="checkbox"
+        value=""
+        id="flexCheckDefault"
+      />
+      <label
+        className="form-check-label"
+        htmlFor="flexCheckDefault"
+      >
+        &nbsp; 456787654
+      </label>
+    </div></>
+)
+
+
   const columns = React.useMemo(
     () => [
       {
         Header: "1",
         columns: [
-          // {
-          //   Header: "App No.",
-          //   accessor: "appNo",
-          // },
+          {
+            Header: "App No.",
+            accessor: "appNo",
+          },
           {
             Header: "Ack. No.",
             accessor: "ackNo",
@@ -250,7 +254,8 @@ function ScanningUpload() {
 
 const data = [
     {
-       appNo: "456787654",
+
+      appNo:appNo,
       ackNo: "345",
       csNo: "212",
       ackYear: "2022",
@@ -264,7 +269,7 @@ const data = [
 
     },
     {
-      // appNo: "456787654",
+      appNo: appNo,
       ackNo: "345",
       csNo: "212",
       ackYear: "2022",
@@ -276,7 +281,7 @@ const data = [
       min: "02",
     },
     {
-      // appNo: "456787654",
+      appNo: appNo,
       ackNo: "345",
       csNo: "212",
       ackYear: "2022",
@@ -288,7 +293,7 @@ const data = [
       min: "01",
     },
     {
-      appNo: "456787654",
+      appNo: appNo,
       ackNo: "345",
       csNo: "212",
       ackYear: "2022",
@@ -300,7 +305,7 @@ const data = [
       min: "02",
     },
     {
-      appNo: "456787654",
+      appNo: appNo,
       ackNo: "345",
       csNo: "212",
       ackYear: "2022",
@@ -312,7 +317,7 @@ const data = [
       min: "01",
     },
     {
-      appNo: "456787654",
+      appNo: appNo,
       ackNo: "345",
       csNo: "212",
       ackYear: "2022",
@@ -324,7 +329,7 @@ const data = [
       min: "02",
     },
     {
-      appNo: "456787654",
+      appNo: appNo,
       ackNo: "345",
       csNo: "212",
       ackYear: "2022",
@@ -336,7 +341,7 @@ const data = [
       min: "01",
     },
     {
-      appNo: "456787654",
+      appNo: appNo,
       ackNo: "345",
       csNo: "212",
       ackYear: "2022",
@@ -348,7 +353,7 @@ const data = [
       min: "02",
     },
     {
-      appNo: "456787654",
+      appNo: appNo,
       ackNo: "345",
       csNo: "212",
       ackYear: "2022",
@@ -360,7 +365,7 @@ const data = [
       min: "01",
     },
     {
-      appNo: "456787654",
+      appNo: appNo,
       ackNo: "345",
       csNo: "212",
       ackYear: "2022",
@@ -372,7 +377,20 @@ const data = [
       min: "02",
     },
   ];
-
+const [checked, setchecked] = useState(0)
+  function checkboxes(){
+    var inputs = document.getElementsByTagName("input");
+    var inputObj;
+  var selectedCount = 0;
+    for(var count1 = 0;count1<inputs.length;count1++) {
+        inputObj = inputs[count1];
+        var type = inputObj.getAttribute("type");
+        if (type == 'checkbox' && inputObj.checked) {
+            selectedCount++;
+        }
+        setchecked(selectedCount)
+    }
+}
 
 
 return (
@@ -499,7 +517,7 @@ return (
                 </div>
 
                 <div>
-                  <button className="digital-sign-btn " >
+                  <button className={checked>=2 ? "digital-sign-btn-enable" : "digital-sign-btn"} >
                     Bulk Digital Sign
                   </button>
                 </div>
