@@ -2,22 +2,24 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
-import { Container, Row, Col, Table, Tab, Nav, Form } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Container, Row, Col, Table, Tab, Nav, Form, Button } from "react-bootstrap";
 import Stepper from '../components/Stepper'
 const imagingExecutant = () => {
   const router = useRouter()
   const [display, setdisplay] = useState(false)
   const [display1, setdisplay1] = useState(false)
-  const [data, setData] = useState([]);
+const [checked, setchecked] = useState(0);
   const handleClick2 = event => {
     event.currentTarget.disabled = true;
     console.log('button clicked');
   };
+const [data, setData] = useState(0);
   const handleClick = (sig, index) => {
     console.log('signature:', sig);
     console.log('key index:', index);
     setData(sig);
+setchecked(index);
   }
   const handleClick1 = (eval1) => {
     console.log('key index:', eval1);
@@ -89,7 +91,7 @@ const imagingExecutant = () => {
         <link rel="icon" href="/igrsfavicon.ico" />
       </Head>
       <div className="mainWrapper">
-        {(!display && !display1) &&
+
           <div className="wrapperInner">
             <div className="acknowledgement">
               <button className="partyDetails">Party Details</button>
@@ -171,7 +173,7 @@ const imagingExecutant = () => {
                                     onClick={sig => handleClick('photo', index)} key={index} />
                                 </div>
                                 <img src={item.photo}
-                                  className="border border-dark"></img>
+                                  className="border "></img>
                               </td>
                               <td className="text-center">
                                 <div className="form-check-checkbox">
@@ -188,15 +190,22 @@ const imagingExecutant = () => {
                                     name="esignSignature"
                                     onClick={sig => handleClick('signature', index)} key={index} />
                                 </div>
-                                <img src={item.esignSignature} />
+                                <img src={item.esignSignature} className="border "/>
                               </td>
                               <td>
-                                {item.capture === 'capture' ? (
-                                  <button className="capture" onClick={() => handleClick1({ data })} >
-                                    {item.capture}
+
+                                {item.capture === 'Re-capture' ? (
+
+                                  <button className= {checked >= 2 ?  "capture" : "digital-sign-btn"}
+                                    >
+                                      {item.capture}
+
+
+
                                   </button>
                                 ) : (
-                                  <button className="capture" onClick={() => handleClick1({ data })} disabled>
+                                  <button className="capture"
+                                    onClick={() => handleClick1({ data })}  >
                                     {item.capture}
                                   </button>
                                 )}

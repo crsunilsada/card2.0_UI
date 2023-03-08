@@ -94,7 +94,7 @@ const ScanningDocument = () => {
                         height={185}
                         src="/images/doc 1.svg"
                       />
-                      <Col lg={8} md={8} xs={12} className="text-center">
+                      <Col lg={6} md={6} xs={12} className="text-center">
                         <h6>1</h6>
                       </Col>
                     </Col>
@@ -104,7 +104,7 @@ const ScanningDocument = () => {
                         height={175}
                         src="/images/doc2.svg"
                       />
-                      <Col lg={8} md={8} xs={12} className="text-center">
+                      <Col lg={6} md={6} xs={12} className="text-center">
                         <h6 >2</h6>
                       </Col>
                     </Col>
@@ -114,7 +114,7 @@ const ScanningDocument = () => {
                         height={175}
                         src="/images/doc3.svg"
                       />
-                      <Col lg={8} md={8} xs={12} className="text-center" >
+                      <Col lg={6} md={6} xs={12} className="text-center" >
                         <h6 >3</h6>
                       </Col>
                     </Col>
@@ -127,7 +127,7 @@ const ScanningDocument = () => {
                         height={175}
                         src="/images/doc4.svg"
                       />
-                      <Col lg={8} md={8} xs={12} className="text-center" >
+                      <Col lg={6} md={6} xs={12} className="text-center" >
                         <h6 >4</h6>
                       </Col>
                     </Col>
@@ -137,7 +137,7 @@ const ScanningDocument = () => {
                         height={175}
                         src="/images/doc 1.svg"
                       />
-                      <Col lg={8} md={8} xs={12} className="text-center">
+                      <Col lg={6} md={6} xs={12} className="text-center">
                         <h6 >5</h6>
                       </Col>
                     </Col>
@@ -147,7 +147,7 @@ const ScanningDocument = () => {
                         height={175}
                         src="/images/doc3.svg"
                       />
-                      <Col lg={8} md={8} xs={12} className="text-center">
+                      <Col lg={6} md={6} xs={12} className="text-center">
                         <h6 >6</h6>
                       </Col>
                     </Col>
@@ -159,7 +159,7 @@ const ScanningDocument = () => {
                         height={175}
                         src="/images/doc 1.svg"
                       />
-                      <Col lg={8} md={8} xs={12} className="text-center">
+                      <Col lg={6} md={6} xs={12} className="text-center">
                         <h6 >7</h6>
                       </Col>
                     </Col>
@@ -169,7 +169,7 @@ const ScanningDocument = () => {
                         height={175}
                         src="/images/doc3.svg"
                       />
-                      <Col lg={8} md={8} xs={12} className="text-center">
+                      <Col lg={6} md={6} xs={12} className="text-center">
                         <h6 >8</h6>
                       </Col>
                     </Col>
@@ -179,12 +179,11 @@ const ScanningDocument = () => {
                         height={175}
                         src="/images/doc3.svg"
                       />
-                      <Col lg={8} md={8} xs={12} className="text-center" >
+                      <Col lg={6} md={6} xs={12} className="text-center" >
                         <h6 >9</h6>
                       </Col>
                     </Col>
                   </Row>
-
                   <Row className="mb-4">
                     <Col lg={4} md={4} xs={12} className="mb-3">
                       <Image
@@ -192,7 +191,7 @@ const ScanningDocument = () => {
                         height={185}
                         src="/images/doc4.svg"
                       />
-                      <Col lg={8} md={8} xs={12} className="text-center">
+                      <Col lg={6} md={6} xs={12} className="text-center">
                         <h6 >10</h6>
                       </Col>
                     </Col>
@@ -202,7 +201,7 @@ const ScanningDocument = () => {
                         height={175}
                         src="/images/doc 1.svg"
                       />
-                      <Col lg={8} md={8} xs={12} className="text-center">
+                      <Col lg={6} md={6} xs={12} className="text-center">
                         <h6>11</h6>
                       </Col>
                     </Col>
@@ -210,19 +209,18 @@ const ScanningDocument = () => {
                 </Col>
 
                 <Col lg={6} md={6} xs={12} className="mb-3">
-
-                <Image
-                        width={653}
-                        height={850}
-                        src="/images/stampdoc.svg"
-                      />
+                  <Image
+                    width={695}
+                    height={850}
+                    src="/images/stampdoc.svg"
+                  />
                 </Col>
               </Row>
 
               <Row>
-                <Col lg={5} md={5} xs={12} className="mb-3 ">
+                <Col lg={6} md={6} xs={6} className="mb-3">
                 </Col >
-                <Col lg={7} md={7} xs={12} className="mb-3">
+                <Col lg={6} md={6} xs={6} className="mb-3">
                   <Row className="mb-4">
                   <Col lg={2} md={2} xs={12}>
 
@@ -234,13 +232,12 @@ const ScanningDocument = () => {
                       <button type="button" className="whitebuttonclass">Reject</button>
 
                     </Col>
-                    &ensp;&ensp;
                     <Col lg={3} md={3} xs={12}>
                       {/* <Link href={"/ScanningUpload"}> */}
-                        <button className="bluebuttonclass" data-bs-toggle="modal" data-bs-target="#documentscanning">Save</button>
+                        <button className="bluebuttonclass" data-bs-toggle="modal" data-bs-target="#alert">Save</button>
                       {/* </Link> */}
                     </Col>
-                    {/* <div>
+                    <div>
                       <Container>
                         <div className="modal" id="alert" aria-labelledby="alertLabel" aria-hidden="true">
                           <div className="modal-dialog modal-dialog-centered modal-md">
@@ -270,8 +267,8 @@ const ScanningDocument = () => {
                           </div>
                         </div>
                       </Container>
-                    </div> */}
-                    <div>
+                    </div>
+                    {/* <div>
                       <Container>
                         <div className="modal" id="documentscanning" aria-labelledby="alertLabel" aria-hidden="true">
                           <div className="modal-dialog modal-dialog-centered modal-md">
@@ -300,7 +297,7 @@ const ScanningDocument = () => {
                           </div>
                         </div>
                       </Container>
-                    </div>
+                    </div> */}
                     <Col lg={2} md={2} xs={12}>
 
                     </Col>

@@ -342,6 +342,21 @@ p:last-child {
                         color: $white;
                         padding: 0;
                     }
+                    button.digital-sign-btn {
+                        width: 160px;
+                        height: 60px;
+                        background: $blue;
+                        border-radius: 4px;
+                        font-weight: 600;
+                        font-size: 14px;
+                        line-height: 16px;
+                        text-align: center;
+                        color: $white;
+                        padding: 0;
+                        opacity: 0.5;
+                    }
+
+
                 }
             }
 
@@ -500,13 +515,6 @@ body {
         padding: 0.90rem .75rem;
     }
 
-    // .so.form-control {
-    //   width: 25%;
-    //   display: inline-block;
-    //   border-radius: 12px 0 0 12px;
-    //   border-right: none;
-    // }
-
     .relationName.form-floating {
         width: 75%;
         display: inline-block;
@@ -550,11 +558,12 @@ body {
 
         .form-check-input:checked[type="checkbox"] {
             //background: url(../../public/images/radio-checked.jpg) no-repeat center center;
-             background-color: #274C77;
-             border-color: #274C77;
+            background-color: #274C77;
+            border-color: #274C77;
 
-         }
-         label {
+        }
+
+        label {
             font-weight: 400;
             font-size: 20px;
             line-height: 20px;
@@ -1164,7 +1173,9 @@ body {
 
 .pageMainWrap.homepage {
     background: url(../../public/images/Dashboard-BG.png) no-repeat center bottom $white;
-
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: -65px;
 }
 
 .pageMainWrap.innerpage {
@@ -1634,6 +1645,7 @@ body {
 
 .pageNextBtn.scanningPageSave {
     text-align: left;
+
     button {
         height: 50px;
     }
@@ -1740,13 +1752,14 @@ body {
 
 
 .accordion-button::after {
-    background: url(../../public/images/sidearrow.svg) no-repeat center center;;
+    background: url(../../public/images/sidearrow.svg) no-repeat center center;
+    ;
 
 }
 
 .accordion-button:not(.collapsed)::after {
-     background: url(../../public/images/downarrow.svg) no-repeat center center;
-     transform:rotate(0deg);
+    background: url(../../public/images/downarrow.svg) no-repeat center center;
+    transform: rotate(0deg);
 }
 
 // .accordion-button:focus {
@@ -1938,7 +1951,7 @@ body {
 
 .accordion-button.collapsed .propertydetails-topbutton {
     display: none;
-   // color: #274C77;
+    // color: #274C77;
 }
 
 // menu bar css start
@@ -2029,34 +2042,25 @@ body {
     color: #274C77;
 }
 
-.digital-sign-btn {
-    color: white;
-    background-color: $blue ;
-    opacity: 0.5;
-    padding: 12px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: none;
-}
-.digital-sign-btn-enable {
-    color: white;
-    background-color: $blue ;
-    padding: 12px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: none;
-}
-.WelcomePage{
+
+
+.WelcomePage {
     margin: 0px 200px;
 }
-.welcomePage-image{
-    height:724px;
+
+.welcomePage-image {
+    height: 724px;
 }
 
 .popover {
     max-width: 400px;
 }
-.popover-body{
+
+.popover-body {
     width: 350px;
 }
-.submit, .submit:hover { background-color: #274C77;}
+
+.submit,
+.submit:hover {
+    background-color: #274C77;
+}

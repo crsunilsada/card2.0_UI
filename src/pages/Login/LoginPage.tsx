@@ -2,10 +2,11 @@ import Image from "next/image";
 import { Button, Col, Row } from "react-bootstrap";
 import LoginBG from '../../../public/images/Login1-BG.png';
 import Modal from 'react-bootstrap/Modal';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import Link from "next/link";
 import Head from "next/head";
+import { Alert } from "react-bootstrap";
 
 function MyVerticallyCenteredModal(props) {
     return (
@@ -31,6 +32,18 @@ function MyVerticallyCenteredModal(props) {
 }
 
 const LoginPage = () => {
+    const [display, setDisplay] = useState(false);
+    const [selectedOption, setSelectedOption] = useState("");
+    useEffect(() => {
+        if (display) {
+            setTimeout(() => {
+                setDisplay(false);
+            }, 1000);
+        }
+    }, [display]);
+    const handleOptionChange = (e) => {
+        setSelectedOption(e.target.value);
+        };
     const [modalShow, setModalShow] = useState(false);
     return (
         <div className="pageMainWrap innerpage">
@@ -46,41 +59,51 @@ const LoginPage = () => {
                             <Image src={LoginBG} alt="login-BG" height="676px" />
                         </Col>
                         <Col lg={5} md={5} xs={5}>
-                            <Row className="my-3 mx-4">
-                                <Col lg={12} md={12} xs={12}>
-                                    <h5>Hi, Welcome Back!</h5>
-                                </Col>
-                            </Row>
-                            <Row className="my-3 mx-4">
+                            
+                            {display ? (<Alert variant="success" className="bg-transparent border-0">
+                            {/* <img src="/images/loading-icon.svg" />
+                            <img src="/images/loading-icon2.svg" /> */}
+                            <div className="d-flex justify-content-center">
+                            <div className="spinner-border " role="status">
+</div></div>
+                            </Alert>
+                            ) : (
+                            <><Row className="my-3 mx-4">
+                                            <Col lg={12} md={12} xs={12}>
+
+                                                <h5>Hi, Welcome Back!</h5>
+                                            </Col>
+                                        </Row>
+                                        <Row className="my-3 mx-4">
                                 <Col lg={2} md={2} xs={2}>
-                                    <div>
-                                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />&nbsp;
+                                    {/* <div> */}
+                                        <input className="form-check-input" onClick={(e) =>{handleOptionChange(e); setDisplay(true);}} checked={selectedOption === "option1"} type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />&nbsp;
                                         <label className="form-check-label" >IG</label>
-                                    </div>
+                                    {/* </div> */}
                                 </Col>
                                 <Col lg={2} md={2} xs={2}>
-                                    <div>
-                                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />&nbsp;
+                                    {/* <div> */}
+                                        <input className="form-check-input" onClick={(e) =>{handleOptionChange(e); setDisplay(true);}} checked={selectedOption === "option2"} type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />&nbsp;
                                         <label className="form-check-label" >DIG</label>
-                                    </div>
+                                    {/* </div> */}
                                 </Col>
                                 <Col lg={2} md={2} xs={2}>
-                                    <div>
-                                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" />&nbsp;
+                                    {/* <div> */}
+                                        <input className="form-check-input" onClick={(e) =>{handleOptionChange(e); setDisplay(true);}} checked={selectedOption === "option3"} type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" />&nbsp;
                                         <label className="form-check-label">DR</label>
-                                    </div>
+                                    {/* </div> */}
                                 </Col>
                                 <Col lg={2} md={2} xs={2}>
-                                    <div>
-                                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4" />&nbsp;
+                                    {/* <div> */}
+                                        <input className="form-check-input" onClick={(e) =>{handleOptionChange(e); setDisplay(true);}} checked={selectedOption === "option4"} type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4" />&nbsp;
                                         <label className="form-check-label" >SRO</label>
-                                    </div>
+                                    {/* </div> */}
                                 </Col>
                                 <Col lg={2} md={3} xs={3}>
-                                    <div>
-                                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5" />&nbsp;
+                                    {/* <div> */}
+                                        <input className="form-check-input" onClick={(e) =>{handleOptionChange(e); setDisplay(true);}} checked={selectedOption === "option5"}  type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5" />&nbsp;
                                         <label className="form-check-label" >Staff</label>
-                                    </div>
+                                    {/* </div> */}
                                 </Col>
                             </Row>
                             <Row>
@@ -129,7 +152,16 @@ const LoginPage = () => {
                                     </div>
                                 </Col>
                                 <Col lg={5} md={5} xs={5}></Col>
-                            </Row>
+                            </Row>     
+                                                </>
+                            )}
+
+
+                            
+                            
+                           
+                            
+                           
                         </Col>
                     </Row>
                 </div>
