@@ -288,8 +288,6 @@ const imagingExecutant = () => {
                                       <div>
                                         <img
                                           src={item.photo}
-
-
                                           // className="image-border"
                                         ></img>
                                       </div>
@@ -315,7 +313,6 @@ const imagingExecutant = () => {
                                   </div>
                                   <div className="emptyBox1">
                                     {/* <img src={item.esignSignature} /> */}
-
                                     <input
                                       type="checkbox"
                                       id="myCheckbox2"
