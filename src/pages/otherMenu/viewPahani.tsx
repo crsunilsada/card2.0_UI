@@ -2,10 +2,12 @@ import React, { useEffect } from "react";
 import Head from "next/head";
 import { Form } from "react-bootstrap";
 import { useTable, usePagination } from "react-table";
-import { CheckLg } from 'react-bootstrap-icons';
+import { AlignEnd, CheckLg } from 'react-bootstrap-icons';
 import { Search } from 'react-bootstrap-icons';
 import { useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
+import Image from "next/image";
+// import { Img } from "next/image";
 function Table({ columns, data }) {
     const {
         getTableProps,
@@ -37,47 +39,53 @@ function Table({ columns, data }) {
                 <thead>
                     <tr>
                         <th rowSpan={2} className="text-center">
-                            Sur. No.
+                            Sur. No. <br></br>వరుస సంఖ్య
+                            
                         </th>
                         <th rowSpan={2} className="text-center">
-                            Total Extent
+                            Total Extent<br></br>పూర్తి విస్తీర్ణం
                         </th>
                         <th rowSpan={2} className="text-center">
-                            Land Nature
+                            Land Nature<br></br>భూమి స్వభావం
                         </th>
                         <th rowSpan={2} className="text-center">
                             Tax
                         </th>
-                        <th rowSpan={2}>Land Class</th>
                         <th rowSpan={2} className="text-center">
-                            Khata No.<br />
-                        </th>
-                        <th rowSpan={2}>
-                            Pattadhar Name
+                            Land Class<br></br>భూమి వివరణ
                         </th>
                         <th rowSpan={2} className="text-center">
-                            Occupent Name
+                            Khata No.<br></br>ఖాతా నంబరు
+
                         </th>
-                        <th rowSpan={2} className="extraFont text-center">
-                            Occ Ext
+                        <th rowSpan={2} className="text-center">
+                            Pattadhar Name <br></br>పట్టాదారు పేరు<br></br>(తండ్రి/భర్త)
+
+
                         </th>
-                        <th rowSpan={2} className="extraFont text-center">
-                            Enjoyment Nature
+                        <th rowSpan={2} className="text-center">
+                            Occupent Name<br></br>అనుభవదారు పేరు<br></br>(తండ్రి/భర్త)
                         </th>
-                        <th rowSpan={2} className="extraFont text-center">
-                            Occupent Father
+                        <th rowSpan={2} className=" text-center">
+                            Occ Ext <br></br>అనుభవ విస్తీర్ణం
                         </th>
-                        <th rowSpan={2} className="extraFont text-center">
-                            Pattadhar Father
+                        <th rowSpan={2} className=" text-center">
+                            Enjoyment Nature<br></br> అనుభవ స్వభావం
                         </th>
-                        <th rowSpan={2} className="extraFont text-center">
-                            Village Name
+                        <th rowSpan={2} className=" text-center">
+                            Occupent Father<br></br>అనుభవదారు పేరు<br></br>(తండ్రి/భర్త)
                         </th>
-                        <th rowSpan={2} className="extraFont text-center">
-                            Mut Date
+                        <th rowSpan={2} className=" text-center">
+                            Pattadhar Father<br></br>పట్టాదారు పేరు<br></br>(తండ్రి/భర్త)
                         </th>
-                        <th rowSpan={2} className="extraFont text-center">
-                            Aadhar No.
+                        <th rowSpan={2} className=" text-center">
+                            Village Name      <br></br>
+                        </th>
+                        <th rowSpan={2} className=" text-center">
+                            Mut Date    <br></br>
+                        </th>
+                        <th rowSpan={2} className=" text-center">
+                            Aadhar No.<br></br>ఆధార్
                         </th>
                     </tr>
                 </thead>
@@ -88,7 +96,7 @@ function Table({ columns, data }) {
                         </td>
                     </tr>
                     <tr>
-                        <td colSpan={15}>
+                        <td colSpan={15} className="ml-2">
                             <img src="/images/pahani2.svg" />
                         </td>
                     </tr>
@@ -98,6 +106,10 @@ function Table({ columns, data }) {
     );
 }
 function otherMenu() {
+    const [display, setdisplay] = useState(false)
+    const handleClick = () => {
+        setdisplay(true)
+    }
     useEffect(() => {
         require("bootstrap/dist/js/bootstrap.bundle.min.js");
     }, []);
@@ -262,11 +274,49 @@ function otherMenu() {
                                     <Form.Control
                                         id="floatingInputCustom"
                                         type="text"
-                                        placeholder="Survey No." />
+                                        placeholder="Survey No." onClick={handleShow} />
                                     <Form.Label htmlFor="floatingInputCustom">
                                         Survey No.
                                     </Form.Label>
                                 </Form.Floating></div>
+                                <Modal show={show} onHide={handleClose}>
+
+                                    <Modal.Header closeButton>
+
+                                        <Modal.Title>TeluguSurvey No.</Modal.Title>
+
+                                    </Modal.Header>
+
+                                    <Modal.Body className="justify-content-center text-center ">
+                                        <Form.Floating className="mb-3">
+                                            <Form.Select aria-label="units">
+                                                <option>SNO</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </Form.Select>
+                                        </Form.Floating>
+
+                                        <Form.Floating >
+
+                                            <Form.Control
+
+                                                id="floatingInputCustom"
+
+                                                type="text"
+
+                                                placeholder="250-2" />
+
+                                            <Form.Label htmlFor="floatingInputCustom">
+
+                                                250-2
+
+                                            </Form.Label>
+
+                                        </Form.Floating>
+                                    </Modal.Body>
+
+                                </Modal>
                                 <div className="col-md mt-4"> <Form.Floating>
                                     <Form.Control
                                         id="floatingInputCustom"
@@ -278,32 +328,10 @@ function otherMenu() {
                                 </Form.Floating></div>
                                 <div className="col"></div>
                                 <div className="col-auto d-flex align-items-center pageNextBtn mx-4">
-                                    <Button onClick={handleShow} className="next mb-4 "><CheckLg onClick={handleShow} /></Button>
+                                    <Button className="next mb-4 "><CheckLg /></Button>
                                 </div>
-                                <Modal show={show} onHide={handleClose}>
-                                    <Modal.Header closeButton>
-                                        <Modal.Title>TeluguSurvey No.</Modal.Title>
-                                    </Modal.Header>
-                                    <Modal.Body className="justify-content-center text-center ">
-                                        <Form.Floating className="mb-3">
-                                            <Form.Select aria-label="units">
-                                                <option>SNO</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                            </Form.Select>
-                                        </Form.Floating>
-                                        <Form.Floating >
-                                            <Form.Control
-                                                id="floatingInputCustom"
-                                                type="text"
-                                                placeholder="250-2" />
-                                            <Form.Label htmlFor="floatingInputCustom">
-                                                250-2
-                                            </Form.Label>
-                                        </Form.Floating>
-                                    </Modal.Body>
-                                </Modal>
+
+
                                 <div className="col-auto d-flex align-items-center pageNextBtn">
                                     <Button className="clear mb-4 ">Clear</Button>
                                 </div>
@@ -311,12 +339,59 @@ function otherMenu() {
                             <hr></hr>
                             <div className="row mb-3 mt-5">
                                 <div className="col">
-                                    <h4>Pattadhar Details</h4>
+
+
+
+                                    <h4 className=" crop-image-text">Pattadhar Details</h4>
+
+
+
                                 </div>
-                                <div className="col-auto d-flex align-items-center">
-                                    <button className="btn btn-outline-secondary" type="button">
-                                        <Search />
-                                    </button>
+
+
+
+
+
+
+                                <div className=" col lg={4} md={4} xs={12} " >
+
+
+
+                                    {/* {!display && } */}
+
+
+
+
+
+
+                                </div>
+
+
+
+
+
+
+                                <div className="col">
+
+
+
+
+
+                                    <input type="text" className="justify-content-end float-end search-click" style={{ borderRadius: "5px", borderColor: "#5692B4", height: "40px" }} name="" placeholder="search here..." />
+
+
+
+                                    {display && ("")
+
+
+
+                                    }
+
+
+
+
+
+
                                 </div>
                             </div>
                         </div>

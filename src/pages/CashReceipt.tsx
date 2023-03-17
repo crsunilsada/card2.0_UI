@@ -10,12 +10,6 @@ function Table({ columns, data }) {
     headerGroups,
     prepareRow,
     page,
-    canPreviousPage,
-    canNextPage,
-    pageOptions,
-    nextPage,
-    previousPage,
-    setPageSize,
     state: { pageIndex, pageSize },
   } = useTable(
     {
@@ -37,27 +31,25 @@ function Table({ columns, data }) {
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps()}>{column.render("Header")}</th>
+                <th  {...column.getHeaderProps()}>{column.render("Header")}</th>
               ))}
             </tr>
           ))}
         </thead>
         <thead>
-          <tr>
-            <th className="text-center">Code</th>
-            <th className="text-center">Description</th>
-            <th className="text-center">Amount to pay by Challan</th>
-            <th className="text-center">By CFMS</th>
-            <th>Bifurcation/ Allocation</th>
-            <th className="text-center">By Stock</th>
+          <tr >
+            <th className="text-center p-3">Code</th>
+            <th className="text-center p-3">Description</th>
+            <th className="text-center p-3">Amount to pay by Challan</th>
+            <th className="text-center p-3">By CFMS</th>
+            <th className="text-center p-3">Bifurcation/ Allocation</th>
+            <th className="text-center p-3">By Stock</th>
             <th>
-              By CFMS +
-              <br />
-              Stock Holding
+              {" "}
+              By CFMS + <br /> Stock Holding
             </th>
-            <th className="text-center">By Cash</th>
-
-            <th className="text-center">By DD</th>
+            <th className="text-center p-3">By Cash</th>
+            <th className="text-center p-3">By DD</th>
           </tr>
         </thead>
         <tbody {...getTableBodyProps()}>
@@ -67,7 +59,7 @@ function Table({ columns, data }) {
               <tr {...row.getRowProps()}>
                 {row.cells.map((cell) => {
                   return (
-                    <td className="text-center" {...cell.getCellProps()}>
+                    <td className="text-center p-2" {...cell.getCellProps()}>
                       {cell.render("Cell")}
                     </td>
                   );
@@ -104,6 +96,10 @@ const CashReceipt = () => {
             accessor: "ByCFMS",
           },
           {
+            Header: "Bifurcation/ Allocation",
+            accessor: "bifurcation",
+          },
+          {
             Header: " By Stock",
             accessor: "ByStock",
           },
@@ -132,59 +128,77 @@ const CashReceipt = () => {
       </Form.Floating>
     </>
   );
+  const textFieldFirstColumn = (
+    // <Row >
+    <Form.Floating>
+      <Form.Control
+        className="checkbox-over"
+        id="floatingInputCustom"
+        type="text"
+      />
+    </Form.Floating>
+    // </Row>
+  );
+
   const lastColumn = (
     <>
-      <small>total</small>
+      <small >Total</small>
       <h3>2300</h3>
     </>
   );
 
   const data = [
     {
-      Code: textField,
+      Code:textFieldFirstColumn,
       Description: "Stamp Duty",
       amount: "1000",
       ByCFMS: textField,
+      bifurcation:textField,
       ByStock: textField,
       CFMSandStock: textField,
       ByCash: textField,
       ByDD: textField,
     },
     {
-      Code: textField,
+      Code: textFieldFirstColumn,
       Description: "Transfer Fee",
       amount: "1000",
       ByCFMS: textField,
+      bifurcation:textField,
       ByStock: textField,
       CFMSandStock: textField,
       ByCash: textField,
       ByDD: textField,
     },
     {
-      Code: textField,
+       Code: textFieldFirstColumn,
       Description: "Register Fee",
       amount: "100",
       ByCFMS: textField,
+      bifurcation:textField,
       ByStock: textField,
       CFMSandStock: textField,
       ByCash: textField,
       ByDD: textField,
     },
     {
-      Code: textField,
+       Code: textFieldFirstColumn,
       Description: "User Charges",
       amount: "100",
       ByCFMS: textField,
+      bifurcation:textField,
       ByStock: textField,
       CFMSandStock: textField,
       ByCash: textField,
       ByDD: textField,
+
     },
     {
       Code: "",
       Description: "",
       amount: lastColumn,
       ByCFMS: lastColumn,
+      bifurcation:lastColumn,
       ByStock: lastColumn,
       CFMSandStock: lastColumn,
       ByCash: lastColumn,
@@ -193,7 +207,9 @@ const CashReceipt = () => {
   ];
 
   return (
-    <div>
+    <div><div><Stepper showReason2={true} /></div>
+    <Stepper showReason={true}/>
+        {/* <div className="red-strip text-center p-1">REASON: Change Nature of Document  |  COMMENTS: Comments appear here</div> */}
       <div className="pageMainWrap innerpage">
         <div className="mainWrapper">
           <div className="wrapperInner">
@@ -204,7 +220,7 @@ const CashReceipt = () => {
               <div className="pageTableContainer pageTableMain mt-4">
                 <h4 className="mb-4">Basic Details</h4>
                 <Row className="mb-4">
-                  <Col lg={2} md={4} xs={12}>
+                  <Col lg={2} md={4} xs={12} className="mb-3">
                     <Form.Floating>
                       <Form.Control
                         id="floatingInputCustom"
@@ -241,32 +257,7 @@ const CashReceipt = () => {
                     </Form.Floating>
                   </Col>
 
-                  <Col lg={2} md={3} xs={12} className="mb-3">
-                    <Form.Floating>
-                      <Form.Control
-                        id="floatingInputCustom"
-                        type="text"
-                        placeholder="Name"
-                      />
-                      <Form.Label htmlFor="floatingInputCustom">
-                        Name
-                      </Form.Label>
-                    </Form.Floating>
-                  </Col>
-                  <Col lg={2} md={3} xs={12} className="mb-3">
-                    <Form.Floating>
-                      <Form.Select aria-label="Property Type">
-                        <option>Village Name</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </Form.Select>
-                    </Form.Floating>
-                  </Col>
-                </Row>
-
-                <Row className="mb-4">
-                  <Col lg={2} md={4} xs={12}>
+                  <Col lg={2} md={4} xs={12} className="mb-3">
                     <Form.Floating>
                       <Form.Control
                         id="floatingInputCustom"
@@ -278,31 +269,20 @@ const CashReceipt = () => {
                       </Form.Label>
                     </Form.Floating>
                   </Col>
-                  <Col lg={2} md={4} xs={12}>
+                  <Col lg={2} md={4} xs={12} className="mb-3">
                     <Form.Floating>
                       <Form.Control
                         id="floatingInputCustom"
                         type="text"
-                        placeholder="Document Major"
+                        placeholder=" Nature of Document"
                       />
                       <Form.Label htmlFor="floatingInputCustom">
-                        Document Major
+                      Nature of Document
                       </Form.Label>
                     </Form.Floating>
                   </Col>
-                  <Col lg={2} md={4} xs={12}>
-                    <Form.Floating>
-                      <Form.Control
-                        id="floatingInputCustom"
-                        type="text"
-                        placeholder="Document Minor"
-                      />
-                      <Form.Label htmlFor="floatingInputCustom">
-                        Document Minor
-                      </Form.Label>
-                    </Form.Floating>
-                  </Col>
-                  <Col lg={3} md={4} xs={12}>
+                
+                  <Col lg={3} md={4} xs={12} className="mb-3">
                     <Form.Floating>
                       <Form.Control
                         id="floatingInputCustom"
@@ -317,7 +297,9 @@ const CashReceipt = () => {
                 </Row>
               </div>
             </div>
-            <div className="pageTableContainer pageTableMain mt-4">
+
+            <hr className="mt-3 mb-2" />
+            <div className="pageTableContainer pageTableMain mt-2">
               <Row className="mb-5">
                 <Col lg={3} md={3} xs={12}>
                   <h4 className="mb-4">Cash Receipt </h4>
@@ -340,10 +322,13 @@ const CashReceipt = () => {
               <div className="table-responsive">
                 <Table columns={columns} data={data} />
               </div>
-              <div className="pageNextBtn">
+              <div className="pageNextBtn mb-4">
                 <Button className="next">ADD</Button>
               </div>
-              <div className="pageNextBtn">
+              </div>
+              <hr className="mt-4 mb-2" />
+            <div className="pageTableContainer pageTableMain">
+              <div className="pageNextBtn ">
                 <Button className="clear">Clear</Button>
                 <Button className="next">Save</Button>
               </div>

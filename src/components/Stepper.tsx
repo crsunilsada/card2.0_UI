@@ -1,16 +1,111 @@
+import router from "next/router";
+import { useEffect, useState } from "react";
+import { Col, Row } from "react-bootstrap";
+import { Link } from "react-bootstrap-icons";
 import styles from "../styles/components/header.module.scss";
-const Stepper = () => {
+const Stepper = (props) => {
+  const { showReason } = props;
+
+  useEffect(() => {
+    if (window.location.pathname === "/Verification") {
+      setSelected1(true);
+    }
+    if (window.location.pathname === "/admissionofExecution") {
+      setSelected(true);
+      setSelected3(true);
+    }
+    if (window.location.pathname === "/SubmitForSRO") {
+      setSelected2(true);
+      setSelected1(true);
+      setSelected(true);
+    }
+    if (window.location.pathname === "/assigning") {
+      setSelected4(true);
+      setSelected3(true);
+    }
+    if (window.location.pathname === "/ScanningUpload") {
+      setSelected5(true);
+      setSelected4(true);
+      setSelected3(true);
+    }
+    if (window.location.pathname === "/documentHandover") {
+      setSelected6(true);
+      setSelected5(true);
+      setSelected4(true);
+      setSelected3(true);
+    }
+  }, []);
+
+    const { showReason1 } = props;
+    const { showReason2 } = props;
+    const[selected,setSelected]=useState(false);
+    const[selected1,setSelected1]=useState(false);
+    const[selected2,setSelected2]=useState(false);
+    const[selected3,setSelected3]=useState(false);
+    const[selected4,setSelected4]=useState(false);
+    const[selected5,setSelected5]=useState(false);
+    const[selected6,setSelected6]=useState(false);
+    const handleClick1=()=>{
+      setSelected1(true);
+      router.push('/Verification')
+    }
+
+    const handleClick=()=>{
+      setSelected(true);
+      router.push('/admissionofExecution')
+    }
+    const handleClick2=()=>{
+      setSelected2(true);
+      router.push('/SubmitForSRO')
+    }
+    const handleClick3=()=>{
+      setSelected3(true);
+      router.push('/admissionofExecution')
+    }
+    const handleClick4=()=>{
+      setSelected4(true);
+      router.push('/assigning')
+    }
+    const handleClick5=()=>{
+      setSelected5(true);
+      router.push('/ScanningUpload')
+    }
+    const handleClick6=()=>{
+      setSelected6(true);
+      router.push('/documentHandover')
+    }
   return (
-    <><div className="progressbar-section">
+    <>
+    {showReason1 &&
+     (
+     <div className="progressbar-section ">
     <ul className="progressbar">
-        <li className="completed"><div className="progress_step_text">Document Presentation</div></li>
-        <li className="inactive"><div className="progress_step_text">Admission Of Execution</div></li>
-        <li className="inactive"><div className="progress_step_text">Assigning</div></li>
-        <li className="inactive"><div className="progress_step_text">Scanning And Upload</div></li>
-        <li className="inactive"><div className="progress_step_text">Document Handover</div></li>
+        <li className="completed" onClick={handleClick3}><div className="progress_step_text">Admission Of Execution</div></li>
+        <li className={selected4 ? "completed" : "inactive"} onClick={handleClick4}><div className="progress_step_text">Assigning</div></li>
+        <li className={selected5 ? "completed" : "inactive"} onClick={handleClick5}><div className="progress_step_text">Scanning And Upload</div></li>
+        <li className={selected6 ? "completed" : "inactive"} onClick={handleClick6}><div className="progress_step_text">Document Handover</div></li>
     </ul>
-  </div>
-  <div className="red-strip text-center p-1">REASON: Change Nature of Document  |  COMMENTS: Comments appear here</div>
+  </div>)}
+
+  {showReason2 &&
+     (
+    <div className="progressbar-section align-items-center mx-center">
+      <ul className="progressbar">
+          <li className="completed" onClick={handleClick}><div className="progress_step_text">Admission Of Execution</div></li>
+          <li className={selected1 ? "completed" : "inactive"} onClick={handleClick1}><div className="progress_step_text">Verification</div></li>
+          <li className={selected2 ? "completed" : "inactive"} onClick={handleClick2}><div className="progress_step_text">SRO review</div></li>
+      </ul>
+    </div>
+  )}
+
+  {showReason && (
+        <div className="red-strip text-center p-1">
+          REASON: Change Nature of Document | COMMENTS: Comments appear here
+        </div>
+      )}
+     {/* <div className="red-strip text-center p-1">REASON: Change Nature of Document  |  COMMENTS: Comments appear here</div> */}
+
+  {/* <div className="green-strip text-center p-1">Document has been saved and moved to CC and EC Database</div> */}
     </>
   );
 };

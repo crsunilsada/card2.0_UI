@@ -4,7 +4,8 @@ import { Button, Col, Container, Image, Row, Table } from 'react-bootstrap';
 import Stepper from '../components/Stepper'
 const CropSign = () => {
   return (
-    <><Stepper />
+    <><div><Stepper showReason1={true} /></div>
+    <Stepper showReason={false} />
     <div>
           <div className="pageMainWrap innerpage">
               <Head>

@@ -46,12 +46,12 @@ p:last-child {
 .navigation {
     .header-main-nav {
         .nav-link {
-            font-family: "Roboto", sans-serif;
+            font-family: "Noto Sans", sans-serif;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 18px;
             line-height: 16px;
             color: $white;
-            padding: 12px 25px 10px 25px;
+            padding: 16px 25px 10px 25px;
         }
 
         .nav-link.active {
@@ -61,15 +61,15 @@ p:last-child {
         }
 
         .homeMenu.nav-link {
-            padding-top: 10px;
+            padding-top: 14px;
             padding-bottom: 0;
         }
     }
 }
 
 .pageMainWrap {
-    min-height: calc(100vh - 155px);
-    padding: 65px 0;
+    min-height: calc(100vh - 90px);
+    padding: 5px 0;
     background: $aquaHaze;
 
     .mainWrapper {
@@ -80,15 +80,19 @@ p:last-child {
         border-radius: 5px;
         padding: 50px 40px 40px;
 
+        .StepperWrapper {
+            padding: 50px 0px 40px;
+        }
+
         .wrapperInner {
             background: $white;
             border: 1px solid $blue;
             border-radius: 4px;
-            padding: 60px 0 40px;
+            padding: 30px 0 40px;
             position: relative;
 
             .pageTableContainer {
-                max-width: 1471px;
+                max-width: 1653px;
                 margin: auto;
             }
         }
@@ -164,11 +168,12 @@ p:last-child {
     }
 
     .searchFiler {
-        padding: 30px 0 0;
+        float: right;
+        padding: 0px 0 0;
 
         button {
             height: 42px;
-            margin: 0 15px 0 0;
+            // margin: 0 15px 0 0;
             border: none;
             padding: 0 25px;
             border-radius: 38px;
@@ -178,6 +183,7 @@ p:last-child {
 
         button.today {
             background: $silkBlue;
+            margin: 0 15px 0 0;
             font-weight: 700;
             font-size: 16px;
             line-height: 22px;
@@ -206,7 +212,12 @@ p:last-child {
     padding: 33px 0 0;
 
     .pageTableTabs {
-        padding: 0 0 15px;
+
+        padding: 10px 0 0px;
+
+        .tableMarginTop {
+            margin-bottom: -1rem;
+        }
 
         .button1 {
             background: $blue;
@@ -229,7 +240,8 @@ p:last-child {
             color: $white;
             padding: 5px 12px;
             border: none;
-            margin: 0 2px 0 0;
+            margin: 0 5px 0 0;
+            border-radius: 8px;
         }
 
         .activeButton {
@@ -240,12 +252,10 @@ p:last-child {
             color: $white;
             padding: 5px 12px;
             border: none;
-            margin: 0 2px 0 0;
+            margin: 0 5px 0 0;
+            border-radius: 8px;
         }
 
-        button.active {
-            opacity: 1;
-        }
     }
 
     .tableData {
@@ -261,7 +271,7 @@ p:last-child {
 
             th,
             td {
-                font-size: 14px !important;
+                font-size: 16px !important;
                 line-height: 22px;
                 padding: 6px 6px;
                 border-width: 0 1px 0 0;
@@ -281,6 +291,7 @@ p:last-child {
             tr {
                 th {
                     font-weight: 600;
+                    height: 113px;
                 }
 
                 th.extraFont {
@@ -314,7 +325,6 @@ p:last-child {
 
                     .fcheckbox {
                         margin: 0 0 15px;
-
                     }
 
                     button {
@@ -324,6 +334,7 @@ p:last-child {
                         color: $liver;
                         padding: 0;
                         margin: 0 10px;
+                        border-radius: 8px;
 
                         small {
                             display: block;
@@ -331,10 +342,10 @@ p:last-child {
                     }
 
                     button.capture {
-                        width: 160px;
-                        height: 60px;
+                        width: 140px;
+                        height: 50px;
                         background: $blue;
-                        border-radius: 4px;
+                        border-radius: 8px;
                         font-weight: 600;
                         font-size: 14px;
                         line-height: 16px;
@@ -342,9 +353,10 @@ p:last-child {
                         color: $white;
                         padding: 0;
                     }
+
                     button.digital-sign-btn {
-                        width: 160px;
-                        height: 60px;
+                        width: 140px;
+                        height: 50px;
                         background: $blue;
                         border-radius: 4px;
                         font-weight: 600;
@@ -355,8 +367,6 @@ p:last-child {
                         padding: 0;
                         opacity: 0.5;
                     }
-
-
                 }
             }
 
@@ -372,7 +382,7 @@ p:last-child {
                 }
 
                 td:last-child {
-                    border-radius: 0 0 8px 0;
+                    border-radius: 8px 8px 8px 8px;
                 }
             }
         }
@@ -531,11 +541,9 @@ body {
             margin: 0 10px 0 0;
             width: 20px;
             height: 20px;
-
         }
 
         .form-check-input:checked[type="radio"] {
-
             background: url(../../public/images/radio-checked.jpg) no-repeat center center;
         }
 
@@ -545,7 +553,6 @@ body {
             line-height: 20px;
             color: $blue;
         }
-
     }
 
     .form-check-checkbox {
@@ -553,28 +560,40 @@ body {
             margin: 0 10px 0 0;
             width: 16px;
             height: 16px;
-
         }
 
         .form-check-input:checked[type="checkbox"] {
             //background: url(../../public/images/radio-checked.jpg) no-repeat center center;
             background-color: #274C77;
             border-color: #274C77;
-
         }
 
         label {
             font-weight: 400;
-            font-size: 20px;
-            line-height: 20px;
+            font-size: 16px;
+            line-height: 16px;
             color: $blue;
+
+            h6 {
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 18px;
+                color: #4d4d4d;
+            }
         }
     }
 }
 
 .executanttantTable {
-    overflow-x: auto;
-    white-space: nowrap;
+    .PropertyScrollBar {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .CardMargin {
+        width: 21%;
+    }
 
     .tabsList {
         position: absolute;
@@ -637,14 +656,17 @@ body {
 
     .witnessList {
         .emptyBox {
-            height: 216px;
+            height: 150px;
             background: $blackSqueeze;
             border: 1px solid $hippieBlue;
-            border-radius: 8px;
+            border-radius: 12px;
+            width: 150px;
         }
 
         .confirmbox {
             padding: 20px 0 0;
+            height: 150px;
+            width: 150px;
 
             button {
                 font-weight: 600;
@@ -653,9 +675,10 @@ body {
                 color: $blue;
                 border: 1px solid $hippieBlue;
                 width: 100%;
+                height: 50px;
                 border-radius: 8px;
                 background: $white;
-                padding: 22px 0;
+                padding: 12px 0;
             }
         }
     }
@@ -669,11 +692,11 @@ body {
 
 .pageNextBtn {
     text-align: right;
-    padding: 45px 0 0;
+    padding: 40px 0 0;
 
     button {
-        /*width: 160px;
-    height: 40px;*/
+        width: 140px;
+        height: 50px;
         border-radius: 4px;
         font-weight: 600;
         font-size: 16px;
@@ -687,19 +710,25 @@ body {
         color: $blue;
         background: $white;
         margin-right: 20px;
+        width: 140px;
+        height: 50px;
+        border-radius: 8px;
     }
 
     button.next {
         background: $blue;
         color: $white;
+        width: 140px;
+        height: 50px;
+        border-radius: 8px;
     }
 }
 
 .partyDetails {
     background: $white;
-    padding: 40px 20px;
-    border: 1px solid rgba(221, 221, 221, 0.95);
-    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.08);
+    padding: 10px 20px;
+    // border: 1px solid rgba(221, 221, 221, 0.95);
+    // box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.08);
     border-radius: 20px;
 
     .partyTitle {
@@ -728,6 +757,9 @@ body {
         background: $blackSqueeze;
         border: 1px solid $hippieBlue;
         border-radius: 8px;
+        // width: 430px;
+        margin: 0 10px 10px 0;
+
 
         .cardHeader {
             background: $hippieBlue;
@@ -744,7 +776,7 @@ body {
 
                 span {
                     font-weight: 400;
-                    font-size: 18px;
+                    font-size: 20px;
                 }
             }
 
@@ -763,6 +795,13 @@ body {
             }
         }
 
+        .cardSpaceBetween {
+            h6:nth-child(2) {
+                margin-left: 70px !important;
+            }
+
+        }
+
         .cardBody {
             padding: 20px 12px 15px;
 
@@ -772,7 +811,7 @@ body {
 
             h6 {
                 font-weight: 600;
-                font-size: 13px;
+                font-size: 16px;
                 white-space: normal;
                 line-height: 20px;
                 color: $blue;
@@ -796,7 +835,7 @@ body {
         .card {
             .cardHeader {
                 h5 {
-                    font-size: 12px;
+                    font-size: 15px;
                     line-height: 19px;
                 }
             }
@@ -811,7 +850,7 @@ body {
 }
 
 .assigningcheckboxes {
-    padding: 30px 0;
+    padding: 10px 0;
 
     .form-check:nth-child(2) {
         margin-left: 60px;
@@ -857,7 +896,6 @@ body {
                 font-weight: 500;
                 min-width: 85px;
                 margin: 0 0 0 6px;
-
             }
         }
 
@@ -1028,10 +1066,8 @@ body {
     display: none !important;
 }
 
-
-
 .mainheader-space {
-    height: 120px;
+    height: 55px;
 }
 
 .headerNavContainer.container {
@@ -1078,6 +1114,7 @@ body {
 .progressbar-section {
     padding: 0px 0px 0px 0px;
     height: 82px;
+    margin-left: 300px;
 }
 
 .progressbar li {
@@ -1173,8 +1210,8 @@ body {
 
 .pageMainWrap.homepage {
     background: url(../../public/images/Dashboard-BG.png) no-repeat center bottom $white;
-    margin-left: 50px;
-    margin-right: 50px;
+    // margin-left: 50px;
+    // margin-right: 50px;
     margin-bottom: -65px;
 }
 
@@ -1185,13 +1222,11 @@ body {
 
 .homepageheader {
     background: url(../../public/images/homepageheader.png) no-repeat center top $white;
-
 }
 
-.searchBox {
-    display: flex;
-}
-
+// .searchBox {
+//     display: flex;
+// }
 .searchInput {
     position: relative;
     left: 30px;
@@ -1206,46 +1241,16 @@ body {
     }
 }
 
-.LoginPage {
-    background: url('../../public/images/Card-Header-BG.png') no-repeat center;
-    // background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
-}
-
+// .LoginPage {
+//     background: url('../../public/images/Card-Header-BG.png') no-repeat center;
+//     // background-repeat: no-repeat;
+//     background-size: cover;
+//     color: white;
+// }
 .inputs input {
     width: 50px;
     height: 50px
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .form-select {
     font-size: 14px !important;
@@ -1253,7 +1258,7 @@ body {
     border-radius: 8px;
     height: 50px;
     border: 1px solid #2279c5;
-    color: #4D4D4D !important;
+    // color: #4D4D4D !important;
     padding: .375rem 2.25rem .375rem 0.75rem !important;
     background-image: url(../../public/images/select-dropdown.png) !important;
     background-size: 12px 9px !important;
@@ -1268,9 +1273,7 @@ body {
     order: -1; //swap order
     margin-left: 0;
     margin-right: 0.8em; // just extra space between text and icon
-
 }
-
 
 .red-strip {
     background: linear-gradient(90deg, #FE0000 48.21%, #FE0000 100%);
@@ -1432,6 +1435,8 @@ body {
                 .progress_step_text {
                     top: -10px;
                     line-height: 18px;
+
+
                 }
             }
         }
@@ -1440,6 +1445,7 @@ body {
             clear: both;
             content: "";
             display: block;
+
         }
     }
 
@@ -1627,21 +1633,7 @@ body {
     color: #274C77;
 }
 
-.orginal-document-herf-link-button {
-    position: absolute;
-    width: 220px;
-    height: 60px;
-    text-transform: none;
-    border-radius: 0px 3px 0px 0px;
-    text-decoration-line: underline;
-    background-color: #606F82 !important;
-    color: white !important;
-}
 
-.orginal-document-herf-link-button-over {
-    margin-top: -60px;
-    margin-left: 255px;
-}
 
 .pageNextBtn.scanningPageSave {
     text-align: left;
@@ -1750,11 +1742,9 @@ body {
     color: white;
 }
 
-
 .accordion-button::after {
     background: url(../../public/images/sidearrow.svg) no-repeat center center;
     ;
-
 }
 
 .accordion-button:not(.collapsed)::after {
@@ -1777,17 +1767,12 @@ body {
 }
 
 .accordion-item,
-
 .accordion-button {
-
     border-radius: 8px !important;
-
 }
 
 .pageTableContainer .pageNextBtn {
-
     padding: 20px 0 0;
-
 }
 
 .text-center1 {
@@ -1909,6 +1894,7 @@ body {
 
 
 
+
 .drop-section .form-select.btn {
     text-align: left;
     border: 1px solid #ced4da;
@@ -1957,10 +1943,13 @@ body {
 // menu bar css start
 .navbar-nav li:hover>ul.dropdown-menu {
     display: block;
+
 }
 
 .dropdown-submenu {
     position: relative;
+    font-family: "Noto Sans", sans-serif;
+
 }
 
 .dropdown-submenu>.dropdown-menu {
@@ -1981,10 +1970,12 @@ body {
 .nav-item.dropdown .dropdown-menu .dropdown-item:hover {
     background-color: #274C77;
     color: white;
+
 }
 
 .dropdown-item {
     color: #274C77;
+    font-family: "Noto Sans", sans-serif;
 }
 
 // menu bar css end
@@ -2007,8 +1998,6 @@ body {
         padding: 5px;
         border: 1px solid black;
     }
-
-
 }
 
 .image-container:hover table {
@@ -2018,7 +2007,7 @@ body {
 //grant permission end
 // for opacity
 .card-text {
-    opacity: 1;
+    opacity: 0.5;
 }
 
 // loginbuttonclas
@@ -2042,8 +2031,6 @@ body {
     color: #274C77;
 }
 
-
-
 .WelcomePage {
     margin: 0px 200px;
 }
@@ -2064,3 +2051,467 @@ body {
 .submit:hover {
     background-color: #274C77;
 }
+
+.vertical {
+    border-left: 1px solid grey;
+    height: 900px;
+    left: 50%;
+}
+
+.borderline {
+    border: 1px solid #D3D3D3;
+}
+
+.partydetails-image-card {
+    box-sizing: border-box;
+    width: 255px;
+    height: 250px;
+    background: #f6f8fd;
+    border: 1px solid #c6d0ec;
+    border-radius: 12px;
+    display: flex;
+    align-items: left;
+    display: flex;
+}
+
+.partydetails-image-box {
+    box-sizing: border-box;
+    width: 213px;
+    height: 185px;
+    background: #f6f8fd;
+    border: 1px solid #c6d0ec;
+    border-radius: 10px;
+    margin: auto;
+    display: flex;
+    align-items: left;
+}
+
+.search-click {
+    border: 1px solid #274c77;
+    outline: none;
+    border-radius: 6px;
+    width: 50px;
+    height: 50px;
+    transition: all 0.5s;
+}
+
+.search-click:focus {
+    width: 300px;
+}
+
+.search-click {
+    position: relative;
+    overflow: hidden;
+    height: 50px;
+    background-image: url('/images/Search-icon.svg');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+.search-click:not(:focus)::placeholder {
+    color: transparent;
+}
+
+.search-click input {
+    width: 300px;
+    height: 50px;
+}
+
+.clear-date {
+    color: #274C77;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.modal-path {
+    position: fixed;
+    top: 20%;
+
+}
+
+// .LoginMargin {
+//     margin: 106px 80px;
+// }
+// .WelcomePage {
+//     margin: 0px 96px;
+// }
+.Property-details-text {
+    margin-left: 41px !important;
+}
+
+.Property-details-card-text {
+    margin-right: 12px !important;
+}
+
+.green-strip {
+    background: linear-gradient(90deg, #43A047 48.21%, #43A047 100%);
+    color: #FFF;
+}
+
+.LoginMargin {
+    .LoginPage {
+        background: url('../../public/images/Card-Header-BG.png') no-repeat center;
+        // background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+        max-width: 1500px;
+        margin: 135px auto 57px;
+    }
+
+    .welcomePage-image {
+        height: 628px;
+    }
+
+    .Login-rightGrd {
+        align-items: center;
+        justify-content: center;
+
+        span {
+            display: block !important;
+        }
+    }
+}
+
+.searchBox {
+    position: relative;
+
+    .searchBoxIcon {
+        position: absolute;
+        right: 20px;
+        top: 22px;
+        z-index: 99;
+    }
+
+    .list-group {
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+    }
+}
+
+.emptyBox1 {
+    height: 191px;
+    border: 1px solid black;
+    width: 159px;
+}
+
+.checkbox-check {
+    margin-right: 70px;
+    margin-bottom: 5px;
+}
+
+.digital-sign-btn {
+    color: white;
+    background-color: $blue ;
+    opacity: 0.5;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    margin: 0 0 0 15px;
+}
+
+.digital-sign-btn-enable {
+    color: white;
+    background-color: $blue ;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    margin: 0 0 0 15px;
+}
+
+#tooltip-top>.tooltip-inner {
+    background-color: #fff;
+    color: #000;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+    text-align: left;
+    width: 5 00px;
+    max-width: 500px;
+    padding: 20px 15px;
+
+    h5 {
+        font-size: 16px;
+        color: #274C77;
+    }
+}
+
+
+.tabsList-pd .nav-link.active {
+    background-color: #274C77;
+    color: white;
+}
+
+.tabsList-pd .nav-link {
+    border: 1px solid #274C77;
+    color: #274C77;
+    margin: 2px;
+    border-radius: 8px;
+}
+
+.mainWrapper.dashboardWidth {
+    max-width: 1370px;
+    margin: 230px auto 0;
+    padding: 34px;
+
+    p {
+        color: #274C77;
+        font-weight: 600;
+        font-size: 40px;
+    }
+}
+
+.PropertyScrollBar {
+    display: flex;
+    white-space: nowrap;
+}
+
+.scrollable {
+    height: 700px;
+    overflow-y: scroll;
+}
+
+// .modal-heightt {
+//   height: 700px;
+// }
+.modal-dialog {
+    height: auto !important;
+    padding-top: 10%;
+}
+
+.modal-content {
+    height: 100% !important;
+    overflow: visible;
+}
+
+.modal-body {
+    height: auto;
+    overflow: auto;
+}
+
+.search-icon {
+    float: left;
+}
+
+.searchContainer {
+    display: inline-flex;
+}
+
+.nav-tabs .nav-link.active {
+    border: none;
+}
+
+.nav-tabs .nav-link {
+    border: none;
+}
+
+.nav-tabs .nav-link:focus {
+    border-color: none;
+    outline: none;
+}
+
+.nav-tabs .nav-link:hover {
+    border-color: 1px solid transparent !important;
+}
+
+.info {
+    top: 10px;
+}
+
+@media (min-width:320px) and (max-width:760px) {
+    .mainWrapper {
+        .order_passing {
+            .text_wrap {
+                position: absolute;
+                right: 38px;
+                top: 23px;
+            }
+        }
+    }
+}
+
+@media (min-width:320px) and (max-width:760px) {
+    .mainWrapper {
+        .heading_session {
+            position: absolute;
+            top: 144px;
+            left: -73px;
+        }
+    }
+}
+
+.text_wrap {
+    padding-left: 396px;
+}
+
+.heading_session {
+    padding-left: 127px;
+}
+
+.boder_down {
+    border: 1px solid #D3D3D3;
+    cursor: pointer;
+
+    .scrollable {
+        overflow-y: scroll;
+        border: 1px solid #274c77;
+    }
+
+    .document_a {
+        border: 1px solid #274c77;
+    }
+
+    h4 {
+        padding-left: 20px;
+    }
+
+    .document_a {
+        .stage_a {
+            padding-top: 20px;
+        }
+    }
+}
+
+@media (min-width:320px) and (max-width:920px) {
+    .scrollable {
+        .stable_img {
+            text-align: center;
+            padding: 0;
+        }
+    }
+}
+
+.justyfy_a {
+    .space_a {
+        text-align: right;
+        padding: 0;
+    }
+}
+
+.justyfy_a {
+
+    .space_a {
+
+        text-align: right;
+
+        padding: 0;
+
+    }
+
+}
+
+
+
+.boder_down {
+
+    border: 1px solid #D3D3D3;
+
+    cursor: pointer;
+
+
+
+    .scrollable {
+
+        overflow-y: scroll;
+
+        border: 1px solid #274c77;
+
+    }
+
+
+
+    .document_a {
+
+        border: 1px solid #274c77;
+
+    }
+
+
+
+    h4 {
+
+        padding-left: 20px;
+
+    }
+
+
+
+    .document_a {
+
+        .stage_a {
+
+            padding-top: 20px;
+
+        }
+
+    }
+
+}
+
+
+
+@media (min-width:320px) and (max-width:920px) {
+
+    .scrollable {
+
+        .stable_img {
+
+            text-align: center;
+
+            padding: 0;
+
+        }
+
+    }
+
+}
+
+
+
+.modal-body {
+
+    // padding: 30px 59px 35px;
+
+
+
+    h5 {
+
+        font-weight: 500;
+
+        font-size: 22px;
+
+        line-height: 30px;
+
+        color: $blue;
+
+    }
+
+}
+
+
+
+.justyfy_a {
+
+    justify-content: space-between;
+
+    padding-right: 20px;
+
+}
+
+
+
+// .witnessList.witness1 {
+
+//     border-bottom: 1px solid $black;
+
+//     padding: 30px  0 20px;
+
+//     margin: 0 0 20px;
+
+//   }.tabsList-imaging {
+
+//   position: absolute;
+
+//   top: 120px;
+
+// }

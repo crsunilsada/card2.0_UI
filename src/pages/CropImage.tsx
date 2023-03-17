@@ -2,9 +2,12 @@ import Head from 'next/head';
 import React from 'react'
 import { Button, Col, Container, Image, Row, Table } from 'react-bootstrap';
 import Stepper from '../components/Stepper'
+import Link from "next/link";
 const CropImage = () => {
     return (
-        <><Stepper /><div>
+        <><div><Stepper showReason1={true} /></div>
+        <Stepper showReason={false} />
+        <div>
             <div className="pageMainWrap innerpage">
                 <Head>
                     <title>Cropimage - CARD</title>
@@ -46,7 +49,7 @@ const CropImage = () => {
                                 <Col>
                                     <div className='pageNextBtn d-flex'>
                                         <Button className="btn btn-light clear m-2">Retake</Button>
-                                        <Button className='next btn btn-light m-2'>Done</Button>
+                                        <Link href="/imagingExecutant"><Button className='next btn btn-light m-2'>Done</Button></Link>
                                     </div>
                                 </Col>
                             </Row>

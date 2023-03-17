@@ -14,61 +14,63 @@ const LoginOtp = () => {
                 <meta name="description" content="login" />
                 <link rel="icon" href="/igrsfavicon.ico" />
             </Head>
-
+            <div style={{height: '72px'}}></div>
             <div className="m-5">
-                <div className="LoginPage mx-5">
+                <div className="LoginMargin">
+                <div className="LoginPage">
                     <Row className='Login-rightGrd'>
                         <Col lg={7} md={7} xs={7}>
-                            <Image src={LoginBG} alt="login-BG" height="676px"/>
+                            <Image src={LoginBG} alt="login-BG" height="722px"/>
                         </Col>
                         <Col lg={5} md={5} xs={5}>
                             <Row className="my-3">
                                 <Col lg={1} md={1} xs={1}>
                                     <MdOutlineKeyboardBackspace size={30} />
                                 </Col>
-                                <Col lg={11} md={11} xs={11}>
+                                <Col lg={11} md={11} xs={11} style={{cursor:"pointer"}}>
                                     <Link href="/Login/LoginPage">
-                                        <u>Back</u>
+                                        <h5><u>Back</u></h5>
                                     </Link>
                                 </Col>
                             </Row>
                             <Row>
-                                <Col lg={12} md={12} xs={12}>
-                                    <h4>OTP Verification</h4>
-                                    <p>Please enter the OTP which we sent to your Aadhar registered
-                                        mobile number</p>
+                                <Col lg={9} md={8} xs={12}>
+                                    <h2>OTP Verification</h2>
+                                    <h5>Please enter the OTP which we sent to your Aadhar registered
+                                        mobile number.</h5>
                                 </Col>
                             </Row>
                             <Row>
-                                <Col lg={12} md={12} xs={12} className="my-4">
+                                <Col lg={9} md={12} xs={12} className="my-2">
                                     {/* <OTPInput value={OTP} onChange={setOTP} autoFocus OTPLength={6} otpType="number" disabled={false} /> */}
-                                    <div id="otp" className="inputs d-flex flex-row">
-                                        <input className="m-2 text-center form-control rounded" type="text" id="first" />
-                                        <input className="m-2 text-center form-control rounded" type="text" id="second" />
-                                        <input className="m-2 text-center form-control rounded" type="text" id="third" />
-                                        <input className="m-2 text-center form-control rounded" type="text" id="fourth" />
-                                        <input className="m-2 text-center form-control rounded" type="text" id="fifth" />
-                                        <input className="m-2 text-center form-control rounded" type="text" id="sixth" />
+                                    <div id="otp" className="inputs d-flex flex-row my-2 justify-content-between">
+                                        <input className=" text-center form-control rounded" type="text" id="first" />
+                                        <input className="text-center form-control rounded" type="text" id="second" />
+                                        <input className="text-center form-control rounded" type="text" id="third" />
+                                        <input className="text-center form-control rounded" type="text" id="fourth" />
+                                        <input className="text-center form-control rounded" type="text" id="fifth" />
+                                        <input className="text-center form-control rounded" type="text" id="sixth" />
                                     </div>
-                                    <p>&nbsp;&nbsp;OTP Expires in 02:00s</p>
+                                    <h6>OTP Expires in 02:00s</h6>
+                                    {/* <p>OTP Expires. <u><strong>Resend</strong></u></p> */}
                                 </Col>
                             </Row>
                             <Row>
                                 <Col lg={12} md={12} xs={12}>
-                                    <div className="d-flex h-75 d-inline-block">
-                                    <div className="card">
+                                    <div className="d-flex h-100 d-inline-block">
+                                    <div className="card" style={{borderRadius:"8px 0px 0px 8px"}}>
                                         <div className="card-body d-flex align-content-center">
-                                            <img src="/images/Captcha.svg" alt="captcha" width={120} height={15} />&nbsp;
-                                            <TbRefresh color="#274C77"/>
+                                            <img src="/images/Captcha.svg" alt="captcha" width={167} height={20} />
+                                            <TbRefresh color="#274C77" size={25}/>
                                         </div>
                                     </div>
-                                    <input type="text" placeholder="Enter Captcha" /></div>
+                                    <input type="text" placeholder="Enter Captcha" className="form-control" style={{borderRadius:"0px 8px 8px 0px", borderColor:"white",width:"37%"}}/></div>
                                 </Col>
                             </Row>
                             <Row>
-                                <Col lg={5} md={5} xs={5}></Col>
-                                <Col lg={4} md={4} xs={4}>
-                                    <Link href={"/Login/WelcomePage"}><Button className="loginbuttonclass my-3">Submit</Button></Link>
+                                <Col lg={5} md={4} xs={12}></Col>
+                                <Col lg={4} md={4} xs={12}>
+                                    <Link href={"/Login/WelcomePage"}><Button className="loginbuttonclass my-4">Submit</Button></Link>
                                 </Col>
                             </Row>
                             <Row className="my-5">
@@ -93,6 +95,7 @@ const LoginOtp = () => {
                             </Row>
                         </Col>
                     </Row>
+                    </div>
                 </div>
             </div>
         </div>

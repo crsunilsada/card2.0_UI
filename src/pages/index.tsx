@@ -1,12 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
-import Homepage from './homePage'
+import Dashboard from './Dashboard'
 export default function Home() {
   return (
 
 
-          <Homepage/>
+          <Dashboard/>
 
   )
 }

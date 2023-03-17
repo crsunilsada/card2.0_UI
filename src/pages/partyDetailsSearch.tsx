@@ -89,7 +89,7 @@ const partyDetailsSearch = () => {
 
                             </Col>
                             <Col lg={3} md={3} xs={12} className="mb-3">
-                                <Link href={"/partyDetails"}>
+                                <Link href={"/partyDetailsScroll"}>
                                 <button className="bluebuttonclass">Next</button>
                                 </Link>
                             </Col>

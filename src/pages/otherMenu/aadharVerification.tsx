@@ -2,7 +2,7 @@ import { Container, Col, Row, Form, Button } from "react-bootstrap"
 import Head from "next/head";
 import Image from "next/image";
 import Stepper from '../components/Stepper'
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import React from "react";
 const aadharVerification = () => {
     useEffect(() => {
@@ -12,6 +12,9 @@ const aadharVerification = () => {
     const handleDisplay = () => {
         setDisplay(true);
     };
+    const [selectedOption, setSelectedOption] = useState("S/o");
+    const handleOptionClick = (event) => { setSelectedOption(event.target.textContent); };
+    useEffect(() => { require("bootstrap/dist/js/bootstrap.bundle.min.js"); }, []);
     return (
         <><div className="pageMainWrap innerpage">
             <Head>
@@ -27,129 +30,132 @@ const aadharVerification = () => {
                                 <button className="active partyDetails">Aadhar Verification</button>
                             </div>
                             <div>
-                                <Container>
-                                    <Row className="justify-content-center">
-                                        <Col lg={7} md={7} xs={7} className="mb-3">
-                                            <Form.Floating>
-                                                <Form.Control
-                                                    id="floatingInputCustom"
-                                                    type="text"
-                                                    placeholder="Aadhar Number"
-                                                    name="aadharnumber"
-                                                />
-                                                <label htmlFor="floatingInputCustom">
-                                                    Aadhar No.
-                                                </label>
-                                            </Form.Floating>
-                                        </Col>
-                                        {!display&&<Col lg={1} md={1} xs={1}>
-                                            <button className="verifyBtn" 
-                                            data-bs-toggle="modal" data-bs-target="#aadharVerification" 
+                                <Row>
+                                    <Col lg={2} md={2} xs={2}></Col>
+                                    <Col lg={6} md={6} xs={6} className="mb-3">
+                                        <Form.Floating>
+                                            <Form.Control
+                                                id="floatingInputCustom"
+                                                type="text"
+                                                placeholder="Aadhar Number"
+                                                name="aadharnumber"
+                                            />
+                                            <label htmlFor="floatingInputCustom">
+                                                Aadhar No.
+                                            </label>
+                                        </Form.Floating>
+                                    </Col>
+                                    {!display && <Col lg={1} md={1} xs={1}>
+                                        <button className="bluebuttonclass"
+                                            data-bs-toggle="modal" data-bs-target="#aadharVerification"
                                             onClick={handleDisplay}> Verify </button>
-                                        </Col>}&ensp;&ensp;
-                                        {display&&<Col lg={1} md={1} xs={1}>
-                                            <button className="verifyBtn"
-                                             data-bs-toggle="modal" data-bs-target="#aadharVerification"
-                                              onClick={handleDisplay}> <Image width={20} height={20} src="/images/tick.svg"/> </button>
-                                        </Col>}&ensp;
-                                        <Col lg={1} md={1} xs={1}>
-                                            <button className="whitebuttonclass" data-bs-dismiss="modal"> Clear </button>
-                                        </Col>
-                                    </Row>
-                                </Container>
+                                    </Col>}
+                                    {display && <Col lg={1} md={1} xs={1}>
+                                        <button className="bluebuttonclass"
+                                            data-bs-toggle="modal" data-bs-target="#aadharVerification"
+                                            onClick={handleDisplay}> <Image width={20} height={15} src="/images/tick.svg" /> </button>
+                                    </Col>}
+                                    <Col lg={1} md={1} xs={1}>
+                                        <button className="whitebuttonclass" data-bs-dismiss="modal"> Clear </button>
+                                    </Col>
+                                </Row>
                             </div>
                         </div>
                         <hr />
                         {display && <div>
                             <Container>
-                                <Row className="justify-content-center">
-                                    <Row className="mb-4 mt-4">
+                                <Row>
+                                    <Row className="mb-3 mt-3">
                                         <Col lg={1} md={1} xs={1}></Col>
                                         <Col lg={8} md={8} xs={8}>
-                                            <h6>Aadhar Details</h6>
-                                        </Col>
-                                    </Row>
-                                    <Col lg={8} md={8} xs={8}>
-                                        <Row>
-                                            <Col lg={7} md={7} xs={12} className="mb-3">
-                                                <Form.Floating>
-                                                    <Form.Control
-                                                        id="floatingInputCustom"
-                                                        type="text"
-                                                        placeholder="Name"
-                                                    />
-                                                    <label htmlFor="floatingInputCustom">
-                                                        Name
-                                                    </label>
-                                                </Form.Floating>
-                                            </Col>
-                                            <Col lg={4} md={4} xs={12} className="mb-3">
-                                                    <div className="input-group">
-                                                        <select className="form-select" aria-label="Default select example" style={{ color: "#4D4D4D", borderRadius: "12px 0px 0px 12px", borderColor: "#6096BA", backgroundColor: "#F6F9FB", maxWidth: "78px", width: "100%" }}>
-                                                            <option value="1">S/o</option>
-                                                            <option value="2">D/o</option>
-                                                            <option value="3">W/o</option>
-                                                        </select>
+                                            <Row>
+                                                <Col className="mb-3">
+                                                    <h6>Aadhar Details</h6>
+                                                </Col>
+                                            </Row>
+                                            <Row className="mb-3">
+                                                <Row className="mb-3">
+                                                    <Col lg={7} md={7} xs={7}>
+                                                        <Form.Floating>
+                                                            <Form.Control
+                                                                id="floatingInputCustom"
+                                                                type="text"
+                                                                placeholder="Name"
+                                                            />
+                                                            <label htmlFor="floatingInputCustom">
+                                                                Name
+                                                            </label>
+                                                        </Form.Floating>
+                                                    </Col>
+                                                    <Col lg={4} md={4} xs={4}>
+                                                        <div className="input-group">
+                                                            <button className="btn btn-outline-secondary dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false" style={{ color: "#4D4D4D", borderRadius: "12px 0px 0px 12px", borderColor: "#6096BA", backgroundColor: "#F6F9FB" }} >
+                                                                {selectedOption}
+                                                            </button>
+                                                            <ul className="dropdown-menu">
+                                                                <li><a className="dropdown-item" onClick={handleOptionClick}>S/o</a></li>
+                                                                <li><a className="dropdown-item" onClick={handleOptionClick}>D/o</a></li>
+                                                                <li><a className="dropdown-item" onClick={handleOptionClick}>W/o</a></li>
+                                                            </ul>
+                                                            <Form.Floating>
+                                                                <Form.Control id="floatingInputCustom" type="text" placeholder="Age" className="form-control" />
+                                                                <Form.Label htmlFor="floatingInputCustom"> Relation Name </Form.Label>
+                                                            </Form.Floating>
+                                                        </div>
+                                                    </Col>
+                                                </Row>
+                                                <Row className="mb-3">
+                                                    <Col lg={7} md={7} xs={7}>
+                                                        <Form.Floating>
+                                                            <Form.Control
+                                                                id="floatingInputCustom"
+                                                                type="text"
+                                                                placeholder="Phone Number"
+                                                                name="phonenumber"
+                                                            />
+                                                            <label htmlFor="floatingInputCustom">
+                                                                Phone Number
+                                                            </label>
+                                                        </Form.Floating>
+                                                    </Col>
+                                                    <Col lg={4} md={4} xs={4}>
                                                         <Form.Floating>
                                                             <Form.Control
                                                                 id="floatingInputCustom"
                                                                 type="text"
                                                                 placeholder="Age"
-                                                                className="form-control"
                                                             />
-                                                            <Form.Label htmlFor="floatingInputCustom">
-                                                                Relation Name
-                                                            </Form.Label>
+                                                            <label htmlFor="floatingInputCustom">
+                                                                Age
+                                                            </label>
                                                         </Form.Floating>
-                                                    </div>
-                                                </Col>
-                                        </Row>
-                                        <Row>
-                                            <Col lg={7} md={7} xs={12} className="mb-3">
-                                                <Form.Floating>
-                                                    <Form.Control
-                                                        id="floatingInputCustom"
-                                                        type="text"
-                                                        placeholder="Phone Number"
-                                                        name="phonenumber"
-                                                    />
-                                                    <label htmlFor="floatingInputCustom">
-                                                        Phone Number
-                                                    </label>
-                                                </Form.Floating>
-                                            </Col>
-                                            <Col lg={4} md={4} xs={6} className="mb-3">
-                                                <Form.Floating>
-                                                    <Form.Control
-                                                        id="floatingInputCustom"
-                                                        type="text"
-                                                        placeholder="Age"
-                                                    />
-                                                    <label htmlFor="floatingInputCustom">
-                                                        Age
-                                                    </label>
-                                                </Form.Floating>
-                                            </Col>
-                                        </Row>
-                                        <Row>
-                                            <Col lg={11} md={11} xs={11} className="mb-3">
-                                                <Form.Floating>
-                                                    <Form.Control
-                                                        id="floatingInputCustom"
-                                                        type="text"
-                                                        placeholder="Address"
-                                                        name="address"
-                                                    />
-                                                    <label htmlFor="floatingInputCustom">
-                                                        Address
-                                                    </label>
-                                                </Form.Floating>
-                                            </Col>
-                                        </Row>
-                                    </Col>
-                                    <Col lg={2} md={2} xs={2}>
-                                        <img src="/images/party-executantimg.jpg" alt="Card image" />
-                                    </Col>
+                                                    </Col>
+                                                </Row>
+                                                <Row>
+                                                    <Col lg={11} md={11} xs={11}>
+                                                        <Form.Floating>
+                                                            <Form.Control
+                                                                id="floatingInputCustom"
+                                                                type="text"
+                                                                placeholder="Address"
+                                                                name="address"
+                                                            />
+                                                            <label htmlFor="floatingInputCustom">
+                                                                Address
+                                                            </label>
+                                                        </Form.Floating>
+                                                    </Col>
+                                                </Row>
+                                            </Row>
+                                        </Col>
+
+                                        <Col lg={2} md={2} xs={2} className="mt-4">
+                                            <div className="witness-image-card">
+                                                <div className="witness-image-box"></div>
+                                            </div>
+                                        </Col>
+                                    </Row>
+
                                 </Row>
                             </Container>
                         </div>}
@@ -173,11 +179,11 @@ const aadharVerification = () => {
                                                     </Row>
                                                     <Row className="mb-3 justify-content-center pageNextBtn">
                                                         <Col lg={2} md={2} xs={2}>
-                                                            <button className="verifyBtn" type="button" data-bs-dismiss="modal" aria-label="Close">
+                                                            <button className="bluebuttonclass" type="button" data-bs-dismiss="modal" aria-label="Close">
                                                                 Yes
                                                             </button>
                                                         </Col>
-                                                    
+
                                                 </Row>
                                             </Container>
                                         </div>

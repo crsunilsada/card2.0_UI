@@ -1,54 +1,76 @@
-import { Radio } from "@mui/material";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { Container, Row, Col, Table, Tab, Nav, Form, Accordion } from "react-bootstrap";
+import { useState } from "react";
+import { Container, Row, Col, Table, Tab, Nav, Form, Accordion, Modal, Button } from "react-bootstrap";
 import Stepper from '../components/Stepper'
 const Assigning = () => {
+  const lastColumn = [(
+    <>
+      <small>Total</small>
+      <h3>2300</h3>
+    </>
+  ),
+  ];
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   const tableData = [
     {
       code: "01-TS",
       description: "Stamp Duty",
-      amounttoPay: "1000",
-      byCFMS: "345",
-      byStock: "457",
+      amounttoPay: "6000",
+      byCFMS: "745",
+      byStock: "257",
       byCFMSStock: "978",
-      byCash: "123",
+      byCash: "432",
       byDD: "123",
     },
     {
-      code: "01-TS",
-      description: "Stamp Duty",
+      code: "02-US",
+      description: "Transfer Fee",
       amounttoPay: "1000",
-      byCFMS: "345",
+      byCFMS: "999",
       byStock: "457",
-      byCFMSStock: "978",
-      byCash: "123",
-      byDD: "123",
+      byCFMSStock: "378",
+      byCash: "657",
+      byDD: "610",
     },
     {
-      code: "01-TS",
-      description: "Stamp Duty",
-      amounttoPay: "1000",
+      code: "03-SD",
+      description: "Register Fee",
+      amounttoPay: "2000",
       byCFMS: "345",
-      byStock: "457",
+      byStock: "232",
       byCFMSStock: "978",
-      byCash: "123",
-      byDD: "123",
+      byCash: "565",
+      byDD: "342",
     },
     {
-      code: "01-TS",
-      description: "Stamp Duty",
-      amounttoPay: "1000",
-      byCFMS: "345",
-      byStock: "457",
-      byCFMSStock: "978",
-      byCash: "123",
-      byDD: "123",
+      code: "04-TS",
+      description: "User Charges",
+      amounttoPay: "3000",
+      byCFMS: "125",
+      byStock: "676",
+      byCFMSStock: "478",
+      byCash: "787",
+      byDD: "787",
+    },
+    {
+      code: "",
+      description: "",
+      amounttoPay: lastColumn,
+      byCFMS: lastColumn,
+      byStock: lastColumn,
+      byCFMSStock: lastColumn,
+      byCash: lastColumn,
+      byDD: lastColumn,
     },
   ];
   return (
-    <><Stepper /><div className="pageMainWrap innerpage">
+    <><div><Stepper showReason1={true} /></div>
+    <Stepper showReason={false}/>
+    <div className="pageMainWrap innerpage">
       <Head>
         <title>Assigning - CARD</title>
         <meta name="description" content="login" />
@@ -62,7 +84,7 @@ const Assigning = () => {
             <button className="imaging">Endorsement</button>
           </div>
 
-          <div className="pageTableContainer">
+          <div className="pageTableContainer mt-4">
             <Row className="mb-4">
               <Col lg={3} md={3} xs={12} className="mb-3">
                 <Form.Floating>
@@ -111,322 +133,492 @@ const Assigning = () => {
                           <div className="tabsList">
                             <Nav variant="pills">
                               <Nav.Item>
-                                <Nav.Link eventKey="first">
-                                  <span>2</span>Executant List
+                                <Nav.Link eventKey="first" >
+                                  <span>4</span>Executant List
                                 </Nav.Link>
                               </Nav.Item>
-                              <Nav.Item>
-                                <Nav.Link eventKey="second">
-                                  <span>12</span>Claimant List
+                              <Nav.Item >
+                                <Nav.Link eventKey="second"  >
+                                  <span>4</span>Claimant List
                                 </Nav.Link>
                               </Nav.Item>
                             </Nav>
                           </div>
-
-                  <Tab.Content>
-                    <Tab.Pane eventKey="first">
-                      <Row>
-                        <Col lg={4} md={4} xs={12} className="mb-2">
-                          <div className="card">
-                            <div className="cardHeader">
-                              <h5>
-                                Presentant - <span>Executant</span>
-                              </h5>
-                            </div>
-                            <div className="cardBody">
+                          <Tab.Content>
+                            <Tab.Pane eventKey="first">
                               <Row>
-                                <Col lg={4} md={7} xs={12}>
-                                  <img src="/images/party-executantimg.jpg" />
-                                </Col>
-                                <Col lg={8} md={7} xs={12}>
-                                  <div className="d-flex align-items-center mb-2">
-                                    <h6>
-                                      <span>Name</span>Sanjay Kumar
-                                    </h6>
-                                    <h6 className="justify-content-end">
-                                      <span>Aadhaar No.</span>XXXXXX7689
-                                    </h6>
-                                  </div>
-
-                                  <div className="d-flex align-items-center mb-2">
-                                    <h6>
-                                      <span>Rel & Relation</span>S/o Krishna...
-                                    </h6>
-                                    <h6 className="justify-content-end">
-                                      <span>PAN / form 60/61</span>CBAGK0769K
-                                    </h6>
-                                  </div>
-
-                                  <div className="d-flex align-items-center">
-                                    <h6>
-                                      <span>PAN / form 60/61</span>Flat 120,
-                                      Block C, Anjali Residency...
-                                    </h6>
-                                  </div>
-                                </Col>
+                                <div className="PropertyScrollBar">
+                                  <Col lg={4} md={6} xs={12} className="mb-3">
+                                    <div className="card">
+                                      <div className="cardHeader d-flex align-items-center justify-content-between">
+                                        <h5>
+                                          <span>Presentant - Executant</span>
+                                        </h5>
+                                        <h4 className="cardBtns">
+                                          {/* <button type="button" data-bs-toggle="modal" data-bs-target="#partyDetailsScroll">
+                                            <img src="/images/edit-icon.svg" />
+                                          </button>
+                                          <button className="delete">
+                                            <img src="/images/delete-icon.svg" />
+                                          </button> */}
+                                        </h4>
+                                      </div>
+                                      <div className="cardBody">
+                                        <Row>
+                                          <Col lg={4} md={12} xs={12}>
+                                            <img src="/images/party-executantimg.jpg" />
+                                          </Col>
+                                          <Col lg={8} md={12} xs={12}>
+                                            <Row>
+                                              <div className="d-flex align-items-center mb-3">
+                                                <Col lg={6} md={6} xs={6}>
+                                                  <h6>
+                                                    <span>Name</span>Sanjay Kumar
+                                                  </h6>
+                                                </Col>
+                                                <Col lg={6} md={6} xs={6}>
+                                                  <h6 className="justify-content-end">
+                                                    <span>Aadhaar No.</span>XXXXXX7689
+                                                  </h6>
+                                                </Col>
+                                              </div>
+                                              <div className="d-flex align-items-center mb-3">
+                                                <Col lg={6} md={6} xs={6}>
+                                                  <h6>
+                                                    <span>Rel & Relation</span>S/o Krishna...
+                                                  </h6>
+                                                </Col>
+                                                <Col lg={6} md={6} xs={6}>
+                                                  <h6 className="justify-content-end">
+                                                    <span>PAN / form 60/61</span>CBAGK0769K
+                                                  </h6>
+                                                </Col>
+                                              </div>
+                                            </Row>
+                                            <div className="d-flex align-items-center">
+                                              <h6>
+                                                <span>Address</span>Flat 120,
+                                                Block C, Anjali Residency...
+                                              </h6>
+                                            </div>
+                                          </Col>
+                                        </Row>
+                                      </div>
+                                    </div>
+                                  </Col>
+                                  <Col lg={4} md={6} xs={12} className="mb-3">
+                                    <div className="card">
+                                      <div className="cardHeader d-flex align-items-center justify-content-between">
+                                        <h5>
+                                          <span>Executant - Representative</span>
+                                        </h5>
+                                        <h4 className="cardBtns">
+                                          <button type="button" data-bs-toggle="modal" data-bs-target="#partyDetailsScroll1">
+                                            <img src="/images/edit-icon.svg" />
+                                          </button>
+                                          <button className="delete">
+                                            <img src="/images/delete-icon.svg" />
+                                          </button>
+                                        </h4>
+                                      </div>
+                                      <div className="cardBody">
+                                        <Row>
+                                          <Col lg={4} md={12} xs={12}>
+                                            <img src="/images/kanth.svg" />
+                                          </Col>
+                                          <Col lg={8} md={12} xs={12}>
+                                            <Row>
+                                            <div className="d-flex align-items-center mb-3">
+                                            <Col lg={6} md={6} xs={6}>
+                                              <h6>
+                                                <span>Name</span>Krishna Kanth
+                                              </h6>
+                                              </Col>
+                                              <Col lg={6} md={6} xs={6}>
+                                              <h6 className="justify-content-end">
+                                                <span>Aadhaar No.</span>XXXXXX1243
+                                              </h6>
+                                              </Col>
+                                            </div>
+                                            <div className="d-flex align-items-center mb-3">
+                                            <Col lg={6} md={6} xs={6}>
+                                              <h6>
+                                                <span>Rel & Relation</span>S/o Subbarao...
+                                              </h6>
+                                              </Col>
+                                              <Col lg={6} md={6} xs={6}>
+                                              <h6 className="justify-content-end">
+                                                <span>PAN / form 60/61</span>DBAGK0721B
+                                              </h6>
+                                              </Col>
+                                            </div>
+                                            </Row>
+                                            <div className="d-flex align-items-center">
+                                              <h6>
+                                                <span>Address</span>Flat 10, Krishnanjali Residency...
+                                              </h6>
+                                            </div>
+                                          </Col>
+                                        </Row>
+                                      </div>
+                                    </div>
+                                  </Col>
+                                  <Col lg={4} md={6} xs={12} className="mb-3">
+                                    <div className="card">
+                                      <div className="cardHeader d-flex align-items-center justify-content-between">
+                                        <h5>
+                                          <span>Executant</span>
+                                        </h5>
+                                        <h4 className="cardBtns">
+                                          <button data-bs-toggle="modal" data-bs-target="#partyDetailsScroll2">
+                                            <img src="/images/edit-icon.svg" />
+                                          </button>
+                                          <button className="delete">
+                                            <img src="/images/delete-icon.svg" />
+                                          </button>
+                                        </h4>
+                                      </div>
+                                      <div className="cardBody">
+                                        <Row>
+                                          <Col lg={4} md={12} xs={12}>
+                                            <img src="/images/Dharmendar.svg" />
+                                          </Col>
+                                          <Col lg={8} md={12} xs={12}>
+                                            <Row>
+                                            <div className="d-flex align-items-center mb-3">
+                                            <Col lg={6} md={6} xs={6}>
+                                              <h6>
+                                                <span>Name</span>Dharmendra
+                                              </h6>
+                                              </Col>
+                                              <Col lg={6} md={6} xs={6}>
+                                              <h6 className="justify-content-end">
+                                                <span>Aadhaar No.</span>XXXXXX7623
+                                              </h6>
+                                              </Col>
+                                            </div>
+                                            <div className="d-flex align-items-center mb-3">
+                                            <Col lg={6} md={6} xs={6}>
+                                              <h6>
+                                                <span>Rel & Relation</span>S/o Parthasar...
+                                              </h6>
+                                              </Col>
+                                              <Col lg={6} md={6} xs={6}>
+                                              <h6 className="justify-content-end">
+                                                <span>PAN / form 60/61</span>ABCKG0123A
+                                              </h6>
+                                              </Col>
+                                            </div>
+                                            </Row>
+                                            <div className="d-flex align-items-center">
+                                              <h6>
+                                                <span>Address</span>Flat 1A/2,
+                                                Block A, Sanjan Enclave...
+                                              </h6>
+                                            </div>
+                                          </Col>
+                                        </Row>
+                                      </div>
+                                    </div>
+                                  </Col>
+                                  <Col lg={4} md={6} xs={12} className="mb-3">
+                                    <div className="card">
+                                      <div className="cardHeader d-flex align-items-center justify-content-between">
+                                        <h5>
+                                          <span>Executant</span>
+                                        </h5>
+                                        <h4 className="cardBtns">
+                                          <button data-bs-toggle="modal" data-bs-target="#partyDetailsScroll2">
+                                            <img src="/images/edit-icon.svg" />
+                                          </button>
+                                          <button className="delete">
+                                            <img src="/images/delete-icon.svg" />
+                                          </button>
+                                        </h4>
+                                      </div>
+                                      <div className="cardBody">
+                                        <Row>
+                                          <Col lg={4} md={12} xs={12}>
+                                            <img src="/images/Dharmendar.svg" />
+                                          </Col>
+                                          <Col lg={8} md={12} xs={12}>
+                                            <Row>
+                                            <div className="d-flex align-items-center mb-3">
+                                            <Col lg={6} md={6} xs={6}>
+                                              <h6>
+                                                <span>Name</span>Dharmendra
+                                              </h6>
+                                              </Col>
+                                              <Col lg={6} md={6} xs={6}>
+                                              <h6 className="justify-content-end">
+                                                <span>Aadhaar No.</span>XXXXXX7623
+                                              </h6>
+                                              </Col>
+                                            </div>
+                                            <div className="d-flex align-items-center mb-3">
+                                            <Col lg={6} md={6} xs={6}>
+                                              <h6>
+                                                <span>Rel & Relation</span>S/o Parthasar...
+                                              </h6>
+                                              </Col>
+                                              <Col lg={6} md={6} xs={6}>
+                                              <h6 className="justify-content-end">
+                                                <span>PAN / form 60/61</span>ABCKG0123A
+                                              </h6>
+                                              </Col>
+                                            </div>
+                                            </Row>
+                                            <div className="d-flex align-items-center">
+                                              <h6>
+                                                <span>Address</span>Flat 1A/2,
+                                                Block A, Sanjan Enclave...
+                                              </h6>
+                                            </div>
+                                          </Col>
+                                        </Row>
+                                      </div>
+                                    </div>
+                                  </Col>
+                                </div>
                               </Row>
-                            </div>
-                          </div>
-                        </Col>
+                            </Tab.Pane>
+                          </Tab.Content>
 
-                        <Col lg={4} md={4} xs={12} className="mb-2">
-                          <div className="card">
-                            <div className="cardHeader d-flex align-items-center justify-content-between">
-                              <h5>
-                                Executant - <span>Representative</span>
-                              </h5>
-                              <h4 className="cardBtns">
-                                <button className="edit">
-                                  <img src="/images/edit-icon.svg" />
-                                </button>
-                                <button className="delete">
-                                  <img src="/images/delete-icon.svg" />
-                                </button>
-                              </h4>
-                            </div>
-                            <div className="cardBody">
+                          <Tab.Content>
+                            <Tab.Pane eventKey="second">
                               <Row>
-                                <Col lg={4} md={7} xs={12}>
-                                  <img src="/images/party-executantimg.jpg" />
-                                </Col>
-                                <Col lg={8} md={7} xs={12}>
-                                  <div className="d-flex align-items-center mb-2">
-                                    <h6>
-                                      <span>Name</span>Sanjay Kumar
-                                    </h6>
-                                    <h6 className="justify-content-end">
-                                      <span>Aadhaar No.</span>XXXXXX7689
-                                    </h6>
-                                  </div>
-
-                                  <div className="d-flex align-items-center mb-2">
-                                    <h6>
-                                      <span>Rel & Relation</span>S/o Krishna...
-                                    </h6>
-                                    <h6 className="justify-content-end">
-                                      <span>PAN / form 60/61</span>CBAGK0769K
-                                    </h6>
-                                  </div>
-
-                                  <div className="d-flex align-items-center">
-                                    <h6>
-                                      <span>PAN / form 60/61</span>Flat 120,
-                                      Block C, Anjali Residency...
-                                    </h6>
-                                  </div>
-                                </Col>
+                                <div className="PropertyScrollBar">
+                                  <Col lg={4} md={6} xs={12} className="mb-3">
+                                    <div className="card">
+                                      <div className="cardHeader">
+                                        <h5>
+                                          Presentant - <span>Claimant</span>
+                                        </h5>
+                                      </div>
+                                      <div className="cardBody">
+                                        <Row>
+                                          <Col lg={4} md={12} xs={12}>
+                                            <img src="/images/party-executantimg.jpg" />
+                                          </Col>
+                                          <Col lg={8} md={12} xs={12}>
+                                            <Row>
+                                            <div className="d-flex align-items-center mb-3">
+                                            <Col lg={6} md={6} xs={6}>
+                                              <h6>
+                                                <span>Name</span>Sanjay Kumar
+                                              </h6>
+                                              </Col>
+                                              <Col lg={6} md={6} xs={6}>
+                                              <h6 className="justify-content-end">
+                                                <span>Aadhaar No.</span>XXXXXX7689
+                                              </h6>
+                                              </Col>
+                                            </div>
+                                            <div className="d-flex align-items-center mb-3">
+                                            <Col lg={6} md={6} xs={6}>
+                                              <h6>
+                                                <span>Rel & Relation</span>S/o Krishna...
+                                              </h6>
+                                              </Col>
+                                              <Col lg={6} md={6} xs={6}>
+                                              <h6 className="justify-content-end">
+                                                <span>PAN / form 60/61</span>CBAGK0769K
+                                              </h6>
+                                              </Col>
+                                            </div>
+                                            </Row>
+                                            <div className="d-flex align-items-center">
+                                              <h6>
+                                                <span>Address</span>Flat 120,
+                                                Block C, Anjali Residency...
+                                              </h6>
+                                            </div>
+                                          </Col>
+                                        </Row>
+                                      </div>
+                                    </div>
+                                  </Col>
+                                  <Col lg={4} md={6} xs={12} className="mb-3">
+                                    <div className="card">
+                                      <div className="cardHeader d-flex align-items-center justify-content-between">
+                                        <h5>
+                                          Claimant - <span>Representative</span>
+                                        </h5>
+                                        <h4 className="cardBtns">
+                                          <button type="button" data-bs-toggle="modal" data-bs-target="#partyDetailsScroll1">
+                                            <img src="/images/edit-icon.svg" />
+                                          </button>
+                                          <button className="delete">
+                                            <img src="/images/delete-icon.svg" />
+                                          </button>
+                                        </h4>
+                                      </div>
+                                      <div className="cardBody">
+                                        <Row>
+                                          <Col lg={4} md={12} xs={12}>
+                                            <img src="/images/kanth.svg" />
+                                          </Col>
+                                          <Col lg={8} md={12} xs={12}>
+                                            <Row>
+                                            <div className="d-flex align-items-center mb-3">
+                                            <Col lg={6} md={6} xs={6}>
+                                              <h6>
+                                                <span>Name</span>Krishna Kanth
+                                              </h6>
+                                              </Col>
+                                              <Col lg={6} md={6} xs={6}>
+                                              <h6 className="justify-content-end">
+                                                <span>Aadhaar No.</span>XXXXXX1243
+                                              </h6>
+                                              </Col>
+                                            </div>
+                                            <div className="d-flex align-items-center mb-3">
+                                            <Col lg={6} md={6} xs={6}>
+                                              <h6>
+                                                <span>Rel & Relation</span>S/o Subbarao...
+                                              </h6>
+                                              </Col>
+                                              <Col lg={6} md={6} xs={6}>
+                                              <h6 className="justify-content-end">
+                                                <span>PAN / form 60/61</span>DBAGK0721B
+                                              </h6>
+                                              </Col>
+                                            </div>
+                                            </Row>
+                                            <div className="d-flex align-items-center">
+                                              <h6>
+                                                <span>Address</span>Flat 10, Krishnanjali Residency...
+                                              </h6>
+                                            </div>
+                                          </Col>
+                                        </Row>
+                                      </div>
+                                    </div>
+                                  </Col>
+                                  <Col lg={4} md={6} xs={12} className="mb-3">
+                                    <div className="card">
+                                      <div className="cardHeader d-flex align-items-center justify-content-between">
+                                        <h5>
+                                          Claimant
+                                        </h5>
+                                        <h4 className="cardBtns">
+                                          <button data-bs-toggle="modal" data-bs-target="#partyDetailsScroll2">
+                                            <img src="/images/edit-icon.svg" />
+                                          </button>
+                                          <button className="delete">
+                                            <img src="/images/delete-icon.svg" />
+                                          </button>
+                                        </h4>
+                                      </div>
+                                      <div className="cardBody">
+                                        <Row>
+                                          <Col lg={4} md={12} xs={12}>
+                                            <img src="/images/Dharmendar.svg" />
+                                          </Col>
+                                          <Col lg={8} md={12} xs={12}>
+                                            <Row>
+                                            <div className="d-flex align-items-center mb-3">
+                                            <Col lg={6} md={6} xs={6}>
+                                              <h6>
+                                                <span>Name</span>Dharmendra
+                                              </h6>
+                                              </Col>
+                                              <Col lg={6} md={6} xs={6}>
+                                              <h6 className="justify-content-end">
+                                                <span>Aadhaar No.</span>XXXXXX7689
+                                              </h6>
+                                              </Col>
+                                            </div>
+                                            <div className="d-flex align-items-center mb-3">
+                                            <Col lg={6} md={6} xs={6}>
+                                              <h6>
+                                                <span>Rel & Relation</span>S/o Parthasar...
+                                              </h6>
+                                              </Col>
+                                              <Col lg={6} md={6} xs={6}>
+                                              <h6 className="justify-content-end">
+                                                <span>PAN / form 60/61</span>ABCKG0123A
+                                              </h6>
+                                              </Col>
+                                            </div>
+                                            </Row>
+                                            <div className="d-flex align-items-center">
+                                              <h6>
+                                                <span>Address</span>Flat 1A/2,
+                                                Block A, Sanjan Enclave...
+                                              </h6>
+                                            </div>
+                                          </Col>
+                                        </Row>
+                                      </div>
+                                    </div>
+                                  </Col>
+                                  <Col lg={4} md={6} xs={12} className="mb-3">
+                                    <div className="card">
+                                      <div className="cardHeader d-flex align-items-center justify-content-between">
+                                        <h5>
+                                          Claimant
+                                        </h5>
+                                        <h4 className="cardBtns">
+                                          <button data-bs-toggle="modal" data-bs-target="#partyDetailsScroll2">
+                                            <img src="/images/edit-icon.svg" />
+                                          </button>
+                                          <button className="delete">
+                                            <img src="/images/delete-icon.svg" />
+                                          </button>
+                                        </h4>
+                                      </div>
+                                      <div className="cardBody">
+                                        <Row>
+                                          <Col lg={4} md={12} xs={12}>
+                                            <img src="/images/Dharmendar.svg" />
+                                          </Col>
+                                          <Col lg={8} md={12} xs={12}>
+                                            <Row>
+                                            <div className="d-flex align-items-center mb-3">
+                                            <Col lg={6} md={6} xs={6}>
+                                              <h6>
+                                                <span>Name</span>Dharmendra
+                                              </h6>
+                                              </Col>
+                                              <Col lg={6} md={6} xs={6}>
+                                              <h6 className="justify-content-end">
+                                                <span>Aadhaar No.</span>XXXXXX7689
+                                              </h6>
+                                              </Col>
+                                            </div>
+                                            <div className="d-flex align-items-center mb-3">
+                                            <Col lg={6} md={6} xs={6}>
+                                              <h6>
+                                                <span>Rel & Relation</span>S/o Parthasar...
+                                              </h6>
+                                              </Col>
+                                              <Col lg={6} md={6} xs={6}>
+                                              <h6 className="justify-content-end">
+                                                <span>PAN / form 60/61</span>ABCKG0123A
+                                              </h6>
+                                              </Col>
+                                            </div>
+                                            </Row>
+                                            <div className="d-flex align-items-center">
+                                              <h6>
+                                                <span>Address</span>Flat 1A/2,
+                                                Block A, Sanjan Enclave...
+                                              </h6>
+                                            </div>
+                                          </Col>
+                                        </Row>
+                                      </div>
+                                    </div>
+                                  </Col>
+                                </div>
                               </Row>
-                            </div>
-                          </div>
-                        </Col>
 
-                        <Col lg={4} md={4} xs={12} className="mb-2">
-                          <div className="card">
-                          <div className="cardHeader d-flex align-items-center justify-content-between">
-                              <h5>
-                                Presentant - <span>Executant</span>
-                              </h5>
-                              <h4 className="cardBtns">
-                                <button className="edit">
-                                  <img src="/images/edit-icon.svg" />
-                                </button>
-                                <button className="delete">
-                                  <img src="/images/delete-icon.svg" />
-                                </button>
-                              </h4>
-                            </div>
-                            <div className="cardBody">
-                              <Row>
-                                <Col lg={4} md={7} xs={12}>
-                                  <img src="/images/party-executantimg.jpg" />
-                                </Col>
-                                <Col lg={8} md={7} xs={12}>
-                                  <div className="d-flex align-items-center mb-2">
-                                    <h6>
-                                      <span>Name</span>Sanjay Kumar
-                                    </h6>
-                                    <h6 className="justify-content-end">
-                                      <span>Aadhaar No.</span>XXXXXX7689
-                                    </h6>
-                                  </div>
-
-                                  <div className="d-flex align-items-center mb-2">
-                                    <h6>
-                                      <span>Rel & Relation</span>S/o Krishna...
-                                    </h6>
-                                    <h6 className="justify-content-end">
-                                      <span>PAN / form 60/61</span>CBAGK0769K
-                                    </h6>
-                                  </div>
-
-                                  <div className="d-flex align-items-center">
-                                    <h6>
-                                      <span>PAN / form 60/61</span>Flat 120,
-                                      Block C, Anjali Residency...
-                                    </h6>
-                                  </div>
-                                </Col>
-                              </Row>
-                            </div>
-                          </div>
-                        </Col>
-                      </Row>
-                    </Tab.Pane>
-                  </Tab.Content>
-                  <Tab.Content>
-                    <Tab.Pane eventKey="second">
-                      <Row>
-                        <Col lg={4} md={4} xs={12} className="mb-2">
-                          <div className="card">
-                            <div className="cardHeader">
-                              <h5>
-                                Presentant - <span>Executant</span>
-                              </h5>
-                            </div>
-                            <div className="cardBody">
-                              <Row>
-                                <Col lg={4} md={7} xs={12}>
-                                  <img src="/images/party-executantimg.jpg" />
-                                </Col>
-                                <Col lg={8} md={7} xs={12}>
-                                  <div className="d-flex align-items-center mb-2">
-                                    <h6>
-                                      <span>Name</span>Sanjay Kumar
-                                    </h6>
-                                    <h6 className="justify-content-end">
-                                      <span>Aadhaar No.</span>XXXXXX7689
-                                    </h6>
-                                  </div>
-
-                                  <div className="d-flex align-items-center mb-2">
-                                    <h6>
-                                      <span>Rel & Relation</span>S/o Krishna...
-                                    </h6>
-                                    <h6 className="justify-content-end">
-                                      <span>PAN / form 60/61</span>CBAGK0769K
-                                    </h6>
-                                  </div>
-
-                                  <div className="d-flex align-items-center">
-                                    <h6>
-                                      <span>PAN / form 60/61</span>Flat 120,
-                                      Block C, Anjali Residency...
-                                    </h6>
-                                  </div>
-                                </Col>
-                              </Row>
-                            </div>
-                          </div>
-                        </Col>
-
-                        <Col lg={4} md={4} xs={12} className="mb-2">
-                          <div className="card">
-                            <div className="cardHeader d-flex align-items-center justify-content-between">
-                              <h5>
-                                Executant - <span>Representative</span>
-                              </h5>
-                              <h4 className="cardBtns">
-                                <button className="edit">
-                                  <img src="/images/edit-icon.svg" />
-                                </button>
-                                <button className="delete">
-                                  <img src="/images/delete-icon.svg" />
-                                </button>
-                              </h4>
-                            </div>
-                            <div className="cardBody">
-                              <Row>
-                                <Col lg={4} md={7} xs={12}>
-                                  <img src="/images/party-executantimg.jpg" />
-                                </Col>
-                                <Col lg={8} md={7} xs={12}>
-                                  <div className="d-flex align-items-center mb-2">
-                                    <h6>
-                                      <span>Name</span>Sanjay Kumar
-                                    </h6>
-                                    <h6 className="justify-content-end">
-                                      <span>Aadhaar No.</span>XXXXXX7689
-                                    </h6>
-                                  </div>
-
-                                  <div className="d-flex align-items-center mb-2">
-                                    <h6>
-                                      <span>Rel & Relation</span>S/o Krishna...
-                                    </h6>
-                                    <h6 className="justify-content-end">
-                                      <span>PAN / form 60/61</span>CBAGK0769K
-                                    </h6>
-                                  </div>
-
-                                  <div className="d-flex align-items-center">
-                                    <h6>
-                                      <span>PAN / form 60/61</span>Flat 120,
-                                      Block C, Anjali Residency...
-                                    </h6>
-                                  </div>
-                                </Col>
-                              </Row>
-                            </div>
-                          </div>
-                        </Col>
-
-                        <Col lg={4} md={4} xs={12} className="mb-2">
-                          <div className="card">
-                          <div className="cardHeader d-flex align-items-center justify-content-between">
-
-                              <h5>
-                                Presentant - <span>Executant</span>
-                              </h5>
-                              <h4 className="cardBtns">
-                                <button className="edit">
-                                  <img src="/images/edit-icon.svg" />
-                                </button>
-                                <button className="delete">
-                                  <img src="/images/delete-icon.svg" />
-                                </button>
-                              </h4>
-                            </div>
-                            <div className="cardBody">
-                              <Row>
-                                <Col lg={4} md={7} xs={12}>
-                                  <img src="/images/party-executantimg.jpg" />
-                                </Col>
-                                <Col lg={8} md={7} xs={12}>
-                                  <div className="d-flex align-items-center mb-2">
-                                    <h6>
-                                      <span>Name</span>Sanjay Kumar
-                                    </h6>
-                                    <h6 className="justify-content-end">
-                                      <span>Aadhaar No.</span>XXXXXX7689
-                                    </h6>
-                                  </div>
-
-                                  <div className="d-flex align-items-center mb-2">
-                                    <h6>
-                                      <span>Rel & Relation</span>S/o Krishna...
-                                    </h6>
-                                    <h6 className="justify-content-end">
-                                      <span>PAN / form 60/61</span>CBAGK0769K
-                                    </h6>
-                                  </div>
-
-                                  <div className="d-flex align-items-center">
-                                    <h6>
-                                      <span>PAN / form 60/61</span>Flat 120,
-                                      Block C, Anjali Residency...
-                                    </h6>
-                                  </div>
-                                </Col>
-                              </Row>
-                            </div>
-                          </div>
-                        </Col>
-                      </Row>
-                    </Tab.Pane>
-                  </Tab.Content>
-                </Tab.Container>
-              </div>
-            </div>
+                            </Tab.Pane>
+                          </Tab.Content>
+                        </Tab.Container>
+                      </div>
+                    </div>
 
                   </Accordion.Body>
                 </Accordion.Item>
@@ -439,7 +631,7 @@ const Assigning = () => {
                     Property Details
                   </Accordion.Header>
                   <Accordion.Body>
-                    <div className="partyDetails propertyDetails mb-3">
+                    <div className="partyDetails propertyDetails">
 
                       <div className="executanttantTable">
                         <Row>
@@ -450,17 +642,17 @@ const Assigning = () => {
                                 <h5>Registration Type - Urban</h5>
                               </div>
                               <div className="cardBody">
-                                <div className="d-flex align-items-center justify-content-evenly mb-3 ">
+                                <div className="d-flex align-items-center  mb-3 ">
                                   <h6>
                                     <span>SRO Name</span>Ramu
                                   </h6>
-                                  <h6 className="justify-content-end">
-                                    <span>Village Name</span>Kankipadu
+                                  <h6 className="justify-content-end  Property-details-text  ">
+                                    <span >Village Name</span>Kankipadu
                                   </h6>
 
                                 </div>
 
-                        <div className="d-flex align-items-center justify-content-evenly">
+                        <div className="d-flex align-items-center justify-content-between">
                           <h6>
                             <span>Ward No.</span>1
                           </h6>
@@ -482,20 +674,20 @@ const Assigning = () => {
                         <h5>Registration Type - Urban</h5>
                       </div>
                       <div className="cardBody">
-                        <div className="d-flex align-items-center justify-content-evenly mb-3">
+                        <div className="d-flex align-items-center justify-content-between mb-3">
                           <h6>
                             <span>SRO Name</span>Ramu
                           </h6>
-                          <h6 className="justify-content-end">
+                          <h6 className="justify-content-end Property-details-card-text ">
                             <span>Village Name</span>Kankipadu
                           </h6>
                         </div>
 
-                        <div className="d-flex align-items-center justify-content-evenly">
+                        <div className="d-flex align-items-center justify-content-between">
                           <h6>
                             <span>Survey No.</span>1
                           </h6>
-                          <h6>
+                          <h6 className="justify-content-end ">
                             <span>Sub-Survey No.</span>122A
                           </h6>
                         </div>
@@ -504,22 +696,23 @@ const Assigning = () => {
                   </Col>
 
                   <Col lg={3} md={6} xs={12} className="mb-3">
-                    <div className="card">
-                      <div className="cardHeader d-flex align-items-center justify-content-between">
-                        <h5>Schedule 1</h5>
-                        <h5>Registration Type - Urban</h5>
-                      </div>
-                      <div className="cardBody">
-                        <div className="d-flex align-items-center justify-content-evenly mb-3">
-                          <h6>
-                            <span>SRO Name</span>Ramu
-                          </h6>
-                          <h6 className="justify-content-end">
-                            <span>Village Name</span>Kankipadu
-                          </h6>
-                        </div>
+                            <div className="card">
+                              <div className="cardHeader d-flex align-items-center justify-content-between">
+                                <h5>Schedule 1</h5>
+                                <h5>Registration Type - Urban</h5>
+                              </div>
+                              <div className="cardBody">
+                                <div className="d-flex align-items-center  mb-3 ">
+                                  <h6>
+                                    <span>SRO Name</span>Ramu
+                                  </h6>
+                                  <h6 className="justify-content-end Property-details-text">
+                                    <span>Village Name</span>Kankipadu
+                                  </h6>
 
-                        <div className="d-flex align-items-center justify-content-evenly">
+                                </div>
+
+                        <div className="d-flex align-items-center justify-content-between ">
                           <h6>
                             <span>Ward No.</span>1
                           </h6>
@@ -541,26 +734,26 @@ const Assigning = () => {
                         <h5>Registration Type - Urban</h5>
                       </div>
                       <div className="cardBody">
-                        <div className="d-flex align-items-center justify-content-evenly mb-3">
+                        <div className="d-flex align-items-center justify-content-between mb-3">
                           <h6>
                             <span>SRO Name</span>Ramu
                           </h6>
-                          <h6 className="justify-content-end">
+                          <h6 className="justify-content-end  Property-details-card-text">
                             <span>Village Name</span>Kankipadu
                           </h6>
                         </div>
 
-                                <div className="d-flex align-items-center justify-content-evenly">
-                                  <h6>
-                                    <span>Survey No.</span>1
-                                  </h6>
-                                  <h6>
-                                    <span>Sub-Survey No.</span>122A
-                                  </h6>
-                                </div>
-                              </div>
-                            </div>
-                          </Col>
+                        <div className="d-flex align-items-center justify-content-between">
+                          <h6>
+                            <span>Survey No.</span>1
+                          </h6>
+                          <h6 className="justify-content-end ">
+                            <span>Sub-Survey No.</span>122A
+                          </h6>
+                        </div>
+                      </div>
+                    </div>
+                  </Col>
                         </Row>
                       </div>
                     </div>
@@ -572,43 +765,46 @@ const Assigning = () => {
               <Accordion>
                 <Accordion.Item eventKey="0">
                   <Accordion.Header>
-                    Cash Recipient
+                    Cash Details
                   </Accordion.Header>
                   <Accordion.Body>
-                    <div className="partyDetails cashRecipient mb-3">
-                      <div className="executanttantTable pageTableMain">
-                        <Table bordered className="tableData listData tableheadBg">
-                          <thead>
-                            <tr>
-                              <th>Code</th>
-                              <th>Description</th>
-                              <th>
+                    <div className="partyDetails cashRecipient ">
+                      <div className="executanttantTable pageTableMain p-0">
+                        <Table bordered className="tableData listData tableheadBg ">
+                          <thead className="text-center p-3 ">
+                            <tr >
+                              <th className="p-3">Code</th>
+                              <th className="p-3">Description</th>
+                              <th className="p-3">
                                 Amount to pay <br />
                                 by Challan
                               </th>
-                              <th>By CFMS</th>
-                              <th>By Stock</th>
-                              <th>
+                              <th className="p-3">By CFMS</th>
+                              <th className="p-3">By Stock</th>
+                              <th className="p-3">
                                 By CFMS + <br />
                                 Stock Holding
                               </th>
-                              <th>By Cash</th>
-                              <th>By DD</th>
+                              <th className="p-3">By Cash</th>
+                              <th className="p-3">By DD</th>
+
 
                             </tr>
                           </thead>
-                          <tbody>
+                          <tbody className="text-center">
                             {tableData.map((item, index) => {
                               return (
                                 <tr key={index}>
-                                  <td className="text-center">{item.code}</td>
-                                  <td className="text-center">{item.description}</td>
-                                  <td className="text-center">{item.amounttoPay}</td>
-                                  <td className="text-center">{item.byCFMS}</td>
-                                  <td>{item.byStock}</td>
-                                  <td className="text-center">{item.byCFMSStock}</td>
-                                  <td>{item.byCash}</td>
-                                  <td className="text-center">{item.byDD}</td>
+                                  <td className="text-center p-3">{item.code}</td>
+                                  <td className="text-center p-3">{item.description}</td>
+                                  <td className="text-center p-3">{item.amounttoPay}</td>
+                                  <td className="text-center p-3">{item.byCFMS}</td>
+                                  <td className="text-center p-3">{item.byStock}</td>
+                                  <td className="text-center p-3">{item.byCFMSStock}</td>
+                                  <td className="text-center p-3">{item.byCash}</td>
+                                  <td className="text-center p-3">{item.byDD}</td>
+
+
 
                                 </tr>
                               );
@@ -631,12 +827,12 @@ const Assigning = () => {
                     <div className="partyDetails linkDocuments mb-3">
                       <div className="executanttantTable">
                         <Row>
-                          <Col lg={3} md={6} xs={12} className="mb-3">
+                          <Col lg={2} md={6} xs={12} className="mb-3">
                             <div className="card">
                               <div className="cardBody">
-                                <div className="d-flex align-items-center justify-content-evenly mb-3">
+                                <div className="d-flex align-items-center justify-content-evenly">
                                   <h6>
-                                    <span>SRO Code</span>Ramu
+                                    <span>SRO Code</span>1234
                                   </h6>
                                   <h6>
                                     <span>Book No.</span>1
@@ -645,7 +841,7 @@ const Assigning = () => {
 
                         <div className="d-flex align-items-center justify-content-evenly">
                           <h6>
-                            <span>Doc No.</span>34543
+                            <span className="Property-details-card-text">Doc No.</span>34543
                           </h6>
                           <h6>
                             <span>Reg Year</span>2021
@@ -655,58 +851,104 @@ const Assigning = () => {
                     </div>
                   </Col>
 
-                  <Col lg={3} md={6} xs={12} className="mb-3">
+                  <Col lg={2} md={6} xs={12} className="mb-3">
                     <div className="card">
                       <div className="cardBody">
-                        <div className="d-flex align-items-center justify-content-evenly mb-3">
+                        <div className="d-flex align-items-center justify-content-evenly">
                           <h6>
-                            <span>SRO Code</span>Ramu
+                            <span>SRO Code</span>3242
+                          </h6>
+                          <h6>
+                            <span>Book No.</span>2
+                          </h6>
+                        </div>
+
+                        <div className="d-flex align-items-center justify-content-evenly">
+                          <h6>
+                            <span className="Property-details-card-text">Doc No.</span>12345
+                          </h6>
+                          <h6>
+                            <span>Reg Year</span>2022
+                          </h6>
+                        </div>
+                      </div>
+                    </div>
+                  </Col>
+
+                  <Col lg={2} md={6} xs={12} className="mb-3">
+                    <div className="card">
+                      <div className="cardBody">
+                        <div className="d-flex align-items-center justify-content-evenly">
+                          <h6>
+                            <span>SRO Code</span>3223
+                          </h6>
+                          <h6>
+                            <span>Book No.</span>3
+                          </h6>
+                        </div>
+
+                        <div className="d-flex align-items-center justify-content-evenly ">
+                          <h6>
+                            <span className="Property-details-card-text">Doc No.</span>23456
+                          </h6>
+                          <h6>
+                            <span>Reg Year</span>2021
+                          </h6>
+                        </div>
+                      </div>
+                    </div>
+                  </Col>
+
+                  <Col lg={2} md={6} xs={12} className="mb-3">
+                    <div className="card">
+                      <div className="cardBody">
+                        <div className="d-flex align-items-center justify-content-evenly">
+                          <h6>
+                            <span>SRO Code</span>8767
                           </h6>
                           <h6>
                             <span>Book No.</span>1
                           </h6>
                         </div>
 
-                        <div className="d-flex align-items-center justify-content-evenly">
-                          <h6>
-                            <span>Doc No.</span>34543
-                          </h6>
-                          <h6>
-                            <span>Reg Year</span>2021
-                          </h6>
-                        </div>
-                      </div>
-                    </div>
-                  </Col>
-
-                  <Col lg={3} md={6} xs={12} className="mb-3">
+                                <div className="d-flex align-items-center justify-content-evenly">
+                                  <h6>
+                                    <span className="Property-details-card-text">Doc No.</span>67894
+                                  </h6>
+                                  <h6>
+                                    <span>Reg Year</span>2023
+                                  </h6>
+                                </div>
+                              </div>
+                            </div>
+                          </Col>
+                          <Col lg={2} md={6} xs={12} className="mb-3">
                     <div className="card">
                       <div className="cardBody">
-                        <div className="d-flex align-items-center justify-content-evenly mb-3">
+                        <div className="d-flex align-items-center justify-content-evenly ">
                           <h6>
-                            <span>SRO Code</span>Ramu
+                            <span>SRO Code</span>2312
                           </h6>
                           <h6>
                             <span>Book No.</span>1
                           </h6>
                         </div>
 
-                        <div className="d-flex align-items-center justify-content-evenly">
-                          <h6>
-                            <span>Doc No.</span>34543
-                          </h6>
-                          <h6>
-                            <span>Reg Year</span>2021
-                          </h6>
-                        </div>
-                      </div>
-                    </div>
-                  </Col>
-
-                  <Col lg={3} md={6} xs={12} className="mb-3">
+                                <div className="d-flex align-items-center justify-content-evenly">
+                                  <h6>
+                                    <span className="Property-details-card-text" >Doc No.</span>43215
+                                  </h6>
+                                  <h6>
+                                    <span>Reg Year</span>2021
+                                  </h6>
+                                </div>
+                              </div>
+                            </div>
+                          </Col>
+                          <Col lg={2} md={6} xs={12} className="mb-3">
                     <div className="card">
                       <div className="cardBody">
-                        <div className="d-flex align-items-center justify-content-evenly mb-3">
+                        <div className="d-flex align-items-center justify-content-evenly ">
                           <h6>
                             <span>SRO Code</span>Ramu
                           </h6>
@@ -717,7 +959,7 @@ const Assigning = () => {
 
                                 <div className="d-flex align-items-center justify-content-evenly">
                                   <h6>
-                                    <span>Doc No.</span>34543
+                                    <span className="Property-details-card-text">Doc No.</span>34543
                                   </h6>
                                   <h6>
                                     <span>Reg Year</span>2021
@@ -736,17 +978,19 @@ const Assigning = () => {
             <div className="mb-4 d-flex assigningcheckboxes">
 
               <Form.Check
-                value="Pending Document Details"
-                type="radio"
-                aria-label="Pending Document Details"
-                label="Pending Document Details"
-                name="inlineRadioOptions"
-              />
-              <Form.Check
+                defaultChecked
                 value="Regular Document Details"
                 type="radio"
                 aria-label="Regular Document Details"
                 label="Regular Document Details"
+                name="inlineRadioOptions"
+              />
+              <Form.Check
+
+                value=" Pending Document Details"
+                type="radio"
+                aria-label="Pending Document Details"
+                label="Pending Document Details"
                 name="inlineRadioOptions"
               />
             </div>
@@ -770,9 +1014,9 @@ const Assigning = () => {
                   <Form.Control
                     id="floatingInputCustom"
                     type="text"
-                    placeholder="Pending Doc No." />
+                    placeholder="Regular Doc No." />
                   <Form.Label htmlFor="floatingInputCustom">
-                    Pending Doc No.
+                    Regular Doc No.
                   </Form.Label>
                 </Form.Floating>
               </Col>
@@ -782,9 +1026,9 @@ const Assigning = () => {
                   <Form.Control
                     id="floatingInputCustom"
                     type="text"
-                    placeholder="Re Enter Pending Doc No." />
+                    placeholder="Re Enter Regular Doc No." />
                   <Form.Label htmlFor="floatingInputCustom">
-                    Re Enter Pending Doc No.
+                    Re Enter Regular Doc No.
                   </Form.Label>
                 </Form.Floating>
               </Col>
@@ -794,9 +1038,24 @@ const Assigning = () => {
           <hr/>
           <div className="pageTableContainer">
             <div className="pageNextBtn">
-              <Link href={"/Endorsement"}>
-              <button className="next">Save</button>
-              </Link>
+
+              <button className="next " onClick={handleShow}>save</button>
+          
+              <Modal show={show} onHide={handleClose} className="modal-path">
+                <Modal.Header closeButton>
+                  <Modal.Title>Confirmation Message</Modal.Title>
+                </Modal.Header>
+                <Modal.Body className="justify-content-center text-center">Are you sure, you want to save the data,
+                  Data once saved cannot be edited</Modal.Body>
+                <Modal.Footer className="justify-content-center">
+                <Link href={"/Endorsement"}>
+                  <Button className="submit" onClick={handleClose}>
+                    Done
+                  </Button>
+                  </Link>
+                </Modal.Footer>
+              </Modal>
+
             </div>
           </div>
         </div>

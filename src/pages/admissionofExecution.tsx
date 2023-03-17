@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { Container, Row, Col, Form } from "react-bootstrap";
+import { Container, Row, Col, Form, Popover, Overlay } from "react-bootstrap";
 import { useTable, usePagination } from "react-table";
 import Stepper from '../components/Stepper'
 import Link from 'next/link';
@@ -46,43 +46,26 @@ function Table({ columns, data }) {
         </thead>
         <thead>
           <tr>
-            <th rowSpan={2} className="text-center">
-              App No.
-            </th>
-            <th rowSpan={2} className="text-center">
-              Ack. No.
-            </th>
-            <th rowSpan={2} className="text-center">
-              CS No.
-            </th>
-            <th rowSpan={2} className="text-center">
-              Ack. Year
-            </th>
-            <th rowSpan={2}>Presenter Name</th>
-            <th rowSpan={2} className="text-center">
+            <th className="text-center">App No.</th>
+            <th className="text-center">Ack.No/ Year</th>
+            <th className="text-center">CS No.</th>
+
+            <th className="text-center">Presenter Name</th>
+            <th className="text-center">
               No. of <br />
               Schedule
             </th>
-            <th rowSpan={2}>
+            <th className="text-center">
               CS No. & Ack No.
               <br />
               Generated Date & Time
             </th>
-            <th rowSpan={2} className="text-center">
+            <th className="text-center">
               Book <br />
               Number
             </th>
-            <th colSpan={2} className="extraFont text-center">
-              Nature of Document
-            </th>
-
-            <th rowSpan={2} className="text-center">
-              Action
-            </th>
-          </tr>
-          <tr>
-            <th className="text-center smallFont">Maj</th>
-            <th className="text-center smallFont">Min</th>
+            <th className="extraFont text-center">Nature of Document</th>
+            <th className="text-center">Action</th>
           </tr>
         </thead>
         <tbody {...getTableBodyProps()}>
@@ -96,18 +79,6 @@ function Table({ columns, data }) {
                   );
                 })}
                 <td className="text-center">
-                  <button
-                    data-bs-toggle="modal"
-                    data-bs-target="#viewBasicDetails"
-                    className="basicDetails  "
-                  >
-                    {" "}
-                    <Image
-                      width={37}
-                      height={37}
-                      src="/images/partydetailsdisable.svg" />
-                    <small>Party Details</small>
-                  </button>
                   <Link href="/imagingExecutant">
                   <button className="print">
                     {" "}
@@ -210,49 +181,28 @@ function TableAmmend({ columns, data }) {
         </thead>
         <thead>
           <tr>
-            <th rowSpan={2} className="text-center">
-              App No.
-            </th>
-            <th rowSpan={2} className="text-center">
-              Ack. No.
-            </th>
-            <th rowSpan={2} className="text-center">
-              CS No.
-            </th>
-            <th rowSpan={2} className="text-center">
-              Ack. Year
-            </th>
+            <th className="text-center">App No.</th>
+            <th className="text-center">Ack.No/ Year</th>
+            <th className="text-center">CS No.</th>
 
-            <th rowSpan={2}>Presenter Name</th>
-            <th rowSpan={2} className="text-center">
+            <th className="text-center">Presenter Name</th>
+            <th className="text-center">
               No. of <br />
               Schedule
             </th>
-            <th rowSpan={2}>
+            <th className="text-center">
               CS No. & Ack No.
               <br />
               Generated Date & Time
             </th>
-            <th rowSpan={2} className="text-center">
+            <th className="text-center">
               Book <br />
               Number
             </th>
-            <th colSpan={2} className="extraFont text-center">
-              Nature of Document
-            </th>
-            <th rowSpan={2} className="text-center">
-            Ammend Reason
-            </th>
-            <th rowSpan={2} className="text-center">
-            Ammend Comments
-            </th>
-            <th rowSpan={2} className="text-center">
-              Action
-            </th>
-          </tr>
-          <tr>
-            <th className="text-center smallFont">Maj</th>
-            <th className="text-center smallFont">Min</th>
+            <th className="extraFont text-center">Nature of Document</th>
+            <th className="text-center">Ammend Reason</th>
+            <th className="text-center">Ammend Comments</th>
+            <th className="text-center">Action</th>
           </tr>
         </thead>
         <tbody {...getTableBodyProps()}>
@@ -266,11 +216,9 @@ function TableAmmend({ columns, data }) {
                   );
                 })}
                <td className="text-center d-flex justify-content-around">
-               <Link href={"/partyDetailsSearch"}>
+               <Link href={"/partyDetailsScroll"}>
                <button
-                    data-bs-toggle="modal"
-                    data-bs-target="#viewBasicDetails"
-                    className="basicDetails"
+
                   >
                     {" "}
                     <Image
@@ -280,20 +228,8 @@ function TableAmmend({ columns, data }) {
                     <small>Party Details</small>
                   </button>
                   </Link>
-                  <button className="print  digital-sign-btn">
-                    {" "}
-                    <Image width={25} height={25} src="/images/image-capture.svg" />
-                    <small>Image Capture</small>
-                  </button>
-                        <button className="print">
-                          {" "}
-                          <Image
-                            width={37}
-                            height={37}
-                            src="/images/submitSRO.svg"
-                          />
-                          <small>Submit for SRO Review</small>
-                        </button>
+
+
 
                       </td>
               </tr>
@@ -367,17 +303,14 @@ function AdmissionofExecution() {
             accessor: "appNo",
           },
           {
-            Header: "Ack. No.",
+            Header: " Ack.No/ Year",
             accessor: "ackNo",
           },
           {
             Header: "CS No.",
             accessor: "csNo",
           },
-          {
-            Header: "Ack. Year",
-            accessor: "ackYear",
-          },
+
           {
             Header: "No. of Schedule",
             accessor: "presenterName",
@@ -394,17 +327,8 @@ function AdmissionofExecution() {
             Header: "Ack. No.",
             accessor: "bookNumber",
           },
-        ],
-      },
-      {
-        Header: "Nature of Document",
-        columns: [
           {
-            Header: "Maj",
-            accessor: "maj",
-          },
-          {
-            Header: "Min",
+            Header: "Nature of Document",
             accessor: "min",
           },
         ],
@@ -425,17 +349,14 @@ function AdmissionofExecution() {
           },
 
           {
-            Header: "Ack. No.",
+            Header: " Ack.No/ Year",
             accessor: "ackNo",
           },
          {
             Header: "CS No.",
             accessor: "csNo",
           },
-          {
-            Header: "Ack. Year",
-            accessor: "ackYear",
-          },
+
           {
             Header: "No. of Schedule",
             accessor: "presenterName",
@@ -452,18 +373,8 @@ function AdmissionofExecution() {
             Header: "No.of schedule",
             accessor: "bookNumber",
           },
-
-        ],
-      },
-      {
-        Header: "Nature of Document",
-        columns: [
           {
-            Header: "Maj",
-            accessor: "maj",
-          },
-          {
-            Header: "Min",
+            Header: "Nature of Document",
             accessor: "min",
           },
         ],
@@ -486,234 +397,239 @@ function AdmissionofExecution() {
   const data = [
     {
       appNo: "456787654",
-      ackNo: "345",
+      ackNo: "345/2022",
       csNo: "212",
-      ackYear: "2022",
+
+      presenterName: "swapna hanumanthu",
+      noofSchedule: "1",
+      generateddatetime: "22/11/2022 @ 11: 48 AM",
+      bookNumber: "1",
+      maj: "Sale",
+      min: "Sales Deed",
+    },
+    {
+      appNo: "458888123",
+      ackNo: "346/2022",
+      csNo: "213",
+
+      presenterName: "sreeja varma",
+      noofSchedule: "2",
+      generateddatetime: "22/11/2022 @ 08: 00 AM",
+      bookNumber: "2",
+      maj: "Mortgage",
+      min: "Mortgage without position",
+    },
+    {
+      appNo: "656787654",
+      ackNo: "347/2022",
+      csNo: "213",
+
+      presenterName: "rajesh rao",
+      noofSchedule: "1",
+      generateddatetime: "22/11/2022 @ 10: 00 AM",
+      bookNumber: "1",
+      maj: "Gift",
+      min: "Gift",
+    },
+    {
+      appNo: "126787654",
+      ackNo: "348/2023",
+      csNo: "214",
+
+      presenterName: "ravi teja",
+      noofSchedule: "2",
+      generateddatetime: "22/2/2023 @ 09: 09 AM",
+      bookNumber: "2",
+      maj: "Gift",
+      min: "Gift settlement in favour of others",
+    },
+    {
+      appNo: "346787654",
+      ackNo: "349/2023",
+      csNo: "215",
+
       presenterName: "Chandra Sekhar",
       noofSchedule: "1",
-      generateddatetime: "22/11/2022 @ 10: 45 AM",
+      generateddatetime: "20/1/2023 @ 10: 45 AM",
       bookNumber: "1",
-      maj: "01",
-      min: "01",
-
+      maj: "Partitions",
+      min: "Partition among family members",
     },
     {
-      appNo: "456787654",
-      ackNo: "345",
-      csNo: "212",
-      ackYear: "2022",
-      presenterName: "Sekhar Varma",
+      appNo: "566787654",
+      ackNo: "350/2022",
+      csNo: "216",
+
+      presenterName: "Sekhar sastry",
       noofSchedule: "2",
-      generateddatetime: "22/11/2022 @ 10: 45 AM",
+      generateddatetime: "11/10/2022 @ 07: 30 AM",
       bookNumber: "2",
-      maj: "02",
-      min: "02",
-
+      maj: "Release",
+      min: "Release (Co-Parceners)",
     },
     {
-      appNo: "456787654",
-      ackNo: "345",
-      csNo: "212",
-      ackYear: "2022",
+      appNo: "796787654",
+      ackNo: "351/2022",
+      csNo: "217",
+
       presenterName: "Chandra Sekhar",
       noofSchedule: "1",
-      generateddatetime: "22/11/2022 @ 10: 45 AM",
+      generateddatetime: "22/11/2022 @ 10: 41 AM",
       bookNumber: "1",
-      maj: "01",
-      min: "01",
-
+      maj: "Release",
+      min: "Release (Others)",
     },
     {
-      appNo: "456787654",
-      ackNo: "345",
-      csNo: "212",
-      ackYear: "2022",
-      presenterName: "Sekhar Varma",
+      appNo: "916787654",
+      ackNo: "352/2023",
+      csNo: "218",
+
+      presenterName: "Subbarao mucharla",
       noofSchedule: "2",
-      generateddatetime: "22/11/2022 @ 10: 45 AM",
+      generateddatetime: "22/11/2022 @ 09: 46 AM",
       bookNumber: "2",
-      maj: "02",
-      min: "02",
-
-    },
-    {
-      appNo: "456787654",
-      ackNo: "345",
-      csNo: "212",
-      ackYear: "2022",
-      presenterName: "Chandra Sekhar",
-      noofSchedule: "1",
-      generateddatetime: "22/11/2022 @ 10: 45 AM",
-      bookNumber: "1",
-      maj: "01",
-      min: "01",
-
-    },
-    {
-      appNo: "456787654",
-      ackNo: "345",
-      csNo: "212",
-      ackYear: "2022",
-      presenterName: "Sekhar Varma",
-      noofSchedule: "2",
-      generateddatetime: "22/11/2022 @ 10: 45 AM",
-      bookNumber: "2",
-      maj: "02",
-      min: "02",
-
-    },
-    {
-      appNo: "456787654",
-      ackNo: "345",
-      csNo: "212",
-      ackYear: "2022",
-      presenterName: "Chandra Sekhar",
-      noofSchedule: "1",
-      generateddatetime: "22/11/2022 @ 10: 45 AM",
-      bookNumber: "1",
-      maj: "01",
-      min: "01",
-
-    },
-    {
-      appNo: "456787654",
-      ackNo: "345",
-      csNo: "212",
-      ackYear: "2022",
-      presenterName: "Sekhar Varma",
-      noofSchedule: "2",
-      generateddatetime: "22/11/2022 @ 10: 45 AM",
-      bookNumber: "2",
-      maj: "02",
-      min: "02",
-
+      maj: "Release",
+      min: "Release (Others)",
     },
   ];
 
   const dataAmmend = [
     {
       appNo: "456787654",
-      ackNo: "345",
+      ackNo: "345/2022",
       csNo: "212",
-      ackYear: "2022",
+
+      presenterName: "swapna hanumanthu",
+      noofSchedule: "1",
+      generateddatetime: "22/11/2022 @ 11: 48 AM",
+      bookNumber: "1",
+      maj: "Sale",
+      min: "Sales Deed",
+      ammendreason: "Insufficient details",
+      ammendcomments: "All details are not given",
+    },
+    {
+      appNo: "916787654",
+      ackNo: "352/2023",
+      csNo: "218",
+
+      presenterName: "Subbarao mucharla",
+      noofSchedule: "2",
+      generateddatetime: "22/11/2022 @ 09: 46 AM",
+      bookNumber: "2",
+      maj: "Mortgage",
+      min: "Mortgage without position",
+      ammendreason: "Wrong Document",
+      ammendcomments: "please send correct documents",
+    },
+    {
+      appNo: "796787654",
+      ackNo: "351/2022",
+      csNo: "217",
+
       presenterName: "Chandra Sekhar",
       noofSchedule: "1",
-      generateddatetime: "22/11/2022 @ 10: 45 AM",
+      generateddatetime: "22/11/2022 @ 10: 41 AM",
       bookNumber: "1",
-      maj: "01",
-      min: "01",
-      ammendreason:"Wrong Document",
-      ammendcomments:"Comments come here..."
+      maj: "Gift",
+      min: "Gift",
+      ammendreason: "documents are not clear",
+      ammendcomments: "please send documents clearly ",
     },
     {
       appNo: "456787654",
-      ackNo: "345",
+      ackNo: "345/2022",
       csNo: "212",
-      ackYear: "2022",
+
       presenterName: "Sekhar Varma",
       noofSchedule: "2",
       generateddatetime: "22/11/2022 @ 10: 45 AM",
       bookNumber: "2",
-      maj: "02",
-      min: "02",
-      ammendreason:"Wrong Document",
-      ammendcomments:"Comments come here..."
+      maj: "Gift",
+      min: "Gift settlement in favour of others",
+      ammendreason: "Insufficient details",
+      ammendcomments: "All details are not given",
     },
     {
-      appNo: "456787654",
-      ackNo: "345",
-      csNo: "212",
-      ackYear: "2022",
-      presenterName: "Chandra Sekhar",
-      noofSchedule: "1",
-      generateddatetime: "22/11/2022 @ 10: 45 AM",
+      appNo: "566787654",
+      ackNo: "350/2022",
+      csNo: "216",
+
+      presenterName: "Sekhar sastry",
+      noofSchedule: "2",
+      generateddatetime: "11/10/2022 @ 07: 30 AM",
       bookNumber: "1",
-      maj: "01",
-      min: "01",
-      ammendreason:"Wrong Document",
-      ammendcomments:"Comments come here..."
+      maj: "Partitions",
+      min: "Partition among family members",
+      ammendreason: "Improper documents",
+      ammendcomments: "Correct documents are not given",
+    },
+    {
+      appNo: "458888123",
+      ackNo: "346/2022",
+      csNo: "213",
+
+      presenterName: "sreeja varma",
+      noofSchedule: "2",
+      generateddatetime: "22/11/2022 @ 08: 00 AM",
+      bookNumber: "2",
+      maj: "Release",
+      min: "Release (Co-Parceners)",
+      ammendreason: "Wrong Document",
+      ammendcomments: "Incorrect docs are given",
+    },
+    {
+      appNo: "126787654",
+      ackNo: "348/2023",
+      csNo: "214",
+
+      presenterName: "ravi teja",
+      noofSchedule: "2",
+      generateddatetime: "22/2/2023 @ 09: 09 AM",
+      bookNumber: "1",
+      maj: "Release",
+      min: "Release (Others)",
+      ammendreason: "Incorrect details",
+      ammendcomments: "details are wrong",
     },
     {
       appNo: "456787654",
-      ackNo: "345",
+      ackNo: "345/2022",
       csNo: "212",
-      ackYear: "2022",
+
       presenterName: "Sekhar Varma",
       noofSchedule: "2",
       generateddatetime: "22/11/2022 @ 10: 45 AM",
       bookNumber: "2",
-      maj: "02",
-      min: "02",
-      ammendreason:"Wrong Document",
-      ammendcomments:"Comments come here..."
-    },
-    {
-      appNo: "456787654",
-      ackNo: "345",
-      csNo: "212",
-      ackYear: "2022",
-      presenterName: "Chandra Sekhar",
-      noofSchedule: "1",
-      generateddatetime: "22/11/2022 @ 10: 45 AM",
-      bookNumber: "1",
-      maj: "01",
-      min: "01",
-      ammendreason:"Wrong Document",
-      ammendcomments:"Comments come here..."
-    },
-    {
-      appNo: "456787654",
-      ackNo: "345",
-      csNo: "212",
-      ackYear: "2022",
-      presenterName: "Sekhar Varma",
-      noofSchedule: "2",
-      generateddatetime: "22/11/2022 @ 10: 45 AM",
-      bookNumber: "2",
-      maj: "02",
-      min: "02",
-      ammendreason:"Wrong Document",
-      ammendcomments:"Comments come here..."
-    },
-    {
-      appNo: "456787654",
-      ackNo: "345",
-      csNo: "212",
-      ackYear: "2022",
-      presenterName: "Chandra Sekhar",
-      noofSchedule: "1",
-      generateddatetime: "22/11/2022 @ 10: 45 AM",
-      bookNumber: "1",
-      maj: "01",
-      min: "01",
-      ammendreason:"Wrong Document",
-      ammendcomments:"Comments come here..."
-    },
-    {
-      appNo: "456787654",
-      ackNo: "345",
-      csNo: "212",
-      ackYear: "2022",
-      presenterName: "Sekhar Varma",
-      noofSchedule: "2",
-      generateddatetime: "22/11/2022 @ 10: 45 AM",
-      bookNumber: "2",
-      maj: "02",
-      min: "02",
-      ammendreason:"Wrong Document",
-      ammendcomments:"Comments come here..."
+      maj: "Release",
+      min: "Release (Others)",
+      ammendreason: "Wrong Document",
+      ammendcomments: "wrong documents provided ",
     },
   ];
 
-  const onClickHandler=()=>{
-    setclicked(false)
-  }
-  const onClickHandlerAmmend=()=>{
-    setclicked(true)
-  }
+  const [show, setShow] = useState(false);
+  const [show1, setShow1] = useState(false);
+  const [target, setTarget] = useState(null);
+  const ref = useRef(null);
+  const handleClose = () => setShow1(false);
+
+  const handleClick = (event) => {
+    setShow1(!show1);
+    setTarget(event.target);
+  };
+
+  const onClickHandler = () => {
+    setclicked(false);
+  };
+  const onClickHandlerAmmend = () => {
+    setclicked(true);
+  };
 
   return (
-    <><Stepper /><div className="pageMainWrap innerpage">
+    <><div><Stepper showReason1={true} /></div>
+    <Stepper showReason={false}/>
+    <div className="pageMainWrap innerpage">
       <Head>
         <title>Admission of Execution - CARD</title>
         <meta name="description" content="login" />
@@ -725,136 +641,177 @@ function AdmissionofExecution() {
           <div className="acknowledgement">
             <h4>Admission of Execution</h4>
           </div>
-
-            <Container>
-              <Row className="justify-content-md-center">
-                <Col lg={7} md={8} xs={12} className="pageTableSearch">
-                  <form className="md-form">
-                    <div className={`input-group md-form form-sm form-1 pl-0`}>
-                      <input
-                        className={`form-control form-control-sm ml-3 w-75`}
-                        type="text"
-                        placeholder="Search Here.."
-                        aria-label="Search"
-                      />
-                      <div className={`input-group-prepend`}>
-                        <button
-                          className={`btn btn-outline-success`}
-                          type="submit"
-                        >
-                          <Image
-                            width={23}
-                            height={23}
-                            src="/images/Search-icon.svg"
+            <div
+              className="modal-path modal fade modal-sm"
+              id="exampleModals"
+              tabIndex={-1}
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div className="modal-dialog mt-5">
+                <div className="modal-content">
+                  <div className="modal-body">
+                    <Row>
+                      <Col lg={12} md={12} xs={12} className="mb-3">
+                        <div className="clear-date d-flex justify-content-end p-2">
+                          Clear
+                        </div>
+                        <Form.Floating>
+                          <Form.Control
+                            id="floatingInputCustom"
+                            type="date"
+                            placeholder="From Date"
                           />
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-                  <div className="searchFiler">
-                  <button className="today">Today</button>
-                  <button className="filter"  data-bs-toggle="modal" data-bs-target="#exampleModals">
-                    <small>Filters</small>
-                    <Image width={20} height={20} src="/images/filter.svg" />
-                  </button>
-                </div>
-
-                </Col>
-              </Row>
-
-              <div
-                className="modal fade modal-sm"
-                id="exampleModals"
-                tabIndex={-1}
-                aria-labelledby="exampleModalLabel"
-                aria-hidden="true"
-              >
-                <div className="modal-dialog">
-                  <div className="modal-content">
-                    <div className="modal-header">
-                      <h1 className="modal-title fs-5" id="exampleModalLabel">
-                        Clear
-                      </h1>
-                      <button
-                        type="button"
-                        className="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div className="modal-body">
-                      <Row>
-                        <Col lg={12} md={12} xs={12} className="mb-3">
-                          <Form.Floating>
-                            <Form.Control
-                              id="floatingInputCustom"
-                              type="date"
-                              placeholder="Start Date"
-                            />
-                            <Form.Label htmlFor="floatingInputCustom">
-                              Start Date
-                            </Form.Label>
-                          </Form.Floating>
-                        </Col>
-                      </Row>
-                      <Row>
-                        <Col lg={12} md={12} xs={12}>
-                          <Form.Floating>
-                            <Form.Control
-                              id="floatingInputCustom"
-                              type="date"
-                              placeholder="End Date"
-                            />
-                            <Form.Label htmlFor="floatingInputCustom">
-                              End Date
-                            </Form.Label>
-                          </Form.Floating>
-                        </Col>
-                      </Row>
-                    </div>
-                    <div className="modal-footer text-center d-flex justify-content-center">
-                      <button
-                        type="button"
-                        className="btn btn-primary text-center bluebuttonclass"
-                      >
-                        Save
-                      </button>
-                    </div>
+                          <Form.Label htmlFor="floatingInputCustom">
+                            From Date
+                          </Form.Label>
+                        </Form.Floating>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col lg={12} md={12} xs={12}>
+                        <Form.Floating>
+                          <Form.Control
+                            id="floatingInputCustom"
+                            type="date"
+                            placeholder="To Date"
+                          />
+                          <Form.Label htmlFor="floatingInputCustom">
+                            To Date
+                          </Form.Label>
+                        </Form.Floating>
+                      </Col>
+                    </Row>
                   </div>
                 </div>
               </div>
-            </Container>
+            </div>
 
-          <div className="documentsTable pageTableMain pageTableContainer">
+            <div ref={ref}>
+              <Overlay
+                onHide={handleClose}
+                show={show1}
+                target={target}
+                placement="bottom"
+                container={ref}
+                containerPadding={20}
+              >
+                <Popover id="popover-contained">
+                  <Popover.Body>
+                    <Row>
+                      <Col lg={12} md={12} xs={12} className="mb-3">
+                        <div className="clear-date d-flex justify-content-end p-2">
+                          Clear
+                        </div>
+                        <Form.Floating>
+                          <Form.Control
+                            id="floatingInputCustom"
+                            type="date"
+                            placeholder="From Date"
+                          />
+                          <Form.Label htmlFor="floatingInputCustom">
+                            From Date
+                          </Form.Label>
+                        </Form.Floating>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col lg={12} md={12} xs={12}>
+                        <Form.Floating>
+                          <Form.Control
+                            id="floatingInputCustom"
+                            type="date"
+                            placeholder="To Date"
+                          />
+                          <Form.Label htmlFor="floatingInputCustom">
+                            To Date
+                          </Form.Label>
+                        </Form.Floating>
+                      </Col>
+                    </Row>
+                  </Popover.Body>
+                </Popover>
+              </Overlay>
+            </div>
+
             <div className="documentsTable pageTableMain pageTableContainer">
-            {/* <div className="pageTableTabs">
-              <button onClick={onClickHandler} className="accept ">Accept (30)</button>
-              <button onClick={onClickHandlerAmmend}  className="ammend active">Ammend (5)</button>
-            </div> */}
 
-        <div className="pageTableTabs">
-                  {["Accept (30)", "Ammend (5)"].map((o, i) => {
-                    return(
-                    <button
-                      key={o}
-                      className={i === activeTab ? "activeButton" : "button"}
-                      onClick={() => {
-                        if (o=="Accept (30)") {
+                <Row className="mb-4">
+                  <Col lg={6} md={4} xs={12}>
+                    <div className="pageTableTabs">
+                      {["Accept (30)", "Ammend (5)"].map((o, i) => {
+                        return (
+                          <button
+                            key={o}
+                            className={
+                              i === activeTab ? "activeButton" : "button"
+                            }
+                            onClick={() => {
+                              if (o == "Accept (30)") {
+                                setclicked(false);
+                              } else {
+                                setclicked(true);
+                              }
+                              setActiveTab(i);
+                            }}
+                          >
+                            {o}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </Col>
 
-                          setclicked(false);
-                        } else {
+                  <Col lg={6} md={4} xs={12} className="pageTableSearch">
+                    <div className="d-flex justify-content-end">
+                      <div className="mx-3">
+                        <form className="md-form">
+                          <div
+                            className={`input-group md-form form-sm form-1 pl-0`}
+                          >
+                            <input
+                              className={`form-control form-control-sm ml-3 w-75`}
+                              type="text"
+                              placeholder="Search Here.."
+                              aria-label="Search"
+                            />
+                            <div className={`input-group-prepend`}>
+                              <button
+                                className={`btn btn-outline-success`}
+                                type="submit"
+                              >
+                                <Image
+                                  width={23}
+                                  height={23}
+                                  src="/images/Search-icon.svg"
+                                />
+                              </button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
 
-                          setclicked(true);
-                        }
-                        setActiveTab(i);
-                      }}
-                    >
-                      {o}
-                    </button>
-                    )
-                  })
-                }
-                </div>
+                      <div>
+                        <div className="searchFiler">
+                          <button className="today">Today</button>
+                          <button
+                            className="filter"
+                            data-bs-toggle="modal"
+                            data-bs-target="#exampleModals"
+                          >
+                            <small>Filters</small>
+                            <Image
+                              width={20}
+                              height={20}
+                              src="/images/filter.svg"
+                            />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </Col>
+                </Row>
+
                 <div className="table-responsive">
                   {clicked ? (
                     <TableAmmend columns={columnsAmmend} data={dataAmmend} />
@@ -862,12 +819,12 @@ function AdmissionofExecution() {
                     <Table columns={columns} data={data} />
                   )}
                 </div>
-              </div>
+
             </div>
           </div>
         </div>
       </div>
     </>
   );
-};
+}
 export default AdmissionofExecution;

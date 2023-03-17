@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { Container, Row, Col, Form } from "react-bootstrap";
+import { Container, Row, Col, Form, Overlay, Popover } from "react-bootstrap";
 import { useTable, usePagination } from "react-table";
 import Stepper from '../components/Stepper'
 import Link from "next/link";
@@ -46,42 +46,26 @@ function Table({ columns, data }) {
         </thead>
         <thead>
           <tr>
-            <th rowSpan={2} className="text-center">
-              App No.
-            </th>
-            <th rowSpan={2} className="text-center">
-              Ack. No.
-            </th>
-            <th rowSpan={2} className="text-center">
-              CS No.
-            </th>
-            <th rowSpan={2} className="text-center">
-              Ack. Year
-            </th>
-            <th rowSpan={2}>Presenter Name</th>
-            <th rowSpan={2} className="text-center">
+            <th className="text-center">App No.</th>
+            <th className="text-center">Ack.No/ Year</th>
+            <th className="text-center">CS No.</th>
+
+            <th className="text-center">Presenter Name</th>
+            <th className="text-center">
               No. of <br />
               Schedule
             </th>
-            <th rowSpan={2}>
+            <th className="text-center">
               CS No. & Ack No.
               <br />
               Generated Date & Time
             </th>
-            <th rowSpan={2} className="text-center">
+            <th className="text-center">
               Book <br />
               Number
             </th>
-            <th colSpan={2} className="extraFont text-center">
-              Nature of Document
-            </th>
-            <th rowSpan={2} className="text-center">
-              Action
-            </th>
-          </tr>
-          <tr>
-            <th className="text-center smallFont">Maj</th>
-            <th className="text-center smallFont">Min</th>
+            <th className="extraFont text-center">Nature of Document</th>
+            <th className="text-center">Action</th>
           </tr>
         </thead>
         <tbody {...getTableBodyProps()}>
@@ -172,25 +156,23 @@ function ScanningUpload() {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
 
-let appNo=(
-<> <div className="d-flex form-check-checkbox">
-      <input
-        onClick={checkboxes}
-        className="form-check-input"
-        // checked={checked}
-        type="checkbox"
-        value=""
-        id="flexCheckDefault"
-      />
-      <label
-        className="form-check-label"
-        htmlFor="flexCheckDefault"
-      >
-        &nbsp; 456787654
-      </label>
-    </div></>
-)
-
+  let appNo = (
+    <>
+      {" "}
+      <div className="d-flex">
+        <input
+          onClick={checkboxes}
+          className="form-check-input"
+          type="checkbox"
+          value=""
+          id="flexCheckDefault"
+        />
+        <label className="form-check-label" htmlFor="flexCheckDefault">
+          456787654
+        </label>
+      </div>
+    </>
+  );
 
   const columns = React.useMemo(
     () => [
@@ -202,17 +184,14 @@ let appNo=(
             accessor: "appNo",
           },
           {
-            Header: "Ack. No.",
+            Header: " Ack.No/ Year",
             accessor: "ackNo",
           },
           {
             Header: "CS No.",
             accessor: "csNo",
           },
-          {
-            Header: "Ack. Year",
-            accessor: "ackYear",
-          },
+
           {
             Header: "No. of Schedule",
             accessor: "presenterName",
@@ -229,17 +208,8 @@ let appNo=(
             Header: "Ack. No.",
             accessor: "bookNumber",
           },
-        ],
-      },
-      {
-        Header: "Nature of Document",
-        columns: [
           {
-            Header: "Maj",
-            accessor: "maj",
-          },
-          {
-            Header: "Min",
+            Header: "Nature of Document",
             accessor: "min",
           },
         ],
@@ -247,138 +217,241 @@ let appNo=(
     ],
     []
   );
-
-
-
-
-
-const data = [
+  const data = [
     {
+      appNo: (
+        <>
+          {" "}
+          <div className="d-flex">
+            <input
+              onClick={checkboxes}
+              className="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault"
+            />
+            <label className="form-check-label mx-2" htmlFor="flexCheckDefault">
+              456787654
+            </label>
+          </div>
+        </>
+      ),
 
-      appNo:appNo,
-      ackNo: "345",
+      ackNo: "345/2022",
       csNo: "212",
-      ackYear: "2022",
+
+      presenterName: "swapna hanumanthu",
+      noofSchedule: "1",
+      generateddatetime: "22/11/2022 @ 11: 48 AM",
+      bookNumber: "1",
+      maj: "Sale",
+      min: "Sales Deed",
+    },
+    {
+      appNo: (
+        <>
+          {" "}
+          <div className="d-flex">
+            <input
+              onClick={checkboxes}
+              className="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault"
+            />
+            <label className="form-check-label mx-2" htmlFor="flexCheckDefault">
+              458888123
+            </label>
+          </div>
+        </>
+      ),
+      ackNo: "346/2022",
+      csNo: "213",
+
+      presenterName: "sreeja varma",
+      noofSchedule: "2",
+      generateddatetime: "22/11/2022 @ 08: 00 AM",
+      bookNumber: "2",
+      maj: "Mortgage",
+      min: "Mortgage without position",
+    },
+    {
+      appNo: (
+        <>
+          <div className="d-flex">
+            <input
+              onClick={checkboxes}
+              className="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault"
+            />
+            <label className="form-check-label mx-2" htmlFor="flexCheckDefault">
+              158888334
+            </label>
+          </div>
+        </>
+      ),
+      ackNo: "347/2022",
+      csNo: "213",
+
+      presenterName: "rajesh rao",
+      noofSchedule: "1",
+      generateddatetime: "22/11/2022 @ 10: 00 AM",
+      bookNumber: "1",
+      maj: "Gift",
+      min: "Gift",
+    },
+    {
+      appNo: (
+        <>
+          {" "}
+          <div className="d-flex">
+            <input
+              onClick={checkboxes}
+              className="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault"
+            />
+            <label className="form-check-label mx-2" htmlFor="flexCheckDefault">
+              638888123
+            </label>
+          </div>
+        </>
+      ),
+      ackNo: "348/2023",
+      csNo: "214",
+
+      presenterName: "ravi teja",
+      noofSchedule: "2",
+      generateddatetime: "22/2/2023 @ 09: 09 AM",
+      bookNumber: "2",
+      maj: "Gift",
+      min: "Gift settlement in favour of others",
+    },
+    {
+      appNo: (
+        <>
+          {" "}
+          <div className="d-flex">
+            <input
+              onClick={checkboxes}
+              className="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault"
+            />
+            <label className="form-check-label mx-2" htmlFor="flexCheckDefault">
+              458888123
+            </label>
+          </div>
+        </>
+      ),
+      ackNo: "349/2023",
+      csNo: "215",
+
       presenterName: "Chandra Sekhar",
       noofSchedule: "1",
-      generateddatetime: "22/11/2022 @ 10: 45 AM",
+      generateddatetime: "20/1/2023 @ 10: 45 AM",
       bookNumber: "1",
-      maj: "01",
-      min: "01",
+      maj: "Partitions",
+      min: "Partition among family members",
+    },
+    {
+      appNo: (
+        <>
+          <div className="d-flex">
+            <input
+              onClick={checkboxes}
+              className="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault"
+            />
+            <label className="form-check-label mx-2" htmlFor="flexCheckDefault">
+              675388123
+            </label>
+          </div>
+        </>
+      ),
+      ackNo: "350/2022",
+      csNo: "216",
 
+      presenterName: "Sekhar sastry",
+      noofSchedule: "2",
+      generateddatetime: "11/10/2022 @ 07: 30 AM",
+      bookNumber: "2",
+      maj: "Release",
+      min: "Release (Co-Parceners)",
+    },
+    {
+      appNo: (
+        <>
+          {" "}
+          <div className="d-flex">
+            <input
+              onClick={checkboxes}
+              className="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault"
+            />
+            <label className="form-check-label mx-2" htmlFor="flexCheckDefault">
+              358888123
+            </label>
+          </div>
+        </>
+      ),
+      ackNo: "351/2022",
+      csNo: "217",
 
-    },
-    {
-      appNo: appNo,
-      ackNo: "345",
-      csNo: "212",
-      ackYear: "2022",
-      presenterName: "Sekhar Varma",
-      noofSchedule: "2",
-      generateddatetime: "22/11/2022 @ 10: 45 AM",
-      bookNumber: "2",
-      maj: "02",
-      min: "02",
-    },
-    {
-      appNo: appNo,
-      ackNo: "345",
-      csNo: "212",
-      ackYear: "2022",
       presenterName: "Chandra Sekhar",
       noofSchedule: "1",
-      generateddatetime: "22/11/2022 @ 10: 45 AM",
+      generateddatetime: "22/11/2022 @ 10: 41 AM",
       bookNumber: "1",
-      maj: "01",
-      min: "01",
+      maj: "Release",
+      min: "Release (Others)",
     },
     {
-      appNo: appNo,
-      ackNo: "345",
-      csNo: "212",
-      ackYear: "2022",
-      presenterName: "Sekhar Varma",
+      appNo: (
+        <>
+          <div className="d-flex">
+            <input
+              onClick={checkboxes}
+              className="form-check-input"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault"
+            />
+            <label className="form-check-label mx-2" htmlFor="flexCheckDefault">
+              678888123
+            </label>
+          </div>
+        </>
+      ),
+      ackNo: "352/2023",
+      csNo: "218",
+
+      presenterName: "Subbarao mucharla",
       noofSchedule: "2",
-      generateddatetime: "22/11/2022 @ 10: 45 AM",
+      generateddatetime: "22/11/2022 @ 09: 46 AM",
       bookNumber: "2",
-      maj: "02",
-      min: "02",
-    },
-    {
-      appNo: appNo,
-      ackNo: "345",
-      csNo: "212",
-      ackYear: "2022",
-      presenterName: "Chandra Sekhar",
-      noofSchedule: "1",
-      generateddatetime: "22/11/2022 @ 10: 45 AM",
-      bookNumber: "1",
-      maj: "01",
-      min: "01",
-    },
-    {
-      appNo: appNo,
-      ackNo: "345",
-      csNo: "212",
-      ackYear: "2022",
-      presenterName: "Sekhar Varma",
-      noofSchedule: "2",
-      generateddatetime: "22/11/2022 @ 10: 45 AM",
-      bookNumber: "2",
-      maj: "02",
-      min: "02",
-    },
-    {
-      appNo: appNo,
-      ackNo: "345",
-      csNo: "212",
-      ackYear: "2022",
-      presenterName: "Chandra Sekhar",
-      noofSchedule: "1",
-      generateddatetime: "22/11/2022 @ 10: 45 AM",
-      bookNumber: "1",
-      maj: "01",
-      min: "01",
-    },
-    {
-      appNo: appNo,
-      ackNo: "345",
-      csNo: "212",
-      ackYear: "2022",
-      presenterName: "Sekhar Varma",
-      noofSchedule: "2",
-      generateddatetime: "22/11/2022 @ 10: 45 AM",
-      bookNumber: "2",
-      maj: "02",
-      min: "02",
-    },
-    {
-      appNo: appNo,
-      ackNo: "345",
-      csNo: "212",
-      ackYear: "2022",
-      presenterName: "Chandra Sekhar",
-      noofSchedule: "1",
-      generateddatetime: "22/11/2022 @ 10: 45 AM",
-      bookNumber: "1",
-      maj: "01",
-      min: "01",
-    },
-    {
-      appNo: appNo,
-      ackNo: "345",
-      csNo: "212",
-      ackYear: "2022",
-      presenterName: "Sekhar Varma",
-      noofSchedule: "2",
-      generateddatetime: "22/11/2022 @ 10: 45 AM",
-      bookNumber: "2",
-      maj: "02",
-      min: "02",
+      maj: "Release",
+      min: "Release (Others)",
     },
   ];
-const [checked, setchecked] = useState(0)
-  function checkboxes(){
+
+  const [show, setShow] = useState(false);
+  const [show1, setShow1] = useState(false);
+  const [target, setTarget] = useState(null);
+  const ref = useRef(null);
+  const handleClose = () => setShow1(false);
+
+  const handleClick = (event) => {};
+
+  const [checked, setchecked] = useState(0);
+  function checkboxes() {
     var inputs = document.getElementsByTagName("input");
     var inputObj;
   var selectedCount = 0;
@@ -395,8 +468,9 @@ const [checked, setchecked] = useState(0)
 
 return (
   <>
-  <Stepper/>
-    <div className="pageMainWrap">
+ <div><Stepper showReason1={true} /></div>
+  <Stepper showReason={false} />
+    <div className="pageMainWrap innerpage">
       <Head>
         <title>Document Presentation - CARD</title>
         <meta name="description" content="login" />
@@ -409,55 +483,29 @@ return (
             <h4>Scanning & Upload</h4>
           </div>
 
-          <Container>
-            <Row className="justify-content-md-center">
-              <Col lg={7} md={8} xs={12} className="pageTableSearch">
-                <form className="md-form">
-                  <div className={`input-group md-form form-sm form-1 pl-0`}>
-                    <input
-                      className={`form-control form-control-sm ml-3 w-75`}
-                      type="text"
-                      placeholder="Search"
-                      aria-label="Search" />
-                    <div className={`input-group-prepend`}>
-                      <button
-                        className={`btn btn-outline-success`}
-                        type="submit"
-                      >
-                        <Image
-                          width={23}
-                          height={23}
-                          src="/images/Search-icon.svg" />
-                      </button>
-                    </div>
-                  </div>
-                </form>
-                <div className="searchFiler">
-                  <button className="today">Today</button>
-                  <button className="filter"  data-bs-toggle="modal" data-bs-target="#exampleModals">
-                    <small>Filters</small>
-                    <Image width={20} height={20} src="/images/filter.svg" />
-                  </button>
-                </div>
-                </Col>
-              </Row>
-              <div className="modal fade modal-sm position-absolute" id="exampleModals" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div className="modal-dialog">
+            <div
+              className="modal-path modal fade modal-sm"
+              id="exampleModals"
+              tabIndex={-1}
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div className="modal-dialog mt-5">
                 <div className="modal-content">
-                  <div className="modal-header">
-                    <h1 className="modal-title fs-5" id="exampleModalLabel">Clear</h1>
-                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
                   <div className="modal-body">
                     <Row>
                       <Col lg={12} md={12} xs={12} className="mb-3">
+                        <div className="clear-date d-flex justify-content-end p-2">
+                          Clear
+                        </div>
                         <Form.Floating>
                           <Form.Control
                             id="floatingInputCustom"
                             type="date"
-                            placeholder="Start Date" />
+                            placeholder="From Date"
+                          />
                           <Form.Label htmlFor="floatingInputCustom">
-                            Start Date
+                            From Date
                           </Form.Label>
                         </Form.Floating>
                       </Col>
@@ -468,69 +516,100 @@ return (
                           <Form.Control
                             id="floatingInputCustom"
                             type="date"
-                            placeholder="End Date" />
+                            placeholder="To Date"
+                          />
                           <Form.Label htmlFor="floatingInputCustom">
-                            End Date
+                            To Date
                           </Form.Label>
                         </Form.Floating>
                       </Col>
                     </Row>
-
-                </div>
-                <div className="modal-footer text-center d-flex justify-content-center">
-                  <button type="button" className="btn btn-primary text-center bluebuttonclass">Save</button>
+                  </div>
                 </div>
               </div>
-            </div></div>
-            </Container>
+            </div>
 
-          <div className="documentsTable pageTableMain pageTableContainer">
+            <div className="documentsTable pageTableMain pageTableContainer">
 
-              <div className="d-flex justify-content-between mb-3">
-                {/* <div className="pageTableTabs">
-                  <button onClick={onClickHandler}>Accept (30)</button>
-                  <button onClick={onClickHandlerAmmend}>Ammend (5)</button>
-                </div> */}
+                <Row className="mb-4">
+                  <Col lg={4} md={4} xs={12}>
+                    <div className="pageTableTabs">
+                    <button className="activeButton">Accept (30)</button>
+                          <button className="button">Ammend (5)</button>
+                    </div>
+                  </Col>
 
-                <div className="pageTableTabs">
-                  {["Accept (30)", "Ammend (5)"].map((o, i) => {
-                    return(
-                    <button
-                      key={o}
-                      className={i === activeTab ? "activeButton" : "button"}
-                      onClick={() => {
-                        if (o=="Accept (30)") {
+                  <Col lg={8} md={4} xs={12} className="pageTableSearch">
+                    <div className="d-flex justify-content-end">
+                      <div className="mx-3">
+                        <form className="md-form">
+                          <div
+                            className={`input-group md-form form-sm form-1 pl-0`}
+                          >
+                            <input
+                              className={`form-control form-control-sm ml-3 w-75`}
+                              type="text"
+                              placeholder="Search Here.."
+                              aria-label="Search"
+                            />
+                            <div className={`input-group-prepend`}>
+                              <button
+                                className={`btn btn-outline-success`}
+                                type="submit"
+                              >
+                                <Image
+                                  width={23}
+                                  height={23}
+                                  src="/images/Search-icon.svg"
+                                />
+                              </button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
 
-                          setclicked(false);
-                        } else {
+                      <div>
+                        <div className="searchFiler">
+                          <button className="today">Today</button>
+                          <button
+                            className="filter"
+                            data-bs-toggle="modal"
+                            data-bs-target="#exampleModals"
+                          >
+                            <small>Filters</small>
+                            <Image
+                              width={20}
+                              height={20}
+                              src="/images/filter.svg"
+                            />
+                          </button>
+                        </div>
+                      </div>
 
-                          setclicked(true);
-                        }
-                        setActiveTab(i);
-                      }}
-                    >
-                      {o}
-                    </button>
-                    )
-                  })
-                }
-                </div>
+                      <div>
+                        <button
+                          className={
+                            checked >= 2
+                              ? "digital-sign-btn-enable"
+                              : "digital-sign-btn"
+                          }
+                        >
+                          Bulk Digital Sign
+                        </button>
+                      </div>
+                    </div>
+                  </Col>
+                </Row>
 
-                <div>
-                  <button className={checked>=2 ? "digital-sign-btn-enable" : "digital-sign-btn"} >
-                    Bulk Digital Sign
-                  </button>
-                </div>
-              </div>
+
               <div className="table-responsive">
-
                   <Table columns={columns} data={data} />
-
               </div>
             </div>
           </div>
+        </div>
       </div>
-    </div></>
+    </>
   );
 }
 

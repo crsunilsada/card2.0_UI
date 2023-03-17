@@ -1,10 +1,15 @@
 import { Container, Col, Row, Form, Button } from "react-bootstrap"
+import Image from "next/image";
 import Head from "next/head";
 import Stepper from '../components/Stepper'
 import Link from "next/link";
+import { useEffect, useState } from "react";
 const partyDetails = () => {
+    const [selectedOption, setSelectedOption] = useState("S/O");
+    const handleOptionClick = (event) => { setSelectedOption(event.target.textContent); };
+    useEffect(() => { require("bootstrap/dist/js/bootstrap.bundle.min.js"); }, []);
     return (
-        <><Stepper /><div className="pageMainWrap innerpage">
+        <><div className="pageMainWrap innerpage"><Stepper />
             <Head>
                 <title>Party Details - CARD</title>
                 <meta name="description" content="login" />
@@ -18,7 +23,6 @@ const partyDetails = () => {
                                 <button className="active partyDetails">Party Details</button>
                                 <button className=" imaging">Imaging</button>
                             </div>
-                            <div>
                                 <div className="mb-4 d-flex assigningcheckboxes">
                                     <Form.Check
                                         value="Executant"
@@ -85,29 +89,25 @@ const partyDetails = () => {
                                                         </label>
                                                     </Form.Floating>
                                                 </Col>
-                                                <Col lg={2} md={2} xs={4} className="mb-3">
-                                                    <Form.Select aria-label="Default select example" id="floatingInputCustom">
-                                                        <option value="">S/o</option>
-                                                        <option value="">S/o</option>
-                                                        <option value="">D/o</option>
-                                                        <option value="">W/o</option>
-                                                    </Form.Select>
-                                                </Col>
-                                                <Col lg={4} md={4} xs={8} className="mb-3">
-                                                    <Form.Floating>
-                                                        <Form.Control
-                                                            id="floatingInputCustom"
-                                                            type="text"
-                                                            placeholder="RelationName"
-                                                        />
-                                                        <label htmlFor="floatingInputCustom">
-                                                            Relation Name
-                                                        </label>
-                                                    </Form.Floating>
+                                                <Col lg={6} md={6} xs={12} className="mb-3">
+                                                    <div className="input-group">
+                                                        <button className="btn btn-outline-secondary dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false" style={{ color: "#4D4D4D", borderRadius: "12px 0px 0px 12px", borderColor: "#6096BA", backgroundColor: "#F6F9FB" }} >
+                                                            {selectedOption}
+                                                        </button>
+                                                        <ul className="dropdown-menu">
+                                                            <li><a className="dropdown-item" onClick={handleOptionClick}>S/o</a></li>
+                                                            <li><a className="dropdown-item" onClick={handleOptionClick}>D/o</a></li>
+                                                            <li><a className="dropdown-item" onClick={handleOptionClick}>W/o</a></li>
+                                                        </ul>
+                                                        <Form.Floating>
+                                                            <Form.Control id="floatingInputCustom" type="text" placeholder="Age" className="form-control" />
+                                                            <Form.Label htmlFor="floatingInputCustom"> Relation Name </Form.Label>
+                                                        </Form.Floating>
+                                                    </div>
                                                 </Col>
                                             </Row>
                                             <Row>
-                                                <Col lg={6} md={6} xs={12} className="mb-4">
+                                                <Col lg={6} md={6} xs={12} className="mb-3">
                                                     <Form.Floating>
                                                         <Form.Control
                                                             id="floatingInputCustom"
@@ -120,7 +120,7 @@ const partyDetails = () => {
                                                         </label>
                                                     </Form.Floating>
                                                 </Col>
-                                                <Col lg={6} md={6} xs={12} className="mb-4">
+                                                <Col lg={6} md={6} xs={12} className="mb-3">
                                                     <Form.Floating>
                                                         <Form.Control
                                                             id="floatingInputCustom"
@@ -163,26 +163,28 @@ const partyDetails = () => {
                                             </Row>
                                         </Col>
                                         <Col lg={2} md={2} xs={2}>
-                                            <img src="/images/party-executantimg.jpg" alt="Card image" />
+                                        <div className="partydetails-image-card ">
+                                            <div className="partydetails-image-box"></div>
+                                            </div>
                                         </Col>
                                     </Row>
                                 </div>
                                 <Row>
                                     <Col lg={6} md={6} xs={6}>
-                                        <div className="form-check-checkbox">
-                                            <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" />
-                                            <label className="form-check-label" htmlFor="defaultCheck1">
+                                        <div className="form-check-checkbox assigningcheckboxes">
+                                            <input className="form-check-input m-2" type="checkbox" value="" id="defaultCheck1" />
+                                            <label className="m-2">
                                                 Consider this Claimant/Executant as Representative
                                             </label>
                                         </div>
                                     </Col>
                                 </Row>
                                 <Row>
-                                    <Col lg={6} md={6} xs={12} className="mb-3">
+                                    <Col lg={6} md={6} xs={12} className="mb-1">
                                     </Col>
-                                    <Col lg={2} md={2} xs={12} className="mb-3">
+                                    <Col lg={2} md={2} xs={12} className="mb-1">
                                     </Col>
-                                    <Col lg={4} md={4} xs={4} className="mb-3">
+                                    <Col lg={4} md={4} xs={4} className="mb-1">
                                         <div className="pageNextBtn">
                                             <button className="clear">
                                                 Clear
@@ -195,7 +197,7 @@ const partyDetails = () => {
                                         </div>
                                     </Col>
                                 </Row>
-                            </div>
+
                         </div>
                     </div>
                 </div>

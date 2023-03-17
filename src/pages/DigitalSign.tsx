@@ -2,9 +2,11 @@ import { Container, Col, Row, Form, Button } from "react-bootstrap"
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
+import Stepper from "../components/Stepper";
 const DigitalSign = () => {
   return (
-    <> 
+    <><div><Stepper showReason1={true} /></div>
+    <Stepper showReason={false} />
       <div className="pageMainWrap innerpage">
         <Head>
           <title>Digital Sign - CARD</title>
@@ -18,52 +20,49 @@ const DigitalSign = () => {
                 <button className="partyDetails">Scanning</button>
                 <button className="active imaging">Digital Sign</button>
               </div>
-              <div  >
-                <h8 className="devicemantra"> Device Mantra</h8>
-              </div>
-              <div >
-                <p className="digitalSignHeader">
-                  SRO Name
-                </p>
-              </div>
-              <br></br>
-              <div >
-                <Row>
-                  <Col lg={6} md={6} xs={12} className="mb-3">
+              <Row className="pt-7 order_passing">
+                <Col lg={6} md={6} sm={12} className="mb-4">
+                  <div className="text_wrap">
+                  <div className="mb-4">
+                  <p className="digitalSignHeader">SRO Name</p>
+                  </div>
+                  <Form.Select aria-label="Default select example my_option">
+                    <option value="">Designation</option>
+                    <option value="10">Chairman</option>
+                    <option value="20">AP Registrar Head</option>
+                    <option value="30">Document Writer</option>
+                  </Form.Select>
+                  </div>
+                </Col>
+                <Col lg={6} md={6} sm={12}>
 
-                  </Col>
-                  <Col lg={2} md={2} xs={12} className="mb-3">
+                  <div className="heading_session">
 
-                  </Col>
-                  <Col lg={4} md={4} xs={4} className="mb-3">
+                  <div className="mb-2">
 
-                  </Col>
-                </Row> <Row>
-                  <Col lg={3} md={3} xs={12} className="mb-3">
-                    <Form.Select aria-label="Default select example">
-                      <option value="">Designation</option>
-                      <option value="10">Chairman</option>
-                      <option value="20">AP Registrar Head</option>
-                      <option value="30">Document Writer</option>
-                    </Form.Select>
-                  </Col>
-                  <Col lg={3} md={3} xs={12} className="mb-3">
+                    <h4>Device Mantra</h4>
 
-                  </Col>
-                  <Col lg={6} md={6} xs={12} className="mb-3">
+                  </div>
 
-                  </Col>
-                </Row>
+                  <div className="pageNextBtn">
 
-              </div>
-              <br></br>
-              <div  >
-                <div className="pageNextBtn">
-                  <Link href={"/documentHandover"}>
-                  <button className="next">Submit</button>
-                  </Link>
-                </div>
-              </div>
+                    <Link href={"/documentHandover"}>
+
+                    <Col lg={3} md={3} sm={12}>
+
+                      <button className="next">Submit</button>
+
+                      </Col>
+
+                    </Link>
+
+                  </div>
+
+                  </div>
+
+                </Col>
+              </Row>
+
             </div>
           </div>
         </div>
