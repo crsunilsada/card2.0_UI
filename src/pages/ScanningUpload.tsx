@@ -463,7 +463,7 @@ return (
   <Stepper showReason={false} />
     <div className="pageMainWrap innerpage">
       <Head>
-        <title>Document Presentation - CARD</title>
+        <title>Bundling - CARD</title>
         <meta name="description" content="login" />
         <link rel="icon" href="/igrsfavicon.ico" />
       </Head>
@@ -533,7 +533,7 @@ return (
                   <Col lg={9} md={4} xs={12} className="pageTableSearch">
                     <div className="d-flex justify-content-end">
                       <div className="mx-3">
-                      
+
                           <div
                             className={`input-group md-form form-sm form-1 pl-0`}
                           >
@@ -562,13 +562,13 @@ return (
 
 
                           </div>
-              
+
                       </div>
 
                       <div>
                         <div className="searchFiler">
                           <button className="today">Today</button>
-                          
+
                           <RangePicker />
                         </div>
                       </div>
