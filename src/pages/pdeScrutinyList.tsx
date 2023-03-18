@@ -4,16 +4,12 @@ import Image from "next/image";
 import { Container, Row, Col, Form, Nav, Tab, Table, Tabs, TabContainer, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { useTable, usePagination } from "react-table";
 import { BsInfoCircle } from "react-icons/bs";
+import { DatePicker, Space } from 'antd';
 
 function PendingTable({ columns, data }) {
   const {
     getTableProps,
-    getTableBodyProps,
     headerGroups,
-    prepareRow,
-    page,
-    canPreviousPage,
-    canNextPage,
     pageOptions,
     nextPage,
     previousPage,
@@ -149,7 +145,7 @@ function PendingTable({ columns, data }) {
             </td>
           </tr>
           <tr>
-            <td>456787654 </td>
+            <td>456787692</td>
             <td>Sekhar Varma</td>
             <td>Mortgage with possession</td>
             <td>12:15pm</td>
@@ -998,9 +994,9 @@ function RefuseTable({ columns, data }) {
         </thead>
         <tbody {...getTableBodyProps()} className="text-center">
           <tr>
-            <td>456787564</td>
+            <td>456787521</td>
             <td>34567/2022</td>
-            <td>212</td>
+            <td>546</td>
             <td>Chandra Shekar</td>
             <td>Sale Deed</td>
             <td>10:30am</td>
@@ -1018,7 +1014,7 @@ function RefuseTable({ columns, data }) {
               </button>
             </td>
             <td>Fake documents</td>
-            <td>02-01-2023 12:00pm</td>
+            <td>02/01/2023 12:00pm</td>
             <td>Original documents needed for registration</td>
           </tr>
           <tr>
@@ -1027,7 +1023,7 @@ function RefuseTable({ columns, data }) {
             <td>389</td>
             <td>Shekar Varma</td>
             <td>Mortgage with possession</td>
-            <td>10:30am</td>
+            <td>11:30pm</td>
             <td className="text-center">
               <button
                 data-bs-toggle="modal"
@@ -1042,16 +1038,16 @@ function RefuseTable({ columns, data }) {
               </button>
             </td>
             <td>Third party person </td>
-            <td>02-01-2023 12:00pm</td>
+            <td>11/05/2023 10:45pm</td>
             <td>Parties to be present at the time of registration</td>
           </tr>
           <tr>
-            <td>456787564</td>
+            <td>456787594</td>
             <td>67894/2022</td>
             <td>367</td>
             <td>Lakshmikanth</td>
             <td>Sale agreement with possession</td>
-            <td>10:30am</td>
+            <td>09:30am</td>
             <td className="text-center">
               <button
                 data-bs-toggle="modal"
@@ -1066,16 +1062,16 @@ function RefuseTable({ columns, data }) {
               </button>
             </td>
             <td>Property Tax Receipts</td>
-            <td>02-01-2023 12:00pm</td>
+            <td>30/05/2022 09:15am</td>
             <td>Tax receipts are mandatory</td>
           </tr>
           <tr>
-            <td>456787564</td>
+            <td>456787534</td>
             <td>97632/2022</td>
             <td>987</td>
             <td>Srinivasulu</td>
             <td>Gift</td>
-            <td>10:30am</td>
+            <td>02:30pm</td>
             <td className="text-center">
               <button
                 data-bs-toggle="modal"
@@ -1090,16 +1086,16 @@ function RefuseTable({ columns, data }) {
               </button>
             </td>
             <td>Identity</td>
-            <td>02-01-2023 12:00pm</td>
+            <td>09/02/2022 07:00pm</td>
             <td>Identity of the seller cannot be confirmed</td>
           </tr>
           <tr>
-            <td>456787564</td>
+            <td>456787543</td>
             <td>14789/2022</td>
             <td>342</td>
             <td>Ramya Lasya</td>
             <td>Partition</td>
-            <td>10:30am</td>
+            <td>03:45am</td>
             <td className="text-center">
               <button
                 data-bs-toggle="modal"
@@ -1114,7 +1110,7 @@ function RefuseTable({ columns, data }) {
               </button>
             </td>
             <td>Others</td>
-            <td>02-01-2023 12:00pm</td>
+            <td>21/05/2023 09:30am</td>
             <td>Court has put a stay order on the deed</td>
           </tr>
         </tbody>
@@ -1168,9 +1164,16 @@ function RefuseTable({ columns, data }) {
 
 
 const pdeScrutinyList = () => {
+  const [display, setdisplay] = useState(false)
+  const handleClick = () => {
+    setdisplay(true)
+  }
+
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
+
+  const { RangePicker } = DatePicker;
 
 
   const pendingcolumns = React.useMemo(
@@ -1188,24 +1191,11 @@ const pdeScrutinyList = () => {
           },
           {
             Header: "Nature of Document",
-            columns: [
-              {
-                Header: "Maj",
-                accessor: "maj",
-              },
-              {
-                Header: "Min",
-                accessor: "min",
-              },
-            ],
+            accessor:"natureofdocument",
           },
           {
             Header: "Slot Time",
             accessor: "slotTime",
-          },
-          {
-            Header: "Registration Type",
-            accessor: "registrationType",
           },
           {
             Header: "Details",
@@ -1225,22 +1215,26 @@ const pdeScrutinyList = () => {
     {
       appId: "456787654",
       presenterName: "Chandra Shekar",
-      maj: "Sale",
-      min: "Sale Deed",
+      natureofdocument:"Sale deed",
       slotTime: "10:30am",
-      registrationType: "Original1",
       details: "View Details",
       status: "New",
     },
     {
       appId: "456787654",
       presenterName: "Shekar Varma",
-      maj: "Sale",
-      min: "Sale Deed1",
+      natureofdocument:"Mortgage with possesion",
       slotTime: "12:15pm",
-      registrationType: "Anywhere",
       details: "View Details",
       status: "Ammend",
+    },
+    {
+      appId: "456787654",
+      presenterName: "Chandra Shekar",
+      natureofdocument: "Sale deed",
+      slotTime: "10:30am",
+      details: "View Details",
+      status: "New",
     },
   ]
 
@@ -1250,8 +1244,16 @@ const pdeScrutinyList = () => {
         Header: "1",
         columns: [
           {
-            Header: "App ID.",
+            Header: "App ID",
             accessor: "appId",
+          },
+          {
+            Header: "Ack num/Year",
+            accessor: "ackNumYear",
+          },
+          {
+            Header: "Cs No",
+            accessor: "cs no",
           },
           {
             Header: "Presenter Name.",
@@ -1259,38 +1261,20 @@ const pdeScrutinyList = () => {
           },
           {
             Header: "Nature of Document",
-            columns: [
-              {
-                Header: "Maj",
-                accessor: "maj",
-              },
-              {
-                Header: "Min",
-                accessor: "min",
-              },
-            ],
+            accessor:"natureofdocument",
           },
           {
             Header: "Slot Time",
             accessor: "slotTime",
           },
           {
-            Header: "Registration Type",
-            accessor: "registrationType",
+            Header: "Details",
+            accessor: "details",
           },
-
-          // {
-          //   Header: "Details",
-          //   accessor: "details",
-          // },
           {
-            Header: "Status",
-            accessor: "status",
+            Header: "Accept Date&Time by SRO",
+            accessor: "accept date&time by SRO",
           },
-          // {
-          //   Header: "Action",
-          //   accessor: "",
-          // },
         ],
       },
     ],
@@ -1299,24 +1283,23 @@ const pdeScrutinyList = () => {
   const accepttableData = [
     {
       appId: "456787654",
+      ackNumYear:"1234",
+      csno:"5676",
       presenterName: "Chandra Shekar",
-      maj: "Sale",
-      min: "Sale Deed",
+      Natureofdocument:"Sale deed",
       slotTime: "10:30am",
-      registrationType: "Original",
       details: "View Details",
-      status: "New"
-
+      acceptdatetimebySRO:"22/11/2022 @10:45pm",
     },
     {
-      appId: "456787654",
+      appId: "456787655",
+      ackNumYear:"1234",
+      csno:"7654",
       presenterName: "Shekar Varma",
-      maj: "Sale",
-      min: "Sale Deed",
+      Natureofdocument:"Mortgage with possesion",
       slotTime: "12:15pm",
-      registrationType: "Anywhere",
       details: "View Details",
-      status: "Ammend"
+      acceptdatetimebySRO:"24/11/2022 @12:45pm",
     },
   ]
   const ammendcolumns = React.useMemo(
@@ -1325,16 +1308,16 @@ const pdeScrutinyList = () => {
         Header: "1",
         columns: [
           {
-            Header: "Ack No.",
-            accessor: "ackNo",
+            Header: "App ID",
+            accessor: "appId",
+          },
+          {
+            Header: "Ack Number/Year",
+            accessor: "acknumberyear",
           },
           {
             Header: "CS. No.",
             accessor: "csNo",
-          },
-          {
-            Header: "App ID",
-            accessor: "appId",
           },
           {
             Header: "Presenter Name",
@@ -1342,24 +1325,11 @@ const pdeScrutinyList = () => {
           },
           {
             Header: "Nature of Document",
-            columns: [
-              {
-                Header: "Maj",
-                accessor: "maj",
-              },
-              {
-                Header: "Min",
-                accessor: "min",
-              },
-            ],
+            accessor:"natureofdocument"
           },
           {
             Header: "Slot Time",
             accessor: "slotTime",
-          },
-          {
-            Header: "Registration Type",
-            accessor: "registrationType",
           },
           {
             Header: "Details",
@@ -1384,32 +1354,28 @@ const pdeScrutinyList = () => {
   );
   const ammendtableData = [
     {
-      ackNo: "345",
+      appId: "45678564",
+      acknumberyear: "34544/2022",
       csNo: "212",
-      appId: "46576864",
       presenterName: "chandra Shekar",
-      maj: "Sale",
-      min: "Sale Deed",
+      natureofdocument:"Sale Deed",
       slotTime: "10:30pm",
-      registrationType: "original",
       details: "View Details",
-      ammendReason: "Wrong Document",
+      ammendReason: "Name expansion",
       ammend_datetime_SRO: "02-1-2023 2:30pm",
-      ammend_comments: "Comments comes here",
+      ammend_comments: "Name should be expanded as per ID proof",
     },
     {
-      ackNo: "345",
-      csNo: "212",
-      appId: "46576864",
+      appId: "45678622",
+      acknumberyear: "12345/2022",
+      csNo: "132",
       presenterName: "Shekar varma",
-      maj: "Sale",
-      min: "Sale Deed",
-      slotTime: "12:15pm",
-      registrationType: "Anywhere",
+      natureofdocument:"Mortgage with possesion",
+      slotTime: "11:00pm",
       details: "View Details",
-      ammendReason: "Wrong Document",
-      ammend_datetime_SRO: "02-1-2023 2:30pm",
-      ammend_comments: "Comments comes here",
+      ammendReason: "Surname is not matching",
+      ammend_datetime_SRO: "22/11/2022 10:45am",
+      ammend_comments: "Family member surname should match",
     }
   ];
   const refusecolumns = React.useMemo(
@@ -1418,16 +1384,16 @@ const pdeScrutinyList = () => {
         Header: "1",
         columns: [
           {
-            Header: "Ack No.",
-            accessor: "ackNo",
+            Header: "App ID",
+            accessor: "appId",
+          },
+          {
+            Header: "Ack Number/Year",
+            accessor: "acknumberyear",
           },
           {
             Header: "CS. No.",
             accessor: "csNo",
-          },
-          {
-            Header: "App ID",
-            accessor: "appId",
           },
           {
             Header: "Presenter Name",
@@ -1435,24 +1401,11 @@ const pdeScrutinyList = () => {
           },
           {
             Header: "Nature of Document",
-            columns: [
-              {
-                Header: "Maj",
-                accessor: "maj",
-              },
-              {
-                Header: "Min",
-                accessor: "min",
-              },
-            ],
+            accessor:"nature of Document"
           },
           {
             Header: "Slot Time",
             accessor: "slotTime",
-          },
-          {
-            Header: "Registration Type",
-            accessor: "registrationType",
           },
           {
             Header: "Details",
@@ -1477,32 +1430,28 @@ const pdeScrutinyList = () => {
   );
   const refusetableData = [
     {
-      ackNo: "345",
-      csNo: "212",
-      appId: "46576864",
+      appId: "46576521",
+      acknumberyear: "34567/2022",
+      csNo: "546",
       presenterName: "chandra Shekar",
-      maj: "Sale",
-      min: "Sale Deed",
-      slotTime: "10:30pm",
-      registrationType: "original",
+      natureofdocument:"Sale Deed",
+      slotTime: "10:30am",
       details: "View Details",
-      refuseReason: "Wrong Document",
-      refuse_datetime_SRO: "02-1-2023 2:30pm",
-      refuse_comments: "Comments comes here",
+      refuseReason: "Fake Document",
+      refuse_datetime_SRO: "02/1/2023 12:00pm",
+      refuse_comments: "original documents needed for registration",
     },
     {
-      ackNo: "345",
-      csNo: "212",
-      appId: "46576864",
+      appId: "46576564",
+      acknumberyear: "43214/2022",
+      csNo: "389",
       presenterName: "shekar varma",
-      maj: "Sale",
-      min: "Sale Deed",
-      slotTime: "12:15pm",
-      registrationType: "Anywhere",
+      natureofdocument:"Mortgage with possesion",
+      slotTime: "11:30pm",
       details: "View Details",
-      refuseReason: "Wrong Document",
-      refuse_datetime_SRO: "02-1-2023 2:30pm",
-      refuse_comments: "Comments comes here",
+      refuseReason: "Third party person",
+      refuse_datetime_SRO: "11/05/2023 10:45am",
+      refuse_comments: "parties should be present at the time of registration",
     }
   ];
   return (
@@ -1527,7 +1476,7 @@ const pdeScrutinyList = () => {
                 <div className="pageTableTabs">
                   <Row className="tableMarginTop">
                     <div className="searchContainer">
-                      <Col lg={5}>
+                      <Col lg={4}>
                         <div>
                           <Nav variant="pills">
                             <Nav.Item>
@@ -1545,36 +1494,19 @@ const pdeScrutinyList = () => {
                           </Nav>
                         </div>
                       </Col>
-                      <Col lg={7}>
+                      <Col lg={8}>
                         <div className="pageTableSearch text-end mt-3" >
                           <div className="d-flex searchbar-ml justify-content-end">
                             <div className="mx-3">
-                            <form className="md-form">
-                              <div className={`input-group md-form form-sm form-1 pl-0`}>
-                                <input
-                                  className={`form-control form-control-sm wl-50`}
-                                  type="text"
-                                  placeholder="Search"
-                                  aria-label="Search" />
-                                <div className={`input-group-prepend`}>
-                                  <button
-                                    className={`btn btn-outline-success`}
-                                    type="submit"
-                                  >
-                                    <Image
-                                      width={23}
-                                      height={23}
-                                      src="/images/Search-icon.svg" />
-                                  </button>
-                                </div>
+                              <div className="col">
+                                <input type="text" className="justify-content-end float-end search-click" style={{ borderRadius: "5px", borderColor: "#5692B4", height: "40px" }} name="" placeholder="Please search with any of these CS No/Ack No/App No/Presenter Name" />
+                                {/* {display && ("")
+                                } */}
                               </div>
-                            </form></div>
+                            </div>
                             <div className="searchFiler">
                               <button className="today">Today</button>
-                              <button className="filter" data-bs-toggle="modal" data-bs-target="#exampleModals">
-                                <small>Filters</small>
-                                <Image width={20} height={20} src="/images/filter.svg" />
-                              </button>
+                              <RangePicker />
                             </div>
                           </div>
                         </div>
@@ -1705,13 +1637,15 @@ const pdeScrutinyList = () => {
             </div>
           </div>
 
+
+          {/* //accept icons popups */}
           <div
             className="modal fade modal-md"
             id="acceptdetails"
             aria-labelledby="acceptdetails"
             aria-hidden="true"
           >
-            {/* <div className="modal-dialog">
+            <div className="modal-dialog">
               <div className="modal-content">
                 <div className="modal-header">
                   <h1 className="modal-title" id="exampleModalLabel">Application No: 456787654</h1>
@@ -1774,16 +1708,19 @@ const pdeScrutinyList = () => {
                       </Form.Floating>
                     </Col>
                   </Row>
-                  <div className="d-flex justify-content-center">
-                    <button type="button" className="bluebuttonclass">
+                  <div className="d-flex justify-content-center mt-5">
+                    <button
+                      data-bs-toggle="modal"
+                      data-bs-target="#generatingdetails"
+                      className="bluebuttonclass">
                       ADD
                     </button>
                   </div>
                 </div>
 
               </div>
-            </div> */}
-            <div className="modal-dialog">
+            </div>
+            {/* <div className="modal-dialog">
               <div className="modal-content">
                 <div className="modal-header">
                   <h1 className="modal-title" id="exampleModalLabel">Application No: 456787654</h1>
@@ -1849,7 +1786,7 @@ const pdeScrutinyList = () => {
                       </Form.Floating>
                     </Col>
                   </Row>
-                  <div className="d-flex justify-content-center">
+                  <div className="d-flex justify-content-center mt-5">
                     <button type="button" className="bluebuttonclass">
                       ADD
                     </button>
@@ -1858,7 +1795,7 @@ const pdeScrutinyList = () => {
                 </div>
 
               </div>
-            </div>
+            </div> */}
             {/* <div className="modal-dialog">
               <div className="modal-content">
                 <div className="modal-header">
@@ -1928,7 +1865,7 @@ const pdeScrutinyList = () => {
                       </Form.Floating>
                     </Col>
                   </Row>
-                  <div className="d-flex justify-content-center">
+                  <div className="d-flex justify-content-center mt-5">
                     <button type="button" className="bluebuttonclass">
                       ADD
                     </button>
@@ -1967,21 +1904,22 @@ const pdeScrutinyList = () => {
                           src="/images/accept1.svg"
                         />
                       </div>
-                      <h5>Acknowledgement No: 345 &</h5>
+                      <h5>For Given</h5>
+                      <h5>For Given Acknowledgement No: <strong>345 &</strong></h5>
                     </div>
                     <div className="text-center">
-                      <h5>Check Slip No: 212</h5>
+                      <h5>Check Slip No: <strong>212</strong></h5>
                     </div>
                     <div className="text-center">
-                      <h5>Receipt No: 234567</h5>
+                      <h5>Receipt No: <strong>123</strong></h5>
                     </div>
                     <div className="text-center">
-                      <h5>has been generated successfully.</h5>
+                      <h5>has been generated and ammend flow accepted successfully</h5>
                     </div>
                   </Row>
                 </div>
               </div>
-            </div> */}
+            </div>  */}
             {/* <div className="modal-dialog">
               <div className="modal-content">
                 <div className="modal-header">
@@ -2011,59 +1949,14 @@ const pdeScrutinyList = () => {
                           src="/images/accept1.svg"
                         />
                       </div>
-                      <h6>For Given</h6>
-                      <h6>For Given Acknowledgement No: <strong>345 &</strong></h6>
+                      <h5>For Given</h5>
+                      <h5>For Given Acknowledgement No: <strong>345 &</strong></h5>
                     </div>
                     <div className="text-center">
-                      <h6>Check Slip No: <strong>212</strong></h6>
+                      <h5>Check Slip No: <strong>212</strong></h5>
                     </div>
                     <div className="text-center">
-                      <h6>Receipt No: <strong>123</strong></h6>
-                    </div>
-                    <div className="text-center">
-                      <h6>has been generated and ammend flow accepted successfully</h6>
-                    </div>
-                  </Row>
-                </div>
-              </div>
-            </div> */}
-            {/* <div className="modal-dialog">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h5 className="modal-title" id="exampleModalLabel">
-                    Application No: 456787654
-                  </h5>
-                  <button
-                    type="button"
-                    className="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    <Image
-                      width={20}
-                      height={20}
-                      src="/images/popup-close.svg"
-                    />
-                  </button>
-                </div>
-                <div className="modal-body">
-                  <Row>
-                    <div className="text-center">
-                      <div>
-                        <Image
-                          width={80}
-                          height={80}
-                          src="/images/accept1.svg"
-                        />
-                      </div>
-                      <h6>For Given</h6>
-                      <h6>For Given Acknowledgement No: <strong>345 &</strong></h6>
-                    </div>
-                    <div className="text-center">
-                      <h6>Check Slip No: <strong>212</strong></h6>
-                    </div>
-                    <div className="text-center">
-                      <h6>Ammend flow accepted successfully.</h6>
+                      <h5>Ammend flow accepted successfully.</h5>
                     </div>
                   </Row>
                 </div>
@@ -2071,6 +1964,58 @@ const pdeScrutinyList = () => {
             </div> */}
           </div>
 
+          <div
+            className="modal fade modal-md"
+            id="generatingdetails"
+            aria-labelledby="generatingdetails"
+            aria-hidden="true"
+          >
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title" id="exampleModalLabel">
+                    Application No: 456787654
+                  </h5>
+                  <button
+                    type="button"
+                    className="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <Image
+                      width={20}
+                      height={20}
+                      src="/images/popup-close.svg"
+                    />
+                  </button>
+                </div>
+                <div className="modal-body">
+                  <Row>
+                    <div className="text-center">
+                      <div>
+                        <Image
+                          width={80}
+                          height={80}
+                          src="/images/accept1.svg"
+                        />
+                      </div>
+                      <h5>Acknowledgement No: <strong>345 &</strong></h5>
+                    </div>
+                    <div className="text-center">
+                      <h5>Check Slip No: <strong>212</strong></h5>
+                    </div>
+                    <div className="text-center">
+                      <h5>Receipt No: <strong>234567</strong></h5>
+                    </div>
+                    <div className="text-center">
+                      <h5>has been generated successfully.</h5>
+                    </div>
+                  </Row>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* //ammend icon popups */}
           <div
             className="modal fade modal-md"
             id="ammenddetails"
@@ -2116,9 +2061,8 @@ const pdeScrutinyList = () => {
                       placeholder="comments(Upto 1000 Characters)"
                     ></textarea>
                   </Row>
-                  <br></br>
                   <Row>
-                    <div className="d-flex justify-content-center">
+                    <div className="d-flex justify-content-center mt-5">
                       <button type="button" className="bluebuttonclass">
                         Submit
                       </button>
@@ -2127,7 +2071,7 @@ const pdeScrutinyList = () => {
                 </div>
               </div>
             </div>
-            {/* <div className="modal-dialog">
+            <div className="modal-dialog">
               <div className="modal-content">
                 <div className="modal-header">
                   <h1 className="modal-title" id="exampleModalLabel">Application List Ammend</h1>
@@ -2176,8 +2120,8 @@ const pdeScrutinyList = () => {
                   </div>
                 </div>
               </div>
-            </div> */}
-            {/* <div className="modal-dialog">
+            </div>
+            <div className="modal-dialog">
               <div className="modal-content">
                 <div className="modal-header">
                   <h5 className="modal-title" id="exampleModalLabel">
@@ -2217,8 +2161,10 @@ const pdeScrutinyList = () => {
                   </Row>
                 </div>
               </div>
-            </div> */}
+            </div>
           </div>
+
+          {/* //refuse icon popups */}
           <div
             className="modal fade modal-md"
             id="refusedetails"
@@ -2265,18 +2211,22 @@ const pdeScrutinyList = () => {
 
                   <Row>
                     <Col>
-                      <div className="d-flex justify-content-center">
+                      <div className="d-flex justify-content-center mt-5">
                         <button type="button" className="bluebuttonclass">
                           Submit
                         </button>
                       </div>
                     </Col>
                   </Row>
+
                 </div>
               </div>
             </div>
+
           </div>
+          <div style={{height: '102px'}}></div>
         </div>
+
       </div>
     </div>
   );

@@ -40,7 +40,7 @@ function Table({ columns, data }) {
                     <tr>
                         <th rowSpan={2} className="text-center">
                             Sur. No. <br></br>వరుస సంఖ్య
-                            
+
                         </th>
                         <th rowSpan={2} className="text-center">
                             Total Extent<br></br>పూర్తి విస్తీర్ణం
@@ -377,7 +377,7 @@ function otherMenu() {
 
 
 
-                                    <input type="text" className="justify-content-end float-end search-click" style={{ borderRadius: "5px", borderColor: "#5692B4", height: "40px" }} name="" placeholder="search here..." />
+                                    <input type="text" className="justify-content-end float-end search-click" style={{  borderRadius: "5px", borderColor: "#5692B4", height: "40px" }} name="" placeholder="search here..." />
 
 
 

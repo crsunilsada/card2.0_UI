@@ -201,11 +201,11 @@ const imagingExecutant = () => {
                       </Nav.Item>
                     </Nav>
                   </div>
-                  <br />
+
                   <Tab.Content>
                     <Tab.Pane eventKey="first">
                       <Row className="justify-content-md-end mb-5">
-                        <br />
+
                         <Col lg={6} md={6} xs={12} className="pageTableSearch">
                           <form className="md-form">
                             <div
@@ -243,7 +243,7 @@ const imagingExecutant = () => {
                             <th className="text-center p-3">Name</th>
                             <th className="text-center">Photo</th>
                             <th className="text-center">Thumb impression</th>
-                            <th className="text-center">E Sign Signature</th>
+                            {/* <th className="text-center">E Sign Signature</th> */}
                             <th className="text-center">Capture</th>
                           </tr>
                         </thead>
@@ -304,32 +304,7 @@ const imagingExecutant = () => {
                                     <img src={item.thumbImpression} />
                                   </div>
                                 </td>
-                                <td className="text-center">
-                                  <div className="form-check-checkbox">
-                                    {/* <Form.Check
-                                  type={"checkbox"}
-                                  name="esignSignature" className="checkbox-check"
-                                  onClick={sig => handleClick('signature', index)} key={index} /> */}
-                                  </div>
-                                  <div className="emptyBox1">
-                                    {/* <img src={item.esignSignature} /> */}
-                                    <input
-                                      type="checkbox"
-                                      id="myCheckbox2"
-                                      onClick={(sig) =>
-                                        handleClick("signature", index)
-                                      }
-                                      key={index}
-                                      hidden
-                                    />
-                                    <label for="myCheckbox2">
-                                      <img
-                                        src={item.esignSignature}
-                                        // className="image-border"
-                                      ></img>
-                                    </label>
-                                  </div>
-                                </td>
+
                                 <td>
                                   {item.capture === "Re-capture" ? (
                                     <button
@@ -405,7 +380,7 @@ const imagingExecutant = () => {
                             <th className="text-center p-3">Name</th>
                             <th className="text-center">Photo</th>
                             <th className="text-center">Thumb impression</th>
-                            <th className="text-center">E Sign Signature</th>
+
                             <th>Capture</th>
                           </tr>
                         </thead>
@@ -435,16 +410,7 @@ const imagingExecutant = () => {
                                     <img src={item.thumbImpression} />
                                   </div>
                                 </td>
-                                <td className="text-center">
-                                  {/* <div className="form-check-checkbox">
-                                <Form.Check
-                                  type={"checkbox"} className="checkbox-check"
-                                  name="esignSignature" />
-                              </div> */}
-                                  <div className="emptyBox1">
-                                    <img src={item.esignSignature} />
-                                  </div>
-                                </td>
+
                                 <td>
                                   <button className="capture">
                                     {item.capture}
@@ -745,7 +711,9 @@ const imagingExecutant = () => {
                           </div>
 
                           <div className="pageNextBtn">
+                            <Link href="/AssigningVerification">
                             <button className="next">Save</button>
+                            </Link>
                           </div>
                         </div>
                       )}

@@ -3,8 +3,10 @@ import Head from "next/head";
 import Image from "next/image";
 import { Container, Row, Col, Form, Popover, Overlay } from "react-bootstrap";
 import { useTable, usePagination } from "react-table";
-import Stepper from '../components/Stepper'
-import Link from 'next/link';
+import Stepper from "../components/Stepper";
+import Link from "next/link";
+import { DatePicker, Space } from 'antd';
+const { RangePicker } = DatePicker;
 function Table({ columns, data }) {
   const {
     getTableProps,
@@ -737,7 +739,7 @@ function AdmissionofExecution() {
             <div className="documentsTable pageTableMain pageTableContainer">
 
                 <Row className="mb-4">
-                  <Col lg={6} md={4} xs={12}>
+                  <Col lg={3} md={4} xs={12}>
                     <div className="pageTableTabs">
                       {["Accept (30)", "Ammend (5)"].map((o, i) => {
                         return (
@@ -762,50 +764,24 @@ function AdmissionofExecution() {
                     </div>
                   </Col>
 
-                  <Col lg={6} md={4} xs={12} className="pageTableSearch">
+                  <Col lg={9} md={4} xs={12} className="pageTableSearch">
                     <div className="d-flex justify-content-end">
                       <div className="mx-3">
-                        <form className="md-form">
+                      
                           <div
                             className={`input-group md-form form-sm form-1 pl-0`}
                           >
-                            <input
-                              className={`form-control form-control-sm ml-3 w-75`}
-                              type="text"
-                              placeholder="Search Here.."
-                              aria-label="Search"
-                            />
-                            <div className={`input-group-prepend`}>
-                              <button
-                                className={`btn btn-outline-success`}
-                                type="submit"
-                              >
-                                <Image
-                                  width={23}
-                                  height={23}
-                                  src="/images/Search-icon.svg"
-                                />
-                              </button>
-                            </div>
+                            
+                          
+                            <input type="text" className="justify-content-end float-end search-click" style={{ borderRadius: "5px", borderColor: "#5692B4", height: "40px" }} name="" placeholder="Please search with any of these - CS No / Ack No / App No / Presentant Name" />
                           </div>
-                        </form>
+                        
                       </div>
 
                       <div>
                         <div className="searchFiler">
                           <button className="today">Today</button>
-                          <button
-                            className="filter"
-                            data-bs-toggle="modal"
-                            data-bs-target="#exampleModals"
-                          >
-                            <small>Filters</small>
-                            <Image
-                              width={20}
-                              height={20}
-                              src="/images/filter.svg"
-                            />
-                          </button>
+                          <RangePicker />
                         </div>
                       </div>
                     </div>

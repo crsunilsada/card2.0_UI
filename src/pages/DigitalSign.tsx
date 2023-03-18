@@ -19,7 +19,7 @@ const DigitalSign = () => {
               <div className="acknowledgement">
                 <button className="partyDetails">Scanning</button>
                 <button className="active imaging">Digital Sign</button>
-              </div>
+              </div><br></br><br></br><br></br><br></br><br></br><br></br>
               <Row className="pt-7 order_passing">
                 <Col lg={6} md={6} sm={12} className="mb-4">
                   <div className="text_wrap">

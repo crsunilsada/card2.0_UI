@@ -5,6 +5,8 @@ import { Container, Row, Col, Form, Overlay, Popover } from "react-bootstrap";
 import { useTable, usePagination } from "react-table";
 import Stepper from '../components/Stepper'
 import Link from "next/link";
+import { DatePicker, Space } from 'antd';
+const { RangePicker } = DatePicker;
 function Table({ columns, data }) {
   const {
     getTableProps,
@@ -80,18 +82,18 @@ function Table({ columns, data }) {
                 })}
                 <td className="text-center">
                   <Link href={"/scanning"}>
-                  <button className="basicDetails">
-                    {" "}
-                    <Image width={25} height={25} src="/images/Scanning.svg" />
-                    <small>Scanning</small>
-                  </button>
+                    <button className="basicDetails">
+                      {" "}
+                      <Image width={25} height={25} src="/images/Scanning.svg" />
+                      <small>Bundling</small>
+                    </button>
                   </Link>
                   <Link href={"/DigitalSign"}>
-                  <button className="print">
-                    {" "}
-                    <Image width={25} height={25} src="/images/DigiSign.svg" />
-                    <small>Digital Sign</small>
-                  </button>
+                    <button className="print">
+                      {" "}
+                      <Image width={25} height={25} src="/images/DigiSign.svg" />
+                      <small>Digital Sign</small>
+                    </button>
                   </Link>
                 </td>
               </tr>
@@ -150,29 +152,18 @@ function Table({ columns, data }) {
 }
 
 function ScanningUpload() {
+  const [display, setdisplay] = useState(false)
+  const handleClick1 = () => {
+      setdisplay(true)
+  }
+  useEffect(() => {
+      require("bootstrap/dist/js/bootstrap.bundle.min.js");
+  }, []);
   const [clicked, setclicked] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState(0);
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
-
-  let appNo = (
-    <>
-      {" "}
-      <div className="d-flex">
-        <input
-          onClick={checkboxes}
-          className="form-check-input"
-          type="checkbox"
-          value=""
-          id="flexCheckDefault"
-        />
-        <label className="form-check-label" htmlFor="flexCheckDefault">
-          456787654
-        </label>
-      </div>
-    </>
-  );
 
   const columns = React.useMemo(
     () => [
@@ -222,7 +213,7 @@ function ScanningUpload() {
       appNo: (
         <>
           {" "}
-          <div className="d-flex">
+          <div className="d-flex form-check-checkbox">
             <input
               onClick={checkboxes}
               className="form-check-input"
@@ -251,7 +242,7 @@ function ScanningUpload() {
       appNo: (
         <>
           {" "}
-          <div className="d-flex">
+          <div className="d-flex form-check-checkbox" >
             <input
               onClick={checkboxes}
               className="form-check-input"
@@ -278,7 +269,7 @@ function ScanningUpload() {
     {
       appNo: (
         <>
-          <div className="d-flex">
+          <div className="d-flex form-check-checkbox">
             <input
               onClick={checkboxes}
               className="form-check-input"
@@ -306,7 +297,7 @@ function ScanningUpload() {
       appNo: (
         <>
           {" "}
-          <div className="d-flex">
+          <div className="d-flex form-check-checkbox">
             <input
               onClick={checkboxes}
               className="form-check-input"
@@ -334,7 +325,7 @@ function ScanningUpload() {
       appNo: (
         <>
           {" "}
-          <div className="d-flex">
+          <div className="d-flex form-check-checkbox">
             <input
               onClick={checkboxes}
               className="form-check-input"
@@ -361,7 +352,7 @@ function ScanningUpload() {
     {
       appNo: (
         <>
-          <div className="d-flex">
+          <div className="d-flex form-check-checkbox">
             <input
               onClick={checkboxes}
               className="form-check-input"
@@ -389,7 +380,7 @@ function ScanningUpload() {
       appNo: (
         <>
           {" "}
-          <div className="d-flex">
+          <div className="d-flex form-check-checkbox">
             <input
               onClick={checkboxes}
               className="form-check-input"
@@ -416,7 +407,7 @@ function ScanningUpload() {
     {
       appNo: (
         <>
-          <div className="d-flex">
+          <div className="d-flex form-check-checkbox">
             <input
               onClick={checkboxes}
               className="form-check-input"
@@ -480,7 +471,7 @@ return (
       <div className="mainWrapper">
         <div className="wrapperInner">
           <div className="acknowledgement">
-            <h4>Scanning & Upload</h4>
+            <h4>Bundling</h4>
           </div>
 
             <div
@@ -532,57 +523,53 @@ return (
             <div className="documentsTable pageTableMain pageTableContainer">
 
                 <Row className="mb-4">
-                  <Col lg={4} md={4} xs={12}>
+                  <Col lg={3} md={4} xs={12}>
                     <div className="pageTableTabs">
                     <button className="activeButton">Accept (30)</button>
                           <button className="button">Ammend (5)</button>
                     </div>
                   </Col>
 
-                  <Col lg={8} md={4} xs={12} className="pageTableSearch">
+                  <Col lg={9} md={4} xs={12} className="pageTableSearch">
                     <div className="d-flex justify-content-end">
                       <div className="mx-3">
-                        <form className="md-form">
+                      
                           <div
                             className={`input-group md-form form-sm form-1 pl-0`}
                           >
-                            <input
-                              className={`form-control form-control-sm ml-3 w-75`}
-                              type="text"
-                              placeholder="Search Here.."
-                              aria-label="Search"
-                            />
-                            <div className={`input-group-prepend`}>
-                              <button
-                                className={`btn btn-outline-success`}
-                                type="submit"
-                              >
-                                <Image
-                                  width={23}
-                                  height={23}
-                                  src="/images/Search-icon.svg"
-                                />
-                              </button>
-                            </div>
+                               <div className="col">
+
+
+
+
+
+<input type="text" className="justify-content-end float-end search-click" style={{  borderRadius: "5px", borderColor: "#5692B4", height: "40px" }} name="" placeholder="Please search with any of these - CS No / Ack No / App No / Presentant Name" />
+
+
+
+{display && ("")
+
+
+
+}
+
+
+
+
+
+
+</div>
+
+
                           </div>
-                        </form>
+              
                       </div>
 
                       <div>
                         <div className="searchFiler">
                           <button className="today">Today</button>
-                          <button
-                            className="filter"
-                            data-bs-toggle="modal"
-                            data-bs-target="#exampleModals"
-                          >
-                            <small>Filters</small>
-                            <Image
-                              width={20}
-                              height={20}
-                              src="/images/filter.svg"
-                            />
-                          </button>
+                          
+                          <RangePicker />
                         </div>
                       </div>
 

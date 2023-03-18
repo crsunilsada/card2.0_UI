@@ -13,7 +13,7 @@ const Endorsement = () => {
         <Stepper showReason={false} />
         <div className="pageMainWrap innerpage">
             <Head>
-                <title>Digital Sign - CARD</title>
+                <title>Endorsement - CARD</title>
                 <meta name="description" content="login" />
                 <link rel="icon" href="/igrsfavicon.ico" />
             </Head>
@@ -23,7 +23,8 @@ const Endorsement = () => {
                         <div className="pageTableContainer">
                             <div className="acknowledgement">
                                 <button className="partyDetails">Assigning</button>
-                                <button className="active imaging">Endorement</button>
+                                <button className="active imaging">Endorsement</button>
+
                             </div>
                             <div>
                                 <Row>
@@ -134,16 +135,17 @@ const Endorsement = () => {
                                             <button className=" clear">
                                                 Exit
                                             </button>
-                                            {/* <Link href={"/ScanningUpload"}> */}
-                                            <button className="next" data-bs-toggle="modal" data-bs-target="#alert">Print</button>
-                                            {/* </Link> */}
+
+                                            {/* <button className="next" >Print</button> */}
+                                            <button className="next" data-bs-toggle="modal" data-bs-target="#alert">View</button>
+
                                             <div >
                                                 <Container >
                                                     <div className="modal" id="alert" aria-labelledby="alertLabel" aria-hidden="true">
                                                         <div className="modal-dialog modal-dialog-centered modal-md">
                                                             <div className="modal-content">
                                                                 <div className="modal-header">
-                                                                    <h5 className="modal-title" id="alertLabel">Endorsement Print </h5>
+                                                                    <h5 className="modal-title" id="alertLabel">Endorsement</h5>
                                                                     <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close">
                                                                         <Image width={20} height={20} src="/images/popup-close.svg" />
                                                                     </button>
@@ -163,7 +165,7 @@ const Endorsement = () => {
                                                                         <Row className="text-center">
                                                                             <Col lg={9} md={9} xs={12}>
                                                                             <Link href={"/ScanningUpload"}>
-                                                                            <button type="button" className="bluebuttonclass">Print</button>
+                                                                            <button type="button" className="bluebuttonclass">Save</button>
                                                                             </Link>
                                                                             </Col>
                                                                         </Row>

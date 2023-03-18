@@ -202,23 +202,23 @@ function SRO() {
                                         type="text"
                                         placeholder="Comments(Optional)" style={{height:"100px"}} />
                                     <Form.Label htmlFor="floatingInputCustom">
-                                       Comments(Optional)  
+                                       Comments(Optional)
                                     </Form.Label>
                                 </Form.Floating>
                                     </Col>
                                 </Row>
                             </Container>
                             <Row className="justify-content-md-center ">
-                                <Col lg={3} md={3} xs={12}>
+                                <Col lg={2} md={2} xs={12}>
                                     <div className="pageNextBtn">
-                                        <button className="next">Assign SRO for the Day</button>
+                                        <button className="next" style={{width: '270px'}}>Assign SRO for the Day</button>
                                     </div>
                                 </Col>
                             </Row><br />
                             <Container >
                                 <Row className="justify-content-center  ">
                                     <Col lg={6} md={6} xs={12}  >
-                                        <h6  className="pl-3"> SROs History</h6>
+                                        <h5  className="pl-3"> History</h5>
                                     </Col>
                                 </Row>
                             </Container>

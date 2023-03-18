@@ -7,7 +7,9 @@ const Stepper = (props) => {
   const { showReason } = props;
 
   useEffect(() => {
-    if (window.location.pathname === "/Verification") {
+    // if (window.location.pathname === "/sroReview" || window.location.pathname === "/anotherPathname") {
+    if (window.location.pathname === "/Verification"  || window.location.pathname === "/propertyDetails" || window.location.pathname === "/partyDetails" || window.location.pathname === "/CashReceipt") {
+      setSelected(true);
       setSelected1(true);
     }
     if (window.location.pathname === "/admissionofExecution") {
@@ -19,11 +21,11 @@ const Stepper = (props) => {
       setSelected1(true);
       setSelected(true);
     }
-    if (window.location.pathname === "/assigning") {
+    if (window.location.pathname === "/assigning" || window.location.pathname === "/Endorsement" || window.location.pathname === "/AssigningVerification"  ) {
       setSelected4(true);
       setSelected3(true);
     }
-    if (window.location.pathname === "/ScanningUpload") {
+    if (window.location.pathname === "/ScanningUpload" || window.location.pathname === "/scanning" || window.location.pathname === "/DigitalSign") {
       setSelected5(true);
       setSelected4(true);
       setSelected3(true);
@@ -82,7 +84,7 @@ const Stepper = (props) => {
     <ul className="progressbar">
         <li className="completed" onClick={handleClick3}><div className="progress_step_text">Admission Of Execution</div></li>
         <li className={selected4 ? "completed" : "inactive"} onClick={handleClick4}><div className="progress_step_text">Assigning</div></li>
-        <li className={selected5 ? "completed" : "inactive"} onClick={handleClick5}><div className="progress_step_text">Scanning And Upload</div></li>
+        <li className={selected5 ? "completed" : "inactive"} onClick={handleClick5}><div className="progress_step_text">Bundling</div></li>
         <li className={selected6 ? "completed" : "inactive"} onClick={handleClick6}><div className="progress_step_text">Document Handover</div></li>
     </ul>
   </div>)}

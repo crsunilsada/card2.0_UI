@@ -68,11 +68,12 @@ p:last-child {
 }
 
 .pageMainWrap {
-    min-height: calc(100vh - 90px);
+
     padding: 5px 0;
     background: $aquaHaze;
 
     .mainWrapper {
+
         max-width: 1795px;
         margin: auto;
         background: $white;
@@ -90,6 +91,7 @@ p:last-child {
             border-radius: 4px;
             padding: 30px 0 40px;
             position: relative;
+            min-height: calc(100vh - 363px);
 
             .pageTableContainer {
                 max-width: 1653px;
@@ -352,6 +354,21 @@ p:last-child {
                         text-align: center;
                         color: $white;
                         padding: 0;
+                    }
+
+                    button.capture-disable {
+                        width: 160px;
+                        height: 60px;
+                        background: $blue;
+                        border-radius: 4px;
+                        font-weight: 600;
+                        font-size: 14px;
+                        line-height: 16px;
+                        text-align: center;
+                        color: $white;
+                        padding: 0;
+                        opacity: 0.5;
+
                     }
 
                     button.digital-sign-btn {
@@ -2076,7 +2093,7 @@ body {
 
 .partydetails-image-box {
     box-sizing: border-box;
-    width: 213px;
+    width: 196px;
     height: 185px;
     background: #f6f8fd;
     border: 1px solid #c6d0ec;
@@ -2084,6 +2101,7 @@ body {
     margin: auto;
     display: flex;
     align-items: left;
+    margin-right: 146px;
 }
 
 .search-click {
@@ -2091,12 +2109,12 @@ body {
     outline: none;
     border-radius: 6px;
     width: 50px;
-    height: 50px;
+    height: 350px;
     transition: all 0.5s;
 }
 
 .search-click:focus {
-    width: 300px;
+    width: 615px;
 }
 
 .search-click {
@@ -2251,8 +2269,10 @@ body {
 
 .mainWrapper.dashboardWidth {
     max-width: 1370px;
-    margin: 230px auto 0;
-    padding: 34px;
+    margin: 187px auto 30px ;
+   // padding: 34px;
+
+
 
     p {
         color: #274C77;
@@ -2267,7 +2287,7 @@ body {
 }
 
 .scrollable {
-    height: 700px;
+    height: 500px;
     overflow-y: scroll;
 }
 
@@ -2515,3 +2535,97 @@ body {
 //   top: 120px;
 
 // }
+.tabsList-imaging {
+    position: absolute;
+    top: 120px;
+}
+
+.witnessList.witness1 {
+    border-bottom: 1px solid $black;
+    padding: 30px 0 20px;
+    margin: 0 0 20px;
+}
+
+.th-width{
+    width: 15%;
+}
+.saveBtn{
+    display: block;
+    margin: 97px auto 0;
+}
+
+.ant-picker-dropdown {
+
+    left: 1235px !important;
+
+  }
+
+
+
+  .ant-picker-range-arrow {
+
+    left: 360px !important;
+
+  }
+
+
+
+  .ant-picker-range {
+
+    border-radius: 30px;
+
+    width: 225px !important;
+
+  }
+
+
+
+  .ant-picker-cell-in-view.ant-picker-cell-in-range::before {
+
+    background: #D9D9D9 !important;
+
+  }
+
+
+
+  .ant-picker-cell-inner {
+
+    border-radius: 20px !important;
+
+    width: 27px !important;
+
+    height: 20px !important;
+
+    padding: 4px !important;
+
+    color: #274C77 !important;
+
+  }
+
+
+
+  .ant-picker {
+
+    border-color: #6096BA !important;
+
+    font-size: 20px;
+
+    height: 41px;//added
+
+  }
+
+
+
+  .ant-picker-suffix {
+
+    color: #274C77 !important;
+
+  }
+
+  .ant-picker-dropdown .ant-picker-cell-in-view .ant-picker-cell-range-start:not(.ant-picker-cell-range-start-single)::before,
+
+  :where(.css-dev-only-do-not-override-ph9edi).ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-range-end-single)::before {
+
+    background: #D9D9D9 !important;
+
+  }

@@ -10,6 +10,8 @@ const documentHandover = () => {
     useEffect(() => {
         require("bootstrap/dist/js/bootstrap.bundle.min.js");
     }, []);
+    const [clicked, setclicked] = useState(false);
+    const handleClick = () => { setclicked(true)};
     return (
         <><div><Stepper showReason1={true} /></div>
         <Stepper showReason={false} />
@@ -27,9 +29,9 @@ const documentHandover = () => {
                                 <button className="active partyDetails">Document Handover</button>
                             </div>
                             <div>
-                                <Row className="justify-content-center">
-                                <Col lg={2} md={2} xs={2}>
-                                    <Form.Floating>
+                                <Row className="justify-content-center mt-3">
+                                    <Col lg={2} md={2} xs={12} className="mb-3">
+                                        <Form.Floating>
                                             <Form.Control
                                                 id="floatingInputCustom"
                                                 type="dropdown"
@@ -92,7 +94,8 @@ const documentHandover = () => {
                                     </Col>
                                 </Row>
                                 <Row className="justify-content-center">
-                                    <Col lg={2} md={2} xs={12} className="mb-3">
+                                    <Col lg
+                                        ={2} md={2} xs={12} className="mb-3">
                                         <Form.Floating>
                                             <Form.Control
                                                 id="floatingInputCustom"
@@ -272,8 +275,7 @@ const documentHandover = () => {
                                         <Row>
                                         </Row>
                                     </Col>
-
-                                    <Col lg={2} md={2} xs={4} className="mx-4">
+                                    <Col lg={3} md={2} xs={4} className="float-end">
                                         <div className="partydetails-image-box">
                                         </div>
                                     </Col>
@@ -285,42 +287,48 @@ const documentHandover = () => {
                                         <p className="text-color">Nominee Thumb Capture</p>
                                     </Col>
                                 </Row>
-                                <Row className="justify-content-center">
-                                    <Col lg={8} md={8} xs={12} className="mb-3">
+                                <Row className="justify-content-start">
+                                    <Col lg={2} md={2} xs={2}></Col>
+                                    <Col lg={6} md={6} xs={12} className="mb-3">
                                         <div className="table-responsive">
                                             <table className="tableData listData tableheadBg table">
                                                 <thead>
                                                     <tr>
-                                                        <th style={{width:"15%"}} className="text-center">Name</th>
-                                                        <th style={{width:"15%"}} className="text-center">Thumb impression</th>
-                                                        <th style={{width:"15%"}} className="text-center">Capture</th>
+                                                        <th className="text-center th-width">Name</th>
+                                                        <th className="text-center th-width">Thumb impression</th>
+                                                        <th className="text-center th-width">Capture</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
                                                         <td className="text-center">Sanjay</td>
                                                         <td className="text-center">
-                                                            <button>
+                                                            <button onClick={handleClick}>
                                                                 <img height={160} width={120} src={"/images/executant-thumb-impression.svg"} />
                                                             </button>
                                                         </td>
                                                         <td className="text-center">
-                                                        <button className="capture" > Capture </button>
+                                                            <button className={ clicked ? "capture": "capture-disable" } > Capture </button>
                                                         </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
                                         </div>
                                     </Col>
+                                    <Col lg={2} md={2} xs={6} className="mb-3">
+                                        <div className="saveBtn ">
+                                            <button className="bluebuttonclass">Save</button>
+                                        </div>
+                                    </Col>
                                 </Row>
-                                <Row>
+                                {/* <Row>
                                     <Col lg={6} md={6} xs={6} className="mb-3"></Col>
                                     <Col lg={4} md={4} xs={6} className="mb-3">
                                         <div>
                                             <button className="bluebuttonclass">Save</button>
                                         </div>
                                     </Col>
-                                </Row>
+                                </Row> */}
                             </div>
                         </div>
                     </div>
