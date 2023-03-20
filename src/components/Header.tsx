@@ -106,7 +106,7 @@ const Header = () => {
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
-              <Dropdown.Item >View Profile</Dropdown.Item>
+              {/* <Dropdown.Item >View Profile</Dropdown.Item> */}
               <Dropdown.Item ><Link href={"/Login/LoginPage"}>Logout</Link></Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>

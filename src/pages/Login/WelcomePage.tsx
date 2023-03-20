@@ -11,7 +11,7 @@ const WelcomePage = () => {
     useEffect(() => {
       const timeoutId = setTimeout(() => {
         router.push('/');
-      },10000);
+      },3000);
 
       return () => {
         clearTimeout(timeoutId);
