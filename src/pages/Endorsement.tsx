@@ -1,9 +1,8 @@
-import { Container, Col, Row, Form, Button } from "react-bootstrap"
+import { Container, Col, Row, Form, Button, Modal } from "react-bootstrap"
 import Head from "next/head";
 import Stepper from '../components/Stepper'
 import Link from "next/link";
 import Image from "next/image";
-import Modal from 'react-bootstrap/Modal';
 
 import { useEffect, useState } from "react";
 const Endorsement = () => {
@@ -12,14 +11,6 @@ const Endorsement = () => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
-    // useEffect(() => {
-    //     handleShow()
-    // }, [])
-
-    useEffect(() => {
-        require("bootstrap/dist/js/bootstrap.bundle.min.js");
-    }, []);
     return (
         <><div><Stepper showReason1={true} /></div>
         <Stepper showReason={false} />
@@ -39,6 +30,12 @@ const Endorsement = () => {
 
                                 </div>
                                 <div>
+                                <Row className="mb-3">
+                                    <Col lg={12} md={12} xs={12}></Col>
+                                </Row>
+                                <Row className="mb-3">
+                                    <Col lg={12} md={12} xs={12}></Col>
+                                </Row>
                                     <Row>
                                         <Col lg={3} md={3} xs={12} className="mb-3">
                                             <Form.Floating>
@@ -120,18 +117,18 @@ const Endorsement = () => {
                                             </Form.Floating>
                                         </Col>
                                         <Col lg={3} md={12} xs={12} className="mb-3">
-
-                                            <Form.Select aria-label="Default select example" style={{ color: "red", borderColor: "red" }}>
-                                                <option value="Sub Registrar Name"></option>
-                                                <option value="Sub Registrar Name">Sub Registrar Name</option>
-                                                <option value="Sub Registrar Name">Sub Registrar Name</option>
-                                                <option value="Sub Registrar Name">Sub Registrar Name</option>
-                                            </Form.Select><span style={{ color: "red" }}> Sub Registrar Name mismatched</span>
-
-                                    </Col>
-                                </Row>
-                                <Row>
-                                    <Col lg={6} md={6} xs={12} className="mb-3">
+                                            <Form.Floating>
+                                                <Form.Select aria-label="Sub Registrar Name" id="floatingInputCustom" placeholder="Sub Registrar Name" style={{ color: "red", borderColor: "red" }}>
+                                                    <option value="1">Sub Registrar Name</option>
+                                                    <option value="2">Sub Registrar Name</option>
+                                                </Form.Select>
+                                                <Form.Label htmlFor="floatingInputCustom">Sub Registrar Name</Form.Label>
+                                            </Form.Floating>
+                                            <span style={{ color: "red" }}> Sub Registrar Name mismatched</span>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col lg={6} md={6} xs={12} className="mb-3">
 
                                     </Col>
                                     <Col lg={2} md={2} xs={12} className="mb-3">
@@ -142,81 +139,36 @@ const Endorsement = () => {
                                             <button className=" clear">
                                                 Exit
                                             </button>
-
-
                                                 <Button variant="primary" className="next" onClick={handleShow}>
                                                     View
                                                 </Button>
 
-                                                <div >
-                                                    <div className="modal" id="alert" aria-labelledby="alertLabel" aria-hidden="true">
-                                                        <Modal show={show} onHide={handleClose}>
-                                                            <Modal.Header closeButton>
-                                                                <Modal.Title>Endorsement</Modal.Title>
-                                                            </Modal.Header>
-
-                                                            <Modal.Body>
-                                                                <Container className="scrollable">
-                                                                    <Row className="text-center  ">
-                                                                        <Col lg={12} md={12} xs={12}>
-                                                                            <Image width={700} height={1100} src="/images/endrosementprint.svg" />
-                                                                        </Col>
-                                                                    </Row>
-
-                                                                </Container>
+                                                <Modal show={show} onHide={handleClose} className="modal fade modal-lg align-items-center justify-content-center show">
+                                                    <Modal.Header closeButton>
+                                                        <Modal.Title>Endorsement</Modal.Title>
+                                                    </Modal.Header>
+                                                    <Container className="scrollable">
+                                                        <Modal.Body className="justify-content-center text-center">
+                                                          <Row>
+                                                        <Col lg={12} md={12} xs={12}>
+                                                                        <Image width={700} height={1100} src="/images/endrosementprint.svg" />
+                                                                    </Col>
+                                                                </Row>
+                                                                <Row className="text-center  ">
+                                                                    <Col lg={12} md={12} xs={12}>
+                                                                        <Image width={700} height={1100} src="/images/endrosementprint.svg" />
+                                                                    </Col>
+                                                                </Row>
                                                             </Modal.Body>
-
-                                                            <Modal.Footer>
-
-                                                                <Link href={"/ScanningUpload"}>
-                                                                    <button type="button" className="bluebuttonclass">Save</button>
-                                                                </Link>
-
-                                                            </Modal.Footer>
-                                                        </Modal>
-                                                    </div>
-                                                    {/* <Container > */}
-                                                        {/* <div className="modal" id="alert" aria-labelledby="alertLabel" aria-hidden="true"> */}
-
-
-
-
-                                                        {/* <div className="modal-dialog modal-dialog-centered modal-md">
-                                                                <div className="modal-content">
-                                                                    <div className="modal-header">
-                                                                        <h5 className="modal-title" id="alertLabel">Endorsement</h5>
-                                                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                                                                            <Image width={20} height={20} src="/images/popup-close.svg" />
-                                                                        </button>
-                                                                    </div>
-                                                                    <div className="modal-body">
-                                                                        <Container className="scrollable">
-                                                                            <Row className="text-center  ">
-                                                                                <Col lg={12} md={12} xs={12}>
-                                                                                    <Image width={700} height={1100} src="/images/endrosementprint.svg" />
-                                                                                </Col>
-                                                                            </Row>
-                                                                            <Row className="text-center  ">
-                                                                                <Col lg={12} md={12} xs={12}>
-                                                                                    <Image width={700} height={1100} src="/images/endrosementprint.svg" />
-                                                                                </Col>
-                                                                            </Row>
-                                                                            <Row className="text-center">
-                                                                                <Col lg={9} md={9} xs={12}>
-
-                                                                                    <Link href={"/ScanningUpload"}>
-                                                                                        <button type="button" className="bluebuttonclass">Save</button>
-                                                                                    </Link>
-                                                                                </Col>
-                                                                            </Row>
-                                                                        </Container>
-                                                                    </div>
-                                                                </div>
-                                                            </div> */}
-
-                                                        {/* </div> */}
-                                                    {/* </Container> */}
-                                                </div>
+                                                        <Modal.Footer className="justify-content-center ">
+                                                            <Link href={"/AssigningVerification"}>
+                                                                <Button className="bluebuttonclass" onClick={handleClose}>
+                                                                    Save
+                                                                </Button>
+                                                            </Link>
+                                                        </Modal.Footer>
+                                                    </Container>
+                                                </Modal>
                                             </div>
                                         </Col>
                                     </Row>

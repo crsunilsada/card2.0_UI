@@ -51,17 +51,17 @@ function Table({ columns, data }) {
             <th className="text-center">App No.</th>
             <th className="text-center">Ack.No/ Year</th>
             <th className="text-center">CS No.</th>
-
-            <th className="text-center">Presenter Name</th>
-            <th className="text-center">
-              No. of <br />
-              Schedule
-            </th>
             <th className="text-center">
               CS No. & Ack No.
               <br />
               Generated Date & Time
             </th>
+            <th className="text-center">Presenter Name</th>
+            <th className="text-center">
+              No. of <br />
+              Schedule
+            </th>
+
             <th className="text-center">
               Book <br />
               Number
@@ -99,7 +99,7 @@ function Table({ columns, data }) {
         <ul className="pagination d-flex align-items-center justify-content-end">
           <li className="PageItems">
             Items per page:{" "}
-            <select
+            <select className="text-center"
               value={pageSize}
               onChange={(e) => {
                 setPageSize(Number(e.target.value));
@@ -312,21 +312,23 @@ function AdmissionofExecution() {
             Header: "CS No.",
             accessor: "csNo",
           },
-
-          {
-            Header: "No. of Schedule",
-            accessor: "presenterName",
-          },
           {
             Header: "CS No. & Ack No. Generated Date & Time",
+            accessor: "generateddatetime",
+          },
+
+
+          {
+            Header: "presenter name",
+            accessor: "presenterName",
+          },
+
+          {
+            Header: "No of schedule",
             accessor: "noofSchedule",
           },
           {
-            Header: "Book Number",
-            accessor: "generateddatetime",
-          },
-          {
-            Header: "Ack. No.",
+            Header: "book number",
             accessor: "bookNumber",
           },
           {
@@ -638,110 +640,20 @@ function AdmissionofExecution() {
         <link rel="icon" href="/igrsfavicon.ico" />
       </Head>
 
-      <div className="mainWrapper">
-        <div className="wrapperInner">
-          <div className="acknowledgement">
-            <h4>Admission of Execution</h4>
-          </div>
-            <div
-              className="modal-path modal fade modal-sm"
-              id="exampleModals"
-              tabIndex={-1}
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div className="modal-dialog mt-5">
-                <div className="modal-content">
-                  <div className="modal-body">
-                    <Row>
-                      <Col lg={12} md={12} xs={12} className="mb-3">
-                        <div className="clear-date d-flex justify-content-end p-2">
-                          Clear
-                        </div>
-                        <Form.Floating>
-                          <Form.Control
-                            id="floatingInputCustom"
-                            type="date"
-                            placeholder="From Date"
-                          />
-                          <Form.Label htmlFor="floatingInputCustom">
-                            From Date
-                          </Form.Label>
-                        </Form.Floating>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col lg={12} md={12} xs={12}>
-                        <Form.Floating>
-                          <Form.Control
-                            id="floatingInputCustom"
-                            type="date"
-                            placeholder="To Date"
-                          />
-                          <Form.Label htmlFor="floatingInputCustom">
-                            To Date
-                          </Form.Label>
-                        </Form.Floating>
-                      </Col>
-                    </Row>
-                  </div>
-                </div>
-              </div>
+        <div className="mainWrapper">
+          <div className="wrapperInner">
+            <div className="acknowledgement">
+              <h4>Admission of Execution</h4>
             </div>
 
-            <div ref={ref}>
-              <Overlay
-                onHide={handleClose}
-                show={show1}
-                target={target}
-                placement="bottom"
-                container={ref}
-                containerPadding={20}
-              >
-                <Popover id="popover-contained">
-                  <Popover.Body>
-                    <Row>
-                      <Col lg={12} md={12} xs={12} className="mb-3">
-                        <div className="clear-date d-flex justify-content-end p-2">
-                          Clear
-                        </div>
-                        <Form.Floating>
-                          <Form.Control
-                            id="floatingInputCustom"
-                            type="date"
-                            placeholder="From Date"
-                          />
-                          <Form.Label htmlFor="floatingInputCustom">
-                            From Date
-                          </Form.Label>
-                        </Form.Floating>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col lg={12} md={12} xs={12}>
-                        <Form.Floating>
-                          <Form.Control
-                            id="floatingInputCustom"
-                            type="date"
-                            placeholder="To Date"
-                          />
-                          <Form.Label htmlFor="floatingInputCustom">
-                            To Date
-                          </Form.Label>
-                        </Form.Floating>
-                      </Col>
-                    </Row>
-                  </Popover.Body>
-                </Popover>
-              </Overlay>
-            </div>
+
 
             <div className="documentsTable pageTableMain pageTableContainer">
 
                 <Row className="mb-4">
                   <Col lg={3} md={4} xs={12}>
                     <div className="pageTableTabs">
-                      {["Accept (30)", "Ammend (5)"].map((o, i) => {
+                      {["Accept (30)"].map((o, i) => {
                         return (
                           <button
                             key={o}
@@ -767,15 +679,15 @@ function AdmissionofExecution() {
                   <Col lg={9} md={4} xs={12} className="pageTableSearch">
                     <div className="d-flex justify-content-end">
                       <div className="mx-3">
-                      
+
                           <div
                             className={`input-group md-form form-sm form-1 pl-0`}
                           >
-                            
-                          
-                            <input type="text" className="justify-content-end float-end search-click" style={{ borderRadius: "5px", borderColor: "#5692B4", height: "40px" }} name="" placeholder="Please search with any of these - CS No / Ack No / App No / Presentant Name" />
+
+
+                            <input type="text" className="justify-content-end float-end search-click" style={{ borderRadius: "5px", borderColor: "#5692B4", height: "40px" }} name="" placeholder=" Please search with - CS No / Ack No / App No / Presentant Name" />
                           </div>
-                        
+
                       </div>
 
                       <div>

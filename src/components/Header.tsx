@@ -60,7 +60,8 @@ const Header = () => {
                       <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Registration </a>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <li className="dropdown-submenu"><a className="dropdown-item dropdown-toggle">Document Registration</a>
+                          <li className="dropdown-submenu"><a className="dropdown-item dropdown-toggle">CARD - Manual Entry</a></li>
+                          <li className="dropdown-submenu"><a className="dropdown-item dropdown-toggle" href="/admissionofExecution">CARD - PDE</a>
                             {/* <ul className="dropdown-menu">
                               <li><a className="dropdown-item" href="#">CARD - Manual Entry</a></li>
                               <li><a className="dropdown-item" href="/admissionofExecution">CARD - PDE</a></li>
@@ -76,14 +77,16 @@ const Header = () => {
                       <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SRO </a>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li className="dropdown-submenu"><a className="dropdown-item dropdown-toggle">Document Registration</a>
-                            <ul className="dropdown-menu">
+                        <li className="dropdown-submenu"><a className="dropdown-item dropdown-toggle">CARD - Manual Entry</a></li>
+                          <li className="dropdown-submenu"><a className="dropdown-item dropdown-toggle" href="/pdeScrutinyList">CARD - PDE</a>
+                            {/* <ul className="dropdown-menu">
                               <li><a className="dropdown-item" href="#">CARD - Manual Entry</a></li>
                               <li><a className="dropdown-item" href="/pdeScrutinyList">CARD - PDE</a></li>
 
-                            </ul>
+                            </ul> */}
                           </li>
                           <li><a className="dropdown-item" href="/otherMenu/SRO">SRO For The Day</a></li>
+                          <li><a className="dropdown-item" href="/otherMenu/SroEsign">SRO Esign</a></li>
                           {/* <li><a className="dropdown-item" href="#">Grant Permission</a></li> */}
                         </ul>
                       </li>

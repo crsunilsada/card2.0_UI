@@ -15,51 +15,50 @@ const DigitalSign = () => {
         </Head>
         <div className="mainWrapper">
           <div className="wrapperInner">
-            <div className="pageTableContainer">
-              <div className="acknowledgement">
-                <button className="partyDetails">Scanning</button>
-                <button className="active imaging">Digital Sign</button>
-              </div><br></br><br></br><br></br><br></br><br></br><br></br>
-              <Row className="pt-7 order_passing">
-                <Col lg={6} md={6} sm={12} className="mb-4">
-                  <div className="text_wrap">
-                  <div className="mb-4">
-                  <p className="digitalSignHeader">SRO Name</p>
-                  </div>
-                  <Form.Select aria-label="Default select example my_option">
+            <div className="acknowledgement">
+              <button className="partyDetails">Scanning</button>
+              <button className="active imaging">Digital Sign</button>
+            </div>
+            <div className="pageTableContainer mt-3">
+              <Row>
+                <Col lg={10} md={10} xs={10}></Col>
+                <Col lg={2} md={2} xs={2}>
+                <h4 >Device Mantra</h4>
+                </Col>
+              </Row>
+	      <Row className="mt-3">
+                <Col lg={3} md={3} xs={3}></Col>
+                <Col lg={3} md={3} xs={3}>
+                
+                </Col>
+              </Row>
+              <Row>
+                <Col lg={3} md={3} xs={3}></Col>
+                <Col lg={3} md={3} xs={3}>
+                <h4 >SRO Name</h4>
+                </Col>
+              </Row>
+	      <Row className="mt-3">
+                <Col lg={3} md={3} xs={3}></Col>
+                <Col lg={3} md={3} xs={3}>
+                
+                </Col>
+              </Row>
+              <Row>
+                <Col lg={3} md={3} xs={3}></Col>
+                <Col lg={3} md={3} xs={3} className="mt-3">
+               	 <Form.Select aria-label="Default select example my_option">
                     <option value="">Designation</option>
                     <option value="10">Chairman</option>
                     <option value="20">AP Registrar Head</option>
                     <option value="30">Document Writer</option>
                   </Form.Select>
-                  </div>
                 </Col>
-                <Col lg={6} md={6} sm={12}>
-
-                  <div className="heading_session">
-
-                  <div className="mb-2">
-
-                    <h4>Device Mantra</h4>
-
-                  </div>
-
-                  <div className="pageNextBtn">
-
-                    <Link href={"/documentHandover"}>
-
-                    <Col lg={3} md={3} sm={12}>
-
+                <Col lg={1} md={1} xs={1}></Col>
+                <Col lg={1} md={1} xs={1} className="pageNextBtn">
+                    <Link href={"/ScanningUpload"}>
                       <button className="next">Submit</button>
-
-                      </Col>
-
                     </Link>
-
-                  </div>
-
-                  </div>
-
                 </Col>
               </Row>
 

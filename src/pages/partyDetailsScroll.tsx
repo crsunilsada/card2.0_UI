@@ -1,11 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/Link";
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import { Container, Row, Col, Table, Tab, Nav, Form } from "react-bootstrap";
-import Stepper from '../components/Stepper'
-import { useRouter } from 'next/router'
-import { redirect } from "next/dist/server/api-utils";
+import { Row, Col, Tab, Nav, Form } from "react-bootstrap";
+import Stepper from '../components/Stepper';
 const partyDetailsScroll = () => {
   const [activeTab, setActiveTab] = useState('first');
   const handleNextClick = () => {
@@ -16,48 +14,6 @@ const partyDetailsScroll = () => {
   const [selectedOption, setSelectedOption] = useState("S/o");
   const handleOptionClick = (event) => { setSelectedOption(event.target.textContent); };
   useEffect(() => { require("bootstrap/dist/js/bootstrap.bundle.min.js"); }, []);
-  const tableData = [
-    {
-      code: "01-TS",
-      description: "Stamp Duty",
-      amounttoPay: "1000",
-      byCFMS: "345",
-      byStock: "457",
-      byCFMSStock: "978",
-      byCash: "123",
-      byDD: "123",
-    },
-    {
-      code: "01-TS",
-      description: "Stamp Duty",
-      amounttoPay: "1000",
-      byCFMS: "345",
-      byStock: "457",
-      byCFMSStock: "978",
-      byCash: "123",
-      byDD: "123",
-    },
-    {
-      code: "01-TS",
-      description: "Stamp Duty",
-      amounttoPay: "1000",
-      byCFMS: "345",
-      byStock: "457",
-      byCFMSStock: "978",
-      byCash: "123",
-      byDD: "123",
-    },
-    {
-      code: "01-TS",
-      description: "Stamp Duty",
-      amounttoPay: "1000",
-      byCFMS: "345",
-      byStock: "457",
-      byCFMSStock: "978",
-      byCash: "123",
-      byDD: "123",
-    },
-  ];
   return (
     <><div><Stepper showReason2={true} /></div>
     <Stepper showReason={true} />
@@ -491,12 +447,15 @@ const partyDetailsScroll = () => {
                   <Col lg={9} md={9} xs={89}>
                     <Row>
                       <Col lg={6} md={6} xs={12} className="mb-3">
-                        <Form.Select aria-label="Default select example">
-                          <option value="10">ID Proof</option>
-                          <option value="10">Aadhar card</option>
-                          <option value="20">PAN card</option>
-                          <option value="30">Voter Id</option>
-                        </Form.Select>
+                        <Form.Floating>
+                          <Form.Select aria-label="Book No" id="floatingInputCustom" placeholder="ID Proof">
+                            <option value="2">Aadhar Card</option>
+                            <option value="3">Pan Card</option>
+                          </Form.Select>
+                          <Form.Label htmlFor="floatingInputCustom">
+                            ID Proof
+                          </Form.Label>
+                        </Form.Floating>
                       </Col>
                       <Col lg={6} md={6} xs={12} className="mb-3">
                         <Form.Floating>
@@ -562,8 +521,8 @@ const partyDetailsScroll = () => {
                           <Form.Control
                             id="floatingInputCustom"
                             type="text"
-                            placeholder="Phone Number"
-                            name="phonenumber"
+                            placeholder="address"
+                            name="address"
                             value="Flat 120, Block C, Anjali Residency.."
                           />
                           <label htmlFor="floatingInputCustom">
@@ -592,8 +551,8 @@ const partyDetailsScroll = () => {
                           <Form.Control
                             id="floatingInputCustom"
                             type="text"
-                            placeholder="PAN Card Number"
-                            name="pancardnumber"
+                            placeholder="PAN Number"
+                            name="pannumber"
                             value="CBAK0769K"
                           />
                           <label htmlFor="floatingInputCustom">
@@ -656,10 +615,9 @@ const partyDetailsScroll = () => {
                     <Row>
                       <Col lg={6} md={6} xs={12} className="mb-3">
                         <Form.Floating>
-                          <Form.Select aria-label="Book No" id="floatingInputCustom" placeholder="Book No">
-                            <option value="1" selected>1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
+                          <Form.Select aria-label="Book No" id="floatingInputCustom" placeholder="ID Proof">
+                            <option value="1">Aadhar Card</option>
+                            <option value="2">Pan Card</option>
                           </Form.Select>
                           <Form.Label htmlFor="floatingInputCustom">
                             Id Proof
@@ -760,7 +718,7 @@ const partyDetailsScroll = () => {
                           <Form.Control
                             id="floatingInputCustom"
                             type="text"
-                            placeholder="PAN Card Number"
+                            placeholder="PAN Number"
                             name="pancardnumber"
                             value="DBAGK721B"
                           />
@@ -823,12 +781,15 @@ const partyDetailsScroll = () => {
                   <Col lg={9} md={9} xs={89}>
                     <Row>
                       <Col lg={6} md={6} xs={12} className="mb-3">
-                        <Form.Select aria-label="Default select example">
-                          <option value="10">ID Proof</option>
-                          <option value="10">Aadhar card</option>
-                          <option value="20">PAN card</option>
-                          <option value="30">Voter Id</option>
-                        </Form.Select>
+                        <Form.Floating>
+                          <Form.Select aria-label="Book No" id="floatingInputCustom" placeholder="ID Proof">
+                            <option value="1">Aadhar Card</option>
+                            <option value="2">Pan Card</option>
+                          </Form.Select>
+                          <Form.Label htmlFor="floatingInputCustom">
+                            ID Proof
+                          </Form.Label>
+                        </Form.Floating>
                       </Col>
                       <Col lg={6} md={6} xs={12} className="mb-3">
                         <Form.Floating>
@@ -924,8 +885,8 @@ const partyDetailsScroll = () => {
                           <Form.Control
                             id="floatingInputCustom"
                             type="text"
-                            placeholder="PAN Card Number"
-                            name="pancardnumber"
+                            placeholder="PAN Number"
+                            name="pannumber"
                             value="ABCKG0123A"
                           />
                           <label htmlFor="floatingInputCustom">
@@ -987,12 +948,15 @@ const partyDetailsScroll = () => {
                   <Col lg={9} md={9} xs={89}>
                     <Row>
                       <Col lg={6} md={6} xs={12} className="mb-3">
-                        <Form.Select aria-label="Default select example">
-                          <option value="10">ID Proof</option>
-                          <option value="10">Aadhar card</option>
-                          <option value="20">PAN card</option>
-                          <option value="30">Voter Id</option>
-                        </Form.Select>
+                        <Form.Floating>
+                          <Form.Select aria-label="Book No" id="floatingInputCustom" placeholder="ID Proof">
+                            <option value="1">Aadhar Card</option>
+                            <option value="2">Pan Card</option>
+                          </Form.Select>
+                          <Form.Label htmlFor="floatingInputCustom">
+                            ID Proof
+                          </Form.Label>
+                        </Form.Floating>
                       </Col>
                       <Col lg={6} md={6} xs={12} className="mb-3">
                         <Form.Floating>
@@ -1015,7 +979,7 @@ const partyDetailsScroll = () => {
                             id="floatingInputCustom"
                             type="text"
                             placeholder="Name"
-                            value="Deepika Basu"
+                            value="Sanjay Kumar"
                           />
                           <label htmlFor="floatingInputCustom">
                             Name
@@ -1088,8 +1052,8 @@ const partyDetailsScroll = () => {
                           <Form.Control
                             id="floatingInputCustom"
                             type="text"
-                            placeholder="PAN Card Number"
-                            name="pancardnumber"
+                            placeholder="PAN Number"
+                            name="pannumber"
                             value="ABLKG0856B"
                           />
                           <label htmlFor="floatingInputCustom">

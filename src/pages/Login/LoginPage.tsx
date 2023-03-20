@@ -7,7 +7,6 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import Link from "next/link";
 import Head from "next/head";
 import { Alert } from "react-bootstrap";
-
 function MyVerticallyCenteredModal(props) {
     return (
         <Modal
@@ -30,10 +29,9 @@ function MyVerticallyCenteredModal(props) {
         </Modal>
     );
 }
-
 const LoginPage = () => {
     const [display, setDisplay] = useState(false);
-    const [selectedOption, setSelectedOption] = useState("");
+    const [selectedOption, setSelectedOption] = useState("option4");
     useEffect(() => {
         if (display) {
             setTimeout(() => {
@@ -45,36 +43,28 @@ const LoginPage = () => {
         setSelectedOption(e.target.value);
         };
     const [modalShow, setModalShow] = useState(false);
-
     const [searchTerm, setSearchTerm] = useState('');
     const [searchEmp, setSearchEmp] = useState('');
     const [showSuggestions, setShowSuggestions] = useState(false);
     const [showSuggestionsEmp, setShowSuggestionsEmp] = useState(false);
-
     const suggestions1 = ['KRISHNA', 'GUNTUR', 'VIZAG', 'VIJAYAWADA', 'WEST GODAVARI'];
     const suggestions2 = ['5233', '4562', '3453', '2343', '1234'];
-
     const handleInputChange = (event) => {
         setSearchTerm(event.target.value);
         setShowSuggestions(true);
     };
-
     const handleSuggestionClick = (suggestion) => {
         setSearchTerm(suggestion);
         setShowSuggestions(false);
     };
-
     const handleInputChangeEmp = (event) => {
         setSearchEmp(event.target.value);
         setShowSuggestionsEmp(true);
     };
-
     const handleSuggestionClickEmp = (suggestion) => {
         setSearchEmp(suggestion);
         setShowSuggestionsEmp(false);
     };
-
-
     return (
         <div className="pageMainWrap innerpage">
             <Head>
@@ -82,16 +72,15 @@ const LoginPage = () => {
                 <meta name="description" content="login" />
                 <link rel="icon" href="/igrsfavicon.ico" />
             </Head>
-	                <div style={{height: '72px'}}></div>
-            <div className="m-5">
+	                {/* <div style={{height: '72px'}}></div> */}
+            {/* <div className="m-5"> */}
                 <div className="LoginMargin">
                     <div className="LoginPage">
                         <Row className='Login-rightGrd'>
                             <Col lg={7} md={7} xs={7}>
-                                <Image src={LoginBG} alt="login-BG" height="722px"/>
+                                <Image src={LoginBG} alt="login-BG" height="732px"/>
                             </Col>
                             <Col lg={5} md={5} xs={5}>
-
                             {display ? (<Alert variant="success" className="bg-transparent border-0">
                             {/* <img src="/images/loading-icon.svg" />
                             <img src="/images/loading-icon2.svg" /> */}
@@ -126,7 +115,7 @@ const LoginPage = () => {
                                             </Col>
                                             <Col lg={2} md={2} xs={2}>
                                                 {/* <div> */}
-                                                <input className="form-check-input" onClick={(e) => { handleOptionChange(e); setDisplay(true); }} checked={selectedOption === "option4"} type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4" />&nbsp;
+                                                <input className="form-check-input"  onClick={(e) => { handleOptionChange(e); setDisplay(true); }} checked={selectedOption === "option4"} type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4" />&nbsp;
                                                 <label className="form-check-label" >SRO</label>
                                                 {/* </div> */}
                                             </Col>
@@ -168,7 +157,6 @@ const LoginPage = () => {
                                                     <div className="searchBoxIcon">
                                                 <Image width={20} height={20}  src='/images/Search-icon.svg' alt="Search" /></div>
                                                 </div>
-
                                             </Col>
                                         </Row>
                                         <Row>
@@ -223,7 +211,6 @@ const LoginPage = () => {
                                                         width={18}
                                                         height={18}
                                                         alt="Next-Tab"
-
                                                     />&nbsp;
                                                     <Image
                                                         src="/images/Ellipse-54.svg"
@@ -242,8 +229,7 @@ const LoginPage = () => {
                     </div>
                 </div>
             </div >
-
-	    </div>
+	    // </div>
     )
 }
 export default LoginPage;

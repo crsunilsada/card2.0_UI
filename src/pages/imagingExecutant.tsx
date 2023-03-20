@@ -1216,7 +1216,7 @@ const imagingExecutant = () => {
                           </div>
 
                           <div className="pageNextBtn">
-                            <Link href="/AssigningVerification">
+                            <Link href="/admissionofExecution">
                               <button className="next">Save</button>
                             </Link>
                           </div>

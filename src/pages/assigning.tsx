@@ -985,14 +985,14 @@ const Assigning = () => {
                 label="Regular Document Details"
                 name="inlineRadioOptions"
               />
-              <Form.Check
+              {/* <Form.Check
 
                 value=" Pending Document Details"
                 type="radio"
                 aria-label="Pending Document Details"
                 label="Pending Document Details"
                 name="inlineRadioOptions"
-              />
+              /> */}
             </div>
 
             <Row>
@@ -1039,19 +1039,19 @@ const Assigning = () => {
           <div className="pageTableContainer">
             <div className="pageNextBtn">
 
-              <button className="next " onClick={handleShow}>save</button>
-          
+              <button className="next " onClick={handleShow}>Save</button>
+
               <Modal show={show} onHide={handleClose} className="modal-path">
                 <Modal.Header closeButton>
                   <Modal.Title>Confirmation Message</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="justify-content-center text-center">Are you sure, you want to save the data,
                   Data once saved cannot be edited</Modal.Body>
-                <Modal.Footer className="justify-content-center">
-                <Link href={"/Endorsement"}>
-                  <Button className="submit" onClick={handleClose}>
-                    Done
-                  </Button>
+                <Modal.Footer className="justify-content-center ">
+                <Link href={"/AssigningVerification"}>
+                    <Button className="bluebuttonclass" onClick={handleClose}>
+                      Done
+                    </Button>
                   </Link>
                 </Modal.Footer>
               </Modal>

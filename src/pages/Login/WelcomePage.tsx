@@ -11,7 +11,7 @@ const WelcomePage = () => {
     useEffect(() => {
       const timeoutId = setTimeout(() => {
         router.push('/');
-      },3000);
+      },10000);
 
       return () => {
         clearTimeout(timeoutId);
@@ -25,9 +25,9 @@ const WelcomePage = () => {
                 <meta name="description" content="login" />
                 <link rel="icon" href="/igrsfavicon.ico" />
             </Head>
-            <div style={{height: '72px'}}></div>
+            {/* <div style={{height: '72px'}}></div> */}
 
-            <div className="mt-5 WelcomePage">
+            {/* <div className="mt-5 WelcomePage"> */}
             <div className="LoginMargin">
                 <div className="LoginPage">
                     <Row>
@@ -39,7 +39,7 @@ const WelcomePage = () => {
                 </div>
             </div>
             </div>
-        </div>
+        // </div>
     )
 }
 export default WelcomePage;

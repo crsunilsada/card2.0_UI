@@ -1,4 +1,4 @@
-import { Container, Col, Row, Form, Button, Table, Dropdown } from "react-bootstrap"
+import { Col, Row, Form } from "react-bootstrap"
 import Head from "next/head";
 import Image from "next/image";
 import Stepper from '../components/Stepper'
@@ -11,7 +11,8 @@ const documentHandover = () => {
         require("bootstrap/dist/js/bootstrap.bundle.min.js");
     }, []);
     const [clicked, setclicked] = useState(false);
-    const handleClick = () => { setclicked(true)};
+    const handleClick = () => { setclicked(true); setborder("1px solid #989898 ") };
+    const [border, setborder] = useState("0px solid #989898")
     return (
         <><div><Stepper showReason1={true} /></div>
         <Stepper showReason={false} />
@@ -35,7 +36,7 @@ const documentHandover = () => {
                                             <Form.Control
                                                 id="floatingInputCustom"
                                                 type="dropdown"
-                                                placeholder="Doc No"
+                                                placeholder="Date"
                                                 value="16-03-2023" />
                                             <label htmlFor="floatingInputCustom">
                                                 Date
@@ -88,7 +89,7 @@ const documentHandover = () => {
                                 <Row className="justify-content-start">
                                     <Col lg={2} md={2} xs={2}></Col>
                                     <Col lg={6} md={6} xs={12} className="justify-content-start">
-                                        <p className="text-color" color="red">
+                                        <p className="text-color">
                                             Basic Details
                                         </p>
                                     </Col>
@@ -100,7 +101,7 @@ const documentHandover = () => {
                                             <Form.Control
                                                 id="floatingInputCustom"
                                                 type="text"
-                                                placeholder="Book No"
+                                                placeholder="Ack No"
                                                 value="1" />
                                             <label htmlFor="floatingInputCustom">
                                                 Ack No
@@ -112,7 +113,7 @@ const documentHandover = () => {
                                             <Form.Control
                                                 id="floatingInputCustom"
                                                 type="text"
-                                                placeholder="CS No"
+                                                placeholder="Ack Year"
                                                 value="2726" />
                                             <label htmlFor="floatingInputCustom">
                                                 Ack Year
@@ -136,7 +137,7 @@ const documentHandover = () => {
                                             <Form.Control
                                                 id="floatingInputCustom"
                                                 type="text"
-                                                placeholder="Ack No."
+                                                placeholder="CS Year"
                                                 value="2321" />
                                             <label htmlFor="floatingInputCustom">
                                                 CS Year
@@ -149,7 +150,7 @@ const documentHandover = () => {
                                 <Row>
                                     <Col lg={2} md={2} xs={12}></Col>
                                     <Col lg={3} md={3} xs={12} className="justify-content-center">
-                                        <p className="text-color" color="red">
+                                        <p className="text-color">
                                             Nominee Details
                                         </p>
                                     </Col>
@@ -205,7 +206,7 @@ const documentHandover = () => {
                                                     <Form.Control
                                                         id="floatingInputCustom"
                                                         type="text"
-                                                        placeholder="Phone Number"
+                                                        placeholder="Age"
                                                         value="23"
                                                     />
                                                     <label htmlFor="floatingInputCustom">
@@ -321,14 +322,6 @@ const documentHandover = () => {
                                         </div>
                                     </Col>
                                 </Row>
-                                {/* <Row>
-                                    <Col lg={6} md={6} xs={6} className="mb-3"></Col>
-                                    <Col lg={4} md={4} xs={6} className="mb-3">
-                                        <div>
-                                            <button className="bluebuttonclass">Save</button>
-                                        </div>
-                                    </Col>
-                                </Row> */}
                             </div>
                         </div>
                     </div>

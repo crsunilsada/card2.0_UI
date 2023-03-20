@@ -61,7 +61,7 @@ p:last-child {
         }
 
         .homeMenu.nav-link {
-            padding-top: 14px;
+            padding-top: 11px;
             padding-bottom: 0;
         }
     }
@@ -465,6 +465,11 @@ body {
 }
 
 body {
+
+    .form-control.form-select.inputcomment {
+        height: 130px;
+    }
+
     .form-control {
         background: $blackSqueeze !important;
         border: 1px solid $hippieBlue;
@@ -2076,7 +2081,7 @@ body {
 }
 
 .search-click:focus {
-    width: 615px;
+    width: 620px;
 }
 
 .search-click {
@@ -2134,11 +2139,11 @@ body {
         background-size: cover;
         color: white;
         max-width: 1500px;
-        margin: 135px auto 57px;
+        margin: 216px auto 40px;
     }
 
     .welcomePage-image {
-        height: 628px;
+        height: 636px;
     }
 
     .Login-rightGrd {
@@ -2230,8 +2235,8 @@ body {
 
 .mainWrapper.dashboardWidth {
     max-width: 1370px;
-    margin: 187px auto 30px;
-    // padding: 34px;
+    margin: 169px auto 0px;
+     padding: 69px;
 
     p {
         color: #274C77;
@@ -2454,6 +2459,7 @@ body {
 .ant-picker-range {
     border-radius: 30px;
     width: 225px !important;
+    height: 41px;
 }
 
 .ant-picker-cell-in-view.ant-picker-cell-in-range::before {
@@ -2488,5 +2494,79 @@ body {
 .ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-range-start-single)::before,
 :where(.css-dev-only-do-not-override-ph9edi).ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-range-end-single)::before {
     background: #D9D9D9 !important;
+}
+
+.pageNextBtn1 {
+
+    // text-align: right;
+
+    padding: 0px 0 0;
+
+
+
+    button {
+
+        width: 300px;
+
+        height: 50px;
+
+        border-radius: 4px;
+
+        font-weight: 600;
+
+        font-size: 16px;
+
+        line-height: 22px;
+
+        text-align: center;
+
+        padding: 10px 30px;
+
+        border: 1px solid $blue;
+
+    }
+
+
+
+    button.clear {
+
+        color: $blue;
+
+        background: $white;
+
+        margin-right: 20px;
+
+        width: 140px;
+
+        height: 50px;
+
+        border-radius: 8px;
+
+    }
+
+
+
+    button.next {
+
+        background: $blue;
+
+        color: $white;
+
+        width: 140px;
+
+        height: 50px;
+
+        border-radius: 8px;
+
+    }
+
+}
+
+.btn-color {
+
+    background-color: #274C77 !important;
+
+    border-radius: 8px !important;
+
 }
 

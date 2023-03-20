@@ -140,7 +140,7 @@ function PendingTable({ columns, data }) {
                   width={18}
                   height={18}
                   src="/images/refuse.svg" />
-                <small>refuse</small>
+                <small>Refuse</small>
               </button>
             </td>
           </tr>
@@ -207,7 +207,7 @@ function PendingTable({ columns, data }) {
                   width={18}
                   height={18}
                   src="/images/refuse.svg" />
-                <small>refuse</small>
+                <small>Refuse</small>
               </button>
             </td>
           </tr>
@@ -259,7 +259,7 @@ function PendingTable({ columns, data }) {
                   width={18}
                   height={18}
                   src="/images/refuse.svg" />
-                <small>refuse</small>
+                <small>Refuse</small>
               </button>
             </td>
           </tr>
@@ -326,7 +326,7 @@ function PendingTable({ columns, data }) {
                   width={18}
                   height={18}
                   src="/images/refuse.svg" />
-                <small>refuse</small>
+                <small>Refuse</small>
               </button>
             </td>
           </tr>
@@ -378,7 +378,7 @@ function PendingTable({ columns, data }) {
                   width={18}
                   height={18}
                   src="/images/refuse.svg" />
-                <small>refuse</small>
+                <small>Refuse</small>
               </button>
             </td>
           </tr>
@@ -389,7 +389,7 @@ function PendingTable({ columns, data }) {
         <ul className="pagination d-flex align-items-center justify-content-end">
           <li className="PageItems">
             Items per page:{" "}
-            <select
+            <select className="text-center"
               value={pageSize}
               onChange={(e) => {
                 setPageSize(Number(e.target.value));
@@ -615,7 +615,7 @@ function AcceptTable({ columns, data }) {
         <ul className="pagination d-flex align-items-center justify-content-end">
           <li className="PageItems">
             Items per page:{" "}
-            <select
+            <select className="text-center"
               value={pageSize}
               onChange={(e) => {
                 setPageSize(Number(e.target.value));
@@ -682,7 +682,7 @@ function AmmendTable({ columns, data }) {
   const tooltip = (
     <Tooltip id="tooltip-top">
       <Form.Floating>
-        <p>Comments with 1000 characters come here when they hover</p>
+        <p>Name should be expanded as per ID proof</p>
       </Form.Floating>
     </Tooltip>
   );
@@ -730,10 +730,10 @@ function AmmendTable({ columns, data }) {
               Ammend Reason
             </th>
             <th rowSpan={2} className="extraFont text-center">
-              Ammend Date & Time by SRO
+              Ammend comments
             </th>
             <th rowSpan={2} className="extraFont text-center">
-              Ammend comments
+              Ammend Date & Time by SRO
             </th>
           </tr>
         </thead>
@@ -759,7 +759,6 @@ function AmmendTable({ columns, data }) {
               </button>
             </td>
             <td>Name expansion</td>
-            <td>22/11/2022 @10:45am</td>
             <td>
               <div >
                 {/* <span className="icon mx-1">Comments come here</span> */}
@@ -774,6 +773,7 @@ function AmmendTable({ columns, data }) {
                 </OverlayTrigger>
               </div>
             </td>
+            <td>12/03/2022 @12:00pm</td>
           </tr>
           <tr>
             <td>456787622</td>
@@ -796,8 +796,8 @@ function AmmendTable({ columns, data }) {
               </button>
             </td>
             <td>Surname is not matching</td>
-            <td>12/03/2022 @12:00pm</td>
             <td>Family member surname should match</td>
+            <td>12/03/2022 @12:00pm</td>
           </tr>
           <tr>
             <td>456787631</td>
@@ -820,8 +820,8 @@ function AmmendTable({ columns, data }) {
               </button>
             </td>
             <td>Documents are not proper</td>
-            <td>01/07/2022 @11:13am</td>
             <td>Boundary details are missing</td>
+            <td>01/07/2022 @11:13am</td>
           </tr>
           <tr>
             <td>456787645</td>
@@ -844,8 +844,8 @@ function AmmendTable({ columns, data }) {
               </button>
             </td>
             <td>Residence proofs wrong</td>
-            <td>17/09/2022 @10:15pm</td>
             <td>Address should match in ID proofs</td>
+            <td>17/09/2022 @10:15pm</td>
           </tr>
           <tr>
             <td>456787665</td>
@@ -868,8 +868,8 @@ function AmmendTable({ columns, data }) {
               </button>
             </td>
             <td>Witness</td>
-            <td>25/02/2022 @10:41am</td>
             <td>witness signs are mandatory</td>
+            <td>25/02/2022 @10:41am</td>
           </tr>
         </tbody>
       </table>
@@ -878,7 +878,7 @@ function AmmendTable({ columns, data }) {
         <ul className="pagination d-flex align-items-center justify-content-end">
           <li className="PageItems">
             Items per page:{" "}
-            <select
+            <select className="text-center"
               value={pageSize}
               onChange={(e) => {
                 setPageSize(Number(e.target.value));
@@ -985,10 +985,10 @@ function RefuseTable({ columns, data }) {
               Refuse Reason
             </th>
             <th rowSpan={2} className="extraFont text-center">
-              Refuse Date & Time by SRO
+              Refuse comments
             </th>
             <th rowSpan={2} className="extraFont text-center">
-              Refuse comments
+              Refuse Date & Time by SRO
             </th>
           </tr>
         </thead>
@@ -1014,8 +1014,8 @@ function RefuseTable({ columns, data }) {
               </button>
             </td>
             <td>Fake documents</td>
-            <td>02/01/2023 12:00pm</td>
             <td>Original documents needed for registration</td>
+            <td>02/01/2023 12:00pm</td>
           </tr>
           <tr>
             <td>456787564</td>
@@ -1038,8 +1038,8 @@ function RefuseTable({ columns, data }) {
               </button>
             </td>
             <td>Third party person </td>
-            <td>11/05/2023 10:45pm</td>
             <td>Parties to be present at the time of registration</td>
+            <td>11/05/2023 10:45pm</td>
           </tr>
           <tr>
             <td>456787594</td>
@@ -1062,8 +1062,8 @@ function RefuseTable({ columns, data }) {
               </button>
             </td>
             <td>Property Tax Receipts</td>
-            <td>30/05/2022 09:15am</td>
             <td>Tax receipts are mandatory</td>
+            <td>30/05/2022 09:15am</td>
           </tr>
           <tr>
             <td>456787534</td>
@@ -1086,8 +1086,8 @@ function RefuseTable({ columns, data }) {
               </button>
             </td>
             <td>Identity</td>
-            <td>09/02/2022 07:00pm</td>
             <td>Identity of the seller cannot be confirmed</td>
+            <td>09/02/2022 07:00pm</td>
           </tr>
           <tr>
             <td>456787543</td>
@@ -1110,8 +1110,8 @@ function RefuseTable({ columns, data }) {
               </button>
             </td>
             <td>Others</td>
-            <td>21/05/2023 09:30am</td>
             <td>Court has put a stay order on the deed</td>
+            <td>21/05/2023 09:30am</td>
           </tr>
         </tbody>
       </table>
@@ -1120,7 +1120,7 @@ function RefuseTable({ columns, data }) {
         <ul className="pagination d-flex align-items-center justify-content-end">
           <li className="PageItems">
             Items per page:{" "}
-            <select
+            <select className="text-center"
               value={pageSize}
               onChange={(e) => {
                 setPageSize(Number(e.target.value));
@@ -1458,7 +1458,7 @@ const pdeScrutinyList = () => {
 
     <div className="pageMainWrap innerpage">
       <Head>
-        <title>Document Presentation-CARD</title>
+        <title>PDE Scrutiny List - CARD</title>
         <meta name="description" content="login" />
         <link rel="icon" href="/igrsfavicon.ico" />
       </Head>
@@ -1483,13 +1483,13 @@ const pdeScrutinyList = () => {
                               <Nav.Link eventKey="pending"><button className="button my-4">Pending (5)</button></Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                              <Nav.Link eventKey="accept"><button className="button my-4 accpBtn">Accept (5)</button></Nav.Link>
+                              <Nav.Link eventKey="accept"><button className="button my-4">Accept (5)</button></Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                              <Nav.Link eventKey="ammend"><button className="button my-4 accpBtn">Ammend (5)</button></Nav.Link>
+                              <Nav.Link eventKey="ammend"><button className="button my-4">Ammend (5)</button></Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                              <Nav.Link eventKey="refuse"><button className="button my-4 accpBtn">Refuse (5)</button></Nav.Link>
+                              <Nav.Link eventKey="refuse"><button className="button my-4">Refuse (5)</button></Nav.Link>
                             </Nav.Item>
                           </Nav>
                         </div>
@@ -1499,7 +1499,7 @@ const pdeScrutinyList = () => {
                           <div className="d-flex searchbar-ml justify-content-end">
                             <div className="mx-3">
                               <div className="col">
-                                <input type="text" className="justify-content-end float-end search-click" style={{ borderRadius: "5px", borderColor: "#5692B4", height: "40px" }} name="" placeholder="Please search with any of these CS No/Ack No/App No/Presenter Name" />
+                                <input type="text" className="justify-content-end float-end search-click" style={{ borderRadius: "5px", borderColor: "#5692B4", height: "40px" }} name="" placeholder=" Please search with - CS No/Ack No/App No/Presenter Name" />
                                 {/* {display && ("")
                                 } */}
                               </div>
@@ -1511,49 +1511,6 @@ const pdeScrutinyList = () => {
                           </div>
                         </div>
                       </Col>
-                    </div>
-                  </Row>
-                  <Row>
-                    <div className="modal fade modal-md position-absolute" id="exampleModals" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div className="modal-dialog">
-                        <div className="modal-content">
-                          <div className="modal-header">
-                            <h1 className="modal-title fs-5" id="exampleModalLabel"></h1>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div className="modal-body">
-                            <Row>
-                              <Col lg={12} md={12} xs={12} className="mb-3">
-                                <Form.Floating>
-                                  <Form.Control
-                                    id="floatingInputCustom"
-                                    type="date"
-                                    placeholder="Start Date" />
-                                  <Form.Label htmlFor="floatingInputCustom">
-                                    Start Date
-                                  </Form.Label>
-                                </Form.Floating>
-                              </Col>
-                            </Row>
-                            <Row>
-                              <Col lg={12} md={12} xs={12} >
-                                <Form.Floating>
-                                  <Form.Control
-                                    id="floatingInputCustom"
-                                    type="date"
-                                    placeholder="End Date" />
-                                  <Form.Label htmlFor="floatingInputCustom">
-                                    End Date
-                                  </Form.Label>
-                                </Form.Floating>
-                              </Col>
-                            </Row>
-                          </div>
-                          <div className="modal-footer text-center d-flex justify-content-center">
-                            <button type="button" className="btn btn-primary text-center bluebuttonclass">Save</button>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </Row>
                   <Tab.Content>
@@ -1582,10 +1539,10 @@ const pdeScrutinyList = () => {
           >
             <div className="modal-dialog">
               <div className="modal-content">
-                <div className="d-flex align-items-end flex-column p-4">
+                <div className="d-flex align-items-end flex-column py-2">
                   <button
                     type="button"
-                    className="btn-close"
+                    className="btn-close px-4"
                     data-bs-dismiss="modal"
                     aria-label="Close"
                   >
@@ -1596,7 +1553,7 @@ const pdeScrutinyList = () => {
                     />
                   </button>
                 </div>
-                <div className="modal-body">
+                <div className="modal-body modalCheckSlip">
                   <Tabs
                     defaultActiveKey="Check Slip Report"
                     id="justify-tab-example"
@@ -1631,15 +1588,19 @@ const pdeScrutinyList = () => {
                         src="/images/acknowledgement.svg"
                       />
                     </Tab>
+                    <Tab eventKey="Form 60/61" title="Form 60/61" className="text-center scrollable">
+                      <Image
+                        width={800}
+                        height={500}
+                        src="/images/form60.svg"
+                      />
+                    </Tab>
                   </Tabs>
                 </div>
               </div>
             </div>
           </div>
-
-
-          {/* //accept icons popups */}
-          <div
+          <div //accept icon popups modal
             className="modal fade modal-md"
             id="acceptdetails"
             aria-labelledby="acceptdetails"
@@ -1662,7 +1623,7 @@ const pdeScrutinyList = () => {
                     />
                   </button>
                 </div>
-                <div style={{ margin: "1rem" }}>
+                <div className="mx-3 mt-3 ">
                   Basic Details
                 </div>
                 <div className="modal-body">
@@ -1673,6 +1634,7 @@ const pdeScrutinyList = () => {
                           id="floatingInputCustom"
                           type="text"
                           placeholder="No. Of Sheets/Pages"
+                          value="5"
                         />
                         <Form.Label htmlFor="floatingInputCustom">
                           No. Of Sheets/Pages
@@ -1687,6 +1649,7 @@ const pdeScrutinyList = () => {
                           id="floatingInputCustom"
                           type="text"
                           placeholder="Nominee Name"
+                          value=""
                         />
                         <Form.Label htmlFor="floatingInputCustom">
                           Nominee Aadhar No.
@@ -1701,6 +1664,7 @@ const pdeScrutinyList = () => {
                           id="floatingInputCustom"
                           type="text"
                           placeholder="Nominee Aadhar No"
+                          value=""
                         />
                         <Form.Label htmlFor="floatingInputCustom">
                           Nominee Name
@@ -1708,7 +1672,7 @@ const pdeScrutinyList = () => {
                       </Form.Floating>
                     </Col>
                   </Row>
-                  <div className="d-flex justify-content-center mt-5">
+                  <div className="d-flex justify-content-center mt-3">
                     <button
                       data-bs-toggle="modal"
                       data-bs-target="#generatingdetails"
@@ -1787,7 +1751,7 @@ const pdeScrutinyList = () => {
                       </Form.Floating>
                     </Col>
                   </Row>
-                  <div className="d-flex justify-content-center mt-5">
+                  <div className="d-flex justify-content-center mt-3">
                     <button type="button" className="bluebuttonclass">
                       ADD
                     </button>
@@ -1866,7 +1830,7 @@ const pdeScrutinyList = () => {
                       </Form.Floating>
                     </Col>
                   </Row>
-                  <div className="d-flex justify-content-center mt-5">
+                  <div className="d-flex justify-content-center mt-3">
                     <button type="button" className="bluebuttonclass">
                       ADD
                     </button>
@@ -2056,14 +2020,14 @@ const pdeScrutinyList = () => {
                   </Row>
                   <Row>
                     <textarea
-                      className="form-control form-select"
-                      rows={3}
+                      className="form-control form-select inputcomment"
+                      rows={10}
                       id="comment"
                       placeholder="comments(Upto 1000 Characters)"
                     ></textarea>
                   </Row>
                   <Row>
-                    <div className="d-flex justify-content-center mt-5">
+                    <div className="d-flex justify-content-center mt-3">
                       <button
                         data-bs-toggle="modal"
                         data-bs-target="#slipdetails"
@@ -2176,7 +2140,7 @@ const pdeScrutinyList = () => {
               </div>
             </div>
           </div>
-          <div
+          <div //refuse icon popups modal
             className="modal fade modal-md"
             id="refusedetails"
             aria-labelledby="refusedetails"
@@ -2213,17 +2177,15 @@ const pdeScrutinyList = () => {
                   </Row>
                   <Row>
                     <textarea
-                      className="form-control form-select"
+                      className="form-control form-select inputcomment"
                       rows={5}
                       id="comment"
                       placeholder="comments"
                     ></textarea>
                   </Row>
-                  <br></br>
-
                   <Row>
                     <Col>
-                      <div className="d-flex justify-content-center mt-5">
+                      <div className="d-flex justify-content-center mt-3">
                         <button type="button" className="bluebuttonclass">
                           Submit
                         </button>
