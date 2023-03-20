@@ -463,7 +463,7 @@ const partyDetailsScroll = () => {
                           </Col>
                         </div>
                       </Row>
-                      <Link href="/AssigningVerification">
+                      <Link href="/Verification">
                       <div className="pageNextBtn">
                         <button className="next"> Save </button>
                       </div>

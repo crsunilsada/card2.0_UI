@@ -67,10 +67,10 @@ const Header = () => {
 
                             </ul> */}
                           </li>
-                          <li><a className="dropdown-item" href="#">View Pahani</a></li>
+                          {/* <li><a className="dropdown-item" href="#">View Pahani</a></li>
                           <li><a className="dropdown-item" href="#">View CDMA</a></li>
                           <li><a className="dropdown-item" href="#">Verify Aadhaar</a></li>
-                          <li><a className="dropdown-item" href="#">E-KYC</a></li>
+                          <li><a className="dropdown-item" href="#">E-KYC</a></li> */}
                         </ul>
                       </li>
                       <li className="nav-item dropdown">
@@ -83,8 +83,8 @@ const Header = () => {
 
                             </ul>
                           </li>
-                          <li><a className="dropdown-item" href="#">SRO For The Day</a></li>
-                          <li><a className="dropdown-item" href="#">Grant Permission</a></li>
+                          <li><a className="dropdown-item" href="/otherMenu/SRO">SRO For The Day</a></li>
+                          {/* <li><a className="dropdown-item" href="#">Grant Permission</a></li> */}
                         </ul>
                       </li>
 

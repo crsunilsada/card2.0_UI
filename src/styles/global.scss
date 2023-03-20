@@ -68,12 +68,10 @@ p:last-child {
 }
 
 .pageMainWrap {
-
     padding: 5px 0;
     background: $aquaHaze;
 
     .mainWrapper {
-
         max-width: 1795px;
         margin: auto;
         background: $white;
@@ -175,7 +173,6 @@ p:last-child {
 
         button {
             height: 42px;
-            // margin: 0 15px 0 0;
             border: none;
             padding: 0 25px;
             border-radius: 38px;
@@ -214,7 +211,6 @@ p:last-child {
     padding: 33px 0 0;
 
     .pageTableTabs {
-
         padding: 10px 0 0px;
 
         .tableMarginTop {
@@ -257,7 +253,6 @@ p:last-child {
             margin: 0 5px 0 0;
             border-radius: 8px;
         }
-
     }
 
     .tableData {
@@ -293,7 +288,6 @@ p:last-child {
             tr {
                 th {
                     font-weight: 600;
-
                 }
 
                 th.extraFont {
@@ -368,7 +362,6 @@ p:last-child {
                         color: $white;
                         padding: 0;
                         opacity: 0.5;
-
                     }
 
                     button.digital-sign-btn {
@@ -477,7 +470,6 @@ body {
         border: 1px solid $hippieBlue;
         border-radius: 8px;
         height: 61px;
-        /*font-weight: 600;*/
         font-size: 16px;
         line-height: 22px;
         padding: 19px 20px;
@@ -498,7 +490,6 @@ body {
     .form-label {
         font-weight: 400;
         font-size: 14px;
-        /* line-height: 16px; */
         color: $liver;
     }
 
@@ -614,7 +605,7 @@ body {
 
     .tabsList {
         position: absolute;
-        top: 60px;
+        top: 78px;
 
         .nav-item {
             margin: 0 30px 0 0;
@@ -673,7 +664,7 @@ body {
 
     .witnessList {
         .emptyBox {
-            height: 150px;
+            height: 182px;
             background: $blackSqueeze;
             border: 1px solid $hippieBlue;
             border-radius: 12px;
@@ -777,7 +768,6 @@ body {
         // width: 430px;
         margin: 0 10px 10px 0;
 
-
         .cardHeader {
             background: $hippieBlue;
             border: 1px solid $hippieBlue;
@@ -816,7 +806,6 @@ body {
             h6:nth-child(2) {
                 margin-left: 70px !important;
             }
-
         }
 
         .cardBody {
@@ -1453,7 +1442,6 @@ body {
                     top: -10px;
                     line-height: 18px;
 
-
                 }
             }
         }
@@ -1462,7 +1450,6 @@ body {
             clear: both;
             content: "";
             display: block;
-
         }
     }
 
@@ -1649,8 +1636,6 @@ body {
 .crop-image-text {
     color: #274C77;
 }
-
-
 
 .pageNextBtn.scanningPageSave {
     text-align: left;
@@ -1892,26 +1877,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .drop-section .form-select.btn {
     text-align: left;
     border: 1px solid #ced4da;
@@ -1960,13 +1925,11 @@ body {
 // menu bar css start
 .navbar-nav li:hover>ul.dropdown-menu {
     display: block;
-
 }
 
 .dropdown-submenu {
     position: relative;
     font-family: "Noto Sans", sans-serif;
-
 }
 
 .dropdown-submenu>.dropdown-menu {
@@ -1987,7 +1950,6 @@ body {
 .nav-item.dropdown .dropdown-menu .dropdown-item:hover {
     background-color: #274C77;
     color: white;
-
 }
 
 .dropdown-item {
@@ -2144,7 +2106,6 @@ body {
 .modal-path {
     position: fixed;
     top: 20%;
-
 }
 
 // .LoginMargin {
@@ -2211,6 +2172,7 @@ body {
     height: 191px;
     border: 1px solid black;
     width: 159px;
+    margin: auto;
 }
 
 .checkbox-check {
@@ -2254,7 +2216,6 @@ body {
     }
 }
 
-
 .tabsList-pd .nav-link.active {
     background-color: #274C77;
     color: white;
@@ -2269,10 +2230,8 @@ body {
 
 .mainWrapper.dashboardWidth {
     max-width: 1370px;
-    margin: 187px auto 30px ;
-   // padding: 34px;
-
-
+    margin: 187px auto 30px;
+    // padding: 34px;
 
     p {
         color: #274C77;
@@ -2409,132 +2368,61 @@ body {
 }
 
 .justyfy_a {
-
     .space_a {
-
         text-align: right;
-
         padding: 0;
-
     }
-
 }
-
-
 
 .boder_down {
-
     border: 1px solid #D3D3D3;
-
     cursor: pointer;
 
-
-
     .scrollable {
-
         overflow-y: scroll;
-
         border: 1px solid #274c77;
-
     }
-
-
 
     .document_a {
-
         border: 1px solid #274c77;
-
     }
-
-
 
     h4 {
-
         padding-left: 20px;
-
     }
-
-
 
     .document_a {
-
         .stage_a {
-
             padding-top: 20px;
-
         }
-
     }
-
 }
-
-
 
 @media (min-width:320px) and (max-width:920px) {
-
     .scrollable {
-
         .stable_img {
-
             text-align: center;
-
             padding: 0;
-
         }
-
     }
-
 }
-
-
 
 .modal-body {
-
     // padding: 30px 59px 35px;
 
-
-
     h5 {
-
         font-weight: 500;
-
         font-size: 22px;
-
         line-height: 30px;
-
         color: $blue;
-
     }
-
 }
-
-
 
 .justyfy_a {
-
     justify-content: space-between;
-
     padding-right: 20px;
-
 }
 
-
-
-// .witnessList.witness1 {
-
-//     border-bottom: 1px solid $black;
-
-//     padding: 30px  0 20px;
-
-//     margin: 0 0 20px;
-
-//   }.tabsList-imaging {
-
-//   position: absolute;
-
-//   top: 120px;
-
-// }
 .tabsList-imaging {
     position: absolute;
     top: 120px;
@@ -2546,86 +2434,59 @@ body {
     margin: 0 0 20px;
 }
 
-.th-width{
+.th-width {
     width: 15%;
 }
-.saveBtn{
+
+.saveBtn {
     display: block;
     margin: 97px auto 0;
 }
 
 .ant-picker-dropdown {
-
     left: 1235px !important;
+}
 
-  }
-
-
-
-  .ant-picker-range-arrow {
-
+.ant-picker-range-arrow {
     left: 360px !important;
+}
 
-  }
-
-
-
-  .ant-picker-range {
-
+.ant-picker-range {
     border-radius: 30px;
-
     width: 225px !important;
+}
 
-  }
-
-
-
-  .ant-picker-cell-in-view.ant-picker-cell-in-range::before {
-
+.ant-picker-cell-in-view.ant-picker-cell-in-range::before {
     background: #D9D9D9 !important;
+}
 
-  }
-
-
-
-  .ant-picker-cell-inner {
-
+.ant-picker-cell-inner {
     border-radius: 20px !important;
-
     width: 27px !important;
-
-    height: 20px !important;
-
-    padding: 4px !important;
-
+    height: 27px !important;
+    padding: 2px !important;
     color: #274C77 !important;
+}
 
-  }
-
-
-
-  .ant-picker {
-
+.ant-picker {
     border-color: #6096BA !important;
-
     font-size: 20px;
+}
 
-    height: 41px;//added
-
-  }
-
-
-
-  .ant-picker-suffix {
-
+.ant-picker-suffix {
     color: #274C77 !important;
+}
 
-  }
+.searchFiler {
+    input::placeholder {
+        color: #303030 !important;
+        font-size: 15px;
+        font-family: "Noto Sans";
+    }
+}
 
-  .ant-picker-dropdown .ant-picker-cell-in-view .ant-picker-cell-range-start:not(.ant-picker-cell-range-start-single)::before,
-
-  :where(.css-dev-only-do-not-override-ph9edi).ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-range-end-single)::before {
-
+.ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-range-start-single)::before,
+:where(.css-dev-only-do-not-override-ph9edi).ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-range-end-single)::before {
     background: #D9D9D9 !important;
+}
 
-  }

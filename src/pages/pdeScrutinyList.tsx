@@ -1689,7 +1689,7 @@ const pdeScrutinyList = () => {
                           placeholder="Nominee Name"
                         />
                         <Form.Label htmlFor="floatingInputCustom">
-                          Nominee Name
+                          Nominee Aadhar No.
                         </Form.Label>
                       </Form.Floating>
                     </Col>
@@ -1703,7 +1703,7 @@ const pdeScrutinyList = () => {
                           placeholder="Nominee Aadhar No"
                         />
                         <Form.Label htmlFor="floatingInputCustom">
-                          Nominee Aadhar No.
+                          Nominee Name
                         </Form.Label>
                       </Form.Floating>
                     </Col>
@@ -1712,6 +1712,7 @@ const pdeScrutinyList = () => {
                     <button
                       data-bs-toggle="modal"
                       data-bs-target="#generatingdetails"
+                      type="button"
                       className="bluebuttonclass">
                       ADD
                     </button>
@@ -1762,11 +1763,11 @@ const pdeScrutinyList = () => {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Nominee Name"
-                          value="Meena"
+                          placeholder="Nominee Aadhar No"
+                          value="XXXXXXXX1234"
                         />
                         <Form.Label htmlFor="floatingInputCustom">
-                          Nominee Name
+                          Nominee Aadhar No.
                         </Form.Label>
                       </Form.Floating>
                     </Col>
@@ -1777,11 +1778,11 @@ const pdeScrutinyList = () => {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Nominee Aadhar No"
-                          value="XXXXXXXX1234"
+                          placeholder="Nominee Name"
+                          value="Meena"
                         />
                         <Form.Label htmlFor="floatingInputCustom">
-                          Nominee Aadhar No.
+                          Nominee Name.
                         </Form.Label>
                       </Form.Floating>
                     </Col>
@@ -1838,11 +1839,11 @@ const pdeScrutinyList = () => {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Nominee Name"
-                          value="Meena"
+                          placeholder="Nominee Aadhar No"
+                          value="XXXXXXXX1234"
                         />
                         <Form.Label htmlFor="floatingInputCustom">
-                          Nominee Name
+                          Nominee Aadhar No.
                         </Form.Label>
                       </Form.Floating>
                     </Col>
@@ -1853,11 +1854,11 @@ const pdeScrutinyList = () => {
                         <Form.Control
                           id="floatingInputCustom"
                           type="text"
-                          placeholder="Nominee Aadhar No"
-                          value="XXXXXXXX1234"
+                          placeholder="Nominee Name"
+                          value="Meena"
                         />
                         <Form.Label htmlFor="floatingInputCustom">
-                          Nominee Aadhar No.
+                          Nominee Name.
                         </Form.Label>
                         <div style={{ color: "red" }}>
                           Aadhar Number is invalid. Please re-enter
@@ -1904,17 +1905,17 @@ const pdeScrutinyList = () => {
                           src="/images/accept1.svg"
                         />
                       </div>
-                      <h5>For Given</h5>
-                      <h5>For Given Acknowledgement No: <strong>345 &</strong></h5>
+                      <h6>For Given</h6>
+                      <h6>For Given Acknowledgement No: <strong>345 &</strong></h6>
                     </div>
                     <div className="text-center">
-                      <h5>Check Slip No: <strong>212</strong></h5>
+                      <h6>Check Slip No: <strong>212</strong></h6>
                     </div>
                     <div className="text-center">
-                      <h5>Receipt No: <strong>123</strong></h5>
+                      <h6>Receipt No: <strong>123</strong></h6>
                     </div>
                     <div className="text-center">
-                      <h5>has been generated and ammend flow accepted successfully</h5>
+                      <h6>has been generated and ammend flow accepted successfully</h6>
                     </div>
                   </Row>
                 </div>
@@ -1949,14 +1950,14 @@ const pdeScrutinyList = () => {
                           src="/images/accept1.svg"
                         />
                       </div>
-                      <h5>For Given</h5>
-                      <h5>For Given Acknowledgement No: <strong>345 &</strong></h5>
+                      <h6>For Given</h6>
+                      <h6>For Given Acknowledgement No: <strong>345 &</strong></h6>
                     </div>
                     <div className="text-center">
-                      <h5>Check Slip No: <strong>212</strong></h5>
+                      <h6>Check Slip No: <strong>212</strong></h6>
                     </div>
                     <div className="text-center">
-                      <h5>Ammend flow accepted successfully.</h5>
+                      <h6>Ammend flow accepted successfully.</h6>
                     </div>
                   </Row>
                 </div>
@@ -2015,7 +2016,7 @@ const pdeScrutinyList = () => {
               </div>
             </div>
           </div>
-          {/* //ammend icon popups */}
+
           <div
             className="modal fade modal-md"
             id="ammenddetails"
@@ -2063,7 +2064,11 @@ const pdeScrutinyList = () => {
                   </Row>
                   <Row>
                     <div className="d-flex justify-content-center mt-5">
-                      <button type="button" className="bluebuttonclass">
+                      <button
+                        data-bs-toggle="modal"
+                        data-bs-target="#slipdetails"
+                        type="button"
+                        className="bluebuttonclass">
                         Submit
                       </button>
                     </div>
@@ -2071,7 +2076,7 @@ const pdeScrutinyList = () => {
                 </div>
               </div>
             </div>
-            <div className="modal-dialog">
+            {/* <div className="modal-dialog">
               <div className="modal-content">
                 <div className="modal-header">
                   <h1 className="modal-title" id="exampleModalLabel">Application List Ammend</h1>
@@ -2120,7 +2125,15 @@ const pdeScrutinyList = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
+          </div>
+
+          <div
+            className="modal fade modal-md"
+            id="slipdetails"
+            aria-labelledby="slipdetails"
+            aria-hidden="true"
+          >
             <div className="modal-dialog">
               <div className="modal-content">
                 <div className="modal-header">
@@ -2163,8 +2176,6 @@ const pdeScrutinyList = () => {
               </div>
             </div>
           </div>
-
-          {/* //refuse icon popups */}
           <div
             className="modal fade modal-md"
             id="refusedetails"
@@ -2197,6 +2208,7 @@ const pdeScrutinyList = () => {
                       <option value="1">Fake Documents</option>
                       <option value="2">Third party Person</option>
                       <option value="3">Property tax receipts</option>
+                      <option value="4">Others</option>
                     </select>
                   </Row>
                   <Row>

@@ -207,7 +207,7 @@ const LoginPage = () => {
                                         <Row>
                                             <Col lg={6} md={6} xs={12}></Col>
                                             <Col lg={4} md={4} xs={12}>
-                                                <Link href={"/Login/LoginOtp"}><Button className="loginbuttonclass my-3" onClick={() => setModalShow(true)}>Capture</Button></Link>
+                                                <Link href={"/Login/WelcomePage"}><Button className="loginbuttonclass my-3" onClick={() => setModalShow(true)}>Capture</Button></Link>
                                                 <MyVerticallyCenteredModal
                                                     show={modalShow}
                                                     onHide={() => setModalShow(false)}

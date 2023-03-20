@@ -81,10 +81,10 @@ function Table({ columns, data }) {
                   );
                 })}
                 <td className="text-center">
-                  <Link href={"/scanning"}>
+                  <Link href={"/Bundling"}>
                     <button className="basicDetails">
                       {" "}
-                      <Image width={25} height={25} src="/images/Scanning.svg" />
+                      <Image width={25} height={25} src="/images/Layer_1.svg" />
                       <small>Bundling</small>
                     </button>
                   </Link>
@@ -471,7 +471,7 @@ return (
       <div className="mainWrapper">
         <div className="wrapperInner">
           <div className="acknowledgement">
-            <h4>Bundling</h4>
+            <h4>Bundling & Digital Sign</h4>
           </div>
 
             <div

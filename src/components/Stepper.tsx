@@ -21,11 +21,11 @@ const Stepper = (props) => {
       setSelected1(true);
       setSelected(true);
     }
-    if (window.location.pathname === "/assigning" || window.location.pathname === "/Endorsement" || window.location.pathname === "/AssigningVerification"  ) {
+    if (window.location.pathname === "/AssigningVerification" || window.location.pathname === "/Endorsement" || window.location.pathname === "/assigning"  ) {
       setSelected4(true);
       setSelected3(true);
     }
-    if (window.location.pathname === "/ScanningUpload" || window.location.pathname === "/scanning" || window.location.pathname === "/DigitalSign") {
+    if (window.location.pathname === "/ScanningUpload" || window.location.pathname === "/scanning" || window.location.pathname === "/DigitalSign" || window.location.pathname === "/Bundling") {
       setSelected5(true);
       setSelected4(true);
       setSelected3(true);
@@ -66,7 +66,7 @@ const Stepper = (props) => {
     }
     const handleClick4=()=>{
       setSelected4(true);
-      router.push('/assigning')
+      router.push('/AssigningVerification')
     }
     const handleClick5=()=>{
       setSelected5(true);
@@ -84,7 +84,7 @@ const Stepper = (props) => {
     <ul className="progressbar">
         <li className="completed" onClick={handleClick3}><div className="progress_step_text">Admission Of Execution</div></li>
         <li className={selected4 ? "completed" : "inactive"} onClick={handleClick4}><div className="progress_step_text">Assigning</div></li>
-        <li className={selected5 ? "completed" : "inactive"} onClick={handleClick5}><div className="progress_step_text">Bundling</div></li>
+        <li className={selected5 ? "completed" : "inactive"} onClick={handleClick5}><div className="progress_step_text">BUNDLING & DIGITAL SIGN</div></li>
         <li className={selected6 ? "completed" : "inactive"} onClick={handleClick6}><div className="progress_step_text">Document Handover</div></li>
     </ul>
   </div>)}
