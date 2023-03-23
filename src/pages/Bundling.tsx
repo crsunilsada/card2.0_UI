@@ -13,7 +13,7 @@ const Bundling = () => {
             <Stepper showReason={false} />
             <div className="pageMainWrap innerpage">
                 <Head>
-                    <title>Digital Sign - CARD</title>
+                    <title>Bundling - CARD</title>
                     <meta name="description" content="login" />
                     <link rel="icon" href="/igrsfavicon.ico" />
                 </Head>
@@ -106,12 +106,12 @@ const Bundling = () => {
                                         <Col lg={8} md={8} xs={12} className="mb-3">
                                         </Col>
                                         <Col lg={4} md={4} xs={12} className="pageNextBtn">
-                                            <Row>
+                                            <Row className="m-2">
                                                 <Col lg={6} md={12} xs={12} className="mb-3">
-                                                    <button type="button" className="next p-2 mx-4" onClick={handleShow}>Start Bundling</button>
+                                                    <button type="button" className="next p-2 " onClick={handleShow}>Start Bundling</button>
                                                 </Col>
-                                                <Col lg={1} md={12} xs={12}>
-                                                    <button type="button" className="clear"> Clear</button>
+                                                <Col lg={4} md={12} xs={12}>
+                                                    <button type="button" className="clear "> Clear</button>
                                                 </Col>
                                             </Row>
                                         </Col>

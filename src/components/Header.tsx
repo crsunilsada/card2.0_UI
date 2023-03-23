@@ -1,8 +1,7 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
 import styles from "../styles/components/header.module.scss";
-import { Navbar, NavDropdown, Container, Col, Row, Nav, Dropdown } from "react-bootstrap";
-import banner from 'images/Header1.png'
+import { Navbar, Container, Nav, Dropdown } from "react-bootstrap";
 import Link from "next/link";
 const Header = () => {
   const router = useRouter();
@@ -40,12 +39,6 @@ const Header = () => {
                 >
                   <Image width={30} height={25} src="/images/Home.svg" />
                 </Nav.Link>
-                {/* <Nav.Link
-                  className={router.pathname == "/registration" ? "active" : "active"}
-                  href="/registration"
-                >
-                  REGISTRATION
-                </Nav.Link> */}
                 <nav style={{height:"50px"}}>
                   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -57,15 +50,7 @@ const Header = () => {
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                           <li className="dropdown-submenu"><a className="dropdown-item dropdown-toggle">CARD - Manual Entry</a></li>
                           <li className="dropdown-submenu"><a className="dropdown-item dropdown-toggle" href="/admissionofExecution">CARD - PDE</a>
-                            {/* <ul className="dropdown-menu">
-                              <li><a className="dropdown-item" href="#">CARD - Manual Entry</a></li>
-                              <li><a className="dropdown-item" href="/admissionofExecution">CARD - PDE</a></li>
-                            </ul> */}
                           </li>
-                          {/* <li><a className="dropdown-item" href="#">View Pahani</a></li>
-                          <li><a className="dropdown-item" href="#">View CDMA</a></li>
-                          <li><a className="dropdown-item" href="#">Verify Aadhaar</a></li>
-                          <li><a className="dropdown-item" href="#">E-KYC</a></li> */}
                         </ul>
                       </li>
                       <li className="nav-item dropdown">
@@ -73,14 +58,9 @@ const Header = () => {
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li className="dropdown-submenu"><a className="dropdown-item dropdown-toggle">CARD - Manual Entry</a></li>
                           <li className="dropdown-submenu"><a className="dropdown-item dropdown-toggle" href="/pdeScrutinyList">CARD - PDE</a>
-                            {/* <ul className="dropdown-menu">
-                              <li><a className="dropdown-item" href="#">CARD - Manual Entry</a></li>
-                              <li><a className="dropdown-item" href="/pdeScrutinyList">CARD - PDE</a></li>
-                            </ul> */}
                           </li>
                           <li><a className="dropdown-item" href="/otherMenu/SRO">SRO For The Day</a></li>
                           <li><a className="dropdown-item" href="/otherMenu/SroEsign">SRO Esign</a></li>
-                          {/* <li><a className="dropdown-item" href="#">Grant Permission</a></li> */}
                         </ul>
                       </li>
                     </ul>
@@ -97,7 +77,6 @@ const Header = () => {
               Welcome, Praveen
             </Dropdown.Toggle>
             <Dropdown.Menu>
-              {/* <Dropdown.Item >View Profile</Dropdown.Item> */}
               <Dropdown.Item ><Link href={"/Login/LoginPage"}>Logout</Link></Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
