@@ -77,10 +77,10 @@ const LoginPage = () => {
                 <div className="LoginMargin">
                     <div className="LoginPage">
                         <Row className='Login-rightGrd'>
-                            <Col lg={7} md={7} xs={7}>
-                                <Image src={LoginBG} alt="login-BG" height="732px"/>
+                            <Col lg={7} md={7} xs={12}>
+                                <Image className="loginRightImg" src={LoginBG} alt="login-BG" height="732px"/>
                             </Col>
-                            <Col lg={5} md={5} xs={5}>
+                            <Col lg={5} md={5} xs={12}>
                             {display ? (<Alert variant="success" className="bg-transparent border-0">
                             {/* <img src="/images/loading-icon.svg" />
                             <img src="/images/loading-icon2.svg" /> */}
@@ -89,12 +89,14 @@ const LoginPage = () => {
                                         </div></div>
                                 </Alert>
                                 ) : (
-                                    <><Row className="my-3">
+                                    <>
+                                    <div className="loginBody">
+                                    <Row >
                                         <Col lg={12} md={12} xs={12}>
                                             <h2>Hi, Welcome Back!</h2>
                                         </Col>
                                     </Row>
-                                        <Row className="my-3" style={{ fontSize: "21px" }}>
+                                        <Row className="my-1 loginRadio">
                                             <Col lg={2} md={2} xs={2}>
                                                 {/* <div> */}
                                                 <input className="form-check-input" onClick={(e) => { handleOptionChange(e); setDisplay(true); }} checked={selectedOption === "option1"} type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />&nbsp;
@@ -127,8 +129,8 @@ const LoginPage = () => {
                                             </Col>
                                         </Row>
                                         <Row>
-                                            <Col lg={10} md={10} xs={10}>
-                                                <div className="searchBox my-2">
+                                            <Col lg={10} md={10} xs={12}>
+                                                <div className="searchBox">
                                                     <input
                                                         type="text"
                                                         className="form-control"
@@ -160,7 +162,7 @@ const LoginPage = () => {
                                             </Col>
                                         </Row>
                                         <Row>
-                                            <Col lg={10} md={10} xs={10}>
+                                            <Col lg={10} md={10} xs={12}>
                                                 <div className="searchBox my-2">
                                                     <input
                                                         type="text"
@@ -202,7 +204,7 @@ const LoginPage = () => {
                                                 />
                                             </Col>
                                         </Row>
-                                        <Row className="my-5">
+                                        <Row className="my-3 loginStepper">
                                             <Col lg={5} md={5} xs={5}></Col>
                                             <Col lg={2} md={2} xs={2}>
                                                 <div className="d-flex">
@@ -222,6 +224,7 @@ const LoginPage = () => {
                                             </Col>
                                             <Col lg={5} md={5} xs={5}></Col>
                                         </Row>
+                                        </div>
                                     </>
                                 )}
                             </Col>

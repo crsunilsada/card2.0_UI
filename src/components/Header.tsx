@@ -10,7 +10,6 @@ const Header = () => {
   let headerclassname = {};
   let loginheaderclass = {};
   let pagesNav = '';
-
   if (router.pathname === '/' || router.pathname === '/Dashboard' ) {
     headerimage = '/images/Login.jpg';
     headerclassname = 'mainheader-space';
@@ -19,17 +18,14 @@ const Header = () => {
     headerimage = '/images/Login.jpg';
     headerclassname = 'loginheaderspace';
     loginheaderclass = 'headernone';
-
   }
    else {
     headerimage = '/images/Landingandpde.png';
     headerclassname = 'header-space';
   }
-
   if(router.pathname === '/Login/LoginPage' || router.pathname === '/Login/LoginOtp' || router.pathname === '/Login/WelcomePage'){
     pagesNav = 'loginPage'
   }
-
   return (
     <><div className={`mainHeader ${headerclassname}${pagesNav}`}><div className={`fixed-top ${headerclassname}`}><img src={headerimage} width="100%"></img><header className={styles.header_body}>
       <Navbar className={`navigation bg-primary ${loginheaderclass}`} bg="light" expand="lg">
@@ -49,7 +45,6 @@ const Header = () => {
                   href="/registration"
                 >
                   REGISTRATION
-
                 </Nav.Link> */}
                 <nav style={{height:"50px"}}>
                   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,7 +60,6 @@ const Header = () => {
                             {/* <ul className="dropdown-menu">
                               <li><a className="dropdown-item" href="#">CARD - Manual Entry</a></li>
                               <li><a className="dropdown-item" href="/admissionofExecution">CARD - PDE</a></li>
-
                             </ul> */}
                           </li>
                           {/* <li><a className="dropdown-item" href="#">View Pahani</a></li>
@@ -82,7 +76,6 @@ const Header = () => {
                             {/* <ul className="dropdown-menu">
                               <li><a className="dropdown-item" href="#">CARD - Manual Entry</a></li>
                               <li><a className="dropdown-item" href="/pdeScrutinyList">CARD - PDE</a></li>
-
                             </ul> */}
                           </li>
                           <li><a className="dropdown-item" href="/otherMenu/SRO">SRO For The Day</a></li>
@@ -90,7 +83,6 @@ const Header = () => {
                           {/* <li><a className="dropdown-item" href="#">Grant Permission</a></li> */}
                         </ul>
                       </li>
-
                     </ul>
                   </div>
                 </nav>
@@ -104,16 +96,12 @@ const Header = () => {
             <Dropdown.Toggle  id=""  variant="secondary" style={{ backgroundColor: '#274C77', border:"none" }}>
               Welcome, Praveen
             </Dropdown.Toggle>
-
             <Dropdown.Menu>
               {/* <Dropdown.Item >View Profile</Dropdown.Item> */}
               <Dropdown.Item ><Link href={"/Login/LoginPage"}>Logout</Link></Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
           </div>
-
-
-
         </Container>
       </Navbar>
     </header>
@@ -122,5 +110,4 @@ const Header = () => {
       </div></>
   );
 };
-
 export default Header;

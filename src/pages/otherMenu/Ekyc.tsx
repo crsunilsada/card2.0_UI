@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Col, Form, Modal, Row } from 'react-bootstrap'
 import Image from "next/image";
+import Head from "next/head";
 const Ekyc = () => {
     const [show, setShow] = useState(false);
 
@@ -20,17 +21,28 @@ const Ekyc = () => {
     }, []);
     return (
         <>
-            <div className="pageMainWrap pt-4 innerpage">
+            <div className="pageMainWrap innerpage">
+            <Head>
+                <title>Ekyc - CARD</title>
+                <meta name="description" content="login" />
+                <link rel="icon" href="/igrsfavicon.ico" />
+            </Head>
                 <div className="mainWrapper">
-                    <div className="wrapperInner pt-0">
+		  <div className="mainWrapper_a">
+                    <div className="otherMenuwrapperInner1 pt-0">
                         <div className="acknowledgement">
                             <button className='active'>EKYC Services</button>
                         </div>
-                        <Row className="p-4">
-                            <Col lg={10} md={10} xs={12}></Col>
-                            <Col lg={2} md={2} xs={12}><h4>Device Mantra</h4></Col></Row>
-                        <Row className="p-4">
-                            <Col lg={3} md={4} xs={12}>
+                        <Row className="p-4 pt-5">
+                            <Col lg={8} md={8} xs={12}></Col>
+                            <Col lg={4} md={4} xs={12} className="pe-0">
+                                <div className="justifydata">
+                                    <h4>Device Mantra</h4>
+                                </div>
+                            </Col>
+                        </Row>
+                        <Row className="p-4 pt-1">
+                            <Col lg={3} md={4} xs={12} className="pb-2" >
                                 <Form.Floating>
                                     <Form.Control
                                         id="floatingInputCustom"
@@ -51,15 +63,16 @@ const Ekyc = () => {
                                 </Form.Select>
                             </Col>
                         </Row>
-                        <Row className='p-4'>
+                        <Row className='pt-2 m'>
                             <Col lg={11} md={11} xs={11}>
                                 <div className=" d-flex form-check-checkbox">
-                                    <Col lg={0.25} md={0.25} xs={0.25}>
-                                        <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" />
-                                    </Col>
-                                    <Col lg={1} md={1} xs={1}><h6>Consent:</h6></Col>
-                                    <Col >
-                                        I, the holder of Aadhar Number, given by consent number to IGRS under ITE&C, Govt. of Andhra Pradesh, to obtain my Aadhar Number and Biometric/ OTP for authenticating wih UIDAI
+                                    <div className='d-flex p-2 pt-0'>
+                                        <Col lg={0.25} md={0.25} xs={0.25}>
+                                            <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" />
+                                        </Col>
+                                        <Col lg={1} md={1} xs={1}><h6>Consent:</h6></Col></div>
+                                    <Col>
+                                        I, the holder of Aadhar Number  , given by consent number to IGRS under ITE&C, Govt. of Andhra Pradesh, to obtain my Aadhar Number and Biometric/ OTP for authenticating wih UIDAI
                                     </Col>
                                 </div>
                             </Col>
@@ -68,31 +81,24 @@ const Ekyc = () => {
 
                             </Col>
                         </Row>
-                        <div className="pageNextBtn">
-                            <Row>
-                                <Col lg={8} md={8} xs={12}></Col>
-                                <Col lg={2} md={2} xs={12}>
-                                    <button className="whitebuttonclass">Reset</button></Col>
-                                    <button className="bluebuttonclass" data-bs-toggle="modal" data-bs-target="#popup" >Capture</button>
-                            </Row>
-                            {/* <div className="modal fade" id="popup" role="dialog" aria-labelledby="popuplabel" aria-hidden="true">
-                                <div className="modal-dialog" role="document">
-                                    <div className="modal-content">
-                                        <div className="modal-header">
-                                            <h5 className="modal-title" id="popuplabel">Success Message</h5>
-                                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                                            <Image width={20} height={20} src="/images/popup-close.svg" />
-                                            </button>
-                                        </div>
-                                        <div className="modal-body">
-                                            <Row >
-                                            <Col lg={5} md={5} xs={12}></Col>
-                                          <Col lg={2} md={2} xs={12}><img src="/images/Success.svg" /></Col></Row>
-                                        <Row className='justify-content-center mt-4 mb-4'>Youre EKYC has been successfully completed</Row>
-                                        </div>
+                        <div className='pt-4'>
+                            <Row className='m-auto'>
+                                <Col lg={5} md={5   } xs={12}></Col>
+                                <Col lg={3} md={3} xs={12}></Col>
+                                <Col lg={4} md={4} xs={12} className="pb-2 ">
+                                     
+                                    <div className="justyfy_b d-flex">
+                                        <button className="whitebuttonclass me-3">Reset</button><button className="bluebuttonclass" data-bs-toggle="modal" data-bs-target="#popup"
+                                    >Capture</button>
                                     </div>
-                                </div>
-                            </div> */}
+                                    
+                                </Col>
+
+                                {/* <Col lg={1} md={1} sm={12} className="pb-2" > */}
+                                    
+                                {/* </Col> */}
+                            </Row>
+
                             <div className="modal fade" id="popup" role="dialog" aria-labelledby="popuplabel" aria-hidden="true">
                                 <div className="modal-dialog" role="document">
                                     <div className="modal-content">
@@ -215,8 +221,9 @@ const Ekyc = () => {
                                     </div>
                                 </div>
                             </div> */}
-
                         </div>
+                        <div style={{height: '102px'}}></div>
+			</div>
                     </div>
                 </div>
             </div> </>

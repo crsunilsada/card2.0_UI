@@ -24,7 +24,7 @@ const aadharVerification = () => {
             </Head>
             <div>
                 <div className="mainWrapper">
-                    <div className="wrapperInner">
+                    <div className="otherMenuwrapperInner1">
                         <div className="pageTableContainer">
                             <div className="acknowledgement">
                                 <button className="active partyDetails">Aadhar Verification</button>

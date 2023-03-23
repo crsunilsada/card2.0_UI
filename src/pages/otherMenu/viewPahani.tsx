@@ -244,7 +244,7 @@ function otherMenu() {
                     <link rel="icon" href="/igrsfavicon.ico" />
                 </Head>
                 <div className="mainWrapper">
-                    <div className="wrapperInner">
+                    <div className="otherMenuwrapperInner1">
                         <div className="acknowledgement">
                             <h4>View Pahani</h4>
                         </div>

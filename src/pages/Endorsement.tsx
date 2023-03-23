@@ -3,39 +3,35 @@ import Head from "next/head";
 import Stepper from '../components/Stepper'
 import Link from "next/link";
 import Image from "next/image";
-
-import { useEffect, useState } from "react";
+import { useState } from "react";
 const Endorsement = () => {
-
-
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     return (
         <><div><Stepper showReason1={true} /></div>
-        <Stepper showReason={false} />
-        <div className="pageMainWrap innerpage">
-            <Head>
-                <title>Endorsement - CARD</title>
-                <meta name="description" content="login" />
-                <link rel="icon" href="/igrsfavicon.ico" />
-            </Head>
-            <div>
-                <div className="mainWrapper">
-                    <div className="wrapperInner">
-                        <div className="pageTableContainer">
-                            <div className="acknowledgement">
-                                <button className="partyDetails">Assigning</button>
-                                <button className="active imaging">Endorsement</button>
-
+            <Stepper showReason={false} />
+            <div className="pageMainWrap innerpage">
+                <Head>
+                    <title>Endorsement - CARD</title>
+                    <meta name="description" content="login" />
+                    <link rel="icon" href="/igrsfavicon.ico" />
+                </Head>
+                <div>
+                    <div className="mainWrapper">
+                        <div className="wrapperInner">
+                            <div className="pageTableContainer">
+                                <div className="acknowledgement">
+                                    <button className="partyDetails">Assigning</button>
+                                    <button className="active imaging px-2">Endorsement</button>
                                 </div>
                                 <div>
-                                <Row className="mb-3">
-                                    <Col lg={12} md={12} xs={12}></Col>
-                                </Row>
-                                <Row className="mb-3">
-                                    <Col lg={12} md={12} xs={12}></Col>
-                                </Row>
+                                    <Row className="mb-3">
+                                        <Col lg={12} md={12} xs={12}></Col>
+                                    </Row>
+                                    <Row className="mb-3">
+                                        <Col lg={12} md={12} xs={12}></Col>
+                                    </Row>
                                     <Row>
                                         <Col lg={3} md={3} xs={12} className="mb-3">
                                             <Form.Floating>
@@ -119,6 +115,7 @@ const Endorsement = () => {
                                         <Col lg={3} md={12} xs={12} className="mb-3">
                                             <Form.Floating>
                                                 <Form.Select aria-label="Sub Registrar Name" id="floatingInputCustom" placeholder="Sub Registrar Name" style={{ color: "red", borderColor: "red" }}>
+                                                    <option value="0">Please Select</option>
                                                     <option value="1">Sub Registrar Name</option>
                                                     <option value="2">Sub Registrar Name</option>
                                                 </Form.Select>
@@ -129,37 +126,34 @@ const Endorsement = () => {
                                     </Row>
                                     <Row>
                                         <Col lg={6} md={6} xs={12} className="mb-3">
-
-                                    </Col>
-                                    <Col lg={2} md={2} xs={12} className="mb-3">
-
-                                    </Col>
-                                    <Col lg={4} md={4} xs={4} className="mb-3">
-                                        <div className="pageNextBtn">
-                                            <button className=" clear">
-                                                Exit
-                                            </button>
-                                                <Button variant="primary" className="next" onClick={handleShow}>
+                                        </Col>
+                                        <Col lg={2} md={2} xs={12} className="mb-3">
+                                        </Col>
+                                        <Col lg={4} md={4} xs={12} className="mb-3">
+                                            <div className="pageNextBtn">
+                                                <button className=" clear m-3">
+                                                    Exit
+                                                </button>
+                                                <Button variant="primary" className="next  m-3" onClick={handleShow}>
                                                     View
                                                 </Button>
-
                                                 <Modal show={show} onHide={handleClose} className="modal fade modal-lg align-items-center justify-content-center show">
                                                     <Modal.Header closeButton>
                                                         <Modal.Title>Endorsement</Modal.Title>
                                                     </Modal.Header>
                                                     <Container className="scrollable">
                                                         <Modal.Body className="justify-content-center text-center">
-                                                          <Row>
-                                                        <Col lg={12} md={12} xs={12}>
-                                                                        <Image width={700} height={1100} src="/images/endrosementprint.svg" />
-                                                                    </Col>
-                                                                </Row>
-                                                                <Row className="text-center  ">
-                                                                    <Col lg={12} md={12} xs={12}>
-                                                                        <Image width={700} height={1100} src="/images/endrosementprint.svg" />
-                                                                    </Col>
-                                                                </Row>
-                                                            </Modal.Body>
+                                                            <Row>
+                                                                <Col lg={12} md={12} xs={12}>
+                                                                    <Image width={700} height={1100} src="/images/endrosementprint.svg" />
+                                                                </Col>
+                                                            </Row>
+                                                            <Row className="text-center  ">
+                                                                <Col lg={12} md={12} xs={12}>
+                                                                    <Image width={700} height={1100} src="/images/endrosementprint.svg" />
+                                                                </Col>
+                                                            </Row>
+                                                        </Modal.Body>
                                                         <Modal.Footer className="justify-content-center ">
                                                             <Link href={"/AssigningVerification"}>
                                                                 <Button className="bluebuttonclass" onClick={handleClose}>

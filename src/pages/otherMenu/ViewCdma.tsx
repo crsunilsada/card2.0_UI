@@ -62,7 +62,7 @@ const ViewCdma = () => {
             </Head>
 
             <div className="mainWrapper">
-                <div className="wrapperInner">
+                <div className="otherMenuwrapperInner1">
                     <div className="acknowledgement">
                         <h4>View CDMA</h4>
                     </div>

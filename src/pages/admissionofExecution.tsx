@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { Container, Row, Col, Form, Popover, Overlay } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { useTable, usePagination } from "react-table";
 import Stepper from "../components/Stepper";
 import Link from "next/link";
@@ -645,11 +645,7 @@ function AdmissionofExecution() {
             <div className="acknowledgement">
               <h4>Admission of Execution</h4>
             </div>
-
-
-
             <div className="documentsTable pageTableMain pageTableContainer">
-
                 <Row className="mb-4">
                   <Col lg={3} md={4} xs={12}>
                     <div className="pageTableTabs">
@@ -675,21 +671,15 @@ function AdmissionofExecution() {
                       })}
                     </div>
                   </Col>
-
-                  <Col lg={9} md={4} xs={12} className="pageTableSearch">
+                  <Col lg={9} md={8} xs={12} className="pageTableSearch">
                     <div className="d-flex justify-content-end">
                       <div className="mx-3">
-
                           <div
                             className={`input-group md-form form-sm form-1 pl-0`}
                           >
-
-
                             <input type="text" className="justify-content-end float-end search-click" style={{ borderRadius: "5px", borderColor: "#5692B4", height: "40px" }} name="" placeholder=" Please search with - CS No / Ack No / App No / Presentant Name" />
                           </div>
-
                       </div>
-
                       <div>
                         <div className="searchFiler">
                           <button className="today">Today</button>
@@ -699,7 +689,6 @@ function AdmissionofExecution() {
                     </div>
                   </Col>
                 </Row>
-
                 <div className="table-responsive">
                   {clicked ? (
                     <TableAmmend columns={columnsAmmend} data={dataAmmend} />

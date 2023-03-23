@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { Container, Row, Col, Form, Nav, Tab, Table, Tabs, TabContainer, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Row, Col, Form, Nav, Tab, Tabs, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { useTable, usePagination } from "react-table";
 import { BsInfoCircle } from "react-icons/bs";
-import { DatePicker, Space } from 'antd';
-
+import { DatePicker } from 'antd';
 function PendingTable({ columns, data }) {
   const {
     getTableProps,
@@ -23,7 +22,6 @@ function PendingTable({ columns, data }) {
     },
     usePagination
   );
-
   const tooltip = (
     <Tooltip id="tooltip-top">
       <h5>Previous Ammend Reasons</h5>
@@ -48,7 +46,6 @@ function PendingTable({ columns, data }) {
         </Row>
       </Form.Floating>
     </Tooltip>
-
   );
   // Render the UI for your table
   return (
@@ -134,7 +131,6 @@ function PendingTable({ columns, data }) {
                   src="/images/ammend.svg" />
                 <small>Ammend</small>
               </button>
-
               <button className="print" data-bs-toggle="modal" data-bs-target="#refusedetails">
                 <Image
                   width={18}
@@ -201,7 +197,6 @@ function PendingTable({ columns, data }) {
                   src="/images/ammend.svg" />
                 <small>Ammend</small>
               </button>
-
               <button className="print" data-bs-toggle="modal" data-bs-target="#refusedetails">
                 <Image
                   width={18}
@@ -253,7 +248,6 @@ function PendingTable({ columns, data }) {
                   src="/images/ammend.svg" />
                 <small>Ammend</small>
               </button>
-
               <button className="print" data-bs-toggle="modal" data-bs-target="#refusedetails">
                 <Image
                   width={18}
@@ -320,7 +314,6 @@ function PendingTable({ columns, data }) {
                   src="/images/ammend.svg" />
                 <small>Ammend</small>
               </button>
-
               <button className="print" data-bs-toggle="modal" data-bs-target="#refusedetails">
                 <Image
                   width={18}
@@ -372,7 +365,6 @@ function PendingTable({ columns, data }) {
                   src="/images/ammend.svg" />
                 <small>Ammend</small>
               </button>
-
               <button className="print" data-bs-toggle="modal" data-bs-target="#refusedetails">
                 <Image
                   width={18}
@@ -384,7 +376,6 @@ function PendingTable({ columns, data }) {
           </tr>
         </tbody>
       </table>
-
       <div className="paginationMain">
         <ul className="pagination d-flex align-items-center justify-content-end">
           <li className="PageItems">
@@ -419,7 +410,7 @@ function PendingTable({ columns, data }) {
           <li
             className="paginationNext pageNav"
             onClick={() => nextPage()}
-            // disabled={!canNextPage}
+          // disabled={!canNextPage}
           >
             <a className="page-link">
               <img src="/images/pagination-next.jpg" />
@@ -433,12 +424,7 @@ function PendingTable({ columns, data }) {
 function AcceptTable({ columns, data }) {
   const {
     getTableProps,
-    getTableBodyProps,
     headerGroups,
-    prepareRow,
-    page,
-    canPreviousPage,
-    canNextPage,
     pageOptions,
     nextPage,
     previousPage,
@@ -452,7 +438,6 @@ function AcceptTable({ columns, data }) {
     },
     usePagination
   );
-
   // Render the UI for your table
   return (
     <div className="tableWithPagination table-responsive">
@@ -610,7 +595,6 @@ function AcceptTable({ columns, data }) {
           </tr>
         </tbody>
       </table>
-
       <div className="paginationMain">
         <ul className="pagination d-flex align-items-center justify-content-end">
           <li className="PageItems">
@@ -636,7 +620,7 @@ function AcceptTable({ columns, data }) {
           <li
             className="paginationPrev pageNav"
             onClick={() => previousPage()}
-            // disabled={!canPreviousPage}
+          // disabled={!canPreviousPage}
           >
             <a className="page-link">
               <img src="/images/pagination-prev.jpg" />
@@ -645,7 +629,7 @@ function AcceptTable({ columns, data }) {
           <li
             className="paginationNext pageNav"
             onClick={() => nextPage()}
-            // disabled={!canNextPage}
+          // disabled={!canNextPage}
           >
             <a className="page-link">
               <img src="/images/pagination-next.jpg" />
@@ -661,10 +645,6 @@ function AmmendTable({ columns, data }) {
     getTableProps,
     getTableBodyProps,
     headerGroups,
-    prepareRow,
-    page,
-    canPreviousPage,
-    canNextPage,
     pageOptions,
     nextPage,
     previousPage,
@@ -678,15 +658,13 @@ function AmmendTable({ columns, data }) {
     },
     usePagination
   );
-
   const tooltip = (
     <Tooltip id="tooltip-top">
       <Form.Floating>
-        <p>Name should be expanded as per ID proof</p>
+        Name should be expanded as per ID proof
       </Form.Floating>
     </Tooltip>
   );
-
   // Render the UI for your table
   return (
     <div className="tableWithPagination table-responsive">
@@ -767,8 +745,8 @@ function AmmendTable({ columns, data }) {
                   overlay={tooltip}
                 // containerPadding={20}
                 >
-                  <div>
-                    Name should be expanded as per ID proof
+                  <div >
+                    Name should be expanded...
                   </div>
                 </OverlayTrigger>
               </div>
@@ -873,7 +851,6 @@ function AmmendTable({ columns, data }) {
           </tr>
         </tbody>
       </table>
-
       <div className="paginationMain">
         <ul className="pagination d-flex align-items-center justify-content-end">
           <li className="PageItems">
@@ -899,7 +876,7 @@ function AmmendTable({ columns, data }) {
           <li
             className="paginationPrev pageNav"
             onClick={() => previousPage()}
-            // disabled={!canPreviousPage}
+          // disabled={!canPreviousPage}
           >
             <a className="page-link">
               <img src="/images/pagination-prev.jpg" />
@@ -908,7 +885,7 @@ function AmmendTable({ columns, data }) {
           <li
             className="paginationNext pageNav"
             onClick={() => nextPage()}
-            // disabled={!canNextPage}
+          // disabled={!canNextPage}
           >
             <a className="page-link">
               <img src="/images/pagination-next.jpg" />
@@ -924,10 +901,6 @@ function RefuseTable({ columns, data }) {
     getTableProps,
     getTableBodyProps,
     headerGroups,
-    prepareRow,
-    page,
-    canPreviousPage,
-    canNextPage,
     pageOptions,
     nextPage,
     previousPage,
@@ -941,7 +914,6 @@ function RefuseTable({ columns, data }) {
     },
     usePagination
   );
-
   // Render the UI for your table
   return (
     <div className="tableWithPagination table-responsive">
@@ -1115,7 +1087,6 @@ function RefuseTable({ columns, data }) {
           </tr>
         </tbody>
       </table>
-
       <div className="paginationMain">
         <ul className="pagination d-flex align-items-center justify-content-end">
           <li className="PageItems">
@@ -1141,7 +1112,7 @@ function RefuseTable({ columns, data }) {
           <li
             className="paginationPrev pageNav"
             onClick={() => previousPage()}
-            // disabled={!canPreviousPage}
+          // disabled={!canPreviousPage}
           >
             <a className="page-link">
               <img src="/images/pagination-prev.jpg" />
@@ -1150,7 +1121,7 @@ function RefuseTable({ columns, data }) {
           <li
             className="paginationNext pageNav"
             onClick={() => nextPage()}
-            // disabled={!canNextPage}
+          // disabled={!canNextPage}
           >
             <a className="page-link">
               <img src="/images/pagination-next.jpg" />
@@ -1161,21 +1132,15 @@ function RefuseTable({ columns, data }) {
     </div>
   );
 }
-
-
 const pdeScrutinyList = () => {
   const [display, setdisplay] = useState(false)
   const handleClick = () => {
     setdisplay(true)
   }
-
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
-
   const { RangePicker } = DatePicker;
-
-
   const pendingcolumns = React.useMemo(
     () => [
       {
@@ -1191,7 +1156,7 @@ const pdeScrutinyList = () => {
           },
           {
             Header: "Nature of Document",
-            accessor:"natureofdocument",
+            accessor: "natureofdocument",
           },
           {
             Header: "Slot Time",
@@ -1210,12 +1175,11 @@ const pdeScrutinyList = () => {
     ],
     []
   );
-
   const pendingtableData = [
     {
       appId: "456787654",
       presenterName: "Chandra Shekar",
-      natureofdocument:"Sale deed",
+      natureofdocument: "Sale deed",
       slotTime: "10:30am",
       details: "View Details",
       status: "New",
@@ -1223,7 +1187,7 @@ const pdeScrutinyList = () => {
     {
       appId: "456787654",
       presenterName: "Shekar Varma",
-      natureofdocument:"Mortgage with possesion",
+      natureofdocument: "Mortgage with possesion",
       slotTime: "12:15pm",
       details: "View Details",
       status: "Ammend",
@@ -1237,7 +1201,6 @@ const pdeScrutinyList = () => {
       status: "New",
     },
   ]
-
   const acceptcolumns = React.useMemo(
     () => [
       {
@@ -1261,7 +1224,7 @@ const pdeScrutinyList = () => {
           },
           {
             Header: "Nature of Document",
-            accessor:"natureofdocument",
+            accessor: "natureofdocument",
           },
           {
             Header: "Slot Time",
@@ -1283,23 +1246,23 @@ const pdeScrutinyList = () => {
   const accepttableData = [
     {
       appId: "456787654",
-      ackNumYear:"1234",
-      csno:"5676",
+      ackNumYear: "1234",
+      csno: "5676",
       presenterName: "Chandra Shekar",
-      Natureofdocument:"Sale deed",
+      Natureofdocument: "Sale deed",
       slotTime: "10:30am",
       details: "View Details",
-      acceptdatetimebySRO:"22/11/2022 @10:45pm",
+      acceptdatetimebySRO: "22/11/2022 @10:45pm",
     },
     {
       appId: "456787655",
-      ackNumYear:"1234",
-      csno:"7654",
+      ackNumYear: "1234",
+      csno: "7654",
       presenterName: "Shekar Varma",
-      Natureofdocument:"Mortgage with possesion",
+      Natureofdocument: "Mortgage with possesion",
       slotTime: "12:15pm",
       details: "View Details",
-      acceptdatetimebySRO:"24/11/2022 @12:45pm",
+      acceptdatetimebySRO: "24/11/2022 @12:45pm",
     },
   ]
   const ammendcolumns = React.useMemo(
@@ -1325,7 +1288,7 @@ const pdeScrutinyList = () => {
           },
           {
             Header: "Nature of Document",
-            accessor:"natureofdocument"
+            accessor: "natureofdocument"
           },
           {
             Header: "Slot Time",
@@ -1358,7 +1321,7 @@ const pdeScrutinyList = () => {
       acknumberyear: "34544/2022",
       csNo: "212",
       presenterName: "chandra Shekar",
-      natureofdocument:"Sale Deed",
+      natureofdocument: "Sale Deed",
       slotTime: "10:30pm",
       details: "View Details",
       ammendReason: "Name expansion",
@@ -1370,7 +1333,7 @@ const pdeScrutinyList = () => {
       acknumberyear: "12345/2022",
       csNo: "132",
       presenterName: "Shekar varma",
-      natureofdocument:"Mortgage with possesion",
+      natureofdocument: "Mortgage with possesion",
       slotTime: "11:00pm",
       details: "View Details",
       ammendReason: "Surname is not matching",
@@ -1401,7 +1364,7 @@ const pdeScrutinyList = () => {
           },
           {
             Header: "Nature of Document",
-            accessor:"nature of Document"
+            accessor: "nature of Document"
           },
           {
             Header: "Slot Time",
@@ -1434,7 +1397,7 @@ const pdeScrutinyList = () => {
       acknumberyear: "34567/2022",
       csNo: "546",
       presenterName: "chandra Shekar",
-      natureofdocument:"Sale Deed",
+      natureofdocument: "Sale Deed",
       slotTime: "10:30am",
       details: "View Details",
       refuseReason: "Fake Document",
@@ -1446,7 +1409,7 @@ const pdeScrutinyList = () => {
       acknumberyear: "43214/2022",
       csNo: "389",
       presenterName: "shekar varma",
-      natureofdocument:"Mortgage with possesion",
+      natureofdocument: "Mortgage with possesion",
       slotTime: "11:30pm",
       details: "View Details",
       refuseReason: "Third party person",
@@ -1455,21 +1418,17 @@ const pdeScrutinyList = () => {
     }
   ];
   return (
-
     <div className="pageMainWrap innerpage">
       <Head>
         <title>PDE Scrutiny List - CARD</title>
         <meta name="description" content="login" />
         <link rel="icon" href="/igrsfavicon.ico" />
       </Head>
-
       <div className="mainWrapper">
         <div className="wrapperInner">
           <div className="acknowledgement">
             <h4>PDE Applications Scrutiny</h4>
           </div>
-
-
           <div className="documentsTable pageTableMain pageTableContainer">
             <Tab.Container defaultActiveKey="pending">
               <div className="pageTabsMain">
@@ -1539,7 +1498,7 @@ const pdeScrutinyList = () => {
           >
             <div className="modal-dialog">
               <div className="modal-content">
-                <div className="d-flex align-items-end flex-column py-2">
+                <div className="d-flex align-items-end flex-column py-3">
                   <button
                     type="button"
                     className="btn-close px-4"
@@ -1623,7 +1582,7 @@ const pdeScrutinyList = () => {
                     />
                   </button>
                 </div>
-                <div className="mx-3 mt-3 ">
+                <div className="mx-3 ">
                   Basic Details
                 </div>
                 <div className="modal-body">
@@ -1682,7 +1641,6 @@ const pdeScrutinyList = () => {
                     </button>
                   </div>
                 </div>
-
               </div>
             </div>
             {/* <div className="modal-dialog">
@@ -1756,9 +1714,7 @@ const pdeScrutinyList = () => {
                       ADD
                     </button>
                   </div>
-
                 </div>
-
               </div>
             </div> */}
             {/* <div className="modal-dialog">
@@ -1835,9 +1791,7 @@ const pdeScrutinyList = () => {
                       ADD
                     </button>
                   </div>
-
                 </div>
-
               </div>
             </div> */}
             {/* <div className="modal-dialog">
@@ -1928,7 +1882,6 @@ const pdeScrutinyList = () => {
               </div>
             </div> */}
           </div>
-
           <div
             className="modal fade modal-md"
             id="generatingdetails"
@@ -1980,7 +1933,6 @@ const pdeScrutinyList = () => {
               </div>
             </div>
           </div>
-
           <div
             className="modal fade modal-md"
             id="ammenddetails"
@@ -2006,7 +1958,6 @@ const pdeScrutinyList = () => {
                     />
                   </button>
                 </div>
-
                 <div className="modal-body">
                   <Row>
                     <select className="form-select form-select form-data mb-3">
@@ -2091,7 +2042,6 @@ const pdeScrutinyList = () => {
               </div>
             </div> */}
           </div>
-
           <div
             className="modal fade modal-md"
             id="slipdetails"
@@ -2127,13 +2077,13 @@ const pdeScrutinyList = () => {
                           src="/images/accept1.svg"
                         />
                       </div>
-                      <h6>Acknowledgement No: <strong>345</strong></h6>
+                      <h5>Acknowledgement No: <strong>345</strong></h5>
                     </div>
                     <div className="text-center">
-                      <h6>Check Slip No: <strong>212</strong></h6>
+                      <h5>Check Slip No: <strong>212</strong></h5>
                     </div>
                     <div className="text-center">
-                      <h6>has been generated successfully.</h6>
+                      <h5>has been generated successfully.</h5>
                     </div>
                   </Row>
                 </div>
@@ -2186,21 +2136,70 @@ const pdeScrutinyList = () => {
                   <Row>
                     <Col>
                       <div className="d-flex justify-content-center mt-3">
-                        <button type="button" className="bluebuttonclass">
+                        <button
+                          data-bs-toggle="modal"
+                          data-bs-target="#checkdetails"
+                          type="button"
+                          className="bluebuttonclass">
                           Submit
                         </button>
                       </div>
                     </Col>
                   </Row>
-
                 </div>
               </div>
             </div>
-
           </div>
-          <div style={{height: '102px'}}></div>
+          <div
+            className="modal fade modal-md"
+            id="checkdetails"
+            aria-labelledby="checkdetails"
+            aria-hidden="true"
+          >
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title" id="exampleModalLabel">
+                    Application No: 456787654
+                  </h5>
+                  <button
+                    type="button"
+                    className="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <Image
+                      width={20}
+                      height={20}
+                      src="/images/popup-close.svg"
+                    />
+                  </button>
+                </div>
+                <div className="modal-body">
+                  <Row>
+                    <div className="text-center">
+                      <div>
+                        <Image
+                          width={80}
+                          height={80}
+                          src="/images/accept1.svg"
+                        />
+                      </div>
+                      <h5>Acknowledgement No: <strong>345</strong></h5>
+                    </div>
+                    <div className="text-center">
+                      <h5>Check Slip No: <strong>212</strong></h5>
+                    </div>
+                    <div className="text-center">
+                      <h5>has been generated successfully.</h5>
+                    </div>
+                  </Row>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style={{ height: '102px' }}></div>
         </div>
-
       </div>
     </div>
   );

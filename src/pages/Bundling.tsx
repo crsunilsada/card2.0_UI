@@ -3,16 +3,15 @@ import Head from "next/head";
 import Stepper from '../components/Stepper'
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 const Bundling = () => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     return (
-    <><div><Stepper showReason1={true} /></div>
-    <Stepper showReason={false} />
-     <div className="pageMainWrap innerpage">
-
+        <><div><Stepper showReason1={true} /></div>
+            <Stepper showReason={false} />
+            <div className="pageMainWrap innerpage">
                 <Head>
                     <title>Digital Sign - CARD</title>
                     <meta name="description" content="login" />
@@ -27,19 +26,19 @@ const Bundling = () => {
                                     <button className=" partyDetails">Digital Sign</button>
                                 </div>
                                 <div>
-                                <Row className="mb-3">
-                                    <Col lg={12} md={12} xs={12}></Col>
-                                </Row>
-                                <Row className="mb-3">
-                                    <Col lg={12} md={12} xs={12}></Col>
-                                </Row>
+                                    <Row className="mb-3">
+                                        <Col lg={12} md={12} xs={12}></Col>
+                                    </Row>
+                                    <Row className="mb-3">
+                                        <Col lg={12} md={12} xs={12}></Col>
+                                    </Row>
                                     <Row>
                                         <Col lg={3} md={3} xs={12} className="mb-3">
                                             <Form.Floating>
                                                 <Form.Control
                                                     id="floatingInputCustom"
                                                     type="text"
-                                                    placeholder="CS Number" />
+                                                    placeholder="CS Number" value="3453" />
                                                 <label htmlFor="floatingInputCustom">
                                                     CS Number
                                                 </label>
@@ -50,7 +49,7 @@ const Bundling = () => {
                                                 <Form.Control
                                                     id="floatingInputCustom"
                                                     type="text"
-                                                    placeholder="CS Number" />
+                                                    placeholder="CS Number" value="2023" />
                                                 <label htmlFor="floatingInputCustom">
                                                     CS Year
                                                 </label>
@@ -61,7 +60,7 @@ const Bundling = () => {
                                                 <Form.Control
                                                     id="floatingInputCustom"
                                                     type="text"
-                                                    placeholder="CS Number" />
+                                                    placeholder="CS Number" value="56345" />
                                                 <label htmlFor="floatingInputCustom">
                                                     Ack No.
                                                 </label>
@@ -74,7 +73,7 @@ const Bundling = () => {
                                                 <Form.Control
                                                     id="floatingInputCustom"
                                                     type="text"
-                                                    placeholder="CS Number" />
+                                                    placeholder="CS Number" value="2023" />
                                                 <label htmlFor="floatingInputCustom">
                                                     Ack Year
                                                 </label>
@@ -85,7 +84,7 @@ const Bundling = () => {
                                                 <Form.Control
                                                     id="floatingInputCustom"
                                                     type="text"
-                                                    placeholder="CS Number" />
+                                                    placeholder="CS Number" value="117" />
                                                 <label htmlFor="floatingInputCustom">
                                                     Book No
                                                 </label>
@@ -96,7 +95,7 @@ const Bundling = () => {
                                                 <Form.Control
                                                     id="floatingInputCustom"
                                                     type="text"
-                                                    placeholder="CS Number" />
+                                                    placeholder="CS Number" value="2812384" />
                                                 <label htmlFor="floatingInputCustom">
                                                     Reg Document No.
                                                 </label>
@@ -108,16 +107,16 @@ const Bundling = () => {
                                         </Col>
                                         <Col lg={4} md={4} xs={12} className="pageNextBtn">
                                             <Row>
-                                                <Col lg={6} md={6} xs={6} className="mb-3">
-                                                    <button type="button" className="next p-2" onClick={handleShow}>Start Bundling</button>
+                                                <Col lg={6} md={12} xs={12} className="mb-3">
+                                                    <button type="button" className="next p-2 mx-4" onClick={handleShow}>Start Bundling</button>
                                                 </Col>
-                                                <Col lg={1} md={1} xs={6}>
+                                                <Col lg={1} md={12} xs={12}>
                                                     <button type="button" className="clear"> Clear</button>
                                                 </Col>
                                             </Row>
                                         </Col>
                                     </Row>
-                                   {/* <Modal show={show} onHide={handleClose} className="modal-path">
+                                    {/* <Modal show={show} onHide={handleClose} className="modal fade modal-lg align-items-center justify-content-center show">
                                         <Modal.Header closeButton>
                                             <Modal.Title>Bundling</Modal.Title>
                                         </Modal.Header>
@@ -139,20 +138,19 @@ const Bundling = () => {
                                         </Modal.Body>
                                         <Modal.Footer className="justify-content-center ">
                                             <Link href={"/ScanningUpload"}>
-                                                <Button className="bluebuttonclass-disable" aria-disabled="true" disabled onClick={handleClose}>
+                                                <Button className="bluebuttonclass" aria-disabled="true" disabled onClick={handleClose}>
                                                     Save
                                                 </Button>
                                             </Link>
                                         </Modal.Footer>
                                         </Container>
                                     </Modal> */}
-                                       <Modal show={show} onHide={handleClose} className="modal fade modal-lg align-items-center justify-content-center show">
+                                    <Modal show={show} onHide={handleClose} className="modal fade modal-lg align-items-center justify-content-center show">
                                         <Modal.Header closeButton>
                                             <Modal.Title>Bundling</Modal.Title>
                                         </Modal.Header>
-                                         <Container className="scrollable">
+                                        <Container className="scrollable">
                                             <Modal.Body className="justify-content-center text-center">
-
                                                 <Row className="text-center  ">
                                                     <Col lg={12} md={10} xs={12}>
                                                         <Image width={200} height={300} src="/images/Bundling1.svg" />
@@ -163,14 +161,14 @@ const Bundling = () => {
                                                         <Image width={200} height={300} src="/images/Bundling.svg" />
                                                     </Col>
                                                 </Row>
-                                        </Modal.Body>
-                                        <Modal.Footer className="justify-content-center ">
-                                            <Link href={"/ScanningUpload"}>
-                                                <Button className="bluebuttonclass" onClick={handleClose}>
-                                                    Save
-                                                </Button>
-                                            </Link>
-                                        </Modal.Footer>
+                                            </Modal.Body>
+                                            <Modal.Footer className="justify-content-center ">
+                                                <Link href={"/ScanningUpload"}>
+                                                    <Button className="bluebuttonclass" onClick={handleClose}>
+                                                        Save
+                                                    </Button>
+                                                </Link>
+                                            </Modal.Footer>
                                         </Container>
                                     </Modal>
                                 </div>
@@ -181,6 +179,4 @@ const Bundling = () => {
             </div></>
     );
 };
-
 export default Bundling;
-

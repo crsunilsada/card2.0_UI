@@ -14,7 +14,7 @@ const ErrorScreen = () => {
                     <link rel="icon" href="/igrsfavicon.ico" />
                 </Head>
                 <div className="mainWrapper">
-                    <div className="wrapperInner">
+                    <div className="otherMenuwrapperInner1">
                         <div className="acknowledgement">
                             {/* <button className="partyDetails">Party Details</button> */}
                             <button className="active imaging">Aadhar Verification</button>
@@ -36,7 +36,7 @@ const ErrorScreen = () => {
                                 <Col className='errormessage'>
                                     <div className="my-5 crop-image-text my-auto">
                                         <strong className='h5 fw-bold'>Cannot Connect to a Local Network</strong></div>
-                                </Col>                                
+                                </Col>
                             </Row>
                         </div>
                     </div>

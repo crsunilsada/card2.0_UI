@@ -135,7 +135,7 @@ function SRO() {
                     <link rel="icon" href="/igrsfavicon.ico" />
                 </Head>
                 <div className="mainWrapper">
-                    <div className="wrapperInner">
+                    <div className="otherMenuwrapperInner1">
                         <div className="acknowledgement">
                             <h4>SRO For The Day</h4>
                         </div>

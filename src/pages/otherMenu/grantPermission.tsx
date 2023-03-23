@@ -60,7 +60,7 @@ const pdeScrutinyList = () => {
             </Head>
 
             <div className="mainWrapper">
-                <div className="wrapperInner">
+                <div className="otherMenuwrapperInner1">
                     <div className="acknowledgement">
                         <h4>PP Grant Permission</h4>
                     </div>

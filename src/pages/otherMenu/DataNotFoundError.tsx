@@ -7,7 +7,7 @@ const DataNotFoundError = () => {
         <div>
             <div className="pageMainWrap innerpage">
                 <div className="mainWrapper">
-                    <div className="wrapperInner">
+                    <div className="otherMenuwrapperInner1">
                         <div className="acknowledgement">
                             <h4>Aadhar Verification</h4>
                         </div>

@@ -1,8 +1,7 @@
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { Container, Row, Col, Table, Tab, Nav, Form, Accordion, Modal, Button } from "react-bootstrap";
+import { Row, Col, Table, Tab, Nav, Form, Accordion, Modal, Button } from "react-bootstrap";
 import Stepper from '../components/Stepper'
 const Assigning = () => {
   const lastColumn = [(
@@ -76,17 +75,15 @@ const Assigning = () => {
         <meta name="description" content="login" />
         <link rel="icon" href="/igrsfavicon.ico" />
       </Head>
-
       <div className="mainWrapper">
         <div className="wrapperInner">
           <div className="acknowledgement">
             <button className="active partyDetails">Assigning</button>
             <button className="imaging">Endorsement</button>
           </div>
-
           <div className="pageTableContainer mt-4">
             <Row className="mb-4">
-              <Col lg={3} md={3} xs={12} className="mb-3">
+              <Col lg={3} md={3} xs={12} className="mb-4">
                 <Form.Floating>
                   <Form.Control
                     id="floatingInputCustom"
@@ -97,8 +94,7 @@ const Assigning = () => {
                   </Form.Label>
                 </Form.Floating>
               </Col>
-
-              <Col lg={3} md={4} xs={12} className="mb-3">
+              <Col lg={3} md={4} xs={12} className="mb-4">
                 <Form.Floating>
                   <Form.Control
                     id="floatingInputCustom"
@@ -107,8 +103,7 @@ const Assigning = () => {
                   <Form.Label htmlFor="floatingInputCustom">Year</Form.Label>
                 </Form.Floating>
               </Col>
-
-              <Col lg={3} md={4} xs={12}>
+              <Col lg={3} md={4} xs={12} className="mb-4">
                 <Form.Floating>
                   <Form.Control
                     id="floatingInputCustom"
@@ -133,7 +128,7 @@ const Assigning = () => {
                           <div className="tabsList">
                             <Nav variant="pills">
                               <Nav.Item>
-                                <Nav.Link eventKey="first" >
+                                <Nav.Link eventKey="first" className="tab-link" >
                                   <span>4</span>Executant List
                                 </Nav.Link>
                               </Nav.Item>
@@ -148,11 +143,11 @@ const Assigning = () => {
                             <Tab.Pane eventKey="first">
                               <Row>
                                 <div className="PropertyScrollBar">
-                                  <Col lg={4} md={6} xs={12} className="mb-3">
+                                  <Col lg={4} md={10}  className="mb-3 ">
                                     <div className="card">
-                                      <div className="cardHeader d-flex align-items-center justify-content-between">
-                                        <h5>
-                                          <span>Presentant - Executant</span>
+                                      <div className="cardHeader d-flex align-items-center justify-content-between PropertyScrollBar">
+                                        <h5>Presentant -
+                                          <span> Executant</span>
                                         </h5>
                                         <h4 className="cardBtns">
                                           {/* <button type="button" data-bs-toggle="modal" data-bs-target="#partyDetailsScroll">
@@ -165,10 +160,10 @@ const Assigning = () => {
                                       </div>
                                       <div className="cardBody">
                                         <Row>
-                                          <Col lg={4} md={12} xs={12}>
+                                          <Col lg={4} md={4} xs={12}>
                                             <img src="/images/party-executantimg.jpg" />
                                           </Col>
-                                          <Col lg={8} md={12} xs={12}>
+                                          <Col lg={8} md={8} xs={12}>
                                             <Row>
                                               <div className="d-flex align-items-center mb-3">
                                                 <Col lg={6} md={6} xs={6}>
@@ -206,11 +201,11 @@ const Assigning = () => {
                                       </div>
                                     </div>
                                   </Col>
-                                  <Col lg={4} md={6} xs={12} className="mb-3">
+                                  <Col lg={4} md={10}  className="mb-3 ">
                                     <div className="card">
-                                      <div className="cardHeader d-flex align-items-center justify-content-between">
-                                        <h5>
-                                          <span>Executant - Representative</span>
+                                      <div className="cardHeader d-flex align-items-center justify-content-between PropertyScrollBar">
+                                        <h5>Executant -
+                                          <span> Representative</span>
                                         </h5>
                                         <h4 className="cardBtns">
                                           <button type="button" data-bs-toggle="modal" data-bs-target="#partyDetailsScroll1">
@@ -223,15 +218,15 @@ const Assigning = () => {
                                       </div>
                                       <div className="cardBody">
                                         <Row>
-                                          <Col lg={4} md={12} xs={12}>
+                                          <Col lg={4} md={4} xs={12}>
                                             <img src="/images/kanth.svg" />
                                           </Col>
-                                          <Col lg={8} md={12} xs={12}>
+                                          <Col lg={8} md={8} xs={12}>
                                             <Row>
                                             <div className="d-flex align-items-center mb-3">
                                             <Col lg={6} md={6} xs={6}>
                                               <h6>
-                                                <span>Name</span>Krishna Kanth
+                                                <span>Name</span>krishna Raju
                                               </h6>
                                               </Col>
                                               <Col lg={6} md={6} xs={6}>
@@ -255,7 +250,7 @@ const Assigning = () => {
                                             </Row>
                                             <div className="d-flex align-items-center">
                                               <h6>
-                                                <span>Address</span>Flat 10, Krishnanjali Residency...
+                                                <span>Address</span>Flat 10,Block E, Krisha Residency...
                                               </h6>
                                             </div>
                                           </Col>
@@ -263,14 +258,13 @@ const Assigning = () => {
                                       </div>
                                     </div>
                                   </Col>
-                                  <Col lg={4} md={6} xs={12} className="mb-3">
+                                  <Col lg={4} md={10}  className="mb-3 ">
                                     <div className="card">
-                                      <div className="cardHeader d-flex align-items-center justify-content-between">
-                                        <h5>
-                                          <span>Executant</span>
+                                      <div className="cardHeader d-flex align-items-center justify-content-between ">
+                                        <h5>Executant
                                         </h5>
                                         <h4 className="cardBtns">
-                                          <button data-bs-toggle="modal" data-bs-target="#partyDetailsScroll2">
+                                          <button type="button" data-bs-toggle="modal" data-bs-target="#partyDetailsScroll1">
                                             <img src="/images/edit-icon.svg" />
                                           </button>
                                           <button className="delete">
@@ -280,40 +274,39 @@ const Assigning = () => {
                                       </div>
                                       <div className="cardBody">
                                         <Row>
-                                          <Col lg={4} md={12} xs={12}>
+                                          <Col lg={4} md={4} xs={12}>
                                             <img src="/images/Dharmendar.svg" />
                                           </Col>
-                                          <Col lg={8} md={12} xs={12}>
+                                          <Col lg={8} md={8} xs={12}>
                                             <Row>
                                             <div className="d-flex align-items-center mb-3">
                                             <Col lg={6} md={6} xs={6}>
                                               <h6>
-                                                <span>Name</span>Dharmendra
+                                                <span>Name</span>Ramakrishna
                                               </h6>
                                               </Col>
                                               <Col lg={6} md={6} xs={6}>
                                               <h6 className="justify-content-end">
-                                                <span>Aadhaar No.</span>XXXXXX7623
+                                                <span>Aadhaar No.</span>XXXXXX1243
                                               </h6>
                                               </Col>
                                             </div>
                                             <div className="d-flex align-items-center mb-3">
                                             <Col lg={6} md={6} xs={6}>
                                               <h6>
-                                                <span>Rel & Relation</span>S/o Parthasar...
+                                                <span>Rel & Relation</span>S/o Subbarao...
                                               </h6>
                                               </Col>
                                               <Col lg={6} md={6} xs={6}>
                                               <h6 className="justify-content-end">
-                                                <span>PAN / form 60/61</span>ABCKG0123A
+                                                <span>PAN / form 60/61</span>DBAGK0721B
                                               </h6>
                                               </Col>
                                             </div>
                                             </Row>
                                             <div className="d-flex align-items-center">
                                               <h6>
-                                                <span>Address</span>Flat 1A/2,
-                                                Block A, Sanjan Enclave...
+                                                <span>Address</span>Flat 10,Block A, Ram Residency...
                                               </h6>
                                             </div>
                                           </Col>
@@ -321,11 +314,11 @@ const Assigning = () => {
                                       </div>
                                     </div>
                                   </Col>
-                                  <Col lg={4} md={6} xs={12} className="mb-3">
+                                  <Col lg={4} md={10} className="mb-3 ">
                                     <div className="card">
                                       <div className="cardHeader d-flex align-items-center justify-content-between">
                                         <h5>
-                                          <span>Executant</span>
+                                         Executant
                                         </h5>
                                         <h4 className="cardBtns">
                                           <button data-bs-toggle="modal" data-bs-target="#partyDetailsScroll2">
@@ -338,10 +331,10 @@ const Assigning = () => {
                                       </div>
                                       <div className="cardBody">
                                         <Row>
-                                          <Col lg={4} md={12} xs={12}>
+                                          <Col lg={4} md={4} xs={12}>
                                             <img src="/images/Dharmendar.svg" />
                                           </Col>
-                                          <Col lg={8} md={12} xs={12}>
+                                          <Col lg={8} md={8} xs={12}>
                                             <Row>
                                             <div className="d-flex align-items-center mb-3">
                                             <Col lg={6} md={6} xs={6}>
@@ -383,24 +376,23 @@ const Assigning = () => {
                               </Row>
                             </Tab.Pane>
                           </Tab.Content>
-
                           <Tab.Content>
                             <Tab.Pane eventKey="second">
                               <Row>
                                 <div className="PropertyScrollBar">
-                                  <Col lg={4} md={6} xs={12} className="mb-3">
+                                  <Col lg={4} md={10}  className="mb-3 ">
                                     <div className="card">
-                                      <div className="cardHeader">
+                                      <div className="cardHeader PropertyScrollBar">
                                         <h5>
                                           Presentant - <span>Claimant</span>
                                         </h5>
                                       </div>
                                       <div className="cardBody">
                                         <Row>
-                                          <Col lg={4} md={12} xs={12}>
+                                          <Col lg={4} md={4} xs={12}>
                                             <img src="/images/party-executantimg.jpg" />
                                           </Col>
-                                          <Col lg={8} md={12} xs={12}>
+                                          <Col lg={8} md={8} xs={12}>
                                             <Row>
                                             <div className="d-flex align-items-center mb-3">
                                             <Col lg={6} md={6} xs={6}>
@@ -438,9 +430,9 @@ const Assigning = () => {
                                       </div>
                                     </div>
                                   </Col>
-                                  <Col lg={4} md={6} xs={12} className="mb-3">
+                                  <Col lg={4} md={10}  className="mb-3 ">
                                     <div className="card">
-                                      <div className="cardHeader d-flex align-items-center justify-content-between">
+                                      <div className="cardHeader d-flex align-items-center justify-content-between PropertyScrollBar">
                                         <h5>
                                           Claimant - <span>Representative</span>
                                         </h5>
@@ -455,10 +447,10 @@ const Assigning = () => {
                                       </div>
                                       <div className="cardBody">
                                         <Row>
-                                          <Col lg={4} md={12} xs={12}>
+                                          <Col lg={4} md={4} xs={12}>
                                             <img src="/images/kanth.svg" />
                                           </Col>
-                                          <Col lg={8} md={12} xs={12}>
+                                          <Col lg={8} md={8} xs={12}>
                                             <Row>
                                             <div className="d-flex align-items-center mb-3">
                                             <Col lg={6} md={6} xs={6}>
@@ -487,7 +479,7 @@ const Assigning = () => {
                                             </Row>
                                             <div className="d-flex align-items-center">
                                               <h6>
-                                                <span>Address</span>Flat 10, Krishnanjali Residency...
+                                                <span>Address</span>Flat 10,Block C, Krisha Residency...
                                               </h6>
                                             </div>
                                           </Col>
@@ -495,7 +487,7 @@ const Assigning = () => {
                                       </div>
                                     </div>
                                   </Col>
-                                  <Col lg={4} md={6} xs={12} className="mb-3">
+                                  <Col lg={4} md={10}  className="mb-3">
                                     <div className="card">
                                       <div className="cardHeader d-flex align-items-center justify-content-between">
                                         <h5>
@@ -512,10 +504,10 @@ const Assigning = () => {
                                       </div>
                                       <div className="cardBody">
                                         <Row>
-                                          <Col lg={4} md={12} xs={12}>
+                                          <Col lg={4} md={4} xs={12}>
                                             <img src="/images/Dharmendar.svg" />
                                           </Col>
-                                          <Col lg={8} md={12} xs={12}>
+                                          <Col lg={8} md={8} xs={12}>
                                             <Row>
                                             <div className="d-flex align-items-center mb-3">
                                             <Col lg={6} md={6} xs={6}>
@@ -553,7 +545,7 @@ const Assigning = () => {
                                       </div>
                                     </div>
                                   </Col>
-                                  <Col lg={4} md={6} xs={12} className="mb-3">
+                                  <Col lg={4} md={10}  className="mb-3 ">
                                     <div className="card">
                                       <div className="cardHeader d-flex align-items-center justify-content-between">
                                         <h5>
@@ -570,10 +562,10 @@ const Assigning = () => {
                                       </div>
                                       <div className="cardBody">
                                         <Row>
-                                          <Col lg={4} md={12} xs={12}>
+                                          <Col lg={4} md={4} xs={12}>
                                             <img src="/images/Dharmendar.svg" />
                                           </Col>
-                                          <Col lg={8} md={12} xs={12}>
+                                          <Col lg={8} md={8} xs={12}>
                                             <Row>
                                             <div className="d-flex align-items-center mb-3">
                                             <Col lg={6} md={6} xs={6}>
@@ -613,13 +605,11 @@ const Assigning = () => {
                                   </Col>
                                 </div>
                               </Row>
-
                             </Tab.Pane>
                           </Tab.Content>
                         </Tab.Container>
                       </div>
                     </div>
-
                   </Accordion.Body>
                 </Accordion.Item>
               </Accordion>
@@ -632,10 +622,10 @@ const Assigning = () => {
                   </Accordion.Header>
                   <Accordion.Body>
                     <div className="partyDetails propertyDetails">
-
-                      <div className="executanttantTable">
-                        <Row>
-                          <Col lg={3} md={6} xs={12} className="mb-3">
+                      <div className="executanttantTable  ">
+                        <Row >
+                          <div className="PropertyScrollBar">
+                          <Col lg={3} md={6}  className="mb-3">
                             <div className="card">
                               <div className="cardHeader d-flex align-items-center justify-content-between">
                                 <h5>Schedule 1</h5>
@@ -649,9 +639,7 @@ const Assigning = () => {
                                   <h6 className="justify-content-end  Property-details-text  ">
                                     <span >Village Name</span>Kankipadu
                                   </h6>
-
                                 </div>
-
                         <div className="d-flex align-items-center justify-content-between">
                           <h6>
                             <span>Ward No.</span>1
@@ -666,8 +654,7 @@ const Assigning = () => {
                       </div>
                     </div>
                   </Col>
-
-                  <Col lg={3} md={6} xs={12} className="mb-3">
+                  <Col lg={3} md={6}  className="mb-3">
                     <div className="card">
                       <div className="cardHeader d-flex align-items-center justify-content-between">
                         <h5>Schedule 1</h5>
@@ -682,7 +669,6 @@ const Assigning = () => {
                             <span>Village Name</span>Kankipadu
                           </h6>
                         </div>
-
                         <div className="d-flex align-items-center justify-content-between">
                           <h6>
                             <span>Survey No.</span>1
@@ -694,8 +680,7 @@ const Assigning = () => {
                       </div>
                     </div>
                   </Col>
-
-                  <Col lg={3} md={6} xs={12} className="mb-3">
+                  <Col lg={3} md={6}  className="mb-3">
                             <div className="card">
                               <div className="cardHeader d-flex align-items-center justify-content-between">
                                 <h5>Schedule 1</h5>
@@ -709,9 +694,7 @@ const Assigning = () => {
                                   <h6 className="justify-content-end Property-details-text">
                                     <span>Village Name</span>Kankipadu
                                   </h6>
-
                                 </div>
-
                         <div className="d-flex align-items-center justify-content-between ">
                           <h6>
                             <span>Ward No.</span>1
@@ -726,8 +709,7 @@ const Assigning = () => {
                       </div>
                     </div>
                   </Col>
-
-                  <Col lg={3} md={6} xs={12} className="mb-3">
+                  <Col lg={3} md={6}  className="mb-3">
                     <div className="card">
                       <div className="cardHeader d-flex align-items-center justify-content-between">
                         <h5>Schedule 1</h5>
@@ -742,7 +724,6 @@ const Assigning = () => {
                             <span>Village Name</span>Kankipadu
                           </h6>
                         </div>
-
                         <div className="d-flex align-items-center justify-content-between">
                           <h6>
                             <span>Survey No.</span>1
@@ -754,6 +735,33 @@ const Assigning = () => {
                       </div>
                     </div>
                   </Col>
+                  <Col lg={3} md={6}  className="mb-3">
+                    <div className="card">
+                      <div className="cardHeader d-flex align-items-center justify-content-between">
+                        <h5>Schedule 1</h5>
+                        <h5>Registration Type - Urban</h5>
+                      </div>
+                      <div className="cardBody">
+                        <div className="d-flex align-items-center justify-content-between mb-3">
+                          <h6>
+                            <span>SRO Name</span>Ramu
+                          </h6>
+                          <h6 className="justify-content-end  Property-details-card-text">
+                            <span>Village Name</span>Kankipadu
+                          </h6>
+                        </div>
+                        <div className="d-flex align-items-center justify-content-between">
+                          <h6>
+                            <span>Survey No.</span>1
+                          </h6>
+                          <h6 className="justify-content-end ">
+                            <span>Sub-Survey No.</span>122A
+                          </h6>
+                        </div>
+                      </div>
+                    </div>
+                  </Col>
+                  </div>
                         </Row>
                       </div>
                     </div>
@@ -769,7 +777,7 @@ const Assigning = () => {
                   </Accordion.Header>
                   <Accordion.Body>
                     <div className="partyDetails cashRecipient ">
-                      <div className="executanttantTable pageTableMain p-0">
+                      <div className="executanttantTable pageTableMain p-0 table-responsive">
                         <Table bordered className="tableData listData tableheadBg ">
                           <thead className="text-center p-3 ">
                             <tr >
@@ -787,8 +795,6 @@ const Assigning = () => {
                               </th>
                               <th className="p-3">By Cash</th>
                               <th className="p-3">By DD</th>
-
-
                             </tr>
                           </thead>
                           <tbody className="text-center">
@@ -803,9 +809,6 @@ const Assigning = () => {
                                   <td className="text-center p-3">{item.byCFMSStock}</td>
                                   <td className="text-center p-3">{item.byCash}</td>
                                   <td className="text-center p-3">{item.byDD}</td>
-
-
-
                                 </tr>
                               );
                             })}
@@ -827,6 +830,7 @@ const Assigning = () => {
                     <div className="partyDetails linkDocuments mb-3">
                       <div className="executanttantTable">
                         <Row>
+                          <div className="PropertyScrollBar">
                           <Col lg={2} md={6} xs={12} className="mb-3">
                             <div className="card">
                               <div className="cardBody">
@@ -838,7 +842,6 @@ const Assigning = () => {
                                     <span>Book No.</span>1
                                   </h6>
                                 </div>
-
                         <div className="d-flex align-items-center justify-content-evenly">
                           <h6>
                             <span className="Property-details-card-text">Doc No.</span>34543
@@ -850,7 +853,6 @@ const Assigning = () => {
                       </div>
                     </div>
                   </Col>
-
                   <Col lg={2} md={6} xs={12} className="mb-3">
                     <div className="card">
                       <div className="cardBody">
@@ -862,7 +864,6 @@ const Assigning = () => {
                             <span>Book No.</span>2
                           </h6>
                         </div>
-
                         <div className="d-flex align-items-center justify-content-evenly">
                           <h6>
                             <span className="Property-details-card-text">Doc No.</span>12345
@@ -874,7 +875,6 @@ const Assigning = () => {
                       </div>
                     </div>
                   </Col>
-
                   <Col lg={2} md={6} xs={12} className="mb-3">
                     <div className="card">
                       <div className="cardBody">
@@ -886,7 +886,6 @@ const Assigning = () => {
                             <span>Book No.</span>3
                           </h6>
                         </div>
-
                         <div className="d-flex align-items-center justify-content-evenly ">
                           <h6>
                             <span className="Property-details-card-text">Doc No.</span>23456
@@ -898,7 +897,6 @@ const Assigning = () => {
                       </div>
                     </div>
                   </Col>
-
                   <Col lg={2} md={6} xs={12} className="mb-3">
                     <div className="card">
                       <div className="cardBody">
@@ -910,7 +908,6 @@ const Assigning = () => {
                             <span>Book No.</span>1
                           </h6>
                         </div>
-
                                 <div className="d-flex align-items-center justify-content-evenly">
                                   <h6>
                                     <span className="Property-details-card-text">Doc No.</span>67894
@@ -933,7 +930,6 @@ const Assigning = () => {
                             <span>Book No.</span>1
                           </h6>
                         </div>
-
                                 <div className="d-flex align-items-center justify-content-evenly">
                                   <h6>
                                     <span className="Property-details-card-text" >Doc No.</span>43215
@@ -956,7 +952,6 @@ const Assigning = () => {
                             <span>Book No.</span>1
                           </h6>
                         </div>
-
                                 <div className="d-flex align-items-center justify-content-evenly">
                                   <h6>
                                     <span className="Property-details-card-text">Doc No.</span>34543
@@ -968,6 +963,7 @@ const Assigning = () => {
                               </div>
                             </div>
                           </Col>
+                          </div>
                         </Row>
                       </div>
                     </div>
@@ -976,7 +972,6 @@ const Assigning = () => {
               </Accordion>
             </div>
             <div className="mb-4 d-flex assigningcheckboxes">
-
               <Form.Check
                 defaultChecked
                 value="Regular Document Details"
@@ -986,7 +981,6 @@ const Assigning = () => {
                 name="inlineRadioOptions"
               />
               {/* <Form.Check
-
                 value=" Pending Document Details"
                 type="radio"
                 aria-label="Pending Document Details"
@@ -994,9 +988,8 @@ const Assigning = () => {
                 name="inlineRadioOptions"
               /> */}
             </div>
-
             <Row>
-              <Col lg={3} md={3} xs={12} className="mb-3">
+              <Col lg={3} md={3} xs={12} className="mb-4">
                 <Form.Floating>
                   <Form.Control
                     id="floatingInputCustom"
@@ -1008,8 +1001,7 @@ const Assigning = () => {
                   </Form.Label>
                 </Form.Floating>
               </Col>
-
-              <Col lg={3} md={4} xs={12} className="mb-3">
+              <Col lg={3} md={4} xs={12} className="mb-4">
                 <Form.Floating>
                   <Form.Control
                     id="floatingInputCustom"
@@ -1020,7 +1012,6 @@ const Assigning = () => {
                   </Form.Label>
                 </Form.Floating>
               </Col>
-
               <Col lg={3} md={4} xs={12}>
                 <Form.Floating>
                   <Form.Control
@@ -1033,14 +1024,11 @@ const Assigning = () => {
                 </Form.Floating>
               </Col>
             </Row>
-
           </div>
           <hr/>
           <div className="pageTableContainer">
             <div className="pageNextBtn">
-
               <button className="next " onClick={handleShow}>Save</button>
-
               <Modal show={show} onHide={handleClose} className="modal-path">
                 <Modal.Header closeButton>
                   <Modal.Title>Confirmation Message</Modal.Title>
@@ -1055,7 +1043,6 @@ const Assigning = () => {
                   </Link>
                 </Modal.Footer>
               </Modal>
-
             </div>
           </div>
         </div>
@@ -1063,5 +1050,4 @@ const Assigning = () => {
     </div></>
   );
 };
-
 export default Assigning;

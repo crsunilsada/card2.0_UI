@@ -1,9 +1,10 @@
 import React from "react";
-import { Button, Col, Container, Dropdown, Form, Row } from "react-bootstrap";
-import Stepper from "../components/Stepper";
-import Link from "next/link";
+import { Button, Col, Form, Row } from "react-bootstrap";
+import Table from "react-bootstrap";
+
+import Image from "next/image";
 import { useTable, usePagination } from "react-table";
-function Table({ columns, data }) {
+function Tables({ columns, data }) {
   const {
     getTableProps,
     getTableBodyProps,
@@ -31,20 +32,20 @@ function Table({ columns, data }) {
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
-                <th  {...column.getHeaderProps()}>{column.render("Header")}</th>
+                <th {...column.getHeaderProps()}>{column.render("Header")}</th>
               ))}
             </tr>
           ))}
         </thead>
         <thead>
-          <tr >
+          <tr>
             <th className="text-center p-3">Code</th>
             <th className="text-center p-3">Description</th>
             <th className="text-center p-3">Amount to pay by Challan</th>
             <th className="text-center p-3">By CFMS</th>
             <th className="text-center p-3">Bifurcation/ Allocation</th>
             <th className="text-center p-3">By Stock</th>
-            <th className="text-center p-3">
+            <th>
               {" "}
               By CFMS + <br /> Stock Holding
             </th>
@@ -73,7 +74,7 @@ function Table({ columns, data }) {
   );
 }
 
-const CashReceipt = () => {
+const CashReceiptSecond = () => {
   const columns = React.useMemo(
     () => [
       {
@@ -129,7 +130,7 @@ const CashReceipt = () => {
     </>
   );
   const textFieldFirstColumn = (
-    // <Row >
+  
     <Form.Floating>
       <Form.Control
         className="checkbox-over"
@@ -137,7 +138,7 @@ const CashReceipt = () => {
         type="text"
       />
     </Form.Floating>
-    // </Row>
+  
   );
 
  
@@ -148,7 +149,7 @@ const CashReceipt = () => {
       Description: <span className="fontweight">Stamp Duty</span>,
       amount: <span className="fontweight">1000</span>,
       ByCFMS: textField,
-      bifurcation:textField,
+      bifurcation: textField,
       ByStock: textField,
       CFMSandStock: textField,
       ByCash: textField,
@@ -159,7 +160,7 @@ const CashReceipt = () => {
       Description: <span className="fontweight">Transfer Fee</span>,
       amount: <span className="fontweight">1000</span>,
       ByCFMS: textField,
-      bifurcation:textField,
+      bifurcation: textField,
       ByStock: textField,
       CFMSandStock: textField,
       ByCash: textField,
@@ -170,7 +171,7 @@ const CashReceipt = () => {
       Description: <span className="fontweight">Fee</span>,
       amount: <span className="fontweight">100</span>,
       ByCFMS: textField,
-      bifurcation:textField,
+      bifurcation: textField,
       ByStock: textField,
       CFMSandStock: textField,
       ByCash: textField,
@@ -181,12 +182,11 @@ const CashReceipt = () => {
       Description: <span className="fontweight">User Charges</span>,
       amount: <span className="fontweight">100</span>,
       ByCFMS: textField,
-      bifurcation:textField,
+      bifurcation: textField,
       ByStock: textField,
       CFMSandStock: textField,
       ByCash: textField,
       ByDD: textField,
-
     },
     {
       Code: "",
@@ -248,10 +248,9 @@ const CashReceipt = () => {
     },
   ];
 
+
   return (
-    <div><div><Stepper showReason2={true} /></div>
-    <Stepper showReason={true}/>
-        {/* <div className="red-strip text-center p-1">REASON: Change Nature of Document  |  COMMENTS: Comments appear here</div> */}
+    <div>
       <div className="pageMainWrap innerpage">
         <div className="mainWrapper">
           <div className="wrapperInner">
@@ -319,11 +318,11 @@ const CashReceipt = () => {
                         placeholder=" Nature of Document"
                       />
                       <Form.Label htmlFor="floatingInputCustom">
-                      Nature of Document
+                        Nature of Document
                       </Form.Label>
                     </Form.Floating>
                   </Col>
-                
+
                   <Col lg={3} md={4} xs={12} className="mb-3">
                     <Form.Floating>
                       <Form.Control
@@ -340,35 +339,50 @@ const CashReceipt = () => {
               </div>
             </div>
 
-            <hr className="mt-3 mb-2" />
+            <hr className="mt-3 mb-2"/>
             <div className="pageTableContainer pageTableMain mt-2">
               <Row className="mb-5">
-                <Col lg={3} md={3} xs={12}>
+                <Col lg={3} md={3} xs={4}>
                   <h4 className="mb-4">Cash Receipt </h4>
                 </Col>
-                <Col lg={3} md={4} xs={12}></Col>
-                <Col lg={3} md={4} xs={12}></Col>
+                <Col lg={3} md={3} xs={12}></Col>
+                <Col lg={3} md={3} xs={12}></Col>
                 <Col lg={3} md={3} xs={12}>
-                  <Form.Floating>
-                    <Form.Control
-                      id="floatingInputCustom"
-                      type="text"
-                      placeholder="By CFMS"
-                    />
-                    <Form.Label htmlFor="floatingInputCustom">
-                      By CFMS
-                    </Form.Label>
-                  </Form.Floating>
+                  <div className="already-paid-btn">
+                    Amount Already Paid{" "}
+                    <div className="image-container-new">
+                      <Image width={15} height={15} src="/images/Iicon.svg" />
+
+                      <table className="table">
+                        <thead>
+                          <tr>
+                            <th className="text-nowrap">Receipt No</th>
+                            <th className="text-nowrap">Receipt Date</th>
+                            <th>Amount</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>8896</td>
+                            <td className="text-nowrap">26-4-2021</td>
+                            <td>2300</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
                 </Col>
               </Row>
+
               <div className="table-responsive">
-                <Table columns={columns} data={data} />
+                <Tables columns={columns} data={data}/>
               </div>
-              <div className="pageNextBtn mb-4">
+              <div className="pageNextBtn">
                 <Button className="next">ADD</Button>
               </div>
-              </div>
-              <hr className="mt-4 mb-2" />
+            </div>
+
+            <hr className="mt-4 mb-2" />
             <div className="pageTableContainer pageTableMain">
               <div className="pageNextBtn ">
                 <Button className="clear">Clear</Button>
@@ -382,4 +396,4 @@ const CashReceipt = () => {
   );
 };
 
-export default CashReceipt;
+export default CashReceiptSecond;

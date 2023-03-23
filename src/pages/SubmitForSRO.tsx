@@ -5,6 +5,8 @@ import { Container, Row, Col, Form, Overlay, Popover } from "react-bootstrap";
 import { useTable, usePagination } from "react-table";
 import Stepper from "../components/Stepper";
 import Link from "next/link";
+import { DatePicker } from 'antd';
+const { RangePicker } = DatePicker;
 function Table({ columns, data }) {
   const {
     getTableProps,
@@ -117,7 +119,7 @@ function Table({ columns, data }) {
         <ul className="pagination d-flex align-items-center justify-content-end">
           <li className="PageItems">
             Items per page:{" "}
-            <select
+            <select className="text-center"
               value={pageSize}
               onChange={(e) => {
                 setPageSize(Number(e.target.value));
@@ -438,58 +440,46 @@ function SubmitForSRO() {
             <div className="documentsTable pageTableMain pageTableContainer">
 
                 <Row className="mb-4">
-                  <Col lg={4} md={4} xs={12}>
+                  <Col lg={3} md={4} xs={12}>
                     <div className="pageTableTabs">
-                    <button className="button">Accept (30)</button>
-                    <button className="activeButton">Ammend (5)</button>
+                      {["Ammend (8)"].map((o, i) => {
+                        return (
+                          <button
+                            key={o}
+                            className={
+                              i === activeTab ? "activeButton" : "button"
+                            }
+                            onClick={() => {
+                              if (o == "Accept (30)") {
+                                setclicked(false);
+                              } else {
+                                setclicked(true);
+                              }
+                              setActiveTab(i);
+                            }}
+                          >
+                            {o}
+                          </button>
+                        );
+                      })}
                     </div>
                   </Col>
-
-
-                  <Col lg={8} md={4} xs={12} className="pageTableSearch">
-                    <div className="d-flex justify-content-end ">
+                  <Col lg={9} md={4} xs={12} className="pageTableSearch">
+                    <div className="d-flex justify-content-end">
                       <div className="mx-3">
-                      <form className="md-form">
-                        <div className={`input-group md-form form-sm form-1 pl-0`}>
-                          <input
-                            className={`form-control form-control-sm ml-3 w-75`}
-                            type="text"
-                            placeholder="Search Here.."
-                            aria-label="Search"
-                          />
-                          <div className={`input-group-prepend`}>
-                            <button
-                              className={`btn btn-outline-success`}
-                              type="submit"
-                            >
-                              <Image
-                                width={23}
-                                height={23}
-                                src="/images/Search-icon.svg"
-                              />
-                            </button>
+                          <div
+                            className={`input-group md-form form-sm form-1 pl-0`}
+                          >
+                            <input type="text" className="justify-content-end float-end search-click" style={{ borderRadius: "5px", borderColor: "#5692B4", height: "40px" }} name="" placeholder=" Please search with - CS No / Ack No / App No / Presentant Name" />
                           </div>
-                        </div>
-                      </form>
                       </div>
-
-<div>
-                      <div className="searchFiler">
-                        <button className="today">Today</button>
-                        <button className="filter" data-bs-toggle="modal" data-bs-target="#exampleModals">
-                          <small>Filters</small>
-                          <Image width={20} height={20} src="/images/filter.svg" />
-                        </button>
-                      </div>
-                      </div>
-
-
-
                       <div>
-
-                </div>
-                </div>
-
+                        <div className="searchFiler">
+                          <button className="today">Today</button>
+                          <RangePicker />
+                        </div>
+                      </div>
+                    </div>
                   </Col>
                 </Row>
 

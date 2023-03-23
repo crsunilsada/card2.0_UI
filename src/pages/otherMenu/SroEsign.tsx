@@ -174,7 +174,7 @@ function SRO() {
                     <link rel="icon" href="/igrsfavicon.ico" />
                 </Head>
                 <div className="mainWrapper">
-                    <div className="wrapperInner">
+                    <div className="otherMenuwrapperInner1">
                         <div className="acknowledgement">
                             <h4>SRO E-Signature</h4>
                         </div>

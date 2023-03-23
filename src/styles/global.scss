@@ -96,6 +96,20 @@ p:last-child {
                 margin: auto;
             }
         }
+
+        .otherMenuwrapperInner1 {
+            background: $white;
+            border: 1px solid $blue;
+            border-radius: 4px;
+            padding: 30px 0 40px;
+            position: relative;
+            min-height: calc(100vh - 265px);
+
+            .pageTableContainer {
+                max-width: 1653px;
+                margin: auto;
+            }
+        }
     }
 }
 
@@ -350,6 +364,14 @@ p:last-child {
                         padding: 0;
                     }
 
+                    button.capture.ImagingColor {
+                        background-color: red;
+                    }
+
+                    button.capture.selected-ImagingColor {
+                        background-color: green;
+                    }
+
                     button.capture-disable {
                         width: 160px;
                         height: 60px;
@@ -465,7 +487,6 @@ body {
 }
 
 body {
-
     .form-control.form-select.inputcomment {
         height: 130px;
     }
@@ -696,11 +717,11 @@ body {
         }
     }
 
-    .witnessList.witness1 {
-        border-bottom: 1px solid $black;
-        padding: 0 0 40px;
-        margin: 0 0 40px;
-    }
+    // .witnessList.witness1 {
+    //     border-bottom: 1px solid $black;
+    //     padding: 0 0 40px;
+    //     margin: 0 0 40px;
+    // }
 }
 
 .pageNextBtn {
@@ -722,7 +743,7 @@ body {
     button.clear {
         color: $blue;
         background: $white;
-        margin-right: 20px;
+        // margin-right: 20px;
         width: 140px;
         height: 50px;
         border-radius: 8px;
@@ -932,6 +953,11 @@ body {
 
 @media (min-width: 768px) and (max-width: 1300px) {
     .pageMainWrap {
+        .mainWrapper.dashboardWidth {
+            // max-width: 1370px;
+            margin: 70px auto 0px;
+            // padding: 69px;
+        }
         .modal-lg {
             .modal-dialog {
                 width: 98%;
@@ -1034,28 +1060,6 @@ body {
     color: $liver;
 }
 
-.acknowledge-Partydetails-button {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 10px;
-    gap: 10px;
-    width: 100%;
-    max-width: 170px;
-    height: 100%;
-    max-height: 53px;
-    margin: -22px 0px 0px 20px;
-    background: #274c77;
-    border: 1px solid #274c77;
-    font-family: "Noto Sans";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 33px;
-    color: #ffffff;
-}
-
 .header-image {
     // height: 120px;
     width: 100%;
@@ -1120,12 +1124,16 @@ body {
 .progressbar {
     position: relative;
     z-index: 1;
+
+    flex-wrap: wrap;
+
 }
 
 .progressbar-section {
-    padding: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 350px;
     height: 82px;
-    margin-left: 300px;
+
+    //margin-left: 300px;
 }
 
 .progressbar li {
@@ -1235,9 +1243,7 @@ body {
     background: url(../../public/images/homepageheader.png) no-repeat center top $white;
 }
 
-// .searchBox {
-//     display: flex;
-// }
+
 .searchInput {
     position: relative;
     left: 30px;
@@ -1397,6 +1403,10 @@ body {
             .wrapperInner {
                 padding: 40px 15px;
             }
+
+            .otherMenuwrapperInner1 {
+                padding: 40px 15px;
+            }
         }
     }
 
@@ -1436,7 +1446,7 @@ body {
     }
 
     .progressbar-section {
-        padding: 20px 0;
+        padding: 20px 0px 0px 150px;
         height: 100px;
 
         .progressbar {
@@ -1446,7 +1456,6 @@ body {
                 .progress_step_text {
                     top: -10px;
                     line-height: 18px;
-
                 }
             }
         }
@@ -1476,6 +1485,16 @@ body {
 
     .pageMainWrap {
         padding: 30px 0;
+        .mainWrapper.dashboardWidth {
+            margin: 70px auto 0px;
+            padding: 20px;
+            img{
+                height: fit-content;
+            }
+            p{
+                font-size: small;
+            }
+        }
 
         .mainWrapper {
             width: 97%;
@@ -1484,6 +1503,11 @@ body {
             .wrapperInner {
                 padding: 30px 10px;
             }
+
+            .otherMenuwrapperInner1 {
+                padding: 30px 10px;
+            }
+
         }
     }
 
@@ -1864,24 +1888,6 @@ body {
     display: block;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .drop-section .form-select.btn {
     text-align: left;
     border: 1px solid #ced4da;
@@ -2082,6 +2088,7 @@ body {
 
 .search-click:focus {
     width: 620px;
+    //width: 100%;
 }
 
 .search-click {
@@ -2120,7 +2127,7 @@ body {
 //     margin: 0px 96px;
 // }
 .Property-details-text {
-    margin-left: 41px !important;
+    margin-left: 72px !important;
 }
 
 .Property-details-card-text {
@@ -2140,6 +2147,10 @@ body {
         color: white;
         max-width: 1500px;
         margin: 216px auto 40px;
+    }
+
+    .loginRadio {
+        font-size: 21px;
     }
 
     .welcomePage-image {
@@ -2236,7 +2247,7 @@ body {
 .mainWrapper.dashboardWidth {
     max-width: 1370px;
     margin: 169px auto 0px;
-     padding: 69px;
+    padding: 69px;
 
     p {
         color: #274C77;
@@ -2282,11 +2293,14 @@ body {
 }
 
 .nav-tabs .nav-link.active {
-    border: none;
+    color: #274C77 !important;
+    border-bottom: 3px solid #274c77 !important;
+    width: 100%;
 }
 
 .nav-tabs .nav-link {
     border: none;
+    color: #000000;
 }
 
 .nav-tabs .nav-link:focus {
@@ -2413,8 +2427,8 @@ body {
 }
 
 .modal-body {
-    // padding: 30px 59px 35px;
 
+    // padding: 30px 59px 35px;
     h5 {
         font-weight: 500;
         font-size: 22px;
@@ -2497,76 +2511,222 @@ body {
 }
 
 .pageNextBtn1 {
-
     // text-align: right;
-
     padding: 0px 0 0;
 
-
-
     button {
-
         width: 300px;
-
         height: 50px;
-
         border-radius: 4px;
-
         font-weight: 600;
-
         font-size: 16px;
-
         line-height: 22px;
-
         text-align: center;
-
         padding: 10px 30px;
-
         border: 1px solid $blue;
-
     }
-
-
 
     button.clear {
-
         color: $blue;
-
         background: $white;
-
         margin-right: 20px;
-
         width: 140px;
-
         height: 50px;
-
         border-radius: 8px;
-
     }
-
-
 
     button.next {
-
         background: $blue;
-
         color: $white;
-
         width: 140px;
-
         height: 50px;
-
         border-radius: 8px;
-
     }
-
 }
 
 .btn-color {
-
     background-color: #274C77 !important;
-
     border-radius: 8px !important;
+}
+
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .search-here {
+        margin-top: 120px;
+    }
+
+    .witness {
+        margin-top: 90px !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .button-number {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (min-width: 400px) {
+    .pageNextBtn button.clear {
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .pageNextBtn {
+        flex-direction: column;
+    }
+
+    .pageNextBtn button {
+        margin-top: 10px;
+    }
+}
+
+@media (min-width:0px) and (max-width:767px) {
+    .tab-link {
+        margin-bottom: 10px;
+    }
+
+    .Property-details-text {
+        margin-left: 10% !important;
+    }
+}
+
+@media (min-width:768px) and (max-width:1767px) {
+    .Property-details-text {
+        margin-left: 0px !important;
+        padding-left: 25px;
+    }
+}
+
+.redbuttonclass {
+    width: 100%;
+    max-width: 160px;
+    height: 50px;
+    background-color: red;
+    border-radius: 8px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    color: $white;
+    border: 1px solid red;
+    cursor: pointer;
+}
+
+.redbuttonclass-disable {
+    width: 100%;
+    max-width: 160px;
+    height: 50px;
+    background-color: green;
+    border: 1px solid green;
+    border-radius: 8px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    color: $white;
+    opacity: 0.5;
+}
+@media (min-width:1024px) and (max-width:1440px) {
+    .LoginMargin {
+        .LoginPage {
+            max-width: 1024px;
+            margin: 130px auto 30px;
+
+            .Login-rightGrd {
+                Image {
+                    height: 900px;
+                }
+            }
+
+            .loginBody {
+                h2 {
+                    font-size: 20px;
+                }
+            }
+
+            .loginRadio {
+                font-size: 15px;
+            }
+        }
+    }
+}
+@media (min-width:768px) and (max-width:1024px) {
+    .LoginMargin {
+        .LoginPage {
+            max-width: 768px;
+            margin: 85px auto 0px;
+
+            .loginBody {
+                h2 {
+                    font-size: 14px;
+                }
+            }
+            .loginRadio {
+                font-size: 9px;
+            }
+
+            .loginbuttonclass {
+                margin: 0px;
+                height: 40px;
+                font-size: 14px;
+            }
+        }
+    }
+}
+@media (min-width:425px) and (max-width:767px) {
+    .LoginMargin {
+        .LoginPage {
+            max-width: 555px;
+            margin: 45px auto 0px;
+        }
+        .loginBody{
+            padding: 20px;
+        }
+        .loginRadio {
+            font-size: 18px;
+        }
+        .welcomePage-image {
+            height: 455px;
+            h3{
+                font-size: 16px;
+            }
+        }
+
+    }
+}
+@media (max-width:424px) {
+    .LoginMargin {
+        .LoginPage {
+            max-width: 310px;
+            margin: 25px auto 0px;
+        }
+        .loginBody{
+            padding: 20px;
+        }
+        .loginRadio {
+            font-size: 15px;
+        }
+        .welcomePage-image {
+            height: 305px;
+            h3{
+                font-size: 14px;
+            }
+        }
+
+    }
+}
+.selected-Imaging {
+
+    border: none;
 
 }
 
+
+
+.selected-Imaging.selected {
+
+    border: 5px solid red;
+
+}
