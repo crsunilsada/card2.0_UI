@@ -9,20 +9,20 @@ const Header = () => {
   let headerclassname = {};
   let loginheaderclass = {};
   let pagesNav = '';
-  if (router.pathname === '/' || router.pathname === '/Dashboard' ) {
+  if (router.pathname === '/' || router.pathname === '/dashboard') {
     headerimage = '/images/Login.jpg';
     headerclassname = 'mainheader-space';
   }
-  else if (router.pathname === '/Login/LoginPage' || router.pathname === '/Login/LoginOtp' || router.pathname === '/Login/WelcomePage' ){
+  else if (router.pathname === '/Login/loginPage' || router.pathname === '/Login/loginOtp' || router.pathname === '/Login/welcomePage') {
     headerimage = '/images/Login.jpg';
     headerclassname = 'loginheaderspace';
     loginheaderclass = 'headernone';
   }
-   else {
+  else {
     headerimage = '/images/Landingandpde.png';
     headerclassname = 'header-space';
   }
-  if(router.pathname === '/Login/LoginPage' || router.pathname === '/Login/LoginOtp' || router.pathname === '/Login/WelcomePage'){
+  if (router.pathname === '/Login/loginPage' || router.pathname === '/Login/loginOtp' || router.pathname === '/Login/welcomePage') {
     pagesNav = 'loginPage'
   }
   return (
@@ -39,7 +39,7 @@ const Header = () => {
                 >
                   <Image width={30} height={25} src="/images/Home.svg" />
                 </Nav.Link>
-                <nav style={{height:"50px"}}>
+                <nav style={{ height: "50px" }}>
                   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                   </button>
@@ -56,11 +56,11 @@ const Header = () => {
                       <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SRO </a>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li className="dropdown-submenu"><a className="dropdown-item dropdown-toggle">CARD - Manual Entry</a></li>
+                          <li className="dropdown-submenu"><a className="dropdown-item dropdown-toggle">CARD - Manual Entry</a></li>
                           <li className="dropdown-submenu"><a className="dropdown-item dropdown-toggle" href="/pdeScrutinyList">CARD - PDE</a>
                           </li>
                           <li><a className="dropdown-item" href="/otherMenu/SRO">SRO For The Day</a></li>
-                          <li><a className="dropdown-item" href="/otherMenu/SroEsign">SRO Esign</a></li>
+                          <li><a className="dropdown-item" href="/otherMenu/sroEsign">SRO Esign</a></li>
                         </ul>
                       </li>
                     </ul>
@@ -70,23 +70,23 @@ const Header = () => {
             </Navbar.Collapse>
           </div>
           <div className="d-flex float-end align-items-center " >
-          <Image className="mr-5" width={30} height={25} src="/images/Notification Icon.svg" />&nbsp;&nbsp;
-          <Image ml-5 width={30} height={25} src="/images/profile-icon.svg" />
-          <Dropdown>
-            <Dropdown.Toggle  id=""  variant="secondary" style={{ backgroundColor: '#274C77', border:"none" }}>
-              Welcome, Praveen
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item ><Link href={"/Login/LoginPage"}>Logout</Link></Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+            <Image className="mr-5" width={30} height={25} src="/images/Notification Icon.svg" />&nbsp;&nbsp;
+            <Image ml-5 width={30} height={25} src="/images/profile-icon.svg" />
+            <Dropdown>
+              <Dropdown.Toggle id="" variant="secondary" style={{ backgroundColor: '#274C77', border: "none" }}>
+                Welcome, Praveen
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item ><Link href={"/Login/loginPage"}>Logout</Link></Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
         </Container>
       </Navbar>
     </header>
     </div>
       <div className={`header-space ${loginheaderclass}`}></div>
-      </div></>
+    </div></>
   );
 };
 export default Header;

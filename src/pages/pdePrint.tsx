@@ -1,9 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { Container, Row, Col, Form, Tabs, Tab, Button, Nav, Card } from "react-bootstrap";
 import { useTable, usePagination } from "react-table";
 import Stepper from '../components/Stepper'
+import { DatePicker, Space } from 'antd';
+const { RangePicker } = DatePicker;
 function Table({ columns, data }) {
   const {
     getTableProps,
@@ -58,8 +60,8 @@ function Table({ columns, data }) {
               Ack. Year
             </th>
             <th rowSpan={2} className="text-center">Presenter Name</th>
-            <th rowSpan={2} className="text-center"> Date </th> 
-            <th rowSpan={2} className="text-center"> Documents Print </th>          
+            <th rowSpan={2} className="text-center"> Date </th>
+            <th rowSpan={2} className="text-center"> Documents Print </th>
           </tr>
         </thead>
         <tbody {...getTableBodyProps()}>
@@ -153,6 +155,8 @@ function Table({ columns, data }) {
 
 
 function pdePrint() {
+  const [clicked, setclicked] = useState<boolean>(false)
+  const [activeTab, setActiveTab] = useState(0);
     useEffect(() => {
       require("bootstrap/dist/js/bootstrap.bundle.min.js");
     }, []);
@@ -186,10 +190,10 @@ function pdePrint() {
                         Header: "CS No. & Ack No. Generated Date & Time",
                         accessor: "date",
                     },
-                   
+
                 ],
             },
-            
+
         ],
         []
     );
@@ -203,7 +207,7 @@ function pdePrint() {
             ackYear: "2022",
             presenterName: "Chandra Sekhar",
             date:"12-3-2022",
-           
+
         },
         {
             appNo: "456787654",
@@ -212,12 +216,12 @@ function pdePrint() {
             ackYear: "2022",
             presenterName: "Sekhar Varma",
             date:"12-3-2022",
-            
+
         },
 
     ];
 
-    
+
 
   return (
     <><Stepper/><div className="pageMainWrap innerpage">
@@ -228,98 +232,58 @@ function pdePrint() {
       </Head>
 
       <div className="mainWrapper">
-        <div className="wrapperInner">
+        <div className="otherMenuwrapperInner1">
           <div className="acknowledgement">
             <h4>PDE Print</h4>
           </div>
+          <div className="documentsTable pageTableMain pageTableContainer">
+                <Row className="mb-4">
+                  <Col lg={12} md={12} xs={12}>
 
-          <Container>
-            <Row className="justify-content-md-center">
-              <Col lg={7} md={8} xs={12} className="pageTableSearch">
-                <form className="md-form">
-                  <div className={`input-group md-form form-sm form-1 pl-0`}>
-                    <input
-                      className={`form-control form-control-sm ml-3 w-75`}
-                      type="text"
-                      placeholder="Search Here.."
-                      aria-label="Search" />
-                    <div className={`input-group-prepend`}>
-                      <button
-                        className={`btn btn-outline-success`}
-                        type="submit"
-                      >
-                        <Image
-                          width={23}
-                          height={23}
-                          src="/images/Search-icon.svg" />
-                      </button>
+                  </Col>
+                </Row>
+                <Row className="mb-4">
+                  <Col lg={3} md={4} xs={12}>
+
+                  </Col>
+                  <Col lg={9} md={8} xs={12} className="pageTableSearch">
+                    <div className="d-flex justify-content-end">
+                      <div className="mx-3">
+                          <div
+                            className={`input-group md-form form-sm form-1 pl-0`}
+                          >
+                            <input type="text" className="justify-content-end float-end search-click" style={{ borderRadius: "5px", borderColor: "#5692B4", height: "40px" }} name="" placeholder=" Please search with - CS No / Ack No / App No / Presentant Name" />
+                          </div>
+                      </div>
+                      <div>
+                        <div className="searchFiler">
+                          <button className="today">Today</button>
+                          <RangePicker />
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </form>
+                  </Col>
+                </Row>
+                <div className="table-responsive">
+                  {clicked ? (
+                    <TableAmmend columns={columnsAmmend} data={dataAmmend} />
+                  ) : (
+                    <Table columns={columns} data={data} />
+                  )}
+                </div>
 
-                <div className="searchFiler">
-                  <button className="today">Today</button>
-                  <button className="filter"  data-bs-toggle="modal" data-bs-target="#exampleModals">
-                    <small>Filters</small>
-                    <Image width={20} height={20} src="/images/filter.svg" />
-                  </button>
-                </div>
-              </Col>
-            </Row>
-            <div className="modal fade modal-sm position-absolute" id="exampleModals" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div className="modal-dialog">
-                <div className="modal-content">
-                  <div className="modal-header">
-                    <h1 className="modal-title fs-5" id="exampleModalLabel">Clear</h1>
-                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div className="modal-body">
-                    <Row>
-                      <Col lg={12} md={12} xs={12} className="mb-3">
-                        <Form.Floating>
-                          <Form.Control
-                            id="floatingInputCustom"
-                            type="date"
-                            placeholder="Start Date" />
-                          <Form.Label htmlFor="floatingInputCustom">
-                            Start Date
-                          </Form.Label>
-                        </Form.Floating>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col lg={12} md={12} xs={12} >
-                        <Form.Floating>
-                          <Form.Control
-                            id="floatingInputCustom"
-                            type="date"
-                            placeholder="End Date" />
-                          <Form.Label htmlFor="floatingInputCustom">
-                            End Date
-                          </Form.Label>
-                        </Form.Floating>
-                      </Col>
-                    </Row>
-
-                </div>
-                <div className="modal-footer text-center d-flex justify-content-center">
-                  <button type="button" className="btn btn-primary text-center bluebuttonclass">Save</button>
-                </div>
-              </div>
             </div>
-          </div>
-          </Container>
 
-          <Col>
+          {/* <Col>
                                     <div className="documentsTable pageTableMain pageTableContainer">
                                         <div className="pageTableTabs">
                                         </div>
                                         <Table columns={columns} data={data} />
                                     </div>
-                                </Col>
+                                </Col> */}
 
                     {/* <!-- Modal --> */}
-                    
+
 
           <div
             className="modal fade modal-xl"
@@ -352,16 +316,16 @@ function pdePrint() {
                                   <Row>
                       <Col lg={2} md={2} xs={2}></Col>
                        <Col lg={8} md={8} xs={8}>
-                      
-                 
+
+
                   <h4 className="text-center mt-4"><u>SALE DEED</u> </h4>
                   <h6 className="text-center mt-4">This SALE DEED is made and executed on this 02nd day of the february, 2023,by:</h6>
-                  <h6 className="mt-4">Mr/Mrs Vudimudi Ravi Teja  S/O V.E.R.subba Raju, aged above 35 years, 
+                  <h6 className="mt-4">Mr/Mrs Vudimudi Ravi Teja  S/O V.E.R.subba Raju, aged above 35 years,
                   occupation:Teacher, presently residing at plot 180 flat 30, shapur nagar IDA Jeedimetla,
                   rangareddi,
                   Qutubullapur 500050</h6>
-                   <h6 className="text-center mt-4">Herein after called the SETTLOR of the first part</h6> 
-                   <h4 className="text-center"><u>AND</u></h4> 
+                   <h6 className="text-center mt-4">Herein after called the SETTLOR of the first part</h6>
+                   <h4 className="text-center"><u>AND</u></h4>
                    <h6 className="mt-4">Mr/Mrs Chennoju Sreekanth, S/O Chennjou Surya Narayana, aged above 27 years,
                    occupation:Teacher, R/O Venkatapur mandalam,
                    warangal
@@ -369,9 +333,9 @@ function pdePrint() {
                    Waranagl,
                    Laxmidevipeta-506345,
                    </h6>
-                   <h6 className="text-center mt-4">Herein after called the SETTLEE of the second part</h6> 
-                   <h6 className="mt-4">Whereas  the SETTLOR herein is the absolute owner and possessor of Residential Flat no. in 
-                   Aparna Apartments situated in Rajahmundry,Rajahmundry acquired by inheritence.</h6>                   
+                   <h6 className="text-center mt-4">Herein after called the SETTLEE of the second part</h6>
+                   <h6 className="mt-4">Whereas  the SETTLOR herein is the absolute owner and possessor of Residential Flat no. in
+                   Aparna Apartments situated in Rajahmundry,Rajahmundry acquired by inheritence.</h6>
                      <Row className="mt-4">
                       <Col lg={4} md={4} xs={4}></Col>
                       <Col lg={4} md={4} xs={4}>
@@ -383,7 +347,7 @@ function pdePrint() {
                       <Col lg={2} md={2} xs={4}><h6 className="pt-4">Signature(s)</h6></Col>
 
                       </Row>
-                      
+
                   </Col>
                   <Col lg={2} md={2} xs={2}></Col>
                   </Row>

@@ -64,7 +64,7 @@ const DigitalSign = () => {
                   <Col lg={1} md={1} sm={12}></Col>
                   <Col lg={1} md={2} sm={12}>
                     <div className="pageNextBtn p-0">
-                      <Link href={"/ScanningUpload"}>
+                      <Link href={"/scanningUpload"}>
                         <button className="bluebuttonclass">Submit</button>
                       </Link>
                     </div>

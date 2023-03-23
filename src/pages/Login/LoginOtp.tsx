@@ -28,7 +28,7 @@ const LoginOtp = () => {
                                     <MdOutlineKeyboardBackspace size={30} />
                                 </Col>
                                 <Col lg={11} md={11} xs={11} style={{cursor:"pointer"}}>
-                                    <Link href="/Login/LoginPage">
+                                    <Link href="/Login/loginPage">
                                         <h5><u>Back</u></h5>
                                     </Link>
                                 </Col>
@@ -70,7 +70,7 @@ const LoginOtp = () => {
                             <Row>
                                 <Col lg={5} md={4} xs={12}></Col>
                                 <Col lg={4} md={4} xs={12}>
-                                    <Link href={"/Login/WelcomePage"}><Button className="loginbuttonclass my-4">Submit</Button></Link>
+                                    <Link href={"/Login/welcomePage"}><Button className="loginbuttonclass my-4">Submit</Button></Link>
                                 </Col>
                             </Row>
                             <Row className="my-5">

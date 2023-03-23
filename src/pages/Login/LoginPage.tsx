@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Button, Col, Row, Form, FormControl, ListGroup } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
 import LoginBG from '../../../public/images/Login1-BG.png';
 import Modal from 'react-bootstrap/Modal';
 import { useEffect, useState } from "react";
@@ -41,7 +41,7 @@ const LoginPage = () => {
     }, [display]);
     const handleOptionChange = (e) => {
         setSelectedOption(e.target.value);
-        };
+    };
     const [modalShow, setModalShow] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
     const [searchEmp, setSearchEmp] = useState('');
@@ -72,30 +72,30 @@ const LoginPage = () => {
                 <meta name="description" content="login" />
                 <link rel="icon" href="/igrsfavicon.ico" />
             </Head>
-	                {/* <div style={{height: '72px'}}></div> */}
+            {/* <div style={{height: '72px'}}></div> */}
             {/* <div className="m-5"> */}
-                <div className="LoginMargin">
-                    <div className="LoginPage">
-                        <Row className='Login-rightGrd'>
-                            <Col lg={7} md={7} xs={12}>
-                                <Image className="loginRightImg" src={LoginBG} alt="login-BG" height="732px"/>
-                            </Col>
-                            <Col lg={5} md={5} xs={12}>
+            <div className="LoginMargin">
+                <div className="LoginPage">
+                    <Row className='Login-rightGrd'>
+                        <Col lg={7} md={7} xs={12}>
+                            <Image className="loginRightImg" src={LoginBG} alt="login-BG" height="732px" />
+                        </Col>
+                        <Col lg={5} md={5} xs={12}>
                             {display ? (<Alert variant="success" className="bg-transparent border-0">
-                            {/* <img src="/images/loading-icon.svg" />
+                                {/* <img src="/images/loading-icon.svg" />
                             <img src="/images/loading-icon2.svg" /> */}
-                                    <div className="d-flex justify-content-center">
-                                        <div className="spinner-border " role="status">
-                                        </div></div>
-                                </Alert>
-                                ) : (
-                                    <>
+                                <div className="d-flex justify-content-center">
+                                    <div className="spinner-border " role="status">
+                                    </div></div>
+                            </Alert>
+                            ) : (
+                                <>
                                     <div className="loginBody">
-                                    <Row >
-                                        <Col lg={12} md={12} xs={12}>
-                                            <h2>Hi, Welcome Back!</h2>
-                                        </Col>
-                                    </Row>
+                                        <Row >
+                                            <Col lg={12} md={12} xs={12}>
+                                                <h2>Hi, Welcome Back!</h2>
+                                            </Col>
+                                        </Row>
                                         <Row className="my-1 loginRadio">
                                             <Col lg={2} md={2} xs={2}>
                                                 {/* <div> */}
@@ -117,7 +117,7 @@ const LoginPage = () => {
                                             </Col>
                                             <Col lg={2} md={2} xs={2}>
                                                 {/* <div> */}
-                                                <input className="form-check-input"  onClick={(e) => { handleOptionChange(e); setDisplay(true); }} checked={selectedOption === "option4"} type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4" />&nbsp;
+                                                <input className="form-check-input" onClick={(e) => { handleOptionChange(e); setDisplay(true); }} checked={selectedOption === "option4"} type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4" />&nbsp;
                                                 <label className="form-check-label" >SRO</label>
                                                 {/* </div> */}
                                             </Col>
@@ -148,7 +148,7 @@ const LoginPage = () => {
                                                                     <li
                                                                         key={suggestion}
                                                                         className="list-group-item"
-                                                                        style={{zIndex:"1"}}
+                                                                        style={{ zIndex: "1" }}
                                                                         onClick={() => handleSuggestionClick(suggestion)}
                                                                     >
                                                                         <a>{suggestion}</a>
@@ -157,7 +157,7 @@ const LoginPage = () => {
                                                         </ul>
                                                     )}
                                                     <div className="searchBoxIcon">
-                                                <Image width={20} height={20}  src='/images/Search-icon.svg' alt="Search" /></div>
+                                                        <Image width={20} height={20} src='/images/Search-icon.svg' alt="Search" /></div>
                                                 </div>
                                             </Col>
                                         </Row>
@@ -181,7 +181,7 @@ const LoginPage = () => {
                                                                     <li
                                                                         key={suggestion}
                                                                         className="list-group-item"
-                                                                        style={{zIndex:"1"}}
+                                                                        style={{ zIndex: "1" }}
                                                                         onClick={() => handleSuggestionClickEmp(suggestion)}
                                                                     >
                                                                         <a>{suggestion}</a>
@@ -190,14 +190,14 @@ const LoginPage = () => {
                                                         </ul>
                                                     )}
                                                     <div className="searchBoxIcon">
-                                                <Image width={20} height={20} src='/images/Search-icon.svg' alt="Search" /></div>
+                                                        <Image width={20} height={20} src='/images/Search-icon.svg' alt="Search" /></div>
                                                 </div>
                                             </Col>
                                         </Row>
                                         <Row>
                                             <Col lg={6} md={6} xs={12}></Col>
                                             <Col lg={4} md={4} xs={12}>
-                                                <Link href={"/Login/WelcomePage"}><Button className="loginbuttonclass my-3" onClick={() => setModalShow(true)}>Capture</Button></Link>
+                                                <Link href={"/Login/welcomePage"}><Button className="loginbuttonclass my-3" onClick={() => setModalShow(true)}>Capture</Button></Link>
                                                 <MyVerticallyCenteredModal
                                                     show={modalShow}
                                                     onHide={() => setModalShow(false)}
@@ -224,15 +224,15 @@ const LoginPage = () => {
                                             </Col>
                                             <Col lg={5} md={5} xs={5}></Col>
                                         </Row>
-                                        </div>
-                                    </>
-                                )}
-                            </Col>
-                        </Row>
-                    </div>
+                                    </div>
+                                </>
+                            )}
+                        </Col>
+                    </Row>
                 </div>
-            </div >
-	    // </div>
+            </div>
+        </div >
+        // </div>
     )
 }
 export default LoginPage;

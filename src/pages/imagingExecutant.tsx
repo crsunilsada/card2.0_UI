@@ -63,12 +63,12 @@ const imagingExecutant = () => {
   const handleClick1 = () => {
     if (selectedSignature !== null) {
       router.push({
-        pathname: '/CropSign',
+        pathname: '/cropSign',
       });
     }
     else if (selectedItem !== null) {
       router.push({
-        pathname: '/CropImage',
+        pathname: '/cropImage',
       });
     }
   };

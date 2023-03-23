@@ -163,7 +163,7 @@ const Bundling = () => {
                                                 </Row>
                                             </Modal.Body>
                                             <Modal.Footer className="justify-content-center ">
-                                                <Link href={"/ScanningUpload"}>
+                                                <Link href={"/scanningUpload"}>
                                                     <Button className="bluebuttonclass" onClick={handleClose}>
                                                         Save
                                                     </Button>

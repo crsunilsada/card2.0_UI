@@ -97,7 +97,7 @@ function Table({ columns, data }) {
                 })}
                 <td className="text-center">
 
-                  <Link href={"/DigitalSign"}>
+                  <Link href={"/digitalSign"}>
                     <button className="print">
                       {" "}
                       <Image

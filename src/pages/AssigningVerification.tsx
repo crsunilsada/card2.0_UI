@@ -91,7 +91,7 @@ function Table({ columns, data }) {
                     <small>Assigning</small>
                   </button>
                   </Link>
-                  <Link href="/Endorsement">
+                  <Link href="/endorsement">
                   <button className="print">
                     {" "}
                     <Image

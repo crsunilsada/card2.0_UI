@@ -1036,7 +1036,7 @@ const Assigning = () => {
                 <Modal.Body className="justify-content-center text-center">Are you sure, you want to save the data,
                   Data once saved cannot be edited</Modal.Body>
                 <Modal.Footer className="justify-content-center ">
-                <Link href={"/AssigningVerification"}>
+                <Link href={"/assigningVerification"}>
                     <Button className="bluebuttonclass" onClick={handleClose}>
                       Done
                     </Button>

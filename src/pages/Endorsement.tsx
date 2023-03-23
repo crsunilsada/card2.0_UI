@@ -155,7 +155,7 @@ const Endorsement = () => {
                                                             </Row>
                                                         </Modal.Body>
                                                         <Modal.Footer className="justify-content-center ">
-                                                            <Link href={"/AssigningVerification"}>
+                                                            <Link href={"/assigningVerification"}>
                                                                 <Button className="bluebuttonclass" onClick={handleClose}>
                                                                     Save
                                                                 </Button>

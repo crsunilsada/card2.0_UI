@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const Stepper = (props) => {
   const { showReason } = props;
   useEffect(() => {
-    if (window.location.pathname === "/Verification" || window.location.pathname === "/propertyDetails" || window.location.pathname === "/partyDetails" || window.location.pathname === "/CashReceipt") {
+    if (window.location.pathname === "/verification" || window.location.pathname === "/propertyDetails" || window.location.pathname === "/partyDetails" || window.location.pathname === "/cashReceipt") {
       setSelected(true);
       setSelected1(true);
     }
@@ -11,16 +11,16 @@ const Stepper = (props) => {
       setSelected(true);
       setSelected3(true);
     }
-    if (window.location.pathname === "/SubmitForSRO") {
+    if (window.location.pathname === "/submitForSRO") {
       setSelected2(true);
       setSelected1(true);
       setSelected(true);
     }
-    if (window.location.pathname === "/AssigningVerification" || window.location.pathname === "/Endorsement" || window.location.pathname === "/assigning") {
+    if (window.location.pathname === "/assigningVerification" || window.location.pathname === "/endorsement" || window.location.pathname === "/assigning") {
       setSelected4(true);
       setSelected3(true);
     }
-    if (window.location.pathname === "/ScanningUpload" || window.location.pathname === "/scanning" || window.location.pathname === "/DigitalSign" || window.location.pathname === "/Bundling") {
+    if (window.location.pathname === "/scanningUpload" || window.location.pathname === "/scanning" || window.location.pathname === "/digitalSign" || window.location.pathname === "/bundling") {
       setSelected5(true);
       setSelected4(true);
       setSelected3(true);
@@ -43,7 +43,7 @@ const Stepper = (props) => {
   const [selected6, setSelected6] = useState(false);
   const handleClick1 = () => {
     setSelected1(true);
-    router.push('/Verification')
+    router.push('/verification')
   }
   const handleClick = () => {
     setSelected(true);
@@ -51,7 +51,7 @@ const Stepper = (props) => {
   }
   const handleClick2 = () => {
     setSelected2(true);
-    router.push('/SubmitForSRO')
+    router.push('/submitForSRO')
   }
   const handleClick3 = () => {
     setSelected3(true);
@@ -59,11 +59,11 @@ const Stepper = (props) => {
   }
   const handleClick4 = () => {
     setSelected4(true);
-    router.push('/AssigningVerification')
+    router.push('/assigningVerification')
   }
   const handleClick5 = () => {
     setSelected5(true);
-    router.push('/ScanningUpload')
+    router.push('/scanningUpload')
   }
   const handleClick6 = () => {
     setSelected6(true);

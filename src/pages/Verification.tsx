@@ -102,7 +102,7 @@ function Table({ columns, data }) {
                           <small>Assigning</small>
                         </button>
                         </Link>
-                        <Link href={"/Endorsement"}>
+                        <Link href={"/endorsement"}>
                           <button className="print">
                             {" "}
                             <Image
@@ -271,7 +271,7 @@ function TableAmmend({ columns, data }) {
                           <small>Property Details</small>
                         </button>
                         </Link>
-                        <Link href={"/CashReceipt"}>
+                        <Link href={"/cashReceipt"}>
                         <button className="print">
                           {" "}
                           <Image
@@ -681,7 +681,7 @@ function Verification() {
         <meta name="description" content="login" />
         <link rel="icon" href="/igrsfavicon.ico" />
       </Head>
-      
+
       <div className="mainWrapper">
         <div className="wrapperInner">
           <div className="acknowledgement">
@@ -724,7 +724,7 @@ function Verification() {
           </div>
 
 
-           
+
             <div className="documentsTable pageTableMain pageTableContainer">
               <div className="documentsTable pageTableMain pageTableContainer">
 
@@ -764,7 +764,7 @@ function Verification() {
                         </div>
                       </form>
                       </div>
-                     
+
 <div>
                       <div className="searchFiler">
                         <button className="today">Today</button>
@@ -775,7 +775,7 @@ function Verification() {
                       </div>
                       </div>
                       </div>
-              
+
                   </Col>
                 </Row>
 
@@ -785,9 +785,9 @@ function Verification() {
 
 
               <div className="table-responsive">
-                
+
                   <TableAmmend columns={columnsAmmend} data={dataAmmend} />
-                
+
               </div>
             </div>
           </div>
