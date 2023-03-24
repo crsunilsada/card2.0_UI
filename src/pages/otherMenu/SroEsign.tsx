@@ -176,7 +176,7 @@ function SRO() {
                 <div className="mainWrapper">
                     <div className="otherMenuwrapperInner1">
                         <div className="acknowledgement">
-                            <h4>SRO E-Signature</h4>
+                            <h4>SRO E-Pad Signature</h4>
                         </div>
                         <Container className="align-items-center">
                             <Container>
