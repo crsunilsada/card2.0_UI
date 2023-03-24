@@ -221,11 +221,30 @@ p:last-child {
     }
 }
 
+
+.today {
+    height: 42px;
+    text-align:center;
+    width:100%;
+    max-width:130px;
+    border: none;
+    padding: 0 25px;
+    border-radius: 38px;
+    line-height: 40px;
+    background: $white;
+    background: $silkBlue;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    color: $desertStorm;
+  }
+
+
 .pageTableMain {
     padding: 33px 0 0;
 
     .pageTableTabs {
-        padding: 10px 0 0px;
+        padding: 10px 12px 0px;
 
         .tableMarginTop {
             margin-bottom: -1rem;
@@ -2087,14 +2106,14 @@ body {
 }
 
 .search-click:focus {
-    width: 620px;
-    //width: 100%;
+    // width: 620px;
+    width: 100%;
 }
 
 .search-click {
     position: relative;
     overflow: hidden;
-    height: 50px;
+    height: 41px;
     background-image: url('/images/Search-icon.svg');
     background-repeat: no-repeat;
     background-position: right 10px center;
@@ -2197,25 +2216,28 @@ body {
 }
 
 .digital-sign-btn {
+    width:100%;
     color: white;
-    background-color: $blue ;
+    background-color: $blue;
     opacity: 0.5;
-    padding: 12px;
+    padding: 9px;
     font-size: 16px;
     border-radius: 8px;
     border: none;
-    margin: 0 0 0 15px;
-}
-
-.digital-sign-btn-enable {
+    margin: 0 0 0 0px;
+    max-width: 380px;
+  }
+  .digital-sign-btn-enable {
+    width:100%;
+      max-width:380px;
     color: white;
     background-color: $blue ;
     padding: 12px;
     font-size: 16px;
     border-radius: 8px;
     border: none;
-    margin: 0 0 0 15px;
-}
+    margin: 0 0 0 0px;
+  }
 
 #tooltip-top>.tooltip-inner {
     background-color: #fff;
@@ -2472,8 +2494,9 @@ body {
 
 .ant-picker-range {
     border-radius: 30px;
-    width: 225px !important;
     height: 41px;
+    width: 100% ;
+    max-width:380px;
 }
 
 .ant-picker-cell-in-view.ant-picker-cell-in-range::before {
@@ -2730,3 +2753,4 @@ body {
     border: 5px solid red;
 
 }
+

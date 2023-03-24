@@ -646,48 +646,50 @@ function AdmissionofExecution() {
               <h4>Admission of Execution</h4>
             </div>
             <div className="documentsTable pageTableMain pageTableContainer">
-                <Row className="mb-4">
-                  <Col lg={3} md={4} xs={12}>
-                    <div className="pageTableTabs">
-                      {["Accept (30)"].map((o, i) => {
-                        return (
-                          <button
-                            key={o}
-                            className={
-                              i === activeTab ? "activeButton" : "button"
-                            }
-                            onClick={() => {
-                              if (o == "Accept (30)") {
-                                setclicked(false);
-                              } else {
-                                setclicked(true);
-                              }
-                              setActiveTab(i);
-                            }}
-                          >
-                            {o}
-                          </button>
-                        );
-                      })}
-                    </div>
+                <Row >
+                  <Col xxl={2} xl={2} lg={2} md={12} sm={12} className="pageTableTabs">
+                  {["Accept (30)"].map((o, i) => {
+                    return(
+                    <button
+                      key={o}
+                      className={i === activeTab ? "activeButton" : "button"}
+                      onClick={() => {
+                        if (o=="Accept (30)") {
+
+                          setclicked(false);
+                        } else {
+
+                          setclicked(true);
+                        }
+                        setActiveTab(i);
+                      }}
+                    >
+                      {o}
+                    </button>
+                    )
+                  })
+                }
                   </Col>
-                  <Col lg={9} md={8} xs={12} className="pageTableSearch">
-                    <div className="d-flex justify-content-end">
-                      <div className="mx-3">
-                          <div
-                            className={`input-group md-form form-sm form-1 pl-0`}
-                          >
-                            <input type="text" className="justify-content-end float-end search-click" style={{ borderRadius: "5px", borderColor: "#5692B4", height: "40px" }} name="" placeholder=" Please search with - CS No / Ack No / App No / Presentant Name" />
-                          </div>
-                      </div>
-                      <div>
-                        <div className="searchFiler">
-                          <button className="today">Today</button>
-                          <RangePicker />
-                        </div>
-                      </div>
-                    </div>
-                  </Col>
+                <Col xxl={0} xl={0} lg={0} md={0} sm={0}></Col>
+
+                    <Col xxl={5} xl={5} lg={8} md={10} sm={12} className="float-end my-1">
+                      <input
+                        type="text"
+                        className="justify-content-end float-end search-click"
+                        name=""
+                        placeholder=" Please search with - CS No / Ack No / App No / Presentant Name"
+                      />
+                    </Col>
+                    <Col xxl={1} xl={1} lg={12} md={9}sm={12} className="my-1 mx-2 px-1">
+
+                        <button className="today">Today</button>
+
+                        </Col>
+                        <Col xxl={2} xl={2} lg={4} md={6} sm={12} className="my-1">
+                        <RangePicker/>
+                        </Col>
+
+
                 </Row>
                 <div className="table-responsive">
                   {clicked ? (

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { Row, Col, Form, Nav, Tab, Tabs, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Container, Row, Col, Form, Nav, Tab, Table, Tabs, TabContainer, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { useTable, usePagination } from "react-table";
 import { BsInfoCircle } from "react-icons/bs";
-import { DatePicker } from 'antd';
+import { DatePicker, Space } from 'antd';
+
 function PendingTable({ columns, data }) {
   const {
     getTableProps,
@@ -424,7 +425,12 @@ function PendingTable({ columns, data }) {
 function AcceptTable({ columns, data }) {
   const {
     getTableProps,
+    getTableBodyProps,
     headerGroups,
+    prepareRow,
+    page,
+    canPreviousPage,
+    canNextPage,
     pageOptions,
     nextPage,
     previousPage,
@@ -645,6 +651,10 @@ function AmmendTable({ columns, data }) {
     getTableProps,
     getTableBodyProps,
     headerGroups,
+    prepareRow,
+    page,
+    canPreviousPage,
+    canNextPage,
     pageOptions,
     nextPage,
     previousPage,
@@ -901,6 +911,10 @@ function RefuseTable({ columns, data }) {
     getTableProps,
     getTableBodyProps,
     headerGroups,
+    prepareRow,
+    page,
+    canPreviousPage,
+    canNextPage,
     pageOptions,
     nextPage,
     previousPage,
@@ -1433,44 +1447,40 @@ const pdeScrutinyList = () => {
             <Tab.Container defaultActiveKey="pending">
               <div className="pageTabsMain">
                 <div className="pageTableTabs">
+                  {/* <div className="searchContainer"> */}
                   <Row className="tableMarginTop">
-                    <div className="searchContainer">
-                      <Col lg={4}>
-                        <div>
-                          <Nav variant="pills">
-                            <Nav.Item>
-                              <Nav.Link eventKey="pending"><button className="button my-4">Pending (5)</button></Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                              <Nav.Link eventKey="accept"><button className="button my-4">Accept (5)</button></Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                              <Nav.Link eventKey="ammend"><button className="button my-4">Ammend (5)</button></Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                              <Nav.Link eventKey="refuse"><button className="button my-4">Refuse (5)</button></Nav.Link>
-                            </Nav.Item>
-                          </Nav>
-                        </div>
-                      </Col>
-                      <Col lg={8}>
-                        <div className="pageTableSearch text-end mt-3" >
-                          <div className="d-flex searchbar-ml justify-content-end">
-                            <div className="mx-3">
-                              <div className="col">
-                                <input type="text" className="justify-content-end float-end search-click" style={{ borderRadius: "5px", borderColor: "#5692B4", height: "40px" }} name="" placeholder=" Please search with - CS No/Ack No/App No/Presenter Name" />
-                                {/* {display && ("")
-                                } */}
-                              </div>
-                            </div>
-                            <div className="searchFiler">
-                              <button className="today">Today</button>
-                              <RangePicker />
-                            </div>
-                          </div>
-                        </div>
-                      </Col>
-                    </div>
+                    <Col lg={4}>
+                      <div>
+                        <Nav variant="pills">
+                          <Nav.Item>
+                            <Nav.Link eventKey="pending"><button className="button my-4">Pending (5)</button></Nav.Link>
+                          </Nav.Item>
+                          <Nav.Item>
+                            <Nav.Link eventKey="accept"><button className="button my-4">Accept (5)</button></Nav.Link>
+                          </Nav.Item>
+                          <Nav.Item>
+                            <Nav.Link eventKey="ammend"><button className="button my-4">Ammend (5)</button></Nav.Link>
+                          </Nav.Item>
+                          <Nav.Item>
+                            <Nav.Link eventKey="refuse"><button className="button my-4">Refuse (5)</button></Nav.Link>
+                          </Nav.Item>
+                        </Nav>
+                      </div>
+                    </Col>
+                    <Col lg={5} md={12} xs={12} className="my-3 ">
+                      <input
+                        type="text"
+                        className="justify-content-end float-end search-click"
+                        name=""
+                        placeholder=" Please search with - CS No / Ack No / App No / Presentant Name"
+                      />
+                    </Col>
+                    <Col lg={1} md={12} xs={12} className="my-3">
+                      <button className="today today">Today</button>
+                    </Col>
+                    <Col lg={2} className="my-3">
+                      <RangePicker />
+                    </Col>
                   </Row>
                   <Tab.Content>
                     <Tab.Pane eventKey="pending">
@@ -1498,7 +1508,7 @@ const pdeScrutinyList = () => {
           >
             <div className="modal-dialog">
               <div className="modal-content">
-                <div className="d-flex align-items-end flex-column py-3">
+                <div className="d-flex align-items-end flex-column py-2">
                   <button
                     type="button"
                     className="btn-close px-4"
@@ -1582,7 +1592,7 @@ const pdeScrutinyList = () => {
                     />
                   </button>
                 </div>
-                <div className="mx-3 ">
+                <div className="mx-3 mt-3 ">
                   Basic Details
                 </div>
                 <div className="modal-body">

@@ -226,6 +226,7 @@ const PropertyDetails = () => {
                                                 <Col lg={3} md={4} xs={12} className="mb-3">
                                                     <Form.Floating>
                                                         <Form.Select aria-label="Jurisdication" id="floatingInputCustom" placeholder="Jurisdication">
+                                                            <option value="0">Please Select</option>
                                                             <option value="1" selected>Kankipadu</option>
                                                             <option value="2">Guntur</option>
                                                             <option value="3">Ongole</option>
@@ -1616,7 +1617,7 @@ const PropertyDetails = () => {
                                     </Accordion.Item>
                                 </Accordion>
                             </div>
-                           
+
                                         </Tab.Pane>
                                         <Tab.Pane eventKey="second">
                                         <div className="scheduleDetails mb-3">
@@ -3064,7 +3065,7 @@ const PropertyDetails = () => {
                                     </Accordion.Item>
                                 </Accordion>
                             </div>
-                            
+
                                         </Tab.Pane>
                                         <Tab.Pane eventKey="third">
                                         <div className="scheduleDetails mb-3">

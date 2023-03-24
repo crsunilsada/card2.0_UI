@@ -60,7 +60,7 @@ const Header = () => {
                           <li className="dropdown-submenu"><a className="dropdown-item dropdown-toggle" href="/pdeScrutinyList">CARD - PDE</a>
                           </li>
                           <li><a className="dropdown-item" href="/otherMenu/SRO">SRO For The Day</a></li>
-                          <li><a className="dropdown-item" href="/otherMenu/sroEsign">SRO Esign</a></li>
+                          <li><a className="dropdown-item" href="/otherMenu/sroEsign">SRO E-Pad Signature</a></li>
                         </ul>
                       </li>
                     </ul>

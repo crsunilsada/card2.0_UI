@@ -29,7 +29,6 @@ function Table({ columns, data }) {
     },
     usePagination
   );
-
   // Render the UI for your table
   return (
     <div className="tableWithPagination">
@@ -56,13 +55,11 @@ function Table({ columns, data }) {
               <br />
               Generated Date & Time
             </th>
-
             <th className="text-center">Presenter Name</th>
             <th className="text-center">
               No. of <br />
               Schedule
             </th>
-
             <th className="text-center">
               Book <br />
               Number
@@ -76,20 +73,20 @@ function Table({ columns, data }) {
             prepareRow(row);
             return (
               <tr {...row.getRowProps()}>
-              {row.cells.map((cell) => {
+                {row.cells.map((cell) => {
                   return (
                     <td className="text-center" {...cell.getCellProps()}>{cell.render("Cell")}</td>
                   );
                 })}
                 <td className="text-center">
-                  <Link href={"/Bundling"}>
+                  <Link href={"/bundling"}>
                     <button className="basicDetails">
                       {" "}
                       <Image width={25} height={25} src="/images/Layer_1.svg" />
                       <small>Bundling</small>
                     </button>
                   </Link>
-                  <Link href={"/DigitalSign"}>
+                  <Link href={"/digitalSign"}>
                     <button className="print">
                       {" "}
                       <Image width={25} height={25} src="/images/DigiSign.svg" />
@@ -102,10 +99,6 @@ function Table({ columns, data }) {
           })}
         </tbody>
       </table>
-
-
-
-
       <div className="paginationMain">
         <ul className="pagination d-flex align-items-center justify-content-end">
           <li className="PageItems">
@@ -151,21 +144,19 @@ function Table({ columns, data }) {
     </div>
   );
 }
-
 function ScanningUpload() {
   const [display, setdisplay] = useState(false)
   const handleClick1 = () => {
-      setdisplay(true)
+    setdisplay(true)
   }
   useEffect(() => {
-      require("bootstrap/dist/js/bootstrap.bundle.min.js");
+    require("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
   const [clicked, setclicked] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState(0);
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
-
   const columns = React.useMemo(
     () => [
       {
@@ -187,13 +178,10 @@ function ScanningUpload() {
             Header: "CS No. & Ack No. Generated Date & Time",
             accessor: "generateddatetime",
           },
-
-
           {
             Header: "presenter name",
             accessor: "presenterName",
           },
-
           {
             Header: "No of schedule",
             accessor: "noofSchedule",
@@ -230,10 +218,8 @@ function ScanningUpload() {
           </div>
         </>
       ),
-
       ackNo: "345/2022",
       csNo: "212",
-
       presenterName: "swapna hanumanthu",
       noofSchedule: "1",
       generateddatetime: "22/11/2022 @ 11: 48 AM",
@@ -261,7 +247,6 @@ function ScanningUpload() {
       ),
       ackNo: "346/2022",
       csNo: "213",
-
       presenterName: "sreeja varma",
       noofSchedule: "2",
       generateddatetime: "22/11/2022 @ 08: 00 AM",
@@ -288,7 +273,6 @@ function ScanningUpload() {
       ),
       ackNo: "347/2022",
       csNo: "213",
-
       presenterName: "rajesh rao",
       noofSchedule: "1",
       generateddatetime: "22/11/2022 @ 10: 00 AM",
@@ -316,7 +300,6 @@ function ScanningUpload() {
       ),
       ackNo: "348/2023",
       csNo: "214",
-
       presenterName: "ravi teja",
       noofSchedule: "2",
       generateddatetime: "22/2/2023 @ 09: 09 AM",
@@ -344,7 +327,6 @@ function ScanningUpload() {
       ),
       ackNo: "349/2023",
       csNo: "215",
-
       presenterName: "Chandra Sekhar",
       noofSchedule: "1",
       generateddatetime: "20/1/2023 @ 10: 45 AM",
@@ -371,7 +353,6 @@ function ScanningUpload() {
       ),
       ackNo: "350/2022",
       csNo: "216",
-
       presenterName: "Sekhar sastry",
       noofSchedule: "2",
       generateddatetime: "11/10/2022 @ 07: 30 AM",
@@ -399,7 +380,6 @@ function ScanningUpload() {
       ),
       ackNo: "351/2022",
       csNo: "217",
-
       presenterName: "Chandra Sekhar",
       noofSchedule: "1",
       generateddatetime: "22/11/2022 @ 10: 41 AM",
@@ -426,7 +406,6 @@ function ScanningUpload() {
       ),
       ackNo: "352/2023",
       csNo: "218",
-
       presenterName: "Subbarao mucharla",
       noofSchedule: "2",
       generateddatetime: "22/11/2022 @ 09: 46 AM",
@@ -435,121 +414,80 @@ function ScanningUpload() {
       min: "Release (Others)",
     },
   ];
-
   const [show, setShow] = useState(false);
   const [show1, setShow1] = useState(false);
   const [target, setTarget] = useState(null);
   const ref = useRef(null);
   const handleClose = () => setShow1(false);
-
-  const handleClick = (event) => {};
-
+  const handleClick = (event) => { };
   const [checked, setchecked] = useState(0);
   function checkboxes() {
     var inputs = document.getElementsByTagName("input");
     var inputObj;
-  var selectedCount = 0;
-    for(var count1 = 0;count1<inputs.length;count1++) {
-        inputObj = inputs[count1];
-        var type = inputObj.getAttribute("type");
-        if (type == 'checkbox' && inputObj.checked) {
-            selectedCount++;
-        }
-        setchecked(selectedCount)
+    var selectedCount = 0;
+    for (var count1 = 0; count1 < inputs.length; count1++) {
+      inputObj = inputs[count1];
+      var type = inputObj.getAttribute("type");
+      if (type == 'checkbox' && inputObj.checked) {
+        selectedCount++;
+      }
+      setchecked(selectedCount)
     }
-}
-
-
-return (
-  <>
- <div><Stepper showReason1={true} /></div>
-  <Stepper showReason={false} />
-    <div className="pageMainWrap innerpage">
-      <Head>
-        <title>Bundling - CARD</title>
-        <meta name="description" content="login" />
-        <link rel="icon" href="/igrsfavicon.ico" />
-      </Head>
-
-      <div className="mainWrapper">
-        <div className="wrapperInner">
-          <div className="acknowledgement">
-            <h4>Bundling & Digital Sign</h4>
-          </div>
-
-
-
+  }
+  return (
+    <>
+      <div><Stepper showReason1={true} /></div>
+      <Stepper showReason={false} />
+      <div className="pageMainWrap innerpage">
+        <Head>
+          <title>Bundling - CARD</title>
+          <meta name="description" content="login" />
+          <link rel="icon" href="/igrsfavicon.ico" />
+        </Head>
+        <div className="mainWrapper">
+          <div className="wrapperInner">
+            <div className="acknowledgement">
+              <h4>Bundling & Digital Sign</h4>
+            </div>
             <div className="documentsTable pageTableMain pageTableContainer">
-
-                <Row className="mb-4">
-                  <Col lg={3} md={4} xs={12}>
-                    <div className="pageTableTabs">
-                    <button className="activeButton">Accept (8)</button>
-
-                    </div>
+        <Row >
+                  <Col xxl={2} xl={2} lg={2} md={12} sm={12}className="pageTableTabs">
+                    <button className="activeButton">Ammend (5)</button>
                   </Col>
+                <Col xxl={0} xl={0} lg={0} md={0} sm={0}></Col>
 
-                  <Col lg={9} md={4} xs={12} className="pageTableSearch">
-                    <div className="d-flex justify-content-end">
-                      <div className="mx-3">
+                    <Col xxl={4} xl={3} lg={112} md={12} sm={12}className="float-end my-1">
+                      <input
+                        type="text"
+                        className="justify-content-end float-end search-click"
+                        name=""
+                        placeholder=" Please search with - CS No / Ack No / App No / Presentant Name"
+                      />
+                    </Col>
+                    <Col xxl={1} xl={1} lg={12} md={9}sm={12} className="my-1 mx-2 p-0">
 
-                          <div
-                            className={`input-group md-form form-sm form-1 pl-0`}
-                          >
-                               <div className="col">
+                        <button className="today">Today</button>
 
-
-
-
-
-<input type="text" className="justify-content-end float-end search-click" style={{  borderRadius: "5px", borderColor: "#5692B4", height: "40px" }} name="" placeholder=" Please search with - CS No / Ack No / App No / Presentant Name" />
-
-
-
-{display && ("")
-
-
-
-}
-
-
-
-
-
-
-</div>
-
-
-                          </div>
-
-                      </div>
-
-                      <div>
-                        <div className="searchFiler">
-                          <button className="today">Today</button>
-
-                          <RangePicker />
-                        </div>
-                      </div>
-
-                      <div>
+                        </Col>
+                       <Col xxl={2} xl={2} lg={4} md={6} sm={12} className="my-1">
+                        <RangePicker/>
+                        </Col>
+                        <Col xxl={2} xl={2} lg={3} md={4} sm={12} className="my-1">
                         <button
-                          className={
-                            checked >= 2
-                              ? "digital-sign-btn-enable"
-                              : "digital-sign-btn"
-                          }
-                        >
-                          Bulk Digital Sign
-                        </button>
-                      </div>
-                    </div>
-                  </Col>
+                      className={
+                        checked >= 2
+                          ? "digital-sign-btn-enable"
+                          : "digital-sign-btn"
+                      }
+                    >
+                      Bulk Digital Sign
+                    </button>
+                        </Col>
+
+
                 </Row>
-
-
               <div className="table-responsive">
-                  <Table columns={columns} data={data} />
+                <Table columns={columns} data={data} />
               </div>
             </div>
           </div>
@@ -558,5 +496,4 @@ return (
     </>
   );
 }
-
 export default ScanningUpload;
