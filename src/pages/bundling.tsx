@@ -108,10 +108,10 @@ const Bundling = () => {
                                         <Col lg={4} md={4} xs={12} className="pageNextBtn">
                                             <Row className="mx-4">
                                                 <Col lg={6} md={12} xs={12} className="mb-3">
-                                                    <button type="button" className="next p-2 m-1"onClick={handleShow}>Start Bundling</button>
+                                                    <button type="button" className="bluebuttonclass p-2 m-1"onClick={handleShow}>Start Bundling</button>
                                                 </Col>
-                                                <Col lg={4} md={12} xs={12} className="">
-                                                    <button type="button" className="clear m-1"> Clear</button>
+                                                <Col lg={4} md={12} xs={12}>
+                                                    <button type="button" className="whitebuttonclass"> Clear</button>
                                                 </Col>
                                             </Row>
                                         </Col>
