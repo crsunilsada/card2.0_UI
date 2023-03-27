@@ -72,8 +72,6 @@ const LoginPage = () => {
                 <meta name="description" content="login" />
                 <link rel="icon" href="/igrsfavicon.ico" />
             </Head>
-            {/* <div style={{height: '72px'}}></div> */}
-            {/* <div className="m-5"> */}
             <div className="LoginMargin">
                 <div className="LoginPage">
                     <Row className='Login-rightGrd'>
@@ -82,8 +80,6 @@ const LoginPage = () => {
                         </Col>
                         <Col lg={5} md={5} xs={12}>
                             {display ? (<Alert variant="success" className="bg-transparent border-0">
-                                {/* <img src="/images/loading-icon.svg" />
-                            <img src="/images/loading-icon2.svg" /> */}
                                 <div className="d-flex justify-content-center">
                                     <div className="spinner-border " role="status">
                                     </div></div>
@@ -98,34 +94,25 @@ const LoginPage = () => {
                                         </Row>
                                         <Row className="my-1 loginRadio">
                                             <Col lg={2} md={2} xs={2}>
-                                                {/* <div> */}
                                                 <input className="form-check-input" onClick={(e) => { handleOptionChange(e); setDisplay(true); }} checked={selectedOption === "option1"} type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />&nbsp;
                                                 <label className="form-check-label" >IG</label>
-                                                {/* </div> */}
                                             </Col>
                                             <Col lg={2} md={2} xs={2}>
-                                                {/* <div> */}
                                                 <input className="form-check-input" onClick={(e) => { handleOptionChange(e); setDisplay(true); }} checked={selectedOption === "option2"} type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />&nbsp;
                                                 <label className="form-check-label" >DIG</label>
-                                                {/* </div> */}
                                             </Col>
                                             <Col lg={2} md={2} xs={2}>
-                                                {/* <div> */}
                                                 <input className="form-check-input" onClick={(e) => { handleOptionChange(e); setDisplay(true); }} checked={selectedOption === "option3"} type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" />&nbsp;
                                                 <label className="form-check-label">DR</label>
-                                                {/* </div> */}
                                             </Col>
                                             <Col lg={2} md={2} xs={2}>
-                                                {/* <div> */}
                                                 <input className="form-check-input" onClick={(e) => { handleOptionChange(e); setDisplay(true); }} checked={selectedOption === "option4"} type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4" />&nbsp;
                                                 <label className="form-check-label" >SRO</label>
-                                                {/* </div> */}
                                             </Col>
                                             <Col lg={3} md={3} xs={3}>
-                                                {/* <div> */}
                                                 <input className="form-check-input" onClick={(e) => { handleOptionChange(e); setDisplay(true); }} checked={selectedOption === "option5"} type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5" />&nbsp;
                                                 <label className="form-check-label" >Staff</label>
-                                                {/* </div> */}
+                                     
                                             </Col>
                                         </Row>
                                         <Row>
@@ -232,7 +219,6 @@ const LoginPage = () => {
                 </div>
             </div>
         </div >
-        // </div>
     )
 }
 export default LoginPage;

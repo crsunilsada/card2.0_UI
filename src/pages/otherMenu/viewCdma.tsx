@@ -1,9 +1,6 @@
 import { useEffect } from "react";
 import Head from "next/head";
-import Image from "next/image";
-import { Container, Row, Col, Table, Form, Nav, Tab, Tabs } from "react-bootstrap";
-
-
+import { Container, Row, Col, Table } from "react-bootstrap";
 const ViewCdma = () => {
     useEffect(() => {
         require("bootstrap/dist/js/bootstrap.bundle.min.js");
@@ -53,14 +50,12 @@ const ViewCdma = () => {
         },
     ]
     return (
-
         <div className="pageMainWrap">
             <Head>
                 <title>Document Presentation-CARD</title>
                 <meta name="description" content="login" />
                 <link rel="icon" href="/igrsfavicon.ico" />
             </Head>
-
             <div className="mainWrapper">
                 <div className="otherMenuwrapperInner1">
                     <div className="acknowledgement">
@@ -79,7 +74,7 @@ const ViewCdma = () => {
                                 </div>
                             </Col>
                             <Col>
-                                <div>
+                                <div className="my-2">
                                     <button className="bluebuttonclass">
                                         Check
                                     </button>
@@ -88,7 +83,7 @@ const ViewCdma = () => {
                         </Row>
                         <hr className="mt-5" />
                     </Container>
-                    <div className="documentsTable pageTableMain pageTableContainer">
+                    <div className="documentsTable pageTableMain pageTableContainer table-responsive">
                         <Table bordered className="tableData listData tableheadBg">
                             <thead>
                                 <tr>

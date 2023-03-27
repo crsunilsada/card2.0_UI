@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { Container, Row, Col, Form, Nav, Tab, Table, Tabs, TabContainer, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Row, Col, Form, Nav, Tab, Tabs, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { useTable, usePagination } from "react-table";
 import { BsInfoCircle } from "react-icons/bs";
-import { DatePicker, Space } from 'antd';
-
+import { DatePicker } from 'antd';
 function PendingTable({ columns, data }) {
   const {
     getTableProps,
@@ -402,7 +401,6 @@ function PendingTable({ columns, data }) {
           <li
             className="paginationPrev pageNav"
             onClick={() => previousPage()}
-          // disabled  ={!canPreviousPage}
           >
             <a className="page-link">
               <img src="/images/pagination-prev.jpg" />
@@ -411,7 +409,6 @@ function PendingTable({ columns, data }) {
           <li
             className="paginationNext pageNav"
             onClick={() => nextPage()}
-          // disabled={!canNextPage}
           >
             <a className="page-link">
               <img src="/images/pagination-next.jpg" />
@@ -626,7 +623,6 @@ function AcceptTable({ columns, data }) {
           <li
             className="paginationPrev pageNav"
             onClick={() => previousPage()}
-          // disabled={!canPreviousPage}
           >
             <a className="page-link">
               <img src="/images/pagination-prev.jpg" />
@@ -635,7 +631,6 @@ function AcceptTable({ columns, data }) {
           <li
             className="paginationNext pageNav"
             onClick={() => nextPage()}
-          // disabled={!canNextPage}
           >
             <a className="page-link">
               <img src="/images/pagination-next.jpg" />
@@ -749,11 +744,9 @@ function AmmendTable({ columns, data }) {
             <td>Name expansion</td>
             <td>
               <div >
-                {/* <span className="icon mx-1">Comments come here</span> */}
                 <OverlayTrigger
                   placement="bottom"
                   overlay={tooltip}
-                // containerPadding={20}
                 >
                   <div >
                     Name should be expanded...
@@ -1126,7 +1119,6 @@ function RefuseTable({ columns, data }) {
           <li
             className="paginationPrev pageNav"
             onClick={() => previousPage()}
-          // disabled={!canPreviousPage}
           >
             <a className="page-link">
               <img src="/images/pagination-prev.jpg" />
@@ -1135,7 +1127,6 @@ function RefuseTable({ columns, data }) {
           <li
             className="paginationNext pageNav"
             onClick={() => nextPage()}
-          // disabled={!canNextPage}
           >
             <a className="page-link">
               <img src="/images/pagination-next.jpg" />
@@ -1447,7 +1438,6 @@ const pdeScrutinyList = () => {
             <Tab.Container defaultActiveKey="pending">
               <div className="pageTabsMain">
                 <div className="pageTableTabs">
-                  {/* <div className="searchContainer"> */}
                   <Row className="tableMarginTop">
                     <Col lg={4}>
                       <div>

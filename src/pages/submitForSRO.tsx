@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { Container, Row, Col, Form, Overlay, Popover } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import { useTable, usePagination } from "react-table";
 import Stepper from "../components/Stepper";
 import Link from "next/link";
@@ -29,7 +29,6 @@ function Table({ columns, data }) {
     },
     usePagination
   );
-
   // Render the UI for your table
   return (
     <div className="tableWithPagination">
@@ -48,39 +47,16 @@ function Table({ columns, data }) {
         </thead>
         <thead>
           <tr>
-            <th className="text-center p-3">
-              App No.
-            </th>
-            <th  className="text-center">
-              Ack.No/ Year
-            </th>
-            <th  className="text-center">
-              CS No.
-            </th>
-
-            <th  className="text-center">
-              Presenter Name
-            </th>
-
-            <th className="extraFont text-center">
-              Nature of Document
-            </th>
-            <th  className="text-center">
-            Ammend Reason
-            </th>
-            <th  className="text-center">
-            Ammend Comments
-            </th>
-            <th  className="text-center">
-            Ammend date & time
-            </th>
-            <th  className="text-center">
-            status
-            </th>
-
-            <th className="text-center">
-              Action
-            </th>
+            <th className="text-center p-3">App No.</th>
+            <th className="text-center">Ack.No/ Year</th>
+            <th className="text-center">CS No.</th>
+            <th className="text-center">Presenter Name</th>
+            <th className="extraFont text-center">Nature of Document</th>
+            <th className="text-center">Ammend Reason</th>
+            <th className="text-center">Ammend Comments</th>
+            <th className="text-center">Ammend date & time</th>
+            <th className="text-center">status</th>
+            <th className="text-center">Action</th>
           </tr>
         </thead>
         <tbody {...getTableBodyProps()}>
@@ -96,7 +72,6 @@ function Table({ columns, data }) {
                   );
                 })}
                 <td className="text-center">
-
                   <Link href={"/digitalSign"}>
                     <button className="print">
                       {" "}
@@ -114,7 +89,6 @@ function Table({ columns, data }) {
           })}
         </tbody>
       </table>
-
       <div className="paginationMain">
         <ul className="pagination d-flex align-items-center justify-content-end">
           <li className="PageItems">
@@ -160,33 +134,10 @@ function Table({ columns, data }) {
     </div>
   );
 }
-
 function SubmitForSRO() {
-  const [clicked, setclicked] = useState<boolean>(false);
-  const [activeTab, setActiveTab] = useState(0);
-
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
-
-  let appNo = (
-    <>
-      {" "}
-      <div className="d-flex">
-        <input
-          onClick={checkboxes}
-          className="form-check-input"
-          type="checkbox"
-          value=""
-          id="flexCheckDefault"
-        />
-        <label className="form-check-label" htmlFor="flexCheckDefault">
-          456787654
-        </label>
-      </div>
-    </>
-  );
-
   const columnsAmmend = React.useMemo(
     () => [
       {
@@ -196,7 +147,6 @@ function SubmitForSRO() {
             Header: "App No.",
             accessor: "appNo",
           },
-
           {
             Header: " Ack.No/ Year",
             accessor: "ackNo",
@@ -205,7 +155,6 @@ function SubmitForSRO() {
             Header: "CS No.",
             accessor: "csNo",
           },
-
           {
             Header: "presenterName",
             accessor: "presenterName",
@@ -214,14 +163,8 @@ function SubmitForSRO() {
             Header: "Nature of Document",
             accessor: "min",
           },
-
-
-
-
-
         ],
       },
-
       {
         Header: "Ammend Reason",
         accessor: "ammendreason",
@@ -241,7 +184,6 @@ function SubmitForSRO() {
     ],
     []
   );
-
   const dataAmmend = [
     {
       appNo: "456787654",
@@ -356,32 +298,6 @@ function SubmitForSRO() {
       ammendcomments: "wrong documents provided ",
     },
   ];
-
-  const [show, setShow] = useState(false);
-  const [show1, setShow1] = useState(false);
-  const [target, setTarget] = useState(null);
-  const ref = useRef(null);
-  const handleClose = () => setShow1(false);
-
-  const handleClick = (event) => {
-
-  };
-
-  const [checked, setchecked] = useState(0);
-  function checkboxes() {
-    var inputs = document.getElementsByTagName("input");
-    var inputObj;
-    var selectedCount = 0;
-    for (var count1 = 0; count1 < inputs.length; count1++) {
-      inputObj = inputs[count1];
-      var type = inputObj.getAttribute("type");
-      if (type == "checkbox" && inputObj.checked) {
-        selectedCount++;
-      }
-      setchecked(selectedCount);
-    }
-  }
-
   return (
     <>
      <div><Stepper showReason2={true} /></div> <Stepper showReason={true} />
@@ -391,100 +307,32 @@ function SubmitForSRO() {
           <meta name="description" content="login" />
           <link rel="icon" href="/igrsfavicon.ico" />
         </Head>
-
         <div className="mainWrapper">
           <div className="wrapperInner">
             <div className="acknowledgement">
               <h4>Submit for SRO Review</h4>
             </div>
-
-            <div className="modal-path modal fade modal-sm" id="exampleModals" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div className="modal-dialog mt-5">
-              <div className="modal-content">
-                <div className="modal-body">
-                  <Row>
-                    <Col lg={12} md={12} xs={12} className="mb-3">
-                      <div className="clear-date d-flex justify-content-end p-2">Clear</div>
-                      <Form.Floating>
-                        <Form.Control
-                          id="floatingInputCustom"
-                          type="date"
-                          placeholder="From Date" />
-                        <Form.Label htmlFor="floatingInputCustom">
-                          From Date
-                        </Form.Label>
-                      </Form.Floating>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col lg={12} md={12} xs={12} >
-                      <Form.Floating>
-                        <Form.Control
-                          id="floatingInputCustom"
-                          type="date"
-                          placeholder="To Date" />
-                        <Form.Label htmlFor="floatingInputCustom">
-                          To Date
-                        </Form.Label>
-                      </Form.Floating>
-                    </Col>
-                  </Row>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-
-
             <div className="documentsTable pageTableMain pageTableContainer">
-
-                <Row className="mb-4">
-                  <Col lg={3} md={4} xs={12}>
-                    <div className="pageTableTabs">
-                      {["Ammend (8)"].map((o, i) => {
-                        return (
-                          <button
-                            key={o}
-                            className={
-                              i === activeTab ? "activeButton" : "button"
-                            }
-                            onClick={() => {
-                              if (o == "Accept (30)") {
-                                setclicked(false);
-                              } else {
-                                setclicked(true);
-                              }
-                              setActiveTab(i);
-                            }}
-                          >
-                            {o}
-                          </button>
-                        );
-                      })}
-                    </div>
+            <Row >
+                  <Col xxl={2} xl={2} lg={2} md={12} sm={12}className="pageTableTabs">
+                  <button className="activeButton">Ammend (5)</button>
                   </Col>
-                  <Col lg={9} md={4} xs={12} className="pageTableSearch">
-                    <div className="d-flex justify-content-end">
-                      <div className="mx-3">
-                          <div
-                            className={`input-group md-form form-sm form-1 pl-0`}
-                          >
-                            <input type="text" className="justify-content-end float-end search-click" style={{ borderRadius: "5px", borderColor: "#5692B4", height: "40px" }} name="" placeholder=" Please search with - CS No / Ack No / App No / Presentant Name" />
-                          </div>
-                      </div>
-                      <div>
-                        <div className="searchFiler">
-                          <button className="today">Today</button>
-                          <RangePicker />
-                        </div>
-                      </div>
-                    </div>
-                  </Col>
+                <Col xxl={0} xl={0} lg={0} md={0} sm={0}></Col>
+                    <Col xxl={5} xl={5} lg={8} md={10} sm={12}className="float-end my-1">
+                      <input
+                        type="text"
+                        className="justify-content-end float-end search-click"
+                        name=""
+                        placeholder=" Please search with - CS No / Ack No / App No / Presentant Name"
+                      />
+                    </Col>
+                    <Col xxl={1} xl={1} lg={12} md={9}sm={12} className="my-1 mx-2 px-1">
+                        <button className="today">Today</button>
+                        </Col>
+                        <Col xxl={2} xl={2} lg={4} md={6} sm={12} className="my-1">
+                        <RangePicker/>
+                        </Col>
                 </Row>
-
-
-
               <div className="table-responsive">
                 <Table columns={columnsAmmend} data={dataAmmend} />
               </div>
@@ -495,5 +343,4 @@ function SubmitForSRO() {
     </>
   );
 }
-
 export default SubmitForSRO;

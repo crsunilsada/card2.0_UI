@@ -757,7 +757,7 @@ const imagingExecutant = () => {
                             <Col lg={8} md={8} xs={2}></Col>
                             <Col lg={4} md={4} xs={10}>
                               <div className="pageNextBtn ">
-                                <button className="clear  mb-2">
+                                <button className="clear  mb-2 mx-2">
                                   Clear
                                 </button>
                                 <button

@@ -1,7 +1,6 @@
 import React from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import Image from "next/image";
-
 const DataNotFoundError = () => {
     return (
         <div>
@@ -12,11 +11,9 @@ const DataNotFoundError = () => {
                             <h4>Aadhar Verification</h4>
                         </div>
                         <Container>
-
-                            <div className='text-center my-5'>
-
+                            <div className='text-center my-5 justify-content-center p-5'>
                                 <Image width={500} height={300} src="/images/DataNotFound.svg" />
-                                <h1 className='error-name'>Data Not Found</h1>
+                                <h1 className='error-name p-2'>Data Not Found</h1>
                             </div>
                         </Container>
                     </div>
@@ -25,5 +22,4 @@ const DataNotFoundError = () => {
         </div>
     )
 }
-
 export default DataNotFoundError

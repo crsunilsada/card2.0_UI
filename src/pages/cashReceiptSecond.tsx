@@ -1,9 +1,8 @@
 import React from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
-import Table from "react-bootstrap";
-
 import Image from "next/image";
 import { useTable, usePagination } from "react-table";
+import Stepper from "../components/Stepper";
 function Tables({ columns, data }) {
   const {
     getTableProps,
@@ -20,7 +19,6 @@ function Tables({ columns, data }) {
     },
     usePagination
   );
-
   // Render the UI for your table
   return (
     <div className="tableWithPagination">
@@ -73,7 +71,6 @@ function Tables({ columns, data }) {
     </div>
   );
 }
-
 const CashReceiptSecond = () => {
   const columns = React.useMemo(
     () => [
@@ -121,7 +118,6 @@ const CashReceiptSecond = () => {
     ],
     []
   );
-
   const textField = (
     <>
       <Form.Floating>
@@ -130,7 +126,6 @@ const CashReceiptSecond = () => {
     </>
   );
   const textFieldFirstColumn = (
-  
     <Form.Floating>
       <Form.Control
         className="checkbox-over"
@@ -138,11 +133,7 @@ const CashReceiptSecond = () => {
         type="text"
       />
     </Form.Floating>
-  
   );
-
- 
-
   const data = [
     {
       Code: textFieldFirstColumn,
@@ -247,10 +238,9 @@ const CashReceiptSecond = () => {
       ),
     },
   ];
-
-
   return (
-    <div>
+    <div><div><Stepper showReason2={true} /></div>
+    <Stepper showReason={true}/>
       <div className="pageMainWrap innerpage">
         <div className="mainWrapper">
           <div className="wrapperInner">
@@ -297,7 +287,6 @@ const CashReceiptSecond = () => {
                       </Form.Label>
                     </Form.Floating>
                   </Col>
-
                   <Col lg={2} md={4} xs={12} className="mb-3">
                     <Form.Floating>
                       <Form.Control
@@ -322,7 +311,6 @@ const CashReceiptSecond = () => {
                       </Form.Label>
                     </Form.Floating>
                   </Col>
-
                   <Col lg={3} md={4} xs={12} className="mb-3">
                     <Form.Floating>
                       <Form.Control
@@ -338,7 +326,6 @@ const CashReceiptSecond = () => {
                 </Row>
               </div>
             </div>
-
             <hr className="mt-3 mb-2"/>
             <div className="pageTableContainer pageTableMain mt-2">
               <Row className="mb-5">
@@ -347,13 +334,12 @@ const CashReceiptSecond = () => {
                 </Col>
                 <Col lg={3} md={3} xs={12}></Col>
                 <Col lg={3} md={3} xs={12}></Col>
-                <Col lg={3} md={3} xs={12}>
-                  <div className="already-paid-btn">
+                <Col lg={2} md={3} xs={12}>
+                  <div className="bluebuttonclass">
                     Amount Already Paid{" "}
-                    <div className="image-container-new">
+                    <div className="image-container">
                       <Image width={15} height={15} src="/images/Iicon.svg" />
-
-                      <table className="table">
+                      <table className="tableData listData tableheadBg table">
                         <thead>
                           <tr>
                             <th className="text-nowrap">Receipt No</th>
@@ -373,7 +359,6 @@ const CashReceiptSecond = () => {
                   </div>
                 </Col>
               </Row>
-
               <div className="table-responsive">
                 <Tables columns={columns} data={data}/>
               </div>
@@ -381,7 +366,6 @@ const CashReceiptSecond = () => {
                 <Button className="next">ADD</Button>
               </div>
             </div>
-
             <hr className="mt-4 mb-2" />
             <div className="pageTableContainer pageTableMain">
               <div className="pageNextBtn ">
@@ -395,5 +379,4 @@ const CashReceiptSecond = () => {
     </div>
   );
 };
-
 export default CashReceiptSecond;

@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { Container, Row, Col, Table, Button } from "react-bootstrap";
-
-const pdeScrutinyList = () => {
+import { Row, Col, Table } from "react-bootstrap";
+import { DatePicker } from 'antd';
+const { RangePicker } = DatePicker;
+const grantPermission = () => {
     useEffect(() => {
         require("bootstrap/dist/js/bootstrap.bundle.min.js");
     }, []);
@@ -48,63 +49,39 @@ const pdeScrutinyList = () => {
             PPCheck: "",
             AllowPermission: "",
         },
-
     ]
     return (
-
         <div className="pageMainWrap">
             <Head>
-                <title>Document Presentation-CARD</title>
+                <title>Grant Permission-CARD</title>
                 <meta name="description" content="login" />
                 <link rel="icon" href="/igrsfavicon.ico" />
             </Head>
-
             <div className="mainWrapper">
                 <div className="otherMenuwrapperInner1">
                     <div className="acknowledgement">
                         <h4>PP Grant Permission</h4>
                     </div>
-
-                    <Container>
-                        <Row className="justify-content-md-center">
-                            <Col lg={7} md={8} xs={12} className="pageTableSearch">
-                                <form className="md-form">
-                                    <div className={`input-group md-form form-sm form-1 pl-0`}>
-                                        <input
-                                            className={`form-control form-control-sm ml-3 w-75`}
-                                            type="text"
-                                            placeholder="Search Here.."
-                                            aria-label="Search"
-                                        />
-                                        <div className={`input-group-prepend`}>
-                                            <button
-                                                className={`btn btn-outline-success`}
-                                                type="submit"
-                                            >
-                                                <Image
-                                                    width={30}
-                                                    height={30}
-                                                    src="/images/Search-icon.svg"
-                                                    alt="image"
-                                                />
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-
-                                <div className="searchFiler">
-                                    <button className="today">Today</button>
-                                    <button className="filter">
-                                        <small>Filters</small>
-                                        <Image width={20} height={20} src="/images/filter.svg" alt="image" />
-                                    </button>
-                                </div>
+                    <div className="documentsTable pageTableMain pageTableContainer">
+                        <Row >
+                        <Col xxl={2} xl={2} lg={2} md={12} sm={12} >
+                        </Col>
+                        <Col xxl={0} xl={0} lg={0} md={0} sm={0}></Col>
+                            <Col xxl={5} xl={5} lg={8} md={10} sm={12} className="float-end my-1">
+                            <input
+                                type="text"
+                                className="justify-content-end float-end search-click"
+                                name=""
+                                placeholder=" Search Here"
+                            />
                             </Col>
+                            <Col xxl={1} xl={1} lg={12} md={9}sm={12} className="my-1 mx-2 px-1">
+                                <button className="today">Today</button>
+                                </Col>
+                                <Col xxl={2} xl={2} lg={4} md={6} sm={12} className="my-1">
+                                <RangePicker/>
+                                </Col>
                         </Row>
-                    </Container>
-
-                    <div className="documentsTable pageTableMain pageTableContainer table-responsive">
-
                         <Table bordered className="tableData listData tableheadBg">
                             <thead>
                                 <tr>
@@ -189,8 +166,9 @@ const pdeScrutinyList = () => {
                                                     </Table>
                                                 </div>
                                             </td>
-                                            <td className="text-center">
-                                                <Button className="bluebuttonclass">Allow</Button>                                            </td>
+                                            <td className="text-center ">
+                                                <button className="bluebuttonclass">Allow</button>
+                                             </td>
                                         </tr>
                                     );
                                 })}
@@ -202,5 +180,4 @@ const pdeScrutinyList = () => {
         </div>
     );
 };
-
-export default pdeScrutinyList;
+export default grantPermission;

@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head';
-import { Button, Col, Container, Image, Row, Table } from 'react-bootstrap';
+import { Image } from 'react-bootstrap';
 import Stepper from '../components/Stepper'
 import Link from 'next/link';
 const Homepage = () => {
@@ -44,5 +44,4 @@ const Homepage = () => {
         </div></>
     )
 }
-
 export default Homepage

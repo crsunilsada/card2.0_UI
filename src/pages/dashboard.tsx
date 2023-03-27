@@ -1,8 +1,6 @@
 import React from 'react'
 import Head from "next/head";
-
 const Dashboard = () => {
-
     return (
         <div className='pageMainWrap innerpage'>
             <Head>
@@ -18,5 +16,4 @@ const Dashboard = () => {
         </div>
     )
 }
-
 export default Dashboard;

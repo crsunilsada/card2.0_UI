@@ -49,35 +49,6 @@ function Table({ columns, data }) {
                                 </th>
                             </tr>
                         </thead>
-                        {/* <tbody
-                        {...getTableBodyProps()}
-                        >
-                            {page.map((row, i) => {
-                                prepareRow(row);
-                                return (
-                                    <tr {...row.getRowProps()} className="text-center">
-                                        {row.cells.map((cell) => {
-                                            return (
-                                                <td {...cell.getCellProps()}>
-                                                    {cell.render("Cell")}</td>
-                                            );
-                                        })}
-                                        <td className="text-center">
-                                            <Image className="mr-4"
-                                                width={80}
-                                                height={30}
-                                                src="/images/sign1.png" />
-                                            <Image
-                                                width={8}
-                                                height={12}
-                                                src="/images/delete.png" />
-                                        </td>
-
-                                    </tr>
-
-                                );
-                            })}
-                        </tbody> */}
                         <tbody>
                             <tr>
                                 <td> Chandraja (Sr. Assistant) </td>
@@ -163,7 +134,6 @@ function SRO() {
             AssignedSROs: "Raghu Kamlekar (Sr. Assistant)",
             Edit: "18-01-2023",
         },
-
     ];
     return (
         <>
@@ -182,7 +152,7 @@ function SRO() {
                             <Container>
                                 <br></br>
                                 <Row className="justify-content-center">
-                                    <Col lg={3} md={3} xs={12} className="mb-3">
+                                    <Col lg={3} md={4} xs={12} className="mb-3">
                                         <Form.Floating>
                                             <Form.Control
                                                 id="floatingInputCustom"
@@ -193,22 +163,22 @@ function SRO() {
                                             </Form.Label>
                                         </Form.Floating>
                                     </Col>
-                                    <Col lg={3} md={3} xs={12} className="mb-3">
+                                    <Col lg={3} md={4} xs={12} className="mb-3">
                                         <Form.Floating>
                                             <Form.Select aria-label="Book No" id="floatingInputCustom" placeholder="Book No">
+                                                <option value="0">Please Select</option>
                                                 <option value="1" selected>Trinath Rao</option>
                                                 <option value="2">Mahesh</option>
                                                 <option value="3">Suresh</option>
                                             </Form.Select>
                                             <Form.Label htmlFor="floatingInputCustom">
-                                                Select SRO
+                                                SRO
                                             </Form.Label>
                                         </Form.Floating>
                                     </Col>
                                 </Row>
-
-                                <Row className="justify-content-center">
-                                    <Col lg={3} md={3}>
+                                <Row className="justify-content-center mt-1">
+                                    <Col lg={3} md={4} xs={12} className="mb-3">
                                         <div className="pageNextBtn1">
                                             <Dropdown>
                                                 <Dropdown.Toggle variant="success" className="btn-color active" id="dropdown-basic">
@@ -241,9 +211,9 @@ function SRO() {
                                             </Form.Floating> */}
                                         </div>
                                     </Col>
-                                    <Col lg={3} md={3}>
+                                    <Col lg={3} md={4} xs={12}>
                                         <div className="pageNextBtn1">
-                                            <button className="next" style={{ width: '300px' }}>Assign SRO for the Day</button>
+                                            <button className="next p-1">Assign SRO for the Day</button>
                                         </div>
                                     </Col>
                                 </Row>
@@ -319,7 +289,6 @@ function SRO() {
                 </div>
             </div>
         </>
-
     );
 }
 export default SRO;

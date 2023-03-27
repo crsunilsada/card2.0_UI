@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head';
-import { Button, Col, Container, Image, Row, Table } from 'react-bootstrap';
+import { Button, Col, Image, Row } from 'react-bootstrap';
 import Stepper from '../components/Stepper'
 const CropSign = () => {
   return (
@@ -45,7 +45,6 @@ const CropSign = () => {
                                     </div>
                                 </Col>
                             </Row>
-
                             <Row>
                                 <Col>
                                     <div className='pageNextBtn d-flex'>
@@ -62,5 +61,4 @@ const CropSign = () => {
         </>
   )
 }
-
 export default CropSign

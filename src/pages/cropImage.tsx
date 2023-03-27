@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import React from 'react'
-import { Button, Col, Container, Image, Row, Table } from 'react-bootstrap';
+import { Button, Col, Image, Row } from 'react-bootstrap';
 import Stepper from '../components/Stepper'
 import Link from "next/link";
 const CropImage = () => {
@@ -60,5 +60,4 @@ const CropImage = () => {
         </div></>
     )
 }
-
 export default CropImage

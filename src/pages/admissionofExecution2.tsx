@@ -5,137 +5,144 @@ import { Row, Col } from "react-bootstrap";
 import { useTable, usePagination } from "react-table";
 import Stepper from "../components/Stepper";
 import Link from "next/link";
-import { DatePicker } from 'antd';
+import { DatePicker, Space } from 'antd';
 const { RangePicker } = DatePicker;
 function Table({ columns, data }) {
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    prepareRow,
-    page,
-    canPreviousPage,
-    canNextPage,
-    pageOptions,
-    nextPage,
-    previousPage,
-    setPageSize,
-    state: { pageIndex, pageSize },
-  } = useTable(
-    {
-      columns,
-      data,
-      initialState: { pageIndex: 0, pageSize: 5 },
-    },
-    usePagination
-  );
-  return (
-    <div className="tableWithPagination">
-      <table
-        className="tableData listData tableheadBg table"
-        {...getTableProps()}
-      >
-        <thead className="hiddenHead">
-          {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps()}>{column.render("Header")}</th>
-              ))}
-            </tr>
-          ))}
-        </thead>
-        <thead>
-          <tr>
-            <th className="text-center">App No.</th>
-            <th className="text-center">Ack.No/ Year</th>
-            <th className="text-center">CS No.</th>
-            <th className="text-center">
-              CS No. & Ack No.
-              <br />
-              Generated Date & Time
-            </th>
-            <th className="text-center">Presenter Name</th>
-            <th className="text-center">
-              No. of <br />
-              Schedule
-            </th>
-            <th className="text-center">
-              Book <br />
-              Number
-            </th>
-            <th className="extraFont text-center">Nature of Document</th>
-            <th className="text-center">Action</th>
-          </tr>
-        </thead>
-        <tbody {...getTableBodyProps()}>
-          {page.map((row, i) => {
-            prepareRow(row);
-            return (
-              <tr {...row.getRowProps()}>
-                {row.cells.map((cell) => {
-                  return (
-                    <td className="text-center" {...cell.getCellProps()}>{cell.render("Cell")}</td>
-                  );
-                })}
-                <td className="text-center">
-                  <Link href="/imagingExecutant">
-                    <button className="print">
-                      {" "}
-                      <Image width={25} height={25} src="/images/image-capture.svg" />
-                      <small>Image Capture</small>
-                    </button>
-                  </Link>
-                </td>
+    const {
+      getTableProps,
+      getTableBodyProps,
+      headerGroups,
+      prepareRow,
+      page,
+      canPreviousPage,
+      canNextPage,
+      pageOptions,
+      nextPage,
+      previousPage,
+      setPageSize,
+      state: { pageIndex, pageSize },
+    } = useTable(
+      {
+        columns,
+        data,
+        initialState: { pageIndex: 0, pageSize: 5 },
+      },
+      usePagination
+    );
+    // Render the UI for your table
+    return (
+      <div className="tableWithPagination">
+        <table
+          className="tableData listData tableheadBg table"
+          {...getTableProps()}
+        >
+          <thead className="hiddenHead">
+            {headerGroups.map((headerGroup) => (
+              <tr {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map((column) => (
+                  <th {...column.getHeaderProps()}>{column.render("Header")}</th>
+                ))}
               </tr>
-            );
-          })}
-        </tbody>
-      </table>
-      <div className="paginationMain">
-        <ul className="pagination d-flex align-items-center justify-content-end">
-          <li className="PageItems">
-            Items per page:{" "}
-            <select className="text-center"
-              value={pageSize}
-              onChange={(e) => {
-                setPageSize(Number(e.target.value));
-              }}
+            ))}
+          </thead>
+          <thead>
+            <tr>
+              <th className="text-center">App No.</th>
+              <th className="text-center">Ack.No/ Year</th>
+              <th className="text-center">CS No.</th>
+              <th className="text-center">
+                CS No. & Ack No.
+                <br />
+                Generated Date & Time
+              </th>
+              <th className="text-center">Presenter Name</th>
+              <th className="text-center">
+                No. of <br />
+                Schedule
+              </th>
+              <th className="text-center">
+                Book <br />
+                Number
+              </th>
+              <th className="extraFont text-center">Nature of Document</th>
+              <th className="text-center">Action</th>
+            </tr>
+          </thead>
+          <tbody {...getTableBodyProps()}>
+            {page.map((row, i) => {
+              prepareRow(row);
+              return (
+                <tr {...row.getRowProps()}>
+                  {row.cells.map((cell) => {
+                    return (
+                      <td className="text-center" {...cell.getCellProps()}>
+                        {cell.render("Cell")}
+                      </td>
+                    );
+                  })}
+                  <td className="text-center">
+                    <Link href="/imagingExecutant">
+                      <button className="print">
+                        {" "}
+                        <Image
+                          width={25}
+                          height={25}
+                          src="/images/image-capture.svg"
+                        />
+                        <small>Image Capture</small>
+                      </button>
+                    </Link>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+        <div className="paginationMain">
+          <ul className="pagination d-flex align-items-center justify-content-end">
+            <li className="PageItems">
+              Items per page:{" "}
+              <select className="text-center"
+                value={pageSize}
+                onChange={(e) => {
+                  setPageSize(Number(e.target.value));
+                }}
+              >
+                {[5, 10, 20, 30, 40, 50].map((pageSize) => (
+                  <option key={pageSize} value={pageSize}>
+                    {pageSize}
+                  </option>
+                ))}
+              </select>
+            </li>
+            <li className="pagesList">
+              <a className="page-link">
+                Page {pageIndex + 1} of {pageOptions.length}{" "}
+              </a>
+            </li>
+            <li
+              className="paginationPrev pageNav"
+              onClick={() => previousPage()}
+              disabled={!canPreviousPage}
             >
-              {[5, 10, 20, 30, 40, 50].map((pageSize) => (
-                <option key={pageSize} value={pageSize}>
-                  {pageSize}
-                </option>
-              ))}
-            </select>
-          </li>
-          <li className="pagesList">
-            <a className="page-link">
-              Page {pageIndex + 1} of {pageOptions.length}{" "}
-            </a>
-          </li>
-          <li
-            className="paginationPrev pageNav"
-            onClick={() => previousPage()}
-            disabled={!canPreviousPage}
-          >
-            <a className="page-link">
-              <img src="/images/pagination-prev.jpg" />
-            </a>
-          </li>
-          <li
-            className="paginationNext pageNav"
-            onClick={() => nextPage()}
-            disabled={!canNextPage}
-          >
-            <a className="page-link">
-              <img src="/images/pagination-next.jpg" />
-            </a>
-          </li>
-        </ul>
+              <a className="page-link">
+                <img src="/images/pagination-prev.jpg" />
+              </a>
+            </li>
+            <li
+              className="paginationNext pageNav"
+              onClick={() => nextPage()}
+              disabled={!canNextPage}
+            >
+              <a className="page-link">
+                <img src="/images/pagination-next.jpg" />
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
 function TableAmmend({ columns, data }) {
   const {
     getTableProps,
@@ -179,15 +186,15 @@ function TableAmmend({ columns, data }) {
             <th className="text-center">App No.</th>
             <th className="text-center">Ack.No/ Year</th>
             <th className="text-center">CS No.</th>
-            <th className="text-center">Presenter Name</th>
-            <th className="text-center">
-              No. of <br />
-              Schedule
-            </th>
             <th className="text-center">
               CS No. & Ack No.
               <br />
               Generated Date & Time
+            </th>
+            <th className="text-center">Presenter Name</th>
+            <th className="text-center">
+              No. of <br />
+              Schedule
             </th>
             <th className="text-center">
               Book <br />
@@ -206,18 +213,20 @@ function TableAmmend({ columns, data }) {
               <tr {...row.getRowProps()}>
                 {row.cells.map((cell) => {
                   return (
-                    <td className="text-center" {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                    <td className="text-center" {...cell.getCellProps()}>
+                      {cell.render("Cell")}
+                    </td>
                   );
                 })}
                 <td className="text-center d-flex justify-content-around">
                   <Link href={"/partyDetailsScroll"}>
-                    <button
-                    >
+                    <button className="basicDetails">
                       {" "}
                       <Image
                         width={20}
                         height={27}
-                        src="/images/party-details.svg" />
+                        src="/images/Party-details.svg"
+                      />
                       <small>Party Details</small>
                     </button>
                   </Link>
@@ -231,7 +240,7 @@ function TableAmmend({ columns, data }) {
         <ul className="pagination d-flex align-items-center justify-content-end">
           <li className="PageItems">
             Items per page:{" "}
-            <select
+            <select className="text-center"
               value={pageSize}
               onChange={(e) => {
                 setPageSize(Number(e.target.value));
@@ -338,19 +347,19 @@ function AdmissionofExecution() {
             accessor: "csNo",
           },
           {
-            Header: "No. of Schedule",
-            accessor: "presenterName",
-          },
-          {
             Header: "CS No. & Ack No. Generated Date & Time",
-            accessor: "noofSchedule",
-          },
-          {
-            Header: "Book Number",
             accessor: "generateddatetime",
           },
           {
-            Header: "No.of schedule",
+            Header: "presenter name",
+            accessor: "presenterName",
+          },
+          {
+            Header: "No of schedule",
+            accessor: "noofSchedule",
+          },
+          {
+            Header: "book number",
             accessor: "bookNumber",
           },
           {
@@ -510,8 +519,8 @@ function AdmissionofExecution() {
       bookNumber: "2",
       maj: "Gift",
       min: "Gift settlement in favour of others",
-      ammendreason: "Insufficient details",
-      ammendcomments: "All details are not given",
+      ammendreason: "Improper documents",
+      ammendcomments: "Correct documents are not given",
     },
     {
       appNo: "566787654",
@@ -523,8 +532,8 @@ function AdmissionofExecution() {
       bookNumber: "1",
       maj: "Partitions",
       min: "Partition among family members",
-      ammendreason: "Improper documents",
-      ammendcomments: "Correct documents are not given",
+      ammendreason: "Insufficient details",
+      ammendcomments: "All details are not given",
     },
     {
       appNo: "458888123",
@@ -536,8 +545,8 @@ function AdmissionofExecution() {
       bookNumber: "2",
       maj: "Release",
       min: "Release (Co-Parceners)",
-      ammendreason: "Wrong Document",
-      ammendcomments: "Incorrect docs are given",
+      ammendreason: "documents are not clear",
+      ammendcomments: "please send documents clearly ",
     },
     {
       appNo: "126787654",
@@ -549,8 +558,8 @@ function AdmissionofExecution() {
       bookNumber: "1",
       maj: "Release",
       min: "Release (Others)",
-      ammendreason: "Incorrect details",
-      ammendcomments: "details are wrong",
+      ammendreason: "Wrong Document",
+      ammendcomments: "please send correct documents",
     },
     {
       appNo: "456787654",
@@ -562,8 +571,8 @@ function AdmissionofExecution() {
       bookNumber: "2",
       maj: "Release",
       min: "Release (Others)",
-      ammendreason: "Wrong Document",
-      ammendcomments: "wrong documents provided ",
+      ammendreason: "Insufficient details",
+      ammendcomments: "All details are not given",
     },
   ];
   const [show, setShow] = useState(false);
@@ -583,64 +592,64 @@ function AdmissionofExecution() {
   };
   return (
     <><div><Stepper showReason1={true} /></div>
-      <Stepper showReason={false} />
-      <div className="pageMainWrap innerpage">
-        <Head>
-          <title>Admission of Execution - CARD</title>
-          <meta name="description" content="login" />
-          <link rel="icon" href="/igrsfavicon.ico" />
-        </Head>
+    <Stepper showReason={false}/>
+    <div className="pageMainWrap innerpage">
+      <Head>
+        <title>Admission of Execution - CARD</title>
+        <meta name="description" content="login" />
+        <link rel="icon" href="/igrsfavicon.ico" />
+      </Head>
         <div className="mainWrapper">
           <div className="wrapperInner">
             <div className="acknowledgement">
-              <h4>Admission of Execution</h4>
+              <h4>Admission of Execution - CARD</h4>
             </div>
             <div className="documentsTable pageTableMain pageTableContainer">
-              <Row >
-                <Col xxl={2} xl={2} lg={2} md={12} sm={12} className="pageTableTabs">
-                  {["Accept (30)"].map((o, i) => {
-                    return (
-                      <button
-                        key={o}
-                        className={i === activeTab ? "activeButton" : "button"}
-                        onClick={() => {
-                          if (o == "Accept (30)") {
-                            setclicked(false);
-                          } else {
-                            setclicked(true);
-                          }
-                          setActiveTab(i);
-                        }}
-                      >
-                        {o}
-                      </button>
+            <Row >
+                  <Col xxl={3} xl={3} lg={4} md={12} sm={12}className="pageTableTabs">
+                  {["Accept (30)", "Ammend (5)"].map((o, i) => {
+                    return(
+                    <button
+                      key={o}
+                      className={i === activeTab ? "activeButton" : "button"}
+                      onClick={() => {
+                        if (o=="Accept (30)") {
+                          setclicked(false);
+                        } else {
+                          setclicked(true);
+                        }
+                        setActiveTab(i);
+                      }}
+                    >
+                      {o}
+                    </button>
                     )
                   })
-                  }
-                </Col>
+                }
+                  </Col>
                 <Col xxl={0} xl={0} lg={0} md={0} sm={0}></Col>
-                <Col xxl={5} xl={5} lg={8} md={10} sm={12} className="float-end my-1">
-                  <input
-                    type="text"
-                    className="justify-content-end float-end search-click"
-                    name=""
-                    placeholder=" Please search with - CS No / Ack No / App No / Presentant Name"
-                  />
-                </Col>
-                <Col xxl={1} xl={1} lg={12} md={9} sm={12} className="my-1 mx-2 px-1">
-                  <button className="today">Today</button>
-                </Col>
-                <Col xxl={2} xl={2} lg={4} md={6} sm={12} className="my-1">
-                  <RangePicker />
-                </Col>
-              </Row>
-              <div className="table-responsive">
+                    <Col xxl={5} xl={5} lg={12} md={10} sm={12}className="float-end my-1">
+                      <input
+                        type="text"
+                        className="justify-content-end float-end search-click"
+                        name=""
+                        placeholder=" Please search with - CS No / Ack No / App No / Presentant Name"
+                      />
+                    </Col>
+                    <Col xxl={1} xl={1} lg={12} md={9}sm={12} className="my-1 mx-2 px-1">
+                        <button className="today">Today</button>
+                        </Col>
+                        <Col xxl={2} xl={2} lg={4} md={6} sm={12} className="my-1">
+                        <RangePicker/>
+                        </Col>
+                </Row>
+                <div className="table-responsive">
                 {clicked ? (
-                  <TableAmmend columns={columnsAmmend} data={dataAmmend} />
-                ) : (
-                  <Table columns={columns} data={data} />
-                )}
-              </div>
+                    <TableAmmend columns={columnsAmmend} data={dataAmmend} />
+                  ) : (
+                    <Table columns={columns} data={data} />
+                  )}
+                </div>
             </div>
           </div>
         </div>

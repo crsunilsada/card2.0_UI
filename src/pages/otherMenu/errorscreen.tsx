@@ -1,11 +1,9 @@
 import Head from 'next/head';
 import React from 'react'
-import { Button, Col, Container, Image, Row, Table } from 'react-bootstrap';
-import Stepper from '../components/Stepper'
+import { Col, Image, Row } from 'react-bootstrap';
 const ErrorScreen = () => {
     return (
         <>
-        {/* <Stepper /> */}
         <div>
             <div className="pageMainWrap innerpage">
                 <Head>
@@ -16,11 +14,10 @@ const ErrorScreen = () => {
                 <div className="mainWrapper">
                     <div className="otherMenuwrapperInner1">
                         <div className="acknowledgement">
-                            {/* <button className="partyDetails">Party Details</button> */}
                             <button className="active imaging">Aadhar Verification</button>
                         </div>
-                        <div className='d-flex justify-content-center align-items-center flex-column'>
-                            <Row>
+                        <div className='d-flex justify-content-center align-items-center flex-column pt-5'>
+                            <Row className='mt-5'>
                                 <Col >
                                     <div className='p-1'>
                                         <Image className='crops-image'
@@ -45,5 +42,4 @@ const ErrorScreen = () => {
         </div></>
     )
 }
-
 export default ErrorScreen

@@ -83,7 +83,7 @@ const Stepper = (props) => {
           </div>)}
       {showReason2 &&
         (
-          <div className="progressbar-section align-items-center mx-center">
+          <div className="progressbar-section1 align-items-center mx-center">
             <ul className="progressbar">
               <li className="completed" onClick={handleClick}><div className="progress_step_text">Admission Of Execution</div></li>
               <li className={selected1 ? "completed" : "inactive"} onClick={handleClick1}><div className="progress_step_text">Verification</div></li>

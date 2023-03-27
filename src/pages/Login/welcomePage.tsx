@@ -4,20 +4,16 @@ import { Col, Row } from "react-bootstrap";
 import WaveGif from '../../../public/images/wave.gif';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-
 const WelcomePage = () => {
     const router = useRouter();
-
     useEffect(() => {
       const timeoutId = setTimeout(() => {
         router.push('/');
       },3000);
-
       return () => {
         clearTimeout(timeoutId);
       };
     }, []);
-
     return (
         <div className="pageMainWrap innerpage">
             <Head>
@@ -25,9 +21,6 @@ const WelcomePage = () => {
                 <meta name="description" content="login" />
                 <link rel="icon" href="/igrsfavicon.ico" />
             </Head>
-            {/* <div style={{height: '72px'}}></div> */}
-
-            {/* <div className="mt-5 WelcomePage"> */}
             <div className="LoginMargin">
                 <div className="LoginPage">
                     <Row>
@@ -39,8 +32,6 @@ const WelcomePage = () => {
                 </div>
             </div>
             </div>
-        // </div>
     )
 }
 export default WelcomePage;
-

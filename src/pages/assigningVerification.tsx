@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { Container, Row, Col, Form, Popover, Overlay } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import { useTable, usePagination } from "react-table";
 import Stepper from "../components/Stepper";
 import Link from "next/link";
-import { DatePicker, Space } from 'antd';
+import { DatePicker } from 'antd';
 const { RangePicker } = DatePicker;
 function Table({ columns, data }) {
   const {
@@ -29,7 +29,6 @@ function Table({ columns, data }) {
     },
     usePagination
   );
-
   // Render the UI for your table
   return (
     <div className="tableWithPagination">
@@ -56,13 +55,11 @@ function Table({ columns, data }) {
               <br />
               Generated Date & Time
             </th>
-
             <th className="text-center">Presenter Name</th>
             <th className="text-center">
               No. of <br />
               Schedule
             </th>
-
             <th className="text-center">
               Book <br />
               Number
@@ -108,7 +105,6 @@ function Table({ columns, data }) {
           })}
         </tbody>
       </table>
-
       <div className="paginationMain">
         <ul className="pagination d-flex align-items-center justify-content-end">
           <li className="PageItems">
@@ -154,15 +150,12 @@ function Table({ columns, data }) {
     </div>
   );
 }
-
-
 function Assigning() {
   const [clicked, setclicked] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState(0);
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
-
   const columns = React.useMemo(
     () => [
       {
@@ -184,12 +177,10 @@ function Assigning() {
             Header: "CS No. & Ack No. Generated Date & Time",
             accessor: "generateddatetime",
           },
-
           {
             Header: "presenter name",
             accessor: "presenterName",
           },
-
           {
             Header: "No of schedule",
             accessor: "noofSchedule",
@@ -204,20 +195,14 @@ function Assigning() {
               },
         ],
       },
-
         ],
-
     []
   );
-
-
-
   const data = [
     {
       appNo: "456787654",
       ackNo: "345/2022",
       csNo: "212",
-
       presenterName: "swapna hanumanthu",
       noofSchedule: "1",
       generateddatetime: "22/11/2022 @ 11: 48 AM",
@@ -238,7 +223,6 @@ function Assigning() {
       appNo: "656787654",
       ackNo: "347/2022",
       csNo: "213",
-
       presenterName: "rajesh rao",
       noofSchedule: "1",
       generateddatetime: "22/11/2022 @ 10: 00 AM",
@@ -250,7 +234,6 @@ function Assigning() {
       appNo: "126787654",
       ackNo: "348/2023",
       csNo: "214",
-
       presenterName: "ravi teja",
       noofSchedule: "2",
       generateddatetime: "22/2/2023 @ 09: 09 AM",
@@ -262,7 +245,6 @@ function Assigning() {
       appNo: "346787654",
       ackNo: "349/2023",
       csNo: "215",
-
       presenterName: "Chandra Sekhar",
       noofSchedule: "1",
       generateddatetime: "20/1/2023 @ 10: 45 AM",
@@ -274,7 +256,6 @@ function Assigning() {
       appNo: "566787654",
       ackNo: "350/2022",
       csNo: "216",
-
       presenterName: "Sekhar sastry",
       noofSchedule: "2",
       generateddatetime: "11/10/2022 @ 07: 30 AM",
@@ -286,7 +267,6 @@ function Assigning() {
       appNo: "796787654",
       ackNo: "351/2022",
       csNo: "217",
-
       presenterName: "Chandra Sekhar",
       noofSchedule: "1",
       generateddatetime: "22/11/2022 @ 10: 41 AM",
@@ -298,7 +278,6 @@ function Assigning() {
       appNo: "916787654",
       ackNo: "352/2023",
       csNo: "218",
-
       presenterName: "Subbarao mucharla",
       noofSchedule: "2",
       generateddatetime: "22/11/2022 @ 09: 46 AM",
@@ -307,19 +286,15 @@ function Assigning() {
       min: "Release (Others)",
     },
   ];
-
-
   const [show, setShow] = useState(false);
   const [show1, setShow1] = useState(false);
   const [target, setTarget] = useState(null);
   const ref = useRef(null);
   const handleClose = () => setShow1(false);
-
   const handleClick = (event) => {
     setShow1(!show1);
     setTarget(event.target);
   };
-
   return (
     <>
       <div><Stepper showReason1={true} /></div>
@@ -330,21 +305,18 @@ function Assigning() {
           <meta name="description" content="login" />
           <link rel="icon" href="/igrsfavicon.ico" />
         </Head>
-
         <div className="mainWrapper">
           <div className="wrapperInner">
             <div className="acknowledgement">
               <h4>Assigning</h4>
             </div>
-
-
               <div className="documentsTable pageTableMain pageTableContainer">
                <Row >
                   <Col xxl={2} xl={2} lg={2} md={12} sm={12}className="pageTableTabs">
                     <button className="activeButton">Accept (30)</button>
                   </Col>
                 <Col xxl={0} xl={0} lg={0} md={0} sm={0}></Col>
-                  
+
                     <Col xxl={5} xl={5} lg={8} md={10} sm={12}className="float-end my-1">
                       <input
                         type="text"
@@ -354,26 +326,23 @@ function Assigning() {
                       />
                     </Col>
                     <Col xxl={1} xl={1} lg={12} md={9}sm={12} className="my-1 mx-2 px-1">
-                      
+
                         <button className="today">Today</button>
-                    
+
                         </Col>
                         <Col xxl={2} xl={2} lg={4} md={6} sm={12} className="my-1">
                         <RangePicker/>
                         </Col>
-                    
-                  
+
+
                 </Row>
               <div className="table-responsive">
-
                   <Table columns={columns} data={data} />
-
               </div>
             </div>
           </div>
         </div>
       </div>
-
     </>
   );
 }

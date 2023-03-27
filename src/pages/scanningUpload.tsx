@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { Container, Row, Col, Form, Overlay, Popover } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import { useTable, usePagination } from "react-table";
 import Stepper from '../components/Stepper'
 import Link from "next/link";
-import { DatePicker, Space } from 'antd';
+import { DatePicker } from 'antd';
 const { RangePicker } = DatePicker;
 function Table({ columns, data }) {
   const {
@@ -455,7 +455,6 @@ function ScanningUpload() {
                     <button className="activeButton">Ammend (5)</button>
                   </Col>
                 <Col xxl={0} xl={0} lg={0} md={0} sm={0}></Col>
-
                     <Col xxl={4} xl={3} lg={112} md={12} sm={12}className="float-end my-1">
                       <input
                         type="text"
@@ -465,9 +464,7 @@ function ScanningUpload() {
                       />
                     </Col>
                     <Col xxl={1} xl={1} lg={12} md={9}sm={12} className="my-1 mx-2 p-0">
-
                         <button className="today">Today</button>
-
                         </Col>
                        <Col xxl={2} xl={2} lg={4} md={6} sm={12} className="my-1">
                         <RangePicker/>
@@ -483,8 +480,6 @@ function ScanningUpload() {
                       Bulk Digital Sign
                     </button>
                         </Col>
-
-
                 </Row>
               <div className="table-responsive">
                 <Table columns={columns} data={data} />

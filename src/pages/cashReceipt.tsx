@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Col, Container, Dropdown, Form, Row } from "react-bootstrap";
+import { Button, Col, Form, Row } from "react-bootstrap";
 import Stepper from "../components/Stepper";
 import Link from "next/link";
 import { useTable, usePagination } from "react-table";
@@ -19,7 +19,6 @@ function Table({ columns, data }) {
     },
     usePagination
   );
-
   // Render the UI for your table
   return (
     <div className="tableWithPagination">
@@ -72,7 +71,6 @@ function Table({ columns, data }) {
     </div>
   );
 }
-
 const CashReceipt = () => {
   const columns = React.useMemo(
     () => [
@@ -120,7 +118,6 @@ const CashReceipt = () => {
     ],
     []
   );
-
   const textField = (
     <>
       <Form.Floating>
@@ -129,7 +126,6 @@ const CashReceipt = () => {
     </>
   );
   const textFieldFirstColumn = (
-    // <Row >
     <Form.Floating>
       <Form.Control
         className="checkbox-over"
@@ -137,11 +133,7 @@ const CashReceipt = () => {
         type="text"
       />
     </Form.Floating>
-    // </Row>
   );
-
- 
-
   const data = [
     {
       Code: textFieldFirstColumn,
@@ -186,7 +178,6 @@ const CashReceipt = () => {
       CFMSandStock: textField,
       ByCash: textField,
       ByDD: textField,
-
     },
     {
       Code: "",
@@ -247,11 +238,9 @@ const CashReceipt = () => {
       ),
     },
   ];
-
   return (
     <div><div><Stepper showReason2={true} /></div>
     <Stepper showReason={true}/>
-        {/* <div className="red-strip text-center p-1">REASON: Change Nature of Document  |  COMMENTS: Comments appear here</div> */}
       <div className="pageMainWrap innerpage">
         <div className="mainWrapper">
           <div className="wrapperInner">
@@ -298,7 +287,6 @@ const CashReceipt = () => {
                       </Form.Label>
                     </Form.Floating>
                   </Col>
-
                   <Col lg={2} md={4} xs={12} className="mb-3">
                     <Form.Floating>
                       <Form.Control
@@ -323,7 +311,6 @@ const CashReceipt = () => {
                       </Form.Label>
                     </Form.Floating>
                   </Col>
-                
                   <Col lg={3} md={4} xs={12} className="mb-3">
                     <Form.Floating>
                       <Form.Control
@@ -339,7 +326,6 @@ const CashReceipt = () => {
                 </Row>
               </div>
             </div>
-
             <hr className="mt-3 mb-2" />
             <div className="pageTableContainer pageTableMain mt-2">
               <Row className="mb-5">
@@ -381,5 +367,4 @@ const CashReceipt = () => {
     </div>
   );
 };
-
 export default CashReceipt;
