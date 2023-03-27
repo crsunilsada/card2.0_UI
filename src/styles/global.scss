@@ -1009,7 +1009,7 @@ body {
     font-weight: 500;
     font-size: 16px;
     text-align: center;
-    color: $white;
+    color: $white !important;
     border: 1px solid $blue;
     cursor: pointer;
     float: right;
@@ -1100,6 +1100,7 @@ body {
     padding: 0px 0px 0px 350px;
     height: 82px;
 }
+
 .progressbar-section1 {
     padding: 0px 0px 0px 550px;
     height: 82px;
@@ -1524,14 +1525,14 @@ body {
 // menu bar css end
 // grant permission start
 .image-container {
-    position: relative;
+    position: inherit;
     display: inline-block;
 
     Table {
         display: none;
         position: absolute;
-        top: 100%;
-        left: -100px;
+        width: auto;
+        right: 100px;
         z-index: 1;
         border-collapse: collapse;
     }
@@ -1969,6 +1970,11 @@ body {
 
 .selected-Imaging.selected {
     border: 5px solid red;
+}
+
+.modal-path-assigning {
+    position: fixed;
+    top: 10%;
 }
 
 // --------------------------ekyc--------------------//

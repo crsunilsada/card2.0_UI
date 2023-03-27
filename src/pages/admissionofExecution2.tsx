@@ -591,7 +591,7 @@ function AdmissionofExecution() {
     setclicked(true);
   };
   return (
-    <><div><Stepper showReason1={true} /></div>
+    <><div><Stepper showReason2={true} /></div>
     <Stepper showReason={false}/>
     <div className="pageMainWrap innerpage">
       <Head>
@@ -602,18 +602,19 @@ function AdmissionofExecution() {
         <div className="mainWrapper">
           <div className="wrapperInner">
             <div className="acknowledgement">
-              <h4>Admission of Execution - CARD</h4>
+              <h4>Admission of Execution</h4>
             </div>
             <div className="documentsTable pageTableMain pageTableContainer">
             <Row >
                   <Col xxl={3} xl={3} lg={4} md={12} sm={12}className="pageTableTabs">
-                  {["Accept (30)", "Ammend (5)"].map((o, i) => {
+                  {/* {["Accept (8)", "Ammend (8)"].map((o, i) => { */}
+                  {["Accept (8)", "Ammend (8)"].map((o, i) => {
                     return(
                     <button
                       key={o}
                       className={i === activeTab ? "activeButton" : "button"}
                       onClick={() => {
-                        if (o=="Accept (30)") {
+                        if (o=="Accept (8)") {
                           setclicked(false);
                         } else {
                           setclicked(true);

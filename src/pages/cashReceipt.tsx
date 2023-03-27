@@ -358,7 +358,7 @@ const CashReceipt = () => {
             <div className="pageTableContainer pageTableMain">
               <div className="pageNextBtn ">
                 <Button className="clear">Clear</Button>
-                <Button className="next">Save</Button>
+                <Link href="/verification"><Button className="next">Save</Button></Link>
               </div>
             </div>
           </div>

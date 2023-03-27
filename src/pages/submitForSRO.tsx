@@ -72,7 +72,6 @@ function Table({ columns, data }) {
                   );
                 })}
                 <td className="text-center">
-                  <Link href={"/digitalSign"}>
                     <button className="print">
                       {" "}
                       <Image
@@ -82,7 +81,6 @@ function Table({ columns, data }) {
                       />
                       <small>Submit for SRO Review</small>
                     </button>
-                  </Link>
                 </td>
               </tr>
             );

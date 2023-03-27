@@ -1029,7 +1029,7 @@ const Assigning = () => {
           <div className="pageTableContainer">
             <div className="pageNextBtn">
               <button className="next " onClick={handleShow}>Save</button>
-              <Modal show={show} onHide={handleClose} className="modal-path">
+              <Modal show={show} onHide={handleClose} className="modal-path-assigning">
                 <Modal.Header closeButton>
                   <Modal.Title>Confirmation Message</Modal.Title>
                 </Modal.Header>

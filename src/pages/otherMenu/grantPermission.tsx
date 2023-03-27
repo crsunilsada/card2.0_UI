@@ -1,7 +1,7 @@
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { Row, Col, Table } from "react-bootstrap";
+import { Row, Col, Table, Button } from "react-bootstrap";
 import { DatePicker } from 'antd';
 const { RangePicker } = DatePicker;
 const grantPermission = () => {
@@ -21,35 +21,55 @@ const grantPermission = () => {
         },
         {
             SNo: "2",
-            UserName: "",
-            RegType: "",
-            SROName: "",
-            DistrictName: "",
-            VillageName: "",
+            UserName: "Bharat",
+            RegType: "Urban",
+            SROName: "KANKIPADU",
+            DistrictName: "Krishna",
+            VillageName: "Kankipadu",
             PPCheck: "",
             AllowPermission: "",
         },
         {
             SNo: "3",
-            UserName: "",
-            RegType: "",
-            SROName: "",
-            DistrictName: "",
-            VillageName: "",
+            UserName: "Rakesh",
+            RegType: "Urban",
+            SROName: "KANKIPADU",
+            DistrictName: "Krishna",
+            VillageName: "Kankipadu",
             PPCheck: "",
             AllowPermission: "",
         },
         {
             SNo: "4",
-            UserName: "",
-            RegType: "",
-            SROName: "",
-            DistrictName: "",
-            VillageName: "",
+            UserName: "Sudarshan",
+            RegType: "Urban",
+            SROName: "KANKIPADU",
+            DistrictName: "Krishna",
+            VillageName: "Kankipadu",
+            PPCheck: "",
+            AllowPermission: "",
+        },
+        {
+            SNo: "5",
+            UserName: "Prashanth",
+            RegType: "Urban",
+            SROName: "KANKIPADU",
+            DistrictName: "Krishna",
+            VillageName: "Kankipadu",
             PPCheck: "",
             AllowPermission: "",
         },
     ]
+    const [clickedRowIndex, setClickedRowIndex] = useState(-1);
+
+    const handleButtonClick = (index) => {
+      setClickedRowIndex(index);
+    };
+  
+    const isRowDisabled = (index) => {
+      return index === clickedRowIndex;
+    };
+
     return (
         <div className="pageMainWrap">
             <Head>
@@ -82,6 +102,7 @@ const grantPermission = () => {
                                 <RangePicker/>
                                 </Col>
                         </Row>
+                        <div className="table-responsive">
                         <Table bordered className="tableData listData tableheadBg">
                             <thead>
                                 <tr>
@@ -114,7 +135,7 @@ const grantPermission = () => {
                             <tbody>
                                 {pendingtableData.map((item, index) => {
                                     return (
-                                        <tr key={index}>
+                                        <tr key={index} style={{ opacity: isRowDisabled(index) ? "0.5" : "1", pointerEvents: isRowDisabled(index) ? 'none' : 'auto' }}>
                                             <td className="text-center">{item.SNo}</td>
                                             <td className="text-center">{item.UserName}</td>
                                             <td className="text-center">{item.RegType}</td>
@@ -166,14 +187,60 @@ const grantPermission = () => {
                                                     </Table>
                                                 </div>
                                             </td>
-                                            <td className="text-center ">
-                                                <button className="bluebuttonclass">Allow</button>
-                                             </td>
+                                            <td className="text-center">
+                                            <div>
+                                                    {isRowDisabled(index) ? (
+                                                        <span>Permission Granted</span>
+                                                    ) : (
+                                                        <Button onClick={() => handleButtonClick(index)} className="bluebuttonclass float-none">Allow</Button>
+                                                    )}
+                                                </div>
+                                                </td>
                                         </tr>
                                     );
                                 })}
                             </tbody>
                         </Table>
+                        </div>
+                        <div className="paginationMain">
+                        <ul className="pagination d-flex align-items-center justify-content-end">
+                          <li className="PageItems">
+                            Items per page:
+                            <select className="text-center"
+                              value={5}
+                              onChange={(e) => {
+                                setPageSize(Number(e.target.value));
+                              }}
+                            >
+                              {[5, 10, 15, 20].map((pageSize) => (
+                                <option key={pageSize} value={pageSize}>
+                                  {pageSize}
+                                </option>
+                              ))}
+                            </select>
+                          </li>
+                          <li className="pagesList">
+                            <a className="page-link"></a>
+                          </li>
+                          <li
+                            className="paginationPrev pageNav"
+                            onClick={() => previousPage()}
+                          >
+                            <a className="page-link">
+                              <img src="/images/pagination-prev.jpg" />
+                            </a>
+                          </li>
+                          <li
+                            className="paginationNext pageNav"
+                            onClick={() => nextPage()}
+                          >
+                            <a className="page-link">
+                              <img src="/images/pagination-next.jpg" />
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+
                     </div>
                 </div>
             </div>

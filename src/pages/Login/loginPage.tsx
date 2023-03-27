@@ -13,7 +13,7 @@ function MyVerticallyCenteredModal(props) {
             {...props}
             size="md"
             aria-labelledby="contained-modal-title-vcenter"
-            centered
+           // centered
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
@@ -112,7 +112,7 @@ const LoginPage = () => {
                                             <Col lg={3} md={3} xs={3}>
                                                 <input className="form-check-input" onClick={(e) => { handleOptionChange(e); setDisplay(true); }} checked={selectedOption === "option5"} type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5" />&nbsp;
                                                 <label className="form-check-label" >Staff</label>
-                                     
+
                                             </Col>
                                         </Row>
                                         <Row>
