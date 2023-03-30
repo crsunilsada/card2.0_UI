@@ -5,7 +5,7 @@ import { Row, Col } from "react-bootstrap";
 import { useTable, usePagination } from "react-table";
 import Stepper from "../components/Stepper";
 import Link from "next/link";
-import { DatePicker, Space } from 'antd';
+import { DatePicker } from 'antd';
 const { RangePicker } = DatePicker;
 function Table({ columns, data }) {
     const {
@@ -641,7 +641,9 @@ function AdmissionofExecution() {
                         <button className="today">Today</button>
                         </Col>
                         <Col xxl={2} xl={2} lg={4} md={6} sm={12} className="my-1">
-                        <RangePicker/>
+                          <div className="searchFiler">
+                            <RangePicker />
+                          </div>
                         </Col>
                 </Row>
                 <div className="table-responsive">

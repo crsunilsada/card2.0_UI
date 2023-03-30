@@ -974,19 +974,6 @@ body {
     }
 }
 
-.devicemantra {
-    position: relative;
-    width: 168px;
-    height: 27px;
-    left: 90%;
-    font-family: "Noto Sans";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 27px;
-    color: #000000;
-}
-
 .digitalSignHeader {
     width: 142px;
     height: 27px;
@@ -1255,6 +1242,7 @@ body {
 .red-strip {
     background: linear-gradient(90deg, #FE0000 48.21%, #FE0000 100%);
     color: #FFF;
+    font-weight: 600;
 }
 
 .pageTableContainer .mb-4.row {
@@ -1278,15 +1266,16 @@ body {
 
 .crop-image-text {
     color: #274C77;
+    padding: 5px;
 }
 
-.pageNextBtn.scanningPageSave {
-    text-align: left;
+// .pageNextBtn.scanningPageSave {
+//     text-align: left;
 
-    button {
-        height: 50px;
-    }
-}
+//     button {
+//         height: 50px;
+//     }
+// }
 
 ::-webkit-scrollbar {
     width: 6px;
@@ -1378,7 +1367,6 @@ body {
 
 .accordion-button::after {
     background: url(../../public/images/sidearrow.svg) no-repeat center center;
-    ;
 }
 
 .accordion-button:not(.collapsed)::after {
@@ -1532,7 +1520,7 @@ body {
         display: none;
         position: absolute;
         width: auto;
-        right: 100px;
+        right: 10px;
         z-index: 1;
         border-collapse: collapse;
     }
@@ -1718,11 +1706,12 @@ body {
     max-width: 380px;
 }
 
-.digital-sign-btn-enable {
+.digital-sign-btn-enable,
+.digital-sign-btn-enable:hover  {
     width: 100%;
     max-width: 380px;
     color: white;
-    background-color: $blue ;
+    background: $blue !important;
     padding: 12px;
     font-size: 16px;
     border-radius: 8px;
@@ -2005,6 +1994,55 @@ body {
     width: 200px;
     height: 200px;
     text-align: justify;
+}
+
+// .submit,
+// .submit:hover {
+//     background-color: #274C77;
+// }
+
+.propertydetails-topbutton1 {
+    padding: 5px;
+    position: absolute;
+    top: -1px;
+    z-index: 99;
+    right: 0px;
+    border-top-right-radius: 10px;
+}
+
+.accordion-button.collapsed .propertydetails-topbutton1 {
+    display: none;
+}
+
+@media (max-width: 617px) {
+    .propertydetails-topbutton1 {
+        display: block;
+        clear: both;
+        // margin-top: 95px;
+        top: 35px;
+    }
+
+    .accordionContent-sd1 {
+        padding-top: 100px;
+    }
+}
+
+.partydetails-card-image {
+    box-sizing: border-box;
+    width: 142px;
+    height: 179px;
+    border: 1px solid #6096BA;
+    display: flex;
+    margin-left: 12px;
+}
+
+.radioTop-pd {
+    margin-top: -22px;
+}
+
+.table-scroll {
+    max-height: 500px;
+    overflow-y: scroll;
 }
 
 // ---------------------------ekys------------------//

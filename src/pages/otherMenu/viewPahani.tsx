@@ -380,18 +380,18 @@ function otherMenu() {
                                 </Form.Floating></div>
                                 <div className="col"></div>
                                 <div className="col-auto d-flex align-items-center pageNextBtn mx-2 mt-2">
-                                    <Button className="bluebuttonclass mb-4 ">Verify</Button>
+                                    <Button className="next mb-4 ">Verify</Button>
                                 </div>
                                 <div className="col-auto d-flex align-items-center pageNextBtn pageNextBtn1 mt-2">
                                     <Button className="clear mb-4 ">Clear</Button>
                                 </div>
                             </div>
                             <hr></hr>
-                            <div className="row mb-3 mt-5">
-                                <div className="col">
-                                    <h4 className=" crop-image-text">Pattadhar Details</h4>
+                            <div className="row mt-5 ">
+                                <div className="col ">
+                                    <h4 className="crop-image-text">Pattadhar Details</h4>
                                 </div>
-                                <div className=" col lg={4} md={4} xs={12} " >
+                                <div className="col" >
                                     {/* {!display && } */}
                                 </div>
                                 <div className="col">
@@ -400,8 +400,6 @@ function otherMenu() {
                                     }
                                 </div>
                             </div>
-                        </div>
-                        <div className="documentsTable pageTableMain pageTableContainer">
                             <Table columns={columns} data={data} />
                         </div>
                     </div>

@@ -59,7 +59,7 @@ function Table({ columns, data }) {
             <th className="text-center">Action</th>
           </tr>
         </thead>
-        <tbody {...getTableBodyProps()}>
+        {/* <tbody {...getTableBodyProps()}>
           {page.map((row, i) => {
             prepareRow(row);
             return (
@@ -79,12 +79,200 @@ function Table({ columns, data }) {
                         height={37}
                         src="/images/submitSRO.svg"
                       />
+
                       <small>Submit for SRO Review</small>
                     </button>
                 </td>
+
               </tr>
             );
           })}
+        </tbody> */}
+         <tbody>
+          {/* <tr>
+            <td> 456787654  </td>
+            <td>345/2022</td>
+            <td> 212  </td>
+            <td> swapna hanumanthu </td>
+            <td>  Sales Deed </td>
+            <td>Insufficient details </td>
+            <td> All details are not given  </td>
+            <td> 22/11/2022 @ 11: 48 AM </td>
+            <td> submitted  </td>
+            <td className="text-center">
+                    <button className="print">
+                      {" "}
+                      <Image
+                        width={47}
+                        height={47}
+                        src="/images/submitSRO.svg"
+                      />
+                      <small>Submit for SRO Review</small>
+                    </button>
+                </td>
+          </tr> */}
+          {/* <tr>
+            <td> 916787654  </td>
+            <td>352/2023</td>
+            <td> 218  </td>
+            <td> Subbarao mucharla </td>
+            <td>  Mortgage without position</td>
+            <td>Wrong Document </td>
+            <td> please send correct documents  </td>
+            <td> 22/11/2022 @ 09: 46 AM </td>
+            <td> submitted  </td>
+            <td className="text-center">
+            <Link href={"/DigitalSign"}>
+                    <button className="print">
+                      {" "}
+                      <Image
+                        width={47}
+                        height={47}
+                        src="/images/submitSRO.svg"
+                      />
+                      <small>Submit for SRO Review</small>
+                    </button>
+                    </Link>
+                </td>
+          </tr> */}
+          <tr>
+            <td>796787654 </td>
+            <td>351/2022</td>
+            <td> 217  </td>
+            <td> Chandra Sekhar </td>
+            <td>  Gift </td>
+            <td>documents are not clear </td>
+            <td> please send documents clearly  </td>
+            <td> 22/11/2022 @ 10: 41 AM</td>
+            <td> pending  </td>
+            <td className="text-center ">
+                    <button className="print">
+                      {" "}
+                      <Image
+                        width={47}
+                        height={47}
+                        src="/images/sroriview-disabled.svg"
+                      />
+                      <small>Submit for SRO Review</small>
+                    </button>
+                </td>
+          </tr>
+           <tr>
+            <td> 456787654  </td>
+            <td>345/2022</td>
+            <td> 212  </td>
+            <td> Sekhar Varma </td>
+            <td>  Gift settlement in favour of others  </td>
+            <td>Insufficient details </td>
+            <td> All details are not given  </td>
+            <td> 22/11/2022 @ 11: 45 AM </td>
+            <td> submitted  </td>
+            <td className="text-center">
+            {/* <Link href={"/DigitalSign"}> */}
+                    <button className="print">
+                      {" "}
+                      <Image
+                        width={47}
+                        height={47}
+                        src="/images/submitSRO.svg"
+                      />
+                      <small>Submit for SRO Review</small>
+                    </button>
+                    {/* </Link> */}
+                </td>
+          </tr>
+           <tr>
+            <td> 566787654  </td>
+            <td>350/2022</td>
+            <td> 216  </td>
+            <td> Sekhar sastry </td>
+            <td>  Partition among family members </td>
+            <td>Improper documents </td>
+            <td> Correct documents are not given  </td>
+            <td> 11/10/2022 @ 07: 30 AM </td>
+            <td> pending  </td>
+            <td className="text-center">
+            <button className="print">
+                       {" "}
+                      <Image
+                        width={47}
+                        height={47}
+                        src="/images/sroriview-disabled.svg"
+                      />
+                      <small>Submit for SRO Review</small>
+                    </button>
+                </td>
+          </tr>
+          {/* <tr>
+            <td> 458888123 </td>
+            <td>346/2022</td>
+            <td> 213  </td>
+            <td> sreeja varma </td>
+            <td> Release (Co-Parceners)</td>
+            <td>Wrong Document </td>
+            <td>Incorrect docs are given  </td>
+            <td> 22/11/2022 @ 08: 00 AM </td>
+            <td> submitted  </td>
+            <td className="text-center">
+            <Link href={"/DigitalSign"}>
+                    <button className="print">
+                    {" "}
+                      <Image
+                        width={47}
+                        height={47}
+                        src="/images/submitSRO.svg"
+                      />
+                      <small>Submit for SRO Review</small>
+                    </button>
+                    </Link>
+                </td>
+          </tr> */}
+          <tr>
+            <td>126787654</td>
+            <td>348/2022</td>
+            <td> 214  </td>
+            <td> ravi teja </td>
+            <td>  Release (Others)</td>
+            <td>Incorrect details </td>
+            <td>details are wrong </td>
+            <td> 22/2/2023 @ 09: 09 AM </td>
+            <td> submitted  </td>
+            <td className="text-center">
+            {/* <Link href={"/DigitalSign"}> */}
+                    <button className="print">
+                    {" "}
+                      <Image
+                        width={47}
+                        height={47}
+                        src="/images/submitSRO.svg"
+                      />
+                      <small>Submit for SRO Review</small>
+                    </button>
+                    {/* </Link> */}
+                </td>
+          </tr>
+          <tr>
+            <td> 456787654  </td>
+            <td>345/2022</td>
+            <td> 212  </td>
+            <td> Sekhar Varma </td>
+            <td>  Release (Others) </td>
+            <td>Wrong Document </td>
+            <td> wrong documents provided </td>
+            <td> 22/11/2022 @ 11: 45 AM </td>
+            <td> pending  </td>
+            <td className="text-center">
+                    <button className="print">
+                    {" "}
+                      <Image
+                        width={47}
+                        height={47}
+                        src="/images/sroriview-disabled.svg"
+                      />
+                      <small>Submit for SRO Review</small>
+                    </button>
+                </td>
+          </tr>
         </tbody>
       </table>
       <div className="paginationMain">
@@ -301,7 +489,7 @@ function SubmitForSRO() {
      <div><Stepper showReason2={true} /></div> <Stepper showReason={true} />
       <div className="pageMainWrap innerpage">
         <Head>
-          <title>Document Presentation - CARD</title>
+          <title>Submit For SRO - CARD</title>
           <meta name="description" content="login" />
           <link rel="icon" href="/igrsfavicon.ico" />
         </Head>
@@ -311,11 +499,11 @@ function SubmitForSRO() {
               <h4>Submit for SRO Review</h4>
             </div>
             <div className="documentsTable pageTableMain pageTableContainer">
-            <Row >
-                  <Col xxl={2} xl={2} lg={2} md={12} sm={12}className="pageTableTabs">
-                  <button className="activeButton">Ammend (5)</button>
-                  </Col>
-                <Col xxl={0} xl={0} lg={0} md={0} sm={0}></Col>
+                <Row >
+                    <Col xxl={2} xl={2} lg={2} md={12} sm={12}className="pageTableTabs">
+                      <button className="activeButton">Ammend (5)</button>
+                    </Col>
+                    <Col xxl={0} xl={0} lg={0} md={0} sm={0}></Col>
                     <Col xxl={5} xl={5} lg={8} md={10} sm={12}className="float-end my-1">
                       <input
                         type="text"
@@ -326,14 +514,16 @@ function SubmitForSRO() {
                     </Col>
                     <Col xxl={1} xl={1} lg={12} md={9}sm={12} className="my-1 mx-2 px-1">
                         <button className="today">Today</button>
-                        </Col>
-                        <Col xxl={2} xl={2} lg={4} md={6} sm={12} className="my-1">
-                        <RangePicker/>
-                        </Col>
+                    </Col>
+                    <Col xxl={2} xl={2} lg={4} md={6} sm={12} className="my-1">
+                      <div className="searchFiler">
+                        <RangePicker />
+                      </div>
+                    </Col>
                 </Row>
-              <div className="table-responsive">
-                <Table columns={columnsAmmend} data={dataAmmend} />
-              </div>
+                <div className="table-responsive text-center">
+                  <Table columns={columnsAmmend} data={dataAmmend} />
+                </div>
             </div>
           </div>
         </div>

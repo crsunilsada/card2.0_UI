@@ -47,7 +47,7 @@ const Stepper = (props) => {
   }
   const handleClick = () => {
     setSelected(true);
-    router.push('/admissionofExecution')
+    router.push('/admissionofExecution2')
   }
   const handleClick2 = () => {
     setSelected2(true);

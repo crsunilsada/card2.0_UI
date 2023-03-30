@@ -467,7 +467,9 @@ function ScanningUpload() {
                         <button className="today">Today</button>
                         </Col>
                        <Col xxl={2} xl={2} lg={4} md={6} sm={12} className="my-1">
-                        <RangePicker/>
+                        <div className="searchFiler">
+                          <RangePicker />
+                        </div>
                         </Col>
                         <Col xxl={2} xl={2} lg={3} md={4} sm={12} className="my-1">
                         <button

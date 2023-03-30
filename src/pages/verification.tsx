@@ -93,15 +93,15 @@ function TableAmmend({ columns, data }) {
                     </button>
                   </Link>
                   <Link href={"/cashReceipt"}>
-                  <button >
-                    {" "}
-                    <Image
-                       width={67}
-                       height={67}
-                      src="/images/Cashreceipt.svg"
-                    />
-                  {/*   <small>Cash Receipt</small>  */}
-                  </button>
+                    <button >
+                      {" "}
+                      <Image
+                        width={67}
+                        height={67}
+                        src="/images/Cashreceipt.svg"
+                      />
+                      {/*   <small>Cash Receipt</small>  */}
+                    </button>
                   </Link>
                 </td>
               </tr>
@@ -197,14 +197,14 @@ function Verification() {
           },
         ],
       },
-        {
-          Header: "Ammend Reason",
-          accessor: "ammendreason",
-        },
-        {
-          Header: "Ammend Comments",
-          accessor: "ammendcomments",
-        },
+      {
+        Header: "Ammend Reason",
+        accessor: "ammendreason",
+      },
+      {
+        Header: "Ammend Comments",
+        accessor: "ammendcomments",
+      },
     ],
     []
   );
@@ -316,42 +316,46 @@ function Verification() {
   ];
   return (
     <><div><Stepper showReason2={true} /></div>
-    <Stepper showReason={true} />
-    <div className="pageMainWrap innerpage">
-      <Head>
-        <title>Verification - CARD</title>
-        <meta name="description" content="login" />
-        <link rel="icon" href="/igrsfavicon.ico" />
-      </Head>
-      <div className="mainWrapper">
-        <div className="wrapperInner">
-          <div className="acknowledgement">
-            <h4>Verification</h4>
-          </div>
+      <Stepper showReason={true} />
+      <div className="pageMainWrap innerpage">
+        <Head>
+          <title>Verification - CARD</title>
+          <meta name="description" content="login" />
+          <link rel="icon" href="/igrsfavicon.ico" />
+        </Head>
+        <div className="mainWrapper">
+          <div className="wrapperInner">
+            <div className="acknowledgement">
+              <h4>Verification</h4>
+            </div>
             <div className="documentsTable pageTableMain pageTableContainer">
-            <Row >
-                  <Col xxl={2} xl={2} lg={2} md={12} sm={12}className="pageTableTabs">
+              <Row >
+                <Col xxl={2} xl={2} lg={2} md={12} sm={12} className="pageTableTabs">
                   <button className="activeButton">Ammend (5)</button>
-                  </Col>
+                </Col>
                 <Col xxl={0} xl={0} lg={0} md={0} sm={0}></Col>
-                    <Col xxl={5} xl={5} lg={8} md={10} sm={12}className="float-end my-1">
-                      <input
-                        type="text"
-                        className="justify-content-end float-end search-click"
-                        name=""
-                        placeholder=" Please search with - CS No / Ack No / App No / Presentant Name"
-                      />
-                    </Col>
-                    <Col xxl={1} xl={1} lg={12} md={9}sm={12} className="my-1 mx-2 px-1">
-                        <button className="today">Today</button>
-                        </Col>
-                        <Col xxl={2} xl={2} lg={4} md={6} sm={12} className="my-1">
-                        <RangePicker/>
-                        </Col>
-                </Row>
+                <Col xxl={5} xl={5} lg={8} md={10} sm={12} className="float-end my-1">
+                  <input
+                    type="text"
+                    className="justify-content-end float-end search-click"
+                    name=""
+                    placeholder=" Please search with - CS No / Ack No / App No / Presentant Name"
+                  />
+                </Col>
+                <Col xxl={1} xl={1} lg={12} md={9} sm={12} className="my-1 mx-2 px-1">
+                  <button className="today">Today</button>
+                </Col>
+                <Col xxl={2} xl={2} lg={4} md={6} sm={12} className="my-1">
+                  <div className="searchFiler">
+                    <div className="searchFiler">
+                      <RangePicker />
+                    </div>
+                  </div>
+                </Col>
+              </Row>
               <div className="table-responsive">
-                  <TableAmmend columns={columnsAmmend} data={dataAmmend} />
-                </div>
+                <TableAmmend columns={columnsAmmend} data={dataAmmend} />
+              </div>
             </div>
           </div>
         </div>

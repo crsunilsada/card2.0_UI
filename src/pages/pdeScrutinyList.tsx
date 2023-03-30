@@ -1469,7 +1469,9 @@ const pdeScrutinyList = () => {
                       <button className="today today">Today</button>
                     </Col>
                     <Col lg={2} className="my-3">
-                      <RangePicker />
+                      <div className="searchFiler">
+                        <RangePicker />
+                      </div>
                     </Col>
                   </Row>
                   <Tab.Content>

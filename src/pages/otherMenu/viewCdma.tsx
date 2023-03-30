@@ -20,34 +20,7 @@ const ViewCdma = () => {
             market_value: "123",
             application_no: "123",
         },
-        {
-            assesment_Ptin_no: "2321",
-            door_no: "45/B",
-            property_address: "Property Address",
-            locality_name: "Locality Name",
-            revenue_ward: "Revenue Ward",
-            revenue_no: "343245",
-            owner_name: "Naidu",
-            plinth_area: "123",
-            total_property_tax_due: "Tax Due",
-            reg_value: "123",
-            market_value: "123",
-            application_no: "123",
-        },
-        {
-            assesment_Ptin_no: "2321",
-            door_no: "45/B",
-            property_address: "Property Address",
-            locality_name: "Locality Name",
-            revenue_ward: "Revenue Ward",
-            revenue_no: "343245",
-            owner_name: "Naidu",
-            plinth_area: "123",
-            total_property_tax_due: "Tax Due",
-            reg_value: "123",
-            market_value: "123",
-            application_no: "123",
-        },
+      
     ]
     return (
         <div className="pageMainWrap">

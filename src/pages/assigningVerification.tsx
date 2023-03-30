@@ -316,7 +316,6 @@ function Assigning() {
                     <button className="activeButton">Accept (30)</button>
                   </Col>
                 <Col xxl={0} xl={0} lg={0} md={0} sm={0}></Col>
-
                     <Col xxl={5} xl={5} lg={8} md={10} sm={12}className="float-end my-1">
                       <input
                         type="text"
@@ -326,15 +325,13 @@ function Assigning() {
                       />
                     </Col>
                     <Col xxl={1} xl={1} lg={12} md={9}sm={12} className="my-1 mx-2 px-1">
-
                         <button className="today">Today</button>
-
                         </Col>
                         <Col xxl={2} xl={2} lg={4} md={6} sm={12} className="my-1">
-                        <RangePicker/>
+                          <div className="searchFiler">
+                            <RangePicker />
+                        </div>
                         </Col>
-
-
                 </Row>
               <div className="table-responsive">
                   <Table columns={columns} data={data} />

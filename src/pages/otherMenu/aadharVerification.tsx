@@ -1,5 +1,6 @@
 import { Container, Col, Row, Form, Modal } from "react-bootstrap"
 import Head from "next/head";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import React from "react";
 const aadharVerification = () => {
@@ -30,7 +31,7 @@ const aadharVerification = () => {
                             <div className="acknowledgement">
                                 <button className="active partyDetails">Aadhar Verification</button>
                             </div>
-                            <Row>
+                            <Row className="my-3">
                                 <Col lg={2} md={2} xs={2}></Col>
                                 <Col lg={6} md={8} xs={8} className="mb-3">
                                     <Form.Floating>
@@ -39,6 +40,7 @@ const aadharVerification = () => {
                                             type="text"
                                             placeholder="Aadhar Number"
                                             name="aadharnumber"
+                                            value="xxxx xxxx 9875"
                                         />
                                         <label htmlFor="floatingInputCustom">
                                             Aadhar No.
@@ -55,9 +57,9 @@ const aadharVerification = () => {
                             </Row>
                         </div>
                         <hr />
-                        {display && <div>
+                        <div>
                             <Container>
-                                <Row className="mb-3">
+                                <Row className="mb-3 mt-5">
                                     <Col lg={1} md={1} xs={1}></Col>
                                     <Col lg={6} md={6} xs={12}>
                                         <h6>Aadhar Details</h6>
@@ -74,6 +76,7 @@ const aadharVerification = () => {
                                                         type="text"
                                                         placeholder="Name"
                                                         name="name"
+                                                        value={show ? "Krishna" : null}
                                                     />
                                                     <label htmlFor="floatingInputCustom">
                                                         Name
@@ -91,7 +94,7 @@ const aadharVerification = () => {
                                                         <li><a className="dropdown-item" onClick={handleOptionClick}>W/o</a></li>
                                                     </ul>
                                                     <Form.Floating>
-                                                        <Form.Control id="floatingInputCustom" type="text" placeholder="Age" className="form-control" />
+                                                        <Form.Control id="floatingInputCustom" type="text" placeholder="Relation Name" className="form-control" value={show ? "Subbarao" : null}/>
                                                         <Form.Label htmlFor="floatingInputCustom"> Relation Name </Form.Label>
                                                     </Form.Floating>
                                                 </div>
@@ -105,6 +108,7 @@ const aadharVerification = () => {
                                                         type="text"
                                                         placeholder="Phone Number"
                                                         name="phone number"
+                                                        value={show ? "+91 98*******2" : null}
                                                     />
                                                     <label htmlFor="floatingInputCustom">
                                                         Phone Number
@@ -118,6 +122,7 @@ const aadharVerification = () => {
                                                         type="text"
                                                         placeholder="Age"
                                                         name="age"
+                                                        value={show ? "28" : null}
                                                     />
                                                     <label htmlFor="floatingInputCustom">
                                                         Age
@@ -133,6 +138,7 @@ const aadharVerification = () => {
                                                         type="text"
                                                         placeholder="Address"
                                                         name="address"
+                                                        value={show ? "Falt 120, Block C, Anjali Residency, Rajahmundry" : null}
                                                     />
                                                     <label htmlFor="floatingInputCustom">
                                                         Address
@@ -142,12 +148,14 @@ const aadharVerification = () => {
                                         </Row>
                                     </Col>
                                     <Col lg={3} md={4} xs={4}>
-                                        <div className="partydetails-image-box"></div>
+                                    <div className="partydetails-image-box">
+                                        { show ? <Image width={200} height={165} src="/images/krishna.svg" /> : null}
+                                        </div>
                                     </Col>
                                 </Row>
                             </Container>
-                        </div>}
-                        <Modal show={show} onHide={handleClose} className="modal modal-lg">
+                        </div>
+                        {/* <Modal show={show} onHide={handleClose} className="modal modal-lg">
                             <Modal.Header closeButton>
                                 <Modal.Title>Aadhar Verification</Modal.Title>
                             </Modal.Header>
@@ -170,7 +178,7 @@ const aadharVerification = () => {
                                     </Container>
                                 </div>
                             </Modal.Body>
-                        </Modal>
+                        </Modal> */}
                     </div>
                 </div>
             </div>

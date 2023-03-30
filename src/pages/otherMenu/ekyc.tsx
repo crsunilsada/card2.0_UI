@@ -28,7 +28,7 @@ const Ekyc = () => {
                         <div className="acknowledgement">
                             <button className='active'>EKYC Services</button>
                         </div>
-                        <Row className="p-4 pt-5">
+                        <Row className="p-4 pt-4">
                             <Col lg={8} md={8} xs={12}></Col>
                             <Col lg={4} md={4} xs={12} className="pe-0">
                                 <div className="justifydata">
@@ -36,7 +36,7 @@ const Ekyc = () => {
                                 </div>
                             </Col>
                         </Row>
-                        <Row className="p-4 pt-1">
+                        <Row className="p-4 pt-5">
                                 <Col lg={3} md={4} xs={12} className="pb-3 " >
                                     <Form.Floating>
                                         <Form.Control
@@ -64,14 +64,17 @@ const Ekyc = () => {
                             <Row className='pt-2  m-auto'>
                                 <Col lg={11} md={11} xs={11}>
                                     <div className=" d-flex form-check-checkbox">
-                                        <div className='d-flex p-2 pt-0'>
-                                            <Col lg={0.25} md={0.25} xs={0.25}>
+                                        <div className='d-flex p-3 pt-0'>
+                                            <Col lg={0.25} md={0.25} xs={0.25} className="pt-1">
                                                 <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" />
                                             </Col>
-                                            <Col lg={1} md={1} xs={1}><h6>Consent:</h6></Col></div>
-                                        <Col>
-                                            <span className='text-string'>I, the holder of Aadhar Number  , given by consent number to IGRS under ITE&C, Govt. of Andhra Pradesh, to obtain my Aadhar Number and Biometric/ OTP for authenticating wih UIDAI</span>
-                                        </Col>
+                                            <Col lg={1} md={1} xs={1} ><h7>Consent:</h7></Col>
+                                        </div>
+                                        <div className='d-flex p-2 pt-0 '>
+                                            <Col>
+                                                    <span className='text-string'>I, the holder of Aadhar Number  , given by consent number to IGRS under ITE&C, Govt. of Andhra Pradesh, to obtain my Aadhar Number and Biometric/ OTP for authenticating wih UIDAI</span>
+                                            </Col>
+                                        </div>
                                     </div>
                                 </Col>
                                 <Col lg={8} md={8} xs={8}>
