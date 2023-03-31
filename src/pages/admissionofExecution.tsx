@@ -10,7 +10,7 @@ const { RangePicker } = DatePicker;
 function Table({ columns, data }) {
   const {
     getTableProps,
-    getTableBodyProps,
+    getTableBodyProps, 
     headerGroups,
     prepareRow,
     page,
