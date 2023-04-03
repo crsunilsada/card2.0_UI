@@ -10,26 +10,38 @@ const Stepper = (props) => {
     if (window.location.pathname === "/admissionofExecution") {
       setSelected(true);
       setSelected3(true);
+      setSelected4(true);
+      setSelected5(true);
+      setSelected6(true);
     }
     if (window.location.pathname === "/submitForSRO") {
       setSelected2(true);
       setSelected1(true);
       setSelected(true);
     }
-    if (window.location.pathname === "/assigningVerification" || window.location.pathname === "/endorsement" || window.location.pathname === "/assigning") {
+    if (window.location.pathname === "/assigningVerification" || window.location.pathname === "/assigning") {
       setSelected4(true);
       setSelected3(true);
+    }
+    if (window.location.pathname === "/endorsementLanding" || window.location.pathname === "/endorsement") {
+      setSelected4(true);
+      setSelected3(true);
+      setSelected5(true);
     }
     if (window.location.pathname === "/scanningUpload" || window.location.pathname === "/scanning" || window.location.pathname === "/digitalSign" || window.location.pathname === "/bundling") {
       setSelected5(true);
       setSelected4(true);
       setSelected3(true);
+      setSelected7(true);
+      setSelected6(true);
     }
     if (window.location.pathname === "/documentHandover") {
       setSelected6(true);
       setSelected5(true);
       setSelected4(true);
       setSelected3(true);
+      setSelected8(true);
+      setSelected7(true);
     }
   }, []);
   const { showReason1 } = props;
@@ -41,6 +53,9 @@ const Stepper = (props) => {
   const [selected4, setSelected4] = useState(false);
   const [selected5, setSelected5] = useState(false);
   const [selected6, setSelected6] = useState(false);
+  const [selected7, setSelected7] = useState(false);
+  const [selected8, setSelected8] = useState(false);
+
   const handleClick1 = () => {
     setSelected1(true);
     router.push('/verification')
@@ -55,7 +70,7 @@ const Stepper = (props) => {
   }
   const handleClick3 = () => {
     setSelected3(true);
-    router.push('/admissionofExecution')
+    router.push('/pdeScrutinyList')
   }
   const handleClick4 = () => {
     setSelected4(true);
@@ -63,22 +78,32 @@ const Stepper = (props) => {
   }
   const handleClick5 = () => {
     setSelected5(true);
-    router.push('/scanningUpload')
+    router.push('/endorsementLanding')
   }
   const handleClick6 = () => {
     setSelected6(true);
+    router.push('/admissionofExecution')
+  }
+  const handleClick7 = () => {
+    setSelected7(true);
+    router.push('/scanningUpload')
+  }
+  const handleClick8 = () => {
+    setSelected8(true);
     router.push('/documentHandover')
   }
   return (
     <>
       {showReason1 &&
         (
-          <div className="progressbar-section ">
-            <ul className="progressbar">
-              <li className="completed" onClick={handleClick3}><div className="progress_step_text">Admission Of Execution</div></li>
+          <div className="progressbar-section">
+            <ul className="progressbar progressbar1">
+              <li className="completed" onClick={handleClick3}><div className="progress_step_text">CARD pde</div></li>
               <li className={selected4 ? "completed" : "inactive"} onClick={handleClick4}><div className="progress_step_text">Assigning</div></li>
-              <li className={selected5 ? "completed" : "inactive"} onClick={handleClick5}><div className="progress_step_text">BUNDLING</div></li>
-              <li className={selected6 ? "completed" : "inactive"} onClick={handleClick6}><div className="progress_step_text">Document Handover</div></li>
+              <li className={selected5 ? "completed" : "inactive"} onClick={handleClick5}><div className="progress_step_text">endorsement & BUNDLING</div></li>
+              <li className={selected6 ? "completed" : "inactive"} onClick={handleClick6}><div className="progress_step_text">e-sign</div></li>
+              <li className={selected7 ? "completed" : "inactive"} onClick={handleClick7}><div className="progress_step_text">digital sign</div></li>
+              <li className={selected8 ? "completed" : "inactive"} onClick={handleClick8}><div className="progress_step_text">Document Handover</div></li>
             </ul>
           </div>)}
       {showReason2 &&

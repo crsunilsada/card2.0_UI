@@ -10,7 +10,7 @@ const { RangePicker } = DatePicker;
 function Table({ columns, data }) {
   const {
     getTableProps,
-    getTableBodyProps, 
+    getTableBodyProps,
     headerGroups,
     prepareRow,
     page,
@@ -50,9 +50,9 @@ function Table({ columns, data }) {
             <th className="text-center">Ack.No/ Year</th>
             <th className="text-center">CS No.</th>
             <th className="text-center">
-              CS No. & Ack No.
+              Accepted
               <br />
-              Generated Date & Time
+              Date & Timestamp
             </th>
             <th className="text-center">Presenter Name</th>
             <th className="text-center">
@@ -81,8 +81,8 @@ function Table({ columns, data }) {
                   <Link href="/imagingExecutant">
                     <button className="print">
                       {" "}
-                      <Image width={25} height={25} src="/images/image-capture.svg" />
-                      <small>Image Capture</small>
+                      <Image width={25} height={25} src="/images/AadharEsign.svg" />
+                      <small>eSign</small>
                     </button>
                   </Link>
                 </td>
@@ -185,9 +185,9 @@ function TableAmmend({ columns, data }) {
               Schedule
             </th>
             <th className="text-center">
-              CS No. & Ack No.
+              Accepted
               <br />
-              Generated Date & Time
+              Date & Timestamp
             </th>
             <th className="text-center">
               Book <br />
@@ -593,7 +593,7 @@ function AdmissionofExecution() {
         <div className="mainWrapper">
           <div className="wrapperInner">
             <div className="acknowledgement">
-              <h4>Admission of Execution</h4>
+              <h4>eSign</h4>
             </div>
             <div className="documentsTable pageTableMain pageTableContainer">
               <Row >

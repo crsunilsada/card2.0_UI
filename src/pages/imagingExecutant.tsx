@@ -77,46 +77,46 @@ const imagingExecutant = () => {
       id: 1,
       executantId: "Executant - 999-1",
       name: "Raghav Dayal",
-      photo: "/images/untitled.png",
-      thumbImpression: "/images/untitled.png",
-      capture: "Capture",
-      ekyc: "e-KYC",
+      // photo: "/images/untitled.png",
+      // thumbImpression: "/images/untitled.png",
+      // capture: "Capture",
+      eSign: "e-Sign",
     },
     {
       id: 2,
       executantId: "Executant - 999-1",
       name: "Raghav Dayal",
-      photo: "/images/untitled.png",
-      thumbImpression: "/images/untitled.png",
-      capture: "Capture",
-      ekyc: "e-KYC",
+      // photo: "/images/untitled.png",
+      // thumbImpression: "/images/untitled.png",
+      // capture: "Capture",
+      eSign: "e-Sign",
     },
     {
       id: 3,
       executantId: "Executant - 999-1",
       name: "Raghav Dayal",
-      photo: "/images/executant-img.svg",
-      thumbImpression: "/images/executant-thumb-impression.svg",
-      capture: "Re-capture",
-      ekyc: "e-KYC",
+      // photo: "/images/executant-img.svg",
+      // thumbImpression: "/images/executant-thumb-impression.svg",
+      // capture: "Re-capture",
+      eSign: "e-Sign",
     },
     {
       id: 4,
       executantId: "Executant - 999-2",
       name: "Chandra Shekhar",
-      photo: "/images/executant-image-2.svg",
-      thumbImpression: "/images/executant-thumb-impression.svg",
-      capture: "Re-capture",
-      ekyc: "e-KYC",
+      // photo: "/images/executant-image-2.svg",
+      // thumbImpression: "/images/executant-thumb-impression.svg",
+      // capture: "Re-capture",
+      eSign: "e-Sign",
     },
     {
       id: 5,
       executantId: "Executant - 999-3",
       name: "Shekhar Varma",
-      photo: "/images/executant-image-1.svg",
-      thumbImpression: "/images/executant-thumb-impression.svg",
-      capture: "Re-capture",
-      ekyc: "e-KYC",
+      // photo: "/images/executant-image-1.svg",
+      // thumbImpression: "/images/executant-thumb-impression.svg",
+      // capture: "Re-capture",
+      eSign: "e-Sign",
     },
   ];
   const ClaimantData = [
@@ -124,64 +124,64 @@ const imagingExecutant = () => {
       id: 1,
       executantId: "Executant - 999-1",
       name: "Raghav Dayal",
-      photo: "/images/untitled.png",
-      thumbImpression: "/images/executant-thumb-impression.svg",
-      capture: "Capture",
-      ekyc: "e-KYC",
+      // photo: "/images/untitled.png",
+      // thumbImpression: "/images/executant-thumb-impression.svg",
+      // capture: "Capture",
+      eSign: "e-Sign",
     },
     {
       id: 2,
       executantId: "Executant - 999-1",
       name: "Raghav Dayal",
-      photo: "/images/untitled.png",
-      thumbImpression: "/images/executant-thumb-impression.svg",
-      capture: "Capture",
-      ekyc: "e-KYC",
+      // photo: "/images/untitled.png",
+      // thumbImpression: "/images/executant-thumb-impression.svg",
+      // capture: "Capture",
+      eSign: "e-Sign",
     },
     {
       id: 3,
       executantId: "Executant - 999-1",
       name: "Raghav Dayal",
-      photo: "/images/executant-img.svg",
-      thumbImpression: "/images/executant-thumb-impression.svg",
-      capture: "Re-capture",
-      ekyc: "e-KYC",
+      // photo: "/images/executant-img.svg",
+      // thumbImpression: "/images/executant-thumb-impression.svg",
+      // capture: "Re-capture",
+      eSign: "e-Sign",
     },
     {
       id: 4,
       executantId: "Executant - 999-2",
       name: "Chandra Shekhar",
-      photo: "/images/executant-image-2.svg",
-      thumbImpression: "/images/executant-thumb-impression.svg",
-      capture: "Re-capture",
-      ekyc: "e-KYC",
+      // photo: "/images/executant-image-2.svg",
+      // thumbImpression: "/images/executant-thumb-impression.svg",
+      // capture: "Re-capture",
+      eSign: "e-Sign",
     },
     {
       id: 5,
       executantId: "Executant - 999-3",
       name: "Shekhar Varma",
-      photo: "/images/executant-image-1.svg",
-      thumbImpression: "/images/executant-thumb-impression.svg",
-      capture: "Re-capture",
-      ekyc: "e-KYC",
+      // photo: "/images/executant-image-1.svg",
+      // thumbImpression: "/images/executant-thumb-impression.svg",
+      // capture: "Re-capture",
+      eSign: "e-Sign",
     },
   ];
   const WitnessData = [
     {
       executantId: "Witness-1",
       name: "Krishna",
-      photo: "",
-      thumbImpression: "",
-      capture: "Re-capture",
-      ekyc: "e-KYC",
+      // photo: "",
+      // thumbImpression: "",
+      // capture: "Re-capture",
+      eSign: "e-Sign",
     },
     {
       executantId: "Witness-2",
       name: "Maanas",
-      photo: "",
-      thumbImpression: "",
-      capture: "Re-capture",
-      ekyc: "e-KYC",
+      // photo: "",
+      // thumbImpression: "",
+      // capture: "Re-capture",
+      eSign: "e-Sign",
     },
   ];
   return (
@@ -267,9 +267,9 @@ const imagingExecutant = () => {
                           <thead className="text-center ">
                             <tr className="text-center">
                               <th className="text-center p-3">Name</th>
-                              <th className="text-center">Photo</th>
-                              <th className="text-center">Thumb impression</th>
-                              <th className="text-center">Capture</th>
+                              {/* <th className="text-center">Photo</th> */}
+                              {/* <th className="text-center">Thumb impression</th> */}
+                              <th className="text-center ">Capture</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -283,7 +283,7 @@ const imagingExecutant = () => {
                                     {item.executantId}
                                     <h6>{item.name}</h6>
                                   </td>
-                                  <td className="text-center">
+                                  {/* <td className="text-center">
                                     <div className="form-check-checkbox"></div>
                                     <div>
                                       <input type="checkbox" id={`myCheckbox${index}`} onClick={() => handleClick("item", index)} key={index} hidden />
@@ -294,8 +294,8 @@ const imagingExecutant = () => {
                                         </div>
                                       </label>
                                     </div>
-                                  </td>
-                                  <td className="text-center">
+                                  </td> */}
+                                  {/* <td className="text-center">
                                     <div className="form-check-checkbox"></div>
                                     <input
                                       type="checkbox"
@@ -316,11 +316,11 @@ const imagingExecutant = () => {
                                         />
                                       </div>
                                     </label>
-                                  </td>
-                                  <td>
+                                  </td> */}
+                                  <td className="text-center">
                                     {item.capture === "Re-capture" ? (
-                                      <div className="d-flex justify-content-center align-items-center flex-column">
-                                        <button
+                                      <div className="d-flex justify-content-center align-items-center flex-column  ">
+                                        {/* <button
                                           className={
                                             imageSelected1 === item.id
                                               ? "capture"
@@ -329,25 +329,25 @@ const imagingExecutant = () => {
                                           disabled={!imageSelected1 !== item.id}
                                         >
                                           {item.capture}
-                                        </button>
-                                        <button key={item.id}
-                                          className={`capture my-2 ImagingColor ${isSelected ? 'selected-ImagingColor' : ''}`}
+                                        </button> */}
+                                        <button key={item.id} 
+                                          className={` capture my-2   ImagingColor ${isSelected ? 'selected-ImagingColor' : ''}`}
                                           onClick={() => handleClickBtn(index)}
-                                        > {item.ekyc}</button>
+                                        > {item.eSign}</button>
                                       </div>
                                     ) : (
-                                      <div className="d-flex justify-content-center align-items-center flex-column">
-                                        <button
-                                          className="capture"
-                                          onClick={() => handleClick1({ data })}
-                                        >
-                                          {item.capture}
-                                        </button>
+                                      // <div className="d-flex justify-content-center align-items-center flex-column">
+                                      //   <button
+                                      //     className="capture"
+                                      //     onClick={() => handleClick1({ data })}
+                                      //   >
+                                      //     {item.capture}
+                                      //   </button>
                                         <button
                                           className={`capture my-2 ImagingColor ${isSelected ? 'selected-ImagingColor' : ''}`}
                                           onClick={() => handleClickBtn(index)}
-                                        > {item.ekyc}</button>
-                                      </div>
+                                        > {item.eSign}</button>
+                                      // </div>
                                     )}
                                   </td>
                                 </tr>
@@ -360,8 +360,8 @@ const imagingExecutant = () => {
                         <ul className="pagination d-flex align-items-center justify-content-end">
                           <li className="PageItems">
                             Items per page:
-                            <select
-                              value={5}
+                            <select className="text-center"
+                              value={5} 
                               onChange={(e) => {
                                 setPageSize(Number(e.target.value));
                               }}
@@ -441,8 +441,8 @@ const imagingExecutant = () => {
                           <thead className="text-center">
                             <tr>
                               <th className="text-center p-3">Name</th>
-                              <th className="text-center">Photo</th>
-                              <th className="text-center">Thumb impression</th>
+                              {/* <th className="text-center">Photo</th> */}
+                              {/* <th className="text-center">Thumb impression</th> */}
                               <th>Capture</th>
                             </tr>
                           </thead>
@@ -457,7 +457,7 @@ const imagingExecutant = () => {
                                     {item.executantId}
                                     <h6>{item.name}</h6>
                                   </td>
-                                  <td className="text-center">
+                                  {/* <td className="text-center">
                                     <div className="form-check-checkbox"></div>
                                     <div>
                                       <input
@@ -502,11 +502,11 @@ const imagingExecutant = () => {
                                         />
                                       </div>
                                     </label>
-                                  </td>
-                                  <td>
+                                  </td> */}
+                                  <td className="text-center">
                                     {item.capture === "Re-capture" ? (
                                       <div className="d-flex justify-content-center align-items-center flex-column">
-                                        <button
+                                        {/* <button
                                           className={
                                             imageSelected1 === item.id
                                               ? "capture"
@@ -515,25 +515,25 @@ const imagingExecutant = () => {
                                           disabled={!imageSelected1 !== item.id}
                                         >
                                           {item.capture}
-                                        </button>
+                                        </button> */}
                                         <button  key={item.id}
                                       className={`capture my-2 ImagingColor ${isSelected ? 'selected-ImagingColor' : ''}`}
                                         onClick={() => handleClickBtn(index)}
-                                      >{item.ekyc}</button>
+                                      >{item.eSign}</button>
                                       </div>
                                     ) : (
-                                      <div className="d-flex justify-content-center align-items-center flex-column">
-                                        <button
-                                          className="capture"
-                                          onClick={() => handleClick1({ data })}
-                                        >
-                                          {item.capture}
-                                        </button>
+                                      // <div className="d-flex justify-content-center align-items-center flex-column">
+                                      //   <button
+                                      //     className="capture"
+                                      //     onClick={() => handleClick1({ data })}
+                                      //   >
+                                      //     {item.capture}
+                                      //   </button>
                                         <button
                                       className={`capture my-2 ImagingColor ${isSelected ? 'selected-ImagingColor' : ''}`}
                                         onClick={() => handleClickBtn(index)}
-                                      >{item.ekyc}</button>
-                                      </div>
+                                      >{item.eSign}</button>
+                                      // </div>
                                     )}
                                   </td>
                                 </tr>
@@ -546,7 +546,7 @@ const imagingExecutant = () => {
                         <ul className="pagination d-flex align-items-center justify-content-end">
                           <li className="PageItems">
                             Items per page:
-                            <select
+                            <select className="text-center"
                               value={5}
                               onChange={(e) => {
                                 setPageSize(Number(e.target.value));
@@ -664,9 +664,9 @@ const imagingExecutant = () => {
                               </Col>
                               <Col lg={10}></Col>
                               <Col lg={2}>
-                                <div className="pageNextBtn">
+                                {/* <div className="pageNextBtn">
                                   <button className="next">Capture</button>
-                                </div>
+                                </div> */}
                               </Col>
                             </Row>
                           </div>
@@ -747,9 +747,9 @@ const imagingExecutant = () => {
                               </Col>
                               <Col lg={10}></Col>
                               <Col lg={2}>
-                                <div className="pageNextBtn">
+                                {/* <div className="pageNextBtn">
                                   <button className="next">Capture</button>
-                                </div>
+                                </div> */}
                               </Col>
                             </Row>
                           </div>
@@ -780,10 +780,10 @@ const imagingExecutant = () => {
                               <thead className="text-center">
                                 <tr>
                                   <th className="text-center p-3">Name</th>
-                                  <th className="text-center">Photo</th>
-                                  <th className="text-center">
+                                  {/* <th className="text-center">Photo</th> */}
+                                  {/* <th className="text-center">
                                     Thumb impression{" "}
-                                  </th>
+                                  </th> */}
                                   <th className="text-center">Capture</th>
                                 </tr>
                               </thead>
@@ -796,23 +796,22 @@ const imagingExecutant = () => {
                                         {item.executantId}
                                         <h6>{item.name}</h6>
                                       </td>
-                                      <td className="text-center">
+                                      {/* <td className="text-center">
                                         <div className="emptyBox1"></div>
-                                      </td>
-                                      <td className="text-center">
+                                      </td> */}
+                                      {/* <td className="text-center">
                                         <div className="emptyBox1">
                                           <img src={item.thumbImpression} />
                                         </div>
-                                      </td>
+                                      </td> */}
                                       <td className="text-center">
                                         <div className="d-flex justify-content-center align-items-center flex-column">
-                                          <button className="capture">
+                                          {/* <button className="capture">
                                             {item.capture}
-                                          </button>
+                                          </button> */}
                                           <button key={item.id}
-                                          className={`capture my-2 ImagingColor ${isSelected ? 'selected-ImagingColor' : ''}`}
-                                          onClick={() => handleClickBtn(index)}
-                                        >{item.ekyc}</button>
+                                          className={`capture my-2  ImagingColor ${isSelected ? 'selected-ImagingColor' : ''}`}
+                                          onClick={() => handleClickBtn(index)}>{item.eSign}</button>
                                         </div>
                                       </td>
                                     </tr>

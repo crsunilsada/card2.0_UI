@@ -139,7 +139,7 @@ function SRO() {
         <>
             <div className="pageMainWrap innerpage">
                 <Head>
-                    <title>SRO E-Signature - CARD</title>
+                    <title>SRO E-Pad Signature - CARD</title>
                     <meta name="description" content="login" />
                     <link rel="icon" href="/igrsfavicon.ico" />
                 </Head>
@@ -213,7 +213,7 @@ function SRO() {
                                     </Col>
                                     <Col lg={3} md={4} xs={12}>
                                         <div className="pageNextBtn1">
-                                            <button className="next p-1">Assign SRO for the Day</button>
+                                            <button className="next p-1">Capture New Signature</button>
                                         </div>
                                     </Col>
                                 </Row>

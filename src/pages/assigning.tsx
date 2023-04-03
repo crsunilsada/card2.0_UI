@@ -79,7 +79,7 @@ const Assigning = () => {
         <div className="wrapperInner">
           <div className="acknowledgement">
             <button className="active partyDetails">Assigning</button>
-            <button className="imaging">Endorsement</button>
+            {/* <button className="imaging">Endorsement</button> */}
           </div>
           <div className="pageTableContainer mt-4">
             <Row className="mb-4">
@@ -1028,6 +1028,9 @@ const Assigning = () => {
           <hr/>
           <div className="pageTableContainer">
             <div className="pageNextBtn">
+            <button className=" clear m-3">
+                                                    Exit
+                                                </button>
               <button className="next " onClick={handleShow}>Save</button>
               <Modal show={show} onHide={handleClose} className="modal-path-assigning">
                 <Modal.Header closeButton>

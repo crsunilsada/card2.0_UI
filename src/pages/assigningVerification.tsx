@@ -51,9 +51,9 @@ function Table({ columns, data }) {
             <th className="text-center">Ack.No/ Year</th>
             <th className="text-center">CS No.</th>
             <th className="text-center">
-              CS No. & Ack No.
+              Accepted
               <br />
-              Generated Date & Time
+              Date & Timestamp
             </th>
             <th className="text-center">Presenter Name</th>
             <th className="text-center">
@@ -83,14 +83,12 @@ function Table({ columns, data }) {
                 <td className="text-center">
                   <Link href="/assigning">
                   <button className="basicDetails">
-                    {" "}
                     <Image width={25} height={25} src="/images/Assigning.svg" />
                     <small>Assigning</small>
                   </button>
                   </Link>
-                  <Link href="/endorsement">
+                  {/* <Link href="/endorsement">
                   <button className="print">
-                    {" "}
                     <Image
                       width={25}
                       height={25}
@@ -98,7 +96,7 @@ function Table({ columns, data }) {
                     />
                     <small>Endorsement</small>
                   </button>
-                  </Link>
+                  </Link> */}
                 </td>
               </tr>
             );
@@ -108,7 +106,7 @@ function Table({ columns, data }) {
       <div className="paginationMain">
         <ul className="pagination d-flex align-items-center justify-content-end">
           <li className="PageItems">
-            Items per page:{" "}
+            Items per page:
             <select className="text-center"
               value={pageSize}
               onChange={(e) => {
@@ -124,7 +122,7 @@ function Table({ columns, data }) {
           </li>
           <li className="pagesList">
             <a className="page-link">
-              Page {pageIndex + 1} of {pageOptions.length}{" "}
+              Page {pageIndex + 1} of {pageOptions.length}
             </a>
           </li>
           <li

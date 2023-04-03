@@ -115,8 +115,8 @@ const LoginPage = () => {
 
                                             </Col>
                                         </Row>
-                                        <Row>
-                                            <Col lg={10} md={10} xs={12}>
+                                        <Row className="mt-4 ">
+                                            <Col lg={10} md={10} xs={12} >
                                                 <div className="searchBox">
                                                     <input
                                                         type="text"
@@ -184,7 +184,7 @@ const LoginPage = () => {
                                         <Row>
                                             <Col lg={6} md={6} xs={12}></Col>
                                             <Col lg={4} md={4} xs={12}>
-                                                <Link href={"/Login/welcomePage"}><Button className="loginbuttonclass my-3" onClick={() => setModalShow(true)}>Capture</Button></Link>
+                                                <Link href={"/dashboard"}><Button className="loginbuttonclass my-3" onClick={() => setModalShow(true)}>Capture</Button></Link>
                                                 <MyVerticallyCenteredModal
                                                     show={modalShow}
                                                     onHide={() => setModalShow(false)}

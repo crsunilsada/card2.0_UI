@@ -237,6 +237,57 @@ p:last-child {
     line-height: 22px;
     color: $desertStorm;
 }
+.Acceptbtn{
+    height: 36px;
+    width: 80%;
+    max-width: 130px;
+    margin: 5px 10px !important;
+    border-radius: 38px !important;
+    background: #43A047 !important;
+    font-weight: 700;
+    font-size: 16px;
+    color: $desertStorm !important;
+}
+.Ammendbtn{
+    height: 36px;
+    width: 80%;
+    max-width: 130px;
+    margin: 5px 10px !important;
+    border-radius: 38px !important;
+    background: #FFA800 !important;
+    font-weight: 700;
+    font-size: 16px;
+    color: $desertStorm !important;
+}
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .hover-underline-animation:hover{
+    color: #274c77;
+    text-decoration: none;
+  }
+  .hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    // text-decoration: none;
+    background-color: #5692B4;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
 
 .pageTableMain {
     padding: 33px 0 0;
@@ -383,7 +434,7 @@ p:last-child {
                     }
 
                     button.capture.ImagingColor {
-                        background-color: red;
+                        background-color: #8B0000;
                     }
 
                     button.capture.selected-ImagingColor {
@@ -1084,7 +1135,7 @@ body {
 }
 
 .progressbar-section {
-    padding: 0px 0px 0px 350px;
+    padding: 0px 0px 0px 250px;
     height: 82px;
 }
 
@@ -1102,7 +1153,15 @@ body {
     text-align: center;
     color: #9E9E9E;
 }
-
+.progressbar.progressbar1 li {
+    list-style-type: none;
+    width: 14%;
+    float: left;
+    font-size: 12px;
+    position: relative;
+    text-align: center;
+    color: #9E9E9E;
+}
 .progressbar li:before {
     width: 30px;
     height: 30px;

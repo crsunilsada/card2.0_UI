@@ -46,22 +46,25 @@ const Header = () => {
                   <div className="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul className="navbar-nav">
                       <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Registration </a>
-                        <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="/pdeScrutinyList">CARD - PDE</a>
+                        {/* <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                           <li className="dropdown-submenu"><a className="dropdown-item dropdown-toggle">CARD - Manual Entry</a></li>
                           <li className="dropdown-submenu"><a className="dropdown-item dropdown-toggle" href="/admissionofExecution">CARD - PDE</a>
                           </li>
-                        </ul>
+                        </ul> */}
                       </li>
                       <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SRO </a>
-                        <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="/otherMenu/SRO">SRO For The Day</a>
+                        {/* <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                           <li className="dropdown-submenu"><a className="dropdown-item dropdown-toggle">CARD - Manual Entry</a></li>
                           <li className="dropdown-submenu"><a className="dropdown-item dropdown-toggle" href="/pdeScrutinyList">CARD - PDE</a>
                           </li>
                           <li><a className="dropdown-item" href="/otherMenu/SRO">SRO For The Day</a></li>
                           <li><a className="dropdown-item" href="/otherMenu/sroEsign">SRO E-Pad Signature</a></li>
-                        </ul>
+                        </ul> */}
+                      </li>
+                      <li className="nav-item dropdown">
+                        <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="/otherMenu/sroEsign">SRO E-Pad Signature</a>
                       </li>
                     </ul>
                   </div>
@@ -74,7 +77,7 @@ const Header = () => {
             <Image ml-5 width={30} height={25} src="/images/profile-icon.svg" />
             <Dropdown>
               <Dropdown.Toggle id="" variant="secondary" style={{ backgroundColor: '#274C77', border: "none" }}>
-                Welcome, Praveen
+                Welcome, Praveen (SRO)
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item><Link href={"/Login/loginPage"} >Logout</Link></Dropdown.Item>

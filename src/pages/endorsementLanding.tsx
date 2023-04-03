@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Row, Col } from "react-bootstrap";
 import { useTable, usePagination } from "react-table";
-import Stepper from '../components/Stepper'
+import Stepper from "../components/Stepper";
 import Link from "next/link";
 import { DatePicker } from 'antd';
 const { RangePicker } = DatePicker;
@@ -75,23 +75,27 @@ function Table({ columns, data }) {
               <tr {...row.getRowProps()}>
                 {row.cells.map((cell) => {
                   return (
-                    <td className="text-center" {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                    <td className="text-center" {...cell.getCellProps()}>
+                      {cell.render("Cell")}
+                    </td>
                   );
                 })}
                 <td className="text-center">
-                  {/* <Link href={"/bundling"}>
-                    <button className="basicDetails">
-                      {" "}
-                      <Image width={25} height={25} src="/images/Layer_1.svg" />
-                      <small>Bundling</small>
-                    </button>
+                  {/* <Link href="/assigning">
+                  <button className="basicDetails">
+                    <Image width={25} height={25} src="/images/Assigning.svg" />
+                    <small>Assigning</small>
+                  </button>
                   </Link> */}
-                  <Link href={"/digitalSign"}>
-                    <button className="print">
-                      {" "}
-                      <Image width={25} height={25} src="/images/DigiSign.svg" />
-                      <small>Digital Sign</small>
-                    </button>
+                  <Link href="/endorsement">
+                  <button className="print">
+                    <Image
+                      width={25}
+                      height={25}
+                      src="/images/BundleEndorsement.svg"
+                    />
+                    <small>Endorsement</small>
+                  </button>
                   </Link>
                 </td>
               </tr>
@@ -102,7 +106,7 @@ function Table({ columns, data }) {
       <div className="paginationMain">
         <ul className="pagination d-flex align-items-center justify-content-end">
           <li className="PageItems">
-            Items per page:{" "}
+            Items per page:
             <select className="text-center"
               value={pageSize}
               onChange={(e) => {
@@ -118,7 +122,7 @@ function Table({ columns, data }) {
           </li>
           <li className="pagesList">
             <a className="page-link">
-              Page {pageIndex + 1} of {pageOptions.length}{" "}
+              Page {pageIndex + 1} of {pageOptions.length}
             </a>
           </li>
           <li
@@ -144,14 +148,7 @@ function Table({ columns, data }) {
     </div>
   );
 }
-function ScanningUpload() {
-  const [display, setdisplay] = useState(false)
-  const handleClick1 = () => {
-    setdisplay(true)
-  }
-  useEffect(() => {
-    require("bootstrap/dist/js/bootstrap.bundle.min.js");
-  }, []);
+function Assigning() {
   const [clicked, setclicked] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState(0);
   useEffect(() => {
@@ -193,84 +190,35 @@ function ScanningUpload() {
           {
             Header: "Nature of Document",
             accessor: "min",
-          },
+              },
         ],
       },
-    ],
+        ],
     []
   );
   const data = [
     {
-      appNo: (
-        <>
-          {" "}
-          <div className="d-flex form-check-checkbox">
-            <input
-              onClick={checkboxes}
-              className="form-check-input"
-              type="checkbox"
-              value=""
-              id="flexCheckDefault"
-            />
-            <label className="form-check-label mx-2" htmlFor="flexCheckDefault">
-              456787654
-            </label>
-          </div>
-        </>
-      ),
+      appNo: "456787654",
       ackNo: "345/2022",
       csNo: "212",
       presenterName: "swapna hanumanthu",
       noofSchedule: "1",
       generateddatetime: "22/11/2022 @ 11: 48 AM",
       bookNumber: "1",
-      maj: "Sale",
       min: "Sales Deed",
     },
     {
-      appNo: (
-        <>
-          {" "}
-          <div className="d-flex form-check-checkbox" >
-            <input
-              onClick={checkboxes}
-              className="form-check-input"
-              type="checkbox"
-              value=""
-              id="flexCheckDefault"
-            />
-            <label className="form-check-label mx-2" htmlFor="flexCheckDefault">
-              458888123
-            </label>
-          </div>
-        </>
-      ),
+      appNo: "458888123",
       ackNo: "346/2022",
       csNo: "213",
       presenterName: "sreeja varma",
       noofSchedule: "2",
       generateddatetime: "22/11/2022 @ 08: 00 AM",
       bookNumber: "2",
-      maj: "Mortgage",
       min: "Mortgage without position",
     },
     {
-      appNo: (
-        <>
-          <div className="d-flex form-check-checkbox">
-            <input
-              onClick={checkboxes}
-              className="form-check-input"
-              type="checkbox"
-              value=""
-              id="flexCheckDefault"
-            />
-            <label className="form-check-label mx-2" htmlFor="flexCheckDefault">
-              158888334
-            </label>
-          </div>
-        </>
-      ),
+      appNo: "656787654",
       ackNo: "347/2022",
       csNo: "213",
       presenterName: "rajesh rao",
@@ -281,23 +229,7 @@ function ScanningUpload() {
       min: "Gift",
     },
     {
-      appNo: (
-        <>
-          {" "}
-          <div className="d-flex form-check-checkbox">
-            <input
-              onClick={checkboxes}
-              className="form-check-input"
-              type="checkbox"
-              value=""
-              id="flexCheckDefault"
-            />
-            <label className="form-check-label mx-2" htmlFor="flexCheckDefault">
-              638888123
-            </label>
-          </div>
-        </>
-      ),
+      appNo: "126787654",
       ackNo: "348/2023",
       csNo: "214",
       presenterName: "ravi teja",
@@ -308,23 +240,7 @@ function ScanningUpload() {
       min: "Gift settlement in favour of others",
     },
     {
-      appNo: (
-        <>
-          {" "}
-          <div className="d-flex form-check-checkbox">
-            <input
-              onClick={checkboxes}
-              className="form-check-input"
-              type="checkbox"
-              value=""
-              id="flexCheckDefault"
-            />
-            <label className="form-check-label mx-2" htmlFor="flexCheckDefault">
-              458888123
-            </label>
-          </div>
-        </>
-      ),
+      appNo: "346787654",
       ackNo: "349/2023",
       csNo: "215",
       presenterName: "Chandra Sekhar",
@@ -335,22 +251,7 @@ function ScanningUpload() {
       min: "Partition among family members",
     },
     {
-      appNo: (
-        <>
-          <div className="d-flex form-check-checkbox">
-            <input
-              onClick={checkboxes}
-              className="form-check-input"
-              type="checkbox"
-              value=""
-              id="flexCheckDefault"
-            />
-            <label className="form-check-label mx-2" htmlFor="flexCheckDefault">
-              675388123
-            </label>
-          </div>
-        </>
-      ),
+      appNo: "566787654",
       ackNo: "350/2022",
       csNo: "216",
       presenterName: "Sekhar sastry",
@@ -361,23 +262,7 @@ function ScanningUpload() {
       min: "Release (Co-Parceners)",
     },
     {
-      appNo: (
-        <>
-          {" "}
-          <div className="d-flex form-check-checkbox">
-            <input
-              onClick={checkboxes}
-              className="form-check-input"
-              type="checkbox"
-              value=""
-              id="flexCheckDefault"
-            />
-            <label className="form-check-label mx-2" htmlFor="flexCheckDefault">
-              358888123
-            </label>
-          </div>
-        </>
-      ),
+      appNo: "796787654",
       ackNo: "351/2022",
       csNo: "217",
       presenterName: "Chandra Sekhar",
@@ -388,22 +273,7 @@ function ScanningUpload() {
       min: "Release (Others)",
     },
     {
-      appNo: (
-        <>
-          <div className="d-flex form-check-checkbox">
-            <input
-              onClick={checkboxes}
-              className="form-check-input"
-              type="checkbox"
-              value=""
-              id="flexCheckDefault"
-            />
-            <label className="form-check-label mx-2" htmlFor="flexCheckDefault">
-              678888123
-            </label>
-          </div>
-        </>
-      ),
+      appNo: "916787654",
       ackNo: "352/2023",
       csNo: "218",
       presenterName: "Subbarao mucharla",
@@ -419,43 +289,32 @@ function ScanningUpload() {
   const [target, setTarget] = useState(null);
   const ref = useRef(null);
   const handleClose = () => setShow1(false);
-  const handleClick = (event) => { };
-  const [checked, setchecked] = useState(0);
-  function checkboxes() {
-    var inputs = document.getElementsByTagName("input");
-    var inputObj;
-    var selectedCount = 0;
-    for (var count1 = 0; count1 < inputs.length; count1++) {
-      inputObj = inputs[count1];
-      var type = inputObj.getAttribute("type");
-      if (type == 'checkbox' && inputObj.checked) {
-        selectedCount++;
-      }
-      setchecked(selectedCount)
-    }
-  }
+  const handleClick = (event) => {
+    setShow1(!show1);
+    setTarget(event.target);
+  };
   return (
     <>
       <div><Stepper showReason1={true} /></div>
-      <Stepper showReason={false} />
+    <Stepper showReason={false}/>
       <div className="pageMainWrap innerpage">
         <Head>
-          <title>Digital Sign - CARD</title>
+          <title>Endorsement & Bundling - CARD</title>
           <meta name="description" content="login" />
           <link rel="icon" href="/igrsfavicon.ico" />
         </Head>
         <div className="mainWrapper">
           <div className="wrapperInner">
             <div className="acknowledgement">
-              <h4>Digital Sign</h4>
+              <h4>Endorsement & Bundling</h4>
             </div>
-            <div className="documentsTable pageTableMain pageTableContainer">
-        <Row >
+              <div className="documentsTable pageTableMain pageTableContainer">
+               <Row >
                   <Col xxl={2} xl={2} lg={2} md={12} sm={12}className="pageTableTabs">
-                    <button className="activeButton">Accept (5)</button>
+                    <button className="activeButton">Accept (30)</button>
                   </Col>
                 <Col xxl={0} xl={0} lg={0} md={0} sm={0}></Col>
-                    <Col xxl={4} xl={3} lg={112} md={12} sm={12}className="float-end my-1">
+                    <Col xxl={5} xl={5} lg={8} md={10} sm={12}className="float-end my-1">
                       <input
                         type="text"
                         className="justify-content-end float-end search-click"
@@ -463,28 +322,17 @@ function ScanningUpload() {
                         placeholder=" Please search with - CS No / Ack No / App No / Presentant Name"
                       />
                     </Col>
-                    <Col xxl={1} xl={1} lg={12} md={9}sm={12} className="my-1 mx-2 p-0">
+                    <Col xxl={1} xl={1} lg={12} md={9}sm={12} className="my-1 mx-2 px-1">
                         <button className="today">Today</button>
                         </Col>
-                       <Col xxl={2} xl={2} lg={4} md={6} sm={12} className="my-1">
-                        <div className="searchFiler">
-                          <RangePicker />
+                        <Col xxl={2} xl={2} lg={4} md={6} sm={12} className="my-1">
+                          <div className="searchFiler">
+                            <RangePicker />
                         </div>
-                        </Col>
-                        <Col xxl={2} xl={2} lg={3} md={4} sm={12} className="my-1">
-                        <button
-                      className={
-                        checked >= 2
-                          ? "digital-sign-btn-enable"
-                          : "digital-sign-btn"
-                      }
-                    >
-                      Bulk Digital Sign
-                    </button>
                         </Col>
                 </Row>
               <div className="table-responsive">
-                <Table columns={columns} data={data} />
+                  <Table columns={columns} data={data} />
               </div>
             </div>
           </div>
@@ -493,4 +341,4 @@ function ScanningUpload() {
     </>
   );
 }
-export default ScanningUpload;
+export default Assigning;

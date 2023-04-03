@@ -1,13 +1,30 @@
 import { Container, Col, Row, Form, Button, Modal } from "react-bootstrap"
 import Head from "next/head";
-import Stepper from '../components/Stepper'
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Stepper from "../components/Stepper";
+import React from "react";
+
 const Endorsement = () => {
     const [show, setShow] = useState(false);
+    const [show1, setShow1] = useState(false);
     const handleClose = () => setShow(false);
+    const handleClose1 = () => setShow(false);
     const handleShow = () => setShow(true);
+    const handleShow1 = () => setShow1(true);
+
+    useEffect(() => {
+        require("bootstrap/dist/js/bootstrap.bundle.min.js");
+    }, []);
+    const [display, setDisplay] = React.useState(false);
+    const [generate, setGenerate] = React.useState(false);
+    const handleDisplay = () => {
+        setDisplay(true);
+        setGenerate(true);
+        setShow(false);
+    };
+
     return (
         <><div><Stepper showReason1={true} /></div>
             <Stepper showReason={false} />
@@ -22,8 +39,8 @@ const Endorsement = () => {
                         <div className="wrapperInner">
                             <div className="pageTableContainer">
                                 <div className="acknowledgement">
-                                    <button className="partyDetails">Assigning</button>
-                                    <button className="active imaging px-2">Endorsement</button>
+                                    <button className="active imaging px-2">Endorsement & Bundling</button>
+                                    {/* <button className=" partyDetails"></button> */}
                                 </div>
                                 <div>
                                     <Row className="mb-3">
@@ -112,7 +129,7 @@ const Endorsement = () => {
                                                 </label>
                                             </Form.Floating>
                                         </Col>
-                                        <Col lg={3} md={12} xs={12} className="mb-3">
+                                        <Col lg={3} md={3} xs={12} className="mb-3">
                                             <Form.Floating>
                                                 <Form.Select aria-label="Sub Registrar Name" id="floatingInputCustom" placeholder="Sub Registrar Name" style={{ color: "red", borderColor: "red" }}>
                                                     <option value="0">Please Select</option>
@@ -134,9 +151,8 @@ const Endorsement = () => {
                                                 <button className=" clear m-3">
                                                     Exit
                                                 </button>
-                                                <Button variant="primary" className="next  m-3" onClick={handleShow}>
-                                                    View
-                                                </Button>
+                                                {!generate ? <button className="next  m-3" onClick={handleShow}> Generate</button> : <button className="next p-2" onClick={handleShow1} > Start Bundling </button>}
+
                                                 <Modal show={show} onHide={handleClose} className="modal fade modal-lg align-items-center justify-content-center show">
                                                     <Modal.Header closeButton>
                                                         <Modal.Title>Endorsement</Modal.Title>
@@ -154,11 +170,33 @@ const Endorsement = () => {
                                                                 </Col>
                                                             </Row>
                                                         </Modal.Body>
+                                                        <Modal.Footer className="justify-content-center">
+                                                            <button className="bluebuttonclass" onClick={handleDisplay}> Save </button>
+                                                        </Modal.Footer>
+                                                    </Container>
+                                                </Modal>
+                                                <Modal show={show1} onHide={handleClose} className="modal fade modal-lg align-items-center justify-content-center show">
+                                                    <Modal.Header closeButton>
+                                                        <Modal.Title>Bundling</Modal.Title>
+                                                    </Modal.Header>
+                                                    <Container className="scrollable">
+                                                        <Modal.Body className="justify-content-center text-center">
+                                                            <Row className="text-center  ">
+                                                                <Col lg={12} md={10} xs={12}>
+                                                                    <Image width={200} height={300} src="/images/Bundling1.svg" />
+                                                                </Col>
+                                                            </Row>
+                                                            <Row className="text-center">
+                                                                <Col lg={12} md={12} xs={12}>
+                                                                    <Image width={200} height={300} src="/images/Bundling.svg" />
+                                                                </Col>
+                                                            </Row>
+                                                        </Modal.Body>
                                                         <Modal.Footer className="justify-content-center ">
-                                                            <Link href={"/assigningVerification"}>
-                                                                <Button className="bluebuttonclass" onClick={handleClose}>
+                                                            <Link href={"/endorsementLanding"}>
+                                                                <button className="bluebuttonclass" onClick={handleClose1}>
                                                                     Save
-                                                                </Button>
+                                                                </button>
                                                             </Link>
                                                         </Modal.Footer>
                                                     </Container>

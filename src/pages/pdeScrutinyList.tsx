@@ -5,6 +5,7 @@ import { Row, Col, Form, Nav, Tab, Tabs, OverlayTrigger, Tooltip } from "react-b
 import { useTable, usePagination } from "react-table";
 import { BsInfoCircle } from "react-icons/bs";
 import { DatePicker } from 'antd';
+import Stepper from "../components/Stepper";
 function PendingTable({ columns, data }) {
   const {
     getTableProps,
@@ -75,11 +76,14 @@ function PendingTable({ columns, data }) {
               Nature of Document
             </th>
             <th rowSpan={2} className="text-center">
-              Slot time
+              Check Slip Report
             </th>
             <th rowSpan={2} className="text-center">
-              Details
+              Slot time
             </th>
+            {/* <th rowSpan={2} className="text-center">
+              Details
+            </th> */}
             <th rowSpan={2} className="text-center">
               Status
             </th>
@@ -92,9 +96,22 @@ function PendingTable({ columns, data }) {
           <tr>
             <td>456787654</td>
             <td>Chandra Sekhar</td>
-            <td>Sale Deed</td>
-            <td>10:30am</td>
+            <td><p data-bs-toggle="modal" data-bs-target="#natureDocumnet" className="hover-underline-animation">Sale Deed</p></td>
             <td className="text-center">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#view"
+                className="basicDetails"
+              >
+                <Image
+                  width={18}
+                  height={18}
+                  src="/images/Viewdetails.svg" />
+                <small>View</small>
+              </button>
+            </td>
+            <td>10:30am</td>
+            {/* <td className="text-center">
               <button
                 data-bs-toggle="modal"
                 data-bs-target="#viewdetails"
@@ -106,10 +123,11 @@ function PendingTable({ columns, data }) {
                   src="/images/Viewdetails.svg" />
                 <small>View Details</small>
               </button>
-            </td>
+            </td> */}
             <td>New</td>
-            <td className="text-center">
-              <button
+            <td className="text-center d-flex">
+              <button data-bs-toggle="modal" data-bs-target="#acceptdetails" className="Acceptbtn">Accept</button>
+              {/* <button
                 data-bs-toggle="modal"
                 data-bs-target="#acceptdetails"
                 className="basicDetails"
@@ -119,8 +137,10 @@ function PendingTable({ columns, data }) {
                   height={18}
                   src="/images/accept.svg" />
                 <small>Accept</small>
-              </button>
-              <button
+              </button> */}
+              <button data-bs-toggle="modal" data-bs-target="#ammenddetails" className="Ammendbtn">Ammend</button>
+
+              {/* <button
                 data-bs-toggle="modal"
                 data-bs-target="#ammenddetails"
                 className="basicDetails"
@@ -130,22 +150,36 @@ function PendingTable({ columns, data }) {
                   height={18}
                   src="/images/ammend.svg" />
                 <small>Ammend</small>
-              </button>
-              <button className="print" data-bs-toggle="modal" data-bs-target="#refusedetails">
+              </button> */}
+              {/* <button className="print" data-bs-toggle="modal" data-bs-target="#refusedetails">
                 <Image
                   width={18}
                   height={18}
                   src="/images/refuse.svg" />
                 <small>Refuse</small>
-              </button>
+              </button> */}
             </td>
           </tr>
           <tr>
             <td>456787692</td>
             <td>Sekhar Varma</td>
-            <td>Mortgage with possession</td>
-            <td>12:15pm</td>
+            <td><p data-bs-toggle="modal" data-bs-target="#natureDocumnet" className="hover-underline-animation">Mortgage with possession</p></td>
             <td className="text-center">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#view"
+                className="basicDetails"
+              >
+                <Image
+                  width={18}
+                  height={18}
+                  src="/images/Viewdetails.svg" />
+                <small>View</small>
+              </button>
+            </td>
+
+            <td>12:15pm</td>
+            {/* <td className="text-center">
               <button
                 data-bs-toggle="modal"
                 data-bs-target="#viewdetails"
@@ -157,10 +191,10 @@ function PendingTable({ columns, data }) {
                   src="/images/Viewdetails.svg" />
                 <small>View Details</small>
               </button>
-            </td>
+            </td> */}
             <td>
               <div className="d-flex justify-content-center">
-                <span className="icon mx-1">Ammend</span>
+                <span className="icon mx-1">Ammended</span>
                 <OverlayTrigger
                   placement="bottom"
                   overlay={tooltip}
@@ -174,8 +208,9 @@ function PendingTable({ columns, data }) {
                 </OverlayTrigger>
               </div>
             </td>
-            <td className="text-center">
-              <button
+            <td className="text-center d-flex">
+              <button data-bs-toggle="modal" data-bs-target="#acceptdetails" className="Acceptbtn">Accept</button>
+              {/* <button
                 data-bs-toggle="modal"
                 data-bs-target="#acceptdetails"
                 className="basicDetails"
@@ -185,8 +220,10 @@ function PendingTable({ columns, data }) {
                   height={18}
                   src="/images/accept.svg" />
                 <small>Accept</small>
-              </button>
-              <button
+              </button> */}
+              <button data-bs-toggle="modal" data-bs-target="#ammenddetails" className="Ammendbtn">Ammend</button>
+
+              {/* <button
                 data-bs-toggle="modal"
                 data-bs-target="#ammenddetails"
                 className="basicDetails"
@@ -196,22 +233,36 @@ function PendingTable({ columns, data }) {
                   height={18}
                   src="/images/ammend.svg" />
                 <small>Ammend</small>
-              </button>
-              <button className="print" data-bs-toggle="modal" data-bs-target="#refusedetails">
+              </button> */}
+              {/* <button className="print" data-bs-toggle="modal" data-bs-target="#refusedetails">
                 <Image
                   width={18}
                   height={18}
                   src="/images/refuse.svg" />
                 <small>Refuse</small>
-              </button>
+              </button> */}
             </td>
           </tr>
           <tr>
             <td>456787642</td>
             <td>Biplob Sharma</td>
-            <td>Sale agreement with possession</td>
-            <td>09:30am</td>
+            <td><p data-bs-toggle="modal" data-bs-target="#natureDocumnet" className="hover-underline-animation">Sale agreement with possession</p></td>
             <td className="text-center">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#view"
+                className="basicDetails"
+              >
+                <Image
+                  width={18}
+                  height={18}
+                  src="/images/Viewdetails.svg" />
+                <small>View</small>
+              </button>
+            </td>
+
+            <td>09:30am</td>
+            {/* <td className="text-center">
               <button
                 data-bs-toggle="modal"
                 data-bs-target="#viewdetails"
@@ -223,10 +274,11 @@ function PendingTable({ columns, data }) {
                   src="/images/Viewdetails.svg" />
                 <small>View Details</small>
               </button>
-            </td>
+            </td> */}
             <td>New</td>
-            <td className="text-center">
-              <button
+            <td className="text-center d-flex">
+              <button data-bs-toggle="modal" data-bs-target="#acceptdetails" className="Acceptbtn">Accept</button>
+              {/* <button
                 data-bs-toggle="modal"
                 data-bs-target="#acceptdetails"
                 className="basicDetails"
@@ -236,8 +288,10 @@ function PendingTable({ columns, data }) {
                   height={18}
                   src="/images/accept.svg" />
                 <small>Accept</small>
-              </button>
-              <button
+              </button> */}
+              <button data-bs-toggle="modal" data-bs-target="#ammenddetails" className="Ammendbtn">Ammend</button>
+
+              {/* <button
                 data-bs-toggle="modal"
                 data-bs-target="#ammenddetails"
                 className="basicDetails"
@@ -247,22 +301,36 @@ function PendingTable({ columns, data }) {
                   height={18}
                   src="/images/ammend.svg" />
                 <small>Ammend</small>
-              </button>
-              <button className="print" data-bs-toggle="modal" data-bs-target="#refusedetails">
+              </button> */}
+              {/* <button className="print" data-bs-toggle="modal" data-bs-target="#refusedetails">
                 <Image
                   width={18}
                   height={18}
                   src="/images/refuse.svg" />
                 <small>Refuse</small>
-              </button>
+              </button> */}
             </td>
           </tr>
           <tr>
             <td>456787631</td>
             <td>Radhamma</td>
-            <td>Gift</td>
-            <td>01:25pm</td>
+            <td><p data-bs-toggle="modal" data-bs-target="#natureDocumnet" className="hover-underline-animation">Gift</p></td>
             <td className="text-center">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#view"
+                className="basicDetails"
+              >
+                <Image
+                  width={18}
+                  height={18}
+                  src="/images/Viewdetails.svg" />
+                <small>View</small>
+              </button>
+            </td>
+
+            <td>01:25pm</td>
+            {/* <td className="text-center">
               <button
                 data-bs-toggle="modal"
                 data-bs-target="#viewdetails"
@@ -274,10 +342,10 @@ function PendingTable({ columns, data }) {
                   src="/images/Viewdetails.svg" />
                 <small>View Details</small>
               </button>
-            </td>
+            </td> */}
             <td>
               <div className="d-flex justify-content-center">
-                <span className="icon mx-1">Ammend</span>
+                <span className="icon mx-1">Ammended</span>
                 <OverlayTrigger
                   placement="bottom"
                   overlay={tooltip}
@@ -291,8 +359,9 @@ function PendingTable({ columns, data }) {
                 </OverlayTrigger>
               </div>
             </td>
-            <td className="text-center">
-              <button
+            <td className="text-center d-flex">
+              <button data-bs-toggle="modal" data-bs-target="#acceptdetails" className="Acceptbtn">Accept</button>
+              {/* <button
                 data-bs-toggle="modal"
                 data-bs-target="#acceptdetails"
                 className="basicDetails"
@@ -302,8 +371,10 @@ function PendingTable({ columns, data }) {
                   height={18}
                   src="/images/accept.svg" />
                 <small>Accept</small>
-              </button>
-              <button
+              </button> */}
+              <button data-bs-toggle="modal" data-bs-target="#ammenddetails" className="Ammendbtn">Ammend</button>
+
+              {/* <button
                 data-bs-toggle="modal"
                 data-bs-target="#ammenddetails"
                 className="basicDetails"
@@ -313,22 +384,36 @@ function PendingTable({ columns, data }) {
                   height={18}
                   src="/images/ammend.svg" />
                 <small>Ammend</small>
-              </button>
-              <button className="print" data-bs-toggle="modal" data-bs-target="#refusedetails">
+              </button> */}
+              {/* <button className="print" data-bs-toggle="modal" data-bs-target="#refusedetails">
                 <Image
                   width={18}
                   height={18}
                   src="/images/refuse.svg" />
                 <small>Refuse</small>
-              </button>
+              </button> */}
             </td>
           </tr>
           <tr>
             <td>456787622</td>
             <td>Lakshmi Kanth</td>
-            <td>Partition</td>
-            <td>09:00am</td>
+            <td><p data-bs-toggle="modal" data-bs-target="#natureDocumnet" className="hover-underline-animation">Partition</p></td>
             <td className="text-center">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#view"
+                className="basicDetails"
+              >
+                <Image
+                  width={18}
+                  height={18}
+                  src="/images/Viewdetails.svg" />
+                <small>View</small>
+              </button>
+            </td>
+
+            <td>09:00am</td>
+            {/* <td className="text-center">
               <button
                 data-bs-toggle="modal"
                 data-bs-target="#viewdetails"
@@ -340,10 +425,11 @@ function PendingTable({ columns, data }) {
                   src="/images/Viewdetails.svg" />
                 <small>View Details</small>
               </button>
-            </td>
+            </td> */}
             <td>New</td>
-            <td className="text-center">
-              <button
+            <td className="text-center d-flex">
+              <button data-bs-toggle="modal" data-bs-target="#acceptdetails" className="Acceptbtn">Accept</button>
+              {/* <button
                 data-bs-toggle="modal"
                 data-bs-target="#acceptdetails"
                 className="basicDetails"
@@ -353,8 +439,10 @@ function PendingTable({ columns, data }) {
                   height={18}
                   src="/images/accept.svg" />
                 <small>Accept</small>
-              </button>
-              <button
+              </button> */}
+              <button data-bs-toggle="modal" data-bs-target="#ammenddetails" className="Ammendbtn">Ammend</button>
+
+              {/* <button
                 data-bs-toggle="modal"
                 data-bs-target="#ammenddetails"
                 className="basicDetails"
@@ -364,14 +452,14 @@ function PendingTable({ columns, data }) {
                   height={18}
                   src="/images/ammend.svg" />
                 <small>Ammend</small>
-              </button>
-              <button className="print" data-bs-toggle="modal" data-bs-target="#refusedetails">
+              </button> */}
+              {/* <button className="print" data-bs-toggle="modal" data-bs-target="#refusedetails">
                 <Image
                   width={18}
                   height={18}
                   src="/images/refuse.svg" />
                 <small>Refuse</small>
-              </button>
+              </button> */}
             </td>
           </tr>
         </tbody>
@@ -475,11 +563,14 @@ function AcceptTable({ columns, data }) {
               Nature of Document
             </th>
             <th rowSpan={2} className="text-center">
-              Slot time
+              Check Slip Report
             </th>
             <th rowSpan={2} className="text-center">
-              Details
+              Slot time
             </th>
+            {/* <th rowSpan={2} className="text-center">
+              Details
+            </th> */}
             <th rowSpan={2} className="text-center">
               Accept Date & Time by SRO
             </th>
@@ -491,9 +582,22 @@ function AcceptTable({ columns, data }) {
             <td>12345/2023</td>
             <td>5676</td>
             <td>Chandra Sekhar</td>
-            <td>Sale Deed</td>
-            <td>10:30am</td>
+            <td ><p data-bs-toggle="modal" data-bs-target="#natureDocumnet" className="hover-underline-animation">Sale Deed</p></td>
             <td className="text-center">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#view"
+                className="basicDetails"
+              >
+                <Image
+                  width={18}
+                  height={18}
+                  src="/images/Viewdetails.svg" />
+                <small>View</small>
+              </button>
+            </td>
+            <td>10:30am</td>
+            {/* <td className="text-center">
               <button
                 data-bs-toggle="modal"
                 data-bs-target="#viewdetails"
@@ -505,7 +609,7 @@ function AcceptTable({ columns, data }) {
                   src="/images/Viewdetails.svg" />
                 <small>View Details</small>
               </button>
-            </td>
+            </td> */}
             <td>22/11/2022 @10:45am</td>
           </tr>
           <tr>
@@ -513,9 +617,22 @@ function AcceptTable({ columns, data }) {
             <td>52345/2022</td>
             <td>7654</td>
             <td>Sekhar Varma</td>
-            <td>Mortgage with possession</td>
-            <td>12:15pm</td>
+            <td><p data-bs-toggle="modal" data-bs-target="#natureDocumnet" className="hover-underline-animation">Mortgage with possession</p></td>
             <td className="text-center">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#view"
+                className="basicDetails"
+              >
+                <Image
+                  width={18}
+                  height={18}
+                  src="/images/Viewdetails.svg" />
+                <small>View</small>
+              </button>
+            </td>
+            <td>12:15pm</td>
+            {/* <td className="text-center">
               <button
                 data-bs-toggle="modal"
                 data-bs-target="#viewdetails"
@@ -527,7 +644,7 @@ function AcceptTable({ columns, data }) {
                   src="/images/Viewdetails.svg" />
                 <small>View Details</small>
               </button>
-            </td>
+            </td> */}
             <td>24/11/2022 @12:45pm</td>
           </tr>
           <tr>
@@ -535,9 +652,22 @@ function AcceptTable({ columns, data }) {
             <td>34566/2022</td>
             <td>9876</td>
             <td>Biplob Sharma</td>
-            <td>Sale agreement with possession</td>
-            <td>09:30am</td>
+            <td><p data-bs-toggle="modal" data-bs-target="#natureDocumnet" className="hover-underline-animation">Sale agreement with possession</p></td>
             <td className="text-center">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#view"
+                className="basicDetails"
+              >
+                <Image
+                  width={18}
+                  height={18}
+                  src="/images/Viewdetails.svg" />
+                <small>View</small>
+              </button>
+            </td>
+            <td>09:30am</td>
+            {/* <td className="text-center">
               <button
                 data-bs-toggle="modal"
                 data-bs-target="#viewdetails"
@@ -549,7 +679,7 @@ function AcceptTable({ columns, data }) {
                   src="/images/Viewdetails.svg" />
                 <small>View Details</small>
               </button>
-            </td>
+            </td> */}
             <td>11/05/2022 @09:45am</td>
           </tr>
           <tr>
@@ -557,9 +687,22 @@ function AcceptTable({ columns, data }) {
             <td>32145/2023</td>
             <td>1456</td>
             <td>Radhamma</td>
-            <td>Gift</td>
-            <td>1:25pm</td>
+            <td><p data-bs-toggle="modal" data-bs-target="#natureDocumnet" className="hover-underline-animation">Gift</p></td>
             <td className="text-center">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#view"
+                className="basicDetails"
+              >
+                <Image
+                  width={18}
+                  height={18}
+                  src="/images/Viewdetails.svg" />
+                <small>View</small>
+              </button>
+            </td>
+            <td>1:25pm</td>
+            {/* <td className="text-center">
               <button
                 data-bs-toggle="modal"
                 data-bs-target="#viewdetails"
@@ -571,7 +714,7 @@ function AcceptTable({ columns, data }) {
                   src="/images/Viewdetails.svg" />
                 <small>View Details</small>
               </button>
-            </td>
+            </td> */}
             <td>01/01/2022 @08:45pm</td>
           </tr>
           <tr>
@@ -579,9 +722,22 @@ function AcceptTable({ columns, data }) {
             <td>97654/2022</td>
             <td>7896</td>
             <td>Lakshmi Kanth</td>
-            <td>Partition</td>
-            <td>09:00am</td>
+            <td><p data-bs-toggle="modal" data-bs-target="#natureDocumnet" className="hover-underline-animation">Partition</p></td>
             <td className="text-center">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#view"
+                className="basicDetails"
+              >
+                <Image
+                  width={18}
+                  height={18}
+                  src="/images/Viewdetails.svg" />
+                <small>View</small>
+              </button>
+            </td>
+            <td>09:00am</td>
+            {/* <td className="text-center">
               <button
                 data-bs-toggle="modal"
                 data-bs-target="#viewdetails"
@@ -593,7 +749,7 @@ function AcceptTable({ columns, data }) {
                   src="/images/Viewdetails.svg" />
                 <small>View Details</small>
               </button>
-            </td>
+            </td> */}
             <td>24/09/2023 @10:45am</td>
           </tr>
         </tbody>
@@ -704,11 +860,14 @@ function AmmendTable({ columns, data }) {
               Nature of Document
             </th>
             <th rowSpan={2} className="text-center">
+              Check Slip Report
+            </th>
+            <th rowSpan={2} className="text-center">
               Slot time
             </th>
-            <th rowSpan={2} className="extraFont text-center">
+            {/* <th rowSpan={2} className="extraFont text-center">
               Details
-            </th>
+            </th> */}
             <th rowSpan={2} className="extraFont text-center">
               Ammend Reason
             </th>
@@ -726,9 +885,22 @@ function AmmendTable({ columns, data }) {
             <td>34544/2022</td>
             <td>212</td>
             <td>Chandra Shekar</td>
-            <td>Sale Deed</td>
-            <td>10:30am</td>
+            <td><p data-bs-toggle="modal" data-bs-target="#natureDocumnet" className="hover-underline-animation">Sale Deed</p></td>
             <td className="text-center">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#view"
+                className="basicDetails"
+              >
+                <Image
+                  width={18}
+                  height={18}
+                  src="/images/Viewdetails.svg" />
+                <small>View</small>
+              </button>
+            </td>
+            <td>10:30am</td>
+            {/* <td className="text-center">
               <button
                 data-bs-toggle="modal"
                 data-bs-target="#viewdetails"
@@ -740,7 +912,7 @@ function AmmendTable({ columns, data }) {
                   src="/images/Viewdetails.svg" />
                 <small>View Details</small>
               </button>
-            </td>
+            </td> */}
             <td>Name expansion</td>
             <td>
               <div >
@@ -761,9 +933,22 @@ function AmmendTable({ columns, data }) {
             <td>12345/2022</td>
             <td>132</td>
             <td>Sekhar Varma</td>
-            <td>Mortgage with possession</td>
-            <td>11:00am</td>
+            <td><p data-bs-toggle="modal" data-bs-target="#natureDocumnet" className="hover-underline-animation">Mortgage with possession</p></td>
             <td className="text-center">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#view"
+                className="basicDetails"
+              >
+                <Image
+                  width={18}
+                  height={18}
+                  src="/images/Viewdetails.svg" />
+                <small>View</small>
+              </button>
+            </td>
+            <td>11:00am</td>
+            {/* <td className="text-center">
               <button
                 data-bs-toggle="modal"
                 data-bs-target="#viewdetails"
@@ -775,7 +960,7 @@ function AmmendTable({ columns, data }) {
                   src="/images/Viewdetails.svg" />
                 <small>View Details</small>
               </button>
-            </td>
+            </td> */}
             <td>Surname is not matching</td>
             <td>Family member surname should match</td>
             <td>12/03/2022 @12:00pm</td>
@@ -785,9 +970,22 @@ function AmmendTable({ columns, data }) {
             <td>34567/2022</td>
             <td>654</td>
             <td>Rajshekar</td>
-            <td>Sale agreement with possession</td>
-            <td>09:05am</td>
+            <td><p data-bs-toggle="modal" data-bs-target="#natureDocumnet" className="hover-underline-animation">Sale agreement with possession</p></td>
             <td className="text-center">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#view"
+                className="basicDetails"
+              >
+                <Image
+                  width={18}
+                  height={18}
+                  src="/images/Viewdetails.svg" />
+                <small>View</small>
+              </button>
+            </td>
+            <td>09:05am</td>
+            {/* <td className="text-center">
               <button
                 data-bs-toggle="modal"
                 data-bs-target="#viewdetails"
@@ -799,7 +997,7 @@ function AmmendTable({ columns, data }) {
                   src="/images/Viewdetails.svg" />
                 <small>View Details</small>
               </button>
-            </td>
+            </td> */}
             <td>Documents are not proper</td>
             <td>Boundary details are missing</td>
             <td>01/07/2022 @11:13am</td>
@@ -809,9 +1007,22 @@ function AmmendTable({ columns, data }) {
             <td>45689/2022</td>
             <td>845</td>
             <td>Malik Verma</td>
-            <td>Gift</td>
-            <td>12:00pm</td>
+            <td><p data-bs-toggle="modal" data-bs-target="#natureDocumnet" className="hover-underline-animation">Gift</p></td>
             <td className="text-center">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#view"
+                className="basicDetails"
+              >
+                <Image
+                  width={18}
+                  height={18}
+                  src="/images/Viewdetails.svg" />
+                <small>View</small>
+              </button>
+            </td>
+            <td>12:00pm</td>
+            {/* <td className="text-center">
               <button
                 data-bs-toggle="modal"
                 data-bs-target="#viewdetails"
@@ -823,7 +1034,7 @@ function AmmendTable({ columns, data }) {
                   src="/images/Viewdetails.svg" />
                 <small>View Details</small>
               </button>
-            </td>
+            </td> */}
             <td>Residence proofs wrong</td>
             <td>Address should match in ID proofs</td>
             <td>17/09/2022 @10:15pm</td>
@@ -833,9 +1044,22 @@ function AmmendTable({ columns, data }) {
             <td>67865/2022</td>
             <td>735</td>
             <td>Ramarao</td>
-            <td>Partition</td>
-            <td>09:12am</td>
+            <td><p data-bs-toggle="modal" data-bs-target="#natureDocumnet" className="hover-underline-animation">Partition</p></td>
             <td className="text-center">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#view"
+                className="basicDetails"
+              >
+                <Image
+                  width={18}
+                  height={18}
+                  src="/images/Viewdetails.svg" />
+                <small>View</small>
+              </button>
+            </td>
+            <td>09:12am</td>
+            {/* <td className="text-center">
               <button
                 data-bs-toggle="modal"
                 data-bs-target="#viewdetails"
@@ -847,7 +1071,7 @@ function AmmendTable({ columns, data }) {
                   src="/images/Viewdetails.svg" />
                 <small>View Details</small>
               </button>
-            </td>
+            </td> */}
             <td>Witness</td>
             <td>witness signs are mandatory</td>
             <td>25/02/2022 @10:41am</td>
@@ -957,9 +1181,9 @@ function RefuseTable({ columns, data }) {
             <th rowSpan={2} className="text-center">
               Slot time
             </th>
-            <th rowSpan={2} className="extraFont text-center">
+            {/* <th rowSpan={2} className="extraFont text-center">
               Details
-            </th>
+            </th> */}
             <th rowSpan={2} className="extraFont text-center">
               Refuse Reason
             </th>
@@ -977,9 +1201,22 @@ function RefuseTable({ columns, data }) {
             <td>34567/2022</td>
             <td>546</td>
             <td>Chandra Shekar</td>
-            <td>Sale Deed</td>
-            <td>10:30am</td>
+            <td><p data-bs-toggle="modal" data-bs-target="#natureDocumnet" className="hover-underline-animation">Sale Deed</p></td>
             <td className="text-center">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#view"
+                className="basicDetails"
+              >
+                <Image
+                  width={18}
+                  height={18}
+                  src="/images/Viewdetails.svg" />
+                <small>View</small>
+              </button>
+            </td>
+            <td>10:30am</td>
+            {/* <td className="text-center">
               <button
                 data-bs-toggle="modal"
                 data-bs-target="#viewdetails"
@@ -991,7 +1228,7 @@ function RefuseTable({ columns, data }) {
                   src="/images/Viewdetails.svg" />
                 <small>View Details</small>
               </button>
-            </td>
+            </td> */}
             <td>Fake documents</td>
             <td>Original documents needed for registration</td>
             <td>02/01/2023 12:00pm</td>
@@ -1003,7 +1240,7 @@ function RefuseTable({ columns, data }) {
             <td>Shekar Varma</td>
             <td>Mortgage with possession</td>
             <td>11:30pm</td>
-            <td className="text-center">
+            {/* <td className="text-center">
               <button
                 data-bs-toggle="modal"
                 data-bs-target="#viewdetails"
@@ -1015,7 +1252,7 @@ function RefuseTable({ columns, data }) {
                   src="/images/Viewdetails.svg" />
                 <small>View Details</small>
               </button>
-            </td>
+            </td> */}
             <td>Third party person </td>
             <td>Parties to be present at the time of registration</td>
             <td>11/05/2023 10:45pm</td>
@@ -1027,7 +1264,7 @@ function RefuseTable({ columns, data }) {
             <td>Lakshmikanth</td>
             <td>Sale agreement with possession</td>
             <td>09:30am</td>
-            <td className="text-center">
+            {/* <td className="text-center">
               <button
                 data-bs-toggle="modal"
                 data-bs-target="#viewdetails"
@@ -1039,7 +1276,7 @@ function RefuseTable({ columns, data }) {
                   src="/images/Viewdetails.svg" />
                 <small>View Details</small>
               </button>
-            </td>
+            </td> */}
             <td>Property Tax Receipts</td>
             <td>Tax receipts are mandatory</td>
             <td>30/05/2022 09:15am</td>
@@ -1051,7 +1288,7 @@ function RefuseTable({ columns, data }) {
             <td>Srinivasulu</td>
             <td>Gift</td>
             <td>02:30pm</td>
-            <td className="text-center">
+            {/* <td className="text-center">
               <button
                 data-bs-toggle="modal"
                 data-bs-target="#viewdetails"
@@ -1063,7 +1300,7 @@ function RefuseTable({ columns, data }) {
                   src="/images/Viewdetails.svg" />
                 <small>View Details</small>
               </button>
-            </td>
+            </td> */}
             <td>Identity</td>
             <td>Identity of the seller cannot be confirmed</td>
             <td>09/02/2022 07:00pm</td>
@@ -1073,9 +1310,9 @@ function RefuseTable({ columns, data }) {
             <td>14789/2022</td>
             <td>342</td>
             <td>Ramya Lasya</td>
-            <td>Partition</td>
+            <td><p data-bs-toggle="modal" data-bs-target="#natureDocumnet" className="hover-underline-animation">Partition</p></td>
             <td>03:45am</td>
-            <td className="text-center">
+            {/* <td className="text-center">
               <button
                 data-bs-toggle="modal"
                 data-bs-target="#viewdetails"
@@ -1087,7 +1324,7 @@ function RefuseTable({ columns, data }) {
                   src="/images/Viewdetails.svg" />
                 <small>View Details</small>
               </button>
-            </td>
+            </td> */}
             <td>Others</td>
             <td>Court has put a stay order on the deed</td>
             <td>21/05/2023 09:30am</td>
@@ -1186,7 +1423,7 @@ const pdeScrutinyList = () => {
       presenterName: "Chandra Shekar",
       natureofdocument: "Sale deed",
       slotTime: "10:30am",
-      details: "View Details",
+     // details: "View Details",
       status: "New",
     },
     {
@@ -1194,7 +1431,7 @@ const pdeScrutinyList = () => {
       presenterName: "Shekar Varma",
       natureofdocument: "Mortgage with possesion",
       slotTime: "12:15pm",
-      details: "View Details",
+     // details: "View Details",
       status: "Ammend",
     },
     {
@@ -1202,7 +1439,7 @@ const pdeScrutinyList = () => {
       presenterName: "Chandra Shekar",
       natureofdocument: "Sale deed",
       slotTime: "10:30am",
-      details: "View Details",
+    //  details: "View Details",
       status: "New",
     },
   ]
@@ -1235,10 +1472,10 @@ const pdeScrutinyList = () => {
             Header: "Slot Time",
             accessor: "slotTime",
           },
-          {
-            Header: "Details",
-            accessor: "details",
-          },
+          // {
+          //   Header: "Details",
+          //   accessor: "details",
+          // },
           {
             Header: "Accept Date&Time by SRO",
             accessor: "accept date&time by SRO",
@@ -1256,7 +1493,7 @@ const pdeScrutinyList = () => {
       presenterName: "Chandra Shekar",
       Natureofdocument: "Sale deed",
       slotTime: "10:30am",
-      details: "View Details",
+    //  details: "View Details",
       acceptdatetimebySRO: "22/11/2022 @10:45pm",
     },
     {
@@ -1266,7 +1503,7 @@ const pdeScrutinyList = () => {
       presenterName: "Shekar Varma",
       Natureofdocument: "Mortgage with possesion",
       slotTime: "12:15pm",
-      details: "View Details",
+      //details: "View Details",
       acceptdatetimebySRO: "24/11/2022 @12:45pm",
     },
   ]
@@ -1299,10 +1536,10 @@ const pdeScrutinyList = () => {
             Header: "Slot Time",
             accessor: "slotTime",
           },
-          {
-            Header: "Details",
-            accessor: "details",
-          },
+          // {
+          //   Header: "Details",
+          //   accessor: "details",
+          // },
           {
             Header: "Ammend Reason",
             accessor: "ammendReason",
@@ -1328,7 +1565,7 @@ const pdeScrutinyList = () => {
       presenterName: "chandra Shekar",
       natureofdocument: "Sale Deed",
       slotTime: "10:30pm",
-      details: "View Details",
+     // details: "View Details",
       ammendReason: "Name expansion",
       ammend_datetime_SRO: "02-1-2023 2:30pm",
       ammend_comments: "Name should be expanded as per ID proof",
@@ -1340,7 +1577,7 @@ const pdeScrutinyList = () => {
       presenterName: "Shekar varma",
       natureofdocument: "Mortgage with possesion",
       slotTime: "11:00pm",
-      details: "View Details",
+    //  details: "View Details",
       ammendReason: "Surname is not matching",
       ammend_datetime_SRO: "22/11/2022 10:45am",
       ammend_comments: "Family member surname should match",
@@ -1375,10 +1612,10 @@ const pdeScrutinyList = () => {
             Header: "Slot Time",
             accessor: "slotTime",
           },
-          {
-            Header: "Details",
-            accessor: "details",
-          },
+          // {
+          //   Header: "Details",
+          //   accessor: "details",
+          // },
           {
             Header: "Refuse Reason",
             accessor: "refuseReason",
@@ -1423,7 +1660,7 @@ const pdeScrutinyList = () => {
     }
   ];
   return (
-    <div className="pageMainWrap innerpage">
+    <><div><Stepper showReason1={true} /></div><div className="pageMainWrap innerpage">
       <Head>
         <title>PDE Scrutiny List - CARD</title>
         <meta name="description" content="login" />
@@ -1451,9 +1688,9 @@ const pdeScrutinyList = () => {
                           <Nav.Item>
                             <Nav.Link eventKey="ammend"><button className="button my-4">Ammend (5)</button></Nav.Link>
                           </Nav.Item>
-                          <Nav.Item>
+                          {/* <Nav.Item>
                             <Nav.Link eventKey="refuse"><button className="button my-4">Refuse (5)</button></Nav.Link>
-                          </Nav.Item>
+                          </Nav.Item> */}
                         </Nav>
                       </div>
                     </Col>
@@ -1462,8 +1699,7 @@ const pdeScrutinyList = () => {
                         type="text"
                         className="justify-content-end float-end search-click"
                         name=""
-                        placeholder=" Please search with - CS No / Ack No / App No / Presentant Name"
-                      />
+                        placeholder=" Please search with - CS No / Ack No / App No / Presentant Name" />
                     </Col>
                     <Col lg={1} md={12} xs={12} className="my-3">
                       <button className="today today">Today</button>
@@ -1484,9 +1720,9 @@ const pdeScrutinyList = () => {
                     <Tab.Pane eventKey="ammend">
                       <AmmendTable columns={ammendcolumns} data={ammendtableData} />
                     </Tab.Pane>
-                    <Tab.Pane eventKey="refuse">
+                    {/* <Tab.Pane eventKey="refuse">
                       <RefuseTable columns={refusecolumns} data={refusetableData} />
-                    </Tab.Pane>
+                    </Tab.Pane> */}
                   </Tab.Content>
                 </div>
               </div>
@@ -1510,58 +1746,122 @@ const pdeScrutinyList = () => {
                     <Image
                       width={20}
                       height={20}
-                      src="/images/popup-close.svg"
-                    />
+                      src="/images/popup-close.svg" />
                   </button>
                 </div>
                 <div className="modal-body modalCheckSlip">
                   <Tabs
-                    defaultActiveKey="Check Slip Report"
+                    defaultActiveKey="Slot Booking Slip"
                     id="justify-tab-example"
                     className="mb-3"
                     justify
                   >
-                    <Tab eventKey="Check Slip Report" title="Check Slip Report" className="text-center scrollable">
+                    {/* <Tab eventKey="Check Slip Report" title="Check Slip Report" className="text-center scrollable">
                       <Image
                         width={500}
                         height={800}
-                        src="/images/checkslip.svg"
-                      />
+                        src="/images/checkslip.svg" />
                     </Tab>
                     <Tab eventKey="Document Generation" title="Document Generation" className="text-center scrollable">
                       <Image
                         width={800}
                         height={500}
-                        src="/images/saledeed.svg"
-                      />
-                    </Tab>
+                        src="/images/saledeed.svg" />
+                    </Tab> */}
                     <Tab eventKey="Slot Booking Slip" title="Slot Booking Slip" className="text-center scrollable">
                       <Image
                         width={800}
                         height={1000}
-                        src="/images/form60.svg"
-                      />
+                        src="/images/form60.svg" />
                     </Tab>
                     <Tab eventKey="Acknowledgement Slip" title="Acknowledgement Slip" className="text-center scrollable">
                       <Image
                         width={800}
                         height={500}
-                        src="/images/acknowledgement.svg"
-                      />
+                        src="/images/acknowledgement.svg" />
                     </Tab>
                     <Tab eventKey="Form 60/61" title="Form 60/61" className="text-center scrollable">
                       <Image
                         width={800}
                         height={500}
-                        src="/images/form60.svg"
-                      />
+                        src="/images/form60.svg" />
                     </Tab>
                   </Tabs>
                 </div>
               </div>
             </div>
           </div>
+
+          <div //checkslip modal
+            className="modal fade modal-lg modal-heightt"
+            id="view"
+            aria-labelledby="view"
+            aria-hidden="true"
+          >
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h1 className="modal-title" id="exampleModalLabel">Check Slip Report</h1>
+                  <button
+                    type="button"
+                    className="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <Image
+                      width={20}
+                      height={20}
+                      src="/images/popup-close.svg" alt="close" />
+                  </button>
+                </div>
+                <div className="modal-body modalCheckSlip text-center">
+                  <div className="scrollable">
+                    <Image
+                      width={500}
+                      height={800}
+                      src="/images/checkslip.svg" alt="checkslip" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div //Nature of document modal
+            className="modal fade modal-lg modal-heightt"
+            id="natureDocumnet"
+            aria-labelledby="natureDocumnet"
+            aria-hidden="true"
+          >
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h1 className="modal-title" id="exampleModalLabel">Document Generation - Sale Deed</h1>
+                  <button
+                    type="button"
+                    className="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <Image
+                      width={20}
+                      height={20}
+                      src="/images/popup-close.svg" alt="close" />
+                  </button>
+                </div>
+                <div className="modal-body modalCheckSlip text-center">
+                  <div className="scrollable">
+                  <Image
+                        width={800}
+                        height={500}
+                        src="/images/saledeed.svg" alt="Nature Document"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div //accept icon popups modal
+
             className="modal fade modal-md"
             id="acceptdetails"
             aria-labelledby="acceptdetails"
@@ -1580,8 +1880,7 @@ const pdeScrutinyList = () => {
                     <Image
                       width={20}
                       height={20}
-                      src="/images/popup-close.svg"
-                    />
+                      src="/images/popup-close.svg" />
                   </button>
                 </div>
                 <div className="mx-3 mt-3 ">
@@ -1595,8 +1894,7 @@ const pdeScrutinyList = () => {
                           id="floatingInputCustom"
                           type="text"
                           placeholder="No. Of Sheets/Pages"
-                          value="5"
-                        />
+                          value="5" />
                         <Form.Label htmlFor="floatingInputCustom">
                           No. Of Sheets/Pages
                         </Form.Label>
@@ -1610,8 +1908,7 @@ const pdeScrutinyList = () => {
                           id="floatingInputCustom"
                           type="text"
                           placeholder="Nominee Name"
-                          value=""
-                        />
+                          value="" />
                         <Form.Label htmlFor="floatingInputCustom">
                           Nominee Aadhar No.
                         </Form.Label>
@@ -1625,8 +1922,7 @@ const pdeScrutinyList = () => {
                           id="floatingInputCustom"
                           type="text"
                           placeholder="Nominee Aadhar No"
-                          value=""
-                        />
+                          value="" />
                         <Form.Label htmlFor="floatingInputCustom">
                           Nominee Name
                         </Form.Label>
@@ -1646,243 +1942,243 @@ const pdeScrutinyList = () => {
               </div>
             </div>
             {/* <div className="modal-dialog">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h1 className="modal-title" id="exampleModalLabel">Application No: 456787654</h1>
-                  <button
-                    type="button"
-                    className="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    <Image
-                      width={20}
-                      height={20}
-                      src="/images/popup-close.svg"
-                    />
-                  </button>
-                </div>
-                <div style={{ margin: "1rem" }}>
-                  Basic Details
-                </div>
-                <div className="modal-body">
-                  <Row>
-                    <Col lg={12} md={12} className="mb-3">
-                      <Form.Floating>
-                        <Form.Control
-                          id="floatingInputCustom"
-                          type="text"
-                          placeholder="No. Of Sheets/Pages"
-                          value="12"
-                        />
-                        <Form.Label htmlFor="floatingInputCustom">
-                          No. Of Sheets/Pages
-                        </Form.Label>
-                      </Form.Floating>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col lg={12} md={12} className="mb-3">
-                      <Form.Floating>
-                        <Form.Control
-                          id="floatingInputCustom"
-                          type="text"
-                          placeholder="Nominee Aadhar No"
-                          value="XXXXXXXX1234"
-                        />
-                        <Form.Label htmlFor="floatingInputCustom">
-                          Nominee Aadhar No.
-                        </Form.Label>
-                      </Form.Floating>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col lg={12} md={12} className="mb-2">
-                      <Form.Floating>
-                        <Form.Control
-                          id="floatingInputCustom"
-                          type="text"
-                          placeholder="Nominee Name"
-                          value="Meena"
-                        />
-                        <Form.Label htmlFor="floatingInputCustom">
-                          Nominee Name.
-                        </Form.Label>
-                      </Form.Floating>
-                    </Col>
-                  </Row>
-                  <div className="d-flex justify-content-center mt-3">
-                    <button type="button" className="bluebuttonclass">
-                      ADD
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div> */}
+      <div className="modal-content">
+        <div className="modal-header">
+          <h1 className="modal-title" id="exampleModalLabel">Application No: 456787654</h1>
+          <button
+            type="button"
+            className="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            <Image
+              width={20}
+              height={20}
+              src="/images/popup-close.svg"
+            />
+          </button>
+        </div>
+        <div style={{ margin: "1rem" }}>
+          Basic Details
+        </div>
+        <div className="modal-body">
+          <Row>
+            <Col lg={12} md={12} className="mb-3">
+              <Form.Floating>
+                <Form.Control
+                  id="floatingInputCustom"
+                  type="text"
+                  placeholder="No. Of Sheets/Pages"
+                  value="12"
+                />
+                <Form.Label htmlFor="floatingInputCustom">
+                  No. Of Sheets/Pages
+                </Form.Label>
+              </Form.Floating>
+            </Col>
+          </Row>
+          <Row>
+            <Col lg={12} md={12} className="mb-3">
+              <Form.Floating>
+                <Form.Control
+                  id="floatingInputCustom"
+                  type="text"
+                  placeholder="Nominee Aadhar No"
+                  value="XXXXXXXX1234"
+                />
+                <Form.Label htmlFor="floatingInputCustom">
+                  Nominee Aadhar No.
+                </Form.Label>
+              </Form.Floating>
+            </Col>
+          </Row>
+          <Row>
+            <Col lg={12} md={12} className="mb-2">
+              <Form.Floating>
+                <Form.Control
+                  id="floatingInputCustom"
+                  type="text"
+                  placeholder="Nominee Name"
+                  value="Meena"
+                />
+                <Form.Label htmlFor="floatingInputCustom">
+                  Nominee Name.
+                </Form.Label>
+              </Form.Floating>
+            </Col>
+          </Row>
+          <div className="d-flex justify-content-center mt-3">
+            <button type="button" className="bluebuttonclass">
+              ADD
+            </button>
+          </div>
+        </div>
+      </div>
+    </div> */}
             {/* <div className="modal-dialog">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h1 className="modal-title" id="exampleModalLabel">Application No: 456787654</h1>
-                  <button
-                    type="button"
-                    className="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    <Image
-                      width={20}
-                      height={20}
-                      src="/images/popup-close.svg"
-                    />
-                  </button>
+      <div className="modal-content">
+        <div className="modal-header">
+          <h1 className="modal-title" id="exampleModalLabel">Application No: 456787654</h1>
+          <button
+            type="button"
+            className="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            <Image
+              width={20}
+              height={20}
+              src="/images/popup-close.svg"
+            />
+          </button>
+        </div>
+        <div style={{ margin: "1rem" }}>
+          Basic Details
+        </div>
+        <div className="modal-body">
+          <Row>
+            <Col lg={12} md={12} className="mb-3">
+              <Form.Floating>
+                <Form.Control
+                  id="floatingInputCustom"
+                  type="text"
+                  placeholder="No. Of Sheets/Pages"
+                  value="12"
+                />
+                <Form.Label htmlFor="floatingInputCustom">
+                  No. Of Sheets/Pages
+                </Form.Label>
+              </Form.Floating>
+            </Col>
+          </Row>
+          <Row>
+            <Col lg={12} md={12} className="mb-3">
+              <Form.Floating>
+                <Form.Control
+                  id="floatingInputCustom"
+                  type="text"
+                  placeholder="Nominee Aadhar No"
+                  value="XXXXXXXX1234"
+                />
+                <Form.Label htmlFor="floatingInputCustom">
+                  Nominee Aadhar No.
+                </Form.Label>
+              </Form.Floating>
+            </Col>
+          </Row>
+          <Row>
+            <Col lg={12} md={12} className="mb-2">
+              <Form.Floating>
+                <Form.Control
+                  id="floatingInputCustom"
+                  type="text"
+                  placeholder="Nominee Name"
+                  value="Meena"
+                />
+                <Form.Label htmlFor="floatingInputCustom">
+                  Nominee Name.
+                </Form.Label>
+                <div style={{ color: "red" }}>
+                  Aadhar Number is invalid. Please re-enter
                 </div>
-                <div style={{ margin: "1rem" }}>
-                  Basic Details
-                </div>
-                <div className="modal-body">
-                  <Row>
-                    <Col lg={12} md={12} className="mb-3">
-                      <Form.Floating>
-                        <Form.Control
-                          id="floatingInputCustom"
-                          type="text"
-                          placeholder="No. Of Sheets/Pages"
-                          value="12"
-                        />
-                        <Form.Label htmlFor="floatingInputCustom">
-                          No. Of Sheets/Pages
-                        </Form.Label>
-                      </Form.Floating>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col lg={12} md={12} className="mb-3">
-                      <Form.Floating>
-                        <Form.Control
-                          id="floatingInputCustom"
-                          type="text"
-                          placeholder="Nominee Aadhar No"
-                          value="XXXXXXXX1234"
-                        />
-                        <Form.Label htmlFor="floatingInputCustom">
-                          Nominee Aadhar No.
-                        </Form.Label>
-                      </Form.Floating>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col lg={12} md={12} className="mb-2">
-                      <Form.Floating>
-                        <Form.Control
-                          id="floatingInputCustom"
-                          type="text"
-                          placeholder="Nominee Name"
-                          value="Meena"
-                        />
-                        <Form.Label htmlFor="floatingInputCustom">
-                          Nominee Name.
-                        </Form.Label>
-                        <div style={{ color: "red" }}>
-                          Aadhar Number is invalid. Please re-enter
-                        </div>
-                      </Form.Floating>
-                    </Col>
-                  </Row>
-                  <div className="d-flex justify-content-center mt-3">
-                    <button type="button" className="bluebuttonclass">
-                      ADD
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div> */}
+              </Form.Floating>
+            </Col>
+          </Row>
+          <div className="d-flex justify-content-center mt-3">
+            <button type="button" className="bluebuttonclass">
+              ADD
+            </button>
+          </div>
+        </div>
+      </div>
+    </div> */}
             {/* <div className="modal-dialog">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h5 className="modal-title" id="exampleModalLabel">
-                    Application No: 456787654
-                  </h5>
-                  <button
-                    type="button"
-                    className="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    <Image
-                      width={20}
-                      height={20}
-                      src="/images/popup-close.svg"
-                    />
-                  </button>
-                </div>
-                <div className="modal-body">
-                  <Row>
-                    <div className="text-center">
-                      <div>
-                        <Image
-                          width={80}
-                          height={80}
-                          src="/images/accept1.svg"
-                        />
-                      </div>
-                      <h6>For Given</h6>
-                      <h6>For Given Acknowledgement No: <strong>345 &</strong></h6>
-                    </div>
-                    <div className="text-center">
-                      <h6>Check Slip No: <strong>212</strong></h6>
-                    </div>
-                    <div className="text-center">
-                      <h6>Receipt No: <strong>123</strong></h6>
-                    </div>
-                    <div className="text-center">
-                      <h6>has been generated and ammend flow accepted successfully</h6>
-                    </div>
-                  </Row>
-                </div>
+      <div className="modal-content">
+        <div className="modal-header">
+          <h5 className="modal-title" id="exampleModalLabel">
+            Application No: 456787654
+          </h5>
+          <button
+            type="button"
+            className="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            <Image
+              width={20}
+              height={20}
+              src="/images/popup-close.svg"
+            />
+          </button>
+        </div>
+        <div className="modal-body">
+          <Row>
+            <div className="text-center">
+              <div>
+                <Image
+                  width={80}
+                  height={80}
+                  src="/images/accept1.svg"
+                />
               </div>
-            </div>  */}
+              <h6>For Given</h6>
+              <h6>For Given Acknowledgement No: <strong>345 &</strong></h6>
+            </div>
+            <div className="text-center">
+              <h6>Check Slip No: <strong>212</strong></h6>
+            </div>
+            <div className="text-center">
+              <h6>Receipt No: <strong>123</strong></h6>
+            </div>
+            <div className="text-center">
+              <h6>has been generated and ammend flow accepted successfully</h6>
+            </div>
+          </Row>
+        </div>
+      </div>
+    </div>  */}
             {/* <div className="modal-dialog">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h5 className="modal-title" id="exampleModalLabel">
-                    Application No: 456787654
-                  </h5>
-                  <button
-                    type="button"
-                    className="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    <Image
-                      width={20}
-                      height={20}
-                      src="/images/popup-close.svg"
-                    />
-                  </button>
-                </div>
-                <div className="modal-body">
-                  <Row>
-                    <div className="text-center">
-                      <div>
-                        <Image
-                          width={80}
-                          height={80}
-                          src="/images/accept1.svg"
-                        />
-                      </div>
-                      <h6>For Given</h6>
-                      <h6>For Given Acknowledgement No: <strong>345 &</strong></h6>
-                    </div>
-                    <div className="text-center">
-                      <h6>Check Slip No: <strong>212</strong></h6>
-                    </div>
-                    <div className="text-center">
-                      <h6>Ammend flow accepted successfully.</h6>
-                    </div>
-                  </Row>
-                </div>
+      <div className="modal-content">
+        <div className="modal-header">
+          <h5 className="modal-title" id="exampleModalLabel">
+            Application No: 456787654
+          </h5>
+          <button
+            type="button"
+            className="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            <Image
+              width={20}
+              height={20}
+              src="/images/popup-close.svg"
+            />
+          </button>
+        </div>
+        <div className="modal-body">
+          <Row>
+            <div className="text-center">
+              <div>
+                <Image
+                  width={80}
+                  height={80}
+                  src="/images/accept1.svg"
+                />
               </div>
-            </div> */}
+              <h6>For Given</h6>
+              <h6>For Given Acknowledgement No: <strong>345 &</strong></h6>
+            </div>
+            <div className="text-center">
+              <h6>Check Slip No: <strong>212</strong></h6>
+            </div>
+            <div className="text-center">
+              <h6>Ammend flow accepted successfully.</h6>
+            </div>
+          </Row>
+        </div>
+      </div>
+    </div> */}
           </div>
           <div
             className="modal fade modal-md"
@@ -1905,8 +2201,7 @@ const pdeScrutinyList = () => {
                     <Image
                       width={20}
                       height={20}
-                      src="/images/popup-close.svg"
-                    />
+                      src="/images/popup-close.svg" />
                   </button>
                 </div>
                 <div className="modal-body">
@@ -1916,8 +2211,7 @@ const pdeScrutinyList = () => {
                         <Image
                           width={80}
                           height={80}
-                          src="/images/accept1.svg"
-                        />
+                          src="/images/accept1.svg" />
                       </div>
                       <h5>Acknowledgement No: <strong>345 &</strong></h5>
                     </div>
@@ -1956,8 +2250,7 @@ const pdeScrutinyList = () => {
                     <Image
                       width={20}
                       height={20}
-                      src="/images/popup-close.svg"
-                    />
+                      src="/images/popup-close.svg" />
                   </button>
                 </div>
                 <div className="modal-body">
@@ -1994,55 +2287,55 @@ const pdeScrutinyList = () => {
               </div>
             </div>
             {/* <div className="modal-dialog">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h1 className="modal-title" id="exampleModalLabel">Application List Ammend</h1>
-                  <button
-                    type="button"
-                    className="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    <Image
-                      width={20}
-                      height={20}
-                      src="/images/popup-close.svg"
-                    />
-                  </button>
-                </div>
-                <div className="modal-body">
-                  <Row>
-                    <Col lg={12} md={12} className="mb-3">
-                      <Form.Floating >
-                        <Form.Control
-                          id="floatingInputCustom"
-                          type="text"
-                          value="Reason 1 X  Reason 2 X"
-                        />
-                        <Form.Label htmlFor="floatingInputCustom">
-                          Select Reasons
-                        </Form.Label>
-                      </Form.Floating>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col lg={12} md={12} className="mb-3">
-                      <textarea
-                        className="form-control form-select"
-                        rows={5}
-                        id="comment"
-                        placeholder="Comments (Upto 1000 Characters)"
-                      ></textarea>
-                    </Col>
-                  </Row>
-                  <div className="d-flex justify-content-center">
-                    <button type="button" className="bluebuttonclass">
-                      ADD
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div> */}
+      <div className="modal-content">
+        <div className="modal-header">
+          <h1 className="modal-title" id="exampleModalLabel">Application List Ammend</h1>
+          <button
+            type="button"
+            className="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            <Image
+              width={20}
+              height={20}
+              src="/images/popup-close.svg"
+            />
+          </button>
+        </div>
+        <div className="modal-body">
+          <Row>
+            <Col lg={12} md={12} className="mb-3">
+              <Form.Floating >
+                <Form.Control
+                  id="floatingInputCustom"
+                  type="text"
+                  value="Reason 1 X  Reason 2 X"
+                />
+                <Form.Label htmlFor="floatingInputCustom">
+                  Select Reasons
+                </Form.Label>
+              </Form.Floating>
+            </Col>
+          </Row>
+          <Row>
+            <Col lg={12} md={12} className="mb-3">
+              <textarea
+                className="form-control form-select"
+                rows={5}
+                id="comment"
+                placeholder="Comments (Upto 1000 Characters)"
+              ></textarea>
+            </Col>
+          </Row>
+          <div className="d-flex justify-content-center">
+            <button type="button" className="bluebuttonclass">
+              ADD
+            </button>
+          </div>
+        </div>
+      </div>
+    </div> */}
           </div>
           <div
             className="modal fade modal-md"
@@ -2065,8 +2358,7 @@ const pdeScrutinyList = () => {
                     <Image
                       width={20}
                       height={20}
-                      src="/images/popup-close.svg"
-                    />
+                      src="/images/popup-close.svg" />
                   </button>
                 </div>
                 <div className="modal-body">
@@ -2076,8 +2368,7 @@ const pdeScrutinyList = () => {
                         <Image
                           width={80}
                           height={80}
-                          src="/images/accept1.svg"
-                        />
+                          src="/images/accept1.svg" />
                       </div>
                       <h5>Acknowledgement No: <strong>345</strong></h5>
                     </div>
@@ -2093,6 +2384,7 @@ const pdeScrutinyList = () => {
             </div>
           </div>
           <div //refuse icon popups modal
+
             className="modal fade modal-md"
             id="refusedetails"
             aria-labelledby="refusedetails"
@@ -2113,8 +2405,7 @@ const pdeScrutinyList = () => {
                     <Image
                       width={20}
                       height={20}
-                      src="/images/popup-close.svg"
-                    />
+                      src="/images/popup-close.svg" />
                   </button>
                 </div>
                 <div className="modal-body">
@@ -2173,8 +2464,7 @@ const pdeScrutinyList = () => {
                     <Image
                       width={20}
                       height={20}
-                      src="/images/popup-close.svg"
-                    />
+                      src="/images/popup-close.svg" />
                   </button>
                 </div>
                 <div className="modal-body">
@@ -2184,8 +2474,7 @@ const pdeScrutinyList = () => {
                         <Image
                           width={80}
                           height={80}
-                          src="/images/accept1.svg"
-                        />
+                          src="/images/accept1.svg" />
                       </div>
                       <h5>Acknowledgement No: <strong>345</strong></h5>
                     </div>
@@ -2203,7 +2492,7 @@ const pdeScrutinyList = () => {
           <div style={{ height: '102px' }}></div>
         </div>
       </div>
-    </div>
+    </div></>
   );
 };
 export default pdeScrutinyList;
